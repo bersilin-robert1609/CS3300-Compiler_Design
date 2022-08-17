@@ -1,0 +1,146 @@
+flex test.l
+bison test.y -Wcounterexamples
+test.y: warning: 11 shift/reduce conflicts [-Wconflicts-sr]
+test.y: warning: shift/reduce conflict on token OSQRE [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • OSQRE PrimaryExpression CSqre
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 54: PrimaryExpression OSqre         PrimaryExpression CSqre
+                                               ↳ 80: • OSQRE
+  Reduce derivation
+    Expression
+    ↳ 54: PrimaryExpression                      OSqre       PrimaryExpression CSqre
+          ↳ 68: Exclam Expression                ↳ 80: OSQRE
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token DOT [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • DOT Length
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 55: PrimaryExpression Dot         Length
+                                               ↳ 84: • DOT
+  Reduce derivation
+    Expression
+    ↳ 55: PrimaryExpression                      Dot       Length
+          ↳ 68: Exclam Expression                ↳ 84: DOT
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token LAND [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • LAND PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 46: PrimaryExpression Land         PrimaryExpression
+                                               ↳ 98: • LAND
+  Reduce derivation
+    Expression
+    ↳ 46: PrimaryExpression                      Land       PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 98: LAND
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token LOR [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • LOR PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 47: PrimaryExpression Lor         PrimaryExpression
+                                               ↳ 99: • LOR
+  Reduce derivation
+    Expression
+    ↳ 47: PrimaryExpression                      Lor       PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 99: LOR
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token NEQ [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • NEQ PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 48: PrimaryExpression Neq          PrimaryExpression
+                                               ↳ 100: • NEQ
+  Reduce derivation
+    Expression
+    ↳ 48: PrimaryExpression                      Neq        PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 100: NEQ
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token LEQ [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • LEQ PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 49: PrimaryExpression Leq          PrimaryExpression
+                                               ↳ 101: • LEQ
+  Reduce derivation
+    Expression
+    ↳ 49: PrimaryExpression                      Leq        PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 101: LEQ
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token PLUS [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • PLUS PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 50: PrimaryExpression Plus          PrimaryExpression
+                                               ↳ 102: • PLUS
+  Reduce derivation
+    Expression
+    ↳ 50: PrimaryExpression                      Plus        PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 102: PLUS
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token MINUS [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • MINUS PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 51: PrimaryExpression Minus          PrimaryExpression
+                                               ↳ 103: • MINUS
+  Reduce derivation
+    Expression
+    ↳ 51: PrimaryExpression                      Minus        PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 103: MINUS
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token MUL [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • MUL PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 52: PrimaryExpression Mul          PrimaryExpression
+                                               ↳ 104: • MUL
+  Reduce derivation
+    Expression
+    ↳ 52: PrimaryExpression                      Mul        PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 104: MUL
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token DIV [-Wcounterexamples]
+  Example: Exclam PrimaryExpression • DIV PrimaryExpression
+  Shift derivation
+    Expression
+    ↳ 56: PrimaryExpression
+          ↳ 68: Exclam Expression
+                       ↳ 53: PrimaryExpression Div          PrimaryExpression
+                                               ↳ 105: • DIV
+  Reduce derivation
+    Expression
+    ↳ 53: PrimaryExpression                      Div        PrimaryExpression
+          ↳ 68: Exclam Expression                ↳ 105: DIV
+                       ↳ 56: PrimaryExpression •
+test.y: warning: shift/reduce conflict on token ELSE [-Wcounterexamples]
+  Example: If OParen Expression CParen If OParen Expression CParen Statement • ELSE Statement
+  Shift derivation
+    Statement
+    ↳ 39: If OParen Expression CParen Statement
+                                      ↳ 40: If OParen Expression CParen Statement Else         Statement
+                                                                                  ↳ 96: • ELSE
+  Reduce derivation
+    Statement
+    ↳ 40: If OParen Expression CParen Statement                                     Else       Statement
+                                      ↳ 39: If OParen Expression CParen Statement • ↳ 96: ELSE
+gcc test.tab.c -o test.exe -lfl
+# gcc test.tab.c -o test.exe -ll #on macOS
