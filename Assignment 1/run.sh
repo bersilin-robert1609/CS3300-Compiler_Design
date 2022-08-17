@@ -4,8 +4,11 @@ read outputDir
  
 make test.exe
 
-mkdir outputDir
+mkdir $outputDir
 
-int i = 0;
-while [ i -l $]
-
+i=0
+for file in ./Inputs/*.java
+do
+    ./test.exe < $file > $outputDir/"$i".java
+    i=$((i+1))
+done

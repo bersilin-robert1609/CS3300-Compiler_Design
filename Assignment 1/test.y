@@ -47,9 +47,9 @@ MacroDefinition: MacroDefStatement
                | MacroDefExpression
 ;
 
-MacroDefExpression: DEFINEEXPR0 Identifier OParen CParen OParen Expression CParen {createMacroExpr0($2, $6)}
-                  | DEFINEEXPR1 Identifier OParen Identifier CParen OParen Expression CParen {createMacroExpr1($2, $4, $7)}
-                  | DEFINEEXPR2 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen {createMacroExpr2($2, $4, $6, $9)}
+MacroDefExpression: DEFINEEXPR0 Identifier OParen CParen OParen Expression CParen 
+                  | DEFINEEXPR1 Identifier OParen Identifier CParen OParen Expression CParen 
+                  | DEFINEEXPR2 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
 ;
 
 MacroDefStatement: DEFINESTMT0 Identifier OParen CParen OCurly StatementsList CCurly
