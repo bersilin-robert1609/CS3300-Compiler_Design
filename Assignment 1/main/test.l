@@ -1,5 +1,5 @@
 
-WHITESPACE [ \t]+
+WHITESPACE [ \t\r]+
 DIGIT [0-9]
 INTEGER {DIGIT}+
 LETTER [a-zA-Z_]
@@ -75,8 +75,10 @@ DE2 "#defineExpr2"
     return ID;
 } 
 {INTEGER} {
-    yylval.num = atoi(yytext);
+    yylval.id = strdup(yytext);
     return NUM;
 }
+
+. {printf("Lexer Error! %d Not Valid\n", yytext[0]);}
 
 %%

@@ -28,10 +28,19 @@
 
     LL* returnLL(char* data)
     {
+		fprintf(stderr, "returnLL called %s\n", data);
         LL* temp = (LL*)malloc(sizeof(LL));
         temp->head = returnNode(data);
         temp->tail = temp->head;
         return temp;
+    }
+
+    void attach_lists(LL* list1, LL* list2)
+    {
+		fprintf(stderr, "attach_lists called\n");
+        if(list2 != NULL && list1 != NULL) list1->tail->next = list2->head;
+		else return;
+        list1->tail = list2->tail;
     }
 %}
 
@@ -41,76 +50,192 @@
     LL* llPtr;
 }
 
-%token <llPtr> DEFINEEXPR0 DEFINEEXPR1 DEFINEEXPR2
-%token <llPtr> DEFINESTMT0 DEFINESTMT1 DEFINESTMT2
-%token <llPtr> CLASS PUBLIC STATIC MAIN RETURN EXTENDS
-%token <llPtr> INT BOOLEAN VOID STRING LENGTH
-%token <llPtr> IF WHILE ELSE
-%token <llPtr> NEW THIS 
-%token <llPtr> BTRUE BFALSE 
-%token <llPtr> PRNTSTMT
-%token <llPtr> OPAREN CPAREN
-%token <llPtr> OCURLY CCURLY
-%token <llPtr> OSQRE CSQRE
-%token <llPtr> SCOLON
-%token <llPtr> LAND LOR
-%token <llPtr> NEQ LEQ EQ
-%token <llPtr> PLUS MINUS MUL DIV
-%token <llPtr> EXCLAM COMMA DOT
-%token <llPtr> ID 
-%token <llPtr> NUM
+%token <id> DEFINEEXPR0 DEFINEEXPR1 DEFINEEXPR2
+%token <id> DEFINESTMT0 DEFINESTMT1 DEFINESTMT2
+%token <id> CLASS PUBLIC STATIC MAIN RETURN EXTENDS
+%token <id> INT BOOLEAN VOID STRING LENGTH
+%token <id> IF WHILE ELSE
+%token <id> NEW THIS 
+%token <id> BTRUE BFALSE 
+%token <id> PRNTSTMT
+%token <id> OPAREN CPAREN
+%token <id> OCURLY CCURLY
+%token <id> OSQRE CSQRE
+%token <id> SCOLON
+%token <id> LAND LOR
+%token <id> NEQ LEQ EQ
+%token <id> PLUS MINUS MUL DIV
+%token <id> EXCLAM COMMA DOT
+%token <id> ID 
+%token <id> NUM
 
-%type <llPtr> Identifier, Class, Public, Static, Main, Return, Extends, Int, Boolean, Void, String, Bfalse, Btrue, New, This, Length
-%type <llPtr> If, Else, While, PrintStatement, OParen, CParen, OCurly, CCurly, OSqre, CSqre
-%type <llPtr> SColon, Land, Lor, Neq, Leq, Eq, Plus, Minus, Mul, Div, Exclam, Comma, Dot
-%type <llPtr> goal, Expression, Statement, StatementsList, MacroDefinition, MacroDefExpression, MacroDefStatement, MainClass, MainPart
-%type <llPtr> MacroDefinitionMultiple, NextPart, TypeDeclaration, IdentifierDeclarations, IdentifierDeclarationsFinal, MethodDeclaration, MethodDeclarationMultiple
-%type <llPtr> Parameters, ParametersFinal, Type, ExpressionList, PrimaryExpression, Number
+%type <llPtr> Identifier Class Public Static Main Return Extends Int Boolean Void String Bfalse Btrue New This Length
+%type <llPtr> If Else While PrintStatement OParen CParen OCurly CCurly OSqre CSqre
+%type <llPtr> SColon Land Lor Neq Leq Eq Plus Minus Mul Div Exclam Comma Dot
+%type <llPtr> goal Expression Statement StatementsList MacroDefinition MacroDefExpression MacroDefStatement MainClass MainPart MiniGoal
+%type <llPtr> MacroDefinitionMultiple NextPart TypeDeclaration IdentifierDeclarations IdentifierDeclarationsFinal MethodDeclaration MethodDeclarationMultiple
+%type <llPtr> Parameters ParametersFinal Type ExpressionList PrimaryExpression Number
+%type <llPtr> DefineExpr0 DefineExpr1 DefineExpr2
+%type <llPtr> DefineStmt0 DefineStmt1 DefineStmt2
 
 %%
 
-goal: MacroDefinitionMultiple MainPart
-    | MainPart
+goal: MiniGoal {$$ = $1;}
+;
+
+MiniGoal: MacroDefinitionMultiple MainPart
+		{
+			$$ = $1;
+			if($$ != NULL) attach_lists($$, $2);
+			else $$ = $2;
+		}
+        | MainPart {$$ = $1;}
 ;
 
 MacroDefinitionMultiple: MacroDefinition MacroDefinitionMultiple
-                       | MacroDefinition
+					   {
+						$$ = $1;
+						attach_lists($$, $2);
+					   }
+                       | MacroDefinition {$$ = $1;}
 ;
 
-MacroDefinition: MacroDefStatement
-               | MacroDefExpression
+MacroDefinition: MacroDefStatement {$$ = $1;}
+               | MacroDefExpression {$$ = $1;}
 ;
 
-MacroDefExpression: DEFINEEXPR0 Identifier OParen CParen OParen Expression CParen
-                  | DEFINEEXPR1 Identifier OParen Identifier CParen OParen Expression CParen 
-                  | DEFINEEXPR2 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
+MacroDefExpression: DefineExpr0 Identifier OParen CParen OParen Expression CParen
+				  {
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+					attach_lists($$, $7);
+				  }
+                  | DefineExpr1 Identifier OParen Identifier CParen OParen Expression CParen 
+				  {
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+					attach_lists($$, $7);
+					attach_lists($$, $8);
+				  }
+                  | DefineExpr1 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
+				  {
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+					attach_lists($$, $7);
+					attach_lists($$, $8);
+					attach_lists($$, $9);
+					attach_lists($$, $10);
+				 }
 ;
 
-MacroDefStatement: DEFINESTMT0 Identifier OParen CParen OCurly StatementsList CCurly
-                 | DEFINESTMT1 Identifier OParen Identifier CParen OCurly StatementsList CCurly
-                 | DEFINESTMT2 Identifier OParen Identifier Comma Identifier CParen OCurly StatementsList CCurly
+MacroDefStatement: DefineStmt0 Identifier OParen CParen OCurly StatementsList CCurly
+				 {
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+					attach_lists($$, $7);
+				 }
+                 | DefineStmt1 Identifier OParen Identifier CParen OCurly StatementsList CCurly
+				 {
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+					attach_lists($$, $7);
+					attach_lists($$, $8);
+				 }
+                 | DefineStmt2 Identifier OParen Identifier Comma Identifier CParen OCurly StatementsList CCurly
+				 {
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+					attach_lists($$, $7);
+					attach_lists($$, $8);
+					attach_lists($$, $9);
+					attach_lists($$, $10);
+				 }
 ;
 
 MainPart: MainClass NextPart
+		{
+			$$ = $1;
+			attach_lists($$, $2);
+		}
 ;
 
-NextPart: 
+NextPart: {$$ = NULL;}
         | TypeDeclaration NextPart
+		{
+			$$ = $1;
+			attach_lists($$, $2);
+		}
 ;
 
 TypeDeclaration: Class Identifier OCurly IdentifierDeclarations MethodDeclarationMultiple CCurly
+				{
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+				}
                | Class Identifier Extends Identifier OCurly IdentifierDeclarations MethodDeclarationMultiple CCurly
+			    {
+					$$ = $1;
+					attach_lists($$, $2);
+					attach_lists($$, $3);
+					attach_lists($$, $4);
+					attach_lists($$, $5);
+					attach_lists($$, $6);
+					attach_lists($$, $7);
+					attach_lists($$, $8);
+				 }
 ;
 
-IdentifierDeclarations: 
+IdentifierDeclarations: {$$ = NULL;}
                       | IdentifierDeclarations IdentifierDeclarationsFinal
+					  {
+						$$ = $1;
+						if($$ != NULL) attach_lists($$, $2);
+						else $$ = $2;
+					  }
 ;
 
 IdentifierDeclarationsFinal: Type Identifier SColon
+						    {
+								$$ = $1;
+								attach_lists($$, $2);
+								attach_lists($$, $3);
+						    }
 ;
 
-MethodDeclarationMultiple: 
-                         | MethodDeclarationMultiple MethodDeclaration
+MethodDeclarationMultiple: {$$ = NULL;}
+                         | MethodDeclaration MethodDeclarationMultiple
+						 {
+							$$ = $1;
+							attach_lists($$, $2);
+						 }
 ;
 
 MethodDeclaration:  Public Type Identifier OParen Parameters CParen OCurly
@@ -118,18 +243,55 @@ MethodDeclaration:  Public Type Identifier OParen Parameters CParen OCurly
                         StatementsList
                         Return Expression SColon
                     CCurly
+					{
+						$$ = $1;
+						attach_lists($$, $2);
+						attach_lists($$, $3);
+						attach_lists($$, $4);
+						attach_lists($$, $5);
+						attach_lists($$, $6);
+						attach_lists($$, $7);
+						attach_lists($$, $8);
+						attach_lists($$, $9);
+						attach_lists($$, $10);
+						attach_lists($$, $11);
+						attach_lists($$, $12);
+						attach_lists($$, $13);
+					}
                  |  Public Type Identifier OParen CParen OCurly
                         IdentifierDeclarations
                         StatementsList
                         Return Expression SColon
                     CCurly
+					{
+						$$ = $1;
+						attach_lists($$, $2);
+						attach_lists($$, $3);
+						attach_lists($$, $4);
+						attach_lists($$, $5);
+						attach_lists($$, $6);
+						attach_lists($$, $7);
+						attach_lists($$, $8);
+						attach_lists($$, $9);
+						attach_lists($$, $10);
+						attach_lists($$, $11);
+						attach_lists($$, $12);
+					}
 ;
 
-Parameters: ParametersFinal
+Parameters: ParametersFinal {$$ = $1;}
           | ParametersFinal Comma Parameters
+		  {
+			  $$ = $1;
+			  attach_lists($$, $2);
+		  }
 ;
 
-ParametersFinal: Type Identifier
+ParametersFinal: Type Identifier 
+			   {
+				   $$ = $1;
+				   attach_lists($$, $2);
+			   }
 ;
 
 MainClass:  Class Identifier OCurly 
@@ -137,59 +299,264 @@ MainClass:  Class Identifier OCurly
                     PrintStatement OParen Expression CParen SColon 
                 CCurly
             CCurly
+			{
+				$$ = $1;
+            	attach_lists($$, $2);
+            	attach_lists($$, $3);
+            	attach_lists($$, $4);
+            	attach_lists($$, $5);
+            	attach_lists($$, $6);
+				attach_lists($$, $7);
+				attach_lists($$, $8);
+            	attach_lists($$, $9);
+            	attach_lists($$, $10);
+            	attach_lists($$, $11);
+            	attach_lists($$, $12);
+				attach_lists($$, $13);
+				attach_lists($$, $14);
+            	attach_lists($$, $15);
+            	attach_lists($$, $16);
+            	attach_lists($$, $17);
+            	attach_lists($$, $18);
+				attach_lists($$, $19);
+				attach_lists($$, $20);
+				attach_lists($$, $21);
+			}
 ;
 
 Type: Int OSqre CSqre
-    | Boolean
-    | Int
-    | Identifier
+	{
+		$$ = $1;
+		attach_lists($$, $2);
+		attach_lists($$, $3);
+	}
+    | Boolean {$$ = $1;}
+    | Int {$$ = $1;}
+    | Identifier {$$ = $1;}
 ;
 
-StatementsList: 
-              | Statement StatementsList
+StatementsList: {$$ = NULL;}
+              | Statement StatementsList 
+			  {
+				$$ = $1;
+				attach_lists($$, $2);
+			  }
 ;
 
 Statement: OCurly StatementsList CCurly
+         {
+			$$ = $1;
+			attach_lists($$, $2);
+			attach_lists($$, $3);
+         }
          | PrintStatement OParen Expression CParen SColon
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+		 }
          | Identifier Eq Expression SColon
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+		 }
          | Identifier OSqre Expression CSqre Eq Expression SColon
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+            attach_lists($$, $6);
+			attach_lists($$, $7);
+		 }
          | If OParen Expression CParen Statement
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+		 }
          | If OParen Expression CParen Statement Else Statement
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+            attach_lists($$, $6);
+			attach_lists($$, $7);
+		 }
          | While OParen Expression CParen Statement
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+		 }
          | Identifier OParen ExpressionList CParen SColon
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+		 }
          | Identifier OParen CParen SColon
+		 {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+		 }
 ;
 
 ExpressionList: Expression
+              {
+                $$ = $1;
+              }
               | Expression Comma ExpressionList
+              {
+                $$ = $1;
+                attach_lists($$, $2);
+                attach_lists($$, $3);
+              }
 ;
 
 Expression: PrimaryExpression Land PrimaryExpression 
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression Lor PrimaryExpression
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression Neq PrimaryExpression
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression Leq PrimaryExpression
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression Plus PrimaryExpression
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression Minus PrimaryExpression
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression Mul PrimaryExpression
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression Div PrimaryExpression
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression OSqre PrimaryExpression CSqre
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+          }
           | PrimaryExpression Dot Length
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | PrimaryExpression
+          {
+            $$ = $1;
+          }
           | PrimaryExpression Dot Identifier OParen CParen
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+          }
           | PrimaryExpression Dot Identifier OParen ExpressionList CParen
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+            attach_lists($$, $5);
+            attach_lists($$, $6);
+          }
           | Identifier OParen CParen
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+          }
           | Identifier OParen ExpressionList CParen
+          {
+            $$ = $1;
+            attach_lists($$, $2);
+            attach_lists($$, $3);
+            attach_lists($$, $4);
+          }
 ;
 
-PrimaryExpression: Number
-                 | Btrue
-                 | Bfalse
-                 | Identifier
-                 | This
-                 | New Int OSqre Expression CSqre
+PrimaryExpression: Number       { $$ = $1; }
+                 | Btrue        { $$ = $1; }
+                 | Bfalse       { $$ = $1; }
+                 | Identifier   { $$ = $1; }
+                 | This         { $$ = $1; }
+                 | New Int OSqre Expression CSqre 
+                 {
+                    $$ = $1; 
+                    attach_lists($$, $2);
+                    attach_lists($$, $3);
+                    attach_lists($$, $4);
+                    attach_lists($$, $5);
+                 }
                  | New Identifier OParen CParen
+                 {
+                    $$ = $1; 
+                    attach_lists($$, $2);
+                    attach_lists($$, $3);
+                    attach_lists($$, $4);
+                 }
                  | Exclam Expression 
+                 {
+                    $$ = $1; 
+                    attach_lists($$, $2);
+                 }
                  | OParen Expression CParen
+                 {
+                    $$ = $1;
+                    attach_lists($$, $2);
+                    attach_lists($$, $3);
+                 }
 ;
 
 Class: CLASS                {printf("\nclass "); LL* temp = returnLL("class"); $$ = temp;} ;
@@ -230,6 +597,12 @@ Mul: MUL                    {printf(" * "); LL* temp = returnLL("*"); $$ = temp;
 Div: DIV                    {printf(" / "); LL* temp = returnLL("/"); $$ = temp;} ;
 Btrue: BTRUE                {printf("true"); LL* temp = returnLL("true"); $$ = temp;} ;
 Bfalse: BFALSE              {printf("false"); LL* temp = returnLL("false"); $$ = temp;} ;
+DefineExpr0: DEFINEEXPR0    {printf("#defineexpr0"); LL* temp = returnLL("#defineexpr0"); $$ = temp;} ;
+DefineExpr1: DEFINEEXPR1    {printf("#defineexpr1"); LL* temp = returnLL("#defineexpr1"); $$ = temp;} ;
+DefineExpr2: DEFINEEXPR2    {printf("#defineexpr2"); LL* temp = returnLL("#defineexpr2"); $$ = temp;} ;
+DefineStmt0: DEFINESTMT0	{printf("#definestmt0"); LL* temp = returnLL("#definestmt0"); $$ = temp;} ;
+DefineStmt1: DEFINESTMT1	{printf("#definestmt1"); LL* temp = returnLL("#definestmt1"); $$ = temp;} ;
+DefineStmt2: DEFINESTMT2	{printf("#definestmt2"); LL* temp = returnLL("#definestmt2"); $$ = temp;} ;
 
 Identifier: ID              {printf(" %s ", $1); LL* temp = returnLL($1); $$ = temp;} ;
 Number: NUM                 {printf(" %s ", $1); LL* temp = returnLL($1); $$ = temp;} ;
