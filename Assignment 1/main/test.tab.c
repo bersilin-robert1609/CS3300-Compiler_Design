@@ -1511,97 +1511,97 @@ yyreduce:
 
   case 78: /* OParen: OPAREN  */
 #line 168 "test.y"
-               {printf(" ( ");}
+               {printf(" (");}
 #line 1516 "test.tab.c"
     break;
 
   case 79: /* CParen: CPAREN  */
 #line 169 "test.y"
-               {printf(" ) ");}
+               {printf(") ");}
 #line 1522 "test.tab.c"
     break;
 
   case 80: /* String: STRING  */
 #line 170 "test.y"
-               {printf(" String ");}
+               {printf("String ");}
 #line 1528 "test.tab.c"
     break;
 
   case 81: /* OSqre: OSQRE  */
 #line 171 "test.y"
-             {printf(" [ ");}
+             {printf(" [");}
 #line 1534 "test.tab.c"
     break;
 
   case 82: /* CSqre: CSQRE  */
 #line 172 "test.y"
-             {printf(" ] ");}
+             {printf("] ");}
 #line 1540 "test.tab.c"
     break;
 
   case 83: /* PrintStatement: PRNTSTMT  */
 #line 173 "test.y"
-                         {printf(" System.out.println ");}
+                         {printf("System.out.println");}
 #line 1546 "test.tab.c"
     break;
 
   case 84: /* SColon: SCOLON  */
 #line 174 "test.y"
-               {printf(" ;\n");}
+               {printf(";\n");}
 #line 1552 "test.tab.c"
     break;
 
   case 85: /* Dot: DOT  */
 #line 175 "test.y"
-         {printf(" . ");}
+         {printf(".");}
 #line 1558 "test.tab.c"
     break;
 
   case 86: /* Length: LENGTH  */
 #line 176 "test.y"
-               {printf(" length ");}
+               {printf("length");}
 #line 1564 "test.tab.c"
     break;
 
   case 87: /* This: THIS  */
 #line 177 "test.y"
-           {printf(" this ");}
+           {printf("this");}
 #line 1570 "test.tab.c"
     break;
 
   case 88: /* New: NEW  */
 #line 178 "test.y"
-         {printf(" new ");}
+         {printf("new ");}
 #line 1576 "test.tab.c"
     break;
 
   case 89: /* Int: INT  */
 #line 179 "test.y"
-         {printf(" int ");}
+         {printf("int ");}
 #line 1582 "test.tab.c"
     break;
 
   case 90: /* Boolean: BOOLEAN  */
 #line 180 "test.y"
-                 {printf(" boolean ");}
+                 {printf("boolean ");}
 #line 1588 "test.tab.c"
     break;
 
   case 91: /* Exclam: EXCLAM  */
 #line 181 "test.y"
-               {printf(" ! ");}
+               {printf("!");}
 #line 1594 "test.tab.c"
     break;
 
   case 92: /* Return: RETURN  */
 #line 182 "test.y"
-               {printf(" return ");}
+               {printf("return ");}
 #line 1600 "test.tab.c"
     break;
 
   case 93: /* Extends: EXTENDS  */
 #line 183 "test.y"
-                 {printf(" extends ");}
+                 {printf("extends ");}
 #line 1606 "test.tab.c"
     break;
 
@@ -1613,25 +1613,25 @@ yyreduce:
 
   case 95: /* If: IF  */
 #line 185 "test.y"
-       {printf(" if ");}
+       {printf("if ");}
 #line 1618 "test.tab.c"
     break;
 
   case 96: /* While: WHILE  */
 #line 186 "test.y"
-             {printf(" while ");}
+             {printf("while ");}
 #line 1624 "test.tab.c"
     break;
 
   case 97: /* Else: ELSE  */
 #line 187 "test.y"
-           {printf(" else ");}
+           {printf("else ");}
 #line 1630 "test.tab.c"
     break;
 
   case 98: /* Comma: COMMA  */
 #line 188 "test.y"
-             {printf(" , ");}
+             {printf(",");}
 #line 1636 "test.tab.c"
     break;
 
@@ -1685,13 +1685,13 @@ yyreduce:
 
   case 107: /* Btrue: BTRUE  */
 #line 197 "test.y"
-             {printf(" true ");}
+             {printf("true");}
 #line 1690 "test.tab.c"
     break;
 
   case 108: /* Bfalse: BFALSE  */
 #line 198 "test.y"
-               {printf(" false ");}
+               {printf("false");}
 #line 1696 "test.tab.c"
     break;
 
