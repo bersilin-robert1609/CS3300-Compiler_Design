@@ -42,6 +42,17 @@
 		else return;
         list1->tail = list2->tail;
     }
+
+	void printLL(LL* list)
+	{
+		fprintf(stderr, "\n\nprintLL called\n");
+		Node* temp = list->head;
+		while(temp != NULL)
+		{
+			printf("%s", temp->data);
+			temp = temp->next;
+		}
+	}
 %}
 
 %union {
@@ -80,7 +91,7 @@
 
 %%
 
-goal: MiniGoal {$$ = $1;}
+goal: MiniGoal {$$ = $1; printLL($$);}
 ;
 
 MiniGoal: MacroDefinitionMultiple MainPart
@@ -390,7 +401,7 @@ Statement: OCurly StatementsList CCurly
             attach_lists($$, $4);
             attach_lists($$, $5);
             attach_lists($$, $6);
-			attach_lists($$, $7);
+			      attach_lists($$, $7);
 		 }
          | While OParen Expression CParen Statement
 		 {
@@ -559,53 +570,53 @@ PrimaryExpression: Number       { $$ = $1; }
                  }
 ;
 
-Class: CLASS                {printf("\nclass "); LL* temp = returnLL("class"); $$ = temp;} ;
-OCurly: OCURLY              {printf(" {\n"); LL* temp = returnLL("{"); $$ = temp;} ;
-CCurly: CCURLY              {printf("\n}\n"); LL* temp = returnLL("}"); $$ = temp;} ;
-Public: PUBLIC              {printf("public "); LL* temp = returnLL("public"); $$ = temp;} ;
-Static: STATIC              {printf("static "); LL* temp = returnLL("static"); $$ = temp;} ;
-Void: VOID                  {printf("void "); LL* temp = returnLL("void"); $$ = temp;} ;
-Main: MAIN                  {printf("main "); LL* temp = returnLL("main"); $$ = temp;} ;
-OParen: OPAREN              {printf(" ("); LL* temp = returnLL("("); $$ = temp;} ;
-CParen: CPAREN              {printf(") "); LL* temp = returnLL(")"); $$ = temp;} ;
-String: STRING              {printf("String "); LL* temp = returnLL("String"); $$ = temp;} ;
-OSqre: OSQRE                {printf(" ["); LL* temp = returnLL("["); $$ = temp;} ;
-CSqre: CSQRE                {printf("] "); LL* temp = returnLL("]"); $$ = temp;} ;
-PrintStatement: PRNTSTMT    {printf("System.out.println"); LL* temp = returnLL("System.out.println"); $$ = temp;} ;
-SColon: SCOLON              {printf(";\n"); LL* temp = returnLL(";"); $$ = temp;} ;
-Dot: DOT                    {printf("."); LL* temp = returnLL("."); $$ = temp;} ;
-Length: LENGTH              {printf("length"); LL* temp = returnLL("length"); $$ = temp;} ;
-This: THIS                  {printf("this"); LL* temp = returnLL("this"); $$ = temp;} ;
-New: NEW                    {printf("new "); LL* temp = returnLL("new"); $$ = temp;} ;
-Int: INT                    {printf("int "); LL* temp = returnLL("int"); $$ = temp;} ;
-Boolean: BOOLEAN            {printf("boolean "); LL* temp = returnLL("boolean"); $$ = temp;} ;
-Exclam: EXCLAM              {printf("!"); LL* temp = returnLL("!"); $$ = temp;} ;
-Return: RETURN              {printf("return "); LL* temp = returnLL("return"); $$ = temp;} ;
-Extends: EXTENDS            {printf("extends "); LL* temp = returnLL("extends"); $$ = temp;} ;
-Eq: EQ                      {printf(" = "); LL* temp = returnLL("="); $$ = temp;} ;
-If: IF                      {printf("if "); LL* temp = returnLL("if"); $$ = temp;} ;
-Else: ELSE                  {printf("else "); LL* temp = returnLL("else"); $$ = temp;} ;
-While: WHILE                {printf("while "); LL* temp = returnLL("while"); $$ = temp;} ;
-Comma: COMMA                {printf(","); LL* temp = returnLL(","); $$ = temp;} ;
-Land: LAND                  {printf(" && "); LL* temp = returnLL("&&"); $$ = temp;} ;
-Lor: LOR                    {printf(" || "); LL* temp = returnLL("||"); $$ = temp;} ;
-Neq: NEQ                    {printf(" != "); LL* temp = returnLL("!="); $$ = temp;} ;
-Leq: LEQ                    {printf(" <= "); LL* temp = returnLL("<="); $$ = temp;} ;
-Plus: PLUS                  {printf(" + "); LL* temp = returnLL("+"); $$ = temp;} ;
-Minus: MINUS                {printf(" - "); LL* temp = returnLL("-"); $$ = temp;} ;
-Mul: MUL                    {printf(" * "); LL* temp = returnLL("*"); $$ = temp;} ;
-Div: DIV                    {printf(" / "); LL* temp = returnLL("/"); $$ = temp;} ;
-Btrue: BTRUE                {printf("true"); LL* temp = returnLL("true"); $$ = temp;} ;
-Bfalse: BFALSE              {printf("false"); LL* temp = returnLL("false"); $$ = temp;} ;
-DefineExpr0: DEFINEEXPR0    {printf("#defineexpr0"); LL* temp = returnLL("#defineexpr0"); $$ = temp;} ;
-DefineExpr1: DEFINEEXPR1    {printf("#defineexpr1"); LL* temp = returnLL("#defineexpr1"); $$ = temp;} ;
-DefineExpr2: DEFINEEXPR2    {printf("#defineexpr2"); LL* temp = returnLL("#defineexpr2"); $$ = temp;} ;
-DefineStmt0: DEFINESTMT0	{printf("#definestmt0"); LL* temp = returnLL("#definestmt0"); $$ = temp;} ;
-DefineStmt1: DEFINESTMT1	{printf("#definestmt1"); LL* temp = returnLL("#definestmt1"); $$ = temp;} ;
-DefineStmt2: DEFINESTMT2	{printf("#definestmt2"); LL* temp = returnLL("#definestmt2"); $$ = temp;} ;
+Class: CLASS                { LL* temp = returnLL("\nclass "); $$ = temp;} ;
+OCurly: OCURLY              { LL* temp = returnLL(" {\n"); $$ = temp;} ;
+CCurly: CCURLY              { LL* temp = returnLL("\n}\n"); $$ = temp;} ;
+Public: PUBLIC              { LL* temp = returnLL("public "); $$ = temp;} ;
+Static: STATIC              { LL* temp = returnLL("static "); $$ = temp;} ;
+Void: VOID                  { LL* temp = returnLL("void "); $$ = temp;} ;
+Main: MAIN                  { LL* temp = returnLL("main "); $$ = temp;} ;
+OParen: OPAREN              { LL* temp = returnLL(" ("); $$ = temp;} ;
+CParen: CPAREN              { LL* temp = returnLL(") "); $$ = temp;} ;
+String: STRING              { LL* temp = returnLL("String "); $$ = temp;} ;
+OSqre: OSQRE                { LL* temp = returnLL(" ["); $$ = temp;} ;
+CSqre: CSQRE                { LL* temp = returnLL("] "); $$ = temp;} ;
+PrintStatement: PRNTSTMT    { LL* temp = returnLL("System.out.println"); $$ = temp;} ;
+SColon: SCOLON              { LL* temp = returnLL(";\n"); $$ = temp;} ;
+Dot: DOT                    { LL* temp = returnLL("."); $$ = temp;} ;
+Length: LENGTH              { LL* temp = returnLL("length"); $$ = temp;} ;
+This: THIS                  { LL* temp = returnLL("this"); $$ = temp;} ;
+New: NEW                    { LL* temp = returnLL("new "); $$ = temp;} ;
+Int: INT                    { LL* temp = returnLL("int "); $$ = temp;} ;
+Boolean: BOOLEAN            { LL* temp = returnLL("boolean "); $$ = temp;} ;
+Exclam: EXCLAM              { LL* temp = returnLL("!"); $$ = temp;} ;
+Return: RETURN              { LL* temp = returnLL("return "); $$ = temp;} ;
+Extends: EXTENDS            { LL* temp = returnLL("extends "); $$ = temp;} ;
+Eq: EQ                      { LL* temp = returnLL(" = "); $$ = temp;} ;
+If: IF                      { LL* temp = returnLL("if "); $$ = temp;} ;
+Else: ELSE                  { LL* temp = returnLL("else "); $$ = temp;} ;
+While: WHILE                { LL* temp = returnLL("while "); $$ = temp;} ;
+Comma: COMMA                { LL* temp = returnLL(","); $$ = temp;} ;
+Land: LAND                  { LL* temp = returnLL(" && "); $$ = temp;} ;
+Lor: LOR                    { LL* temp = returnLL(" || "); $$ = temp;} ;
+Neq: NEQ                    { LL* temp = returnLL(" != "); $$ = temp;} ;
+Leq: LEQ                    { LL* temp = returnLL(" <= "); $$ = temp;} ;
+Plus: PLUS                  { LL* temp = returnLL(" + "); $$ = temp;} ;
+Minus: MINUS                { LL* temp = returnLL(" - "); $$ = temp;} ;
+Mul: MUL                    { LL* temp = returnLL(" * "); $$ = temp;} ;
+Div: DIV                    { LL* temp = returnLL(" / "); $$ = temp;} ;
+Btrue: BTRUE                { LL* temp = returnLL("true"); $$ = temp;} ;
+Bfalse: BFALSE              { LL* temp = returnLL("false"); $$ = temp;} ;
+DefineExpr0: DEFINEEXPR0    { LL* temp = returnLL("#defineexpr0 "); $$ = temp;} ;
+DefineExpr1: DEFINEEXPR1    { LL* temp = returnLL("#defineexpr1 "); $$ = temp;} ;
+DefineExpr2: DEFINEEXPR2    { LL* temp = returnLL("#defineexpr2 "); $$ = temp;} ;
+DefineStmt0: DEFINESTMT0	{ LL* temp = returnLL("#definestmt0 "); $$ = temp;} ;
+DefineStmt1: DEFINESTMT1	{ LL* temp = returnLL("#definestmt1 "); $$ = temp;} ;
+DefineStmt2: DEFINESTMT2	{ LL* temp = returnLL("#definestmt2 "); $$ = temp;} ;
 
-Identifier: ID              {printf(" %s ", $1); LL* temp = returnLL($1); $$ = temp;} ;
-Number: NUM                 {printf(" %s ", $1); LL* temp = returnLL($1); $$ = temp;} ;
+Identifier: ID              { LL* temp = returnLL($1); $$ = temp;} ;
+Number: NUM                 { LL* temp = returnLL($1); $$ = temp;} ;
 %%
 
 void yyerror(const char *s)
