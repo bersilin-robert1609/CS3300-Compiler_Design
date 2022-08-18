@@ -61,8 +61,8 @@
     LL* llPtr;
 }
 
-%token <id> DEFINEEXPR0 DEFINEEXPR1 DEFINEEXPR2 DEFINEEXPR
-%token <id> DEFINESTMT0 DEFINESTMT1 DEFINESTMT2 DEFINESTMT
+%token <id> DEFINEEXPR0 DEFINEEXPR1 DEFINEEXPR2 
+%token <id> DEFINESTMT0 DEFINESTMT1 DEFINESTMT2 
 %token <id> CLASS PUBLIC STATIC MAIN RETURN EXTENDS
 %token <id> INT BOOLEAN VOID STRING LENGTH
 %token <id> IF WHILE ELSE
@@ -86,8 +86,8 @@
 %type <llPtr> goal Expression Statement StatementsList MacroDefinition MacroDefExpression MacroDefStatement MainClass MainPart MiniGoal
 %type <llPtr> MacroDefinitionMultiple NextPart TypeDeclaration IdentifierDeclarations IdentifierDeclarationsFinal MethodDeclaration MethodDeclarationMultiple
 %type <llPtr> Parameters ParametersFinal Type ExpressionList PrimaryExpression Number
-%type <llPtr> DefineExpr0 DefineExpr1 DefineExpr2 DefineExpr
-%type <llPtr> DefineStmt0 DefineStmt1 DefineStmt2 DefineStmt
+%type <llPtr> DefineExpr0 DefineExpr1 DefineExpr2 
+%type <llPtr> DefineStmt0 DefineStmt1 DefineStmt2 
 
 %%
 
@@ -115,32 +115,16 @@ MacroDefinition: MacroDefStatement {$$ = $1;}
                | MacroDefExpression {$$ = $1;}
 ;
 
-MacroDefExpression: DefineExpr Identifier OParen Identifier Comma Identifier Comma Identifier IdentifiersList CParen OParen Expression CParen
-				  {
-					$$ = $1;
-					attach_lists($$, $2);
-					attach_lists($$, $3);
-					attach_lists($$, $4);
-					attach_lists($$, $5);
-					attach_lists($$, $6);
-					attach_lists($$, $7);
-					attach_lists($$, $8);
-					attach_lists($$, $9);
-					attach_lists($$, $10);
-					attach_lists($$, $11);
-					attach_lists($$, $12);
-					attach_lists($$, $13);
-				  }
-				  | DefineExpr0 Identifier OParen CParen OParen Expression CParen
-				  {
-					$$ = $1;
-					attach_lists($$, $2);
-					attach_lists($$, $3);
-					attach_lists($$, $4);
-					attach_lists($$, $5);
-					attach_lists($$, $6);
-					attach_lists($$, $7);
-				  }
+MacroDefExpression: DefineExpr0 Identifier OParen CParen OParen Expression CParen
+                  {
+                  $$ = $1;
+                  attach_lists($$, $2);
+                  attach_lists($$, $3);
+                  attach_lists($$, $4);
+                  attach_lists($$, $5);
+                  attach_lists($$, $6);
+                  attach_lists($$, $7);
+                  }
                   | DefineExpr1 Identifier OParen Identifier CParen OParen Expression CParen 
 				  {
 					$$ = $1;
@@ -152,7 +136,7 @@ MacroDefExpression: DefineExpr Identifier OParen Identifier Comma Identifier Com
 					attach_lists($$, $7);
 					attach_lists($$, $8);
 				  }
-                  | DefineExpr1 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
+                  | DefineExpr2 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
 				  {
 					$$ = $1;
 					attach_lists($$, $2);
@@ -167,23 +151,7 @@ MacroDefExpression: DefineExpr Identifier OParen Identifier Comma Identifier Com
 				 }
 ;
 
-MacroDefStatement: DefineStmt Identifier OParen Identifier Comma Identifier Comma Identifier IdentifiersList CParen OCurly StatementsList CCurly
-				 {
-					$$ = $1;
-					attach_lists($$, $2);
-					attach_lists($$, $3);
-					attach_lists($$, $4);
-					attach_lists($$, $5);
-					attach_lists($$, $6);
-					attach_lists($$, $7);
-					attach_lists($$, $8);
-					attach_lists($$, $9);
-					attach_lists($$, $10);
-					attach_lists($$, $11);
-					attach_lists($$, $12);
-					attach_lists($$, $13);
-				 }
-				 | DefineStmt0 Identifier OParen CParen OCurly StatementsList CCurly
+MacroDefStatement: DefineStmt0 Identifier OParen CParen OCurly StatementsList CCurly
 				 {
 					$$ = $1;
 					attach_lists($$, $2);
@@ -643,11 +611,10 @@ Bfalse: BFALSE              { LL* temp = returnLL("false"); $$ = temp;} ;
 DefineExpr0: DEFINEEXPR0    { LL* temp = returnLL("#defineexpr0 "); $$ = temp;} ;
 DefineExpr1: DEFINEEXPR1    { LL* temp = returnLL("#defineexpr1 "); $$ = temp;} ;
 DefineExpr2: DEFINEEXPR2    { LL* temp = returnLL("#defineexpr2 "); $$ = temp;} ;
-DefineExpr: DEFINEEXPR		{ LL* temp = returnLL("#defineexpr "); $$ = temp;} ;
-DefineStmt0: DEFINESTMT0	{ LL* temp = returnLL("#definestmt0 "); $$ = temp;} ;
-DefineStmt1: DEFINESTMT1	{ LL* temp = returnLL("#definestmt1 "); $$ = temp;} ;
-DefineStmt2: DEFINESTMT2	{ LL* temp = returnLL("#definestmt2 "); $$ = temp;} ;
-DefineStmt: DEFINESTMT		{ LL* temp = returnLL("#definestmt "); $$ = temp;} ;
+
+DefineStmt0: DEFINESTMT0	  { LL* temp = returnLL("#definestmt0 "); $$ = temp;} ;
+DefineStmt1: DEFINESTMT1	  { LL* temp = returnLL("#definestmt1 "); $$ = temp;} ;
+DefineStmt2: DEFINESTMT2	  { LL* temp = returnLL("#definestmt2 "); $$ = temp;} ;
 
 Identifier: ID              { LL* temp = returnLL($1); $$ = temp;} ;
 Number: NUM                 { LL* temp = returnLL($1); $$ = temp;} ;

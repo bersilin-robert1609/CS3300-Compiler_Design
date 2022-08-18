@@ -8,12 +8,10 @@ COMMENTS "//".*
 DS0 "#defineStmt0"
 DS1 "#defineStmt1"
 DS2 "#defineStmt2"
-DS3 "#defineStmt"
 
 DE0 "#defineExpr0"
 DE1 "#defineExpr1"
 DE2 "#defineExpr2"
-DE3 "#defineExpr"
 
 %%
 
@@ -22,12 +20,10 @@ DE3 "#defineExpr"
 {DS0} {return DEFINESTMT0;}
 {DS1} {return DEFINESTMT1;}
 {DS2} {return DEFINESTMT2;}
-{DS3} {return DEFINESTMT;}
 
 {DE0} {return DEFINEEXPR0;}
 {DE1} {return DEFINEEXPR1;}
 {DE2} {return DEFINEEXPR2;}
-{DE3} {return DEFINEEXPR;}
 
 {WHITESPACE} {}
 
