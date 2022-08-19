@@ -34,7 +34,7 @@
 		LL* replacement;
 		struct Macro* next;
 
-		//0 - expr0, 1 - expr1, 2 - expr2, -1 - stmt0, -2 - stmt1, -3 - stmt2
+		//0 - expr0, 1 - multi, -1 - stmt0, -2 - multi
 		int macroType;  
 	} Macro;
 	
@@ -193,6 +193,86 @@
 		}
 		return replace_macro_stmt0(idList);
 	}
+
+	//Expression with multi argument
+	void create_macro_definition_expr_multi(LL* idList, LL* exprList)
+	{
+		fprintf(stderr, "create_macro_definition_expr_multi called\n");
+		LL* args = returnLL(idList->head->data);
+		fprintf(stderr, "args created with %s\n", args->head->data);
+
+		Node* ptr = idList->head->next;
+		while(ptr != NULL)
+		{
+			LL* temp = returnLL(ptr->data);
+			attach_lists(args, temp);
+			ptr = ptr->next;
+		}
+
+		LL* replacement = returnLL(exprList->head->data);
+		ptr = exprList->head->next;
+		while(ptr != NULL)
+		{
+			LL* temp = returnLL(ptr->data);
+			attach_lists(replacement, temp);
+			ptr = ptr->next;
+		}
+
+		Macro* temp = (Macro*)malloc(sizeof(Macro));
+		temp->macroId = strdup(idList->head->data);
+		temp->args = args;
+		temp->replacement = replacement;
+		temp->next = NULL;
+		temp->macroType = 1;
+		addMacro(temp);
+	}
+
+	LL* replace_macro_expr_multi(LL* idList)
+	{
+		fprintf(stderr, "replace_macro_expr_multi called\n");
+		Macro* temp = macroTable->head;
+		while(temp != NULL)
+		{
+			if(strcmp(temp->macroId, idList->head->data) == 0)
+			{
+				if(temp->macroType == 1)
+				{
+					LL* temp2 = returnLL(temp->replacement->head->data);
+					Node* ptr = temp->replacement->head->next;
+					while(ptr != NULL)
+					{
+						LL* temp3 = returnLL(ptr->data);
+						attach_lists(temp2, temp3);
+						ptr = ptr->next;
+					}
+					//temp2 has whole expression
+					break;
+				}
+			}
+			temp = temp->next;
+		}
+
+		Node* ptr = idList->head->next;
+		Node* macroArgs = temp->args->head->next;
+		while(ptr != NULL)
+		{
+			char* identifierTemp = strdup(ptr->data);
+			char* macroId = strdup(macroArgs->data);
+			Node* ptr2 = temp2->head;
+			while(ptr2 != NULL)
+			{
+				if(strcmp(ptr2->data, macroId) == 0)
+				{
+					ptr2->data = strdup(identifierTemp);
+				}
+				ptr2 = ptr2->next;
+			}
+			ptr = ptr->next;
+			macroArgs = macroArgs->next;
+		}
+
+		return temp2;
+	}
 %}
 
 %union {
@@ -271,16 +351,12 @@ MacroDefExpression: DefineExpr Identifier OParen Identifier Comma Identifier Com
 				  }
                   | DefineExpr1 Identifier OParen Identifier CParen OParen Expression CParen 
 				  {
-					$$ = $1;
-					attach_lists($$, $2);
-					attach_lists($$, $3);
-					attach_lists($$, $4);
-					attach_lists($$, $5);
-					attach_lists($$, $6);
-					attach_lists($$, $7);
-					attach_lists($$, $8);
+					LL* idList = returnLL($2);
+					LL* first_argument = returnLL($4);
+					attach_lists(idList, first_argument);
+					create_macro_definition_expr_multi(idList, $7);
 				  }
-                  | DefineExpr1 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
+                  | DefineExpr2 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
 				  {
 					$$ = $1;
 					attach_lists($$, $2);
@@ -691,7 +767,6 @@ Expression: PrimaryExpression Land PrimaryExpression
           | Identifier OParen CParen
           {
 			$$ = replace_macro_expr0($1);
-			//printLL($$);
           }
           | Identifier OParen ExpressionList CParen
           {
