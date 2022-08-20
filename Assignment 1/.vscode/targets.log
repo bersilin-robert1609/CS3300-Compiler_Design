@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 20 11:35:23 2022
+# Make data base, printed on Sun Aug 21 02:31:18 2022
 
 # Variables
 
@@ -121,7 +121,7 @@ MAKE_VERSION := 4.3
 # environment
 _ = /home/bersilinubuntu22/.vscode-server/bin/e4503b30fc78200f846c62cf8091b76ff5547662/node
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-fc072672-286e-447b-bf4e-80a6d55f31ae.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-db767f10-2e87-462e-bc70-d25e8bd91458.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -149,9 +149,9 @@ WSL_DISTRO_NAME = Ubuntu-22.04
 
 # Directories
 
-# . (device 2064, inode 46092): 18 files, no impossibilities.
+# . (device 2064, inode 46092): 25 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -201,12 +201,12 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 379 B / avg = 14 B
-# current buf: size = 8162 B / used = 379 B / count = 26 / avg = 14 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 578 B / avg = 17 B
+# current buf: size = 8162 B / used = 578 B / count = 33 / avg = 17 B
 
-# strcache performance: lookups = 29 / hit rate = 10%
+# strcache performance: lookups = 36 / hit rate = 8%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=0/29=0%
-# Finished Make data base on Sat Aug 20 11:35:23 2022
+# Load=33/8192=0%, Rehash=0, Collisions=0/36=0%
+# Finished Make data base on Sun Aug 21 02:31:18 2022
 
  
