@@ -205,6 +205,7 @@
 		while(ptr != NULL)
 		{
 			LL* temp = returnLL(ptr->data);
+			fprintf(stderr, "args extended with %s\n", ptr->data);
 			attach_lists(args, temp);
 			ptr = ptr->next;
 		}
@@ -227,17 +228,37 @@
 		addMacro(temp);
 	}
 
-	LL* replace_macro_expr_multi(LL* idList)
+	LL* copy_list(LL* list)
+	{
+		LL* temp = (LL*)malloc(sizeof(LL));
+		temp->head = (Node*)malloc(sizeof(Node));
+		temp->head->data = strdup(list->head->data);
+		temp->head->next = NULL;
+		temp->tail = temp->head;
+		Node* ptr = list->head->next;
+		while(ptr != NULL)
+		{
+			temp->tail->next = (Node*)malloc(sizeof(Node));
+			temp->tail->next->data = strdup(ptr->data);
+			temp->tail->next->next = NULL;
+			temp->tail = temp->tail->next;
+			ptr = ptr->next;
+		}
+		return temp;
+	}
+
+	LL* replace_macro_expr_multi(LL* idList, LL* exprList)
 	{
 		fprintf(stderr, "replace_macro_expr_multi called\n");
 		Macro* temp = macroTable->head;
+		LL* temp2 =  NULL;
 		while(temp != NULL)
 		{
 			if(strcmp(temp->macroId, idList->head->data) == 0)
 			{
 				if(temp->macroType == 1)
 				{
-					LL* temp2 = returnLL(temp->replacement->head->data);
+					temp2 = returnLL(temp->replacement->head->data);
 					Node* ptr = temp->replacement->head->next;
 					while(ptr != NULL)
 					{
@@ -252,13 +273,13 @@
 			temp = temp->next;
 		}
 
-		Node* ptr = idList->head->next;
-		Node* macroArgs = temp->args->head->next;
-		while(ptr != NULL)
+		Node* ptr = exprList->head; //10+20, 30+40
+		Node* macroArgs = temp->args->head->next; //a, b
+		while(macroArgs != NULL)
 		{
-			char* identifierTemp = strdup(ptr->data);
-			char* macroId = strdup(macroArgs->data);
-			Node* ptr2 = temp2->head;
+			char* identifierTemp = strdup(ptr->data); //10+20
+			char* macroId = strdup(macroArgs->data); //a
+			Node* ptr2 = temp2->head;  //a
 			while(ptr2 != NULL)
 			{
 				if(strcmp(ptr2->data, macroId) == 0)
@@ -272,6 +293,34 @@
 		}
 
 		return temp2;
+	}
+
+	LL* convertExpressionListToIdentifierList(LL* exprList)
+	{
+		fprintf(stderr, "convertExpressionListToIdentifierList called\n");
+		LL* idList = NULL;
+		Node* ptr = exprList->head;
+		int first = 1;
+		while(ptr != NULL)
+		{
+			char* buff = strdup("");
+			while(ptr != NULL && strcmp(ptr->data, ",") != 0)
+			{
+				fprintf(stderr, "buff: %s\n", buff);
+				strncat(buff, ptr->data, strlen(ptr->data));
+				ptr = ptr->next;
+			}
+			fprintf(stderr, "buff: %s\n", buff);
+			if(first)
+			{
+				idList = returnLL(buff);
+				first = 0;
+			}
+			else attach_lists(idList, returnLL(buff));
+			if(ptr != NULL) ptr = ptr->next;
+			else break;
+		}
+		return idList;
 	}
 %}
 
@@ -351,23 +400,19 @@ MacroDefExpression: DefineExpr Identifier OParen Identifier Comma Identifier Com
 				  }
                   | DefineExpr1 Identifier OParen Identifier CParen OParen Expression CParen 
 				  {
-					LL* idList = returnLL($2);
-					LL* first_argument = returnLL($4);
+					LL* idList = returnLL($2->head->data);
+					LL* first_argument = returnLL($4->head->data);
 					attach_lists(idList, first_argument);
 					create_macro_definition_expr_multi(idList, $7);
 				  }
                   | DefineExpr2 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen 
 				  {
-					$$ = $1;
-					attach_lists($$, $2);
-					attach_lists($$, $3);
-					attach_lists($$, $4);
-					attach_lists($$, $5);
-					attach_lists($$, $6);
-					attach_lists($$, $7);
-					attach_lists($$, $8);
-					attach_lists($$, $9);
-					attach_lists($$, $10);
+					LL*idList = returnLL($2->head->data);
+					LL*first_argument = returnLL($4->head->data);
+					attach_lists(idList, first_argument);
+					LL*second_argument = returnLL($6->head->data);
+					attach_lists(idList, second_argument);
+					create_macro_definition_expr_multi(idList, $9);
 				 }
 ;
 
@@ -770,10 +815,8 @@ Expression: PrimaryExpression Land PrimaryExpression
           }
           | Identifier OParen ExpressionList CParen
           {
-            $$ = $1;
-            attach_lists($$, $2);
-            attach_lists($$, $3);
-            attach_lists($$, $4);
+            LL* identifierList = convertExpressionListToIdentifierList($3);
+			$$ = replace_macro_expr_multi($1, identifierList);
           }
 ;
 
