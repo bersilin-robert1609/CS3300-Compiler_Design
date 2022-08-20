@@ -96,16 +96,12 @@
         Node *tail;
     } LL;
 
-	//macros global variables
-
 	typedef struct Macro {
 		char* macroId;
 		LL* args;
 		LL* replacement;
 		struct Macro* next;
-
-		//0 - expr0, 1 - multi, -1 - stmt0, -2 - multi
-		int macroType;  
+		int macroType;  //0 - single , 1 - multi
 	} Macro;
 	
 	typedef struct macroList {
@@ -114,14 +110,13 @@
 	} macroList;
 
 	macroList* macroTable;
+
 	void initiate_macro_list()
 	{
 		macroTable = (macroList*)malloc(sizeof(macroList));
 		macroTable->head = NULL;
 		macroTable->tail = NULL;
 	}
-
-	//macros global variables close
 
     LL* returnLL(char* data)
     {
@@ -142,11 +137,36 @@
 
 	void printLL(LL* list)
 	{
-		fprintf(stderr, "\n\nprintLL called\n");
+		fprintf(stderr, "printLL called\n");
 		Node* temp = list->head;
+		int tabCount = 0;
 		while(temp != NULL)
-		{
-			printf("%s", temp->data);
+		{	
+			if(strcmp(temp->data, "{") == 0)
+			{
+				printf("\n");
+				for(int i = 0; i < tabCount; i++) printf("\t");
+				tabCount++;
+				printf("%s", temp->data);
+				printf("\n");
+				for(int i = 0; i < tabCount; i++) printf("\t");
+			}
+			else if(strcmp(temp->data, "}") == 0)
+			{
+				tabCount--;
+				printf("%s", temp->data);
+				printf("\n");
+				for(int i = 0; i < tabCount-1; i++) printf("\t");
+				if(temp->next != NULL && strcmp(temp->next->data, "}") != 0) printf("\t");
+			}
+			else if(strcmp(temp->data, ";") == 0)
+			{
+				printf("%s", temp->data);
+				printf("\n");
+				for(int i = 0; i < tabCount-1; i++) printf("\t");
+				if(strcmp(temp->next->data, "}") != 0) printf("\t");
+			}
+			else printf("%s ", temp->data);
 			temp = temp->next;
 		}
 	}
@@ -166,7 +186,7 @@
 		}
 	}
 
-	void create_macro_definition_expr0(LL* idList, LL* exprList)
+	void create_macro_definition(LL* idList, LL* exprList)
 	{
 		fprintf(stderr, "create_macro_definition_expr0 called\n");
 		LL* args = returnLL(idList->head->data);
@@ -189,56 +209,7 @@
 		addMacro(temp);
 	}
 
-	void create_macro_definition_stmt0(LL* idList, LL* stmtList)
-	{
-		fprintf(stderr, "create_macro_definition_stmt0 called\n");
-		LL* args = returnLL(idList->head->data);
-		fprintf(stderr, "args created with %s\n", args->head->data);
-		LL* replacement = returnLL(stmtList->head->data);
-		Node* ptr = stmtList->head->next;
-		while(ptr != NULL)
-		{
-			LL* temp = returnLL(ptr->data);
-			attach_lists(replacement, temp);
-			ptr = ptr->next;
-		}
-
-		Macro* temp = (Macro*)malloc(sizeof(Macro));
-		temp->macroId = strdup(idList->head->data);
-		temp->args = args;
-		temp->replacement = replacement;
-		temp->next = NULL;
-		temp->macroType = -1;
-		addMacro(temp);
-	}
-
-	LL* replace_macro_stmt0(LL* idList)
-	{
-		fprintf(stderr, "replace_macro_stmt0 called\n");
-		Macro* temp = macroTable->head;
-		while(temp != NULL)
-		{
-			if(strcmp(temp->macroId, idList->head->data) == 0)
-			{
-				if(temp->macroType == -1)
-				{
-					LL* temp2 = returnLL(temp->replacement->head->data);
-					Node* ptr = temp->replacement->head->next;
-					while(ptr != NULL)
-					{
-						LL* temp3 = returnLL(ptr->data);
-						attach_lists(temp2, temp3);
-						ptr = ptr->next;
-					}
-					return temp2;
-				}
-			}
-			temp = temp->next;
-		}
-		return NULL;
-	}
-
-	LL* replace_macro_expr0(LL* idList)
+	LL* replace_macro(LL* idList)
 	{
 		fprintf(stderr, "replace_macro_expr0 called\n");
 		Macro* temp = macroTable->head;
@@ -261,21 +232,18 @@
 			}
 			temp = temp->next;
 		}
-		return replace_macro_stmt0(idList);
+		return NULL;
 	}
 
-	//Expression with multi argument
-	void create_macro_definition_expr_multi(LL* idList, LL* exprList)
+	void create_macro_definition_multi(LL* idList, LL* exprList)
 	{
 		fprintf(stderr, "create_macro_definition_expr_multi called\n");
 		LL* args = returnLL(idList->head->data);
-		fprintf(stderr, "args created with %s\n", args->head->data);
 
 		Node* ptr = idList->head->next;
 		while(ptr != NULL)
 		{
 			LL* temp = returnLL(ptr->data);
-			fprintf(stderr, "args extended with %s\n", ptr->data);
 			attach_lists(args, temp);
 			ptr = ptr->next;
 		}
@@ -317,7 +285,7 @@
 		return temp;
 	}
 
-	LL* replace_macro_expr_multi(LL* idList, LL* exprList)
+	LL* replace_macro_multi(LL* idList, LL* exprList)
 	{
 		fprintf(stderr, "replace_macro_expr_multi called\n");
 		Macro* temp = macroTable->head;
@@ -336,7 +304,7 @@
 						attach_lists(temp2, temp3);
 						ptr = ptr->next;
 					}
-					//temp2 has whole expression
+					//temp2 has whole expression/statement replacement
 					break;
 				}
 			}
@@ -348,18 +316,12 @@
 		while(macroArgs != NULL)
 		{
 			char* identifierTemp = strdup(ptr->data); //10+20
-			fprintf(stderr, "identifierTemp: %s\n", identifierTemp);
 			char* macroId = strdup(macroArgs->data); //a
 			Node* ptr2 = temp2->head;  //a
-			fprintf(stderr, "macroId: %s, value = %s\n", macroId, ptr2->data);
 			while(ptr2 != NULL)
 			{
-				fprintf(stderr, "macroId: %s, value = %s\n", macroId, ptr2->data);
-				if(strcmp(ptr2->data, macroId) == 0)
-				{
-					fprintf(stderr, "changing %s to %s\n", ptr2->data, identifierTemp);
-					ptr2->data = strdup(identifierTemp);
-				}
+				if(strcmp(ptr2->data, macroId) == 0) ptr2->data = strdup(identifierTemp);
+
 				ptr2 = ptr2->next;
 			}
 			ptr = ptr->next;
@@ -380,7 +342,6 @@
 			char* buff = strdup("");
 			while(ptr != NULL && strcmp(ptr->data, ",") != 0)
 			{
-				fprintf(stderr, "buff: %s\n", buff);
 				strncat(buff, ptr->data, strlen(ptr->data));
 				ptr = ptr->next;
 			}
@@ -397,7 +358,7 @@
 		return idList;
 	}
 
-#line 401 "test.tab.c"
+#line 362 "test.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -494,13 +455,13 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 331 "test.y"
+#line 292 "test.y"
 
     int num;
     char* id;
     LL* llPtr;
 
-#line 504 "test.tab.c"
+#line 465 "test.tab.c"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -1034,19 +995,19 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,   367,   367,   370,   374,   377,   378,   381,   382,   385,
-     397,   401,   408,   419,   431,   435,   442,   453,   460,   461,
-     468,   477,   490,   491,   499,   507,   508,   515,   521,   522,
-     529,   549,   570,   571,   578,   585,   615,   621,   622,   623,
-     626,   627,   634,   640,   648,   655,   665,   673,   683,   691,
-     696,   702,   706,   714,   720,   726,   732,   738,   744,   750,
-     756,   762,   769,   775,   779,   787,   796,   800,   807,   808,
-     809,   810,   811,   812,   820,   827,   832,   840,   841,   842,
-     843,   844,   845,   846,   847,   848,   849,   850,   851,   852,
-     853,   854,   855,   856,   857,   858,   859,   860,   861,   862,
-     863,   864,   865,   866,   867,   868,   869,   870,   871,   872,
-     873,   874,   875,   876,   877,   878,   879,   880,   881,   882,
-     883,   884,   885,   887,   888
+       0,   328,   328,   331,   335,   338,   339,   342,   343,   346,
+     358,   362,   369,   380,   392,   396,   403,   414,   421,   422,
+     429,   438,   451,   452,   460,   468,   469,   476,   482,   483,
+     490,   510,   531,   532,   540,   547,   577,   583,   584,   585,
+     588,   589,   596,   602,   610,   617,   627,   635,   645,   653,
+     658,   664,   668,   676,   682,   688,   694,   700,   706,   712,
+     718,   724,   731,   737,   741,   749,   758,   762,   769,   770,
+     771,   772,   773,   774,   782,   789,   794,   802,   803,   804,
+     805,   806,   807,   808,   809,   810,   811,   812,   813,   814,
+     815,   816,   817,   818,   819,   820,   821,   822,   823,   824,
+     825,   826,   827,   828,   829,   830,   831,   832,   833,   834,
+     835,   836,   837,   838,   839,   840,   841,   842,   843,   844,
+     845,   846,   847,   849,   850
 };
 #endif
 
@@ -1831,27 +1792,27 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* goal: MiniGoal  */
-#line 367 "test.y"
+#line 328 "test.y"
                {(yyval.llPtr) = (yyvsp[0].llPtr); printLL((yyval.llPtr));}
-#line 1837 "test.tab.c"
+#line 1798 "test.tab.c"
     break;
 
   case 3: /* MiniGoal: MacroDefinitionMultiple MainPart  */
-#line 371 "test.y"
+#line 332 "test.y"
                 {
 			(yyval.llPtr) = (yyvsp[0].llPtr);
 		}
-#line 1845 "test.tab.c"
+#line 1806 "test.tab.c"
     break;
 
   case 4: /* MiniGoal: MainPart  */
-#line 374 "test.y"
+#line 335 "test.y"
                    {(yyval.llPtr) = (yyvsp[0].llPtr);}
-#line 1851 "test.tab.c"
+#line 1812 "test.tab.c"
     break;
 
   case 9: /* MacroDefExpression: DefineExpr Identifier OParen Identifier Comma Identifier Comma Identifier IdentifiersList CParen OParen Expression CParen  */
-#line 386 "test.y"
+#line 347 "test.y"
                                   {
 					LL* idList = returnLL((yyvsp[-11].llPtr)->head->data);
 					LL* first_argument= returnLL((yyvsp[-9].llPtr)->head->data);
@@ -1861,45 +1822,45 @@ yyreduce:
 					LL* third_argument = returnLL((yyvsp[-5].llPtr)->head->data);
 					attach_lists(idList, third_argument);
 					attach_lists(idList, (yyvsp[-4].llPtr));
-					create_macro_definition_expr_multi(idList, (yyvsp[-1].llPtr));
+					create_macro_definition_multi(idList, (yyvsp[-1].llPtr));
 				  }
-#line 1867 "test.tab.c"
+#line 1828 "test.tab.c"
     break;
 
   case 10: /* MacroDefExpression: DefineExpr0 Identifier OParen CParen OParen Expression CParen  */
-#line 398 "test.y"
+#line 359 "test.y"
                                   {
-					create_macro_definition_expr0((yyvsp[-5].llPtr), (yyvsp[-1].llPtr));
+					create_macro_definition((yyvsp[-5].llPtr), (yyvsp[-1].llPtr));
 				  }
-#line 1875 "test.tab.c"
+#line 1836 "test.tab.c"
     break;
 
   case 11: /* MacroDefExpression: DefineExpr1 Identifier OParen Identifier CParen OParen Expression CParen  */
-#line 402 "test.y"
+#line 363 "test.y"
                                   {
 					LL* idList = returnLL((yyvsp[-6].llPtr)->head->data);
 					LL* first_argument = returnLL((yyvsp[-4].llPtr)->head->data);
 					attach_lists(idList, first_argument);
-					create_macro_definition_expr_multi(idList, (yyvsp[-1].llPtr));
+					create_macro_definition_multi(idList, (yyvsp[-1].llPtr));
 				  }
-#line 1886 "test.tab.c"
+#line 1847 "test.tab.c"
     break;
 
   case 12: /* MacroDefExpression: DefineExpr2 Identifier OParen Identifier Comma Identifier CParen OParen Expression CParen  */
-#line 409 "test.y"
+#line 370 "test.y"
                                   {
 					LL*idList = returnLL((yyvsp[-8].llPtr)->head->data);
 					LL*first_argument = returnLL((yyvsp[-6].llPtr)->head->data);
 					attach_lists(idList, first_argument);
 					LL*second_argument = returnLL((yyvsp[-4].llPtr)->head->data);
 					attach_lists(idList, second_argument);
-					create_macro_definition_expr_multi(idList, (yyvsp[-1].llPtr));
+					create_macro_definition_multi(idList, (yyvsp[-1].llPtr));
 				 }
-#line 1899 "test.tab.c"
+#line 1860 "test.tab.c"
     break;
 
   case 13: /* MacroDefStatement: DefineStmt Identifier OParen Identifier Comma Identifier Comma Identifier IdentifiersList CParen OCurly StatementsList CCurly  */
-#line 420 "test.y"
+#line 381 "test.y"
                                  {
 					LL* idList = returnLL((yyvsp[-11].llPtr)->head->data);
 					LL* first_argument= returnLL((yyvsp[-9].llPtr)->head->data);
@@ -1909,69 +1870,69 @@ yyreduce:
 					LL* third_argument = returnLL((yyvsp[-5].llPtr)->head->data);
 					attach_lists(idList, third_argument);
 					attach_lists(idList, (yyvsp[-4].llPtr));
-					create_macro_definition_expr_multi(idList, (yyvsp[-1].llPtr));
+					create_macro_definition_multi(idList, (yyvsp[-1].llPtr));
 				 }
-#line 1915 "test.tab.c"
+#line 1876 "test.tab.c"
     break;
 
   case 14: /* MacroDefStatement: DefineStmt0 Identifier OParen CParen OCurly StatementsList CCurly  */
-#line 432 "test.y"
+#line 393 "test.y"
                                  {
-					create_macro_definition_stmt0((yyvsp[-5].llPtr), (yyvsp[-1].llPtr));
+					create_macro_definition((yyvsp[-5].llPtr), (yyvsp[-1].llPtr));
 				 }
-#line 1923 "test.tab.c"
+#line 1884 "test.tab.c"
     break;
 
   case 15: /* MacroDefStatement: DefineStmt1 Identifier OParen Identifier CParen OCurly StatementsList CCurly  */
-#line 436 "test.y"
+#line 397 "test.y"
                                  {
 					LL* idList = returnLL((yyvsp[-6].llPtr)->head->data);
 					LL* first_argument = returnLL((yyvsp[-4].llPtr)->head->data);
 					attach_lists(idList, first_argument);
-					create_macro_definition_expr_multi(idList, (yyvsp[-1].llPtr));
+					create_macro_definition_multi(idList, (yyvsp[-1].llPtr));
 				 }
-#line 1934 "test.tab.c"
+#line 1895 "test.tab.c"
     break;
 
   case 16: /* MacroDefStatement: DefineStmt2 Identifier OParen Identifier Comma Identifier CParen OCurly StatementsList CCurly  */
-#line 443 "test.y"
+#line 404 "test.y"
                                  {
 					LL*idList = returnLL((yyvsp[-8].llPtr)->head->data);
 					LL*first_argument = returnLL((yyvsp[-6].llPtr)->head->data);
 					attach_lists(idList, first_argument);
 					LL*second_argument = returnLL((yyvsp[-4].llPtr)->head->data);
 					attach_lists(idList, second_argument);
-					create_macro_definition_expr_multi(idList, (yyvsp[-1].llPtr));
+					create_macro_definition_multi(idList, (yyvsp[-1].llPtr));
 				 }
-#line 1947 "test.tab.c"
+#line 1908 "test.tab.c"
     break;
 
   case 17: /* MainPart: MainClass NextPart  */
-#line 454 "test.y"
+#line 415 "test.y"
                 {
 			(yyval.llPtr) = (yyvsp[-1].llPtr);
 			attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 		}
-#line 1956 "test.tab.c"
+#line 1917 "test.tab.c"
     break;
 
   case 18: /* NextPart: %empty  */
-#line 460 "test.y"
+#line 421 "test.y"
           {(yyval.llPtr) = NULL;}
-#line 1962 "test.tab.c"
+#line 1923 "test.tab.c"
     break;
 
   case 19: /* NextPart: TypeDeclaration NextPart  */
-#line 462 "test.y"
+#line 423 "test.y"
                 {
 			(yyval.llPtr) = (yyvsp[-1].llPtr);
 			attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 		}
-#line 1971 "test.tab.c"
+#line 1932 "test.tab.c"
     break;
 
   case 20: /* TypeDeclaration: Class Identifier OCurly IdentifierDeclarations MethodDeclarationMultiple CCurly  */
-#line 469 "test.y"
+#line 430 "test.y"
                                 {
 					(yyval.llPtr) = (yyvsp[-5].llPtr);
 					attach_lists((yyval.llPtr), (yyvsp[-4].llPtr));
@@ -1980,11 +1941,11 @@ yyreduce:
 					attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 					attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 				}
-#line 1984 "test.tab.c"
+#line 1945 "test.tab.c"
     break;
 
   case 21: /* TypeDeclaration: Class Identifier Extends Identifier OCurly IdentifierDeclarations MethodDeclarationMultiple CCurly  */
-#line 478 "test.y"
+#line 439 "test.y"
                             {
 					(yyval.llPtr) = (yyvsp[-7].llPtr);
 					attach_lists((yyval.llPtr), (yyvsp[-6].llPtr));
@@ -1995,75 +1956,75 @@ yyreduce:
 					attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 					attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 				 }
-#line 1999 "test.tab.c"
+#line 1960 "test.tab.c"
     break;
 
   case 22: /* IdentifierDeclarations: %empty  */
-#line 490 "test.y"
+#line 451 "test.y"
                         {(yyval.llPtr) = NULL;}
-#line 2005 "test.tab.c"
+#line 1966 "test.tab.c"
     break;
 
   case 23: /* IdentifierDeclarations: IdentifierDeclarations IdentifierDeclarationsFinal  */
-#line 492 "test.y"
+#line 453 "test.y"
                                           {
 						(yyval.llPtr) = (yyvsp[-1].llPtr);
 						if((yyval.llPtr) != NULL) attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 						else (yyval.llPtr) = (yyvsp[0].llPtr);
 					  }
-#line 2015 "test.tab.c"
+#line 1976 "test.tab.c"
     break;
 
   case 24: /* IdentifierDeclarationsFinal: Type Identifier SColon  */
-#line 500 "test.y"
+#line 461 "test.y"
                                                     {
 								(yyval.llPtr) = (yyvsp[-2].llPtr);
 								attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 								attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 						    }
-#line 2025 "test.tab.c"
+#line 1986 "test.tab.c"
     break;
 
   case 25: /* IdentifiersList: %empty  */
-#line 507 "test.y"
+#line 468 "test.y"
                  {(yyval.llPtr) = NULL;}
-#line 2031 "test.tab.c"
+#line 1992 "test.tab.c"
     break;
 
   case 26: /* IdentifiersList: ExtraIdentifier IdentifiersList  */
-#line 509 "test.y"
+#line 470 "test.y"
                            {
 					(yyval.llPtr) = (yyvsp[-1].llPtr);
 					attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 			   }
-#line 2040 "test.tab.c"
+#line 2001 "test.tab.c"
     break;
 
   case 27: /* ExtraIdentifier: Comma Identifier  */
-#line 516 "test.y"
+#line 477 "test.y"
                                 {
 					(yyval.llPtr) = (yyvsp[0].llPtr);
 				}
-#line 2048 "test.tab.c"
+#line 2009 "test.tab.c"
     break;
 
   case 28: /* MethodDeclarationMultiple: %empty  */
-#line 521 "test.y"
+#line 482 "test.y"
                            {(yyval.llPtr) = NULL;}
-#line 2054 "test.tab.c"
+#line 2015 "test.tab.c"
     break;
 
   case 29: /* MethodDeclarationMultiple: MethodDeclaration MethodDeclarationMultiple  */
-#line 523 "test.y"
+#line 484 "test.y"
                                                  {
 							(yyval.llPtr) = (yyvsp[-1].llPtr);
 							attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 						 }
-#line 2063 "test.tab.c"
+#line 2024 "test.tab.c"
     break;
 
   case 30: /* MethodDeclaration: Public Type Identifier OParen Parameters CParen OCurly IdentifierDeclarations StatementsList Return Expression SColon CCurly  */
-#line 534 "test.y"
+#line 495 "test.y"
                                         {
 						(yyval.llPtr) = (yyvsp[-12].llPtr);
 						attach_lists((yyval.llPtr), (yyvsp[-11].llPtr));
@@ -2079,11 +2040,11 @@ yyreduce:
 						attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 						attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 					}
-#line 2083 "test.tab.c"
+#line 2044 "test.tab.c"
     break;
 
   case 31: /* MethodDeclaration: Public Type Identifier OParen CParen OCurly IdentifierDeclarations StatementsList Return Expression SColon CCurly  */
-#line 554 "test.y"
+#line 515 "test.y"
                                         {
 						(yyval.llPtr) = (yyvsp[-11].llPtr);
 						attach_lists((yyval.llPtr), (yyvsp[-10].llPtr));
@@ -2098,35 +2059,36 @@ yyreduce:
 						attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 						attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 					}
-#line 2102 "test.tab.c"
+#line 2063 "test.tab.c"
     break;
 
   case 32: /* Parameters: ParametersFinal  */
-#line 570 "test.y"
+#line 531 "test.y"
                             {(yyval.llPtr) = (yyvsp[0].llPtr);}
-#line 2108 "test.tab.c"
+#line 2069 "test.tab.c"
     break;
 
   case 33: /* Parameters: ParametersFinal Comma Parameters  */
-#line 572 "test.y"
+#line 533 "test.y"
                   {
 			  (yyval.llPtr) = (yyvsp[-2].llPtr);
 			  attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
+			  attach_lists((yyval.llPtr), (yyvsp[0].llPtr));	
 		  }
-#line 2117 "test.tab.c"
+#line 2079 "test.tab.c"
     break;
 
   case 34: /* ParametersFinal: Type Identifier  */
-#line 579 "test.y"
+#line 541 "test.y"
                            {
 				   (yyval.llPtr) = (yyvsp[-1].llPtr);
 				   attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 			   }
-#line 2126 "test.tab.c"
+#line 2088 "test.tab.c"
     break;
 
   case 35: /* MainClass: Class Identifier OCurly Public Static Void Main OParen String OSqre CSqre Identifier CParen OCurly PrintStatement OParen Expression CParen SColon CCurly CCurly  */
-#line 590 "test.y"
+#line 552 "test.y"
                         {
 				(yyval.llPtr) = (yyvsp[-20].llPtr);
             	attach_lists((yyval.llPtr), (yyvsp[-19].llPtr));
@@ -2150,64 +2112,64 @@ yyreduce:
 				attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 				attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 			}
-#line 2154 "test.tab.c"
+#line 2116 "test.tab.c"
     break;
 
   case 36: /* Type: Int OSqre CSqre  */
-#line 616 "test.y"
+#line 578 "test.y"
         {
 		(yyval.llPtr) = (yyvsp[-2].llPtr);
 		attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 		attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 	}
-#line 2164 "test.tab.c"
+#line 2126 "test.tab.c"
     break;
 
   case 37: /* Type: Boolean  */
-#line 621 "test.y"
+#line 583 "test.y"
               {(yyval.llPtr) = (yyvsp[0].llPtr);}
-#line 2170 "test.tab.c"
+#line 2132 "test.tab.c"
     break;
 
   case 38: /* Type: Int  */
-#line 622 "test.y"
+#line 584 "test.y"
           {(yyval.llPtr) = (yyvsp[0].llPtr);}
-#line 2176 "test.tab.c"
+#line 2138 "test.tab.c"
     break;
 
   case 39: /* Type: Identifier  */
-#line 623 "test.y"
+#line 585 "test.y"
                  {(yyval.llPtr) = (yyvsp[0].llPtr);}
-#line 2182 "test.tab.c"
+#line 2144 "test.tab.c"
     break;
 
   case 40: /* StatementsList: %empty  */
-#line 626 "test.y"
+#line 588 "test.y"
                 {(yyval.llPtr) = NULL;}
-#line 2188 "test.tab.c"
+#line 2150 "test.tab.c"
     break;
 
   case 41: /* StatementsList: Statement StatementsList  */
-#line 628 "test.y"
+#line 590 "test.y"
                           {
 				(yyval.llPtr) = (yyvsp[-1].llPtr);
 				attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 			  }
-#line 2197 "test.tab.c"
+#line 2159 "test.tab.c"
     break;
 
   case 42: /* Statement: OCurly StatementsList CCurly  */
-#line 635 "test.y"
+#line 597 "test.y"
          {
 			(yyval.llPtr) = (yyvsp[-2].llPtr);
 			attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 			attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
          }
-#line 2207 "test.tab.c"
+#line 2169 "test.tab.c"
     break;
 
   case 43: /* Statement: PrintStatement OParen Expression CParen SColon  */
-#line 641 "test.y"
+#line 603 "test.y"
                  {
             (yyval.llPtr) = (yyvsp[-4].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
@@ -2215,22 +2177,22 @@ yyreduce:
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 		 }
-#line 2219 "test.tab.c"
+#line 2181 "test.tab.c"
     break;
 
   case 44: /* Statement: Identifier Eq Expression SColon  */
-#line 649 "test.y"
+#line 611 "test.y"
                  {
             (yyval.llPtr) = (yyvsp[-3].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 		 }
-#line 2230 "test.tab.c"
+#line 2192 "test.tab.c"
     break;
 
   case 45: /* Statement: Identifier OSqre Expression CSqre Eq Expression SColon  */
-#line 656 "test.y"
+#line 618 "test.y"
                  {
             (yyval.llPtr) = (yyvsp[-6].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-5].llPtr));
@@ -2239,194 +2201,194 @@ yyreduce:
             attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
 			attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
+		 }
+#line 2206 "test.tab.c"
+    break;
+
+  case 46: /* Statement: If OParen Expression CParen Statement  */
+#line 628 "test.y"
+                 {
+            (yyval.llPtr) = (yyvsp[-4].llPtr);
+            attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
+		 }
+#line 2218 "test.tab.c"
+    break;
+
+  case 47: /* Statement: If OParen Expression CParen Statement Else Statement  */
+#line 636 "test.y"
+                 {
+            (yyval.llPtr) = (yyvsp[-6].llPtr);
+            attach_lists((yyval.llPtr), (yyvsp[-5].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-4].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
+			attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
+		 }
+#line 2232 "test.tab.c"
+    break;
+
+  case 48: /* Statement: While OParen Expression CParen Statement  */
+#line 646 "test.y"
+                 {
+            (yyval.llPtr) = (yyvsp[-4].llPtr);
+            attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
+            attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
 		 }
 #line 2244 "test.tab.c"
     break;
 
-  case 46: /* Statement: If OParen Expression CParen Statement  */
-#line 666 "test.y"
-                 {
-            (yyval.llPtr) = (yyvsp[-4].llPtr);
-            attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
-		 }
-#line 2256 "test.tab.c"
-    break;
-
-  case 47: /* Statement: If OParen Expression CParen Statement Else Statement  */
-#line 674 "test.y"
-                 {
-            (yyval.llPtr) = (yyvsp[-6].llPtr);
-            attach_lists((yyval.llPtr), (yyvsp[-5].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-4].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
-			attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
-		 }
-#line 2270 "test.tab.c"
-    break;
-
-  case 48: /* Statement: While OParen Expression CParen Statement  */
-#line 684 "test.y"
-                 {
-            (yyval.llPtr) = (yyvsp[-4].llPtr);
-            attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
-            attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
-		 }
-#line 2282 "test.tab.c"
-    break;
-
   case 49: /* Statement: Identifier OParen ExpressionList CParen SColon  */
-#line 692 "test.y"
+#line 654 "test.y"
                  {
             LL* identifierList = convertExpressionListToIdentifierList((yyvsp[-2].llPtr));
-			(yyval.llPtr) = replace_macro_expr_multi((yyvsp[-4].llPtr), identifierList);
+			(yyval.llPtr) = replace_macro_multi((yyvsp[-4].llPtr), identifierList);
 		 }
-#line 2291 "test.tab.c"
+#line 2253 "test.tab.c"
     break;
 
   case 50: /* Statement: Identifier OParen CParen SColon  */
-#line 697 "test.y"
+#line 659 "test.y"
                  {
-            (yyval.llPtr) = replace_macro_expr0((yyvsp[-3].llPtr));
+            (yyval.llPtr) = replace_macro((yyvsp[-3].llPtr));
 		 }
-#line 2299 "test.tab.c"
+#line 2261 "test.tab.c"
     break;
 
   case 51: /* ExpressionList: Expression  */
-#line 703 "test.y"
+#line 665 "test.y"
               {
                 (yyval.llPtr) = (yyvsp[0].llPtr);
               }
-#line 2307 "test.tab.c"
+#line 2269 "test.tab.c"
     break;
 
   case 52: /* ExpressionList: Expression Comma ExpressionList  */
-#line 707 "test.y"
+#line 669 "test.y"
               {
                 (yyval.llPtr) = (yyvsp[-2].llPtr);
                 attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
                 attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
               }
-#line 2317 "test.tab.c"
+#line 2279 "test.tab.c"
     break;
 
   case 53: /* Expression: PrimaryExpression Land PrimaryExpression  */
-#line 715 "test.y"
+#line 677 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2327 "test.tab.c"
+#line 2289 "test.tab.c"
     break;
 
   case 54: /* Expression: PrimaryExpression Lor PrimaryExpression  */
-#line 721 "test.y"
+#line 683 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2337 "test.tab.c"
+#line 2299 "test.tab.c"
     break;
 
   case 55: /* Expression: PrimaryExpression Neq PrimaryExpression  */
-#line 727 "test.y"
+#line 689 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2347 "test.tab.c"
+#line 2309 "test.tab.c"
     break;
 
   case 56: /* Expression: PrimaryExpression Leq PrimaryExpression  */
-#line 733 "test.y"
+#line 695 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2357 "test.tab.c"
+#line 2319 "test.tab.c"
     break;
 
   case 57: /* Expression: PrimaryExpression Plus PrimaryExpression  */
-#line 739 "test.y"
+#line 701 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2367 "test.tab.c"
+#line 2329 "test.tab.c"
     break;
 
   case 58: /* Expression: PrimaryExpression Minus PrimaryExpression  */
-#line 745 "test.y"
+#line 707 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2377 "test.tab.c"
+#line 2339 "test.tab.c"
     break;
 
   case 59: /* Expression: PrimaryExpression Mul PrimaryExpression  */
-#line 751 "test.y"
+#line 713 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2387 "test.tab.c"
+#line 2349 "test.tab.c"
     break;
 
   case 60: /* Expression: PrimaryExpression Div PrimaryExpression  */
-#line 757 "test.y"
+#line 719 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2397 "test.tab.c"
+#line 2359 "test.tab.c"
     break;
 
   case 61: /* Expression: PrimaryExpression OSqre PrimaryExpression CSqre  */
-#line 763 "test.y"
+#line 725 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-3].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2408 "test.tab.c"
+#line 2370 "test.tab.c"
     break;
 
   case 62: /* Expression: PrimaryExpression Dot Length  */
-#line 770 "test.y"
+#line 732 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-2].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2418 "test.tab.c"
+#line 2380 "test.tab.c"
     break;
 
   case 63: /* Expression: PrimaryExpression  */
-#line 776 "test.y"
+#line 738 "test.y"
           {
             (yyval.llPtr) = (yyvsp[0].llPtr);
           }
-#line 2426 "test.tab.c"
+#line 2388 "test.tab.c"
     break;
 
   case 64: /* Expression: PrimaryExpression Dot Identifier OParen CParen  */
-#line 780 "test.y"
+#line 742 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-4].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
@@ -2434,11 +2396,11 @@ yyreduce:
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2438 "test.tab.c"
+#line 2400 "test.tab.c"
     break;
 
   case 65: /* Expression: PrimaryExpression Dot Identifier OParen ExpressionList CParen  */
-#line 788 "test.y"
+#line 750 "test.y"
           {
             (yyval.llPtr) = (yyvsp[-5].llPtr);
             attach_lists((yyval.llPtr), (yyvsp[-4].llPtr));
@@ -2447,58 +2409,58 @@ yyreduce:
             attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
             attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
           }
-#line 2451 "test.tab.c"
+#line 2413 "test.tab.c"
     break;
 
   case 66: /* Expression: Identifier OParen CParen  */
-#line 797 "test.y"
+#line 759 "test.y"
           {
-			(yyval.llPtr) = replace_macro_expr0((yyvsp[-2].llPtr));
+			(yyval.llPtr) = replace_macro((yyvsp[-2].llPtr));
           }
-#line 2459 "test.tab.c"
+#line 2421 "test.tab.c"
     break;
 
   case 67: /* Expression: Identifier OParen ExpressionList CParen  */
-#line 801 "test.y"
+#line 763 "test.y"
           {
             LL* identifierList = convertExpressionListToIdentifierList((yyvsp[-1].llPtr));
-			(yyval.llPtr) = replace_macro_expr_multi((yyvsp[-3].llPtr), identifierList);
+			(yyval.llPtr) = replace_macro_multi((yyvsp[-3].llPtr), identifierList);
           }
-#line 2468 "test.tab.c"
+#line 2430 "test.tab.c"
     break;
 
   case 68: /* PrimaryExpression: Number  */
-#line 807 "test.y"
+#line 769 "test.y"
                                 { (yyval.llPtr) = (yyvsp[0].llPtr); }
-#line 2474 "test.tab.c"
+#line 2436 "test.tab.c"
     break;
 
   case 69: /* PrimaryExpression: Btrue  */
-#line 808 "test.y"
+#line 770 "test.y"
                                 { (yyval.llPtr) = (yyvsp[0].llPtr); }
-#line 2480 "test.tab.c"
+#line 2442 "test.tab.c"
     break;
 
   case 70: /* PrimaryExpression: Bfalse  */
-#line 809 "test.y"
+#line 771 "test.y"
                                 { (yyval.llPtr) = (yyvsp[0].llPtr); }
-#line 2486 "test.tab.c"
+#line 2448 "test.tab.c"
     break;
 
   case 71: /* PrimaryExpression: Identifier  */
-#line 810 "test.y"
+#line 772 "test.y"
                                 { (yyval.llPtr) = (yyvsp[0].llPtr); }
-#line 2492 "test.tab.c"
+#line 2454 "test.tab.c"
     break;
 
   case 72: /* PrimaryExpression: This  */
-#line 811 "test.y"
+#line 773 "test.y"
                                 { (yyval.llPtr) = (yyvsp[0].llPtr); }
-#line 2498 "test.tab.c"
+#line 2460 "test.tab.c"
     break;
 
   case 73: /* PrimaryExpression: New Int OSqre Expression CSqre  */
-#line 813 "test.y"
+#line 775 "test.y"
                  {
                     (yyval.llPtr) = (yyvsp[-4].llPtr); 
                     attach_lists((yyval.llPtr), (yyvsp[-3].llPtr));
@@ -2506,329 +2468,329 @@ yyreduce:
                     attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
                     attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
                  }
-#line 2510 "test.tab.c"
+#line 2472 "test.tab.c"
     break;
 
   case 74: /* PrimaryExpression: New Identifier OParen CParen  */
-#line 821 "test.y"
+#line 783 "test.y"
                  {
                     (yyval.llPtr) = (yyvsp[-3].llPtr); 
                     attach_lists((yyval.llPtr), (yyvsp[-2].llPtr));
                     attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
                     attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
                  }
-#line 2521 "test.tab.c"
+#line 2483 "test.tab.c"
     break;
 
   case 75: /* PrimaryExpression: Exclam Expression  */
-#line 828 "test.y"
+#line 790 "test.y"
                  {
                     (yyval.llPtr) = (yyvsp[-1].llPtr); 
                     attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
                  }
-#line 2530 "test.tab.c"
+#line 2492 "test.tab.c"
     break;
 
   case 76: /* PrimaryExpression: OParen Expression CParen  */
-#line 833 "test.y"
+#line 795 "test.y"
                  {
                     (yyval.llPtr) = (yyvsp[-2].llPtr);
                     attach_lists((yyval.llPtr), (yyvsp[-1].llPtr));
                     attach_lists((yyval.llPtr), (yyvsp[0].llPtr));
                  }
-#line 2540 "test.tab.c"
+#line 2502 "test.tab.c"
     break;
 
   case 77: /* Class: CLASS  */
-#line 840 "test.y"
-                            { (yyval.llPtr) = returnLL("class ");}
-#line 2546 "test.tab.c"
+#line 802 "test.y"
+                            { (yyval.llPtr) = returnLL("class");}
+#line 2508 "test.tab.c"
     break;
 
   case 78: /* OCurly: OCURLY  */
-#line 841 "test.y"
-                            { (yyval.llPtr) = returnLL(" {\n");}
-#line 2552 "test.tab.c"
+#line 803 "test.y"
+                            { (yyval.llPtr) = returnLL("{");}
+#line 2514 "test.tab.c"
     break;
 
   case 79: /* CCurly: CCURLY  */
-#line 842 "test.y"
-                            { (yyval.llPtr) = returnLL("}\n");}
-#line 2558 "test.tab.c"
+#line 804 "test.y"
+                            { (yyval.llPtr) = returnLL("}");}
+#line 2520 "test.tab.c"
     break;
 
   case 80: /* Public: PUBLIC  */
-#line 843 "test.y"
-                            { (yyval.llPtr) = returnLL("public ");}
-#line 2564 "test.tab.c"
+#line 805 "test.y"
+                            { (yyval.llPtr) = returnLL("public");}
+#line 2526 "test.tab.c"
     break;
 
   case 81: /* Static: STATIC  */
-#line 844 "test.y"
-                            { (yyval.llPtr) = returnLL("static ");}
-#line 2570 "test.tab.c"
+#line 806 "test.y"
+                            { (yyval.llPtr) = returnLL("static");}
+#line 2532 "test.tab.c"
     break;
 
   case 82: /* Void: VOID  */
-#line 845 "test.y"
-                            { (yyval.llPtr) = returnLL("void ");}
-#line 2576 "test.tab.c"
+#line 807 "test.y"
+                            { (yyval.llPtr) = returnLL("void");}
+#line 2538 "test.tab.c"
     break;
 
   case 83: /* Main: MAIN  */
-#line 846 "test.y"
-                            { (yyval.llPtr) = returnLL("main ");}
-#line 2582 "test.tab.c"
+#line 808 "test.y"
+                            { (yyval.llPtr) = returnLL("main");}
+#line 2544 "test.tab.c"
     break;
 
   case 84: /* OParen: OPAREN  */
-#line 847 "test.y"
+#line 809 "test.y"
                             { (yyval.llPtr) = returnLL("(");}
-#line 2588 "test.tab.c"
+#line 2550 "test.tab.c"
     break;
 
   case 85: /* CParen: CPAREN  */
-#line 848 "test.y"
+#line 810 "test.y"
                             { (yyval.llPtr) = returnLL(")");}
-#line 2594 "test.tab.c"
+#line 2556 "test.tab.c"
     break;
 
   case 86: /* String: STRING  */
-#line 849 "test.y"
+#line 811 "test.y"
                             { (yyval.llPtr) = returnLL("String ");}
-#line 2600 "test.tab.c"
+#line 2562 "test.tab.c"
     break;
 
   case 87: /* OSqre: OSQRE  */
-#line 850 "test.y"
+#line 812 "test.y"
                             { (yyval.llPtr) = returnLL("[");}
-#line 2606 "test.tab.c"
+#line 2568 "test.tab.c"
     break;
 
   case 88: /* CSqre: CSQRE  */
-#line 851 "test.y"
-                            { (yyval.llPtr) = returnLL("] ");}
-#line 2612 "test.tab.c"
+#line 813 "test.y"
+                            { (yyval.llPtr) = returnLL("]");}
+#line 2574 "test.tab.c"
     break;
 
   case 89: /* PrintStatement: PRNTSTMT  */
-#line 852 "test.y"
+#line 814 "test.y"
                             { (yyval.llPtr) = returnLL("System.out.println");}
-#line 2618 "test.tab.c"
+#line 2580 "test.tab.c"
     break;
 
   case 90: /* SColon: SCOLON  */
-#line 853 "test.y"
-                            { (yyval.llPtr) = returnLL(";\n");}
-#line 2624 "test.tab.c"
+#line 815 "test.y"
+                            { (yyval.llPtr) = returnLL(";");}
+#line 2586 "test.tab.c"
     break;
 
   case 91: /* Dot: DOT  */
-#line 854 "test.y"
+#line 816 "test.y"
                             { (yyval.llPtr) = returnLL(".");}
-#line 2630 "test.tab.c"
+#line 2592 "test.tab.c"
     break;
 
   case 92: /* Length: LENGTH  */
-#line 855 "test.y"
+#line 817 "test.y"
                             { (yyval.llPtr) = returnLL("length");}
-#line 2636 "test.tab.c"
+#line 2598 "test.tab.c"
     break;
 
   case 93: /* This: THIS  */
-#line 856 "test.y"
+#line 818 "test.y"
                             { (yyval.llPtr) = returnLL("this");}
-#line 2642 "test.tab.c"
+#line 2604 "test.tab.c"
     break;
 
   case 94: /* New: NEW  */
-#line 857 "test.y"
-                            { (yyval.llPtr) = returnLL("new ");}
-#line 2648 "test.tab.c"
+#line 819 "test.y"
+                            { (yyval.llPtr) = returnLL("new");}
+#line 2610 "test.tab.c"
     break;
 
   case 95: /* Int: INT  */
-#line 858 "test.y"
-                            { (yyval.llPtr) = returnLL("int ");}
-#line 2654 "test.tab.c"
+#line 820 "test.y"
+                            { (yyval.llPtr) = returnLL("int");}
+#line 2616 "test.tab.c"
     break;
 
   case 96: /* Boolean: BOOLEAN  */
-#line 859 "test.y"
-                            { (yyval.llPtr) = returnLL("boolean ");}
-#line 2660 "test.tab.c"
+#line 821 "test.y"
+                            { (yyval.llPtr) = returnLL("boolean");}
+#line 2622 "test.tab.c"
     break;
 
   case 97: /* Exclam: EXCLAM  */
-#line 860 "test.y"
+#line 822 "test.y"
                             { (yyval.llPtr) = returnLL("!");}
-#line 2666 "test.tab.c"
+#line 2628 "test.tab.c"
     break;
 
   case 98: /* Return: RETURN  */
-#line 861 "test.y"
-                            { (yyval.llPtr) = returnLL("return ");}
-#line 2672 "test.tab.c"
+#line 823 "test.y"
+                            { (yyval.llPtr) = returnLL("return");}
+#line 2634 "test.tab.c"
     break;
 
   case 99: /* Extends: EXTENDS  */
-#line 862 "test.y"
-                            { (yyval.llPtr) = returnLL("extends ");}
-#line 2678 "test.tab.c"
+#line 824 "test.y"
+                            { (yyval.llPtr) = returnLL("extends");}
+#line 2640 "test.tab.c"
     break;
 
   case 100: /* Eq: EQ  */
-#line 863 "test.y"
-                            { (yyval.llPtr) = returnLL(" = ");}
-#line 2684 "test.tab.c"
+#line 825 "test.y"
+                            { (yyval.llPtr) = returnLL("=");}
+#line 2646 "test.tab.c"
     break;
 
   case 101: /* If: IF  */
-#line 864 "test.y"
-                            { (yyval.llPtr) = returnLL("if ");}
-#line 2690 "test.tab.c"
+#line 826 "test.y"
+                            { (yyval.llPtr) = returnLL("if");}
+#line 2652 "test.tab.c"
     break;
 
   case 102: /* Else: ELSE  */
-#line 865 "test.y"
-                            { (yyval.llPtr) = returnLL("else ");}
-#line 2696 "test.tab.c"
+#line 827 "test.y"
+                            { (yyval.llPtr) = returnLL("else");}
+#line 2658 "test.tab.c"
     break;
 
   case 103: /* While: WHILE  */
-#line 866 "test.y"
-                            { (yyval.llPtr) = returnLL("while ");}
-#line 2702 "test.tab.c"
+#line 828 "test.y"
+                            { (yyval.llPtr) = returnLL("while");}
+#line 2664 "test.tab.c"
     break;
 
   case 104: /* Comma: COMMA  */
-#line 867 "test.y"
+#line 829 "test.y"
                             { (yyval.llPtr) = returnLL(",");}
-#line 2708 "test.tab.c"
+#line 2670 "test.tab.c"
     break;
 
   case 105: /* Land: LAND  */
-#line 868 "test.y"
-                            { (yyval.llPtr) = returnLL(" && ");}
-#line 2714 "test.tab.c"
+#line 830 "test.y"
+                            { (yyval.llPtr) = returnLL("&&");}
+#line 2676 "test.tab.c"
     break;
 
   case 106: /* Lor: LOR  */
-#line 869 "test.y"
-                            { (yyval.llPtr) = returnLL(" || ");}
-#line 2720 "test.tab.c"
+#line 831 "test.y"
+                            { (yyval.llPtr) = returnLL("||");}
+#line 2682 "test.tab.c"
     break;
 
   case 107: /* Neq: NEQ  */
-#line 870 "test.y"
-                            { (yyval.llPtr) = returnLL(" != ");}
-#line 2726 "test.tab.c"
+#line 832 "test.y"
+                            { (yyval.llPtr) = returnLL("!=");}
+#line 2688 "test.tab.c"
     break;
 
   case 108: /* Leq: LEQ  */
-#line 871 "test.y"
-                            { (yyval.llPtr) = returnLL(" <= ");}
-#line 2732 "test.tab.c"
+#line 833 "test.y"
+                            { (yyval.llPtr) = returnLL("<=");}
+#line 2694 "test.tab.c"
     break;
 
   case 109: /* Plus: PLUS  */
-#line 872 "test.y"
-                            { (yyval.llPtr) = returnLL(" + ");}
-#line 2738 "test.tab.c"
+#line 834 "test.y"
+                            { (yyval.llPtr) = returnLL("+");}
+#line 2700 "test.tab.c"
     break;
 
   case 110: /* Minus: MINUS  */
-#line 873 "test.y"
-                            { (yyval.llPtr) = returnLL(" - ");}
-#line 2744 "test.tab.c"
+#line 835 "test.y"
+                            { (yyval.llPtr) = returnLL("-");}
+#line 2706 "test.tab.c"
     break;
 
   case 111: /* Mul: MUL  */
-#line 874 "test.y"
-                            { (yyval.llPtr) = returnLL(" * ");}
-#line 2750 "test.tab.c"
+#line 836 "test.y"
+                            { (yyval.llPtr) = returnLL("*");}
+#line 2712 "test.tab.c"
     break;
 
   case 112: /* Div: DIV  */
-#line 875 "test.y"
-                            { (yyval.llPtr) = returnLL(" / ");}
-#line 2756 "test.tab.c"
+#line 837 "test.y"
+                            { (yyval.llPtr) = returnLL("/");}
+#line 2718 "test.tab.c"
     break;
 
   case 113: /* Btrue: BTRUE  */
-#line 876 "test.y"
+#line 838 "test.y"
                             { (yyval.llPtr) = returnLL("true");}
-#line 2762 "test.tab.c"
+#line 2724 "test.tab.c"
     break;
 
   case 114: /* Bfalse: BFALSE  */
-#line 877 "test.y"
+#line 839 "test.y"
                             { (yyval.llPtr) = returnLL("false");}
-#line 2768 "test.tab.c"
+#line 2730 "test.tab.c"
     break;
 
   case 115: /* DefineExpr0: DEFINEEXPR0  */
-#line 878 "test.y"
+#line 840 "test.y"
                             { (yyval.llPtr) = returnLL("#defineexpr0 ");}
-#line 2774 "test.tab.c"
+#line 2736 "test.tab.c"
     break;
 
   case 116: /* DefineExpr1: DEFINEEXPR1  */
-#line 879 "test.y"
+#line 841 "test.y"
                             { (yyval.llPtr) = returnLL("#defineexpr1 ");}
-#line 2780 "test.tab.c"
+#line 2742 "test.tab.c"
     break;
 
   case 117: /* DefineExpr2: DEFINEEXPR2  */
-#line 880 "test.y"
+#line 842 "test.y"
                             { (yyval.llPtr) = returnLL("#defineexpr2 ");}
-#line 2786 "test.tab.c"
+#line 2748 "test.tab.c"
     break;
 
   case 118: /* DefineExpr: DEFINEEXPR  */
-#line 881 "test.y"
+#line 843 "test.y"
                                 { (yyval.llPtr) = returnLL("#defineexpr ");}
-#line 2792 "test.tab.c"
+#line 2754 "test.tab.c"
     break;
 
   case 119: /* DefineStmt0: DEFINESTMT0  */
-#line 882 "test.y"
+#line 844 "test.y"
                                 { (yyval.llPtr) = returnLL("#definestmt0 ");}
-#line 2798 "test.tab.c"
+#line 2760 "test.tab.c"
     break;
 
   case 120: /* DefineStmt1: DEFINESTMT1  */
-#line 883 "test.y"
+#line 845 "test.y"
                                 { (yyval.llPtr) = returnLL("#definestmt1 ");}
-#line 2804 "test.tab.c"
+#line 2766 "test.tab.c"
     break;
 
   case 121: /* DefineStmt2: DEFINESTMT2  */
-#line 884 "test.y"
+#line 846 "test.y"
                                 { (yyval.llPtr) = returnLL("#definestmt2 ");}
-#line 2810 "test.tab.c"
+#line 2772 "test.tab.c"
     break;
 
   case 122: /* DefineStmt: DEFINESTMT  */
-#line 885 "test.y"
+#line 847 "test.y"
                                 { (yyval.llPtr) = returnLL("#definestmt ");}
-#line 2816 "test.tab.c"
+#line 2778 "test.tab.c"
     break;
 
   case 123: /* Identifier: ID  */
-#line 887 "test.y"
+#line 849 "test.y"
                             { (yyval.llPtr) = returnLL((yyvsp[0].id));}
-#line 2822 "test.tab.c"
+#line 2784 "test.tab.c"
     break;
 
   case 124: /* Number: NUM  */
-#line 888 "test.y"
+#line 850 "test.y"
                             { (yyval.llPtr) = returnLL((yyvsp[0].id));}
-#line 2828 "test.tab.c"
+#line 2790 "test.tab.c"
     break;
 
 
-#line 2832 "test.tab.c"
+#line 2794 "test.tab.c"
 
       default: break;
     }
@@ -3021,7 +2983,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 889 "test.y"
+#line 851 "test.y"
 
 
 void yyerror(const char *s)

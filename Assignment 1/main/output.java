@@ -1,6 +1,8 @@
-class BinarySearch {
-public static void main (String [] a) {
-System.out.println(new BS().Start(System.out.println(40 + 60);
-));
-}
+class BinarySearch
+{
+	public static void main (String [] a) 
+	{
+		System.out.println(new BS() .Start(System.out.println(1) ;
+		) ) ;
+	}
 }
