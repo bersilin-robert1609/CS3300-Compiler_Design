@@ -5,6 +5,8 @@
     #include <unistd.h>
     #include <stdarg.h>
 
+	int DEBUG = 0;
+
     int yylex(void);
     void yyerror(const char *);
 
@@ -50,7 +52,7 @@
 
     LL* returnLL(char* data)
     {
-		fprintf(stderr, "returnLL called %s\n", data);
+		if(DEBUG) fprintf(stderr, "returnLL called %s\n", data);
         LL* temp = (LL*)malloc(sizeof(LL));
         temp->head = returnNode(data);
         temp->tail = temp->head;
@@ -59,7 +61,7 @@
 
     void attach_lists(LL* list1, LL* list2)
     {
-		fprintf(stderr, "attach_lists called\n");
+		if(DEBUG) fprintf(stderr, "attach_lists called\n");
         if(list2 != NULL && list1 != NULL) list1->tail->next = list2->head;
 		else return;
         list1->tail = list2->tail;
@@ -67,7 +69,7 @@
 
 	void printLL(LL* list)
 	{
-		fprintf(stderr, "printLL called\n");
+		if(DEBUG) fprintf(stderr, "printLL called\n");
 		Node* temp = list->head;
 		int tabCount = 0;
 		while(temp != NULL)
@@ -103,7 +105,7 @@
 
 	void addMacro(Macro* macro)
 	{
-		fprintf(stderr, "addMacro called with %s\n", macro->macroId);
+		if(DEBUG) fprintf(stderr, "addMacro called with %s\n", macro->macroId);
 		if(macroTable->head == NULL)
 		{
 			macroTable->head = macro;
@@ -118,9 +120,9 @@
 
 	void create_macro_definition(LL* idList, LL* exprList)
 	{
-		fprintf(stderr, "create_macro_definition_expr0 called\n");
+		if(DEBUG) fprintf(stderr, "create_macro_definition_expr0 called\n");
 		LL* args = returnLL(idList->head->data);
-		fprintf(stderr, "args created with %s\n", args->head->data);
+		if(DEBUG) fprintf(stderr, "args created with %s\n", args->head->data);
 		LL* replacement = returnLL(exprList->head->data);
 		Node* ptr = exprList->head->next;
 		while(ptr != NULL)
@@ -141,7 +143,7 @@
 
 	LL* replace_macro(LL* idList)
 	{
-		fprintf(stderr, "replace_macro_expr0 called\n");
+		if(DEBUG) fprintf(stderr, "replace_macro_expr0 called\n");
 		Macro* temp = macroTable->head;
 		while(temp != NULL)
 		{
@@ -167,7 +169,7 @@
 
 	void create_macro_definition_multi(LL* idList, LL* exprList)
 	{
-		fprintf(stderr, "create_macro_definition_expr_multi called\n");
+		if(DEBUG) fprintf(stderr, "create_macro_definition_expr_multi called\n");
 		LL* args = returnLL(idList->head->data);
 
 		Node* ptr = idList->head->next;
@@ -217,7 +219,7 @@
 
 	LL* replace_macro_multi(LL* idList, LL* exprList)
 	{
-		fprintf(stderr, "replace_macro_expr_multi called\n");
+		if(DEBUG) fprintf(stderr, "replace_macro_expr_multi called\n");
 		Macro* temp = macroTable->head;
 		LL* temp2 =  NULL;
 		while(temp != NULL)
@@ -263,7 +265,7 @@
 
 	LL* convertExpressionListToIdentifierList(LL* exprList)
 	{
-		fprintf(stderr, "convertExpressionListToIdentifierList called\n");
+		if(DEBUG) fprintf(stderr, "convertExpressionListToIdentifierList called\n");
 		LL* idList = NULL;
 		Node* ptr = exprList->head;
 		int first = 1;
@@ -275,7 +277,7 @@
 				strncat(buff, ptr->data, strlen(ptr->data));
 				ptr = ptr->next;
 			}
-			fprintf(stderr, "buff: %s\n", buff);
+			if(DEBUG) fprintf(stderr, "buff: %s\n", buff);
 			if(first)
 			{
 				idList = returnLL(buff);
