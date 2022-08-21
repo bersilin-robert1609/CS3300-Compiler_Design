@@ -1,36 +1,28 @@
-class LinkedList 
-{
-	public static void main ( String  [ ] a ) 
-	{
+class LinkedList {
+	public static void main ( String  [ ] a ) {
 		System.out.println ( new LL ( ) . Start ( ) ) ;
 	}
 }
-	class Element 
-{
+class Element {
 	int Age ;
 	int Salary ;
 	boolean Married ;
-	public boolean Init ( int v_Age , int v_Salary , boolean v_Married ) 
-	{
+	public boolean Init ( int v_Age , int v_Salary , boolean v_Married ) {
 		Age = v_Age ;
 		Salary = v_Salary ;
 		Married = v_Married ;
 		return true ;
 	}
-	public int GetAge ( ) 
-	{
+	public int GetAge ( ) {
 		return Age ;
 	}
-	public int GetSalary ( ) 
-	{
+	public int GetSalary ( ) {
 		return Salary ;
 	}
-	public boolean GetMarried ( ) 
-	{
+	public boolean GetMarried ( ) {
 		return Married ;
 	}
-	public boolean Equal ( Element other ) 
-	{
+	public boolean Equal ( Element other ) {
 		boolean ret_val ;
 		int aux01 ;
 		int aux02 ;
@@ -38,8 +30,7 @@ class LinkedList
 		ret_val = true ;
 		aux01 = other . GetAge ( ) ;
 		if ( ! this . Compare ( aux01 , Age ) ) ret_val = false ;
-		else 
-		{
+		else {
 			aux02 = other . GetSalary ( ) ;
 			if ( ! this . Compare ( aux02 , Salary ) ) ret_val = false ;
 			else if ( Married ) if ( ! other . GetMarried ( ) ) ret_val = false ;
@@ -49,8 +40,7 @@ class LinkedList
 		}
 		return ret_val ;
 	}
-	public boolean Compare ( int num1 , int num2 ) 
-	{
+	public boolean Compare ( int num1 , int num2 ) {
 		boolean retval ;
 		int aux02 ;
 		retval = false ;
@@ -61,25 +51,21 @@ class LinkedList
 		return retval ;
 	}
 }
-	class List 
-{
+class List {
 	Element elem ;
 	List next ;
 	boolean end ;
-	public boolean Init ( ) 
-	{
+	public boolean Init ( ) {
 		end = true ;
 		return true ;
 	}
-	public boolean InitNew ( Element v_elem , List v_next , boolean v_end ) 
-	{
+	public boolean InitNew ( Element v_elem , List v_next , boolean v_end ) {
 		end = v_end ;
 		elem = v_elem ;
 		next = v_next ;
 		return true ;
 	}
-	public List Insert ( Element new_elem ) 
-	{
+	public List Insert ( Element new_elem ) {
 		boolean ret_val ;
 		List aux03 ;
 		List aux02 ;
@@ -88,13 +74,11 @@ class LinkedList
 		ret_val = aux02 . InitNew ( new_elem , aux03 , false ) ;
 		return aux02 ;
 	}
-	public boolean SetNext ( List v_next ) 
-	{
+	public boolean SetNext ( List v_next ) {
 		next = v_next ;
 		return true ;
 	}
-	public List Delete ( Element e ) 
-	{
+	public List Delete ( Element e ) {
 		List my_head ;
 		boolean ret_val ;
 		boolean aux05 ;
@@ -111,25 +95,20 @@ class LinkedList
 		prev = this ;
 		var_end = end ;
 		var_elem = elem ;
-		while ( ( ! var_end ) && ( ! ret_val ) ) 
-		{
-			if ( e . Equal ( var_elem ) ) 
-			{
+		while ( ( ! var_end ) && ( ! ret_val ) ) {
+			if ( e . Equal ( var_elem ) ) {
 				ret_val = true ;
-				if ( ( aux04 <= 0 ) && ( aux04 != 0 ) ) 
-				{
+				if ( ( aux04 <= 0 ) && ( aux04 != 0 ) ) {
 					my_head = aux01 . GetNext ( ) ;
 				}
-				else 
-				{
+				else {
 					System.out.println ( 0 - 555 ) ;
 					aux05 = prev . SetNext ( aux01 . GetNext ( ) ) ;
 					System.out.println ( 0 - 555 ) ;
 				}
 			}
 			else nt = 0 ;
-			if ( ! ret_val ) 
-			{
+			if ( ! ret_val ) {
 				prev = aux01 ;
 				aux01 = aux01 . GetNext ( ) ;
 				var_end = aux01 . GetEnd ( ) ;
@@ -140,8 +119,7 @@ class LinkedList
 		}
 		return my_head ;
 	}
-	public int Search ( Element e ) 
-	{
+	public int Search ( Element e ) {
 		int int_ret_val ;
 		List aux01 ;
 		Element var_elem ;
@@ -151,10 +129,8 @@ class LinkedList
 		aux01 = this ;
 		var_end = end ;
 		var_elem = elem ;
-		while ( ! var_end ) 
-		{
-			if ( e . Equal ( var_elem ) ) 
-			{
+		while ( ! var_end ) {
+			if ( e . Equal ( var_elem ) ) {
 				int_ret_val = 1 ;
 			}
 			else nt = 0 ;
@@ -164,28 +140,23 @@ class LinkedList
 		}
 		return int_ret_val ;
 	}
-	public boolean GetEnd ( ) 
-	{
+	public boolean GetEnd ( ) {
 		return end ;
 	}
-	public Element GetElem ( ) 
-	{
+	public Element GetElem ( ) {
 		return elem ;
 	}
-	public List GetNext ( ) 
-	{
+	public List GetNext ( ) {
 		return next ;
 	}
-	public boolean Print ( ) 
-	{
+	public boolean Print ( ) {
 		List aux01 ;
 		boolean var_end ;
 		Element var_elem ;
 		aux01 = this ;
 		var_end = end ;
 		var_elem = elem ;
-		while ( ! var_end ) 
-		{
+		while ( ! var_end ) {
 			System.out.println ( var_elem . GetAge ( ) ) ;
 			aux01 = aux01 . GetNext ( ) ;
 			var_end = aux01 . GetEnd ( ) ;
@@ -194,10 +165,8 @@ class LinkedList
 		return true ;
 	}
 }
-	class LL 
-{
-	public int Start ( ) 
-	{
+class LL {
+	public int Start ( ) {
 		List head ;
 		List last_elem ;
 		boolean aux01 ;

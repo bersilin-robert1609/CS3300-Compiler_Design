@@ -1,16 +1,12 @@
-class LinearSearch 
-{
-	public static void main ( String  [ ] a ) 
-	{
+class LinearSearch {
+	public static void main ( String  [ ] a ) {
 		System.out.println ( new LS ( ) . Start ( 10 ) ) ;
 	}
 }
-	class LS 
-{
+class LS {
 	int [ ] number ;
 	int size ;
-	public int Start ( int sz ) 
-	{
+	public int Start ( int sz ) {
 		int aux01 ;
 		int aux02 ;
 		aux01 = this . Init ( sz ) ;
@@ -22,19 +18,16 @@ class LinearSearch
 		System.out.println ( this . Search ( 50 ) ) ;
 		return 55 ;
 	}
-	public int Print ( ) 
-	{
+	public int Print ( ) {
 		int j ;
 		j = 1 ;
-		while ( j <= ( size - 1 ) ) 
-		{
+		while ( j <= ( size - 1 ) ) {
 			System.out.println ( number [ j ] ) ;
 			j = j + 1 ;
 		}
 		return 0 ;
 	}
-	public int Search ( int num ) 
-	{
+	public int Search ( int num ) {
 		int j ;
 		boolean ls01 ;
 		int ifound ;
@@ -44,14 +37,12 @@ class LinearSearch
 		j = 1 ;
 		ls01 = false ;
 		ifound = 0 ;
-		while ( j <= ( size - 1 ) ) 
-		{
+		while ( j <= ( size - 1 ) ) {
 			aux01 = number [ j ] ;
 			aux02 = num + 1 ;
 			if ( ( aux01 <= num ) && ( aux01 != num ) ) nt = 0 ;
 			else if ( ! ( aux01 <= ( aux02 - 1 ) ) ) nt = 0 ;
-			else 
-			{
+			else {
 				ls01 = true ;
 				ifound = 1 ;
 				j = size ;
@@ -60,8 +51,7 @@ class LinearSearch
 		}
 		return ifound ;
 	}
-	public int Init ( int sz ) 
-	{
+	public int Init ( int sz ) {
 		int j ;
 		int k ;
 		int aux01 ;
@@ -70,8 +60,7 @@ class LinearSearch
 		number = new int [ sz ] ;
 		j = 1 ;
 		k = size + 1 ;
-		while ( j <= ( size - 1 ) ) 
-		{
+		while ( j <= ( size - 1 ) ) {
 			aux01 = 2 * j ;
 			aux02 = k - 3 ;
 			number [ j ] = aux01 + aux02 ;

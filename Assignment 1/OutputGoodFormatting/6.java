@@ -1,16 +1,12 @@
-class QuickSort 
-{
-	public static void main ( String  [ ] a ) 
-	{
+class QuickSort {
+	public static void main ( String  [ ] a ) {
 		System.out.println ( new QS ( ) . Start ( 10 ) ) ;
 	}
 }
-	class QS 
-{
+class QS {
 	int [ ] number ;
 	int size ;
-	public int Start ( int sz ) 
-	{
+	public int Start ( int sz ) {
 		int aux01 ;
 		aux01 = this . Init ( sz ) ;
 		aux01 = this . Print ( ) ;
@@ -20,8 +16,7 @@ class QuickSort
 		aux01 = this . Print ( ) ;
 		return 0 ;
 	}
-	public int Sort ( int left , int right ) 
-	{
+	public int Sort ( int left , int right ) {
 		int v ;
 		int i ;
 		int j ;
@@ -31,25 +26,21 @@ class QuickSort
 		boolean cont02 ;
 		int aux03 ;
 		t = 0 ;
-		if ( ( left <= right ) && ( left != right ) ) 
-		{
+		if ( ( left <= right ) && ( left != right ) ) {
 			v = number [ right ] ;
 			i = left - 1 ;
 			j = right ;
 			cont01 = true ;
-			while ( cont01 ) 
-			{
+			while ( cont01 ) {
 				cont02 = true ;
-				while ( cont02 ) 
-				{
+				while ( cont02 ) {
 					i = i + 1 ;
 					aux03 = number [ i ] ;
 					if ( ! ( aux03 <= ( v - 1 ) ) ) cont02 = false ;
 					else cont02 = true ;
 				}
 				cont02 = true ;
-				while ( cont02 ) 
-				{
+				while ( cont02 ) {
 					j = j - 1 ;
 					aux03 = number [ j ] ;
 					if ( ! ( v <= ( aux03 - 1 ) ) ) cont02 = false ;
@@ -70,19 +61,16 @@ class QuickSort
 		else nt = 0 ;
 		return 0 ;
 	}
-	public int Print ( ) 
-	{
+	public int Print ( ) {
 		int j ;
 		j = 0 ;
-		while ( j <= ( size - 1 ) ) 
-		{
+		while ( j <= ( size - 1 ) ) {
 			System.out.println ( number [ j ] ) ;
 			j = j + 1 ;
 		}
 		return 0 ;
 	}
-	public int Init ( int sz ) 
-	{
+	public int Init ( int sz ) {
 		size = sz ;
 		number = new int [ sz ] ;
 		number [ 0 ] = 20 ;
