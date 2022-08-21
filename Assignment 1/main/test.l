@@ -4,6 +4,7 @@ INTEGER {DIGIT}+
 LETTER [a-zA-Z_]
 IDENTIFIER {LETTER}({LETTER}|{DIGIT})*
 COMMENTS "//".*
+COMMENTS2 "/*"((\*+[^/*])|([^*]))*\**"*/"
 
 DS0 "#defineStmt0"
 DS1 "#defineStmt1"
@@ -18,6 +19,7 @@ DE3 "#defineExpr"
 %%
 
 {COMMENTS} {}
+{COMMENTS2} {}
 
 {DS0} {return DEFINESTMT0;}
 {DS1} {return DEFINESTMT1;}
@@ -82,6 +84,6 @@ DE3 "#defineExpr"
     return NUM;
 }
 
-. {printf("Lexer Error - %d Not Valid\n", yytext[0]);}
+. {printf("Lexer Error - %d Not Valid\n", yytext[0]); exit(1);}
 
 %%

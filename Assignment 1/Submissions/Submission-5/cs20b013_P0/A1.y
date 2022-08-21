@@ -8,7 +8,7 @@
 	 * 1 - enable debug, 0 - disable debug
 	 * debug prints in stderr to keep output clean
 	 */
-	int DEBUG = 1;
+	int DEBUG = 0;
 
     int yylex(void);
     void yyerror(const char *);
