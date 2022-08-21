@@ -3,55 +3,70 @@
     #include <stdlib.h>
     #include <string.h>
     #include <unistd.h>
-    #include <stdarg.h>
 
-	int DEBUG = 0;
+	/*
+	 * 1 - enable debug, 0 - disable debug
+	 * debug prints in stderr to keep output clean
+	 */
+	int DEBUG = 1;
 
     int yylex(void);
     void yyerror(const char *);
 
-    typedef struct Node {
+    typedef struct Node 
+	{ // node for the linked list
+
         char *data;
         struct Node *next;
     } Node;
 
     Node* returnNode(char* data)
-    {
+    { // return a node pointer with the given data
+
         Node* temp = (Node*)malloc(sizeof(Node));
         temp->data = data;
         temp->next = NULL;
         return temp;
     }
 
-    typedef struct LinkedList {
+    typedef struct LinkedList 
+	{ // linked list defintion
+
         Node *head;
         Node *tail;
     } LL;
 
-	typedef struct Macro {
+	typedef struct Macro 
+	{ // macro definition
+
 		char* macroId;
-		LL* args;
-		LL* replacement;
+		LL* args;			// this has the identifier and the other arguments of the macro call
+		LL* replacement;    // this is the replacement for the macro
 		struct Macro* next;
 		int macroType;  //0 - single , 1 - multi
 	} Macro;
 	
-	typedef struct macroList {
+	typedef struct macroList 
+	{ // linked list of macros
+
 		struct Macro* head;
 		struct Macro* tail;
 	} macroList;
 
+	// global macrotable
 	macroList* macroTable;
 
 	void initiate_macro_list()
-	{
+	{ // initiate the macro list, called from main
+
 		macroTable = (macroList*)malloc(sizeof(macroList));
 		macroTable->head = NULL;
 		macroTable->tail = NULL;
 	}
 
     LL* returnLL(char* data)
-    {
+    { // returns a linked list with the given data
+
 		if(DEBUG) fprintf(stderr, "returnLL called %s\n", data);
         LL* temp = (LL*)malloc(sizeof(LL));
         temp->head = returnNode(data);
@@ -60,18 +75,21 @@
     }
 
     void attach_lists(LL* list1, LL* list2)
-    {
+    { // attach list2 to the end of list1
+
 		if(DEBUG) fprintf(stderr, "attach_lists called\n");
-        if(list2 != NULL && list1 != NULL) list1->tail->next = list2->head;
+        if(list2 != NULL && list1 != NULL) 
+			list1->tail->next = list2->head;
 		else return;
         list1->tail = list2->tail;
     }
 
 	void printLL(LL* list)
-	{
+	{ // print the linked list, only called once at goal
+
 		if(DEBUG) fprintf(stderr, "printLL called\n");
 		Node* temp = list->head;
-		int tabCount = 0;
+		int tabCount = 0; // tab count for pretty printing
 		while(temp != NULL)
 		{	
 			if(strcmp(temp->data, "{") == 0)
@@ -84,14 +102,16 @@
 			{
 				printf("%s\n", temp->data);
 				for(int i=0; i<tabCount-1; i++) printf("\t");
-				if(temp->next != NULL && strcmp(temp->next->data, "}") != 0) printf("\t");
+				if(temp->next != NULL && strcmp(temp->next->data, "}") != 0) 
+					printf("\t");
 			}
 			else if(strcmp(temp->data, "}") == 0)
 			{
 				printf("%s\n", temp->data);
 				tabCount--;
 				for(int i=0; i<tabCount-1; i++) printf("\t");
-				if (temp->next != NULL && strcmp(temp->next->data, "}") != 0 && tabCount > 0) printf("\t");
+				if (temp->next != NULL && strcmp(temp->next->data, "}") != 0 && tabCount > 0) 
+					printf("\t");
 			}
 			else printf("%s ", temp->data);
 			temp = temp->next;
@@ -99,7 +119,8 @@
 	}
 
 	void addMacro(Macro* macro)
-	{
+	{ // add a macro to the macro list
+
 		if(DEBUG) fprintf(stderr, "addMacro called with %s\n", macro->macroId);
 		if(macroTable->head == NULL)
 		{
@@ -114,14 +135,17 @@
 	}
 
 	void create_macro_definition(LL* idList, LL* exprList)
-	{
+	{ // create a macro definition - expr and stmt with 0 args
+
 		if(DEBUG) fprintf(stderr, "create_macro_definition_expr0 called\n");
-		LL* args = returnLL(idList->head->data);
+		LL* args = returnLL(idList->head->data); // this just has the identifier for the macro
 		if(DEBUG) fprintf(stderr, "args created with %s\n", args->head->data);
-		LL* replacement = returnLL(exprList->head->data);
+		LL* replacement = returnLL(exprList->head->data); 
+
 		Node* ptr = exprList->head->next;
 		while(ptr != NULL)
-		{
+		{ // always copy the contents of the linked list else will cause bugs due to excess traversals
+
 			LL* temp = returnLL(ptr->data);
 			attach_lists(replacement, temp);
 			ptr = ptr->next;
@@ -137,7 +161,8 @@
 	}
 
 	LL* replace_macro(LL* idList)
-	{
+	{ // replace a macro with its definition - expr and stmt with 0 args
+
 		if(DEBUG) fprintf(stderr, "replace_macro_expr0 called\n");
 		Macro* temp = macroTable->head;
 		while(temp != NULL)
@@ -159,11 +184,13 @@
 			}
 			temp = temp->next;
 		}
-		return NULL;
+
+		return NULL; // if no macro found
 	}
 
 	void create_macro_definition_multi(LL* idList, LL* exprList)
-	{
+	{ // create a macro definition - expr and stmt with multi args
+
 		if(DEBUG) fprintf(stderr, "create_macro_definition_expr_multi called\n");
 		LL* args = returnLL(idList->head->data);
 
@@ -194,7 +221,8 @@
 	}
 
 	LL* copy_list(LL* list)
-	{
+	{ // make a copy of the entire linked list
+
 		LL* temp = (LL*)malloc(sizeof(LL));
 		temp->head = (Node*)malloc(sizeof(Node));
 		temp->head->data = strdup(list->head->data);
@@ -213,8 +241,11 @@
 	}
 
 	LL* replace_macro_multi(LL* idList, LL* exprList)
-	{
+	{ // replace a macro with its definition - expr and stmt with multi args
+
 		if(DEBUG) fprintf(stderr, "replace_macro_expr_multi called\n");
+
+		//finding the appropriate macro
 		Macro* temp = macroTable->head;
 		LL* temp2 =  NULL;
 		while(temp != NULL)
@@ -238,16 +269,18 @@
 			temp = temp->next;
 		}
 
-		Node* ptr = exprList->head; //10+20, 30+40
-		Node* macroArgs = temp->args->head->next; //a, b
+		// arguments replacement
+		Node* ptr = exprList->head; 
+		Node* macroArgs = temp->args->head->next;
 		while(macroArgs != NULL)
 		{
-			char* identifierTemp = strdup(ptr->data); //10+20
-			char* macroId = strdup(macroArgs->data); //a
-			Node* ptr2 = temp2->head;  //a
+			char* identifierTemp = strdup(ptr->data);
+			char* macroId = strdup(macroArgs->data);
+			Node* ptr2 = temp2->head;
 			while(ptr2 != NULL)
 			{
-				if(strcmp(ptr2->data, macroId) == 0) ptr2->data = strdup(identifierTemp);
+				if(strcmp(ptr2->data, macroId) == 0) 
+					ptr2->data = strdup(identifierTemp);
 
 				ptr2 = ptr2->next;
 			}
@@ -259,7 +292,8 @@
 	}
 
 	LL* convertExpressionListToIdentifierList(LL* exprList)
-	{
+	{ // convert an expression list to an identifier list
+
 		if(DEBUG) fprintf(stderr, "convertExpressionListToIdentifierList called\n");
 		LL* idList = NULL;
 		Node* ptr = exprList->head;
@@ -812,6 +846,8 @@ PrimaryExpression: Number       { $$ = $1; }
                     attach_lists($$, $3);
                  }
 ;
+
+// Below the terminals are converted into linked lists of their own
 
 Class: CLASS                { $$ = returnLL("class");} ;
 OCurly: OCURLY              { $$ = returnLL("{");} ;
