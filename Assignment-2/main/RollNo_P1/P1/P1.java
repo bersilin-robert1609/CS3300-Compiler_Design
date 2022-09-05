@@ -9,6 +9,8 @@ public class P1 {
          GJDepthFirst df = new GJDepthFirst();
          Object value = root.accept(df, null); // Your assignment part is invoked here.
 
+         //print the classMap hashMap
+
          // if(value.equals("true"))
          //    System.out.println("Program type checked successfully");
          // else

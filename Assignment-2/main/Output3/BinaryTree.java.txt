@@ -1,0 +1,194 @@
+BT 
+Class Name: BT
+Parent Class Name: null
+Class Variables: 
+Class Methods: 
+Method Name: Start
+Method Name: Start
+Return Type: int
+Method Variables: 
+Variable Name: nti Variable Type: int
+Variable Name: root Variable Type: Tree
+Variable Name: ntb Variable Type: boolean
+Parameter Count: 0
+Formal Parameters: 
+BinaryTree 
+Class Name: BinaryTree
+Parent Class Name: null
+Class Variables: 
+Class Methods: 
+Tree 
+Class Name: Tree
+Parent Class Name: null
+Class Variables: 
+Variable Name: left Variable Type: Tree
+Variable Name: has_right Variable Type: boolean
+Variable Name: my_null Variable Type: Tree
+Variable Name: right Variable Type: Tree
+Variable Name: has_left Variable Type: boolean
+Variable Name: key Variable Type: int
+Class Methods: 
+Method Name: Delete
+Method Name: Delete
+Return Type: boolean
+Method Variables: 
+Variable Name: current_node Variable Type: Tree
+Variable Name: found Variable Type: boolean
+Variable Name: parent_node Variable Type: Tree
+Variable Name: cont Variable Type: boolean
+Variable Name: is_root Variable Type: boolean
+Variable Name: ntb Variable Type: boolean
+Variable Name: key_aux Variable Type: int
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: v_key Parameter Type: int
+Method Name: SetHas_Left
+Method Name: SetHas_Left
+Return Type: boolean
+Method Variables: 
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: val Parameter Type: boolean
+Method Name: RemoveLeft
+Method Name: RemoveLeft
+Return Type: boolean
+Method Variables: 
+Variable Name: ntb Variable Type: boolean
+Parameter Count: 2
+Formal Parameters: 
+Parameter Name: c_node Parameter Type: Tree
+Parameter Name: p_node Parameter Type: Tree
+Method Name: GetKey
+Method Name: GetKey
+Return Type: int
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: SetRight
+Method Name: SetRight
+Return Type: boolean
+Method Variables: 
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: rn Parameter Type: Tree
+Method Name: GetLeft
+Method Name: GetLeft
+Return Type: Tree
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: GetRight
+Method Name: GetRight
+Return Type: Tree
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: Remove
+Method Name: Remove
+Return Type: boolean
+Method Variables: 
+Variable Name: auxkey1 Variable Type: int
+Variable Name: auxkey2 Variable Type: int
+Variable Name: ntb Variable Type: boolean
+Parameter Count: 2
+Formal Parameters: 
+Parameter Name: c_node Parameter Type: Tree
+Parameter Name: p_node Parameter Type: Tree
+Method Name: SetLeft
+Method Name: SetLeft
+Return Type: boolean
+Method Variables: 
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: ln Parameter Type: Tree
+Method Name: Insert
+Method Name: Insert
+Return Type: boolean
+Method Variables: 
+Variable Name: current_node Variable Type: Tree
+Variable Name: new_node Variable Type: Tree
+Variable Name: cont Variable Type: boolean
+Variable Name: ntb Variable Type: boolean
+Variable Name: key_aux Variable Type: int
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: v_key Parameter Type: int
+Method Name: Print
+Method Name: Print
+Return Type: boolean
+Method Variables: 
+Variable Name: current_node Variable Type: Tree
+Variable Name: ntb Variable Type: boolean
+Parameter Count: 0
+Formal Parameters: 
+Method Name: Init
+Method Name: Init
+Return Type: boolean
+Method Variables: 
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: v_key Parameter Type: int
+Method Name: GetHas_Right
+Method Name: GetHas_Right
+Return Type: boolean
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: GetHas_Left
+Method Name: GetHas_Left
+Return Type: boolean
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: RemoveRight
+Method Name: RemoveRight
+Return Type: boolean
+Method Variables: 
+Variable Name: ntb Variable Type: boolean
+Parameter Count: 2
+Formal Parameters: 
+Parameter Name: c_node Parameter Type: Tree
+Parameter Name: p_node Parameter Type: Tree
+Method Name: Search
+Method Name: Search
+Return Type: int
+Method Variables: 
+Variable Name: current_node Variable Type: Tree
+Variable Name: ifound Variable Type: int
+Variable Name: cont Variable Type: boolean
+Variable Name: key_aux Variable Type: int
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: v_key Parameter Type: int
+Method Name: SetKey
+Method Name: SetKey
+Return Type: boolean
+Method Variables: 
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: v_key Parameter Type: int
+Method Name: Compare
+Method Name: Compare
+Return Type: boolean
+Method Variables: 
+Variable Name: nti Variable Type: int
+Variable Name: ntb Variable Type: boolean
+Parameter Count: 2
+Formal Parameters: 
+Parameter Name: num1 Parameter Type: int
+Parameter Name: num2 Parameter Type: int
+Method Name: SetHas_Right
+Method Name: SetHas_Right
+Return Type: boolean
+Method Variables: 
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: val Parameter Type: boolean
+Method Name: RecPrint
+Method Name: RecPrint
+Return Type: boolean
+Method Variables: 
+Variable Name: ntb Variable Type: boolean
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: node Parameter Type: Tree

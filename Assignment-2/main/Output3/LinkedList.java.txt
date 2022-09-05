@@ -1,0 +1,173 @@
+LL 
+Class Name: LL
+Parent Class Name: null
+Class Variables: 
+Class Methods: 
+Method Name: Start
+Method Name: Start
+Return Type: int
+Method Variables: 
+Variable Name: head Variable Type: List
+Variable Name: last_elem Variable Type: List
+Variable Name: el03 Variable Type: Element
+Variable Name: el02 Variable Type: Element
+Variable Name: el01 Variable Type: Element
+Variable Name: aux01 Variable Type: boolean
+Parameter Count: 0
+Formal Parameters: 
+Element 
+Class Name: Element
+Parent Class Name: null
+Class Variables: 
+Variable Name: Salary Variable Type: int
+Variable Name: Married Variable Type: boolean
+Variable Name: Age Variable Type: int
+Class Methods: 
+Method Name: GetSalary
+Method Name: GetSalary
+Return Type: int
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: Init
+Method Name: Init
+Return Type: boolean
+Method Variables: 
+Parameter Count: 3
+Formal Parameters: 
+Parameter Name: v_Salary Parameter Type: int
+Parameter Name: v_Married Parameter Type: boolean
+Parameter Name: v_Age Parameter Type: int
+Method Name: GetAge
+Method Name: GetAge
+Return Type: int
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: Equal
+Method Name: Equal
+Return Type: boolean
+Method Variables: 
+Variable Name: nt Variable Type: int
+Variable Name: aux01 Variable Type: int
+Variable Name: aux02 Variable Type: int
+Variable Name: ret_val Variable Type: boolean
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: other Parameter Type: Element
+Method Name: GetMarried
+Method Name: GetMarried
+Return Type: boolean
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: Compare
+Method Name: Compare
+Return Type: boolean
+Method Variables: 
+Variable Name: aux02 Variable Type: int
+Variable Name: retval Variable Type: boolean
+Parameter Count: 2
+Formal Parameters: 
+Parameter Name: num1 Parameter Type: int
+Parameter Name: num2 Parameter Type: int
+List 
+Class Name: List
+Parent Class Name: null
+Class Variables: 
+Variable Name: elem Variable Type: Element
+Variable Name: next Variable Type: List
+Variable Name: end Variable Type: boolean
+Class Methods: 
+Method Name: Delete
+Method Name: Delete
+Return Type: List
+Method Variables: 
+Variable Name: aux05 Variable Type: boolean
+Variable Name: aux04 Variable Type: int
+Variable Name: nt Variable Type: int
+Variable Name: prev Variable Type: List
+Variable Name: aux01 Variable Type: List
+Variable Name: var_end Variable Type: boolean
+Variable Name: ret_val Variable Type: boolean
+Variable Name: my_head Variable Type: List
+Variable Name: var_elem Variable Type: Element
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: e Parameter Type: Element
+Method Name: Print
+Method Name: Print
+Return Type: boolean
+Method Variables: 
+Variable Name: aux01 Variable Type: List
+Variable Name: var_end Variable Type: boolean
+Variable Name: var_elem Variable Type: Element
+Parameter Count: 0
+Formal Parameters: 
+Method Name: Init
+Method Name: Init
+Return Type: boolean
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: GetElem
+Method Name: GetElem
+Return Type: Element
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: GetNext
+Method Name: GetNext
+Return Type: List
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: SetNext
+Method Name: SetNext
+Return Type: boolean
+Method Variables: 
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: v_next Parameter Type: List
+Method Name: Search
+Method Name: Search
+Return Type: int
+Method Variables: 
+Variable Name: nt Variable Type: int
+Variable Name: aux01 Variable Type: List
+Variable Name: var_end Variable Type: boolean
+Variable Name: int_ret_val Variable Type: int
+Variable Name: var_elem Variable Type: Element
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: e Parameter Type: Element
+Method Name: GetEnd
+Method Name: GetEnd
+Return Type: boolean
+Method Variables: 
+Parameter Count: 0
+Formal Parameters: 
+Method Name: InitNew
+Method Name: InitNew
+Return Type: boolean
+Method Variables: 
+Parameter Count: 3
+Formal Parameters: 
+Parameter Name: v_next Parameter Type: List
+Parameter Name: v_end Parameter Type: boolean
+Parameter Name: v_elem Parameter Type: Element
+Method Name: Insert
+Method Name: Insert
+Return Type: List
+Method Variables: 
+Variable Name: aux03 Variable Type: List
+Variable Name: aux02 Variable Type: List
+Variable Name: ret_val Variable Type: boolean
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: new_elem Parameter Type: Element
+LinkedList 
+Class Name: LinkedList
+Parent Class Name: null
+Class Variables: 
+Class Methods: 

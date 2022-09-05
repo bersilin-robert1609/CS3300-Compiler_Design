@@ -1,0 +1,18 @@
+Factorial 
+Class Name: Factorial
+Parent Class Name: null
+Class Variables: 
+Class Methods: 
+Fac 
+Class Name: Fac
+Parent Class Name: null
+Class Variables: 
+Class Methods: 
+Method Name: ComputeFac
+Method Name: ComputeFac
+Return Type: int
+Method Variables: 
+Variable Name: num_aux Variable Type: int
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: num Parameter Type: int

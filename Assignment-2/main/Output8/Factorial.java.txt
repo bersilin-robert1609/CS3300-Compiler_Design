@@ -1,3 +1,0 @@
-from the Hashmap Fac
-from the hashmap Fac
-method name ComputeFac

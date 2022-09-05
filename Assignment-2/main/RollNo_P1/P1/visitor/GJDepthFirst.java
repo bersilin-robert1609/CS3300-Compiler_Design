@@ -76,6 +76,14 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       n.f0.accept(this, argu);
       n.f1.accept(this, argu);
       n.f2.accept(this, argu);
+
+      //print hashMap
+      for (Map.Entry<String, ClassAttributesNode> entry : classMap.entrySet()) {
+         System.out.println(entry.getKey() + " ");
+         ClassAttributesNode classAttributesNode = entry.getValue();
+         classAttributesNode.printClassAttributes();
+      }
+
       return _ret;
    }
 
@@ -218,13 +226,13 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int cmv = classMethodIdentifier.classOrMethodVar;
 
       ClassAttributesNode classAttributes = classMap.get(className);
-      System.out.println("from the hashmap " + classAttributes.className);
-      if(cmv == 1) classAttributes.addClassVar(type.toString(), varName.toString());
+      //System.out.println("from the hashmap " + classAttributes.className);
+      if(cmv == 1) classAttributes.addClassVar(varName.toString(), type.toString());
       else 
       {
-         System.out.println("method name " + methodName);
+         //System.out.println("method name " + methodName);
          MethodAttributes methodAttributes = classAttributes.getMethodAttributes(methodName);
-         methodAttributes.addMethodVar(type.toString(), varName.toString());
+         methodAttributes.addMethodVar(varName.toString(), type.toString());
       }
 
       n.f2.accept(this, argu);
@@ -260,7 +268,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       classMethodIdentifier.classOrMethodVar = 2;
 
       ClassAttributesNode classAttributes = classMap.get((String)argu);
-      System.out.println("from the Hashmap " + classAttributes.className);
+      //System.out.println("from the Hashmap " + classAttributes.className);
       MethodAttributes methodAttributes = new MethodAttributes(methodName.toString(), returnType.toString());
       
       classAttributes.addClassMethod(methodName.toString(), methodAttributes);

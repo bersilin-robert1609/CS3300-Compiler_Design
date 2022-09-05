@@ -1,0 +1,73 @@
+BS 
+Class Name: BS
+Parent Class Name: null
+Class Variables: 
+Variable Name: number Variable Type: int[]
+Variable Name: size Variable Type: int
+Class Methods: 
+Method Name: Div
+Method Name: Div
+Return Type: int
+Method Variables: 
+Variable Name: count02 Variable Type: int
+Variable Name: count01 Variable Type: int
+Variable Name: aux03 Variable Type: int
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: num Parameter Type: int
+Method Name: Print
+Method Name: Print
+Return Type: int
+Method Variables: 
+Variable Name: j Variable Type: int
+Parameter Count: 0
+Formal Parameters: 
+Method Name: Init
+Method Name: Init
+Return Type: int
+Method Variables: 
+Variable Name: aux01 Variable Type: int
+Variable Name: j Variable Type: int
+Variable Name: k Variable Type: int
+Variable Name: aux02 Variable Type: int
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: sz Parameter Type: int
+Method Name: Start
+Method Name: Start
+Return Type: int
+Method Variables: 
+Variable Name: aux01 Variable Type: int
+Variable Name: aux02 Variable Type: int
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: sz Parameter Type: int
+Method Name: Search
+Method Name: Search
+Return Type: boolean
+Method Variables: 
+Variable Name: var_cont Variable Type: boolean
+Variable Name: left Variable Type: int
+Variable Name: nt Variable Type: int
+Variable Name: aux01 Variable Type: int
+Variable Name: right Variable Type: int
+Variable Name: medium Variable Type: int
+Variable Name: bs01 Variable Type: boolean
+Parameter Count: 1
+Formal Parameters: 
+Parameter Name: num Parameter Type: int
+Method Name: Compare
+Method Name: Compare
+Return Type: boolean
+Method Variables: 
+Variable Name: aux02 Variable Type: int
+Variable Name: retval Variable Type: boolean
+Parameter Count: 2
+Formal Parameters: 
+Parameter Name: num1 Parameter Type: int
+Parameter Name: num2 Parameter Type: int
+BinarySearch 
+Class Name: BinarySearch
+Parent Class Name: null
+Class Variables: 
+Class Methods: 
