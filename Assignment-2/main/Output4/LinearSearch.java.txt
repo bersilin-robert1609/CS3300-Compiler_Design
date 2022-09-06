@@ -1,0 +1,4 @@
+Class Name: LSParent Class Name: null
+Class Variables: ()
+Class Methods: 
+Class Doesnt Exist!

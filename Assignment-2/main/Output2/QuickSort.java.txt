@@ -1,0 +1,24 @@
+QuickSort 
+Class Name: QuickSortParent Class Name: null
+Class Variables: ()
+Class Methods: 
+QS 
+Class Name: QSParent Class Name: null
+Class Variables: (Variable Name: number Variable Type: int[], Variable Name: size Variable Type: int, )
+Class Methods: 
+Method Name: PrintReturn Type: int
+Method Variables: (Variable Name: j Variable Type: int, )
+Parameter Count: 0
+Formal Parameters: ()
+Method Name: InitReturn Type: int
+Method Variables: ()
+Parameter Count: 0
+Formal Parameters: (Parameter Name: sz Parameter Type: int, )
+Method Name: StartReturn Type: int
+Method Variables: (Variable Name: aux01 Variable Type: int, )
+Parameter Count: 0
+Formal Parameters: (Parameter Name: sz Parameter Type: int, )
+Method Name: SortReturn Type: int
+Method Variables: (Variable Name: t Variable Type: int, Variable Name: v Variable Type: int, Variable Name: nt Variable Type: int, Variable Name: i Variable Type: int, Variable Name: j Variable Type: int, Variable Name: aux03 Variable Type: int, Variable Name: cont02 Variable Type: boolean, Variable Name: cont01 Variable Type: boolean, )
+Parameter Count: 0
+Formal Parameters: (Parameter Name: left Parameter Type: int, Parameter Name: right Parameter Type: int, )
