@@ -8,13 +8,6 @@ public class P1 {
          Node root = new MiniJavaParser(System.in).Goal();
          GJDepthFirst df = new GJDepthFirst();
          Object value = root.accept(df, null); // Your assignment part is invoked here.
-
-         //print the classMap hashMap
-
-         // if(value.equals("true"))
-         //    System.out.println("Program type checked successfully");
-         // else
-         //    System.out.println("Type error");
       }
       catch (ParseException e) {
          System.out.println(e.toString());
