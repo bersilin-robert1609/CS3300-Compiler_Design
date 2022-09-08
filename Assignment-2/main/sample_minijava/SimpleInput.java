@@ -20,7 +20,7 @@ class TV {
 	ntb = root.Init(16);
 	ntb = root.Print();
 	System.out.println(100000000);
-	ntb = root.Insert(8) ;
+	ntb = root.Insert(0) ;
 	ntb = root.Insert(24) ;
 	ntb = root.Insert(4) ;
 	ntb = root.Insert(12) ;
@@ -94,6 +94,11 @@ class Tree{
     }
 
     public Tree GetLeft(){
+		int var1;
+		boolean var3;
+
+		var1 = 5 + 4;
+		var3 = true;
 	return left;
     }
 

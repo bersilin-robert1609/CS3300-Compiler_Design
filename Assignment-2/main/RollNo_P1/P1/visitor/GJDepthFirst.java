@@ -147,6 +147,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       for(int i=0; i<parameterTypes.size(); i++)
       {
+         if(argumentsType.get(i).equals("int") || argumentsType.get(i).equals("boolean") || argumentsType.get(i).equals("int[]"))
+         {
+            return argumentsType.get(i).equals(parameterTypes.get(i));
+         }
          if(!isParent(argumentsType.get(i), parameterTypes.get(i))) return false;
       }
 
@@ -673,12 +677,22 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ClassMethodIdentifier classMethodIdentifier = (ClassMethodIdentifier)argu;
       String varType = findTypeArray(varName, classMethodIdentifier);
 
-      if(!varType.equals("int[]") || !type1.equals("int") || !type2.equals("int"))
+      if(varType != null && type1 != null && type2 != null)
+      {
+         if(!varType.equals("int[]") || !type1.equals("int") || !type2.equals("int"))
+         {
+            System.out.println("varType: " + varType + " type1: " + type1 + " type2: " + type2);
+            System.out.println("Type Mismatch Error in Array Assignment!");
+            System.exit(1);
+         }
+      }
+      else 
       {
          System.out.println("varType: " + varType + " type1: " + type1 + " type2: " + type2);
          System.out.println("Type Mismatch Error in Array Assignment!");
          System.exit(1);
       }
+      
       n.f6.accept(this, argu);
       return _ret;
    }
@@ -851,12 +865,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         if(!type1.equals("boolean") || !type2.equals("boolean"))
+         if(type1 != null && type2 != null)
          {
-            System.out.println("type1: " + type1 + " type2: " + type2);
+            if(!type1.equals("boolean") || !type2.equals("boolean"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: AndExpression Type error");
+               System.exit(1);
+            }
+         }
+         else
+         {
             System.out.println("Error: AndExpression Type error");
             System.exit(1);
-         }
+         }         
       }
       String type = "boolean";
       return (R)type;
@@ -882,12 +904,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         if(!type1.equals("boolean") || !type2.equals("boolean"))
+         if(type1 != null && type2 != null)
          {
-            System.out.println("type1: " + type1 + " type2: " + type2);
+            if(!type1.equals("boolean") || !type2.equals("boolean"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: OrExpression Type error");
+               System.exit(1);
+            }
+         }
+         else
+         {
             System.out.println("Error: OrExpression Type error");
             System.exit(1);
-         }
+         } 
       }
       String type = "boolean";
       return (R)type;
@@ -913,12 +943,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         if(!type1.equals("int") || !type2.equals("int"))
+         if(type1 != null && type2 != null)
          {
-            System.out.println("type1: " + type1 + " type2: " + type2);
-            System.out.println("Error: CompareExpression Type error");
-            System.exit(1);
+            if(!type1.equals("int") || !type2.equals("int"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: LeqExpression Type error");
+               System.exit(1);
+            }
          }
+         else
+         {
+            System.out.println("Error: LeqExpression Type error");
+            System.exit(1);
+         } 
       }
       String type = "boolean";
       return (R)type;
@@ -944,10 +982,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         if(!type1.equals("int") || !type2.equals("int")){
-            System.out.println("Error: neqExpression Type error");
-            System.exit(1);
+         if(type1 != null && type2 != null)
+         {
+            if(!type1.equals("int") || !type2.equals("int"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: NeqExpression Type error");
+               System.exit(1);
+            }
          }
+         else
+         {
+            System.out.println("Error: NeqExpression Type error");
+            System.exit(1);
+         } 
       }
       String type = "boolean";
       return (R)type;
@@ -973,12 +1021,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck) 
       {
-         if(!type1.equals("int") || !type2.equals("int"))
+         if(type1 != null && type2 != null)
          {
-            System.out.println("type1: " + type1 + " type2: " + type2);
+            if(!type1.equals("int") || !type2.equals("int"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: PlusExpression Type error");
+               System.exit(1);
+            }
+         }
+         else
+         {
             System.out.println("Error: PlusExpression Type error");
             System.exit(1);
-         }
+         } 
       }
       String type = "int";
       return (R)type;
@@ -1004,12 +1060,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         if(!type1.equals("int") || !type2.equals("int"))
+         if(type1 != null && type2 != null)
          {
-            System.out.println("type1: " + type1 + " type2: " + type2);
-            System.out.println("Error: PlusExpression Type error");
-            System.exit(1);
+            if(!type1.equals("int") || !type2.equals("int"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: MinusExpression Type error");
+               System.exit(1);
+            }
          }
+         else
+         {
+            System.out.println("Error: MinusExpression Type error");
+            System.exit(1);
+         } 
       }
       String type = "int";
       return (R)type;
@@ -1035,12 +1099,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         if(!type1.equals("int") || !type2.equals("int"))
+         if(type1 != null && type2 != null)
          {
-            System.out.println("type1: " + type1 + " type2: " + type2);
+            if(!type1.equals("int") || !type2.equals("int"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: MultiplyExpression Type error");
+               System.exit(1);
+            }
+         }
+         else
+         {
             System.out.println("Error: MultiplyExpression Type error");
             System.exit(1);
-         }
+         } 
       }
       String type = "int";
       return (R)type;
@@ -1066,12 +1138,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         if(!type1.equals("int") || !type2.equals("int"))
+         if(type1 != null && type2 != null)
          {
-            System.out.println("type1: " + type1 + " type2: " + type2);
-            System.out.println("Error: DivideExpression Type error");
-            System.exit(1);
+            if(!type1.equals("int") || !type2.equals("int"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: DivExpression Type error");
+               System.exit(1);
+            }
          }
+         else
+         {
+            System.out.println("Error: DivExpression Type error");
+            System.exit(1);
+         } 
       }
       String type = "int";
       return (R)type;
@@ -1089,7 +1169,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       R _ret=null;
 
       String type1 = n.f0.accept(this, argu).toString();
-      if(!type1.equals("int")) type1 = findType(type1, (ClassMethodIdentifier)argu);
+      if(!type1.equals("int[]")) type1 = findType(type1, (ClassMethodIdentifier)argu);
 
       n.f1.accept(this, argu);
 
@@ -1099,7 +1179,16 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       n.f3.accept(this, argu);
       if(typeCheck)
       {
-         if(!type1.equals("int[]") || !type2.equals("int"))
+         if(type1 != null && type2 != null)
+         {
+            if(!type1.equals("int[]") || !type2.equals("int"))
+            {
+               System.out.println("type1: " + type1 + " type2: " + type2);
+               System.out.println("Error: ArrayLookUp Type error");
+               System.exit(1);
+            }
+         }
+         else 
          {
             System.out.println("type1: " + type1 + " type2: " + type2);
             System.out.println("Error: ArrayLookUp Type error");
@@ -1123,7 +1212,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       String type = findType(varName, (ClassMethodIdentifier)argu);
       if(typeCheck)
       {
-         if(!type.equals("int[]"))
+         if(type != null && !type.equals("int[]"))
          {
             System.out.println("type: " + type);
             System.out.println("Error: ArrayLength() called on non-array type");
