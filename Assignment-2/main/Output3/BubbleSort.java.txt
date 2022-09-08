@@ -1,1 +1,0 @@
-Error: Class BBS not found

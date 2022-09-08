@@ -1,4 +1,0 @@
-Class Name: BSParent Class Name: null
-Class Variables: ()
-Class Methods: 
-Class Doesnt Exist!
