@@ -1,3 +1,5 @@
+find . -name "*.class" | xargs rm
+
 cd P1/
 javac P1.java
 
@@ -9,5 +11,3 @@ do
     java P1 < $file
 done
 echo "---------------------------"
-
-find . -name "*.class" | xargs rm -f

@@ -49,8 +49,8 @@ class Class2 extends Class1 {
 }
 
 class Class3 extends Class2 {
-    public int AMethod() {
-        return 5;
+    public boolean AMethod() {
+        return true;
     }
 
     public int DMethod() {
