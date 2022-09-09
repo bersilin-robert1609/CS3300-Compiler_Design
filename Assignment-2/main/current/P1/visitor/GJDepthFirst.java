@@ -139,7 +139,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       {
          if(child == null) return false;
          if(child.equals(parent)) return true;
-         child = classMap.get(child).parentClassName;
+         if(classMap.containsKey(child))
+            child = classMap.get(child).parentClassName;
+         else return false;
       }
    }
 
@@ -157,6 +159,30 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
 
       return true;
+   }
+
+   public void checkNoOverloading(ClassAttributesNode classAttributesNode, MethodAttributes methodAttributes)
+   {
+      if(classAttributesNode.parentClassName == null) return;
+
+      ClassAttributesNode parentClassAttributesNode = classMap.get(classAttributesNode.parentClassName);
+      if(parentClassAttributesNode.classMethodMap.containsKey(methodAttributes.methodName))
+      {
+         MethodAttributes parentMethodAttributes = parentClassAttributesNode.classMethodMap.get(methodAttributes.methodName);
+         if(!parentMethodAttributes.returnType.equals(methodAttributes.returnType))
+         {
+            if(!isParent(methodAttributes.returnType, parentMethodAttributes.returnType))
+            {
+               if(debug)
+               {
+                  System.out.println("Overloading Return Type Error: " + methodAttributes.returnType + " != " + parentMethodAttributes.returnType);
+                  System.exit(0);
+               }
+               callError();
+            }
+         }
+      }
+      checkNoOverloading(parentClassAttributesNode, methodAttributes);
    }
 
    public void callError()
@@ -453,6 +479,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       n.f3.accept(this, argu);
       if(!typeCheck) n.f4.accept(this, (A)classMethodIdentifier);
+
+      if(!typeCheck) checkNoOverloading(classAttributes, methodAttributes);
+
       n.f5.accept(this, argu);
       n.f6.accept(this, argu);
       if(!typeCheck) n.f7.accept(this, (A)classMethodIdentifier);
