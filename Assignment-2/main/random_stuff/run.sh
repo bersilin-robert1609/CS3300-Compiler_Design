@@ -1,7 +1,9 @@
-cd RollNo_P1/P1/
+find . -name "*.class" | xargs rm
+
+cd P1/
 javac P1.java
 
-for file in ../../sample_minijava/*.java
+for file in ../sample_minijava/*.java
 do
     echo "---------------------------"
     echo Running "$(basename $file)"
