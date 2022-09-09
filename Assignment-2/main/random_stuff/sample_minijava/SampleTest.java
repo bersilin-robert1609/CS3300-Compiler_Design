@@ -4,7 +4,8 @@ class Extended {
     }
 }
 
-class A {
+class A extends B{
+    int c4;
     public int go() {
         Class1 c1;
         Class2 c2;
@@ -49,8 +50,8 @@ class Class2 extends Class1 {
 }
 
 class Class3 extends Class2 {
-    public boolean AMethod() {
-        return true;
+    public int AMethod() {
+        return 5;
     }
 
     public int DMethod() {
@@ -60,4 +61,8 @@ class Class3 extends Class2 {
     public int FMethod(Class1 x) {
         return 6;
     }
+}
+
+class B {
+    int c2;
 }

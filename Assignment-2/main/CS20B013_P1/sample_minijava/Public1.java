@@ -22,20 +22,6 @@ class A {
     }
 }
 
-class Class1 {
-    public int AMethod() {
-        return 0;
-    }
-
-    public int BMethod() {
-        return 1;
-    }
-
-    public int CMethod() {
-        return 2;
-    }
-}
-
 class Class2 extends Class10 {
     public int BMethod() {
         return 3;
@@ -57,5 +43,19 @@ class Class3 extends Class2 {
 
     public int FMethod() {
         return 6;
+    }
+}
+
+class Class1 {
+    public int AMethod() {
+        return 0;
+    }
+
+    public int BMethod() {
+        return 1;
+    }
+
+    public int CMethod() {
+        return 2;
     }
 }

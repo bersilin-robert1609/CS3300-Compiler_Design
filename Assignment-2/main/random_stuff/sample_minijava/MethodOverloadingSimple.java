@@ -18,9 +18,9 @@ class A
 	}
 }
 
-class B extends A
+class B extends C
 {
-	public int foo(int n, boolean k, int m, int l)
+	public int foo(int n, int m, boolean k)
 	{
 		return 5;
 	}
@@ -28,6 +28,20 @@ class B extends A
 	{
 		B b;
 		b = new B();
-		return b.foo(4, true, 6, 8);
+		return b.foo(4, 6, true);
+	}
+}
+
+class C extends B
+{
+	public int foo(int n, int m, boolean k)
+	{
+		return 10;
+	}
+	public int bar3()
+	{
+		C c;
+		c = new C();
+		return c.foo(4, 6, true);
 	}
 }
