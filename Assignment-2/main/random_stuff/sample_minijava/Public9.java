@@ -17,7 +17,7 @@ class A {
         c2 = new Class2();
         c3 = new Class3();
         c1_2 = new Class1();
-        x = c3.FMethod(c2, 6);
+        x = c3.FMethod(c3);
         return 1337;
     }
 }
@@ -36,7 +36,7 @@ class Class1 {
     }
 }
 
-class Class2 extends Class1 {
+class Class2 extends Class2 {
     public int BMethod() {
         return 3;
     }
@@ -55,7 +55,7 @@ class Class3 extends Class2 {
         return 5;
     }
 
-    public int FMethod(Class1 x) {
+    public int FMethod(Class2 x) {
         return 6;
     }
 }

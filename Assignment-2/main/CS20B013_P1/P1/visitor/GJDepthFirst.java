@@ -180,10 +180,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
          if(parentMethodAttributes.parameterTypes.size() != methodAttributes.parameterTypes.size())
          {
-            System.out.println("parent Attributes: " + parentMethodAttributes.parameterTypes);
-            System.out.println("method Attributes: " + methodAttributes.parameterTypes);
             if(debug)
             {
+               System.out.println("parent Attributes: " + parentMethodAttributes.parameterTypes);
+               System.out.println("method Attributes: " + methodAttributes.parameterTypes);
                System.out.println("Overloading Parameter Size Error: " + methodAttributes.parameterTypes.size() + " != " + parentMethodAttributes.parameterTypes.size());
                System.exit(0);
             }
@@ -264,8 +264,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       n.f1.accept(this, argu);
       n.f0.accept(this, argu);
       n.f2.accept(this, argu);
-
-      System.out.println("Program type checked successfully");
 
       return _ret;
    }
@@ -1425,13 +1423,15 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          String methodReturnType = methodAttributes.returnType;
 
          n.f3.accept(this, argu);
-
+         
+         ArrayList<String> tempArgumentsList = new ArrayList<String>();
+         //copy the arguments list
+         for(String s : argumentsType) tempArgumentsList.add(s);
          argumentsType.clear();
+
          n.f4.accept(this, argu);
          ArrayList<String> parametersTypes = methodAttributes.parameterTypes;
 
-         //System.out.println("parametersTypes: " + parametersTypes);
-         //System.out.println("argumentsType: " + argumentsType);
          if(validParameterList(argumentsType, parametersTypes) == false)
          {
             if(debug)
@@ -1441,8 +1441,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             }
             callError();
          }
-
          argumentsType.clear();
+         for(String s : tempArgumentsList) argumentsType.add(s);
+
          n.f5.accept(this, argu);
          _ret = (R)methodReturnType;
          return _ret;
@@ -1486,7 +1487,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f0 -> ","
     * f1 -> Expression()
     */
-   public R visit(ExpressionRest n, A argu) {
+   public R visit(ExpressionRest n, A argu) 
+   {
       R _ret=null;
       n.f0.accept(this, argu);
       String type = n.f1.accept(this, argu).toString();
@@ -1521,7 +1523,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     *       | NotExpression()
     *       | BracketExpression()
     */
-   public R visit(PrimaryExpression n, A argu) {
+   public R visit(PrimaryExpression n, A argu) 
+   {
       R _ret = n.f0.accept(this, argu);
       return _ret;
    }
@@ -1529,7 +1532,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    /**
     * f0 -> <INTEGER_LITERAL>
     */
-   public R visit(IntegerLiteral n, A argu) {
+   public R visit(IntegerLiteral n, A argu) 
+   {
       n.f0.accept(this, argu);
       R _ret = (R)"int";
       return _ret;
@@ -1538,7 +1542,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    /**
     * f0 -> "true"
     */
-   public R visit(TrueLiteral n, A argu) {
+   public R visit(TrueLiteral n, A argu) 
+   {
       n.f0.accept(this, argu);
       R _ret = (R)"boolean";
       return _ret;
@@ -1547,7 +1552,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    /**
     * f0 -> "false"
     */
-   public R visit(FalseLiteral n, A argu) {
+   public R visit(FalseLiteral n, A argu) 
+   {
       n.f0.accept(this, argu);
       R _ret = (R)"boolean";
       return _ret;
@@ -1556,7 +1562,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    /**
     * f0 -> <IDENTIFIER>
     */
-   public R visit(Identifier n, A argu) {   
+   public R visit(Identifier n, A argu) 
+   {   
       R _ret = n.f0.accept(this, argu); //Here we directly get the value of Identifier as a String
       return _ret;
    }
@@ -1564,11 +1571,12 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    /**
     * f0 -> "this"
     */
-   public R visit(ThisExpression n, A argu) {
+   public R visit(ThisExpression n, A argu) 
+   {
       n.f0.accept(this, argu);
       ClassMethodIdentifier classMethodIdentifier = (ClassMethodIdentifier)argu;
       R _ret = (R)classMethodIdentifier.className;
-      return _ret; //_ret is (R)"this"
+      return _ret;
    }
 
    /**
@@ -1578,7 +1586,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f3 -> Expression()
     * f4 -> "]"
     */
-   public R visit(ArrayAllocationExpression n, A argu) {
+   public R visit(ArrayAllocationExpression n, A argu) 
+   {
       n.f0.accept(this, argu);
       n.f1.accept(this, argu);
       n.f2.accept(this, argu);
@@ -1609,7 +1618,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f2 -> "("
     * f3 -> ")"
     */
-   public R visit(AllocationExpression n, A argu) {
+   public R visit(AllocationExpression n, A argu) 
+   {
       n.f0.accept(this, argu);
       String className = n.f1.accept(this, argu).toString();
       if(typeCheck)
@@ -1634,7 +1644,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f0 -> "!"
     * f1 -> Expression()
     */
-   public R visit(NotExpression n, A argu) {
+   public R visit(NotExpression n, A argu) 
+   {
       n.f0.accept(this, argu);
       R type = n.f1.accept(this, argu);
       String typeString = type.toString();
@@ -1660,8 +1671,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Expression()
     * f2 -> ")"
     */
-   public R visit(BracketExpression n, A argu) {
-
+   public R visit(BracketExpression n, A argu) 
+   {
       R _ret=null;
       n.f0.accept(this, argu);
       _ret = n.f1.accept(this, argu);
@@ -1673,7 +1684,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f0 -> Identifier()
     * f1 -> ( IdentifierRest() )*
     */
-   public R visit(IdentifierList n, A argu) {
+   public R visit(IdentifierList n, A argu) 
+   {
       R _ret=null;
       _ret = n.f0.accept(this, argu);
       n.f1.accept(this, argu);
@@ -1684,13 +1696,13 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f0 -> ","
     * f1 -> Identifier()
     */
-   public R visit(IdentifierRest n, A argu) {
+   public R visit(IdentifierRest n, A argu) 
+   {
       R _ret=null;
       n.f0.accept(this, argu);
       _ret = n.f1.accept(this, argu);
       return _ret;
    }
-
 }
 
 class ClassMethodIdentifier
@@ -1723,43 +1735,14 @@ class ClassAttributesNode
       this.classMethodMap = new HashMap<String, MethodAttributes>();
    }
 
-   public void addClassVar(String varName, String varType)
-   {
-      this.classVarMap.put(varName, varType);
-   }
-
    public void addClassMethod(String methodName, MethodAttributes methodAttributes)
    {
       this.classMethodMap.put(methodName, methodAttributes);
    }
 
-   public String getVarType(String varName)
-   {
-      return this.classVarMap.get(varName);
-   }
-
    public MethodAttributes getMethodAttributes(String methodName)
    {
       return this.classMethodMap.get(methodName);
-   }
-
-   //printing function for the class attributes
-   public void printClassAttributes()
-   {
-      System.out.print("Class Name: " + this.className);
-      System.out.println("Parent Class Name: " + this.parentClassName);
-      System.out.print("Class Variables: (");
-      for (Map.Entry<String, String> entry : this.classVarMap.entrySet())
-      {
-         System.out.print("Variable Name: " + entry.getKey() + " Variable Type: " + entry.getValue() + ", ");
-      }
-      System.out.println(")");
-      System.out.println("Class Methods: ");
-      for (Map.Entry<String, MethodAttributes> entry : this.classMethodMap.entrySet())
-      {
-         //System.out.println("Method Name: " + entry.getKey());
-         entry.getValue().printMethodAttributes(1);
-      }
    }
 }
 
@@ -1782,51 +1765,10 @@ class MethodAttributes
       this.parameterTypes = new ArrayList<String>();
    }
 
-   public void addMethodVar(String varName, String varType)
-   {
-      this.methodVarMap.put(varName, varType);
-   }
-
    public void addParameter(String parameterName, String parameterType)
    {
       this.formalParameters.put(parameterName, parameterType);
       this.parameterTypes.add(parameterType);
       this.parameterCount++;
-   }
-
-   public String getVarType(String varName)
-   {
-      return this.methodVarMap.get(varName);
-   }
-
-   //printing function for the method attributes
-   public void printMethodAttributes(int i)
-   {
-      System.out.print("Method Name: " + this.methodName);
-      System.out.println("Return Type: " + this.returnType);
-      System.out.print("Method Variables: (");
-      for (Map.Entry<String, String> entry : this.methodVarMap.entrySet())
-      {
-         System.out.print("Variable Name: " + entry.getKey() + " Variable Type: " + entry.getValue() + ", ");
-      }
-      System.out.println(")");
-      System.out.println("Parameter Count: " + this.parameterCount);
-      if(i == 1)
-      {
-         System.out.print("Formal Parameters: (");
-         for (Map.Entry<String, String> entry : this.formalParameters.entrySet())
-         {
-            System.out.print("Parameter Name: " + entry.getKey() + " Parameter Type: " + entry.getValue() + ", ");
-         }
-      }
-      else if(i == 2)
-      {
-         System.out.print("Parameter Types: (");
-         for (String parameterType : this.parameterTypes)
-         {
-            System.out.print("Parameter Type: " + parameterType + ", ");
-         }
-      }
-      System.out.println(")");
    }
 }

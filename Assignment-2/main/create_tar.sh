@@ -1,5 +1,5 @@
 cd CS20B013_P1/
-find . -name "*.class" | xargs rm
+find . -name "*.class" | xargs rm -f
 rm -r sample_minijava 
 rm run.sh
 cd ..

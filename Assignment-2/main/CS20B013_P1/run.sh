@@ -10,4 +10,4 @@ do
 done
 echo "---------------------------"
 
-find . -name "*.class" | xargs rm
+find . -name "*.class" | xargs rm -f

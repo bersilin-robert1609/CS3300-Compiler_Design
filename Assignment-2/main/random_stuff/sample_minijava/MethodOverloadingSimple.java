@@ -18,7 +18,7 @@ class A
 	}
 }
 
-class B extends C
+class B extends A
 {
 	public int foo(int n, int m, boolean k)
 	{
