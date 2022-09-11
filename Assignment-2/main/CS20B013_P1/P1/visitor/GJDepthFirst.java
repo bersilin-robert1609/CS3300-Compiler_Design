@@ -72,8 +72,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
    public String findType(String identifier, ClassMethodIdentifier classMethodIdentifier) 
    {
-      if(identifier == "this") return classMethodIdentifier.className; //If the identifier is this, return the class name
-
       String className = classMethodIdentifier.className;
       String methodName = classMethodIdentifier.methodName;
       MethodAttributes methodAttributes = classMap.get(className).getMethodAttributes(methodName);
@@ -1463,9 +1461,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       
       String typeFinal = null;
       if(!type.equals("int") && !type.equals("boolean") && !type.equals("int[]")) 
-         typeFinal = findType(type, (ClassMethodIdentifier)argu);
+         typeFinal = findType(type, (ClassMethodIdentifier)argu); //it must be a variable
       else 
-         typeFinal = type;
+         typeFinal = type; //it is a basic type
       
       if(typeFinal == null)
       {
@@ -1620,11 +1618,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       if(typeCheck)
       {
          if(!typeString.equals("boolean")) typeString = findType(typeString, (ClassMethodIdentifier)argu);
-         if(typeString == null)
+         if(typeString == null  || !typeString.equals("boolean"))
          {
             if(debug)
             {
-               System.out.println("Error: Invalid type in Not Expression");
+               System.out.println("Error: Invalid type in not expression: " + type.toString());
                System.exit(0);
             }
             callError();
