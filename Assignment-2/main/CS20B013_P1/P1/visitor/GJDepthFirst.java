@@ -697,7 +697,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       String varName = n.f0.accept(this, argu).toString();
       n.f1.accept(this, argu);
       String expressionType = n.f2.accept(this, argu).toString();
-      
       varName = findType(varName, (ClassMethodIdentifier)argu);
       if(varName == null)
       {
@@ -710,19 +709,19 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(!varName.equals(expressionType)) //checks for this and new identifier expressions
       {
-         expressionType = findType(expressionType, (ClassMethodIdentifier)argu);
-         if(expressionType == null)
+         String expressionNewType = findType(expressionType, (ClassMethodIdentifier)argu);
+         if(expressionNewType == null)
          {
             if(debug) {
-               System.out.println("Variable " + expressionType + " Not Declared!");
+               System.out.println("Assignment Type Mismatch! " + varName + " " + expressionType);
                System.exit(0);
             }
             callError();
          }
 
-         if(!varName.equals(expressionType)) //checks for basic data types
+         if(!varName.equals(expressionNewType)) //checks for basic data types
          {
-            if(!isParent(expressionType, varName)) //checks for inheritance matching
+            if(!isParent(expressionNewType, varName)) //checks for inheritance matching
             {
                if(debug) {
                   System.out.println("Assignment Type Mismatch!");
