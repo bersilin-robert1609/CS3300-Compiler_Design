@@ -15,7 +15,6 @@ class A extends B{
         Class2 c2_3;
         int x;
         int y;
-        x = 1;
         y = x;
         c1 = new Class1();
         c2 = new Class2();
@@ -41,7 +40,7 @@ class Class1 {
 }
 
 class Class2 extends Class1 {
-    public Class1 BMethod() {
+    public Class2 BMethod() {
         return new Class2();
     }
 
