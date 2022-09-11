@@ -74,6 +74,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    {
       if(identifier == "this") return classMethodIdentifier.className; //If the identifier is this, return the class name
 
+      if(classMap.containsKey(identifier)) return identifier; //If the identifier is a class name, return the class name
+
       String className = classMethodIdentifier.className;
       String methodName = classMethodIdentifier.methodName;
       MethodAttributes methodAttributes = classMap.get(className).getMethodAttributes(methodName);
@@ -86,11 +88,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       while(true)
       {
-         if(className == null) 
-         {
-            if(classMap.containsKey(identifier)) return identifier; //If the identifier is a class name, return the class name
-            else return null;
-         }
+         if(className == null) return null;
          ClassAttributesNode classAttributesNode = classMap.get(className);
          //If the identifier is a class variable, return the type of the class variable
          if(classAttributesNode.classVarMap.containsKey(identifier)) return classAttributesNode.classVarMap.get(identifier);
@@ -144,12 +142,15 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          MethodAttributes parentMethodAttributes = parentClassAttributesNode.classMethodMap.get(methodAttributes.methodName);
          if(!parentMethodAttributes.returnType.equals(methodAttributes.returnType))
          {
-            if(debug)
+            if(!isParent(methodAttributes.returnType, parentMethodAttributes.returnType))
             {
-               System.out.println("Overloading Return Type Error: " + methodAttributes.returnType + " != " + parentMethodAttributes.returnType);
-               System.exit(0);
+               if(debug)
+               {
+                  System.out.println("Overloading Return Type Error: " + methodAttributes.returnType + " != " + parentMethodAttributes.returnType);
+                  System.exit(0);
+               }
+               callError();
             }
-            callError();
          }
 
          if(parentMethodAttributes.parameterTypes.size() != methodAttributes.parameterTypes.size())
@@ -168,12 +169,15 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          {
             if(!parentMethodAttributes.parameterTypes.get(i).equals(methodAttributes.parameterTypes.get(i)))
             {
-               if(debug)
+               if(!isParent(methodAttributes.parameterTypes.get(i), parentMethodAttributes.parameterTypes.get(i)))
                {
-                  System.out.println("Overloading Parameter Type Error: " + methodAttributes.parameterTypes.get(i) + " != " + parentMethodAttributes.parameterTypes.get(i));
-                  System.exit(0);
+                  if(debug)
+                  {
+                     System.out.println("Overloading Parameter Type Error: " + methodAttributes.parameterTypes.get(i) + " != " + parentMethodAttributes.parameterTypes.get(i));
+                     System.exit(0);
+                  }
+                  callError();
                }
-               callError();
             }
          }
       }
@@ -1367,7 +1371,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(typeCheck)
       {
-         className = findType(identifier, classMethodIdentifier);
+         if(identifier.equals("this")) className = classMethodIdentifier.className;
+         else if(classMap.containsKey(identifier)) className = identifier;
+         else className = findType(identifier, classMethodIdentifier);
 
          if(className == null)
          {

@@ -12,19 +12,20 @@ class A {
         Class1 c1_2;
         Class1 c1_3;
         Class2 c2_3;
+        Class1 Class3;
         int x;
         c1 = new Class1();
         c2 = new Class2();
         c3 = new Class3();
         c1_2 = new Class2();
-        return 1337;
+        return Class3.AMethod();
     }
 }
 
 class Class1 {
-    public int AMethod() {
-        return 0;
-    }
+    // public int AMethod() {
+    //     return 0;
+    // }
 
     public int BMethod() {
         return 1;
@@ -36,6 +37,10 @@ class Class1 {
 }
 
 class Class2 extends Class1 {
+    public int AMethod() {
+        return 0;
+    }
+
     public int BMethod() {
         return 3;
     }
@@ -46,9 +51,9 @@ class Class2 extends Class1 {
 }
 
 class Class3 extends Class2 {
-    public int AMethod() {
-        return 7;
-    }
+    // public int AMethod() {
+    //     return 7;
+    // }
 
     public int DMethod() {
         return 5;
