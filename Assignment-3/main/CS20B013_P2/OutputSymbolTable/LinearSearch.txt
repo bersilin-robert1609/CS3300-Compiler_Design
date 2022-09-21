@@ -1,0 +1,28 @@
+Class Name: LS
+Parent Name: null
+Class LS Variable Count: 2
+Variable Offset: {number=4, size=8}
+Class LS Method Count: 4
+Method Offset: {Print=4, Init=12, Start=0, Search=8}
+Method Name: Print
+Method Print Parameter Count: 0
+Parameters: {}
+Method Print Variable Count: 1
+Variables: {j=1}
+Method Name: Init
+Method Init Parameter Count: 1
+Parameters: {sz=1}
+Method Init Variable Count: 4
+Variables: {aux01=4, j=2, k=3, aux02=5}
+Method Name: Start
+Method Start Parameter Count: 1
+Parameters: {sz=1}
+Method Start Variable Count: 2
+Variables: {aux01=2, aux02=3}
+Method Name: Search
+Method Search Parameter Count: 1
+Parameters: {num=1}
+Method Search Variable Count: 6
+Variables: {nt=7, ifound=4, aux01=5, j=2, ls01=3, aux02=6}
+Class LS Variable Table Size: 12
+Class LS Method Table Size: 16

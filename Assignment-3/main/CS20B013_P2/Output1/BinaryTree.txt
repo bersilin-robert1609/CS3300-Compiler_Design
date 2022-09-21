@@ -1,0 +1,186 @@
+Class Name: BT
+Parent Name: null
+Class BT Variable Count: 0
+Variable Offset: {}
+Class BT Method Count: 1
+Method Offset: {Start=0}
+Method Name: Start
+Method Start Parameter Count: 0
+Parameters: {}
+Method Start Variable Count: 3
+Variables: {nti=3, root=1, ntb=2}
+Class BT Variable Table Size: 4
+Class BT Method Table Size: 4
+Class Name: Tree
+Parent Name: null
+Class Tree Variable Count: 6
+Variable Offset: {left=4, has_right=20, my_null=24, right=8, has_left=16, key=12}
+Class Tree Method Count: 20
+Method Offset: {Delete=52, SetHas_Left=36, RemoveLeft=64, GetKey=20, SetRight=4, GetLeft=16, GetRight=12, Remove=56, SetLeft=8, Insert=48, Print=72, Init=0, GetHas_Right=28, GetHas_Left=32, RemoveRight=60, Search=68, SetKey=24, Compare=44, SetHas_Right=40, RecPrint=76}
+Method Name: Delete
+Method Delete Parameter Count: 1
+Parameters: {v_key=1}
+Method Delete Variable Count: 7
+Variables: {current_node=2, found=5, parent_node=3, cont=4, is_root=6, ntb=8, key_aux=7}
+Method Name: SetHas_Left
+Method SetHas_Left Parameter Count: 1
+Parameters: {val=1}
+Method SetHas_Left Variable Count: 0
+Variables: {}
+Method Name: RemoveLeft
+Method RemoveLeft Parameter Count: 2
+Parameters: {c_node=2, p_node=1}
+Method RemoveLeft Variable Count: 1
+Variables: {ntb=3}
+Method Name: GetKey
+Method GetKey Parameter Count: 0
+Parameters: {}
+Method GetKey Variable Count: 0
+Variables: {}
+Method Name: SetRight
+Method SetRight Parameter Count: 1
+Parameters: {rn=1}
+Method SetRight Variable Count: 0
+Variables: {}
+Method Name: GetLeft
+Method GetLeft Parameter Count: 0
+Parameters: {}
+Method GetLeft Variable Count: 0
+Variables: {}
+Method Name: GetRight
+Method GetRight Parameter Count: 0
+Parameters: {}
+Method GetRight Variable Count: 0
+Variables: {}
+Method Name: Remove
+Method Remove Parameter Count: 2
+Parameters: {c_node=2, p_node=1}
+Method Remove Variable Count: 3
+Variables: {auxkey1=4, auxkey2=5, ntb=3}
+Method Name: SetLeft
+Method SetLeft Parameter Count: 1
+Parameters: {ln=1}
+Method SetLeft Variable Count: 0
+Variables: {}
+Method Name: Insert
+Method Insert Parameter Count: 1
+Parameters: {v_key=1}
+Method Insert Variable Count: 5
+Variables: {current_node=6, new_node=2, cont=4, ntb=3, key_aux=5}
+Method Name: Print
+Method Print Parameter Count: 0
+Parameters: {}
+Method Print Variable Count: 2
+Variables: {current_node=1, ntb=2}
+Method Name: Init
+Method Init Parameter Count: 1
+Parameters: {v_key=1}
+Method Init Variable Count: 0
+Variables: {}
+Method Name: GetHas_Right
+Method GetHas_Right Parameter Count: 0
+Parameters: {}
+Method GetHas_Right Variable Count: 0
+Variables: {}
+Method Name: GetHas_Left
+Method GetHas_Left Parameter Count: 0
+Parameters: {}
+Method GetHas_Left Variable Count: 0
+Variables: {}
+Method Name: RemoveRight
+Method RemoveRight Parameter Count: 2
+Parameters: {c_node=2, p_node=1}
+Method RemoveRight Variable Count: 1
+Variables: {ntb=3}
+Method Name: Search
+Method Search Parameter Count: 1
+Parameters: {v_key=1}
+Method Search Variable Count: 4
+Variables: {current_node=4, ifound=3, cont=2, key_aux=5}
+Method Name: SetKey
+Method SetKey Parameter Count: 1
+Parameters: {v_key=1}
+Method SetKey Variable Count: 0
+Variables: {}
+Method Name: Compare
+Method Compare Parameter Count: 2
+Parameters: {num1=1, num2=2}
+Method Compare Variable Count: 2
+Variables: {nti=4, ntb=3}
+Method Name: SetHas_Right
+Method SetHas_Right Parameter Count: 1
+Parameters: {val=1}
+Method SetHas_Right Variable Count: 0
+Variables: {}
+Method Name: RecPrint
+Method RecPrint Parameter Count: 1
+Parameters: {node=1}
+Method RecPrint Variable Count: 1
+Variables: {ntb=2}
+Class Tree Variable Table Size: 28
+Class Tree Method Table Size: 80
+
+MAIN
+MOVE TEMP 1 HALLOCATE 4
+MOVE TEMP 2 BT_Start
+HSTORE TEMP 1 0 TEMP 2
+MOVE TEMP 3 HALLOCATE 8
+HSTORE TEMP 3 0 TEMP 1
+MOVE TEMP 0 TEMP 3
+MOVE TEMP 4 BT_Start
+MOVE TEMP 5 CALL TEMP 4 ( )
+PRINT TEMP 5
+END
+BT_Start [0]
+BEGIN
+ERROR: Identifier root not found
+MOVE TEMP 2 HALLOCATE 80
+MOVE TEMP 3 Tree_Init
+HSTORE TEMP 2 0 TEMP 3
+MOVE TEMP 4 Tree_SetRight
+HSTORE TEMP 2 4 TEMP 4
+MOVE TEMP 5 Tree_SetLeft
+HSTORE TEMP 2 8 TEMP 5
+MOVE TEMP 6 Tree_GetRight
+HSTORE TEMP 2 12 TEMP 6
+MOVE TEMP 7 Tree_GetLeft
+HSTORE TEMP 2 16 TEMP 7
+MOVE TEMP 8 Tree_GetKey
+HSTORE TEMP 2 20 TEMP 8
+MOVE TEMP 9 Tree_SetKey
+HSTORE TEMP 2 24 TEMP 9
+MOVE TEMP 10 Tree_GetHas_Right
+HSTORE TEMP 2 28 TEMP 10
+MOVE TEMP 11 Tree_GetHas_Left
+HSTORE TEMP 2 32 TEMP 11
+MOVE TEMP 12 Tree_SetHas_Left
+HSTORE TEMP 2 36 TEMP 12
+MOVE TEMP 13 Tree_SetHas_Right
+HSTORE TEMP 2 40 TEMP 13
+MOVE TEMP 14 Tree_Compare
+HSTORE TEMP 2 44 TEMP 14
+MOVE TEMP 15 Tree_Insert
+HSTORE TEMP 2 48 TEMP 15
+MOVE TEMP 16 Tree_Delete
+HSTORE TEMP 2 52 TEMP 16
+MOVE TEMP 17 Tree_Remove
+HSTORE TEMP 2 56 TEMP 17
+MOVE TEMP 18 Tree_RemoveRight
+HSTORE TEMP 2 60 TEMP 18
+MOVE TEMP 19 Tree_RemoveLeft
+HSTORE TEMP 2 64 TEMP 19
+MOVE TEMP 20 Tree_Search
+HSTORE TEMP 2 68 TEMP 20
+MOVE TEMP 21 Tree_Print
+HSTORE TEMP 2 72 TEMP 21
+MOVE TEMP 22 Tree_RecPrint
+HSTORE TEMP 2 76 TEMP 22
+MOVE TEMP 23 HALLOCATE 32
+HSTORE TEMP 23 0 TEMP 2
+MOVE TEMP 1 TEMP 23
+MOVE TEMP -1 1
+ERROR: Identifier ntb not found
+ERROR: Identifier root not found
+MOVE TEMP 25 null_Init
+MOVE TEMP 26 16
+MOVE TEMP 27 CALL TEMP 25 ( )

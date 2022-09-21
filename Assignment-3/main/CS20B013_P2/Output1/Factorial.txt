@@ -1,0 +1,50 @@
+Class Name: Fac
+Parent Name: null
+Class Fac Variable Count: 0
+Variable Offset: {}
+Class Fac Method Count: 1
+Method Offset: {ComputeFac=0}
+Method Name: ComputeFac
+Method ComputeFac Parameter Count: 1
+Parameters: {num=1}
+Method ComputeFac Variable Count: 1
+Variables: {num_aux=2}
+Class Fac Variable Table Size: 4
+Class Fac Method Table Size: 4
+
+MAIN
+MOVE TEMP 1 HALLOCATE 4
+MOVE TEMP 2 Fac_ComputeFac
+HSTORE TEMP 1 0 TEMP 2
+MOVE TEMP 3 HALLOCATE 8
+HSTORE TEMP 3 0 TEMP 1
+MOVE TEMP 0 TEMP 3
+MOVE TEMP 4 Fac_ComputeFac
+MOVE TEMP 5 10
+MOVE TEMP 6 CALL TEMP 4 ( )
+PRINT TEMP 6
+END
+Fac_ComputeFac [0]
+BEGIN
+ERROR: Identifier num not found
+MOVE TEMP 2 0
+MOVE TEMP 3 LE TEMP 1 TEMP 2
+CJUMP TEMP 3L0
+ERROR: Identifier num_aux not found
+MOVE TEMP 4 1
+MOVE TEMP -1 4
+JUMP L1
+L0
+ERROR: Identifier num_aux not found
+ERROR: Identifier num not found
+MOVE TEMP 6 Fac_ComputeFac
+ERROR: Identifier num not found
+MOVE TEMP 8 1
+MOVE TEMP 9 MINUS TEMP 7 TEMP 8
+MOVE TEMP 10 CALL TEMP 6 ( )
+MOVE TEMP 11 TIMES TEMP 5 TEMP 10
+MOVE TEMP -1 11
+L1
+ERROR: Identifier num_aux not found
+RETURN TEMP12
+END

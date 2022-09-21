@@ -1,0 +1,67 @@
+Class Name: BS
+Parent Name: null
+Class BS Variable Count: 2
+Variable Offset: {i=4, j=8}
+Class BS Method Count: 2
+Method Offset: {Start=0, End=4}
+Method Name: Start
+Method Start Parameter Count: 0
+Parameters: {}
+Method Start Variable Count: 0
+Variables: {}
+Method Name: End
+Method End Parameter Count: 0
+Parameters: {}
+Method End Variable Count: 0
+Variables: {}
+Class BS Variable Table Size: 12
+Class BS Method Table Size: 8
+Class Name: BBS
+Parent Name: BS
+Class BBS Variable Count: 2
+Variable Offset: {k=4, l=8}
+Class BBS Method Count: 3
+Method Offset: {Start2=8, Start3=0, End3=4}
+Method Name: Start2
+Method Start2 Parameter Count: 0
+Parameters: {}
+Method Start2 Variable Count: 0
+Variables: {}
+Method Name: Start3
+Method Start3 Parameter Count: 0
+Parameters: {}
+Method Start3 Variable Count: 0
+Variables: {}
+Method Name: End3
+Method End3 Parameter Count: 0
+Parameters: {}
+Method End3 Variable Count: 0
+Variables: {}
+Class BBS Variable Table Size: 12
+Class BBS Method Table Size: 12
+
+MAIN
+MOVE TEMP 1 HALLOCATE 12
+MOVE TEMP 2 BBS_Start3
+HSTORE TEMP 1 0 TEMP 2
+MOVE TEMP 3 BBS_End3
+HSTORE TEMP 1 4 TEMP 3
+MOVE TEMP 4 BBS_Start2
+HSTORE TEMP 1 8 TEMP 4
+MOVE TEMP 5 HALLOCATE 16
+HSTORE TEMP 5 0 TEMP 1
+
+ALLOCATE Parent Class BS
+
+MOVE TEMP 7 HALLOCATE 8
+MOVE TEMP 8 BS_Start
+HSTORE TEMP 7 0 TEMP 8
+MOVE TEMP 9 BS_End
+HSTORE TEMP 7 4 TEMP 9
+MOVE TEMP 10 HALLOCATE 16
+HSTORE TEMP 10 0 TEMP 7
+MOVE TEMP 6 TEMP 10
+HSTORE TEMP 5 4 TEMP 6
+MOVE TEMP 0 TEMP 5
+MOVE TEMP 11 BBS_Start
+MOVE TEMP 12 CALL TEMP 11 ( )

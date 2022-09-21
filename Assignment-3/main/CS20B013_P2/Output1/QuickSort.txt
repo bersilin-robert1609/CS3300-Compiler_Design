@@ -1,0 +1,53 @@
+Class Name: QS
+Parent Name: null
+Class QS Variable Count: 2
+Variable Offset: {number=4, size=8}
+Class QS Method Count: 4
+Method Offset: {Print=8, Init=12, Start=0, Sort=4}
+Method Name: Print
+Method Print Parameter Count: 0
+Parameters: {}
+Method Print Variable Count: 1
+Variables: {j=1}
+Method Name: Init
+Method Init Parameter Count: 1
+Parameters: {sz=1}
+Method Init Variable Count: 0
+Variables: {}
+Method Name: Start
+Method Start Parameter Count: 1
+Parameters: {sz=1}
+Method Start Variable Count: 1
+Variables: {aux01=2}
+Method Name: Sort
+Method Sort Parameter Count: 2
+Parameters: {left=1, right=2}
+Method Sort Variable Count: 8
+Variables: {t=7, v=3, nt=6, i=4, j=5, aux03=10, cont02=9, cont01=8}
+Class QS Variable Table Size: 12
+Class QS Method Table Size: 16
+
+MAIN
+MOVE TEMP 1 HALLOCATE 16
+MOVE TEMP 2 QS_Start
+HSTORE TEMP 1 0 TEMP 2
+MOVE TEMP 3 QS_Sort
+HSTORE TEMP 1 4 TEMP 3
+MOVE TEMP 4 QS_Print
+HSTORE TEMP 1 8 TEMP 4
+MOVE TEMP 5 QS_Init
+HSTORE TEMP 1 12 TEMP 5
+MOVE TEMP 6 HALLOCATE 16
+HSTORE TEMP 6 0 TEMP 1
+MOVE TEMP 0 TEMP 6
+MOVE TEMP 7 QS_Start
+MOVE TEMP 8 10
+MOVE TEMP 9 CALL TEMP 7 ( )
+PRINT TEMP 9
+END
+QS_Start [0]
+BEGIN
+ERROR: Identifier aux01 not found
+MOVE TEMP 1 QS_Init
+ERROR: Identifier sz not found
+MOVE TEMP 3 CALL TEMP 1 ( )

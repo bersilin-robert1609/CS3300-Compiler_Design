@@ -1,0 +1,80 @@
+
+MAIN
+END
+BBS_Start [1]
+BEGIN
+END
+BBS_Sort [0]
+BEGIN
+END
+BBS_Print [0]
+BEGIN
+END
+BBS_Init [1]
+BEGIN
+END
+Class Name: BBS
+Parent Name: null
+Class BBS Variable Count: 2
+Variable Offset: {number=4, size=8}
+Class BBS Method Count: 4
+Method Offset: {Print=8, Init=12, Start=0, Sort=4}
+Method Name: Print
+Method Print Parameter Count: 0
+Parameters: {}
+Method Print Variable Count: 1
+Variables: {j=1}
+Method Name: Init
+Method Init Parameter Count: 1
+Parameters: {sz=1}
+Method Init Variable Count: 0
+Variables: {}
+Method Name: Start
+Method Start Parameter Count: 1
+Parameters: {sz=1}
+Method Start Variable Count: 1
+Variables: {aux01=2}
+Method Name: Sort
+Method Sort Parameter Count: 0
+Parameters: {}
+Method Sort Variable Count: 9
+Variables: {aux05=5, t=9, aux04=4, nt=1, aux07=7, aux06=6, i=2, j=8, aux02=3}
+Class BBS Variable Table Size: 12
+Class BBS Method Table Size: 16
+
+MAIN
+
+ALLOCATE BBS
+
+MOVE TEMP 1 HALLOCATE 16
+MOVE TEMP 2 BBS_Start
+HSTORE TEMP 1 0 TEMP 2
+MOVE TEMP 3 BBS_Sort
+HSTORE TEMP 1 4 TEMP 3
+MOVE TEMP 4 BBS_Print
+HSTORE TEMP 1 8 TEMP 4
+MOVE TEMP 5 BBS_Init
+HSTORE TEMP 1 12 TEMP 5
+MOVE TEMP 6 HALLOCATE 16
+HSTORE TEMP 6 0 TEMP 1
+MOVE TEMP 0 TEMP 6
+
+Method Call: BBS Start
+
+MOVE TEMP 7 BBS_Start
+
+IntegerLiteral
+
+MOVE TEMP 8 10
+MOVE TEMP 9 CALL TEMP 7 ( )
+PRINT TEMP 9
+END
+BBS_Start [0]
+BEGIN
+ERROR: Identifier aux01 not found
+
+Method Call: BBS Init
+
+MOVE TEMP 1 BBS_Init
+ERROR: Identifier sz not found
+MOVE TEMP 3 CALL TEMP 1 ( )

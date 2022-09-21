@@ -8,6 +8,7 @@ outputDir="../$outputDirectory"
 
 for file in ../sample_minijava/*.java
 do
+    echo "Running $(basename $file .java)"
     java P2 < $file > $outputDir/$(basename $file .java).txt
 done
 
