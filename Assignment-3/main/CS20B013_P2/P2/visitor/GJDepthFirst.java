@@ -572,9 +572,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int tempValue = findArrayAddr(identifier, (CMI)argu);
 
       ReturnClass rce1 = (ReturnClass)n.f2.accept(this, argu);
-      int tempValue1 = rce1.tempValue;
+      int exprTemp = rce1.numberValue;
 
-      int accessPoint = (tempValue1 + 1)* 4;
+      int accessPoint = (exprTemp + 1)* 4;
 
       ReturnClass rce2 = (ReturnClass)n.f5.accept(this, argu);
       int tempValue2 = rce2.tempValue;
@@ -991,6 +991,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          int newTemp = getNextTemp();
          newTemp = findIdentifierValue(newTemp, rc.identifier, (CMI)argu);
          String type = findType(rc.identifier, (CMI)argu);
+         int exprValue = getValue(rc.identifier, (CMI)argu);
+         rc.exprValue = exprValue;
          rc.tempValue = newTemp;
          rc.type = type;
       }
@@ -1013,6 +1015,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rc = new ReturnClass();
       rc.tempValue = intTemp;
       rc.tempOrIdentifier = 0;
+      rc.numberValue = Integer.parseInt(value);
+      rc.exprValue = rc.numberValue;
       return (R)rc;
    }
 
@@ -1028,6 +1032,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rc = new ReturnClass();
       rc.tempValue = trueTemp;
       rc.tempOrIdentifier = 0;
+      rc.exprValue = 1;
       return (R)rc;
    }
 
@@ -1043,6 +1048,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rc = new ReturnClass();
       rc.tempValue = falseTemp;
       rc.tempOrIdentifier = 0;
+      rc.exprValue = 0;
       return (R)rc;
    }
 
@@ -1139,6 +1145,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int notTemp = getNextTemp();
       System.out.println("MOVE TEMP " + notTemp + " MINUS TEMP " + oneTemp + " TEMP " + exprTemp);
 
+      rc.exprValue = 1 - rc.exprValue;
       rc.tempValue = notTemp;
       return (R)rc;
    }
@@ -1329,5 +1336,7 @@ class ReturnClass
    public int tempValue;
    public String identifier;
    public String type;
+   public int numberValue;
+   public int exprValue; //only if int or boolean
    public int tempOrIdentifier; // 0 for temp, 1 for identifier, 2 for type && temp
 }

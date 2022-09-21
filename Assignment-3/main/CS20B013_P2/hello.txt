@@ -27,6 +27,17 @@ Processing BinaryTree
 0
 0
 Processing BubbleSort
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+99999
 Processing Factorial
 3628800
 Processing LinearSearch
@@ -58,6 +69,17 @@ Processing LinkedList
 44440000
 0
 Processing QuickSort
+5
+5
+5
+5
+5
+5
+5
+5
+5
+5
+9999
 Processing SimpleMinijava
 ParseException: Encountered " <IDENTIFIER> "Parent "" at line 12, column 10.
 Was expecting one of:
