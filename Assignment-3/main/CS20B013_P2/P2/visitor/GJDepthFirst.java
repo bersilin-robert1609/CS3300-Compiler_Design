@@ -61,21 +61,21 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    // User-generated visitor methods below
    //
 
+   // Hash Map of class Info
    public HashMap<String, ClassData> classMap = new HashMap<String, ClassData>();
+   // build variable
    public boolean build = true;
+   // debug variable
    public boolean debug = false;
+   // free temp number;
    public int tempNumber = 0;
+   // temporary arguments tempValue list
    public ArrayList<Integer> argumentsTempValues = new ArrayList<Integer>();
-   public int getNextTemp()
-   {
-      return tempNumber++;
-   }
+   // free label number
    public int labelNumber = 0;
-   public int getNextLabel()
-   {
-      return labelNumber++;
-   }
-   public HashMap<Integer, String> typeMap = new HashMap<Integer, String>();
+
+   public int getNextTemp() {return tempNumber++;}
+   public int getNextLabel() {return labelNumber++;}
 
    public int createObject(int temp, String className)
    {
@@ -102,7 +102,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       if(classData.parentName != null) 
       {
          int parentTemp = getNextTemp();
-         System.out.println("\nALLOCATE Parent Class " + classData.parentName + "\n");
+         if(debug) System.out.println("\nALLOCATE Parent Class " + classData.parentName + "\n");
          parentTemp = createObject(parentTemp, classData.parentName);
          System.out.println("HSTORE TEMP " + classTableTemp + " 4 TEMP " + parentTemp);
       }
@@ -122,7 +122,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       if(offset != -1)
       {
          System.out.println("MOVE TEMP " + temp + " TEMP " + offset);
-         return temp;
       }
       else if(classData.variableOffset.containsKey(id))
       {
@@ -140,7 +139,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             {
                offset = classData.variableOffset.get(id);
                System.out.println("HLOAD TEMP " + temp + " TEMP " + newTemp + " " + offset);
-               return temp;
+               break;
             }
          }
       }
@@ -180,12 +179,13 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       else if(classData.variableMap.containsKey(id)) return classData.variableMap.get(id);
       else
       {
-         if(classData.parentName == null) return null;
-         CMI newCmi = new CMI();
-         newCmi.className = classData.parentName;
-         newCmi.methodName = null;
-         return findType(id, newCmi);
+         while(classData.parentName != null)
+         {
+            classData = classMap.get(classData.parentName);
+            if(classData.variableMap.containsKey(id)) return classData.variableMap.get(id);
+         }
       }
+      return null;
    }
 
    /**
@@ -193,26 +193,23 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> ( TypeDeclaration() )*
     * f2 -> <EOF>
     */
-   public R visit(Goal n, A argu) {
-		/* YOUR CODE HERE */
-
-      R _ret=null;
-      
+   public R visit(Goal n, A argu) 
+   {
       n.f0.accept(this, argu);
       n.f1.accept(this, argu);
       n.f2.accept(this, argu);
-
-      // for(String key : classMap.keySet()) {
-      //    ClassData classData = classMap.get(key);
-      //    classData.printClassData();
-      // }
-
+      if(debug)
+      {
+         for(String key : classMap.keySet()) {
+            ClassData classData = classMap.get(key);
+            classData.printClassData();
+         }
+      }
       build = false;
-
       n.f0.accept(this, argu);
       n.f1.accept(this, argu);
       n.f2.accept(this, argu);
-      return _ret;
+      return null;
    }
 
    /**
@@ -240,11 +237,13 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rc = (ReturnClass) n.f1.accept(this, argu);
       String className = rc.identifier;
       String methodName = n.f6.accept(this, argu).toString();
-
-      ClassData classData = new ClassData(className, null);
-      MethodData methodData = new MethodData(methodName, "void");
-      classData.addMethod(methodName, methodData);
-
+      if(build)
+      {
+         ClassData classData = new ClassData(className, null);
+         classMap.put(className, classData);
+         MethodData methodData = new MethodData(methodName, "void");
+         classData.addMethod(methodName, methodData);
+      }
       if(!build) n.f14.accept(this, argu);
       if(!build) System.out.println("END");
       return null;
@@ -272,20 +271,17 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    {
       ReturnClass rc = (ReturnClass)n.f1.accept(this, argu);
       String className = rc.identifier;
-
       if(build)
       {
          ClassData classData = new ClassData(className, null);
          classMap.put(className, classData);
       }
-
       CMI cmi = new CMI();
       cmi.className = className;
       cmi.methodName = null;
       cmi.com = 0;
 
       argu = (A)cmi;
-
       if(build) n.f3.accept(this, argu);
       n.f4.accept(this, argu);
       return null;
@@ -307,13 +303,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       String className = rc1.identifier;
       ReturnClass rc2 = (ReturnClass)n.f3.accept(this, argu);
       String parentName = rc2.identifier;
-
       if(build)
       {
          ClassData classData = new ClassData(className, parentName);
          classMap.put(className, classData);
       }
-
       CMI cmi = new CMI();
       cmi.className = className;
       cmi.methodName = null;
@@ -336,7 +330,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       String type = rc.identifier;
       ReturnClass rc1 = (ReturnClass)n.f1.accept(this, argu);
       String varName = rc1.identifier;
-
       CMI cmi = (CMI)argu;
       if(cmi.com == 0)
       {
@@ -431,7 +424,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rc = (ReturnClass)n.f0.accept(this, argu);
       String type = rc.identifier;
       ReturnClass rc1 = (ReturnClass)n.f1.accept(this, argu);
-
       String parName = rc1.identifier;
       CMI cmi = (CMI)argu;
       ClassData classData = classMap.get(cmi.className);
@@ -929,10 +921,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int newTemp = getNextTemp();
       int newTemp2 = getNextTemp();
       int classTableTemp = rcp.tempValue;
-      while(className!= null)
+      while(className != null)
       {
          if(classData.methodOffset.containsKey(methodName))
          {
+            System.out.println("MethodName: " + methodName + " ClassName: " + className);
             System.out.println("HLOAD TEMP " + newTemp + " TEMP " + classTableTemp + " 0");
             System.out.println("HLOAD TEMP " + newTemp2 + " TEMP " + newTemp + " " + classData.methodOffset.get(methodName));
             break;

@@ -12,13 +12,14 @@ class BS
 
     public int Start()
     {
-        i = 0;
-        j = 0;
+        i = 1;
+        j = 1;
         while (i <= 10)
         {
             i = i + 1;
-            j = j + 1;
+            j = j + 2;
         }
+        // j = 21 
         return j;
     }
     public int End()
