@@ -1,4 +1,33 @@
 Processing BinarySearch
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+9999
+0
+0
+1
+1
+1
+1
+0
+0
+999
 Processing BinaryTree
 16
 100000000
@@ -27,20 +56,46 @@ Processing BinaryTree
 0
 0
 Processing BubbleSort
-5
-5
-5
-5
-5
-5
-5
-5
-5
+20
+7
+12
+18
+2
+11
+6
+9
+19
 5
 99999
+2
+5
+6
+7
+9
+11
+12
+18
+19
+20
+0
 Processing Factorial
 3628800
 Processing LinearSearch
+10
+11
+12
+13
+14
+15
+16
+17
+18
+9999
+0
+1
+1
+0
+55
 Processing LinkedList
 25
 10000000
@@ -69,17 +124,28 @@ Processing LinkedList
 44440000
 0
 Processing QuickSort
-5
-5
-5
-5
-5
-5
-5
-5
-5
+20
+7
+12
+18
+2
+11
+6
+9
+19
 5
 9999
+2
+5
+6
+7
+9
+11
+12
+18
+19
+20
+0
 Processing SimpleMinijava
 ParseException: Encountered " <IDENTIFIER> "Parent "" at line 12, column 10.
 Was expecting one of:

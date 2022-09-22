@@ -129,11 +129,25 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          offset = classData.variableOffset.get(id);
          System.out.println("HLOAD TEMP " + temp + " TEMP 0 " + offset);
       }
-      else System.out.println("ERROR: Identifier " + id + " not found");
+      else 
+      {
+         while(classData.parentName != null)
+         {
+            classData = classMap.get(classData.parentName);
+            int newTemp = getNextTemp();
+            System.out.println("HLOAD TEMP " + newTemp + " TEMP 0 4");
+            if(classData.variableOffset.containsKey(id))
+            {
+               offset = classData.variableOffset.get(id);
+               System.out.println("HLOAD TEMP " + temp + " TEMP " + newTemp + " " + offset);
+               return temp;
+            }
+         }
+      }
       return temp;
    }
 
-   public int findIdentifierAddr(String id, CMI cmi, int exprTemp)
+   public int storeIdentifierValue(String id, CMI cmi, int exprTemp)
    {
       String className = cmi.className;
       String methodName = cmi.methodName;
@@ -150,34 +164,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       {
          offset = classData.variableOffset.get(id);
          System.out.println("HSTORE TEMP 0 " + offset + " TEMP " + exprTemp);
-         return -1;
       }
-      else System.out.println("ERROR: Identifier " + id + " not found");
-      return -1;
-   }
-
-   public int findArrayAddr(String id, CMI cmi)
-   {
-      String className = cmi.className;
-      String methodName = cmi.methodName;
-      ClassData classData = classMap.get(className);
-      MethodData methodData = classData.methodDataMap.get(methodName);
-
-      int offset = methodData.getVarTempValue(id);
-      if(offset != -1)
-      {
-         int temp = getNextTemp();
-         System.out.println("MOVE TEMP " + temp + " TEMP " + offset);
-         return temp;
-      }
-      else if(classData.variableOffset.containsKey(id))
-      {
-         offset = classData.variableOffset.get(id);
-         int temp = getNextTemp();
-         System.out.println("HLOAD TEMP " + temp + " TEMP 0 " + offset);
-         return temp;
-      }
-      else System.out.println("ERROR: Identifier " + id + " not found");
       return -1;
    }
 
@@ -550,7 +537,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rce = (ReturnClass)n.f2.accept(this, argu);
       int exprTemp = rce.tempValue;
 
-      int tempAddr = findIdentifierAddr(identifier, (CMI)argu, exprTemp);
+      int tempAddr = storeIdentifierValue(identifier, (CMI)argu, exprTemp);
       return null;
    }
 
@@ -569,17 +556,29 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       ReturnClass rc = (ReturnClass)n.f0.accept(this, argu);
       String identifier = rc.identifier;
-      int tempValue = findArrayAddr(identifier, (CMI)argu);
 
       ReturnClass rce1 = (ReturnClass)n.f2.accept(this, argu);
-      int exprTemp = rce1.numberValue;
+      int accessPoint = rce1.tempValue;
 
-      int accessPoint = (exprTemp + 1)* 4;
+      int oneTemp = getNextTemp();
+      System.out.println("MOVE TEMP " + oneTemp + " 1");
+      int fourTemp = getNextTemp();
+      System.out.println("MOVE TEMP " + fourTemp + " 4");
+      int added1Temp = getNextTemp();
+      System.out.println("MOVE TEMP " + added1Temp + " PLUS TEMP " + accessPoint + " TEMP " + oneTemp);
+      int multTemp = getNextTemp();
+      System.out.println("MOVE TEMP " + multTemp + " TIMES TEMP " + added1Temp + " TEMP " + fourTemp);
+      
+      int arrayAddr = getNextTemp();
+      arrayAddr = findIdentifierValue(arrayAddr, identifier, (CMI)argu);
+
+      int actualAddr = getNextTemp();
+      System.out.println("MOVE TEMP " + actualAddr + " PLUS TEMP " + arrayAddr + " TEMP " + multTemp);
 
       ReturnClass rce2 = (ReturnClass)n.f5.accept(this, argu);
-      int tempValue2 = rce2.tempValue;
+      int exprTemp = rce2.tempValue;
+      System.out.println("HSTORE TEMP " + actualAddr + " 0" + " TEMP " + exprTemp);
 
-      System.out.println("HSTORE TEMP " + tempValue + " " + accessPoint + " TEMP " + tempValue2);
       return null;
    }
 
@@ -871,11 +870,19 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int arrayAddrTemp = rc1.tempValue;
       ReturnClass rc2 = (ReturnClass)n.f2.accept(this, argu);
       int accessPoint = rc2.tempValue;
+      int oneTemp = getNextTemp();
+      System.out.println("MOVE TEMP " + oneTemp + " 1");
+      int fourTemp = getNextTemp();
+      System.out.println("MOVE TEMP " + fourTemp + " 4");
+      int added1Temp = getNextTemp();
+      System.out.println("MOVE TEMP " + added1Temp + " PLUS TEMP " + accessPoint + " TEMP " + oneTemp);
+      int multTemp = getNextTemp();
+      System.out.println("MOVE TEMP " + multTemp + " TIMES TEMP " + added1Temp + " TEMP " + fourTemp);
+      int newArrayAddrTemp = getNextTemp();
+      System.out.println("MOVE TEMP " + newArrayAddrTemp + " PLUS TEMP " + arrayAddrTemp + " TEMP " + multTemp);
       int newTemp = getNextTemp();
-      accessPoint += 1;
-      accessPoint *= 4;
-      System.out.println("HLOAD TEMP " + newTemp + " TEMP " + arrayAddrTemp + " " + accessPoint);
-      
+      System.out.println("HLOAD TEMP " + newTemp + " TEMP " + newArrayAddrTemp + " 0");
+
       ReturnClass rc = new ReturnClass();
       rc.tempValue = newTemp;
       rc.type = "int";
@@ -920,10 +927,22 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       if(debug) System.out.println("\nMethod Call: " + className + " " + methodName + "\n");
 
       int newTemp = getNextTemp();
-      System.out.println("HLOAD TEMP " + newTemp + " TEMP " + rcp.tempValue + " 0");
       int newTemp2 = getNextTemp();
-      //System.out.println("In className " + className + " asking for method " + methodName);
-      System.out.println("HLOAD TEMP " + newTemp2 + " TEMP " + newTemp + " " + classData.methodOffset.get(methodName));
+      int classTableTemp = rcp.tempValue;
+      while(className!= null)
+      {
+         if(classData.methodOffset.containsKey(methodName))
+         {
+            System.out.println("HLOAD TEMP " + newTemp + " TEMP " + classTableTemp + " 0");
+            System.out.println("HLOAD TEMP " + newTemp2 + " TEMP " + newTemp + " " + classData.methodOffset.get(methodName));
+            break;
+         }
+         int newClassTableTemp = getNextTemp();
+         System.out.println("HLOAD TEMP " + newClassTableTemp + " TEMP " + classTableTemp + " 4");
+         classTableTemp = newClassTableTemp;
+         className = classData.parentName;
+         classData = classMap.get(className);
+      }
 
       ArrayList<Integer> tempValues = new ArrayList<Integer>();
       for(int i = 0; i<argumentsTempValues.size(); i++) tempValues.add(argumentsTempValues.get(i));
@@ -991,8 +1010,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          int newTemp = getNextTemp();
          newTemp = findIdentifierValue(newTemp, rc.identifier, (CMI)argu);
          String type = findType(rc.identifier, (CMI)argu);
-         int exprValue = getValue(rc.identifier, (CMI)argu);
-         rc.exprValue = exprValue;
          rc.tempValue = newTemp;
          rc.type = type;
       }
@@ -1016,7 +1033,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       rc.tempValue = intTemp;
       rc.tempOrIdentifier = 0;
       rc.numberValue = Integer.parseInt(value);
-      rc.exprValue = rc.numberValue;
       return (R)rc;
    }
 
@@ -1032,7 +1048,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rc = new ReturnClass();
       rc.tempValue = trueTemp;
       rc.tempOrIdentifier = 0;
-      rc.exprValue = 1;
       return (R)rc;
    }
 
@@ -1048,7 +1063,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       ReturnClass rc = new ReturnClass();
       rc.tempValue = falseTemp;
       rc.tempOrIdentifier = 0;
-      rc.exprValue = 0;
       return (R)rc;
    }
 
@@ -1145,7 +1159,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int notTemp = getNextTemp();
       System.out.println("MOVE TEMP " + notTemp + " MINUS TEMP " + oneTemp + " TEMP " + exprTemp);
 
-      rc.exprValue = 1 - rc.exprValue;
       rc.tempValue = notTemp;
       return (R)rc;
    }
@@ -1337,6 +1350,5 @@ class ReturnClass
    public String identifier;
    public String type;
    public int numberValue;
-   public int exprValue; //only if int or boolean
    public int tempOrIdentifier; // 0 for temp, 1 for identifier, 2 for type && temp
 }
