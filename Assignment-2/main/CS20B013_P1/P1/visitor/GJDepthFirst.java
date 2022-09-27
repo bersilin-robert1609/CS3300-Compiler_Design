@@ -743,7 +743,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f5 -> Expression()
     * f6 -> ";"
     */
-   public R visit(ArrayAssignmentStatement n, A argu) {
+   public R visit(ArrayAssignmentStatement n, A argu) 
+   {
       R _ret = null;
       String varName = n.f0.accept(this, argu).toString();
       if(!varName.equals("int[]")) varName = findType(varName, (ClassMethodIdentifier)argu);

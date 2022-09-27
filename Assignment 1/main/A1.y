@@ -8,7 +8,7 @@
 	 * 1 - enable debug, 0 - disable debug
 	 * debug prints in stderr to keep output clean
 	 */
-	int DEBUG = 0;
+	int DEBUG = 1;
 
     int yylex(void);
     void yyerror(const char *);
@@ -202,13 +202,20 @@
 			ptr = ptr->next;
 		}
 
-		LL* replacement = returnLL(exprList->head->data);
-		ptr = exprList->head->next;
-		while(ptr != NULL)
+		LL* replacement;
+		if(exprList) {
+			replacement = returnLL(exprList->head->data);
+			ptr = exprList->head->next;
+			while(ptr != NULL)
+			{
+				LL* temp = returnLL(ptr->data);
+				attach_lists(replacement, temp);
+				ptr = ptr->next;
+			}
+		}
+		else 
 		{
-			LL* temp = returnLL(ptr->data);
-			attach_lists(replacement, temp);
-			ptr = ptr->next;
+			replacement = returnLL("");
 		}
 
 		Macro* temp = (Macro*)malloc(sizeof(Macro));
@@ -694,10 +701,11 @@ Statement: OCurly StatementsList CCurly
          | Identifier OParen CParen SColon
 		 {
             $$ = replace_macro($1);
-			LL* temp = $2;
-			attach_lists($2, $$);
-			attach_lists($2, $3);
-			$$ = $2;
+			LL* temp = returnLL("{");
+			attach_lists(temp, $$);
+			LL* temp2 = returnLL("}");
+			attach_lists(temp, temp2);
+			$$ = temp;
 		 }
 ;
 

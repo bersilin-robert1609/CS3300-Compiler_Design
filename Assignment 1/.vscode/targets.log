@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Aug 21 23:05:09 2022
+# Make data base, printed on Tue Sep  6 15:25:27 2022
 
 # Variables
 
@@ -60,8 +60,8 @@ MFLAGS = -pqrR
 .SHELLFLAGS := -c
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # automatic
@@ -85,9 +85,11 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/bersilinubuntu22/.vscode-server/bin/e4503b30fc78200f846c62cf8091b76ff5547662/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/MinGW/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/ZeroTier/One/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/bersi/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bersi/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/MinGW/bin:/mnt/c/Users/bersi/AppData/Roaming/npm:/mnt/c/Python310/Lib:/snap/bin
+PATH = /home/bersilinubuntu22/.vscode-server/bin/784b0177c56c607789f9638da7b6bf3230d47a8c/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/MinGW/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/ZeroTier/One/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/bersi/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bersi/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/MinGW/bin:/mnt/c/Users/bersi/AppData/Roaming/npm:/mnt/c/Python310/Lib:/mnt/c/Users/bersi/.dotnet/tools:/snap/bin
 # default
 MAKEFILES := 
+# environment
+MOTD_SHOWN = update-motd
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -111,15 +113,15 @@ LOGNAME = bersilinubuntu22
 # environment
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/bersi/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := clean
 # environment
 USER = bersilinubuntu22
 # default
 MAKE_VERSION := 4.3
 # environment
-_ = /home/bersilinubuntu22/.vscode-server/bin/e4503b30fc78200f846c62cf8091b76ff5547662/node
+_ = /home/bersilinubuntu22/.vscode-server/bin/784b0177c56c607789f9638da7b6bf3230d47a8c/node
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-0bcfe57f-fc0b-4842-a571-23824ab56e0d.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4fb60b9d-a679-4796-9c21-3e136ec62f91.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -139,7 +141,7 @@ WSL_DISTRO_NAME = Ubuntu-22.04
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # variable set hash-table stats:
-# Load=63/1024=6%, Rehash=0, Collisions=1/90=1%
+# Load=64/1024=6%, Rehash=0, Collisions=1/94=1%
 
 # Pattern-specific Variable Values
 
@@ -147,22 +149,35 @@ WSL_DISTRO_NAME = Ubuntu-22.04
 
 # Directories
 
-# . (device 2064, inode 46092): 8 files, no impossibilities.
+# . (device 2064, inode 46092): 24 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+%.exe: %.l %.y
+#  recipe to execute (from 'Makefile', line 5):
+	flex $<
+	bison $(word 2,$^)
+	gcc $*.tab.c -o $@ -lfl
+	# gcc $*.tab.c -o $@ -ll #on macOS
 
+# 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-08-21 18:57:52.838210267
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 2):
+	rm -f lex.yy.c *.tab.c a.out *.exe *~
 
 # Not a target:
 .DEFAULT:
@@ -177,34 +192,20 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-makefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
-
-# Not a target:
-GNUmakefile:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
-
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=5/1024=0%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 138 B / avg = 8 B
-# current buf: size = 8162 B / used = 138 B / count = 16 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 272 B / avg = 8 B
+# current buf: size = 8162 B / used = 272 B / count = 33 / avg = 8 B
 
-# strcache performance: lookups = 19 / hit rate = 15%
+# strcache performance: lookups = 38 / hit rate = 13%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=0/19=0%
-# Finished Make data base on Sun Aug 21 23:05:09 2022
+# Load=33/8192=0%, Rehash=0, Collisions=0/38=0%
+# Finished Make data base on Tue Sep  6 15:25:27 2022
 
  
