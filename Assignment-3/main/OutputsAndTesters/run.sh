@@ -15,3 +15,6 @@ do
 done
 
 find -name "*.class" | xargs rm -f
+
+cd ..
+bash compare_output.sh

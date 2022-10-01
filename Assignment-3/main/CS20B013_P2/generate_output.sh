@@ -1,5 +1,5 @@
-inDir=sample_minijava
-outDir=sample_output
+inDir=sample_minijava_2
+outDir=sample_output_2
 mkdir $outDir
 
 for file in $inDir/*.java

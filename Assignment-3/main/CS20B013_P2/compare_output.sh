@@ -1,6 +1,6 @@
-original=sample_output
+original=sample_output_2
 
-for file in foutput/*.txt
+for file in foutput2/*.txt
 do
     q=$(basename $file .txt)
     if diff $file $original/"$q.out"
