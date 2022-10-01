@@ -6,6 +6,8 @@ package visitor;
 import syntaxtree.*;
 import java.util.*;
 
+import javax.lang.model.util.ElementScanner6;
+
 /**
  * Provides default methods which visit each node in the tree in depth-first
  * order.  Your visitors may extend this class.
@@ -163,6 +165,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       {
          offset = classData.variableOffset.get(id);
          System.out.println("HSTORE TEMP 0 " + offset + " TEMP " + exprTemp);
+      }
+      else{
+         while(classData.parentName != null)
+         {
+            classData = classMap.get(classData.parentName);
+            int newTemp = getNextTemp();
+            System.out.println("HLOAD TEMP " + newTemp + " TEMP 0 4");
+            if(classData.variableOffset.containsKey(id))
+            {
+               offset = classData.variableOffset.get(id);
+               System.out.println("HSTORE TEMP " + newTemp + " " + offset + " TEMP " + exprTemp);
+               break;
+            }
+         }
       }
       return -1;
    }
@@ -925,7 +941,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       {
          if(classData.methodOffset.containsKey(methodName))
          {
-            System.out.println("MethodName: " + methodName + " ClassName: " + className);
+         //    System.out.println("MethodName: " + methodName + " ClassName: " + className);
             System.out.println("HLOAD TEMP " + newTemp + " TEMP " + classTableTemp + " 0");
             System.out.println("HLOAD TEMP " + newTemp2 + " TEMP " + newTemp + " " + classData.methodOffset.get(methodName));
             break;

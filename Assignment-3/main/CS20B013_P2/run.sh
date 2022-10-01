@@ -9,7 +9,9 @@ outputDir="../$outputDirectory"
 for file in ../sample_minijava/*.java
 do
     echo "Running $(basename $file .java)"
-    java P2 < $file > $outputDir/$(basename $file .java).txt
+    q=$(basename $file .java)
+    java P2 < $file > $outputDir/"$q.txt"
+    java -jar ../pgi.jar < $outputDir/"$q.txt" > ../foutput/"$q.txt"
 done
 
 find -name "*.class" | xargs rm -f
