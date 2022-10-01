@@ -1,0 +1,152 @@
+Class Name: TV
+Parent Name: null
+Class TV Variable Count: 0
+Variable Offset: {}
+Class TV Method Count: 1
+Method Offset: {Start=0}
+Method Name: Start
+Method Start Parameter Count: 0
+Parameters: {}
+Method Start Variable Count: 4
+Variables: {nti=3, v=4, root=1, ntb=2}
+Class TV Variable Table Size: 4
+Class TV Method Table Size: 4
+Class Name: Visitor
+Parent Name: null
+Class Visitor Variable Count: 2
+Variable Offset: {r=8, l=4}
+Class Visitor Method Count: 1
+Method Offset: {visit=0}
+Method Name: visit
+Method visit Parameter Count: 1
+Parameters: {n=1}
+Method visit Variable Count: 1
+Variables: {nti=2}
+Class Visitor Variable Table Size: 12
+Class Visitor Method Table Size: 4
+Class Name: Tree
+Parent Name: null
+Class Tree Variable Count: 6
+Variable Offset: {left=4, has_right=20, my_null=24, right=8, has_left=16, key=12}
+Class Tree Method Count: 21
+Method Offset: {Delete=52, SetHas_Left=36, RemoveLeft=64, GetKey=20, SetRight=4, GetLeft=16, GetRight=12, Remove=56, SetLeft=8, Insert=48, accept=80, Print=72, Init=0, GetHas_Right=28, GetHas_Left=32, RemoveRight=60, Search=68, SetKey=24, Compare=44, SetHas_Right=40, RecPrint=76}
+Method Name: Delete
+Method Delete Parameter Count: 1
+Parameters: {v_key=1}
+Method Delete Variable Count: 7
+Variables: {current_node=2, found=5, parent_node=3, cont=4, is_root=7, ntb=6, key_aux=8}
+Method Name: SetHas_Left
+Method SetHas_Left Parameter Count: 1
+Parameters: {val=1}
+Method SetHas_Left Variable Count: 0
+Variables: {}
+Method Name: RemoveLeft
+Method RemoveLeft Parameter Count: 2
+Parameters: {c_node=2, p_node=1}
+Method RemoveLeft Variable Count: 1
+Variables: {ntb=3}
+Method Name: GetKey
+Method GetKey Parameter Count: 0
+Parameters: {}
+Method GetKey Variable Count: 0
+Variables: {}
+Method Name: SetRight
+Method SetRight Parameter Count: 1
+Parameters: {rn=1}
+Method SetRight Variable Count: 0
+Variables: {}
+Method Name: GetLeft
+Method GetLeft Parameter Count: 0
+Parameters: {}
+Method GetLeft Variable Count: 0
+Variables: {}
+Method Name: GetRight
+Method GetRight Parameter Count: 0
+Parameters: {}
+Method GetRight Variable Count: 0
+Variables: {}
+Method Name: Remove
+Method Remove Parameter Count: 2
+Parameters: {c_node=2, p_node=1}
+Method Remove Variable Count: 3
+Variables: {auxkey1=4, auxkey2=5, ntb=3}
+Method Name: SetLeft
+Method SetLeft Parameter Count: 1
+Parameters: {ln=1}
+Method SetLeft Variable Count: 0
+Variables: {}
+Method Name: Insert
+Method Insert Parameter Count: 1
+Parameters: {v_key=1}
+Method Insert Variable Count: 5
+Variables: {current_node=4, new_node=2, cont=5, ntb=3, key_aux=6}
+Method Name: accept
+Method accept Parameter Count: 1
+Parameters: {v=1}
+Method accept Variable Count: 1
+Variables: {nti=2}
+Method Name: Print
+Method Print Parameter Count: 0
+Parameters: {}
+Method Print Variable Count: 2
+Variables: {current_node=2, ntb=1}
+Method Name: Init
+Method Init Parameter Count: 1
+Parameters: {v_key=1}
+Method Init Variable Count: 0
+Variables: {}
+Method Name: GetHas_Right
+Method GetHas_Right Parameter Count: 0
+Parameters: {}
+Method GetHas_Right Variable Count: 0
+Variables: {}
+Method Name: GetHas_Left
+Method GetHas_Left Parameter Count: 0
+Parameters: {}
+Method GetHas_Left Variable Count: 0
+Variables: {}
+Method Name: RemoveRight
+Method RemoveRight Parameter Count: 2
+Parameters: {c_node=2, p_node=1}
+Method RemoveRight Variable Count: 1
+Variables: {ntb=3}
+Method Name: Search
+Method Search Parameter Count: 1
+Parameters: {v_key=1}
+Method Search Variable Count: 4
+Variables: {current_node=2, ifound=3, cont=4, key_aux=5}
+Method Name: SetKey
+Method SetKey Parameter Count: 1
+Parameters: {v_key=1}
+Method SetKey Variable Count: 0
+Variables: {}
+Method Name: Compare
+Method Compare Parameter Count: 2
+Parameters: {num1=1, num2=2}
+Method Compare Variable Count: 2
+Variables: {nti=4, ntb=3}
+Method Name: SetHas_Right
+Method SetHas_Right Parameter Count: 1
+Parameters: {val=1}
+Method SetHas_Right Variable Count: 0
+Variables: {}
+Method Name: RecPrint
+Method RecPrint Parameter Count: 1
+Parameters: {node=1}
+Method RecPrint Variable Count: 1
+Variables: {ntb=2}
+Class Tree Variable Table Size: 28
+Class Tree Method Table Size: 84
+Class Name: MyVisitor
+Parent Name: Visitor
+Class MyVisitor Variable Count: 0
+Variable Offset: {}
+Class MyVisitor Method Count: 1
+Method Offset: {visit=0}
+Method Name: visit
+Method visit Parameter Count: 1
+Parameters: {n=1}
+Method visit Variable Count: 1
+Variables: {nti=2}
+Class MyVisitor Variable Table Size: 4
+Class MyVisitor Method Table Size: 4

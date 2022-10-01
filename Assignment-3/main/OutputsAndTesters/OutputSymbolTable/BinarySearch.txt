@@ -1,0 +1,38 @@
+Class Name: BS
+Parent Name: null
+Class BS Variable Count: 2
+Variable Offset: {number=4, size=8}
+Class BS Method Count: 6
+Method Offset: {Div=8, Print=16, Init=20, Start=0, Search=4, Compare=12}
+Method Name: Div
+Method Div Parameter Count: 1
+Parameters: {num=1}
+Method Div Variable Count: 3
+Variables: {count02=3, count01=2, aux03=4}
+Method Name: Print
+Method Print Parameter Count: 0
+Parameters: {}
+Method Print Variable Count: 1
+Variables: {j=1}
+Method Name: Init
+Method Init Parameter Count: 1
+Parameters: {sz=1}
+Method Init Variable Count: 4
+Variables: {aux01=5, j=2, k=3, aux02=4}
+Method Name: Start
+Method Start Parameter Count: 1
+Parameters: {sz=1}
+Method Start Variable Count: 2
+Variables: {aux01=2, aux02=3}
+Method Name: Search
+Method Search Parameter Count: 1
+Parameters: {num=1}
+Method Search Variable Count: 7
+Variables: {var_cont=5, left=4, nt=8, aux01=7, right=3, medium=6, bs01=2}
+Method Name: Compare
+Method Compare Parameter Count: 2
+Parameters: {num1=1, num2=2}
+Method Compare Variable Count: 2
+Variables: {aux02=4, retval=3}
+Class BS Variable Table Size: 12
+Class BS Method Table Size: 24
