@@ -17,7 +17,7 @@ class A1 {
     }
 
     public boolean funA1_2() {
-        return y;
+        return true;
     }
 }
 
