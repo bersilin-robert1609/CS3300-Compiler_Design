@@ -6,8 +6,6 @@ package visitor;
 import syntaxtree.*;
 import java.util.*;
 
-import javax.lang.model.util.ElementScanner6;
-
 /**
  * Provides default methods which visit each node in the tree in depth-first
  * order.  Your visitors may extend this class.
@@ -1361,3 +1359,4 @@ class ReturnClass
    public int numberValue;
    public int tempOrIdentifier; // 0 for temp, 1 for identifier, 2 for type && temp
 }
+
