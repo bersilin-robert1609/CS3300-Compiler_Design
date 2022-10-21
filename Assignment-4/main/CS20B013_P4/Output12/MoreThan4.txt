@@ -1,139 +1,143 @@
 Scope: MAIN
 	Temp: 0
-		Start: 2
-		End: 21
+		Start: 13
+		End: 22
 
 	Temp: 1
-		Start: 2
-		End: 11
+		Start: 4
+		End: 12
 
 	Temp: 2
-		Start: 2
-		End: 2
-
-	Temp: 3
 		Start: 2
 		End: 3
 
+	Temp: 3
+		Start: 3
+		End: 4
+
 	Temp: 4
-		Start: 2
-		End: 12
+		Start: 7
+		End: 13
 
 	Temp: 5
-		Start: 2
-		End: 5
-
-	Temp: 6
-		Start: 2
+		Start: 5
 		End: 6
 
+	Temp: 6
+		Start: 6
+		End: 7
+
 	Temp: 7
-		Start: 2
-		End: 8
+		Start: 8
+		End: 9
 
 	Temp: 8
-		Start: 2
-		End: 10
+		Start: 10
+		End: 11
 
 	Temp: 9
-		Start: 2
-		End: 14
+		Start: 14
+		End: 15
 
 	Temp: 10
-		Start: 2
-		End: 21
-
-	Temp: 11
-		Start: 2
-		End: 21
-
-	Temp: 12
-		Start: 2
-		End: 21
-
-	Temp: 13
-		Start: 2
-		End: 21
-
-	Temp: 14
-		Start: 2
-		End: 21
-
-	Temp: 15
-		Start: 2
-		End: 21
-
-	Temp: 16
-		Start: 2
-		End: 21
-
-	Temp: 17
-		Start: 2
+		Start: 15
 		End: 22
 
+	Temp: 11
+		Start: 16
+		End: 22
+
+	Temp: 12
+		Start: 17
+		End: 22
+
+	Temp: 13
+		Start: 18
+		End: 22
+
+	Temp: 14
+		Start: 19
+		End: 22
+
+	Temp: 15
+		Start: 20
+		End: 22
+
+	Temp: 16
+		Start: 21
+		End: 22
+
+	Temp: 17
+		Start: 22
+		End: 23
+
 Scope: MT4_Change
-	Temp: 2
+	Temp: 1
 		Start: 42
 		End: 42
 
-	Temp: 3
+	Temp: 2
 		Start: 42
 		End: 43
 
-	Temp: 4
+	Temp: 3
 		Start: 42
 		End: 44
 
-	Temp: 5
+	Temp: 4
 		Start: 42
 		End: 45
 
-	Temp: 6
+	Temp: 5
 		Start: 42
 		End: 46
+
+	Temp: 6
+		Start: 42
+		End: 47
 
 Scope: MT4_Start
 	Temp: 0
 		Start: 27
-		End: 32
+		End: 33
 
 	Temp: 1
 		Start: 27
-		End: 35
+		End: 36
 
 	Temp: 2
 		Start: 27
-		End: 35
+		End: 36
 
 	Temp: 3
 		Start: 27
-		End: 35
+		End: 36
 
 	Temp: 4
 		Start: 27
-		End: 35
+		End: 36
 
 	Temp: 5
 		Start: 27
-		End: 35
+		End: 36
 
 	Temp: 6
 		Start: 27
-		End: 35
+		End: 36
 
 	Temp: 9
-		Start: 27
-		End: 35
+		Start: 33
+		End: 36
 
 	Temp: 10
-		Start: 27
-		End: 34
-
-	Temp: 11
-		Start: 27
+		Start: 34
 		End: 35
 
-	Temp: 12
-		Start: 27
+	Temp: 11
+		Start: 35
 		End: 36
+
+	Temp: 12
+		Start: 36
+		End: 37
 

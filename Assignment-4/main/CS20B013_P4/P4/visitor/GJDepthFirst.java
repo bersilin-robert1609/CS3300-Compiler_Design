@@ -118,16 +118,17 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    {
       public int start;
       public int end;
+      public int temp;
 
-      public Interval(int start, int end)
+      public Interval(int start, int end, int key)
       {
          this.start = start;
          this.end = end;
+         this.temp = key;
       }
    }
 
    HashMap<String, ProcedureProperties> procProps = new HashMap<String, ProcedureProperties>();
-   HashMap<Integer, String> registerAllocation = new HashMap<Integer, String>();
    TreeMap<Integer, BasicBlock> instructions = new TreeMap<Integer, BasicBlock>();
    TreeMap<String, Integer> labelMap = new TreeMap<String, Integer>();
    HashMap<Integer, ExpReturn> expMap = new HashMap<Integer, ExpReturn>();
@@ -193,31 +194,164 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
    public void findIntervalsByScope()
    {
+      // start of each interval is the first occurance in the out set
+      // end of each interval is the last occurance in the in set
       for(Map.Entry<String, TreeMap<Integer, BasicBlock>> entry : sortedInstrs.entrySet())
       {
          String scope = entry.getKey();
          TreeMap<Integer, BasicBlock> instrs = entry.getValue();
          intervals.put(scope, new TreeMap<Integer, Interval>());
-         int start = -1;
-         int end = -1;
          for(Map.Entry<Integer, BasicBlock> bbEntry : instrs.entrySet())
          {
             BasicBlock bb = bbEntry.getValue();
-            if(start == -1) start = bbEntry.getKey();
-            end = bbEntry.getKey();
-            for(int i : bb.use)
+            for(Integer temp : bb.out)
             {
-               if(!intervals.get(scope).containsKey(i)) intervals.get(scope).put(i, new Interval(start, end));
+               if(!intervals.get(scope).containsKey(temp)) intervals.get(scope).put(temp, new Interval(bbEntry.getKey(), bbEntry.getKey(), temp));
                else
                {
-                  Interval interval = intervals.get(scope).get(i);
-                  if(interval.start > start) interval.start = start;
-                  if(interval.end < end) interval.end = end;
+                  Interval interval = intervals.get(scope).get(temp);
+                  interval.end = bbEntry.getKey();
+               }
+            }
+            for(Integer temp : bb.in)
+            {
+               if(!intervals.get(scope).containsKey(temp)) intervals.get(scope).put(temp, new Interval(bbEntry.getKey(), bbEntry.getKey(), temp));
+               else
+               {
+                  Interval interval = intervals.get(scope).get(temp);
+                  interval.end = bbEntry.getKey();
                }
             }
          }
       }
    }
+
+   public void printBasicBlocks()
+   {
+      Iterator<String> itr = sortedInstrs.keySet().iterator();
+      while(itr.hasNext()){
+         String key = itr.next();
+         System.out.println("Scope: " + key);
+         Iterator<Integer> itr2 = sortedInstrs.get(key).keySet().iterator();
+         while(itr2.hasNext()){
+            Integer key2 = itr2.next();
+            BasicBlock bb = sortedInstrs.get(key).get(key2);
+            System.out.println("\tBasic Block: " + key2);
+            System.out.println("\t\tType: " + bb.type);
+            System.out.println("\t\tLabel: " + bb.label);
+            System.out.println("\t\tNext: " + bb.next);
+            System.out.println("\t\tUse: " + bb.use);
+            System.out.println("\t\tDef: " + bb.def);
+            System.out.println("\t\tIn: " + bb.in);
+            System.out.println("\t\tOut: " + bb.out);
+            System.out.println();
+         }
+      }
+   }
+
+   public void printLabels()
+   {
+      //print labels
+      System.out.println("Labels:");
+      Iterator<String> itr3 = labelMap.keySet().iterator();
+      while(itr3.hasNext()){
+         String key = itr3.next();
+         System.out.println("\t" + key + ": " + labelMap.get(key));
+      }
+   }
+
+   public void printIntervals()
+   {
+      //print intervals
+      Iterator<String> itr4 = intervals.keySet().iterator();
+      while(itr4.hasNext()){
+         String key = itr4.next();
+         System.out.println("Scope: " + key);
+         Iterator<Integer> itr5 = intervals.get(key).keySet().iterator();
+         while(itr5.hasNext()){
+            Integer key2 = itr5.next();
+            Interval interval = intervals.get(key).get(key2);
+            System.out.println("\tTemp: " + key2);
+            System.out.println("\t\tStart: " + interval.start);
+            System.out.println("\t\tEnd: " + interval.end);
+            System.out.println();
+         }
+      }
+   }
+
+   HashMap<String, HashMap<Integer, String>> registerAllocation = new HashMap<String, HashMap<Integer, String>>();
+   Stack<String> availableRegisters = new Stack<String>();
+
+   public void populateRegisters()
+   {
+      availableRegisters.clear();
+      for(int i = 9; i >= 0; i--) availableRegisters.push("t" + i);
+      for(int i = 7; i >= 0; i--) availableRegisters.push("s" + i);
+   }
+   // Linear Search Algorithm
+   PriorityQueue<Interval> active = new PriorityQueue<Interval>(new Comparator<Interval>() {
+      //Sorted by increasing order of end
+      @Override
+      public int compare(Interval i1, Interval i2) {
+         return i1.end - i2.end;
+      }
+   });
+   PriorityQueue<Interval> liveIntervals = new PriorityQueue<Interval>(new Comparator<Interval>() {
+      //Sorted by increasing order of start
+      @Override
+      public int compare(Interval i1, Interval i2) {
+         return i1.start - i2.start;
+      }
+   });
+
+   // public void linearScanAlgorithm(String scopeLabel)
+   // { //add in register allocation for the particular label scope
+   //   // total available registers - 18 s0-s7, t0-t9
+
+   //    registerAllocation.put(scopeLabel, new HashMap<Integer, String>());
+   //    active.clear();
+   //    liveIntervals.addAll(intervals.get(scopeLabel).values());
+      
+   //    while(!liveIntervals.isEmpty())
+   //    {
+   //       Interval interval = liveIntervals.poll();
+   //       while(!active.isEmpty() && active.peek().end < interval.start)
+   //       {
+   //          availableRegisters.push(registerAllocation.get(scopeLabel).get(active.poll().temp));
+   //       }
+   //       if(availableRegisters.isEmpty())
+   //       { //check active intervals and pop one with max end time
+   //          //last element in active
+
+   //       }
+   // }
+
+   public void registerAllocate()
+   {
+      populateRegisters();
+      Iterator<String> itr = intervals.keySet().iterator();
+      while(itr.hasNext()){
+         String key = itr.next();
+         //linearScanAlgorithm(key);
+      }
+   }
+
+   public void printRegisterAllocation()
+   {
+      Iterator<String> itr = registerAllocation.keySet().iterator();
+      while(itr.hasNext()){
+         String key = itr.next();
+         System.out.println("Scope: " + key);
+         Iterator<Integer> itr2 = registerAllocation.get(key).keySet().iterator();
+         while(itr2.hasNext()){
+            Integer key2 = itr2.next();
+            System.out.print("\tTemp: " + key2);
+            System.out.println(" Register: " + registerAllocation.get(key).get(key2));
+            System.out.println();
+         }
+      }
+   }
+
 
    //
    // User-generated visitor methods below
@@ -240,56 +374,16 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       n.f3.accept(this, argu);
       n.f4.accept(this, argu);
 
-      // Fill in the in and out sets for each basic block using def and use sets
-      // and the in and out sets of the previous basic block
       fillInOut();
       sortByScope();
       findIntervalsByScope();
+      registerAllocate();
+      printRegisterAllocation();
 
-      // Iterator<String> itr = sortedInstrs.keySet().iterator();
-      // while(itr.hasNext()){
-      //    String key = itr.next();
-      //    System.out.println("Scope: " + key);
-      //    Iterator<Integer> itr2 = sortedInstrs.get(key).keySet().iterator();
-      //    while(itr2.hasNext()){
-      //       Integer key2 = itr2.next();
-      //       BasicBlock bb = sortedInstrs.get(key).get(key2);
-      //       System.out.println("\tBasic Block: " + key2);
-      //       System.out.println("\t\tType: " + bb.type);
-      //       System.out.println("\t\tLabel: " + bb.label);
-      //       System.out.println("\t\tNext: " + bb.next);
-      //       System.out.println("\t\tUse: " + bb.use);
-      //       System.out.println("\t\tDef: " + bb.def);
-      //       System.out.println("\t\tIn: " + bb.in);
-      //       System.out.println("\t\tOut: " + bb.out);
-      //       System.out.println();
-      //    }
-      // }
-      // //print labels
-      // System.out.println("Labels:");
-      // Iterator<String> itr3 = labelMap.keySet().iterator();
-      // while(itr3.hasNext()){
-      //    String key = itr3.next();
-      //    System.out.println("\t" + key + ": " + labelMap.get(key));
-      // }
+      //printBasicBlocks();
+      //printLabels();
+      //printIntervals();
 
-      //print intervals
-      Iterator<String> itr4 = intervals.keySet().iterator();
-      while(itr4.hasNext()){
-         String key = itr4.next();
-         System.out.println("Scope: " + key);
-         Iterator<Integer> itr5 = intervals.get(key).keySet().iterator();
-         while(itr5.hasNext()){
-            Integer key2 = itr5.next();
-            Interval interval = intervals.get(key).get(key2);
-            System.out.println("\tTemp: " + key2);
-            System.out.println("\t\tStart: " + interval.start);
-            System.out.println("\t\tEnd: " + interval.end);
-            System.out.println();
-         }
-      }
-
-      
       return _ret;
    }
 
@@ -775,72 +869,5 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          ((ScopeArgument)argu).labelPresent = true;
       }
       return label;
-   }
-}
-
-class ProcedureProperties
-{
-   public int argCount;
-   public int localVarCount;
-   public int tempCount;
-}
-
-class BasicBlock
-{
-   public HashSet<Integer> def;
-   public HashSet<Integer> use;
-   public HashSet<Integer> in;
-   public HashSet<Integer> out;
-   public String type;
-   public int next;
-   public String label;
-   public int labelNext;
-   public String scope;
-   public int lineNumber;
-
-   public BasicBlock()
-   {
-      def = new HashSet<Integer>();
-      use = new HashSet<Integer>();
-      in = new HashSet<Integer>();
-      out = new HashSet<Integer>();
-   }
-}
-
-class SimpleExpReturn
-{
-   public int type;
-   public int temp;
-   public int number;
-   public String label;
-}
-
-class ExpReturn
-{
-   public HashSet<Integer> use;
-   public String type;
-
-   public ExpReturn()
-   {
-      use = new HashSet<Integer>();
-   }
-}
-
-class ScopeArgument
-{
-   public String scope;
-   public boolean isLabel;
-   public boolean labelPresent;
-}
-
-class Interval
-{
-   public int start;
-   public int end;
-
-   public Interval(int start, int end)
-   {
-      this.start = start;
-      this.end = end;
    }
 }
