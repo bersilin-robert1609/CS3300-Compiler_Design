@@ -8,8 +8,6 @@ import java.util.*;
 
 //import jdk.nashorn.internal.codegen.SpillObjectCreator;
 
-
-
 /**
  * Provides default methods which visit each node in the tree in depth-first
  * order.  Your visitors may extend this class.
@@ -18,8 +16,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    //
    // Auto class visitors--probably don't need to be overridden.
    //
-	
-	
    public R visit(NodeList n, A argu) {
       R _ret=null;
       int _count=0;
@@ -63,24 +59,71 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
    public R visit(NodeToken n, A argu) { return (R)n.tokenImage; }
 
-   /**
-    * f0 -> Label()
-    * f1 -> "["
-    * f2 -> IntegerLiteral()
-    * f3 -> "]"
-    * f4 -> StmtExp()
-    */
-   public R visit(Procedure n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);      
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);    
-      n.f3.accept(this, argu);
-      n.f4.accept(this, argu);
-      return _ret;
+   HashMap<String, ProcedureProperties> procProps = new HashMap<String, ProcedureProperties>();
+   HashMap<Integer, String> registerAllocation = new HashMap<Integer, String>();
+   TreeMap<Integer, BasicBlock> instructions = new TreeMap<Integer, BasicBlock>();
+   TreeMap<String, Integer> labelMap = new TreeMap<String, Integer>();
+   HashMap<Integer, ExpReturn> expMap = new HashMap<Integer, ExpReturn>();
+   HashMap<String, TreeMap<Integer, BasicBlock>> sortedInstrs = new HashMap<String, TreeMap<Integer, BasicBlock>>();
+   int stage = 1;
+   int expCount = 0;
+   public int nextExp() {return expCount++;}
+
+   public void fillInOut()
+   {
+      // Fill in the in and out sets for each basic block using def and use sets
+      // and the in and out sets of the previous basic block
+      boolean changed = true;
+      while(changed)
+      {
+         changed = false;
+         for(Map.Entry<Integer, BasicBlock> entry : instructions.entrySet())
+         {
+            BasicBlock bb = entry.getValue();
+            HashSet<Integer> oldIn = new HashSet<Integer>(bb.in);
+            HashSet<Integer> oldOut = new HashSet<Integer>(bb.out);
+            bb.in.clear();
+            bb.in.addAll(bb.use);
+            ArrayList<Integer> outMinusDef = new ArrayList<Integer>(bb.out);
+            outMinusDef.removeAll(bb.def);
+            bb.in.addAll(outMinusDef);
+            bb.out.clear();
+
+            if(bb.type.equals("JUMP")) 
+            {
+               if(labelMap.containsKey(bb.label)) 
+               {
+                  int labelNumber = labelMap.get(bb.label) + 1;
+                  if(instructions.containsKey(labelNumber)) bb.out.addAll(instructions.get(labelNumber).in);
+               }
+            }
+            else if(bb.type.equals("CJUMP"))
+            {
+               if(instructions.containsKey(bb.next)) bb.out.addAll(instructions.get(bb.next).in);
+               if(labelMap.containsKey(bb.label)) 
+               {
+                  int labelNumber = labelMap.get(bb.label) + 1;
+                  if(instructions.containsKey(labelNumber)) bb.out.addAll(instructions.get(labelNumber).in);
+               }
+            }
+            else if(instructions.containsKey(bb.next)) bb.out.addAll(instructions.get(bb.next).in);
+            
+            if(!oldIn.equals(bb.in) || !oldOut.equals(bb.out)) changed = true;
+         }
+      }
    }
 
-//
+   public void sortByScope()
+   {
+      for(Map.Entry<Integer, BasicBlock> entry : instructions.entrySet())
+      {
+         BasicBlock bb = entry.getValue();
+         if(!sortedInstrs.containsKey(bb.scope)) sortedInstrs.put(bb.scope, new TreeMap<Integer, BasicBlock>());
+         sortedInstrs.get(bb.scope).put(entry.getKey(), bb);
+      }
+   }
+
+   //
    // User-generated visitor methods below
    //
 
@@ -93,11 +136,93 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(Goal n, A argu) {
       R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
+      ScopeArgument scope = new ScopeArgument();
+      scope.scope = "MAIN";
+      scope.isLabel = true;
+      n.f1.accept(this, (A)scope);
       n.f2.accept(this, argu);      
       n.f3.accept(this, argu);
-      n.f4.accept(this, argu);      
+      n.f4.accept(this, argu);
+
+      // Fill in the in and out sets for each basic block using def and use sets
+      // and the in and out sets of the previous basic block
+      fillInOut();
+      sortByScope();
+
+      Iterator<String> itr = sortedInstrs.keySet().iterator();
+      while(itr.hasNext()){
+         String key = itr.next();
+         System.out.println("Scope: " + key);
+         Iterator<Integer> itr2 = sortedInstrs.get(key).keySet().iterator();
+         while(itr2.hasNext()){
+            Integer key2 = itr2.next();
+            BasicBlock bb = sortedInstrs.get(key).get(key2);
+            System.out.println("\tBasic Block: " + key2);
+            System.out.println("\t\tType: " + bb.type);
+            System.out.println("\t\tLabel: " + bb.label);
+            System.out.println("\t\tNext: " + bb.next);
+            System.out.println("\t\tUse: " + bb.use);
+            System.out.println("\t\tDef: " + bb.def);
+            System.out.println("\t\tIn: " + bb.in);
+            System.out.println("\t\tOut: " + bb.out);
+            System.out.println();
+         }
+      }
+      //print labels
+      System.out.println("Labels:");
+      Iterator<String> itr3 = labelMap.keySet().iterator();
+      while(itr3.hasNext()){
+         String key = itr3.next();
+         System.out.println("\t" + key + ": " + labelMap.get(key));
+      }
+      
+      return _ret;
+   }
+
+   /**
+    * f0 -> Label()
+    * f1 -> "["
+    * f2 -> IntegerLiteral()
+    * f3 -> "]"
+    * f4 -> StmtExp()
+    */
+   public R visit(Procedure n, A argu) 
+   {
+      R _ret=null;
+
+      ScopeArgument scope = new ScopeArgument();
+      scope.isLabel = false;
+
+      String label = n.f0.accept(this, (A)scope).toString();      
+      n.f1.accept(this, argu);
+      int arguments = Integer.parseInt(n.f2.accept(this, argu).toString());
+
+      ProcedureProperties procedure = new ProcedureProperties();
+      procedure.argCount = arguments;   
+      procProps.put(label, procedure);
+
+      scope.scope = label;
+      scope.isLabel = true;
+
+      n.f3.accept(this, argu);
+      n.f4.accept(this, (A)scope);
+      return _ret;
+   }
+
+   /**
+    * f0 -> "BEGIN"
+    * f1 -> StmtList()
+    * f2 -> "RETURN"
+    * f3 -> SimpleExp()
+    * f4 -> "END"
+    */
+    public R visit(StmtExp n, A argu) {
+      R _ret=null;
+      n.f0.accept(this, argu);
+      n.f1.accept(this, argu);
+      n.f2.accept(this, argu);
+      n.f3.accept(this, argu);
+      n.f4.accept(this, argu);
       return _ret;
    }
 
@@ -106,7 +231,14 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(StmtList n, A argu) {
       R _ret=null;
-      n.f0.accept(this, argu);
+      Vector<Node> v = n.f0.nodes;
+      for(int i = 0; i < v.size(); i++) {
+         ScopeArgument scope = (ScopeArgument)argu;
+         scope.isLabel = true;
+         v.elementAt(i).accept(this, (A)scope);
+      }
+      
+      // n.f0.accept(this, argu);
       return _ret;
    }
 
@@ -121,8 +253,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     *       | PrintStmt()
     */
    public R visit(Stmt n, A argu) {
-      R _ret=null;  
-      n.f0.accept(this, argu);      
+      R _ret=null;
+      ((ScopeArgument)argu).isLabel = false;
+      n.f0.accept(this, argu);
+      ((ScopeArgument)argu).isLabel = true;      
       return _ret;
    }
 
@@ -130,18 +264,50 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f0 -> "NOOP"
     */
    public R visit(NoOpStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "NOOP";
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
     * f0 -> "ERROR"
     */
    public R visit(ErrorStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "ERROR";
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
@@ -149,23 +315,58 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Temp()
     * f2 -> Label()
     */
-   public R visit(CJumpStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      return _ret;
+   public R visit(CJumpStmt n, A argu) 
+   {
+      int temp = Integer.parseInt(n.f1.accept(this, argu).toString());
+      String label = n.f2.accept(this, argu).toString();
+
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "CJUMP";
+         newBlock.use.add(temp);
+         newBlock.label = label;
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
     * f0 -> "JUMP"
     * f1 -> Label()
     */
-   public R visit(JumpStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      return _ret;
+   public R visit(JumpStmt n, A argu) 
+   {
+      String label = n.f1.accept(this, argu).toString();
+
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "JUMP";
+         newBlock.label = label;
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
@@ -174,13 +375,31 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f2 -> IntegerLiteral()
     * f3 -> Temp()
     */
-   public R visit(HStoreStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      n.f3.accept(this, argu);
-      return _ret;
+   public R visit(HStoreStmt n, A argu) 
+   {
+      int temp1 = Integer.parseInt(n.f1.accept(this, argu).toString());
+      int temp2 = Integer.parseInt(n.f3.accept(this, argu).toString());
+      int offset = Integer.parseInt(n.f2.accept(this, argu).toString());
+
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "HSTORE";
+         newBlock.use.add(temp1);
+         newBlock.use.add(temp2);
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
@@ -189,13 +408,31 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f2 -> Temp()
     * f3 -> IntegerLiteral()
     */
-   public R visit(HLoadStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      n.f3.accept(this, argu);
-      return _ret;
+   public R visit(HLoadStmt n, A argu) 
+   {
+      int temp1 = Integer.parseInt(n.f1.accept(this, argu).toString());
+      int temp2 = Integer.parseInt(n.f2.accept(this, argu).toString());
+      int offset = Integer.parseInt(n.f3.accept(this, argu).toString());
+
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "HLOAD";
+         newBlock.use.add(temp2);
+         newBlock.def.add(temp1);
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
@@ -203,23 +440,59 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Temp()
     * f2 -> Exp()
     */
-   public R visit(MoveStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      return _ret;
+   public R visit(MoveStmt n, A argu) 
+   {
+      int temp = Integer.parseInt(n.f1.accept(this, argu).toString());
+      int expNumber = Integer.parseInt(n.f2.accept(this, argu).toString());
+      ExpReturn expReturn = expMap.get(expNumber);
+
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "MOVE";
+         newBlock.use.addAll(expReturn.use);
+         newBlock.def.add(temp);
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
     * f0 -> "PRINT"
     * f1 -> SimpleExp()
     */
-   public R visit(PrintStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);      
-      return _ret;
+   public R visit(PrintStmt n, A argu) 
+   {
+      SimpleExpReturn simpleExpReturn = (SimpleExpReturn)n.f1.accept(this, argu);
+
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "PRINT";
+         if(simpleExpReturn.type == 0) newBlock.use.add(simpleExpReturn.temp);
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f0.beginLine;
+         newBlock.next = lineNumber + 1;
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
@@ -228,27 +501,28 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     *       | BinOp()
     *       | SimpleExp()
     */
-   public R visit(Exp n, A argu) {
-      R _ret=null;
-      _ret = n.f0.accept(this, argu);
-      return _ret;
-   }
+   public R visit(Exp n, A argu) 
+   {
+      SimpleExpReturn simpleExpReturn;
+      ExpReturn expReturn;
+      if(n.f0.which == 3)
+      {
+         simpleExpReturn = (SimpleExpReturn)n.f0.accept(this, argu);
+         expReturn = new ExpReturn();
+         if(simpleExpReturn.type == 0) expReturn.use.add(simpleExpReturn.temp);
+      }
+      else
+      {
+         int expNumber = Integer.parseInt(n.f0.accept(this, argu).toString());
+         expReturn = expMap.get(expNumber);
+         expMap.remove(expNumber);
+      }
 
-   /**
-    * f0 -> "BEGIN"
-    * f1 -> StmtList()
-    * f2 -> "RETURN"
-    * f3 -> SimpleExp()
-    * f4 -> "END"
-    */
-   public R visit(StmtExp n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      n.f3.accept(this, argu);
-      n.f4.accept(this, argu);
-      return _ret;
+      expReturn.type = "EXP";
+      int expNumber = nextExp();
+      expMap.put(expNumber, expReturn);
+
+      return (R)(Integer.toString(expNumber));
    }
 
    /**
@@ -258,26 +532,40 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f3 -> ( Temp() )*
     * f4 -> ")"
     */
-   public R visit(Call n, A argu) {
-      R _ret=null;
-      
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      n.f3.accept(this, argu);
-      n.f4.accept(this, argu);
-      return _ret;
+   public R visit(Call n, A argu) 
+   {
+      SimpleExpReturn simpleExpReturn = (SimpleExpReturn)n.f1.accept(this, argu);
+
+      ExpReturn expReturn = new ExpReturn();
+      if(simpleExpReturn.type == 0) expReturn.use.add(simpleExpReturn.temp);
+      expReturn.type = "CALL";
+
+      Vector<Node> nodes = n.f3.nodes;
+      for(int i = 0; i < nodes.size(); i++) 
+         expReturn.use.add(Integer.parseInt(nodes.get(i).accept(this, argu).toString()));
+
+      int expNumber = nextExp();
+      expMap.put(expNumber, expReturn);
+
+      return (R)(Integer.toString(expNumber));
    }
 
    /**
     * f0 -> "HALLOCATE"
     * f1 -> SimpleExp()
     */
-   public R visit(HAllocate n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      return _ret;
+   public R visit(HAllocate n, A argu) 
+   {  
+      SimpleExpReturn simpleExpReturn = (SimpleExpReturn)n.f1.accept(this, argu);
+
+      ExpReturn expReturn = new ExpReturn();
+      if(simpleExpReturn.type == 0) expReturn.use.add(simpleExpReturn.temp);
+      expReturn.type = "HALLOCATE";
+
+      int expNumber = nextExp();
+      expMap.put(expNumber, expReturn);
+
+      return (R)(Integer.toString(expNumber));
    }
 
    /**
@@ -285,12 +573,21 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Temp()
     * f2 -> SimpleExp()
     */
-   public R visit(BinOp n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      return _ret;
+   public R visit(BinOp n, A argu) 
+   {
+      String op = n.f0.accept(this, argu).toString();
+      Integer temp = Integer.parseInt(n.f1.accept(this, argu).toString());
+      SimpleExpReturn simpleExpReturn = (SimpleExpReturn)n.f2.accept(this, argu);
+
+      ExpReturn expReturn = new ExpReturn();
+      expReturn.use.add(temp);
+      if(simpleExpReturn.type == 0) expReturn.use.add(simpleExpReturn.temp);
+      expReturn.type = "BINOP";
+
+      int expNumber = nextExp();
+      expMap.put(expNumber, expReturn);
+
+      return (R)(Integer.toString(expNumber));
    }
 
    /**
@@ -302,9 +599,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     *       | "DIV"
     */
    public R visit(Operator n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+      return n.f0.accept(this, argu);
    }
 
    /**
@@ -312,10 +607,18 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     *       | IntegerLiteral()
     *       | Label()
     */
-   public R visit(SimpleExp n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+   public R visit(SimpleExp n, A argu) 
+   {
+      R ret = n.f0.accept(this, argu);
+
+      SimpleExpReturn simpleExpReturn = new SimpleExpReturn();
+      simpleExpReturn.type = n.f0.which;
+
+      if(n.f0.which == 0) simpleExpReturn.temp = Integer.parseInt(ret.toString());
+      else if(n.f0.which == 1) simpleExpReturn.number = Integer.parseInt(ret.toString());
+      else if(n.f0.which == 2) simpleExpReturn.label = ret.toString();
+
+      return (R)simpleExpReturn;
    }
 
    /**
@@ -323,28 +626,81 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> IntegerLiteral()
     */
    public R visit(Temp n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      return _ret;
+      return n.f1.accept(this, argu);
    }
 
    /**
     * f0 -> <INTEGER_LITERAL>
     */
    public R visit(IntegerLiteral n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+      return n.f0.accept(this, argu);
    }
 
    /**
     * f0 -> <IDENTIFIER>
     */
-   public R visit(Label n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+   public R visit(Label n, A argu) 
+   {
+      R label = n.f0.accept(this, argu);
+      int lineNumber = n.f0.beginLine;
+      if(((ScopeArgument)argu).isLabel){
+         labelMap.put(label.toString(), lineNumber);
+         ((ScopeArgument)argu).labelPresent = true;
+      }
+      return label;
    }
+}
 
+class ProcedureProperties
+{
+   public int argCount;
+   public int localVarCount;
+   public int tempCount;
+}
+
+class BasicBlock
+{
+   public HashSet<Integer> def;
+   public HashSet<Integer> use;
+   public HashSet<Integer> in;
+   public HashSet<Integer> out;
+   public String type;
+   public int next;
+   public String label;
+   public int labelNext;
+   public String scope;
+
+   public BasicBlock()
+   {
+      def = new HashSet<Integer>();
+      use = new HashSet<Integer>();
+      in = new HashSet<Integer>();
+      out = new HashSet<Integer>();
+   }
+}
+
+class SimpleExpReturn
+{
+   public int type;
+   public int temp;
+   public int number;
+   public String label;
+}
+
+class ExpReturn
+{
+   public HashSet<Integer> use;
+   public String type;
+
+   public ExpReturn()
+   {
+      use = new HashSet<Integer>();
+   }
+}
+
+class ScopeArgument
+{
+   public String scope;
+   public boolean isLabel;
+   public boolean labelPresent;
 }

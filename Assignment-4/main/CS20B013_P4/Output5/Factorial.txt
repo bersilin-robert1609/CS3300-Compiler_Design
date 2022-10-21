@@ -1,0 +1,261 @@
+2
+The def is [2]
+The use is []
+The in is []
+The out is [2]
+The next is 3
+The label is null
+The type is MOVE
+The scope is MAIN
+3
+The def is [3]
+The use is [2]
+The in is [2]
+The out is [3]
+The next is 4
+The label is null
+The type is MOVE
+The scope is MAIN
+4
+The def is [1]
+The use is [3]
+The in is [3]
+The out is [1]
+The next is 5
+The label is null
+The type is MOVE
+The scope is MAIN
+5
+The def is [5]
+The use is []
+The in is [1]
+The out is [1, 5]
+The next is 6
+The label is null
+The type is MOVE
+The scope is MAIN
+6
+The def is [6]
+The use is [5]
+The in is [1, 5]
+The out is [1, 6]
+The next is 7
+The label is null
+The type is MOVE
+The scope is MAIN
+7
+The def is [4]
+The use is [6]
+The in is [1, 6]
+The out is [1, 4]
+The next is 8
+The label is null
+The type is MOVE
+The scope is MAIN
+8
+The def is [7]
+The use is []
+The in is [1, 4]
+The out is [1, 4, 7]
+The next is 9
+The label is null
+The type is MOVE
+The scope is MAIN
+9
+The def is []
+The use is [1, 7]
+The in is [1, 4, 7]
+The out is [1, 4]
+The next is 10
+The label is null
+The type is HSTORE
+The scope is MAIN
+10
+The def is []
+The use is [1, 4]
+The in is [1, 4]
+The out is [4]
+The next is 11
+The label is null
+The type is HSTORE
+The scope is MAIN
+11
+The def is [0]
+The use is [4]
+The in is [4]
+The out is [0]
+The next is 12
+The label is null
+The type is MOVE
+The scope is MAIN
+12
+The def is [8]
+The use is [0]
+The in is [0]
+The out is [0, 8]
+The next is 13
+The label is null
+The type is HLOAD
+The scope is MAIN
+13
+The def is [9]
+The use is [8]
+The in is [0, 8]
+The out is [0, 9]
+The next is 14
+The label is null
+The type is HLOAD
+The scope is MAIN
+14
+The def is [10]
+The use is []
+The in is [0, 9]
+The out is [0, 9, 10]
+The next is 15
+The label is null
+The type is MOVE
+The scope is MAIN
+15
+The def is [11]
+The use is [0, 9, 10]
+The in is [0, 9, 10]
+The out is [11]
+The next is 16
+The label is null
+The type is MOVE
+The scope is MAIN
+16
+The def is []
+The use is [11]
+The in is [11]
+The out is []
+The next is 17
+The label is null
+The type is PRINT
+The scope is MAIN
+20
+The def is [3]
+The use is []
+The in is [0, 1]
+The out is [0, 1, 3]
+The next is 21
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+21
+The def is [4]
+The use is [1, 3]
+The in is [0, 1, 3]
+The out is [0, 1, 4]
+The next is 22
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+22
+The def is []
+The use is [4]
+The in is [0, 1, 4]
+The out is [0, 1]
+The next is 23
+The label is L2
+The type is CJUMP
+The scope is Fac_ComputeFac
+23
+The def is [6]
+The use is []
+The in is []
+The out is [6]
+The next is 24
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+24
+The def is [5]
+The use is [6]
+The in is [6]
+The out is []
+The next is 25
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+25
+The def is []
+The use is []
+The in is []
+The out is []
+The next is 26
+The label is L3
+The type is JUMP
+The scope is Fac_ComputeFac
+27
+The def is [7]
+The use is [0]
+The in is [0, 1]
+The out is [1, 7]
+The next is 28
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+28
+The def is [8]
+The use is [7]
+The in is [1, 7]
+The out is [1, 7, 8]
+The next is 29
+The label is null
+The type is HLOAD
+The scope is Fac_ComputeFac
+29
+The def is [9]
+The use is [8]
+The in is [1, 7, 8]
+The out is [1, 7, 9]
+The next is 30
+The label is null
+The type is HLOAD
+The scope is Fac_ComputeFac
+30
+The def is [10]
+The use is []
+The in is [1, 7, 9]
+The out is [1, 7, 9, 10]
+The next is 31
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+31
+The def is [11]
+The use is [1, 10]
+The in is [1, 7, 9, 10]
+The out is [1, 7, 9, 11]
+The next is 32
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+32
+The def is [12]
+The use is [7, 9, 11]
+The in is [1, 7, 9, 11]
+The out is [1, 12]
+The next is 33
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+33
+The def is [13]
+The use is [1, 12]
+The in is [1, 12]
+The out is [13]
+The next is 34
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
+34
+The def is [5]
+The use is [13]
+The in is [13]
+The out is []
+The next is 35
+The label is null
+The type is MOVE
+The scope is Fac_ComputeFac
