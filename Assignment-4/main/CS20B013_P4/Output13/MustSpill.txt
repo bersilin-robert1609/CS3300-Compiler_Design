@@ -1,0 +1,142 @@
+Scope: MAIN
+	Temp: 0
+		Start: 2
+		End: 3
+
+Scope: Test35
+	Temp: 0
+		Start: 7
+		End: 74
+
+	Temp: 1
+		Start: 7
+		End: 73
+
+	Temp: 2
+		Start: 7
+		End: 72
+
+	Temp: 3
+		Start: 7
+		End: 71
+
+	Temp: 4
+		Start: 7
+		End: 70
+
+	Temp: 5
+		Start: 7
+		End: 69
+
+	Temp: 6
+		Start: 7
+		End: 68
+
+	Temp: 7
+		Start: 7
+		End: 67
+
+	Temp: 8
+		Start: 7
+		End: 66
+
+	Temp: 9
+		Start: 7
+		End: 65
+
+	Temp: 10
+		Start: 7
+		End: 64
+
+	Temp: 11
+		Start: 7
+		End: 63
+
+	Temp: 12
+		Start: 7
+		End: 62
+
+	Temp: 13
+		Start: 7
+		End: 61
+
+	Temp: 14
+		Start: 7
+		End: 60
+
+	Temp: 15
+		Start: 7
+		End: 59
+
+	Temp: 16
+		Start: 7
+		End: 58
+
+	Temp: 17
+		Start: 7
+		End: 57
+
+	Temp: 18
+		Start: 7
+		End: 56
+
+	Temp: 19
+		Start: 7
+		End: 55
+
+	Temp: 20
+		Start: 7
+		End: 54
+
+	Temp: 21
+		Start: 7
+		End: 53
+
+	Temp: 22
+		Start: 7
+		End: 52
+
+	Temp: 23
+		Start: 7
+		End: 51
+
+	Temp: 24
+		Start: 7
+		End: 50
+
+	Temp: 25
+		Start: 7
+		End: 49
+
+	Temp: 26
+		Start: 7
+		End: 48
+
+	Temp: 27
+		Start: 7
+		End: 47
+
+	Temp: 28
+		Start: 7
+		End: 46
+
+	Temp: 29
+		Start: 7
+		End: 45
+
+	Temp: 30
+		Start: 7
+		End: 44
+
+	Temp: 31
+		Start: 7
+		End: 43
+
+	Temp: 32
+		Start: 7
+		End: 42
+
+	Temp: 33
+		Start: 7
+		End: 41
+

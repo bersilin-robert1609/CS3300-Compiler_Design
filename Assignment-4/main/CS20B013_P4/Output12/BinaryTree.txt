@@ -1,0 +1,2078 @@
+Scope: BT_Start
+	Temp: 2
+		Start: 19
+		End: 186
+
+	Temp: 3
+		Start: 19
+		End: 63
+
+	Temp: 4
+		Start: 19
+		End: 19
+
+	Temp: 5
+		Start: 19
+		End: 20
+
+	Temp: 6
+		Start: 19
+		End: 78
+
+	Temp: 7
+		Start: 19
+		End: 22
+
+	Temp: 8
+		Start: 19
+		End: 23
+
+	Temp: 9
+		Start: 19
+		End: 25
+
+	Temp: 10
+		Start: 19
+		End: 27
+
+	Temp: 11
+		Start: 19
+		End: 29
+
+	Temp: 12
+		Start: 19
+		End: 31
+
+	Temp: 13
+		Start: 19
+		End: 33
+
+	Temp: 14
+		Start: 19
+		End: 35
+
+	Temp: 15
+		Start: 19
+		End: 37
+
+	Temp: 16
+		Start: 19
+		End: 39
+
+	Temp: 17
+		Start: 19
+		End: 41
+
+	Temp: 18
+		Start: 19
+		End: 43
+
+	Temp: 19
+		Start: 19
+		End: 45
+
+	Temp: 20
+		Start: 19
+		End: 47
+
+	Temp: 21
+		Start: 19
+		End: 49
+
+	Temp: 22
+		Start: 19
+		End: 51
+
+	Temp: 23
+		Start: 19
+		End: 53
+
+	Temp: 24
+		Start: 19
+		End: 55
+
+	Temp: 25
+		Start: 19
+		End: 57
+
+	Temp: 26
+		Start: 19
+		End: 59
+
+	Temp: 27
+		Start: 19
+		End: 61
+
+	Temp: 28
+		Start: 19
+		End: 63
+
+	Temp: 29
+		Start: 19
+		End: 74
+
+	Temp: 30
+		Start: 19
+		End: 65
+
+	Temp: 31
+		Start: 19
+		End: 67
+
+	Temp: 32
+		Start: 19
+		End: 69
+
+	Temp: 33
+		Start: 19
+		End: 72
+
+	Temp: 34
+		Start: 19
+		End: 72
+
+	Temp: 35
+		Start: 19
+		End: 74
+
+	Temp: 36
+		Start: 19
+		End: 75
+
+	Temp: 38
+		Start: 19
+		End: 84
+
+	Temp: 39
+		Start: 19
+		End: 82
+
+	Temp: 40
+		Start: 19
+		End: 84
+
+	Temp: 41
+		Start: 19
+		End: 84
+
+	Temp: 42
+		Start: 19
+		End: 85
+
+	Temp: 43
+		Start: 19
+		End: 89
+
+	Temp: 44
+		Start: 19
+		End: 88
+
+	Temp: 45
+		Start: 19
+		End: 89
+
+	Temp: 46
+		Start: 19
+		End: 90
+
+	Temp: 47
+		Start: 19
+		End: 92
+
+	Temp: 48
+		Start: 19
+		End: 97
+
+	Temp: 49
+		Start: 19
+		End: 95
+
+	Temp: 50
+		Start: 19
+		End: 97
+
+	Temp: 51
+		Start: 19
+		End: 97
+
+	Temp: 52
+		Start: 19
+		End: 98
+
+	Temp: 53
+		Start: 19
+		End: 102
+
+	Temp: 54
+		Start: 19
+		End: 101
+
+	Temp: 55
+		Start: 19
+		End: 102
+
+	Temp: 56
+		Start: 19
+		End: 103
+
+	Temp: 57
+		Start: 19
+		End: 108
+
+	Temp: 58
+		Start: 19
+		End: 106
+
+	Temp: 59
+		Start: 19
+		End: 108
+
+	Temp: 60
+		Start: 19
+		End: 108
+
+	Temp: 61
+		Start: 19
+		End: 109
+
+	Temp: 62
+		Start: 19
+		End: 114
+
+	Temp: 63
+		Start: 19
+		End: 112
+
+	Temp: 64
+		Start: 19
+		End: 114
+
+	Temp: 65
+		Start: 19
+		End: 114
+
+	Temp: 66
+		Start: 19
+		End: 115
+
+	Temp: 67
+		Start: 19
+		End: 120
+
+	Temp: 68
+		Start: 19
+		End: 118
+
+	Temp: 69
+		Start: 19
+		End: 120
+
+	Temp: 70
+		Start: 19
+		End: 120
+
+	Temp: 71
+		Start: 19
+		End: 121
+
+	Temp: 72
+		Start: 19
+		End: 126
+
+	Temp: 73
+		Start: 19
+		End: 124
+
+	Temp: 74
+		Start: 19
+		End: 126
+
+	Temp: 75
+		Start: 19
+		End: 126
+
+	Temp: 76
+		Start: 19
+		End: 127
+
+	Temp: 77
+		Start: 19
+		End: 132
+
+	Temp: 78
+		Start: 19
+		End: 130
+
+	Temp: 79
+		Start: 19
+		End: 132
+
+	Temp: 80
+		Start: 19
+		End: 132
+
+	Temp: 81
+		Start: 19
+		End: 133
+
+	Temp: 82
+		Start: 19
+		End: 138
+
+	Temp: 83
+		Start: 19
+		End: 136
+
+	Temp: 84
+		Start: 19
+		End: 138
+
+	Temp: 85
+		Start: 19
+		End: 138
+
+	Temp: 86
+		Start: 19
+		End: 139
+
+	Temp: 87
+		Start: 19
+		End: 143
+
+	Temp: 88
+		Start: 19
+		End: 142
+
+	Temp: 89
+		Start: 19
+		End: 143
+
+	Temp: 90
+		Start: 19
+		End: 144
+
+	Temp: 91
+		Start: 19
+		End: 149
+
+	Temp: 92
+		Start: 19
+		End: 147
+
+	Temp: 93
+		Start: 19
+		End: 149
+
+	Temp: 94
+		Start: 19
+		End: 149
+
+	Temp: 95
+		Start: 19
+		End: 150
+
+	Temp: 96
+		Start: 19
+		End: 155
+
+	Temp: 97
+		Start: 19
+		End: 153
+
+	Temp: 98
+		Start: 19
+		End: 155
+
+	Temp: 99
+		Start: 19
+		End: 155
+
+	Temp: 100
+		Start: 19
+		End: 156
+
+	Temp: 101
+		Start: 19
+		End: 161
+
+	Temp: 102
+		Start: 19
+		End: 159
+
+	Temp: 103
+		Start: 19
+		End: 161
+
+	Temp: 104
+		Start: 19
+		End: 161
+
+	Temp: 105
+		Start: 19
+		End: 162
+
+	Temp: 106
+		Start: 19
+		End: 167
+
+	Temp: 107
+		Start: 19
+		End: 165
+
+	Temp: 108
+		Start: 19
+		End: 167
+
+	Temp: 109
+		Start: 19
+		End: 167
+
+	Temp: 110
+		Start: 19
+		End: 168
+
+	Temp: 111
+		Start: 19
+		End: 173
+
+	Temp: 112
+		Start: 19
+		End: 171
+
+	Temp: 113
+		Start: 19
+		End: 173
+
+	Temp: 114
+		Start: 19
+		End: 173
+
+	Temp: 115
+		Start: 19
+		End: 174
+
+	Temp: 116
+		Start: 19
+		End: 179
+
+	Temp: 117
+		Start: 19
+		End: 177
+
+	Temp: 118
+		Start: 19
+		End: 179
+
+	Temp: 119
+		Start: 19
+		End: 179
+
+	Temp: 120
+		Start: 19
+		End: 180
+
+	Temp: 121
+		Start: 19
+		End: 184
+
+	Temp: 122
+		Start: 19
+		End: 183
+
+	Temp: 123
+		Start: 19
+		End: 184
+
+	Temp: 124
+		Start: 19
+		End: 185
+
+	Temp: 125
+		Start: 19
+		End: 190
+
+	Temp: 126
+		Start: 19
+		End: 188
+
+	Temp: 127
+		Start: 19
+		End: 190
+
+	Temp: 128
+		Start: 19
+		End: 190
+
+	Temp: 129
+		Start: 19
+		End: 191
+
+Scope: MAIN
+	Temp: 0
+		Start: 2
+		End: 13
+
+	Temp: 1
+		Start: 2
+		End: 9
+
+	Temp: 2
+		Start: 2
+		End: 2
+
+	Temp: 3
+		Start: 2
+		End: 3
+
+	Temp: 4
+		Start: 2
+		End: 10
+
+	Temp: 5
+		Start: 2
+		End: 5
+
+	Temp: 6
+		Start: 2
+		End: 6
+
+	Temp: 7
+		Start: 2
+		End: 8
+
+	Temp: 8
+		Start: 2
+		End: 12
+
+	Temp: 9
+		Start: 2
+		End: 13
+
+	Temp: 10
+		Start: 2
+		End: 14
+
+Scope: Tree_Compare
+	Temp: 1
+		Start: 263
+		End: 280
+
+	Temp: 2
+		Start: 263
+		End: 268
+
+	Temp: 5
+		Start: 263
+		End: 263
+
+	Temp: 6
+		Start: 263
+		End: 276
+
+	Temp: 7
+		Start: 263
+		End: 265
+
+	Temp: 8
+		Start: 263
+		End: 266
+
+	Temp: 9
+		Start: 263
+		End: 270
+
+	Temp: 10
+		Start: 263
+		End: 268
+
+	Temp: 11
+		Start: 263
+		End: 269
+
+	Temp: 12
+		Start: 263
+		End: 271
+
+	Temp: 13
+		Start: 263
+		End: 273
+
+	Temp: 14
+		Start: 263
+		End: 280
+
+	Temp: 15
+		Start: 263
+		End: 276
+
+	Temp: 16
+		Start: 263
+		End: 278
+
+	Temp: 17
+		Start: 263
+		End: 281
+
+	Temp: 18
+		Start: 263
+		End: 281
+
+	Temp: 19
+		Start: 263
+		End: 282
+
+	Temp: 20
+		Start: 263
+		End: 284
+
+	Temp: 21
+		Start: 263
+		End: 287
+
+Scope: Tree_Delete
+	Temp: 0
+		Start: 446
+		End: 446
+
+	Temp: 1
+		Start: 446
+		End: 484
+
+	Temp: 3
+		Start: 446
+		End: 546
+
+	Temp: 4
+		Start: 446
+		End: 546
+
+	Temp: 5
+		Start: 446
+		End: 453
+
+	Temp: 6
+		Start: 446
+		End: 448
+
+	Temp: 8
+		Start: 446
+		End: 450
+
+	Temp: 10
+		Start: 446
+		End: 452
+
+	Temp: 11
+		Start: 446
+		End: 487
+
+	Temp: 12
+		Start: 446
+		End: 458
+
+	Temp: 13
+		Start: 446
+		End: 457
+
+	Temp: 14
+		Start: 446
+		End: 458
+
+	Temp: 15
+		Start: 446
+		End: 459
+
+	Temp: 16
+		Start: 446
+		End: 463
+
+	Temp: 17
+		Start: 446
+		End: 461
+
+	Temp: 18
+		Start: 446
+		End: 462
+
+	Temp: 19
+		Start: 446
+		End: 464
+
+	Temp: 20
+		Start: 446
+		End: 468
+
+	Temp: 21
+		Start: 446
+		End: 467
+
+	Temp: 22
+		Start: 446
+		End: 468
+
+	Temp: 23
+		Start: 446
+		End: 469
+
+	Temp: 24
+		Start: 446
+		End: 474
+
+	Temp: 25
+		Start: 446
+		End: 473
+
+	Temp: 26
+		Start: 446
+		End: 474
+
+	Temp: 27
+		Start: 446
+		End: 475
+
+	Temp: 28
+		Start: 446
+		End: 478
+
+	Temp: 29
+		Start: 446
+		End: 487
+
+	Temp: 30
+		Start: 446
+		End: 484
+
+	Temp: 31
+		Start: 446
+		End: 486
+
+	Temp: 32
+		Start: 446
+		End: 488
+
+	Temp: 33
+		Start: 446
+		End: 492
+
+	Temp: 34
+		Start: 446
+		End: 491
+
+	Temp: 35
+		Start: 446
+		End: 492
+
+	Temp: 36
+		Start: 446
+		End: 493
+
+	Temp: 37
+		Start: 446
+		End: 498
+
+	Temp: 38
+		Start: 446
+		End: 497
+
+	Temp: 39
+		Start: 446
+		End: 498
+
+	Temp: 40
+		Start: 446
+		End: 499
+
+	Temp: 41
+		Start: 446
+		End: 502
+
+	Temp: 42
+		Start: 446
+		End: 528
+
+	Temp: 43
+		Start: 446
+		End: 510
+
+	Temp: 44
+		Start: 446
+		End: 516
+
+	Temp: 45
+		Start: 446
+		End: 515
+
+	Temp: 46
+		Start: 446
+		End: 514
+
+	Temp: 47
+		Start: 446
+		End: 515
+
+	Temp: 48
+		Start: 446
+		End: 516
+
+	Temp: 49
+		Start: 446
+		End: 517
+
+	Temp: 50
+		Start: 446
+		End: 523
+
+	Temp: 51
+		Start: 446
+		End: 522
+
+	Temp: 52
+		Start: 446
+		End: 521
+
+	Temp: 53
+		Start: 446
+		End: 522
+
+	Temp: 54
+		Start: 446
+		End: 523
+
+	Temp: 55
+		Start: 446
+		End: 524
+
+	Temp: 56
+		Start: 446
+		End: 526
+
+	Temp: 58
+		Start: 446
+		End: 531
+
+	Temp: 59
+		Start: 446
+		End: 537
+
+	Temp: 60
+		Start: 446
+		End: 536
+
+	Temp: 61
+		Start: 446
+		End: 537
+
+	Temp: 62
+		Start: 446
+		End: 538
+
+	Temp: 63
+		Start: 446
+		End: 546
+
+	Temp: 64
+		Start: 446
+		End: 545
+
+	Temp: 65
+		Start: 446
+		End: 546
+
+	Temp: 66
+		Start: 446
+		End: 547
+
+	Temp: 67
+		Start: 446
+		End: 551
+
+	Temp: 68
+		Start: 446
+		End: 553
+
+	Temp: 69
+		Start: 446
+		End: 559
+
+Scope: Tree_GetHas_Left
+Scope: Tree_GetHas_Right
+Scope: Tree_GetKey
+Scope: Tree_GetLeft
+Scope: Tree_GetRight
+Scope: Tree_Init
+	Temp: 0
+		Start: 198
+		End: 201
+
+	Temp: 3
+		Start: 198
+		End: 199
+
+	Temp: 4
+		Start: 198
+		End: 201
+
+Scope: Tree_Insert
+	Temp: 0
+		Start: 298
+		End: 364
+
+	Temp: 1
+		Start: 298
+		End: 377
+
+	Temp: 3
+		Start: 298
+		End: 431
+
+	Temp: 4
+		Start: 298
+		End: 342
+
+	Temp: 5
+		Start: 298
+		End: 298
+
+	Temp: 6
+		Start: 298
+		End: 299
+
+	Temp: 7
+		Start: 298
+		End: 357
+
+	Temp: 8
+		Start: 298
+		End: 301
+
+	Temp: 9
+		Start: 298
+		End: 302
+
+	Temp: 10
+		Start: 298
+		End: 304
+
+	Temp: 11
+		Start: 298
+		End: 306
+
+	Temp: 12
+		Start: 298
+		End: 308
+
+	Temp: 13
+		Start: 298
+		End: 310
+
+	Temp: 14
+		Start: 298
+		End: 312
+
+	Temp: 15
+		Start: 298
+		End: 314
+
+	Temp: 16
+		Start: 298
+		End: 316
+
+	Temp: 17
+		Start: 298
+		End: 318
+
+	Temp: 18
+		Start: 298
+		End: 320
+
+	Temp: 19
+		Start: 298
+		End: 322
+
+	Temp: 20
+		Start: 298
+		End: 324
+
+	Temp: 21
+		Start: 298
+		End: 326
+
+	Temp: 22
+		Start: 298
+		End: 328
+
+	Temp: 23
+		Start: 298
+		End: 330
+
+	Temp: 24
+		Start: 298
+		End: 332
+
+	Temp: 25
+		Start: 298
+		End: 334
+
+	Temp: 26
+		Start: 298
+		End: 336
+
+	Temp: 27
+		Start: 298
+		End: 338
+
+	Temp: 28
+		Start: 298
+		End: 340
+
+	Temp: 29
+		Start: 298
+		End: 342
+
+	Temp: 30
+		Start: 298
+		End: 353
+
+	Temp: 31
+		Start: 298
+		End: 344
+
+	Temp: 32
+		Start: 298
+		End: 346
+
+	Temp: 33
+		Start: 298
+		End: 348
+
+	Temp: 34
+		Start: 298
+		End: 351
+
+	Temp: 35
+		Start: 298
+		End: 351
+
+	Temp: 36
+		Start: 298
+		End: 353
+
+	Temp: 37
+		Start: 298
+		End: 354
+
+	Temp: 39
+		Start: 298
+		End: 362
+
+	Temp: 40
+		Start: 298
+		End: 361
+
+	Temp: 41
+		Start: 298
+		End: 362
+
+	Temp: 42
+		Start: 298
+		End: 363
+
+	Temp: 43
+		Start: 298
+		End: 428
+
+	Temp: 44
+		Start: 298
+		End: 367
+
+	Temp: 45
+		Start: 298
+		End: 366
+
+	Temp: 46
+		Start: 298
+		End: 375
+
+	Temp: 47
+		Start: 298
+		End: 372
+
+	Temp: 48
+		Start: 298
+		End: 371
+
+	Temp: 49
+		Start: 298
+		End: 372
+
+	Temp: 50
+		Start: 298
+		End: 373
+
+	Temp: 51
+		Start: 298
+		End: 377
+
+	Temp: 52
+		Start: 298
+		End: 375
+
+	Temp: 53
+		Start: 298
+		End: 376
+
+	Temp: 54
+		Start: 298
+		End: 378
+
+	Temp: 55
+		Start: 298
+		End: 382
+
+	Temp: 56
+		Start: 298
+		End: 381
+
+	Temp: 57
+		Start: 298
+		End: 382
+
+	Temp: 58
+		Start: 298
+		End: 383
+
+	Temp: 59
+		Start: 298
+		End: 387
+
+	Temp: 60
+		Start: 298
+		End: 386
+
+	Temp: 61
+		Start: 298
+		End: 387
+
+	Temp: 62
+		Start: 298
+		End: 388
+
+	Temp: 63
+		Start: 298
+		End: 391
+
+	Temp: 64
+		Start: 298
+		End: 397
+
+	Temp: 65
+		Start: 298
+		End: 395
+
+	Temp: 66
+		Start: 298
+		End: 397
+
+	Temp: 67
+		Start: 298
+		End: 397
+
+	Temp: 68
+		Start: 298
+		End: 398
+
+	Temp: 69
+		Start: 298
+		End: 402
+
+	Temp: 70
+		Start: 298
+		End: 401
+
+	Temp: 71
+		Start: 298
+		End: 402
+
+	Temp: 72
+		Start: 298
+		End: 403
+
+	Temp: 73
+		Start: 298
+		End: 411
+
+	Temp: 74
+		Start: 298
+		End: 410
+
+	Temp: 75
+		Start: 298
+		End: 411
+
+	Temp: 76
+		Start: 298
+		End: 412
+
+	Temp: 77
+		Start: 298
+		End: 416
+
+	Temp: 78
+		Start: 298
+		End: 415
+
+	Temp: 79
+		Start: 298
+		End: 416
+
+	Temp: 80
+		Start: 298
+		End: 417
+
+	Temp: 81
+		Start: 298
+		End: 420
+
+	Temp: 82
+		Start: 298
+		End: 426
+
+	Temp: 83
+		Start: 298
+		End: 424
+
+	Temp: 84
+		Start: 298
+		End: 426
+
+	Temp: 85
+		Start: 298
+		End: 426
+
+	Temp: 86
+		Start: 298
+		End: 427
+
+	Temp: 87
+		Start: 298
+		End: 431
+
+	Temp: 88
+		Start: 298
+		End: 430
+
+	Temp: 89
+		Start: 298
+		End: 431
+
+	Temp: 90
+		Start: 298
+		End: 432
+
+Scope: Tree_Print
+	Temp: 0
+		Start: 811
+		End: 811
+
+	Temp: 2
+		Start: 811
+		End: 814
+
+	Temp: 4
+		Start: 811
+		End: 814
+
+	Temp: 5
+		Start: 811
+		End: 813
+
+	Temp: 6
+		Start: 811
+		End: 814
+
+	Temp: 7
+		Start: 811
+		End: 815
+
+Scope: Tree_RecPrint
+	Temp: 0
+		Start: 822
+		End: 851
+
+	Temp: 1
+		Start: 822
+		End: 854
+
+	Temp: 3
+		Start: 822
+		End: 824
+
+	Temp: 4
+		Start: 822
+		End: 823
+
+	Temp: 5
+		Start: 822
+		End: 824
+
+	Temp: 6
+		Start: 822
+		End: 825
+
+	Temp: 8
+		Start: 822
+		End: 833
+
+	Temp: 9
+		Start: 822
+		End: 828
+
+	Temp: 10
+		Start: 822
+		End: 833
+
+	Temp: 11
+		Start: 822
+		End: 832
+
+	Temp: 12
+		Start: 822
+		End: 831
+
+	Temp: 13
+		Start: 822
+		End: 832
+
+	Temp: 14
+		Start: 822
+		End: 833
+
+	Temp: 15
+		Start: 822
+		End: 834
+
+	Temp: 16
+		Start: 822
+		End: 837
+
+	Temp: 17
+		Start: 822
+		End: 844
+
+	Temp: 18
+		Start: 822
+		End: 843
+
+	Temp: 19
+		Start: 822
+		End: 844
+
+	Temp: 20
+		Start: 822
+		End: 845
+
+	Temp: 21
+		Start: 822
+		End: 849
+
+	Temp: 22
+		Start: 822
+		End: 848
+
+	Temp: 23
+		Start: 822
+		End: 849
+
+	Temp: 24
+		Start: 822
+		End: 850
+
+	Temp: 25
+		Start: 822
+		End: 858
+
+	Temp: 26
+		Start: 822
+		End: 853
+
+	Temp: 27
+		Start: 822
+		End: 858
+
+	Temp: 28
+		Start: 822
+		End: 857
+
+	Temp: 29
+		Start: 822
+		End: 856
+
+	Temp: 30
+		Start: 822
+		End: 857
+
+	Temp: 31
+		Start: 822
+		End: 858
+
+	Temp: 32
+		Start: 822
+		End: 859
+
+	Temp: 33
+		Start: 822
+		End: 862
+
+Scope: Tree_Remove
+	Temp: 0
+		Start: 568
+		End: 627
+
+	Temp: 1
+		Start: 568
+		End: 630
+
+	Temp: 2
+		Start: 568
+		End: 587
+
+	Temp: 4
+		Start: 568
+		End: 570
+
+	Temp: 5
+		Start: 568
+		End: 569
+
+	Temp: 6
+		Start: 568
+		End: 570
+
+	Temp: 7
+		Start: 568
+		End: 571
+
+	Temp: 9
+		Start: 568
+		End: 575
+
+	Temp: 10
+		Start: 568
+		End: 574
+
+	Temp: 11
+		Start: 568
+		End: 575
+
+	Temp: 12
+		Start: 568
+		End: 576
+
+	Temp: 13
+		Start: 568
+		End: 582
+
+	Temp: 14
+		Start: 568
+		End: 581
+
+	Temp: 15
+		Start: 568
+		End: 582
+
+	Temp: 16
+		Start: 568
+		End: 583
+
+	Temp: 17
+		Start: 568
+		End: 587
+
+	Temp: 18
+		Start: 568
+		End: 586
+
+	Temp: 19
+		Start: 568
+		End: 587
+
+	Temp: 20
+		Start: 568
+		End: 588
+
+	Temp: 21
+		Start: 568
+		End: 608
+
+	Temp: 22
+		Start: 568
+		End: 594
+
+	Temp: 23
+		Start: 568
+		End: 593
+
+	Temp: 24
+		Start: 568
+		End: 594
+
+	Temp: 25
+		Start: 568
+		End: 595
+
+	Temp: 26
+		Start: 568
+		End: 608
+
+	Temp: 27
+		Start: 568
+		End: 603
+
+	Temp: 28
+		Start: 568
+		End: 599
+
+	Temp: 29
+		Start: 568
+		End: 598
+
+	Temp: 30
+		Start: 568
+		End: 599
+
+	Temp: 31
+		Start: 568
+		End: 600
+
+	Temp: 32
+		Start: 568
+		End: 602
+
+	Temp: 33
+		Start: 568
+		End: 603
+
+	Temp: 34
+		Start: 568
+		End: 604
+
+	Temp: 35
+		Start: 568
+		End: 608
+
+	Temp: 36
+		Start: 568
+		End: 607
+
+	Temp: 37
+		Start: 568
+		End: 608
+
+	Temp: 38
+		Start: 568
+		End: 609
+
+	Temp: 39
+		Start: 568
+		End: 614
+
+	Temp: 40
+		Start: 568
+		End: 612
+
+	Temp: 41
+		Start: 568
+		End: 614
+
+	Temp: 42
+		Start: 568
+		End: 614
+
+	Temp: 43
+		Start: 568
+		End: 615
+
+	Temp: 44
+		Start: 568
+		End: 620
+
+	Temp: 45
+		Start: 568
+		End: 618
+
+	Temp: 46
+		Start: 568
+		End: 620
+
+	Temp: 47
+		Start: 568
+		End: 620
+
+	Temp: 48
+		Start: 568
+		End: 621
+
+	Temp: 49
+		Start: 568
+		End: 628
+
+	Temp: 50
+		Start: 568
+		End: 626
+
+	Temp: 51
+		Start: 568
+		End: 628
+
+	Temp: 52
+		Start: 568
+		End: 628
+
+	Temp: 53
+		Start: 568
+		End: 629
+
+	Temp: 54
+		Start: 568
+		End: 634
+
+	Temp: 55
+		Start: 568
+		End: 632
+
+	Temp: 56
+		Start: 568
+		End: 634
+
+	Temp: 57
+		Start: 568
+		End: 634
+
+	Temp: 58
+		Start: 568
+		End: 635
+
+Scope: Tree_RemoveLeft
+	Temp: 0
+		Start: 693
+		End: 723
+
+	Temp: 1
+		Start: 693
+		End: 726
+
+	Temp: 2
+		Start: 693
+		End: 712
+
+	Temp: 4
+		Start: 693
+		End: 696
+
+	Temp: 5
+		Start: 693
+		End: 695
+
+	Temp: 6
+		Start: 693
+		End: 696
+
+	Temp: 7
+		Start: 693
+		End: 697
+
+	Temp: 9
+		Start: 693
+		End: 709
+
+	Temp: 10
+		Start: 693
+		End: 700
+
+	Temp: 11
+		Start: 693
+		End: 709
+
+	Temp: 12
+		Start: 693
+		End: 708
+
+	Temp: 13
+		Start: 693
+		End: 704
+
+	Temp: 14
+		Start: 693
+		End: 703
+
+	Temp: 15
+		Start: 693
+		End: 704
+
+	Temp: 16
+		Start: 693
+		End: 705
+
+	Temp: 17
+		Start: 693
+		End: 707
+
+	Temp: 18
+		Start: 693
+		End: 708
+
+	Temp: 19
+		Start: 693
+		End: 709
+
+	Temp: 20
+		Start: 693
+		End: 710
+
+	Temp: 21
+		Start: 693
+		End: 715
+
+	Temp: 22
+		Start: 693
+		End: 714
+
+	Temp: 23
+		Start: 693
+		End: 715
+
+	Temp: 24
+		Start: 693
+		End: 716
+
+	Temp: 25
+		Start: 693
+		End: 724
+
+	Temp: 26
+		Start: 693
+		End: 722
+
+	Temp: 27
+		Start: 693
+		End: 724
+
+	Temp: 28
+		Start: 693
+		End: 724
+
+	Temp: 29
+		Start: 693
+		End: 725
+
+	Temp: 30
+		Start: 693
+		End: 730
+
+	Temp: 31
+		Start: 693
+		End: 728
+
+	Temp: 32
+		Start: 693
+		End: 730
+
+	Temp: 33
+		Start: 693
+		End: 730
+
+	Temp: 34
+		Start: 693
+		End: 731
+
+Scope: Tree_RemoveRight
+	Temp: 0
+		Start: 648
+		End: 678
+
+	Temp: 1
+		Start: 648
+		End: 681
+
+	Temp: 2
+		Start: 648
+		End: 667
+
+	Temp: 4
+		Start: 648
+		End: 651
+
+	Temp: 5
+		Start: 648
+		End: 650
+
+	Temp: 6
+		Start: 648
+		End: 651
+
+	Temp: 7
+		Start: 648
+		End: 652
+
+	Temp: 9
+		Start: 648
+		End: 664
+
+	Temp: 10
+		Start: 648
+		End: 655
+
+	Temp: 11
+		Start: 648
+		End: 664
+
+	Temp: 12
+		Start: 648
+		End: 663
+
+	Temp: 13
+		Start: 648
+		End: 659
+
+	Temp: 14
+		Start: 648
+		End: 658
+
+	Temp: 15
+		Start: 648
+		End: 659
+
+	Temp: 16
+		Start: 648
+		End: 660
+
+	Temp: 17
+		Start: 648
+		End: 662
+
+	Temp: 18
+		Start: 648
+		End: 663
+
+	Temp: 19
+		Start: 648
+		End: 664
+
+	Temp: 20
+		Start: 648
+		End: 665
+
+	Temp: 21
+		Start: 648
+		End: 670
+
+	Temp: 22
+		Start: 648
+		End: 669
+
+	Temp: 23
+		Start: 648
+		End: 670
+
+	Temp: 24
+		Start: 648
+		End: 671
+
+	Temp: 25
+		Start: 648
+		End: 679
+
+	Temp: 26
+		Start: 648
+		End: 677
+
+	Temp: 27
+		Start: 648
+		End: 679
+
+	Temp: 28
+		Start: 648
+		End: 679
+
+	Temp: 29
+		Start: 648
+		End: 680
+
+	Temp: 30
+		Start: 648
+		End: 685
+
+	Temp: 31
+		Start: 648
+		End: 683
+
+	Temp: 32
+		Start: 648
+		End: 685
+
+	Temp: 33
+		Start: 648
+		End: 685
+
+	Temp: 34
+		Start: 648
+		End: 686
+
+Scope: Tree_Search
+	Temp: 1
+		Start: 738
+		End: 772
+
+	Temp: 3
+		Start: 738
+		End: 782
+
+	Temp: 4
+		Start: 738
+		End: 742
+
+	Temp: 5
+		Start: 738
+		End: 739
+
+	Temp: 7
+		Start: 738
+		End: 741
+
+	Temp: 8
+		Start: 738
+		End: 775
+
+	Temp: 9
+		Start: 738
+		End: 747
+
+	Temp: 10
+		Start: 738
+		End: 746
+
+	Temp: 11
+		Start: 738
+		End: 747
+
+	Temp: 12
+		Start: 738
+		End: 748
+
+	Temp: 13
+		Start: 738
+		End: 752
+
+	Temp: 14
+		Start: 738
+		End: 750
+
+	Temp: 15
+		Start: 738
+		End: 751
+
+	Temp: 16
+		Start: 738
+		End: 753
+
+	Temp: 17
+		Start: 738
+		End: 757
+
+	Temp: 18
+		Start: 738
+		End: 756
+
+	Temp: 19
+		Start: 738
+		End: 757
+
+	Temp: 20
+		Start: 738
+		End: 758
+
+	Temp: 21
+		Start: 738
+		End: 762
+
+	Temp: 22
+		Start: 738
+		End: 761
+
+	Temp: 23
+		Start: 738
+		End: 762
+
+	Temp: 24
+		Start: 738
+		End: 763
+
+	Temp: 25
+		Start: 738
+		End: 766
+
+	Temp: 26
+		Start: 738
+		End: 775
+
+	Temp: 27
+		Start: 738
+		End: 772
+
+	Temp: 28
+		Start: 738
+		End: 774
+
+	Temp: 29
+		Start: 738
+		End: 776
+
+	Temp: 30
+		Start: 738
+		End: 780
+
+	Temp: 31
+		Start: 738
+		End: 779
+
+	Temp: 32
+		Start: 738
+		End: 780
+
+	Temp: 33
+		Start: 738
+		End: 781
+
+	Temp: 34
+		Start: 738
+		End: 785
+
+	Temp: 35
+		Start: 738
+		End: 784
+
+	Temp: 36
+		Start: 738
+		End: 785
+
+	Temp: 37
+		Start: 738
+		End: 786
+
+	Temp: 38
+		Start: 738
+		End: 789
+
+	Temp: 39
+		Start: 738
+		End: 795
+
+	Temp: 40
+		Start: 738
+		End: 798
+
+Scope: Tree_SetHas_Left
+Scope: Tree_SetHas_Right
+Scope: Tree_SetKey
+Scope: Tree_SetLeft
+Scope: Tree_SetRight

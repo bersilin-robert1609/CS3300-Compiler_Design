@@ -59,12 +59,80 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
    public R visit(NodeToken n, A argu) { return (R)n.tokenImage; }
 
+   class ProcedureProperties
+   {
+      public int argCount;
+      public int localVarCount;
+      public int tempCount;
+   }
+
+   class BasicBlock
+   {
+      public HashSet<Integer> def;
+      public HashSet<Integer> use;
+      public HashSet<Integer> in;
+      public HashSet<Integer> out;
+      public String type;
+      public int next;
+      public String label;
+      public int labelNext;
+      public String scope;
+      public int lineNumber;
+
+      public BasicBlock()
+      {
+         def = new HashSet<Integer>();
+         use = new HashSet<Integer>();
+         in = new HashSet<Integer>();
+         out = new HashSet<Integer>();
+      }
+   }
+
+   class SimpleExpReturn
+   {
+      public int type;
+      public int temp;
+      public int number;
+      public String label;
+   }
+
+   class ExpReturn
+   {
+      public HashSet<Integer> use;
+      public String type;
+
+      public ExpReturn()
+      {
+         use = new HashSet<Integer>();
+      }
+   }
+
+   class ScopeArgument
+   {
+      public String scope;
+      public boolean isLabel;
+      public boolean labelPresent;
+   }
+
+   class Interval
+   {
+      public int start;
+      public int end;
+
+      public Interval(int start, int end)
+      {
+         this.start = start;
+         this.end = end;
+      }
+   }
+
    HashMap<String, ProcedureProperties> procProps = new HashMap<String, ProcedureProperties>();
    HashMap<Integer, String> registerAllocation = new HashMap<Integer, String>();
    TreeMap<Integer, BasicBlock> instructions = new TreeMap<Integer, BasicBlock>();
    TreeMap<String, Integer> labelMap = new TreeMap<String, Integer>();
    HashMap<Integer, ExpReturn> expMap = new HashMap<Integer, ExpReturn>();
-   HashMap<String, TreeMap<Integer, BasicBlock>> sortedInstrs = new HashMap<String, TreeMap<Integer, BasicBlock>>();
+   LinkedHashMap<String, TreeMap<Integer, BasicBlock>> sortedInstrs = new LinkedHashMap<String, TreeMap<Integer, BasicBlock>>();
+   TreeMap<String, TreeMap<Integer, Interval>> intervals = new TreeMap<String, TreeMap<Integer, Interval>>();
    int stage = 1;
    int expCount = 0;
    public int nextExp() {return expCount++;}
@@ -84,7 +152,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             HashSet<Integer> oldOut = new HashSet<Integer>(bb.out);
             bb.in.clear();
             bb.in.addAll(bb.use);
-            ArrayList<Integer> outMinusDef = new ArrayList<Integer>(bb.out);
+            HashSet<Integer> outMinusDef = new HashSet<Integer>(bb.out);
             outMinusDef.removeAll(bb.def);
             bb.in.addAll(outMinusDef);
             bb.out.clear();
@@ -123,6 +191,34 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
    }
 
+   public void findIntervalsByScope()
+   {
+      for(Map.Entry<String, TreeMap<Integer, BasicBlock>> entry : sortedInstrs.entrySet())
+      {
+         String scope = entry.getKey();
+         TreeMap<Integer, BasicBlock> instrs = entry.getValue();
+         intervals.put(scope, new TreeMap<Integer, Interval>());
+         int start = -1;
+         int end = -1;
+         for(Map.Entry<Integer, BasicBlock> bbEntry : instrs.entrySet())
+         {
+            BasicBlock bb = bbEntry.getValue();
+            if(start == -1) start = bbEntry.getKey();
+            end = bbEntry.getKey();
+            for(int i : bb.use)
+            {
+               if(!intervals.get(scope).containsKey(i)) intervals.get(scope).put(i, new Interval(start, end));
+               else
+               {
+                  Interval interval = intervals.get(scope).get(i);
+                  if(interval.start > start) interval.start = start;
+                  if(interval.end < end) interval.end = end;
+               }
+            }
+         }
+      }
+   }
+
    //
    // User-generated visitor methods below
    //
@@ -148,33 +244,51 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       // and the in and out sets of the previous basic block
       fillInOut();
       sortByScope();
+      findIntervalsByScope();
 
-      Iterator<String> itr = sortedInstrs.keySet().iterator();
-      while(itr.hasNext()){
-         String key = itr.next();
+      // Iterator<String> itr = sortedInstrs.keySet().iterator();
+      // while(itr.hasNext()){
+      //    String key = itr.next();
+      //    System.out.println("Scope: " + key);
+      //    Iterator<Integer> itr2 = sortedInstrs.get(key).keySet().iterator();
+      //    while(itr2.hasNext()){
+      //       Integer key2 = itr2.next();
+      //       BasicBlock bb = sortedInstrs.get(key).get(key2);
+      //       System.out.println("\tBasic Block: " + key2);
+      //       System.out.println("\t\tType: " + bb.type);
+      //       System.out.println("\t\tLabel: " + bb.label);
+      //       System.out.println("\t\tNext: " + bb.next);
+      //       System.out.println("\t\tUse: " + bb.use);
+      //       System.out.println("\t\tDef: " + bb.def);
+      //       System.out.println("\t\tIn: " + bb.in);
+      //       System.out.println("\t\tOut: " + bb.out);
+      //       System.out.println();
+      //    }
+      // }
+      // //print labels
+      // System.out.println("Labels:");
+      // Iterator<String> itr3 = labelMap.keySet().iterator();
+      // while(itr3.hasNext()){
+      //    String key = itr3.next();
+      //    System.out.println("\t" + key + ": " + labelMap.get(key));
+      // }
+
+      //print intervals
+      Iterator<String> itr4 = intervals.keySet().iterator();
+      while(itr4.hasNext()){
+         String key = itr4.next();
          System.out.println("Scope: " + key);
-         Iterator<Integer> itr2 = sortedInstrs.get(key).keySet().iterator();
-         while(itr2.hasNext()){
-            Integer key2 = itr2.next();
-            BasicBlock bb = sortedInstrs.get(key).get(key2);
-            System.out.println("\tBasic Block: " + key2);
-            System.out.println("\t\tType: " + bb.type);
-            System.out.println("\t\tLabel: " + bb.label);
-            System.out.println("\t\tNext: " + bb.next);
-            System.out.println("\t\tUse: " + bb.use);
-            System.out.println("\t\tDef: " + bb.def);
-            System.out.println("\t\tIn: " + bb.in);
-            System.out.println("\t\tOut: " + bb.out);
+         Iterator<Integer> itr5 = intervals.get(key).keySet().iterator();
+         while(itr5.hasNext()){
+            Integer key2 = itr5.next();
+            Interval interval = intervals.get(key).get(key2);
+            System.out.println("\tTemp: " + key2);
+            System.out.println("\t\tStart: " + interval.start);
+            System.out.println("\t\tEnd: " + interval.end);
             System.out.println();
          }
       }
-      //print labels
-      System.out.println("Labels:");
-      Iterator<String> itr3 = labelMap.keySet().iterator();
-      while(itr3.hasNext()){
-         String key = itr3.next();
-         System.out.println("\t" + key + ": " + labelMap.get(key));
-      }
+
       
       return _ret;
    }
@@ -279,7 +393,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             lineNumber--;
             scope.labelPresent = false;
          }
-
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -305,6 +419,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             scope.labelPresent = false;
          }
 
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -336,6 +451,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             lineNumber--;
             scope.labelPresent = false;
          }
+
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -364,6 +481,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             lineNumber--;
             scope.labelPresent = false;
          }
+
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -397,6 +516,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             lineNumber--;
             scope.labelPresent = false;
          }
+
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -430,6 +551,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             lineNumber--;
             scope.labelPresent = false;
          }
+
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -462,6 +585,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             lineNumber--;
             scope.labelPresent = false;
          }
+
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -490,6 +615,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             lineNumber--;
             scope.labelPresent = false;
          }
+
+         newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
       return null;
@@ -669,6 +796,7 @@ class BasicBlock
    public String label;
    public int labelNext;
    public String scope;
+   public int lineNumber;
 
    public BasicBlock()
    {
@@ -703,4 +831,16 @@ class ScopeArgument
    public String scope;
    public boolean isLabel;
    public boolean labelPresent;
+}
+
+class Interval
+{
+   public int start;
+   public int end;
+
+   public Interval(int start, int end)
+   {
+      this.start = start;
+      this.end = end;
+   }
 }

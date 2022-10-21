@@ -1,0 +1,749 @@
+Scope: LS_Init
+	Temp: 0
+		Start: 193
+		End: 254
+
+	Temp: 1
+		Start: 193
+		End: 220
+
+	Temp: 3
+		Start: 193
+		End: 222
+
+	Temp: 4
+		Start: 193
+		End: 195
+
+	Temp: 5
+		Start: 193
+		End: 197
+
+	Temp: 6
+		Start: 193
+		End: 197
+
+	Temp: 7
+		Start: 193
+		End: 198
+
+	Temp: 8
+		Start: 193
+		End: 199
+
+	Temp: 9
+		Start: 193
+		End: 215
+
+	Temp: 10
+		Start: 193
+		End: 201
+
+	Temp: 11
+		Start: 193
+		End: 204
+
+	Temp: 12
+		Start: 193
+		End: 206
+
+	Temp: 13
+		Start: 193
+		End: 206
+
+	Temp: 14
+		Start: 193
+		End: 208
+
+	Temp: 15
+		Start: 193
+		End: 208
+
+	Temp: 16
+		Start: 193
+		End: 209
+
+	Temp: 17
+		Start: 193
+		End: 210
+
+	Temp: 18
+		Start: 193
+		End: 213
+
+	Temp: 19
+		Start: 193
+		End: 213
+
+	Temp: 20
+		Start: 193
+		End: 215
+
+	Temp: 21
+		Start: 193
+		End: 216
+
+	Temp: 22
+		Start: 193
+		End: 220
+
+	Temp: 23
+		Start: 193
+		End: 221
+
+	Temp: 24
+		Start: 193
+		End: 272
+
+	Temp: 25
+		Start: 193
+		End: 224
+
+	Temp: 26
+		Start: 193
+		End: 275
+
+	Temp: 27
+		Start: 193
+		End: 227
+
+	Temp: 28
+		Start: 193
+		End: 227
+
+	Temp: 29
+		Start: 193
+		End: 228
+
+	Temp: 30
+		Start: 193
+		End: 232
+
+	Temp: 31
+		Start: 193
+		End: 232
+
+	Temp: 32
+		Start: 193
+		End: 233
+
+	Temp: 33
+		Start: 193
+		End: 234
+
+	Temp: 34
+		Start: 193
+		End: 269
+
+	Temp: 35
+		Start: 193
+		End: 236
+
+	Temp: 36
+		Start: 193
+		End: 237
+
+	Temp: 37
+		Start: 193
+		End: 269
+
+	Temp: 38
+		Start: 193
+		End: 239
+
+	Temp: 39
+		Start: 193
+		End: 240
+
+	Temp: 40
+		Start: 193
+		End: 254
+
+	Temp: 41
+		Start: 193
+		End: 243
+
+	Temp: 42
+		Start: 193
+		End: 243
+
+	Temp: 43
+		Start: 193
+		End: 244
+
+	Temp: 44
+		Start: 193
+		End: 268
+
+	Temp: 45
+		Start: 193
+		End: 246
+
+	Temp: 46
+		Start: 193
+		End: 267
+
+	Temp: 47
+		Start: 193
+		End: 248
+
+	Temp: 48
+		Start: 193
+		End: 249
+
+	Temp: 49
+		Start: 193
+		End: 259
+
+	Temp: 50
+		Start: 193
+		End: 252
+
+	Temp: 51
+		Start: 193
+		End: 252
+
+	Temp: 52
+		Start: 193
+		End: 253
+
+	Temp: 53
+		Start: 193
+		End: 255
+
+	Temp: 54
+		Start: 193
+		End: 261
+
+	Temp: 55
+		Start: 193
+		End: 259
+
+	Temp: 56
+		Start: 193
+		End: 260
+
+	Temp: 57
+		Start: 193
+		End: 261
+
+	Temp: 58
+		Start: 193
+		End: 262
+
+	Temp: 59
+		Start: 193
+		End: 267
+
+	Temp: 60
+		Start: 193
+		End: 268
+
+	Temp: 61
+		Start: 193
+		End: 270
+
+	Temp: 62
+		Start: 193
+		End: 270
+
+	Temp: 63
+		Start: 193
+		End: 272
+
+	Temp: 64
+		Start: 193
+		End: 273
+
+	Temp: 65
+		Start: 193
+		End: 275
+
+	Temp: 66
+		Start: 193
+		End: 276
+
+Scope: LS_Print
+	Temp: 0
+		Start: 81
+		End: 93
+
+	Temp: 2
+		Start: 81
+		End: 110
+
+	Temp: 3
+		Start: 81
+		End: 82
+
+	Temp: 4
+		Start: 81
+		End: 86
+
+	Temp: 5
+		Start: 81
+		End: 86
+
+	Temp: 6
+		Start: 81
+		End: 87
+
+	Temp: 7
+		Start: 81
+		End: 88
+
+	Temp: 8
+		Start: 81
+		End: 108
+
+	Temp: 9
+		Start: 81
+		End: 106
+
+	Temp: 10
+		Start: 81
+		End: 105
+
+	Temp: 11
+		Start: 81
+		End: 91
+
+	Temp: 12
+		Start: 81
+		End: 92
+
+	Temp: 13
+		Start: 81
+		End: 97
+
+	Temp: 14
+		Start: 81
+		End: 99
+
+	Temp: 15
+		Start: 81
+		End: 97
+
+	Temp: 16
+		Start: 81
+		End: 98
+
+	Temp: 17
+		Start: 81
+		End: 99
+
+	Temp: 18
+		Start: 81
+		End: 100
+
+	Temp: 19
+		Start: 81
+		End: 105
+
+	Temp: 20
+		Start: 81
+		End: 106
+
+	Temp: 21
+		Start: 81
+		End: 107
+
+	Temp: 22
+		Start: 81
+		End: 110
+
+	Temp: 23
+		Start: 81
+		End: 111
+
+Scope: LS_Search
+	Temp: 0
+		Start: 120
+		End: 177
+
+	Temp: 1
+		Start: 120
+		End: 156
+
+	Temp: 3
+		Start: 120
+		End: 184
+
+	Temp: 4
+		Start: 120
+		End: 121
+
+	Temp: 6
+		Start: 120
+		End: 123
+
+	Temp: 8
+		Start: 120
+		End: 125
+
+	Temp: 9
+		Start: 120
+		End: 129
+
+	Temp: 10
+		Start: 120
+		End: 129
+
+	Temp: 11
+		Start: 120
+		End: 130
+
+	Temp: 12
+		Start: 120
+		End: 131
+
+	Temp: 13
+		Start: 120
+		End: 166
+
+	Temp: 14
+		Start: 120
+		End: 151
+
+	Temp: 15
+		Start: 120
+		End: 149
+
+	Temp: 16
+		Start: 120
+		End: 148
+
+	Temp: 17
+		Start: 120
+		End: 134
+
+	Temp: 18
+		Start: 120
+		End: 135
+
+	Temp: 19
+		Start: 120
+		End: 140
+
+	Temp: 20
+		Start: 120
+		End: 142
+
+	Temp: 21
+		Start: 120
+		End: 140
+
+	Temp: 22
+		Start: 120
+		End: 141
+
+	Temp: 23
+		Start: 120
+		End: 142
+
+	Temp: 24
+		Start: 120
+		End: 143
+
+	Temp: 25
+		Start: 120
+		End: 148
+
+	Temp: 26
+		Start: 120
+		End: 149
+
+	Temp: 27
+		Start: 120
+		End: 150
+
+	Temp: 28
+		Start: 120
+		End: 165
+
+	Temp: 29
+		Start: 120
+		End: 153
+
+	Temp: 30
+		Start: 120
+		End: 154
+
+	Temp: 31
+		Start: 120
+		End: 156
+
+	Temp: 32
+		Start: 120
+		End: 157
+
+	Temp: 33
+		Start: 120
+		End: 158
+
+	Temp: 35
+		Start: 120
+		End: 160
+
+	Temp: 36
+		Start: 120
+		End: 167
+
+	Temp: 37
+		Start: 120
+		End: 165
+
+	Temp: 38
+		Start: 120
+		End: 166
+
+	Temp: 39
+		Start: 120
+		End: 167
+
+	Temp: 40
+		Start: 120
+		End: 168
+
+	Temp: 41
+		Start: 120
+		End: 170
+
+	Temp: 42
+		Start: 120
+		End: 174
+
+	Temp: 43
+		Start: 120
+		End: 176
+
+	Temp: 44
+		Start: 120
+		End: 178
+
+	Temp: 45
+		Start: 120
+		End: 184
+
+	Temp: 46
+		Start: 120
+		End: 185
+
+Scope: LS_Start
+	Temp: 0
+		Start: 40
+		End: 70
+
+	Temp: 1
+		Start: 40
+		End: 43
+
+	Temp: 4
+		Start: 40
+		End: 43
+
+	Temp: 5
+		Start: 40
+		End: 42
+
+	Temp: 6
+		Start: 40
+		End: 43
+
+	Temp: 7
+		Start: 40
+		End: 44
+
+	Temp: 9
+		Start: 40
+		End: 48
+
+	Temp: 10
+		Start: 40
+		End: 47
+
+	Temp: 11
+		Start: 40
+		End: 48
+
+	Temp: 12
+		Start: 40
+		End: 49
+
+	Temp: 13
+		Start: 40
+		End: 51
+
+	Temp: 14
+		Start: 40
+		End: 56
+
+	Temp: 15
+		Start: 40
+		End: 54
+
+	Temp: 16
+		Start: 40
+		End: 56
+
+	Temp: 17
+		Start: 40
+		End: 56
+
+	Temp: 18
+		Start: 40
+		End: 57
+
+	Temp: 19
+		Start: 40
+		End: 62
+
+	Temp: 20
+		Start: 40
+		End: 60
+
+	Temp: 21
+		Start: 40
+		End: 62
+
+	Temp: 22
+		Start: 40
+		End: 62
+
+	Temp: 23
+		Start: 40
+		End: 63
+
+	Temp: 24
+		Start: 40
+		End: 68
+
+	Temp: 25
+		Start: 40
+		End: 66
+
+	Temp: 26
+		Start: 40
+		End: 68
+
+	Temp: 27
+		Start: 40
+		End: 68
+
+	Temp: 28
+		Start: 40
+		End: 69
+
+	Temp: 29
+		Start: 40
+		End: 74
+
+	Temp: 30
+		Start: 40
+		End: 72
+
+	Temp: 31
+		Start: 40
+		End: 74
+
+	Temp: 32
+		Start: 40
+		End: 74
+
+	Temp: 33
+		Start: 40
+		End: 75
+
+Scope: MAIN
+	Temp: 0
+		Start: 2
+		End: 35
+
+	Temp: 1
+		Start: 2
+		End: 29
+
+	Temp: 2
+		Start: 2
+		End: 3
+
+	Temp: 3
+		Start: 2
+		End: 4
+
+	Temp: 4
+		Start: 2
+		End: 31
+
+	Temp: 5
+		Start: 2
+		End: 6
+
+	Temp: 6
+		Start: 2
+		End: 7
+
+	Temp: 7
+		Start: 2
+		End: 9
+
+	Temp: 8
+		Start: 2
+		End: 11
+
+	Temp: 9
+		Start: 2
+		End: 13
+
+	Temp: 10
+		Start: 2
+		End: 15
+
+	Temp: 11
+		Start: 2
+		End: 26
+
+	Temp: 12
+		Start: 2
+		End: 17
+
+	Temp: 13
+		Start: 2
+		End: 20
+
+	Temp: 14
+		Start: 2
+		End: 21
+
+	Temp: 15
+		Start: 2
+		End: 24
+
+	Temp: 16
+		Start: 2
+		End: 24
+
+	Temp: 17
+		Start: 2
+		End: 26
+
+	Temp: 18
+		Start: 2
+		End: 27
+
+	Temp: 19
+		Start: 2
+		End: 33
+
+	Temp: 20
+		Start: 2
+		End: 35
+
+	Temp: 21
+		Start: 2
+		End: 35
+
+	Temp: 22
+		Start: 2
+		End: 36
+

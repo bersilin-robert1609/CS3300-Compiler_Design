@@ -1,0 +1,98 @@
+Scope: Fac_ComputeFac
+	Temp: 0
+		Start: 20
+		End: 26
+
+	Temp: 1
+		Start: 20
+		End: 33
+
+	Temp: 3
+		Start: 20
+		End: 21
+
+	Temp: 4
+		Start: 20
+		End: 22
+
+	Temp: 6
+		Start: 20
+		End: 24
+
+	Temp: 7
+		Start: 20
+		End: 32
+
+	Temp: 8
+		Start: 20
+		End: 29
+
+	Temp: 9
+		Start: 20
+		End: 32
+
+	Temp: 10
+		Start: 20
+		End: 31
+
+	Temp: 11
+		Start: 20
+		End: 32
+
+	Temp: 12
+		Start: 20
+		End: 33
+
+	Temp: 13
+		Start: 20
+		End: 34
+
+Scope: MAIN
+	Temp: 0
+		Start: 2
+		End: 15
+
+	Temp: 1
+		Start: 2
+		End: 10
+
+	Temp: 2
+		Start: 2
+		End: 3
+
+	Temp: 3
+		Start: 2
+		End: 4
+
+	Temp: 4
+		Start: 2
+		End: 11
+
+	Temp: 5
+		Start: 2
+		End: 6
+
+	Temp: 6
+		Start: 2
+		End: 7
+
+	Temp: 7
+		Start: 2
+		End: 9
+
+	Temp: 8
+		Start: 2
+		End: 13
+
+	Temp: 9
+		Start: 2
+		End: 15
+
+	Temp: 10
+		Start: 2
+		End: 15
+
+	Temp: 11
+		Start: 2
+		End: 16
+

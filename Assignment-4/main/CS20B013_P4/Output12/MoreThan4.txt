@@ -1,0 +1,139 @@
+Scope: MAIN
+	Temp: 0
+		Start: 2
+		End: 21
+
+	Temp: 1
+		Start: 2
+		End: 11
+
+	Temp: 2
+		Start: 2
+		End: 2
+
+	Temp: 3
+		Start: 2
+		End: 3
+
+	Temp: 4
+		Start: 2
+		End: 12
+
+	Temp: 5
+		Start: 2
+		End: 5
+
+	Temp: 6
+		Start: 2
+		End: 6
+
+	Temp: 7
+		Start: 2
+		End: 8
+
+	Temp: 8
+		Start: 2
+		End: 10
+
+	Temp: 9
+		Start: 2
+		End: 14
+
+	Temp: 10
+		Start: 2
+		End: 21
+
+	Temp: 11
+		Start: 2
+		End: 21
+
+	Temp: 12
+		Start: 2
+		End: 21
+
+	Temp: 13
+		Start: 2
+		End: 21
+
+	Temp: 14
+		Start: 2
+		End: 21
+
+	Temp: 15
+		Start: 2
+		End: 21
+
+	Temp: 16
+		Start: 2
+		End: 21
+
+	Temp: 17
+		Start: 2
+		End: 22
+
+Scope: MT4_Change
+	Temp: 2
+		Start: 42
+		End: 42
+
+	Temp: 3
+		Start: 42
+		End: 43
+
+	Temp: 4
+		Start: 42
+		End: 44
+
+	Temp: 5
+		Start: 42
+		End: 45
+
+	Temp: 6
+		Start: 42
+		End: 46
+
+Scope: MT4_Start
+	Temp: 0
+		Start: 27
+		End: 32
+
+	Temp: 1
+		Start: 27
+		End: 35
+
+	Temp: 2
+		Start: 27
+		End: 35
+
+	Temp: 3
+		Start: 27
+		End: 35
+
+	Temp: 4
+		Start: 27
+		End: 35
+
+	Temp: 5
+		Start: 27
+		End: 35
+
+	Temp: 6
+		Start: 27
+		End: 35
+
+	Temp: 9
+		Start: 27
+		End: 35
+
+	Temp: 10
+		Start: 27
+		End: 34
+
+	Temp: 11
+		Start: 27
+		End: 35
+
+	Temp: 12
+		Start: 27
+		End: 36
+

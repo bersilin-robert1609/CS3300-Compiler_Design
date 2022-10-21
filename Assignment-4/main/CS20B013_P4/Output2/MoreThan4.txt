@@ -1,2 +1,0 @@
-MT4_Start 25
-MT4_Change 40
