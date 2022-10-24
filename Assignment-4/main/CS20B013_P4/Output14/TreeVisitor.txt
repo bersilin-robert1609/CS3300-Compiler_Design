@@ -556,7 +556,7 @@ Scope: TV_Start
 		Use: [3, 29]
 		Def: []
 		In: [3, 6, 29]
-		Out: [6]
+		Out: [3, 6]
 
 	Basic Block: 67
 		Type: MOVE
@@ -564,8 +564,8 @@ Scope: TV_Start
 		Next: 68
 		Use: []
 		Def: [31]
-		In: [6]
-		Out: [6, 31]
+		In: [3, 6]
+		Out: [3, 6, 31]
 
 	Basic Block: 68
 		Type: MOVE
@@ -573,8 +573,8 @@ Scope: TV_Start
 		Next: 69
 		Use: [31]
 		Def: [30]
-		In: [6, 31]
-		Out: [6, 30]
+		In: [3, 6, 31]
+		Out: [3, 6, 30]
 
 	Basic Block: 69
 		Type: MOVE
@@ -582,8 +582,8 @@ Scope: TV_Start
 		Next: 71
 		Use: []
 		Def: [32]
-		In: [6, 30]
-		Out: [32, 6, 30]
+		In: [3, 6, 30]
+		Out: [32, 3, 6, 30]
 
 	Basic Block: 71
 		Type: MOVE
@@ -591,8 +591,8 @@ Scope: TV_Start
 		Next: 72
 		Use: [32, 30]
 		Def: [33]
-		In: [32, 6, 30]
-		Out: [33, 6, 30]
+		In: [32, 3, 6, 30]
+		Out: [33, 3, 6, 30]
 
 	Basic Block: 72
 		Type: CJUMP
@@ -600,8 +600,8 @@ Scope: TV_Start
 		Next: 73
 		Use: [33]
 		Def: []
-		In: [33, 6, 30]
-		Out: [6, 30]
+		In: [33, 3, 6, 30]
+		Out: [3, 6, 30]
 
 	Basic Block: 73
 		Type: MOVE
@@ -609,8 +609,8 @@ Scope: TV_Start
 		Next: 74
 		Use: [6, 30]
 		Def: [34]
-		In: [6, 30]
-		Out: [34, 30]
+		In: [3, 6, 30]
+		Out: [34, 3, 6, 30]
 
 	Basic Block: 74
 		Type: MOVE
@@ -618,8 +618,8 @@ Scope: TV_Start
 		Next: 75
 		Use: []
 		Def: [35]
-		In: [34, 30]
-		Out: [34, 35, 30]
+		In: [34, 3, 6, 30]
+		Out: [34, 35, 3, 6, 30]
 
 	Basic Block: 75
 		Type: HSTORE
@@ -627,8 +627,8 @@ Scope: TV_Start
 		Next: 76
 		Use: [34, 35]
 		Def: []
-		In: [34, 35, 30]
-		Out: [30]
+		In: [34, 35, 3, 6, 30]
+		Out: [3, 6, 30]
 
 	Basic Block: 76
 		Type: MOVE
@@ -636,8 +636,8 @@ Scope: TV_Start
 		Next: 77
 		Use: []
 		Def: [36]
-		In: [30]
-		Out: [36, 30]
+		In: [3, 6, 30]
+		Out: [3, 36, 6, 30]
 
 	Basic Block: 77
 		Type: MOVE
@@ -645,8 +645,8 @@ Scope: TV_Start
 		Next: 78
 		Use: [36, 30]
 		Def: [37]
-		In: [36, 30]
-		Out: [37]
+		In: [3, 36, 6, 30]
+		Out: [3, 37, 6]
 
 	Basic Block: 78
 		Type: MOVE
@@ -654,8 +654,8 @@ Scope: TV_Start
 		Next: 79
 		Use: [37]
 		Def: [30]
-		In: [37]
-		Out: []
+		In: [3, 37, 6]
+		Out: [3, 6, 30]
 
 	Basic Block: 79
 		Type: JUMP
@@ -663,8 +663,8 @@ Scope: TV_Start
 		Next: 80
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [3, 6, 30]
+		Out: [3, 6, 30]
 
 	Basic Block: 80
 		Type: HSTORE
@@ -1186,7 +1186,7 @@ Scope: TV_Start
 		Use: [2]
 		Def: [84]
 		In: [2]
-		Out: [84]
+		Out: [2, 84]
 
 	Basic Block: 139
 		Type: HLOAD
@@ -1194,8 +1194,8 @@ Scope: TV_Start
 		Next: 140
 		Use: [84]
 		Def: [85]
-		In: [84]
-		Out: [84, 85]
+		In: [2, 84]
+		Out: [2, 84, 85]
 
 	Basic Block: 140
 		Type: HLOAD
@@ -1203,8 +1203,8 @@ Scope: TV_Start
 		Next: 141
 		Use: [85]
 		Def: [86]
-		In: [84, 85]
-		Out: [84, 86]
+		In: [2, 84, 85]
+		Out: [2, 84, 86]
 
 	Basic Block: 141
 		Type: MOVE
@@ -1212,8 +1212,8 @@ Scope: TV_Start
 		Next: 142
 		Use: [84, 86]
 		Def: [87]
-		In: [84, 86]
-		Out: [87]
+		In: [2, 84, 86]
+		Out: [2, 87]
 
 	Basic Block: 142
 		Type: MOVE
@@ -1221,8 +1221,8 @@ Scope: TV_Start
 		Next: 143
 		Use: [87]
 		Def: [38]
-		In: [87]
-		Out: []
+		In: [2, 87]
+		Out: [2]
 
 	Basic Block: 143
 		Type: MOVE
@@ -1230,8 +1230,8 @@ Scope: TV_Start
 		Next: 144
 		Use: []
 		Def: [88]
-		In: []
-		Out: [88]
+		In: [2]
+		Out: [2, 88]
 
 	Basic Block: 144
 		Type: PRINT
@@ -1239,8 +1239,8 @@ Scope: TV_Start
 		Next: 145
 		Use: [88]
 		Def: []
-		In: [88]
-		Out: []
+		In: [2, 88]
+		Out: [2]
 
 	Basic Block: 145
 		Type: MOVE
@@ -1248,8 +1248,8 @@ Scope: TV_Start
 		Next: 146
 		Use: []
 		Def: [91]
-		In: []
-		Out: [91]
+		In: [2]
+		Out: [2, 91]
 
 	Basic Block: 146
 		Type: MOVE
@@ -1257,8 +1257,8 @@ Scope: TV_Start
 		Next: 147
 		Use: [91]
 		Def: [92]
-		In: [91]
-		Out: [92]
+		In: [2, 91]
+		Out: [2, 92]
 
 	Basic Block: 147
 		Type: MOVE
@@ -1266,8 +1266,8 @@ Scope: TV_Start
 		Next: 148
 		Use: [92]
 		Def: [90]
-		In: [92]
-		Out: [90]
+		In: [2, 92]
+		Out: [2, 90]
 
 	Basic Block: 148
 		Type: MOVE
@@ -1275,8 +1275,8 @@ Scope: TV_Start
 		Next: 149
 		Use: []
 		Def: [94]
-		In: [90]
-		Out: [90, 94]
+		In: [2, 90]
+		Out: [2, 90, 94]
 
 	Basic Block: 149
 		Type: MOVE
@@ -1284,8 +1284,8 @@ Scope: TV_Start
 		Next: 150
 		Use: [94]
 		Def: [95]
-		In: [90, 94]
-		Out: [90, 95]
+		In: [2, 90, 94]
+		Out: [2, 90, 95]
 
 	Basic Block: 150
 		Type: MOVE
@@ -1293,8 +1293,8 @@ Scope: TV_Start
 		Next: 151
 		Use: [95]
 		Def: [93]
-		In: [90, 95]
-		Out: [90, 93]
+		In: [2, 90, 95]
+		Out: [2, 90, 93]
 
 	Basic Block: 151
 		Type: MOVE
@@ -1302,8 +1302,8 @@ Scope: TV_Start
 		Next: 152
 		Use: []
 		Def: [96]
-		In: [90, 93]
-		Out: [96, 90, 93]
+		In: [2, 90, 93]
+		Out: [96, 2, 90, 93]
 
 	Basic Block: 152
 		Type: HSTORE
@@ -1311,8 +1311,8 @@ Scope: TV_Start
 		Next: 153
 		Use: [96, 90]
 		Def: []
-		In: [96, 90, 93]
-		Out: [93]
+		In: [96, 2, 90, 93]
+		Out: [2, 90, 93]
 
 	Basic Block: 153
 		Type: MOVE
@@ -1320,8 +1320,8 @@ Scope: TV_Start
 		Next: 154
 		Use: []
 		Def: [98]
-		In: [93]
-		Out: [98, 93]
+		In: [2, 90, 93]
+		Out: [98, 2, 90, 93]
 
 	Basic Block: 154
 		Type: MOVE
@@ -1329,8 +1329,8 @@ Scope: TV_Start
 		Next: 155
 		Use: [98]
 		Def: [97]
-		In: [98, 93]
-		Out: [97, 93]
+		In: [98, 2, 90, 93]
+		Out: [97, 2, 90, 93]
 
 	Basic Block: 155
 		Type: MOVE
@@ -1338,8 +1338,8 @@ Scope: TV_Start
 		Next: 157
 		Use: []
 		Def: [99]
-		In: [97, 93]
-		Out: [97, 99, 93]
+		In: [97, 2, 90, 93]
+		Out: [97, 2, 99, 90, 93]
 
 	Basic Block: 157
 		Type: MOVE
@@ -1347,8 +1347,8 @@ Scope: TV_Start
 		Next: 158
 		Use: [97, 99]
 		Def: [100]
-		In: [97, 99, 93]
-		Out: [97, 100, 93]
+		In: [97, 2, 99, 90, 93]
+		Out: [97, 2, 100, 90, 93]
 
 	Basic Block: 158
 		Type: CJUMP
@@ -1356,8 +1356,8 @@ Scope: TV_Start
 		Next: 159
 		Use: [100]
 		Def: []
-		In: [97, 100, 93]
-		Out: [97, 93]
+		In: [97, 2, 100, 90, 93]
+		Out: [97, 2, 90, 93]
 
 	Basic Block: 159
 		Type: MOVE
@@ -1365,8 +1365,8 @@ Scope: TV_Start
 		Next: 160
 		Use: [97, 93]
 		Def: [101]
-		In: [97, 93]
-		Out: [97, 101]
+		In: [97, 2, 90, 93]
+		Out: [97, 2, 101, 90, 93]
 
 	Basic Block: 160
 		Type: MOVE
@@ -1374,8 +1374,8 @@ Scope: TV_Start
 		Next: 161
 		Use: []
 		Def: [102]
-		In: [97, 101]
-		Out: [97, 101, 102]
+		In: [97, 2, 101, 90, 93]
+		Out: [97, 2, 101, 102, 90, 93]
 
 	Basic Block: 161
 		Type: HSTORE
@@ -1383,8 +1383,8 @@ Scope: TV_Start
 		Next: 162
 		Use: [101, 102]
 		Def: []
-		In: [97, 101, 102]
-		Out: [97]
+		In: [97, 2, 101, 102, 90, 93]
+		Out: [97, 2, 90, 93]
 
 	Basic Block: 162
 		Type: MOVE
@@ -1392,8 +1392,8 @@ Scope: TV_Start
 		Next: 163
 		Use: []
 		Def: [103]
-		In: [97]
-		Out: [97, 103]
+		In: [97, 2, 90, 93]
+		Out: [97, 2, 103, 90, 93]
 
 	Basic Block: 163
 		Type: MOVE
@@ -1401,8 +1401,8 @@ Scope: TV_Start
 		Next: 164
 		Use: [97, 103]
 		Def: [104]
-		In: [97, 103]
-		Out: [104]
+		In: [97, 2, 103, 90, 93]
+		Out: [2, 104, 90, 93]
 
 	Basic Block: 164
 		Type: MOVE
@@ -1410,8 +1410,8 @@ Scope: TV_Start
 		Next: 165
 		Use: [104]
 		Def: [97]
-		In: [104]
-		Out: []
+		In: [2, 104, 90, 93]
+		Out: [97, 2, 90, 93]
 
 	Basic Block: 165
 		Type: JUMP
@@ -1419,8 +1419,8 @@ Scope: TV_Start
 		Next: 166
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [97, 2, 90, 93]
+		Out: [97, 2, 90, 93]
 
 	Basic Block: 166
 		Type: HSTORE
@@ -1951,6 +1951,15 @@ Scope: TV_Start
 		Use: []
 		Def: [151]
 		In: []
+		Out: [151]
+
+	Basic Block: 226
+		Type: RETURN
+		Label: null
+		Next: 227
+		Use: [151]
+		Def: []
+		In: [151]
 		Out: []
 
 Scope: Tree_Init
@@ -2006,6 +2015,15 @@ Scope: Tree_Init
 		Use: []
 		Def: [5]
 		In: []
+		Out: [5]
+
+	Basic Block: 236
+		Type: RETURN
+		Label: null
+		Next: 237
+		Use: [5]
+		Def: []
+		In: [5]
 		Out: []
 
 Scope: Tree_SetRight
@@ -2025,6 +2043,15 @@ Scope: Tree_SetRight
 		Use: []
 		Def: [3]
 		In: []
+		Out: [3]
+
+	Basic Block: 242
+		Type: RETURN
+		Label: null
+		Next: 243
+		Use: [3]
+		Def: []
+		In: [3]
 		Out: []
 
 Scope: Tree_SetLeft
@@ -2044,6 +2071,15 @@ Scope: Tree_SetLeft
 		Use: []
 		Def: [3]
 		In: []
+		Out: [3]
+
+	Basic Block: 248
+		Type: RETURN
+		Label: null
+		Next: 249
+		Use: [3]
+		Def: []
+		In: [3]
 		Out: []
 
 Scope: Tree_GetRight
@@ -2054,6 +2090,15 @@ Scope: Tree_GetRight
 		Use: [0]
 		Def: [2]
 		In: [0]
+		Out: [2]
+
+	Basic Block: 253
+		Type: RETURN
+		Label: null
+		Next: 254
+		Use: [2]
+		Def: []
+		In: [2]
 		Out: []
 
 Scope: Tree_GetLeft
@@ -2064,6 +2109,15 @@ Scope: Tree_GetLeft
 		Use: [0]
 		Def: [2]
 		In: [0]
+		Out: [2]
+
+	Basic Block: 258
+		Type: RETURN
+		Label: null
+		Next: 259
+		Use: [2]
+		Def: []
+		In: [2]
 		Out: []
 
 Scope: Tree_GetKey
@@ -2074,6 +2128,15 @@ Scope: Tree_GetKey
 		Use: [0]
 		Def: [2]
 		In: [0]
+		Out: [2]
+
+	Basic Block: 263
+		Type: RETURN
+		Label: null
+		Next: 264
+		Use: [2]
+		Def: []
+		In: [2]
 		Out: []
 
 Scope: Tree_SetKey
@@ -2093,6 +2156,15 @@ Scope: Tree_SetKey
 		Use: []
 		Def: [3]
 		In: []
+		Out: [3]
+
+	Basic Block: 269
+		Type: RETURN
+		Label: null
+		Next: 270
+		Use: [3]
+		Def: []
+		In: [3]
 		Out: []
 
 Scope: Tree_GetHas_Right
@@ -2103,6 +2175,15 @@ Scope: Tree_GetHas_Right
 		Use: [0]
 		Def: [2]
 		In: [0]
+		Out: [2]
+
+	Basic Block: 274
+		Type: RETURN
+		Label: null
+		Next: 275
+		Use: [2]
+		Def: []
+		In: [2]
 		Out: []
 
 Scope: Tree_GetHas_Left
@@ -2113,6 +2194,15 @@ Scope: Tree_GetHas_Left
 		Use: [0]
 		Def: [2]
 		In: [0]
+		Out: [2]
+
+	Basic Block: 279
+		Type: RETURN
+		Label: null
+		Next: 280
+		Use: [2]
+		Def: []
+		In: [2]
 		Out: []
 
 Scope: Tree_SetHas_Left
@@ -2132,6 +2222,15 @@ Scope: Tree_SetHas_Left
 		Use: []
 		Def: [3]
 		In: []
+		Out: [3]
+
+	Basic Block: 285
+		Type: RETURN
+		Label: null
+		Next: 286
+		Use: [3]
+		Def: []
+		In: [3]
 		Out: []
 
 Scope: Tree_SetHas_Right
@@ -2151,6 +2250,15 @@ Scope: Tree_SetHas_Right
 		Use: []
 		Def: [3]
 		In: []
+		Out: [3]
+
+	Basic Block: 291
+		Type: RETURN
+		Label: null
+		Next: 292
+		Use: [3]
+		Def: []
+		In: [3]
 		Out: []
 
 Scope: Tree_Compare
@@ -2197,7 +2305,7 @@ Scope: Tree_Compare
 		Use: [8]
 		Def: [6]
 		In: [1, 2, 8]
-		Out: [1, 2]
+		Out: [1, 2, 6]
 
 	Basic Block: 300
 		Type: MOVE
@@ -2205,8 +2313,8 @@ Scope: Tree_Compare
 		Next: 301
 		Use: []
 		Def: [10]
-		In: [1, 2]
-		Out: [1, 2, 10]
+		In: [1, 2, 6]
+		Out: [1, 2, 6, 10]
 
 	Basic Block: 301
 		Type: MOVE
@@ -2214,8 +2322,8 @@ Scope: Tree_Compare
 		Next: 302
 		Use: [2, 10]
 		Def: [11]
-		In: [1, 2, 10]
-		Out: [1, 11]
+		In: [1, 2, 6, 10]
+		Out: [1, 6, 11]
 
 	Basic Block: 302
 		Type: MOVE
@@ -2223,8 +2331,8 @@ Scope: Tree_Compare
 		Next: 303
 		Use: [11]
 		Def: [9]
-		In: [1, 11]
-		Out: [1, 9]
+		In: [1, 6, 11]
+		Out: [1, 6, 9]
 
 	Basic Block: 303
 		Type: MOVE
@@ -2232,8 +2340,8 @@ Scope: Tree_Compare
 		Next: 304
 		Use: [1, 9]
 		Def: [12]
-		In: [1, 9]
-		Out: [12]
+		In: [1, 6, 9]
+		Out: [1, 6, 12]
 
 	Basic Block: 304
 		Type: CJUMP
@@ -2241,8 +2349,8 @@ Scope: Tree_Compare
 		Next: 305
 		Use: [12]
 		Def: []
-		In: [12]
-		Out: []
+		In: [1, 6, 12]
+		Out: [1, 6]
 
 	Basic Block: 305
 		Type: MOVE
@@ -2260,7 +2368,7 @@ Scope: Tree_Compare
 		Use: [13]
 		Def: [4]
 		In: [13]
-		Out: []
+		Out: [4]
 
 	Basic Block: 307
 		Type: JUMP
@@ -2268,8 +2376,8 @@ Scope: Tree_Compare
 		Next: 308
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [4]
+		Out: [4]
 
 	Basic Block: 308
 		Type: MOVE
@@ -2350,7 +2458,7 @@ Scope: Tree_Compare
 		Use: [20]
 		Def: [4]
 		In: [20]
-		Out: []
+		Out: [4]
 
 	Basic Block: 318
 		Type: JUMP
@@ -2358,8 +2466,8 @@ Scope: Tree_Compare
 		Next: 319
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [4]
+		Out: [4]
 
 	Basic Block: 319
 		Type: MOVE
@@ -2377,7 +2485,7 @@ Scope: Tree_Compare
 		Use: [21]
 		Def: [4]
 		In: [21]
-		Out: []
+		Out: [4]
 
 	Basic Block: 322
 		Type: NOOP
@@ -2385,8 +2493,8 @@ Scope: Tree_Compare
 		Next: 324
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [4]
+		Out: [4]
 
 	Basic Block: 324
 		Type: NOOP
@@ -2394,7 +2502,16 @@ Scope: Tree_Compare
 		Next: 326
 		Use: []
 		Def: []
-		In: []
+		In: [4]
+		Out: [4]
+
+	Basic Block: 326
+		Type: RETURN
+		Label: null
+		Next: 327
+		Use: [4]
+		Def: []
+		In: [4]
 		Out: []
 
 Scope: Tree_Insert
@@ -2404,8 +2521,8 @@ Scope: Tree_Insert
 		Next: 331
 		Use: []
 		Def: [5]
-		In: []
-		Out: [5]
+		In: [0, 1]
+		Out: [0, 1, 5]
 
 	Basic Block: 331
 		Type: MOVE
@@ -2413,8 +2530,8 @@ Scope: Tree_Insert
 		Next: 332
 		Use: [5]
 		Def: [6]
-		In: [5]
-		Out: [6]
+		In: [0, 1, 5]
+		Out: [0, 1, 6]
 
 	Basic Block: 332
 		Type: MOVE
@@ -2422,8 +2539,8 @@ Scope: Tree_Insert
 		Next: 333
 		Use: [6]
 		Def: [4]
-		In: [6]
-		Out: [4]
+		In: [0, 1, 6]
+		Out: [0, 1, 4]
 
 	Basic Block: 333
 		Type: MOVE
@@ -2431,8 +2548,8 @@ Scope: Tree_Insert
 		Next: 334
 		Use: []
 		Def: [8]
-		In: [4]
-		Out: [4, 8]
+		In: [0, 1, 4]
+		Out: [0, 1, 4, 8]
 
 	Basic Block: 334
 		Type: MOVE
@@ -2440,8 +2557,8 @@ Scope: Tree_Insert
 		Next: 335
 		Use: [8]
 		Def: [9]
-		In: [4, 8]
-		Out: [4, 9]
+		In: [0, 1, 4, 8]
+		Out: [0, 1, 4, 9]
 
 	Basic Block: 335
 		Type: MOVE
@@ -2449,8 +2566,8 @@ Scope: Tree_Insert
 		Next: 336
 		Use: [9]
 		Def: [7]
-		In: [4, 9]
-		Out: [4, 7]
+		In: [0, 1, 4, 9]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 336
 		Type: MOVE
@@ -2458,8 +2575,8 @@ Scope: Tree_Insert
 		Next: 337
 		Use: []
 		Def: [10]
-		In: [4, 7]
-		Out: [4, 7, 10]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 10]
 
 	Basic Block: 337
 		Type: HSTORE
@@ -2467,8 +2584,8 @@ Scope: Tree_Insert
 		Next: 338
 		Use: [4, 10]
 		Def: []
-		In: [4, 7, 10]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 10]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 338
 		Type: MOVE
@@ -2476,8 +2593,8 @@ Scope: Tree_Insert
 		Next: 339
 		Use: []
 		Def: [11]
-		In: [4, 7]
-		Out: [4, 7, 11]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 11]
 
 	Basic Block: 339
 		Type: HSTORE
@@ -2485,8 +2602,8 @@ Scope: Tree_Insert
 		Next: 340
 		Use: [4, 11]
 		Def: []
-		In: [4, 7, 11]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 11]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 340
 		Type: MOVE
@@ -2494,8 +2611,8 @@ Scope: Tree_Insert
 		Next: 341
 		Use: []
 		Def: [12]
-		In: [4, 7]
-		Out: [4, 7, 12]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 12]
 
 	Basic Block: 341
 		Type: HSTORE
@@ -2503,8 +2620,8 @@ Scope: Tree_Insert
 		Next: 342
 		Use: [4, 12]
 		Def: []
-		In: [4, 7, 12]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 12]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 342
 		Type: MOVE
@@ -2512,8 +2629,8 @@ Scope: Tree_Insert
 		Next: 343
 		Use: []
 		Def: [13]
-		In: [4, 7]
-		Out: [4, 7, 13]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 13]
 
 	Basic Block: 343
 		Type: HSTORE
@@ -2521,8 +2638,8 @@ Scope: Tree_Insert
 		Next: 344
 		Use: [4, 13]
 		Def: []
-		In: [4, 7, 13]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 13]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 344
 		Type: MOVE
@@ -2530,8 +2647,8 @@ Scope: Tree_Insert
 		Next: 345
 		Use: []
 		Def: [14]
-		In: [4, 7]
-		Out: [4, 7, 14]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 14]
 
 	Basic Block: 345
 		Type: HSTORE
@@ -2539,8 +2656,8 @@ Scope: Tree_Insert
 		Next: 346
 		Use: [4, 14]
 		Def: []
-		In: [4, 7, 14]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 14]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 346
 		Type: MOVE
@@ -2548,8 +2665,8 @@ Scope: Tree_Insert
 		Next: 347
 		Use: []
 		Def: [15]
-		In: [4, 7]
-		Out: [4, 7, 15]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 15]
 
 	Basic Block: 347
 		Type: HSTORE
@@ -2557,8 +2674,8 @@ Scope: Tree_Insert
 		Next: 348
 		Use: [4, 15]
 		Def: []
-		In: [4, 7, 15]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 15]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 348
 		Type: MOVE
@@ -2566,8 +2683,8 @@ Scope: Tree_Insert
 		Next: 349
 		Use: []
 		Def: [16]
-		In: [4, 7]
-		Out: [16, 4, 7]
+		In: [0, 1, 4, 7]
+		Out: [16, 0, 1, 4, 7]
 
 	Basic Block: 349
 		Type: HSTORE
@@ -2575,8 +2692,8 @@ Scope: Tree_Insert
 		Next: 350
 		Use: [16, 4]
 		Def: []
-		In: [16, 4, 7]
-		Out: [4, 7]
+		In: [16, 0, 1, 4, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 350
 		Type: MOVE
@@ -2584,8 +2701,8 @@ Scope: Tree_Insert
 		Next: 351
 		Use: []
 		Def: [17]
-		In: [4, 7]
-		Out: [17, 4, 7]
+		In: [0, 1, 4, 7]
+		Out: [0, 17, 1, 4, 7]
 
 	Basic Block: 351
 		Type: HSTORE
@@ -2593,8 +2710,8 @@ Scope: Tree_Insert
 		Next: 352
 		Use: [17, 4]
 		Def: []
-		In: [17, 4, 7]
-		Out: [4, 7]
+		In: [0, 17, 1, 4, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 352
 		Type: MOVE
@@ -2602,8 +2719,8 @@ Scope: Tree_Insert
 		Next: 353
 		Use: []
 		Def: [18]
-		In: [4, 7]
-		Out: [18, 4, 7]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 18, 4, 7]
 
 	Basic Block: 353
 		Type: HSTORE
@@ -2611,8 +2728,8 @@ Scope: Tree_Insert
 		Next: 354
 		Use: [18, 4]
 		Def: []
-		In: [18, 4, 7]
-		Out: [4, 7]
+		In: [0, 1, 18, 4, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 354
 		Type: MOVE
@@ -2620,8 +2737,8 @@ Scope: Tree_Insert
 		Next: 355
 		Use: []
 		Def: [19]
-		In: [4, 7]
-		Out: [19, 4, 7]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 19, 4, 7]
 
 	Basic Block: 355
 		Type: HSTORE
@@ -2629,8 +2746,8 @@ Scope: Tree_Insert
 		Next: 356
 		Use: [19, 4]
 		Def: []
-		In: [19, 4, 7]
-		Out: [4, 7]
+		In: [0, 1, 19, 4, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 356
 		Type: MOVE
@@ -2638,8 +2755,8 @@ Scope: Tree_Insert
 		Next: 357
 		Use: []
 		Def: [20]
-		In: [4, 7]
-		Out: [4, 20, 7]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 20, 7]
 
 	Basic Block: 357
 		Type: HSTORE
@@ -2647,8 +2764,8 @@ Scope: Tree_Insert
 		Next: 358
 		Use: [4, 20]
 		Def: []
-		In: [4, 20, 7]
-		Out: [4, 7]
+		In: [0, 1, 4, 20, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 358
 		Type: MOVE
@@ -2656,8 +2773,8 @@ Scope: Tree_Insert
 		Next: 359
 		Use: []
 		Def: [21]
-		In: [4, 7]
-		Out: [4, 21, 7]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 21, 7]
 
 	Basic Block: 359
 		Type: HSTORE
@@ -2665,8 +2782,8 @@ Scope: Tree_Insert
 		Next: 360
 		Use: [4, 21]
 		Def: []
-		In: [4, 21, 7]
-		Out: [4, 7]
+		In: [0, 1, 4, 21, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 360
 		Type: MOVE
@@ -2674,8 +2791,8 @@ Scope: Tree_Insert
 		Next: 361
 		Use: []
 		Def: [22]
-		In: [4, 7]
-		Out: [4, 22, 7]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 22, 7]
 
 	Basic Block: 361
 		Type: HSTORE
@@ -2683,8 +2800,8 @@ Scope: Tree_Insert
 		Next: 362
 		Use: [4, 22]
 		Def: []
-		In: [4, 22, 7]
-		Out: [4, 7]
+		In: [0, 1, 4, 22, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 362
 		Type: MOVE
@@ -2692,8 +2809,8 @@ Scope: Tree_Insert
 		Next: 363
 		Use: []
 		Def: [23]
-		In: [4, 7]
-		Out: [4, 23, 7]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 23, 7]
 
 	Basic Block: 363
 		Type: HSTORE
@@ -2701,8 +2818,8 @@ Scope: Tree_Insert
 		Next: 364
 		Use: [4, 23]
 		Def: []
-		In: [4, 23, 7]
-		Out: [4, 7]
+		In: [0, 1, 4, 23, 7]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 364
 		Type: MOVE
@@ -2710,8 +2827,8 @@ Scope: Tree_Insert
 		Next: 365
 		Use: []
 		Def: [24]
-		In: [4, 7]
-		Out: [4, 7, 24]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 24]
 
 	Basic Block: 365
 		Type: HSTORE
@@ -2719,8 +2836,8 @@ Scope: Tree_Insert
 		Next: 366
 		Use: [4, 24]
 		Def: []
-		In: [4, 7, 24]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 24]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 366
 		Type: MOVE
@@ -2728,8 +2845,8 @@ Scope: Tree_Insert
 		Next: 367
 		Use: []
 		Def: [25]
-		In: [4, 7]
-		Out: [4, 7, 25]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 25]
 
 	Basic Block: 367
 		Type: HSTORE
@@ -2737,8 +2854,8 @@ Scope: Tree_Insert
 		Next: 368
 		Use: [4, 25]
 		Def: []
-		In: [4, 7, 25]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 25]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 368
 		Type: MOVE
@@ -2746,8 +2863,8 @@ Scope: Tree_Insert
 		Next: 369
 		Use: []
 		Def: [26]
-		In: [4, 7]
-		Out: [4, 7, 26]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 26]
 
 	Basic Block: 369
 		Type: HSTORE
@@ -2755,8 +2872,8 @@ Scope: Tree_Insert
 		Next: 370
 		Use: [4, 26]
 		Def: []
-		In: [4, 7, 26]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 26]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 370
 		Type: MOVE
@@ -2764,8 +2881,8 @@ Scope: Tree_Insert
 		Next: 371
 		Use: []
 		Def: [27]
-		In: [4, 7]
-		Out: [4, 7, 27]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 27]
 
 	Basic Block: 371
 		Type: HSTORE
@@ -2773,8 +2890,8 @@ Scope: Tree_Insert
 		Next: 372
 		Use: [4, 27]
 		Def: []
-		In: [4, 7, 27]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 27]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 372
 		Type: MOVE
@@ -2782,8 +2899,8 @@ Scope: Tree_Insert
 		Next: 373
 		Use: []
 		Def: [28]
-		In: [4, 7]
-		Out: [4, 7, 28]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 28]
 
 	Basic Block: 373
 		Type: HSTORE
@@ -2791,8 +2908,8 @@ Scope: Tree_Insert
 		Next: 374
 		Use: [4, 28]
 		Def: []
-		In: [4, 7, 28]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 28]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 374
 		Type: MOVE
@@ -2800,8 +2917,8 @@ Scope: Tree_Insert
 		Next: 375
 		Use: []
 		Def: [29]
-		In: [4, 7]
-		Out: [4, 7, 29]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 29]
 
 	Basic Block: 375
 		Type: HSTORE
@@ -2809,8 +2926,8 @@ Scope: Tree_Insert
 		Next: 376
 		Use: [4, 29]
 		Def: []
-		In: [4, 7, 29]
-		Out: [4, 7]
+		In: [0, 1, 4, 7, 29]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 376
 		Type: MOVE
@@ -2818,8 +2935,8 @@ Scope: Tree_Insert
 		Next: 377
 		Use: []
 		Def: [30]
-		In: [4, 7]
-		Out: [4, 7, 30]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 30]
 
 	Basic Block: 377
 		Type: HSTORE
@@ -2827,8 +2944,8 @@ Scope: Tree_Insert
 		Next: 378
 		Use: [4, 30]
 		Def: []
-		In: [4, 7, 30]
-		Out: [7]
+		In: [0, 1, 4, 7, 30]
+		Out: [0, 1, 4, 7]
 
 	Basic Block: 378
 		Type: MOVE
@@ -2836,8 +2953,8 @@ Scope: Tree_Insert
 		Next: 379
 		Use: []
 		Def: [32]
-		In: [7]
-		Out: [32, 7]
+		In: [0, 1, 4, 7]
+		Out: [32, 0, 1, 4, 7]
 
 	Basic Block: 379
 		Type: MOVE
@@ -2845,8 +2962,8 @@ Scope: Tree_Insert
 		Next: 380
 		Use: [32]
 		Def: [31]
-		In: [32, 7]
-		Out: [7, 31]
+		In: [32, 0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 31]
 
 	Basic Block: 380
 		Type: MOVE
@@ -2854,8 +2971,8 @@ Scope: Tree_Insert
 		Next: 382
 		Use: []
 		Def: [33]
-		In: [7, 31]
-		Out: [33, 7, 31]
+		In: [0, 1, 4, 7, 31]
+		Out: [0, 33, 1, 4, 7, 31]
 
 	Basic Block: 382
 		Type: MOVE
@@ -2863,8 +2980,8 @@ Scope: Tree_Insert
 		Next: 383
 		Use: [33, 31]
 		Def: [34]
-		In: [33, 7, 31]
-		Out: [34, 7, 31]
+		In: [0, 33, 1, 4, 7, 31]
+		Out: [0, 1, 34, 4, 7, 31]
 
 	Basic Block: 383
 		Type: CJUMP
@@ -2872,8 +2989,8 @@ Scope: Tree_Insert
 		Next: 384
 		Use: [34]
 		Def: []
-		In: [34, 7, 31]
-		Out: [7, 31]
+		In: [0, 1, 34, 4, 7, 31]
+		Out: [0, 1, 4, 7, 31]
 
 	Basic Block: 384
 		Type: MOVE
@@ -2881,8 +2998,8 @@ Scope: Tree_Insert
 		Next: 385
 		Use: [7, 31]
 		Def: [35]
-		In: [7, 31]
-		Out: [35, 31]
+		In: [0, 1, 4, 7, 31]
+		Out: [0, 1, 35, 4, 7, 31]
 
 	Basic Block: 385
 		Type: MOVE
@@ -2890,8 +3007,8 @@ Scope: Tree_Insert
 		Next: 386
 		Use: []
 		Def: [36]
-		In: [35, 31]
-		Out: [35, 36, 31]
+		In: [0, 1, 35, 4, 7, 31]
+		Out: [0, 1, 35, 36, 4, 7, 31]
 
 	Basic Block: 386
 		Type: HSTORE
@@ -2899,8 +3016,8 @@ Scope: Tree_Insert
 		Next: 387
 		Use: [35, 36]
 		Def: []
-		In: [35, 36, 31]
-		Out: [31]
+		In: [0, 1, 35, 36, 4, 7, 31]
+		Out: [0, 1, 4, 7, 31]
 
 	Basic Block: 387
 		Type: MOVE
@@ -2908,8 +3025,8 @@ Scope: Tree_Insert
 		Next: 388
 		Use: []
 		Def: [37]
-		In: [31]
-		Out: [37, 31]
+		In: [0, 1, 4, 7, 31]
+		Out: [0, 1, 4, 37, 7, 31]
 
 	Basic Block: 388
 		Type: MOVE
@@ -2917,8 +3034,8 @@ Scope: Tree_Insert
 		Next: 389
 		Use: [37, 31]
 		Def: [38]
-		In: [37, 31]
-		Out: [38]
+		In: [0, 1, 4, 37, 7, 31]
+		Out: [0, 1, 4, 38, 7]
 
 	Basic Block: 389
 		Type: MOVE
@@ -2926,8 +3043,8 @@ Scope: Tree_Insert
 		Next: 390
 		Use: [38]
 		Def: [31]
-		In: [38]
-		Out: []
+		In: [0, 1, 4, 38, 7]
+		Out: [0, 1, 4, 7, 31]
 
 	Basic Block: 390
 		Type: JUMP
@@ -2935,8 +3052,8 @@ Scope: Tree_Insert
 		Next: 391
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 4, 7, 31]
+		Out: [0, 1, 4, 7, 31]
 
 	Basic Block: 391
 		Type: HSTORE
@@ -2963,7 +3080,7 @@ Scope: Tree_Insert
 		Use: [3]
 		Def: [40]
 		In: [0, 1, 3]
-		Out: [0, 1, 40]
+		Out: [0, 1, 3, 40]
 
 	Basic Block: 395
 		Type: HLOAD
@@ -2971,8 +3088,8 @@ Scope: Tree_Insert
 		Next: 396
 		Use: [40]
 		Def: [41]
-		In: [0, 1, 40]
-		Out: [0, 1, 40, 41]
+		In: [0, 1, 3, 40]
+		Out: [0, 1, 3, 40, 41]
 
 	Basic Block: 396
 		Type: HLOAD
@@ -2980,8 +3097,8 @@ Scope: Tree_Insert
 		Next: 397
 		Use: [41]
 		Def: [42]
-		In: [0, 1, 40, 41]
-		Out: [0, 1, 40, 42]
+		In: [0, 1, 3, 40, 41]
+		Out: [0, 1, 3, 40, 42]
 
 	Basic Block: 397
 		Type: MOVE
@@ -2989,8 +3106,8 @@ Scope: Tree_Insert
 		Next: 398
 		Use: [1, 40, 42]
 		Def: [43]
-		In: [0, 1, 40, 42]
-		Out: [0, 1, 43]
+		In: [0, 1, 3, 40, 42]
+		Out: [0, 1, 3, 43]
 
 	Basic Block: 398
 		Type: MOVE
@@ -2998,8 +3115,8 @@ Scope: Tree_Insert
 		Next: 399
 		Use: [43]
 		Def: [39]
-		In: [0, 1, 43]
-		Out: [0, 1]
+		In: [0, 1, 3, 43]
+		Out: [0, 1, 3]
 
 	Basic Block: 399
 		Type: MOVE
@@ -3007,8 +3124,8 @@ Scope: Tree_Insert
 		Next: 400
 		Use: [0]
 		Def: [44]
-		In: [0, 1]
-		Out: [1, 44]
+		In: [0, 1, 3]
+		Out: [1, 3, 44]
 
 	Basic Block: 400
 		Type: MOVE
@@ -3016,8 +3133,8 @@ Scope: Tree_Insert
 		Next: 401
 		Use: []
 		Def: [46]
-		In: [1, 44]
-		Out: [1, 44, 46]
+		In: [1, 3, 44]
+		Out: [1, 3, 44, 46]
 
 	Basic Block: 401
 		Type: MOVE
@@ -3025,8 +3142,8 @@ Scope: Tree_Insert
 		Next: 402
 		Use: [46]
 		Def: [45]
-		In: [1, 44, 46]
-		Out: [1, 44, 45]
+		In: [1, 3, 44, 46]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 402
 		Type: CJUMP
@@ -3034,8 +3151,8 @@ Scope: Tree_Insert
 		Next: 404
 		Use: [45]
 		Def: []
-		In: [1, 44, 45]
-		Out: [1, 44]
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 404
 		Type: MOVE
@@ -3043,8 +3160,8 @@ Scope: Tree_Insert
 		Next: 405
 		Use: [44]
 		Def: [48]
-		In: [1, 44]
-		Out: [48, 1, 44]
+		In: [1, 3, 44, 45]
+		Out: [48, 1, 3, 44, 45]
 
 	Basic Block: 405
 		Type: HLOAD
@@ -3052,8 +3169,8 @@ Scope: Tree_Insert
 		Next: 406
 		Use: [48]
 		Def: [49]
-		In: [48, 1, 44]
-		Out: [48, 49, 1, 44]
+		In: [48, 1, 3, 44, 45]
+		Out: [48, 49, 1, 3, 44, 45]
 
 	Basic Block: 406
 		Type: HLOAD
@@ -3061,8 +3178,8 @@ Scope: Tree_Insert
 		Next: 407
 		Use: [49]
 		Def: [50]
-		In: [48, 49, 1, 44]
-		Out: [48, 1, 50, 44]
+		In: [48, 49, 1, 3, 44, 45]
+		Out: [48, 1, 50, 3, 44, 45]
 
 	Basic Block: 407
 		Type: MOVE
@@ -3070,8 +3187,8 @@ Scope: Tree_Insert
 		Next: 408
 		Use: [48, 50]
 		Def: [51]
-		In: [48, 1, 50, 44]
-		Out: [1, 51, 44]
+		In: [48, 1, 50, 3, 44, 45]
+		Out: [1, 51, 3, 44, 45]
 
 	Basic Block: 408
 		Type: MOVE
@@ -3079,8 +3196,8 @@ Scope: Tree_Insert
 		Next: 409
 		Use: [51]
 		Def: [47]
-		In: [1, 51, 44]
-		Out: [1, 44, 47]
+		In: [1, 51, 3, 44, 45]
+		Out: [1, 3, 44, 45, 47]
 
 	Basic Block: 409
 		Type: MOVE
@@ -3088,8 +3205,8 @@ Scope: Tree_Insert
 		Next: 410
 		Use: []
 		Def: [53]
-		In: [1, 44, 47]
-		Out: [1, 53, 44, 47]
+		In: [1, 3, 44, 45, 47]
+		Out: [1, 3, 53, 44, 45, 47]
 
 	Basic Block: 410
 		Type: MOVE
@@ -3097,8 +3214,8 @@ Scope: Tree_Insert
 		Next: 411
 		Use: [53, 47]
 		Def: [54]
-		In: [1, 53, 44, 47]
-		Out: [1, 54, 44]
+		In: [1, 3, 53, 44, 45, 47]
+		Out: [1, 3, 54, 44, 45]
 
 	Basic Block: 411
 		Type: MOVE
@@ -3106,8 +3223,8 @@ Scope: Tree_Insert
 		Next: 412
 		Use: [54]
 		Def: [52]
-		In: [1, 54, 44]
-		Out: [1, 52, 44]
+		In: [1, 3, 54, 44, 45]
+		Out: [1, 3, 52, 44, 45]
 
 	Basic Block: 412
 		Type: MOVE
@@ -3115,8 +3232,8 @@ Scope: Tree_Insert
 		Next: 413
 		Use: [1, 52]
 		Def: [55]
-		In: [1, 52, 44]
-		Out: [55, 44]
+		In: [1, 3, 52, 44, 45]
+		Out: [1, 3, 55, 44, 45]
 
 	Basic Block: 413
 		Type: CJUMP
@@ -3124,8 +3241,8 @@ Scope: Tree_Insert
 		Next: 414
 		Use: [55]
 		Def: []
-		In: [55, 44]
-		Out: [44]
+		In: [1, 3, 55, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 414
 		Type: MOVE
@@ -3133,8 +3250,8 @@ Scope: Tree_Insert
 		Next: 415
 		Use: [44]
 		Def: [56]
-		In: [44]
-		Out: [56, 44]
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 56, 44, 45]
 
 	Basic Block: 415
 		Type: HLOAD
@@ -3142,8 +3259,8 @@ Scope: Tree_Insert
 		Next: 416
 		Use: [56]
 		Def: [57]
-		In: [56, 44]
-		Out: [56, 57, 44]
+		In: [1, 3, 56, 44, 45]
+		Out: [1, 3, 56, 57, 44, 45]
 
 	Basic Block: 416
 		Type: HLOAD
@@ -3151,8 +3268,8 @@ Scope: Tree_Insert
 		Next: 417
 		Use: [57]
 		Def: [58]
-		In: [56, 57, 44]
-		Out: [56, 58, 44]
+		In: [1, 3, 56, 57, 44, 45]
+		Out: [1, 3, 56, 58, 44, 45]
 
 	Basic Block: 417
 		Type: MOVE
@@ -3160,8 +3277,8 @@ Scope: Tree_Insert
 		Next: 418
 		Use: [56, 58]
 		Def: [59]
-		In: [56, 58, 44]
-		Out: [59, 44]
+		In: [1, 3, 56, 58, 44, 45]
+		Out: [1, 3, 59, 44, 45]
 
 	Basic Block: 418
 		Type: CJUMP
@@ -3169,8 +3286,8 @@ Scope: Tree_Insert
 		Next: 419
 		Use: [59]
 		Def: []
-		In: [59, 44]
-		Out: [44]
+		In: [1, 3, 59, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 419
 		Type: MOVE
@@ -3178,8 +3295,8 @@ Scope: Tree_Insert
 		Next: 420
 		Use: [44]
 		Def: [60]
-		In: [44]
-		Out: [60]
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 60, 45]
 
 	Basic Block: 420
 		Type: HLOAD
@@ -3187,8 +3304,8 @@ Scope: Tree_Insert
 		Next: 421
 		Use: [60]
 		Def: [61]
-		In: [60]
-		Out: [60, 61]
+		In: [1, 3, 60, 45]
+		Out: [1, 3, 60, 61, 45]
 
 	Basic Block: 421
 		Type: HLOAD
@@ -3196,8 +3313,8 @@ Scope: Tree_Insert
 		Next: 422
 		Use: [61]
 		Def: [62]
-		In: [60, 61]
-		Out: [60, 62]
+		In: [1, 3, 60, 61, 45]
+		Out: [1, 3, 60, 45, 62]
 
 	Basic Block: 422
 		Type: MOVE
@@ -3205,8 +3322,8 @@ Scope: Tree_Insert
 		Next: 423
 		Use: [60, 62]
 		Def: [63]
-		In: [60, 62]
-		Out: [63]
+		In: [1, 3, 60, 45, 62]
+		Out: [1, 3, 45, 63]
 
 	Basic Block: 423
 		Type: MOVE
@@ -3214,8 +3331,8 @@ Scope: Tree_Insert
 		Next: 424
 		Use: [63]
 		Def: [44]
-		In: [63]
-		Out: []
+		In: [1, 3, 45, 63]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 424
 		Type: JUMP
@@ -3223,8 +3340,8 @@ Scope: Tree_Insert
 		Next: 425
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 425
 		Type: MOVE
@@ -3232,8 +3349,8 @@ Scope: Tree_Insert
 		Next: 427
 		Use: []
 		Def: [64]
-		In: [3, 44]
-		Out: [64, 3, 44]
+		In: [1, 3, 44]
+		Out: [64, 1, 3, 44]
 
 	Basic Block: 427
 		Type: MOVE
@@ -3241,8 +3358,8 @@ Scope: Tree_Insert
 		Next: 428
 		Use: [64]
 		Def: [45]
-		In: [64, 3, 44]
-		Out: [3, 44]
+		In: [64, 1, 3, 44]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 428
 		Type: MOVE
@@ -3250,8 +3367,8 @@ Scope: Tree_Insert
 		Next: 429
 		Use: [44]
 		Def: [65]
-		In: [3, 44]
-		Out: [65, 3, 44]
+		In: [1, 3, 44, 45]
+		Out: [65, 1, 3, 44, 45]
 
 	Basic Block: 429
 		Type: HLOAD
@@ -3259,8 +3376,8 @@ Scope: Tree_Insert
 		Next: 430
 		Use: [65]
 		Def: [66]
-		In: [65, 3, 44]
-		Out: [65, 66, 3, 44]
+		In: [65, 1, 3, 44, 45]
+		Out: [65, 1, 66, 3, 44, 45]
 
 	Basic Block: 430
 		Type: HLOAD
@@ -3268,8 +3385,8 @@ Scope: Tree_Insert
 		Next: 431
 		Use: [66]
 		Def: [67]
-		In: [65, 66, 3, 44]
-		Out: [65, 67, 3, 44]
+		In: [65, 1, 66, 3, 44, 45]
+		Out: [65, 1, 67, 3, 44, 45]
 
 	Basic Block: 431
 		Type: MOVE
@@ -3277,8 +3394,8 @@ Scope: Tree_Insert
 		Next: 432
 		Use: []
 		Def: [68]
-		In: [65, 67, 3, 44]
-		Out: [65, 67, 3, 68, 44]
+		In: [65, 1, 67, 3, 44, 45]
+		Out: [65, 1, 67, 3, 68, 44, 45]
 
 	Basic Block: 432
 		Type: MOVE
@@ -3286,8 +3403,8 @@ Scope: Tree_Insert
 		Next: 433
 		Use: [65, 67, 68]
 		Def: [69]
-		In: [65, 67, 3, 68, 44]
-		Out: [3, 69, 44]
+		In: [65, 1, 67, 3, 68, 44, 45]
+		Out: [1, 3, 69, 44, 45]
 
 	Basic Block: 433
 		Type: MOVE
@@ -3295,8 +3412,8 @@ Scope: Tree_Insert
 		Next: 434
 		Use: [69]
 		Def: [39]
-		In: [3, 69, 44]
-		Out: [3, 44]
+		In: [1, 3, 69, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 434
 		Type: MOVE
@@ -3304,8 +3421,8 @@ Scope: Tree_Insert
 		Next: 435
 		Use: [44]
 		Def: [70]
-		In: [3, 44]
-		Out: [3, 70]
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 70, 44, 45]
 
 	Basic Block: 435
 		Type: HLOAD
@@ -3313,8 +3430,8 @@ Scope: Tree_Insert
 		Next: 436
 		Use: [70]
 		Def: [71]
-		In: [3, 70]
-		Out: [3, 70, 71]
+		In: [1, 3, 70, 44, 45]
+		Out: [1, 3, 70, 71, 44, 45]
 
 	Basic Block: 436
 		Type: HLOAD
@@ -3322,8 +3439,8 @@ Scope: Tree_Insert
 		Next: 437
 		Use: [71]
 		Def: [72]
-		In: [3, 70, 71]
-		Out: [3, 70, 72]
+		In: [1, 3, 70, 71, 44, 45]
+		Out: [1, 3, 70, 72, 44, 45]
 
 	Basic Block: 437
 		Type: MOVE
@@ -3331,8 +3448,8 @@ Scope: Tree_Insert
 		Next: 438
 		Use: [3, 70, 72]
 		Def: [73]
-		In: [3, 70, 72]
-		Out: [73]
+		In: [1, 3, 70, 72, 44, 45]
+		Out: [1, 3, 73, 44, 45]
 
 	Basic Block: 438
 		Type: MOVE
@@ -3340,8 +3457,8 @@ Scope: Tree_Insert
 		Next: 439
 		Use: [73]
 		Def: [39]
-		In: [73]
-		Out: []
+		In: [1, 3, 73, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 439
 		Type: NOOP
@@ -3349,8 +3466,8 @@ Scope: Tree_Insert
 		Next: 441
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 441
 		Type: JUMP
@@ -3358,8 +3475,8 @@ Scope: Tree_Insert
 		Next: 442
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 442
 		Type: MOVE
@@ -3367,8 +3484,8 @@ Scope: Tree_Insert
 		Next: 444
 		Use: [44]
 		Def: [74]
-		In: [44]
-		Out: [74, 44]
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 74, 44, 45]
 
 	Basic Block: 444
 		Type: HLOAD
@@ -3376,8 +3493,8 @@ Scope: Tree_Insert
 		Next: 445
 		Use: [74]
 		Def: [75]
-		In: [74, 44]
-		Out: [74, 75, 44]
+		In: [1, 3, 74, 44, 45]
+		Out: [1, 3, 74, 75, 44, 45]
 
 	Basic Block: 445
 		Type: HLOAD
@@ -3385,8 +3502,8 @@ Scope: Tree_Insert
 		Next: 446
 		Use: [75]
 		Def: [76]
-		In: [74, 75, 44]
-		Out: [74, 76, 44]
+		In: [1, 3, 74, 75, 44, 45]
+		Out: [1, 3, 74, 76, 44, 45]
 
 	Basic Block: 446
 		Type: MOVE
@@ -3394,8 +3511,8 @@ Scope: Tree_Insert
 		Next: 447
 		Use: [74, 76]
 		Def: [77]
-		In: [74, 76, 44]
-		Out: [44, 77]
+		In: [1, 3, 74, 76, 44, 45]
+		Out: [1, 3, 44, 77, 45]
 
 	Basic Block: 447
 		Type: CJUMP
@@ -3403,8 +3520,8 @@ Scope: Tree_Insert
 		Next: 448
 		Use: [77]
 		Def: []
-		In: [44, 77]
-		Out: [44]
+		In: [1, 3, 44, 77, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 448
 		Type: MOVE
@@ -3412,8 +3529,8 @@ Scope: Tree_Insert
 		Next: 449
 		Use: [44]
 		Def: [78]
-		In: [44]
-		Out: [78]
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 45, 78]
 
 	Basic Block: 449
 		Type: HLOAD
@@ -3421,8 +3538,8 @@ Scope: Tree_Insert
 		Next: 450
 		Use: [78]
 		Def: [79]
-		In: [78]
-		Out: [78, 79]
+		In: [1, 3, 45, 78]
+		Out: [1, 3, 45, 78, 79]
 
 	Basic Block: 450
 		Type: HLOAD
@@ -3430,8 +3547,8 @@ Scope: Tree_Insert
 		Next: 451
 		Use: [79]
 		Def: [80]
-		In: [78, 79]
-		Out: [80, 78]
+		In: [1, 3, 45, 78, 79]
+		Out: [80, 1, 3, 45, 78]
 
 	Basic Block: 451
 		Type: MOVE
@@ -3439,8 +3556,8 @@ Scope: Tree_Insert
 		Next: 452
 		Use: [80, 78]
 		Def: [81]
-		In: [80, 78]
-		Out: [81]
+		In: [80, 1, 3, 45, 78]
+		Out: [81, 1, 3, 45]
 
 	Basic Block: 452
 		Type: MOVE
@@ -3448,8 +3565,8 @@ Scope: Tree_Insert
 		Next: 453
 		Use: [81]
 		Def: [44]
-		In: [81]
-		Out: []
+		In: [81, 1, 3, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 453
 		Type: JUMP
@@ -3457,8 +3574,8 @@ Scope: Tree_Insert
 		Next: 454
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 454
 		Type: MOVE
@@ -3466,8 +3583,8 @@ Scope: Tree_Insert
 		Next: 456
 		Use: []
 		Def: [82]
-		In: [3, 44]
-		Out: [82, 3, 44]
+		In: [1, 3, 44]
+		Out: [1, 82, 3, 44]
 
 	Basic Block: 456
 		Type: MOVE
@@ -3475,8 +3592,8 @@ Scope: Tree_Insert
 		Next: 457
 		Use: [82]
 		Def: [45]
-		In: [82, 3, 44]
-		Out: [3, 44]
+		In: [1, 82, 3, 44]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 457
 		Type: MOVE
@@ -3484,8 +3601,8 @@ Scope: Tree_Insert
 		Next: 458
 		Use: [44]
 		Def: [83]
-		In: [3, 44]
-		Out: [83, 3, 44]
+		In: [1, 3, 44, 45]
+		Out: [1, 83, 3, 44, 45]
 
 	Basic Block: 458
 		Type: HLOAD
@@ -3493,8 +3610,8 @@ Scope: Tree_Insert
 		Next: 459
 		Use: [83]
 		Def: [84]
-		In: [83, 3, 44]
-		Out: [83, 3, 84, 44]
+		In: [1, 83, 3, 44, 45]
+		Out: [1, 83, 3, 84, 44, 45]
 
 	Basic Block: 459
 		Type: HLOAD
@@ -3502,8 +3619,8 @@ Scope: Tree_Insert
 		Next: 460
 		Use: [84]
 		Def: [85]
-		In: [83, 3, 84, 44]
-		Out: [83, 3, 85, 44]
+		In: [1, 83, 3, 84, 44, 45]
+		Out: [1, 83, 3, 85, 44, 45]
 
 	Basic Block: 460
 		Type: MOVE
@@ -3511,8 +3628,8 @@ Scope: Tree_Insert
 		Next: 461
 		Use: []
 		Def: [86]
-		In: [83, 3, 85, 44]
-		Out: [83, 3, 85, 86, 44]
+		In: [1, 83, 3, 85, 44, 45]
+		Out: [1, 83, 3, 85, 86, 44, 45]
 
 	Basic Block: 461
 		Type: MOVE
@@ -3520,8 +3637,8 @@ Scope: Tree_Insert
 		Next: 462
 		Use: [83, 85, 86]
 		Def: [87]
-		In: [83, 3, 85, 86, 44]
-		Out: [3, 87, 44]
+		In: [1, 83, 3, 85, 86, 44, 45]
+		Out: [1, 3, 87, 44, 45]
 
 	Basic Block: 462
 		Type: MOVE
@@ -3529,8 +3646,8 @@ Scope: Tree_Insert
 		Next: 463
 		Use: [87]
 		Def: [39]
-		In: [3, 87, 44]
-		Out: [3, 44]
+		In: [1, 3, 87, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 463
 		Type: MOVE
@@ -3538,8 +3655,8 @@ Scope: Tree_Insert
 		Next: 464
 		Use: [44]
 		Def: [88]
-		In: [3, 44]
-		Out: [3, 88]
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 88, 44, 45]
 
 	Basic Block: 464
 		Type: HLOAD
@@ -3547,8 +3664,8 @@ Scope: Tree_Insert
 		Next: 465
 		Use: [88]
 		Def: [89]
-		In: [3, 88]
-		Out: [3, 88, 89]
+		In: [1, 3, 88, 44, 45]
+		Out: [1, 3, 88, 89, 44, 45]
 
 	Basic Block: 465
 		Type: HLOAD
@@ -3556,8 +3673,8 @@ Scope: Tree_Insert
 		Next: 466
 		Use: [89]
 		Def: [90]
-		In: [3, 88, 89]
-		Out: [3, 88, 90]
+		In: [1, 3, 88, 89, 44, 45]
+		Out: [1, 3, 88, 90, 44, 45]
 
 	Basic Block: 466
 		Type: MOVE
@@ -3565,8 +3682,8 @@ Scope: Tree_Insert
 		Next: 467
 		Use: [3, 88, 90]
 		Def: [91]
-		In: [3, 88, 90]
-		Out: [91]
+		In: [1, 3, 88, 90, 44, 45]
+		Out: [1, 3, 91, 44, 45]
 
 	Basic Block: 467
 		Type: MOVE
@@ -3574,8 +3691,8 @@ Scope: Tree_Insert
 		Next: 468
 		Use: [91]
 		Def: [39]
-		In: [91]
-		Out: []
+		In: [1, 3, 91, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 468
 		Type: NOOP
@@ -3583,8 +3700,8 @@ Scope: Tree_Insert
 		Next: 470
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 470
 		Type: NOOP
@@ -3592,8 +3709,8 @@ Scope: Tree_Insert
 		Next: 472
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 472
 		Type: JUMP
@@ -3601,8 +3718,8 @@ Scope: Tree_Insert
 		Next: 473
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 44, 45]
+		Out: [1, 3, 44, 45]
 
 	Basic Block: 473
 		Type: NOOP
@@ -3620,6 +3737,15 @@ Scope: Tree_Insert
 		Use: []
 		Def: [92]
 		In: []
+		Out: [92]
+
+	Basic Block: 476
+		Type: RETURN
+		Label: null
+		Next: 477
+		Use: [92]
+		Def: []
+		In: [92]
 		Out: []
 
 Scope: Tree_Delete
@@ -3639,7 +3765,7 @@ Scope: Tree_Delete
 		Use: [0]
 		Def: [4]
 		In: [0, 1, 3]
-		Out: [1, 3]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 482
 		Type: MOVE
@@ -3647,8 +3773,8 @@ Scope: Tree_Delete
 		Next: 483
 		Use: []
 		Def: [6]
-		In: [1, 3]
-		Out: [1, 3, 6]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 6]
 
 	Basic Block: 483
 		Type: MOVE
@@ -3656,8 +3782,8 @@ Scope: Tree_Delete
 		Next: 484
 		Use: [6]
 		Def: [5]
-		In: [1, 3, 6]
-		Out: [1, 3, 5]
+		In: [0, 1, 3, 4, 6]
+		Out: [0, 1, 3, 4, 5]
 
 	Basic Block: 484
 		Type: MOVE
@@ -3665,8 +3791,8 @@ Scope: Tree_Delete
 		Next: 485
 		Use: []
 		Def: [8]
-		In: [1, 3, 5]
-		Out: [1, 3, 5, 8]
+		In: [0, 1, 3, 4, 5]
+		Out: [0, 1, 3, 4, 5, 8]
 
 	Basic Block: 485
 		Type: MOVE
@@ -3674,8 +3800,8 @@ Scope: Tree_Delete
 		Next: 486
 		Use: [8]
 		Def: [7]
-		In: [1, 3, 5, 8]
-		Out: [1, 3, 5]
+		In: [0, 1, 3, 4, 5, 8]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 486
 		Type: MOVE
@@ -3683,8 +3809,8 @@ Scope: Tree_Delete
 		Next: 487
 		Use: []
 		Def: [10]
-		In: [1, 3, 5]
-		Out: [1, 3, 5, 10]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7, 10]
 
 	Basic Block: 487
 		Type: MOVE
@@ -3692,8 +3818,8 @@ Scope: Tree_Delete
 		Next: 488
 		Use: [10]
 		Def: [9]
-		In: [1, 3, 5, 10]
-		Out: [1, 3, 5]
+		In: [0, 1, 3, 4, 5, 7, 10]
+		Out: [0, 1, 3, 4, 5, 7, 9]
 
 	Basic Block: 488
 		Type: CJUMP
@@ -3701,8 +3827,8 @@ Scope: Tree_Delete
 		Next: 490
 		Use: [5]
 		Def: []
-		In: [1, 3, 5]
-		Out: [1, 3]
+		In: [0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9]
 
 	Basic Block: 490
 		Type: MOVE
@@ -3710,8 +3836,8 @@ Scope: Tree_Delete
 		Next: 491
 		Use: [3]
 		Def: [12]
-		In: [1, 3]
-		Out: [1, 3, 12]
+		In: [0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9, 12]
 
 	Basic Block: 491
 		Type: HLOAD
@@ -3719,8 +3845,8 @@ Scope: Tree_Delete
 		Next: 492
 		Use: [12]
 		Def: [13]
-		In: [1, 3, 12]
-		Out: [1, 3, 12, 13]
+		In: [0, 1, 3, 4, 5, 7, 9, 12]
+		Out: [0, 1, 3, 4, 5, 7, 9, 12, 13]
 
 	Basic Block: 492
 		Type: HLOAD
@@ -3728,8 +3854,8 @@ Scope: Tree_Delete
 		Next: 493
 		Use: [13]
 		Def: [14]
-		In: [1, 3, 12, 13]
-		Out: [1, 3, 12, 14]
+		In: [0, 1, 3, 4, 5, 7, 9, 12, 13]
+		Out: [0, 1, 3, 4, 5, 7, 9, 12, 14]
 
 	Basic Block: 493
 		Type: MOVE
@@ -3737,8 +3863,8 @@ Scope: Tree_Delete
 		Next: 494
 		Use: [12, 14]
 		Def: [15]
-		In: [1, 3, 12, 14]
-		Out: [1, 3, 15]
+		In: [0, 1, 3, 4, 5, 7, 9, 12, 14]
+		Out: [0, 1, 3, 4, 5, 7, 9, 15]
 
 	Basic Block: 494
 		Type: MOVE
@@ -3746,8 +3872,8 @@ Scope: Tree_Delete
 		Next: 495
 		Use: [15]
 		Def: [11]
-		In: [1, 3, 15]
-		Out: [1, 3, 11]
+		In: [0, 1, 3, 4, 5, 7, 9, 15]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11]
 
 	Basic Block: 495
 		Type: MOVE
@@ -3755,8 +3881,8 @@ Scope: Tree_Delete
 		Next: 496
 		Use: []
 		Def: [17]
-		In: [1, 3, 11]
-		Out: [17, 1, 3, 11]
+		In: [0, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 17, 1, 3, 4, 5, 7, 9, 11]
 
 	Basic Block: 496
 		Type: MOVE
@@ -3764,8 +3890,8 @@ Scope: Tree_Delete
 		Next: 497
 		Use: [17, 11]
 		Def: [18]
-		In: [17, 1, 3, 11]
-		Out: [1, 18, 3]
+		In: [0, 17, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 18, 3, 4, 5, 7, 9, 11]
 
 	Basic Block: 497
 		Type: MOVE
@@ -3773,8 +3899,8 @@ Scope: Tree_Delete
 		Next: 498
 		Use: [18]
 		Def: [16]
-		In: [1, 18, 3]
-		Out: [16, 1, 3]
+		In: [0, 1, 18, 3, 4, 5, 7, 9, 11]
+		Out: [16, 0, 1, 3, 4, 5, 7, 9, 11]
 
 	Basic Block: 498
 		Type: MOVE
@@ -3782,8 +3908,8 @@ Scope: Tree_Delete
 		Next: 499
 		Use: [16, 1]
 		Def: [19]
-		In: [16, 1, 3]
-		Out: [19, 3]
+		In: [16, 0, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 19, 3, 4, 5, 7, 9, 11]
 
 	Basic Block: 499
 		Type: CJUMP
@@ -3791,8 +3917,8 @@ Scope: Tree_Delete
 		Next: 500
 		Use: [19]
 		Def: []
-		In: [19, 3]
-		Out: [3]
+		In: [0, 1, 19, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11]
 
 	Basic Block: 500
 		Type: MOVE
@@ -3800,8 +3926,8 @@ Scope: Tree_Delete
 		Next: 501
 		Use: [3]
 		Def: [20]
-		In: [3]
-		Out: [3, 20]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 20, 4, 5, 7]
 
 	Basic Block: 501
 		Type: HLOAD
@@ -3809,8 +3935,8 @@ Scope: Tree_Delete
 		Next: 502
 		Use: [20]
 		Def: [21]
-		In: [3, 20]
-		Out: [3, 20, 21]
+		In: [0, 1, 3, 20, 4, 5, 7]
+		Out: [0, 1, 3, 20, 4, 21, 5, 7]
 
 	Basic Block: 502
 		Type: HLOAD
@@ -3818,8 +3944,8 @@ Scope: Tree_Delete
 		Next: 503
 		Use: [21]
 		Def: [22]
-		In: [3, 20, 21]
-		Out: [3, 20, 22]
+		In: [0, 1, 3, 20, 4, 21, 5, 7]
+		Out: [0, 1, 3, 20, 4, 5, 22, 7]
 
 	Basic Block: 503
 		Type: MOVE
@@ -3827,8 +3953,8 @@ Scope: Tree_Delete
 		Next: 504
 		Use: [20, 22]
 		Def: [23]
-		In: [3, 20, 22]
-		Out: [3, 23]
+		In: [0, 1, 3, 20, 4, 5, 22, 7]
+		Out: [0, 1, 3, 4, 5, 23, 7]
 
 	Basic Block: 504
 		Type: CJUMP
@@ -3836,8 +3962,8 @@ Scope: Tree_Delete
 		Next: 505
 		Use: [23]
 		Def: []
-		In: [3, 23]
-		Out: [3]
+		In: [0, 1, 3, 4, 5, 23, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 505
 		Type: MOVE
@@ -3845,8 +3971,8 @@ Scope: Tree_Delete
 		Next: 506
 		Use: [3]
 		Def: [4]
-		In: [3]
-		Out: [3]
+		In: [0, 1, 3, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 506
 		Type: MOVE
@@ -3854,8 +3980,8 @@ Scope: Tree_Delete
 		Next: 507
 		Use: [3]
 		Def: [24]
-		In: [3]
-		Out: [24]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 4, 5, 7, 24]
 
 	Basic Block: 507
 		Type: HLOAD
@@ -3863,8 +3989,8 @@ Scope: Tree_Delete
 		Next: 508
 		Use: [24]
 		Def: [25]
-		In: [24]
-		Out: [24, 25]
+		In: [0, 1, 4, 5, 7, 24]
+		Out: [0, 1, 4, 5, 7, 24, 25]
 
 	Basic Block: 508
 		Type: HLOAD
@@ -3872,8 +3998,8 @@ Scope: Tree_Delete
 		Next: 509
 		Use: [25]
 		Def: [26]
-		In: [24, 25]
-		Out: [24, 26]
+		In: [0, 1, 4, 5, 7, 24, 25]
+		Out: [0, 1, 4, 5, 7, 24, 26]
 
 	Basic Block: 509
 		Type: MOVE
@@ -3881,8 +4007,8 @@ Scope: Tree_Delete
 		Next: 510
 		Use: [24, 26]
 		Def: [27]
-		In: [24, 26]
-		Out: [27]
+		In: [0, 1, 4, 5, 7, 24, 26]
+		Out: [0, 1, 4, 5, 7, 27]
 
 	Basic Block: 510
 		Type: MOVE
@@ -3890,8 +4016,8 @@ Scope: Tree_Delete
 		Next: 511
 		Use: [27]
 		Def: [3]
-		In: [27]
-		Out: []
+		In: [0, 1, 4, 5, 7, 27]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 511
 		Type: JUMP
@@ -3899,8 +4025,8 @@ Scope: Tree_Delete
 		Next: 512
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 512
 		Type: MOVE
@@ -3908,8 +4034,8 @@ Scope: Tree_Delete
 		Next: 514
 		Use: []
 		Def: [28]
-		In: []
-		Out: [28]
+		In: [0, 1, 3, 4, 7]
+		Out: [0, 1, 3, 4, 7, 28]
 
 	Basic Block: 514
 		Type: MOVE
@@ -3917,8 +4043,8 @@ Scope: Tree_Delete
 		Next: 515
 		Use: [28]
 		Def: [5]
-		In: [28]
-		Out: []
+		In: [0, 1, 3, 4, 7, 28]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 515
 		Type: NOOP
@@ -3926,8 +4052,8 @@ Scope: Tree_Delete
 		Next: 517
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 517
 		Type: JUMP
@@ -3935,8 +4061,8 @@ Scope: Tree_Delete
 		Next: 518
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 518
 		Type: MOVE
@@ -3944,8 +4070,8 @@ Scope: Tree_Delete
 		Next: 520
 		Use: []
 		Def: [30]
-		In: [1, 3, 11]
-		Out: [1, 3, 11, 30]
+		In: [0, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11, 30]
 
 	Basic Block: 520
 		Type: MOVE
@@ -3953,8 +4079,8 @@ Scope: Tree_Delete
 		Next: 521
 		Use: [1, 30]
 		Def: [31]
-		In: [1, 3, 11, 30]
-		Out: [3, 11, 31]
+		In: [0, 1, 3, 4, 5, 7, 9, 11, 30]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11, 31]
 
 	Basic Block: 521
 		Type: MOVE
@@ -3962,8 +4088,8 @@ Scope: Tree_Delete
 		Next: 522
 		Use: [31]
 		Def: [29]
-		In: [3, 11, 31]
-		Out: [3, 11, 29]
+		In: [0, 1, 3, 4, 5, 7, 9, 11, 31]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11, 29]
 
 	Basic Block: 522
 		Type: MOVE
@@ -3971,8 +4097,8 @@ Scope: Tree_Delete
 		Next: 523
 		Use: [11, 29]
 		Def: [32]
-		In: [3, 11, 29]
-		Out: [32, 3]
+		In: [0, 1, 3, 4, 5, 7, 9, 11, 29]
+		Out: [32, 0, 1, 3, 4, 5, 7, 9]
 
 	Basic Block: 523
 		Type: CJUMP
@@ -3980,8 +4106,8 @@ Scope: Tree_Delete
 		Next: 524
 		Use: [32]
 		Def: []
-		In: [32, 3]
-		Out: [3]
+		In: [32, 0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9]
 
 	Basic Block: 524
 		Type: MOVE
@@ -3989,8 +4115,8 @@ Scope: Tree_Delete
 		Next: 525
 		Use: [3]
 		Def: [33]
-		In: [3]
-		Out: [33, 3]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 33, 1, 3, 4, 5, 7]
 
 	Basic Block: 525
 		Type: HLOAD
@@ -3998,8 +4124,8 @@ Scope: Tree_Delete
 		Next: 526
 		Use: [33]
 		Def: [34]
-		In: [33, 3]
-		Out: [33, 34, 3]
+		In: [0, 33, 1, 3, 4, 5, 7]
+		Out: [0, 33, 1, 34, 3, 4, 5, 7]
 
 	Basic Block: 526
 		Type: HLOAD
@@ -4007,8 +4133,8 @@ Scope: Tree_Delete
 		Next: 527
 		Use: [34]
 		Def: [35]
-		In: [33, 34, 3]
-		Out: [33, 35, 3]
+		In: [0, 33, 1, 34, 3, 4, 5, 7]
+		Out: [0, 33, 1, 35, 3, 4, 5, 7]
 
 	Basic Block: 527
 		Type: MOVE
@@ -4016,8 +4142,8 @@ Scope: Tree_Delete
 		Next: 528
 		Use: [33, 35]
 		Def: [36]
-		In: [33, 35, 3]
-		Out: [3, 36]
+		In: [0, 33, 1, 35, 3, 4, 5, 7]
+		Out: [0, 1, 3, 36, 4, 5, 7]
 
 	Basic Block: 528
 		Type: CJUMP
@@ -4025,8 +4151,8 @@ Scope: Tree_Delete
 		Next: 529
 		Use: [36]
 		Def: []
-		In: [3, 36]
-		Out: [3]
+		In: [0, 1, 3, 36, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 529
 		Type: MOVE
@@ -4034,8 +4160,8 @@ Scope: Tree_Delete
 		Next: 530
 		Use: [3]
 		Def: [4]
-		In: [3]
-		Out: [3]
+		In: [0, 1, 3, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 530
 		Type: MOVE
@@ -4043,8 +4169,8 @@ Scope: Tree_Delete
 		Next: 531
 		Use: [3]
 		Def: [37]
-		In: [3]
-		Out: [37]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 4, 37, 5, 7]
 
 	Basic Block: 531
 		Type: HLOAD
@@ -4052,8 +4178,8 @@ Scope: Tree_Delete
 		Next: 532
 		Use: [37]
 		Def: [38]
-		In: [37]
-		Out: [37, 38]
+		In: [0, 1, 4, 37, 5, 7]
+		Out: [0, 1, 4, 37, 5, 38, 7]
 
 	Basic Block: 532
 		Type: HLOAD
@@ -4061,8 +4187,8 @@ Scope: Tree_Delete
 		Next: 533
 		Use: [38]
 		Def: [39]
-		In: [37, 38]
-		Out: [37, 39]
+		In: [0, 1, 4, 37, 5, 38, 7]
+		Out: [0, 1, 4, 37, 5, 39, 7]
 
 	Basic Block: 533
 		Type: MOVE
@@ -4070,8 +4196,8 @@ Scope: Tree_Delete
 		Next: 534
 		Use: [37, 39]
 		Def: [40]
-		In: [37, 39]
-		Out: [40]
+		In: [0, 1, 4, 37, 5, 39, 7]
+		Out: [0, 1, 4, 5, 7, 40]
 
 	Basic Block: 534
 		Type: MOVE
@@ -4079,8 +4205,8 @@ Scope: Tree_Delete
 		Next: 535
 		Use: [40]
 		Def: [3]
-		In: [40]
-		Out: []
+		In: [0, 1, 4, 5, 7, 40]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 535
 		Type: JUMP
@@ -4088,8 +4214,8 @@ Scope: Tree_Delete
 		Next: 536
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 536
 		Type: MOVE
@@ -4097,8 +4223,8 @@ Scope: Tree_Delete
 		Next: 538
 		Use: []
 		Def: [41]
-		In: []
-		Out: [41]
+		In: [0, 1, 3, 4, 7]
+		Out: [0, 1, 3, 4, 7, 41]
 
 	Basic Block: 538
 		Type: MOVE
@@ -4106,8 +4232,8 @@ Scope: Tree_Delete
 		Next: 539
 		Use: [41]
 		Def: [5]
-		In: [41]
-		Out: []
+		In: [0, 1, 3, 4, 7, 41]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 539
 		Type: NOOP
@@ -4115,8 +4241,8 @@ Scope: Tree_Delete
 		Next: 541
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 541
 		Type: JUMP
@@ -4124,8 +4250,8 @@ Scope: Tree_Delete
 		Next: 542
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 542
 		Type: CJUMP
@@ -4133,8 +4259,8 @@ Scope: Tree_Delete
 		Next: 544
 		Use: [9]
 		Def: []
-		In: [3, 9]
-		Out: [3]
+		In: [0, 1, 3, 4, 9]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 544
 		Type: MOVE
@@ -4142,8 +4268,8 @@ Scope: Tree_Delete
 		Next: 545
 		Use: []
 		Def: [43]
-		In: [3]
-		Out: [3, 43]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 43]
 
 	Basic Block: 545
 		Type: MOVE
@@ -4151,8 +4277,8 @@ Scope: Tree_Delete
 		Next: 546
 		Use: [43]
 		Def: [42]
-		In: [3, 43]
-		Out: [3]
+		In: [0, 1, 3, 4, 43]
+		Out: [0, 1, 3, 4, 42]
 
 	Basic Block: 546
 		Type: MOVE
@@ -4160,8 +4286,8 @@ Scope: Tree_Delete
 		Next: 547
 		Use: []
 		Def: [44]
-		In: [3]
-		Out: [3, 44]
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4, 42, 44]
 
 	Basic Block: 547
 		Type: MOVE
@@ -4169,8 +4295,8 @@ Scope: Tree_Delete
 		Next: 548
 		Use: [3]
 		Def: [45]
-		In: [3, 44]
-		Out: [3, 44, 45]
+		In: [0, 1, 3, 4, 42, 44]
+		Out: [0, 1, 3, 4, 42, 44, 45]
 
 	Basic Block: 548
 		Type: HLOAD
@@ -4178,8 +4304,8 @@ Scope: Tree_Delete
 		Next: 549
 		Use: [45]
 		Def: [46]
-		In: [3, 44, 45]
-		Out: [3, 44, 45, 46]
+		In: [0, 1, 3, 4, 42, 44, 45]
+		Out: [0, 1, 3, 4, 42, 44, 45, 46]
 
 	Basic Block: 549
 		Type: HLOAD
@@ -4187,8 +4313,8 @@ Scope: Tree_Delete
 		Next: 550
 		Use: [46]
 		Def: [47]
-		In: [3, 44, 45, 46]
-		Out: [3, 44, 45, 47]
+		In: [0, 1, 3, 4, 42, 44, 45, 46]
+		Out: [0, 1, 3, 4, 42, 44, 45, 47]
 
 	Basic Block: 550
 		Type: MOVE
@@ -4196,8 +4322,8 @@ Scope: Tree_Delete
 		Next: 551
 		Use: [45, 47]
 		Def: [48]
-		In: [3, 44, 45, 47]
-		Out: [48, 3, 44]
+		In: [0, 1, 3, 4, 42, 44, 45, 47]
+		Out: [48, 0, 1, 3, 4, 42, 44]
 
 	Basic Block: 551
 		Type: MOVE
@@ -4205,8 +4331,8 @@ Scope: Tree_Delete
 		Next: 552
 		Use: [48, 44]
 		Def: [49]
-		In: [48, 3, 44]
-		Out: [49, 3]
+		In: [48, 0, 1, 3, 4, 42, 44]
+		Out: [0, 49, 1, 3, 4, 42]
 
 	Basic Block: 552
 		Type: CJUMP
@@ -4214,8 +4340,8 @@ Scope: Tree_Delete
 		Next: 553
 		Use: [49]
 		Def: []
-		In: [49, 3]
-		Out: [3]
+		In: [0, 49, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4, 42]
 
 	Basic Block: 553
 		Type: MOVE
@@ -4223,8 +4349,8 @@ Scope: Tree_Delete
 		Next: 554
 		Use: []
 		Def: [50]
-		In: [3]
-		Out: [50, 3]
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 50, 3, 4, 42]
 
 	Basic Block: 554
 		Type: MOVE
@@ -4232,8 +4358,8 @@ Scope: Tree_Delete
 		Next: 555
 		Use: [3]
 		Def: [51]
-		In: [50, 3]
-		Out: [50, 51]
+		In: [0, 1, 50, 3, 4, 42]
+		Out: [0, 1, 50, 51, 3, 4, 42]
 
 	Basic Block: 555
 		Type: HLOAD
@@ -4241,8 +4367,8 @@ Scope: Tree_Delete
 		Next: 556
 		Use: [51]
 		Def: [52]
-		In: [50, 51]
-		Out: [50, 51, 52]
+		In: [0, 1, 50, 51, 3, 4, 42]
+		Out: [0, 1, 50, 51, 3, 52, 4, 42]
 
 	Basic Block: 556
 		Type: HLOAD
@@ -4250,8 +4376,8 @@ Scope: Tree_Delete
 		Next: 557
 		Use: [52]
 		Def: [53]
-		In: [50, 51, 52]
-		Out: [50, 51, 53]
+		In: [0, 1, 50, 51, 3, 52, 4, 42]
+		Out: [0, 1, 50, 51, 3, 4, 53, 42]
 
 	Basic Block: 557
 		Type: MOVE
@@ -4259,8 +4385,8 @@ Scope: Tree_Delete
 		Next: 558
 		Use: [51, 53]
 		Def: [54]
-		In: [50, 51, 53]
-		Out: [50, 54]
+		In: [0, 1, 50, 51, 3, 4, 53, 42]
+		Out: [0, 1, 50, 3, 4, 54, 42]
 
 	Basic Block: 558
 		Type: MOVE
@@ -4268,8 +4394,8 @@ Scope: Tree_Delete
 		Next: 559
 		Use: [50, 54]
 		Def: [55]
-		In: [50, 54]
-		Out: [55]
+		In: [0, 1, 50, 3, 4, 54, 42]
+		Out: [0, 1, 3, 4, 55, 42]
 
 	Basic Block: 559
 		Type: CJUMP
@@ -4277,8 +4403,8 @@ Scope: Tree_Delete
 		Next: 560
 		Use: [55]
 		Def: []
-		In: [55]
-		Out: []
+		In: [0, 1, 3, 4, 55, 42]
+		Out: [0, 1, 3, 4, 42]
 
 	Basic Block: 560
 		Type: MOVE
@@ -4286,8 +4412,8 @@ Scope: Tree_Delete
 		Next: 561
 		Use: []
 		Def: [56]
-		In: []
-		Out: [56]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 56]
 
 	Basic Block: 561
 		Type: MOVE
@@ -4295,8 +4421,8 @@ Scope: Tree_Delete
 		Next: 562
 		Use: [56]
 		Def: [42]
-		In: [56]
-		Out: [42]
+		In: [0, 1, 3, 4, 56]
+		Out: [0, 1, 3, 4, 42]
 
 	Basic Block: 562
 		Type: NOOP
@@ -4304,8 +4430,8 @@ Scope: Tree_Delete
 		Next: 564
 		Use: []
 		Def: []
-		In: [42]
-		Out: [42]
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4, 42]
 
 	Basic Block: 564
 		Type: CJUMP
@@ -4313,8 +4439,8 @@ Scope: Tree_Delete
 		Next: 565
 		Use: [42]
 		Def: []
-		In: [42]
-		Out: []
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 565
 		Type: MOVE
@@ -4322,8 +4448,8 @@ Scope: Tree_Delete
 		Next: 566
 		Use: []
 		Def: [58]
-		In: []
-		Out: [58]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 58]
 
 	Basic Block: 566
 		Type: MOVE
@@ -4331,8 +4457,8 @@ Scope: Tree_Delete
 		Next: 567
 		Use: [58]
 		Def: [57]
-		In: [58]
-		Out: []
+		In: [0, 1, 3, 4, 58]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 567
 		Type: JUMP
@@ -4340,8 +4466,8 @@ Scope: Tree_Delete
 		Next: 568
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 568
 		Type: MOVE
@@ -4349,8 +4475,8 @@ Scope: Tree_Delete
 		Next: 570
 		Use: [0]
 		Def: [59]
-		In: [0, 3, 4]
-		Out: [3, 4, 59]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 59]
 
 	Basic Block: 570
 		Type: HLOAD
@@ -4358,8 +4484,8 @@ Scope: Tree_Delete
 		Next: 571
 		Use: [59]
 		Def: [60]
-		In: [3, 4, 59]
-		Out: [3, 4, 59, 60]
+		In: [0, 1, 3, 4, 59]
+		Out: [0, 1, 3, 4, 59, 60]
 
 	Basic Block: 571
 		Type: HLOAD
@@ -4367,8 +4493,8 @@ Scope: Tree_Delete
 		Next: 572
 		Use: [60]
 		Def: [61]
-		In: [3, 4, 59, 60]
-		Out: [3, 4, 59, 61]
+		In: [0, 1, 3, 4, 59, 60]
+		Out: [0, 1, 3, 4, 59, 61]
 
 	Basic Block: 572
 		Type: MOVE
@@ -4376,8 +4502,8 @@ Scope: Tree_Delete
 		Next: 573
 		Use: [3, 4, 59, 61]
 		Def: [62]
-		In: [3, 4, 59, 61]
-		Out: [62]
+		In: [0, 1, 3, 4, 59, 61]
+		Out: [0, 1, 3, 4, 62]
 
 	Basic Block: 573
 		Type: MOVE
@@ -4385,8 +4511,8 @@ Scope: Tree_Delete
 		Next: 574
 		Use: [62]
 		Def: [57]
-		In: [62]
-		Out: []
+		In: [0, 1, 3, 4, 62]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 574
 		Type: NOOP
@@ -4394,8 +4520,8 @@ Scope: Tree_Delete
 		Next: 576
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 576
 		Type: JUMP
@@ -4403,8 +4529,8 @@ Scope: Tree_Delete
 		Next: 577
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 577
 		Type: MOVE
@@ -4412,8 +4538,8 @@ Scope: Tree_Delete
 		Next: 579
 		Use: [0]
 		Def: [63]
-		In: [0, 3, 4]
-		Out: [3, 4, 63]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 63]
 
 	Basic Block: 579
 		Type: HLOAD
@@ -4421,8 +4547,8 @@ Scope: Tree_Delete
 		Next: 580
 		Use: [63]
 		Def: [64]
-		In: [3, 4, 63]
-		Out: [64, 3, 4, 63]
+		In: [0, 1, 3, 4, 63]
+		Out: [64, 0, 1, 3, 4, 63]
 
 	Basic Block: 580
 		Type: HLOAD
@@ -4430,8 +4556,8 @@ Scope: Tree_Delete
 		Next: 581
 		Use: [64]
 		Def: [65]
-		In: [64, 3, 4, 63]
-		Out: [65, 3, 4, 63]
+		In: [64, 0, 1, 3, 4, 63]
+		Out: [0, 65, 1, 3, 4, 63]
 
 	Basic Block: 581
 		Type: MOVE
@@ -4439,8 +4565,8 @@ Scope: Tree_Delete
 		Next: 582
 		Use: [65, 3, 4, 63]
 		Def: [66]
-		In: [65, 3, 4, 63]
-		Out: [66]
+		In: [0, 65, 1, 3, 4, 63]
+		Out: [0, 1, 66, 3, 4]
 
 	Basic Block: 582
 		Type: MOVE
@@ -4448,8 +4574,8 @@ Scope: Tree_Delete
 		Next: 583
 		Use: [66]
 		Def: [57]
-		In: [66]
-		Out: []
+		In: [0, 1, 66, 3, 4]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 583
 		Type: NOOP
@@ -4457,8 +4583,8 @@ Scope: Tree_Delete
 		Next: 585
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
 
 	Basic Block: 585
 		Type: MOVE
@@ -4466,8 +4592,8 @@ Scope: Tree_Delete
 		Next: 586
 		Use: []
 		Def: [67]
-		In: []
-		Out: [67]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 67, 3, 4]
 
 	Basic Block: 586
 		Type: MOVE
@@ -4475,8 +4601,8 @@ Scope: Tree_Delete
 		Next: 587
 		Use: [67]
 		Def: [7]
-		In: [67]
-		Out: []
+		In: [0, 1, 67, 3, 4]
+		Out: [0, 1, 3, 4, 7]
 
 	Basic Block: 587
 		Type: MOVE
@@ -4484,8 +4610,8 @@ Scope: Tree_Delete
 		Next: 588
 		Use: []
 		Def: [68]
-		In: []
-		Out: [68]
+		In: [0, 1, 3, 4, 7]
+		Out: [0, 1, 3, 68, 4, 7]
 
 	Basic Block: 588
 		Type: MOVE
@@ -4493,8 +4619,8 @@ Scope: Tree_Delete
 		Next: 589
 		Use: [68]
 		Def: [5]
-		In: [68]
-		Out: []
+		In: [0, 1, 3, 68, 4, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 589
 		Type: NOOP
@@ -4502,8 +4628,8 @@ Scope: Tree_Delete
 		Next: 591
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 591
 		Type: NOOP
@@ -4511,8 +4637,8 @@ Scope: Tree_Delete
 		Next: 593
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
 
 	Basic Block: 593
 		Type: MOVE
@@ -4520,8 +4646,8 @@ Scope: Tree_Delete
 		Next: 594
 		Use: []
 		Def: [69]
-		In: []
-		Out: [69]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 69, 5, 7]
 
 	Basic Block: 594
 		Type: MOVE
@@ -4529,8 +4655,8 @@ Scope: Tree_Delete
 		Next: 595
 		Use: [69]
 		Def: [9]
-		In: [69]
-		Out: []
+		In: [0, 1, 3, 4, 69, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7, 9]
 
 	Basic Block: 595
 		Type: JUMP
@@ -4538,8 +4664,8 @@ Scope: Tree_Delete
 		Next: 596
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9]
 
 	Basic Block: 596
 		Type: NOOP
@@ -4547,7 +4673,16 @@ Scope: Tree_Delete
 		Next: 598
 		Use: []
 		Def: []
-		In: []
+		In: [7]
+		Out: [7]
+
+	Basic Block: 598
+		Type: RETURN
+		Label: null
+		Next: 599
+		Use: [7]
+		Def: []
+		In: [7]
 		Out: []
 
 Scope: Tree_Remove
@@ -5179,6 +5314,15 @@ Scope: Tree_Remove
 		Use: []
 		Def: [59]
 		In: []
+		Out: [59]
+
+	Basic Block: 678
+		Type: RETURN
+		Label: null
+		Next: 679
+		Use: [59]
+		Def: []
+		In: [59]
 		Out: []
 
 Scope: Tree_RemoveRight
@@ -5188,8 +5332,8 @@ Scope: Tree_RemoveRight
 		Next: 684
 		Use: [2]
 		Def: [4]
-		In: [2]
-		Out: [2, 4]
+		In: [0, 1, 2]
+		Out: [0, 1, 2, 4]
 
 	Basic Block: 684
 		Type: HLOAD
@@ -5197,8 +5341,8 @@ Scope: Tree_RemoveRight
 		Next: 685
 		Use: [4]
 		Def: [5]
-		In: [2, 4]
-		Out: [2, 4, 5]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4, 5]
 
 	Basic Block: 685
 		Type: HLOAD
@@ -5206,8 +5350,8 @@ Scope: Tree_RemoveRight
 		Next: 686
 		Use: [5]
 		Def: [6]
-		In: [2, 4, 5]
-		Out: [2, 4, 6]
+		In: [0, 1, 2, 4, 5]
+		Out: [0, 1, 2, 4, 6]
 
 	Basic Block: 686
 		Type: MOVE
@@ -5215,8 +5359,8 @@ Scope: Tree_RemoveRight
 		Next: 687
 		Use: [4, 6]
 		Def: [7]
-		In: [2, 4, 6]
-		Out: [2, 7]
+		In: [0, 1, 2, 4, 6]
+		Out: [0, 1, 2, 7]
 
 	Basic Block: 687
 		Type: CJUMP
@@ -5224,8 +5368,8 @@ Scope: Tree_RemoveRight
 		Next: 688
 		Use: [7]
 		Def: []
-		In: [2, 7]
-		Out: [2]
+		In: [0, 1, 2, 7]
+		Out: [0, 1, 2]
 
 	Basic Block: 688
 		Type: MOVE
@@ -5233,8 +5377,8 @@ Scope: Tree_RemoveRight
 		Next: 689
 		Use: [2]
 		Def: [9]
-		In: [2]
-		Out: [2, 9]
+		In: [0, 2]
+		Out: [0, 2, 9]
 
 	Basic Block: 689
 		Type: HLOAD
@@ -5242,8 +5386,8 @@ Scope: Tree_RemoveRight
 		Next: 690
 		Use: [9]
 		Def: [10]
-		In: [2, 9]
-		Out: [2, 9, 10]
+		In: [0, 2, 9]
+		Out: [0, 2, 9, 10]
 
 	Basic Block: 690
 		Type: HLOAD
@@ -5251,8 +5395,8 @@ Scope: Tree_RemoveRight
 		Next: 691
 		Use: [10]
 		Def: [11]
-		In: [2, 9, 10]
-		Out: [2, 9, 11]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 9, 11]
 
 	Basic Block: 691
 		Type: MOVE
@@ -5260,8 +5404,8 @@ Scope: Tree_RemoveRight
 		Next: 692
 		Use: [2]
 		Def: [13]
-		In: [2, 9, 11]
-		Out: [2, 9, 11, 13]
+		In: [0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 13]
 
 	Basic Block: 692
 		Type: HLOAD
@@ -5269,8 +5413,8 @@ Scope: Tree_RemoveRight
 		Next: 693
 		Use: [13]
 		Def: [14]
-		In: [2, 9, 11, 13]
-		Out: [2, 9, 11, 13, 14]
+		In: [0, 2, 9, 11, 13]
+		Out: [0, 2, 9, 11, 13, 14]
 
 	Basic Block: 693
 		Type: HLOAD
@@ -5278,8 +5422,8 @@ Scope: Tree_RemoveRight
 		Next: 694
 		Use: [14]
 		Def: [15]
-		In: [2, 9, 11, 13, 14]
-		Out: [2, 9, 11, 13, 15]
+		In: [0, 2, 9, 11, 13, 14]
+		Out: [0, 2, 9, 11, 13, 15]
 
 	Basic Block: 694
 		Type: MOVE
@@ -5287,8 +5431,8 @@ Scope: Tree_RemoveRight
 		Next: 695
 		Use: [13, 15]
 		Def: [16]
-		In: [2, 9, 11, 13, 15]
-		Out: [16, 2, 9, 11]
+		In: [0, 2, 9, 11, 13, 15]
+		Out: [16, 0, 2, 9, 11]
 
 	Basic Block: 695
 		Type: MOVE
@@ -5296,8 +5440,8 @@ Scope: Tree_RemoveRight
 		Next: 696
 		Use: [16]
 		Def: [12]
-		In: [16, 2, 9, 11]
-		Out: [2, 9, 11, 12]
+		In: [16, 0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 12]
 
 	Basic Block: 696
 		Type: HLOAD
@@ -5305,8 +5449,8 @@ Scope: Tree_RemoveRight
 		Next: 697
 		Use: [12]
 		Def: [17]
-		In: [2, 9, 11, 12]
-		Out: [17, 2, 9, 11, 12]
+		In: [0, 2, 9, 11, 12]
+		Out: [0, 17, 2, 9, 11, 12]
 
 	Basic Block: 697
 		Type: HLOAD
@@ -5314,8 +5458,8 @@ Scope: Tree_RemoveRight
 		Next: 698
 		Use: [17]
 		Def: [18]
-		In: [17, 2, 9, 11, 12]
-		Out: [18, 2, 9, 11, 12]
+		In: [0, 17, 2, 9, 11, 12]
+		Out: [0, 18, 2, 9, 11, 12]
 
 	Basic Block: 698
 		Type: MOVE
@@ -5323,8 +5467,8 @@ Scope: Tree_RemoveRight
 		Next: 699
 		Use: [18, 12]
 		Def: [19]
-		In: [18, 2, 9, 11, 12]
-		Out: [2, 19, 9, 11]
+		In: [0, 18, 2, 9, 11, 12]
+		Out: [0, 2, 19, 9, 11]
 
 	Basic Block: 699
 		Type: MOVE
@@ -5332,8 +5476,8 @@ Scope: Tree_RemoveRight
 		Next: 700
 		Use: [19, 9, 11]
 		Def: [20]
-		In: [2, 19, 9, 11]
-		Out: [2, 20]
+		In: [0, 2, 19, 9, 11]
+		Out: [0, 2, 20]
 
 	Basic Block: 700
 		Type: MOVE
@@ -5341,8 +5485,8 @@ Scope: Tree_RemoveRight
 		Next: 701
 		Use: [20]
 		Def: [8]
-		In: [2, 20]
-		Out: [2]
+		In: [0, 2, 20]
+		Out: [0, 2]
 
 	Basic Block: 701
 		Type: MOVE
@@ -5350,8 +5494,8 @@ Scope: Tree_RemoveRight
 		Next: 702
 		Use: [2]
 		Def: [1]
-		In: [2]
-		Out: [2]
+		In: [0, 2]
+		Out: [0, 1, 2]
 
 	Basic Block: 702
 		Type: MOVE
@@ -5359,8 +5503,8 @@ Scope: Tree_RemoveRight
 		Next: 703
 		Use: [2]
 		Def: [21]
-		In: [2]
-		Out: [21]
+		In: [0, 1, 2]
+		Out: [0, 1, 21]
 
 	Basic Block: 703
 		Type: HLOAD
@@ -5368,8 +5512,8 @@ Scope: Tree_RemoveRight
 		Next: 704
 		Use: [21]
 		Def: [22]
-		In: [21]
-		Out: [21, 22]
+		In: [0, 1, 21]
+		Out: [0, 1, 21, 22]
 
 	Basic Block: 704
 		Type: HLOAD
@@ -5377,8 +5521,8 @@ Scope: Tree_RemoveRight
 		Next: 705
 		Use: [22]
 		Def: [23]
-		In: [21, 22]
-		Out: [21, 23]
+		In: [0, 1, 21, 22]
+		Out: [0, 1, 21, 23]
 
 	Basic Block: 705
 		Type: MOVE
@@ -5386,8 +5530,8 @@ Scope: Tree_RemoveRight
 		Next: 706
 		Use: [21, 23]
 		Def: [24]
-		In: [21, 23]
-		Out: [24]
+		In: [0, 1, 21, 23]
+		Out: [0, 1, 24]
 
 	Basic Block: 706
 		Type: MOVE
@@ -5395,8 +5539,8 @@ Scope: Tree_RemoveRight
 		Next: 707
 		Use: [24]
 		Def: [2]
-		In: [24]
-		Out: []
+		In: [0, 1, 24]
+		Out: [0, 1, 2]
 
 	Basic Block: 707
 		Type: JUMP
@@ -5404,8 +5548,8 @@ Scope: Tree_RemoveRight
 		Next: 708
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 2]
+		Out: [0, 1, 2]
 
 	Basic Block: 708
 		Type: NOOP
@@ -5531,6 +5675,15 @@ Scope: Tree_RemoveRight
 		Use: []
 		Def: [35]
 		In: []
+		Out: [35]
+
+	Basic Block: 723
+		Type: RETURN
+		Label: null
+		Next: 724
+		Use: [35]
+		Def: []
+		In: [35]
 		Out: []
 
 Scope: Tree_RemoveLeft
@@ -5540,8 +5693,8 @@ Scope: Tree_RemoveLeft
 		Next: 729
 		Use: [2]
 		Def: [4]
-		In: [2]
-		Out: [2, 4]
+		In: [0, 1, 2]
+		Out: [0, 1, 2, 4]
 
 	Basic Block: 729
 		Type: HLOAD
@@ -5549,8 +5702,8 @@ Scope: Tree_RemoveLeft
 		Next: 730
 		Use: [4]
 		Def: [5]
-		In: [2, 4]
-		Out: [2, 4, 5]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4, 5]
 
 	Basic Block: 730
 		Type: HLOAD
@@ -5558,8 +5711,8 @@ Scope: Tree_RemoveLeft
 		Next: 731
 		Use: [5]
 		Def: [6]
-		In: [2, 4, 5]
-		Out: [2, 4, 6]
+		In: [0, 1, 2, 4, 5]
+		Out: [0, 1, 2, 4, 6]
 
 	Basic Block: 731
 		Type: MOVE
@@ -5567,8 +5720,8 @@ Scope: Tree_RemoveLeft
 		Next: 732
 		Use: [4, 6]
 		Def: [7]
-		In: [2, 4, 6]
-		Out: [2, 7]
+		In: [0, 1, 2, 4, 6]
+		Out: [0, 1, 2, 7]
 
 	Basic Block: 732
 		Type: CJUMP
@@ -5576,8 +5729,8 @@ Scope: Tree_RemoveLeft
 		Next: 733
 		Use: [7]
 		Def: []
-		In: [2, 7]
-		Out: [2]
+		In: [0, 1, 2, 7]
+		Out: [0, 1, 2]
 
 	Basic Block: 733
 		Type: MOVE
@@ -5585,8 +5738,8 @@ Scope: Tree_RemoveLeft
 		Next: 734
 		Use: [2]
 		Def: [9]
-		In: [2]
-		Out: [2, 9]
+		In: [0, 2]
+		Out: [0, 2, 9]
 
 	Basic Block: 734
 		Type: HLOAD
@@ -5594,8 +5747,8 @@ Scope: Tree_RemoveLeft
 		Next: 735
 		Use: [9]
 		Def: [10]
-		In: [2, 9]
-		Out: [2, 9, 10]
+		In: [0, 2, 9]
+		Out: [0, 2, 9, 10]
 
 	Basic Block: 735
 		Type: HLOAD
@@ -5603,8 +5756,8 @@ Scope: Tree_RemoveLeft
 		Next: 736
 		Use: [10]
 		Def: [11]
-		In: [2, 9, 10]
-		Out: [2, 9, 11]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 9, 11]
 
 	Basic Block: 736
 		Type: MOVE
@@ -5612,8 +5765,8 @@ Scope: Tree_RemoveLeft
 		Next: 737
 		Use: [2]
 		Def: [13]
-		In: [2, 9, 11]
-		Out: [2, 9, 11, 13]
+		In: [0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 13]
 
 	Basic Block: 737
 		Type: HLOAD
@@ -5621,8 +5774,8 @@ Scope: Tree_RemoveLeft
 		Next: 738
 		Use: [13]
 		Def: [14]
-		In: [2, 9, 11, 13]
-		Out: [2, 9, 11, 13, 14]
+		In: [0, 2, 9, 11, 13]
+		Out: [0, 2, 9, 11, 13, 14]
 
 	Basic Block: 738
 		Type: HLOAD
@@ -5630,8 +5783,8 @@ Scope: Tree_RemoveLeft
 		Next: 739
 		Use: [14]
 		Def: [15]
-		In: [2, 9, 11, 13, 14]
-		Out: [2, 9, 11, 13, 15]
+		In: [0, 2, 9, 11, 13, 14]
+		Out: [0, 2, 9, 11, 13, 15]
 
 	Basic Block: 739
 		Type: MOVE
@@ -5639,8 +5792,8 @@ Scope: Tree_RemoveLeft
 		Next: 740
 		Use: [13, 15]
 		Def: [16]
-		In: [2, 9, 11, 13, 15]
-		Out: [16, 2, 9, 11]
+		In: [0, 2, 9, 11, 13, 15]
+		Out: [16, 0, 2, 9, 11]
 
 	Basic Block: 740
 		Type: MOVE
@@ -5648,8 +5801,8 @@ Scope: Tree_RemoveLeft
 		Next: 741
 		Use: [16]
 		Def: [12]
-		In: [16, 2, 9, 11]
-		Out: [2, 9, 11, 12]
+		In: [16, 0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 12]
 
 	Basic Block: 741
 		Type: HLOAD
@@ -5657,8 +5810,8 @@ Scope: Tree_RemoveLeft
 		Next: 742
 		Use: [12]
 		Def: [17]
-		In: [2, 9, 11, 12]
-		Out: [17, 2, 9, 11, 12]
+		In: [0, 2, 9, 11, 12]
+		Out: [0, 17, 2, 9, 11, 12]
 
 	Basic Block: 742
 		Type: HLOAD
@@ -5666,8 +5819,8 @@ Scope: Tree_RemoveLeft
 		Next: 743
 		Use: [17]
 		Def: [18]
-		In: [17, 2, 9, 11, 12]
-		Out: [18, 2, 9, 11, 12]
+		In: [0, 17, 2, 9, 11, 12]
+		Out: [0, 18, 2, 9, 11, 12]
 
 	Basic Block: 743
 		Type: MOVE
@@ -5675,8 +5828,8 @@ Scope: Tree_RemoveLeft
 		Next: 744
 		Use: [18, 12]
 		Def: [19]
-		In: [18, 2, 9, 11, 12]
-		Out: [2, 19, 9, 11]
+		In: [0, 18, 2, 9, 11, 12]
+		Out: [0, 2, 19, 9, 11]
 
 	Basic Block: 744
 		Type: MOVE
@@ -5684,8 +5837,8 @@ Scope: Tree_RemoveLeft
 		Next: 745
 		Use: [19, 9, 11]
 		Def: [20]
-		In: [2, 19, 9, 11]
-		Out: [2, 20]
+		In: [0, 2, 19, 9, 11]
+		Out: [0, 2, 20]
 
 	Basic Block: 745
 		Type: MOVE
@@ -5693,8 +5846,8 @@ Scope: Tree_RemoveLeft
 		Next: 746
 		Use: [20]
 		Def: [8]
-		In: [2, 20]
-		Out: [2]
+		In: [0, 2, 20]
+		Out: [0, 2]
 
 	Basic Block: 746
 		Type: MOVE
@@ -5702,8 +5855,8 @@ Scope: Tree_RemoveLeft
 		Next: 747
 		Use: [2]
 		Def: [1]
-		In: [2]
-		Out: [2]
+		In: [0, 2]
+		Out: [0, 1, 2]
 
 	Basic Block: 747
 		Type: MOVE
@@ -5711,8 +5864,8 @@ Scope: Tree_RemoveLeft
 		Next: 748
 		Use: [2]
 		Def: [21]
-		In: [2]
-		Out: [21]
+		In: [0, 1, 2]
+		Out: [0, 1, 21]
 
 	Basic Block: 748
 		Type: HLOAD
@@ -5720,8 +5873,8 @@ Scope: Tree_RemoveLeft
 		Next: 749
 		Use: [21]
 		Def: [22]
-		In: [21]
-		Out: [21, 22]
+		In: [0, 1, 21]
+		Out: [0, 1, 21, 22]
 
 	Basic Block: 749
 		Type: HLOAD
@@ -5729,8 +5882,8 @@ Scope: Tree_RemoveLeft
 		Next: 750
 		Use: [22]
 		Def: [23]
-		In: [21, 22]
-		Out: [21, 23]
+		In: [0, 1, 21, 22]
+		Out: [0, 1, 21, 23]
 
 	Basic Block: 750
 		Type: MOVE
@@ -5738,8 +5891,8 @@ Scope: Tree_RemoveLeft
 		Next: 751
 		Use: [21, 23]
 		Def: [24]
-		In: [21, 23]
-		Out: [24]
+		In: [0, 1, 21, 23]
+		Out: [0, 1, 24]
 
 	Basic Block: 751
 		Type: MOVE
@@ -5747,8 +5900,8 @@ Scope: Tree_RemoveLeft
 		Next: 752
 		Use: [24]
 		Def: [2]
-		In: [24]
-		Out: []
+		In: [0, 1, 24]
+		Out: [0, 1, 2]
 
 	Basic Block: 752
 		Type: JUMP
@@ -5756,8 +5909,8 @@ Scope: Tree_RemoveLeft
 		Next: 753
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 2]
+		Out: [0, 1, 2]
 
 	Basic Block: 753
 		Type: NOOP
@@ -5883,6 +6036,15 @@ Scope: Tree_RemoveLeft
 		Use: []
 		Def: [35]
 		In: []
+		Out: [35]
+
+	Basic Block: 768
+		Type: RETURN
+		Label: null
+		Next: 769
+		Use: [35]
+		Def: []
+		In: [35]
 		Out: []
 
 Scope: Tree_Search
@@ -5929,7 +6091,7 @@ Scope: Tree_Search
 		Use: [7]
 		Def: [6]
 		In: [1, 3, 4, 7]
-		Out: [1, 3, 4]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 777
 		Type: CJUMP
@@ -5937,8 +6099,8 @@ Scope: Tree_Search
 		Next: 779
 		Use: [4]
 		Def: []
-		In: [1, 3, 4]
-		Out: [1, 3]
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 779
 		Type: MOVE
@@ -5946,8 +6108,8 @@ Scope: Tree_Search
 		Next: 780
 		Use: [3]
 		Def: [9]
-		In: [1, 3]
-		Out: [1, 3, 9]
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6, 9]
 
 	Basic Block: 780
 		Type: HLOAD
@@ -5955,8 +6117,8 @@ Scope: Tree_Search
 		Next: 781
 		Use: [9]
 		Def: [10]
-		In: [1, 3, 9]
-		Out: [1, 3, 9, 10]
+		In: [1, 3, 4, 6, 9]
+		Out: [1, 3, 4, 6, 9, 10]
 
 	Basic Block: 781
 		Type: HLOAD
@@ -5964,8 +6126,8 @@ Scope: Tree_Search
 		Next: 782
 		Use: [10]
 		Def: [11]
-		In: [1, 3, 9, 10]
-		Out: [1, 3, 9, 11]
+		In: [1, 3, 4, 6, 9, 10]
+		Out: [1, 3, 4, 6, 9, 11]
 
 	Basic Block: 782
 		Type: MOVE
@@ -5973,8 +6135,8 @@ Scope: Tree_Search
 		Next: 783
 		Use: [9, 11]
 		Def: [12]
-		In: [1, 3, 9, 11]
-		Out: [1, 3, 12]
+		In: [1, 3, 4, 6, 9, 11]
+		Out: [1, 3, 4, 6, 12]
 
 	Basic Block: 783
 		Type: MOVE
@@ -5982,8 +6144,8 @@ Scope: Tree_Search
 		Next: 784
 		Use: [12]
 		Def: [8]
-		In: [1, 3, 12]
-		Out: [1, 3, 8]
+		In: [1, 3, 4, 6, 12]
+		Out: [1, 3, 4, 6, 8]
 
 	Basic Block: 784
 		Type: MOVE
@@ -5991,8 +6153,8 @@ Scope: Tree_Search
 		Next: 785
 		Use: []
 		Def: [14]
-		In: [1, 3, 8]
-		Out: [1, 3, 8, 14]
+		In: [1, 3, 4, 6, 8]
+		Out: [1, 3, 4, 6, 8, 14]
 
 	Basic Block: 785
 		Type: MOVE
@@ -6000,8 +6162,8 @@ Scope: Tree_Search
 		Next: 786
 		Use: [8, 14]
 		Def: [15]
-		In: [1, 3, 8, 14]
-		Out: [1, 3, 15]
+		In: [1, 3, 4, 6, 8, 14]
+		Out: [1, 3, 4, 6, 8, 15]
 
 	Basic Block: 786
 		Type: MOVE
@@ -6009,8 +6171,8 @@ Scope: Tree_Search
 		Next: 787
 		Use: [15]
 		Def: [13]
-		In: [1, 3, 15]
-		Out: [1, 3, 13]
+		In: [1, 3, 4, 6, 8, 15]
+		Out: [1, 3, 4, 6, 8, 13]
 
 	Basic Block: 787
 		Type: MOVE
@@ -6018,8 +6180,8 @@ Scope: Tree_Search
 		Next: 788
 		Use: [1, 13]
 		Def: [16]
-		In: [1, 3, 13]
-		Out: [16, 3]
+		In: [1, 3, 4, 6, 8, 13]
+		Out: [16, 1, 3, 4, 6, 8]
 
 	Basic Block: 788
 		Type: CJUMP
@@ -6027,8 +6189,8 @@ Scope: Tree_Search
 		Next: 789
 		Use: [16]
 		Def: []
-		In: [16, 3]
-		Out: [3]
+		In: [16, 1, 3, 4, 6, 8]
+		Out: [1, 3, 4, 6, 8]
 
 	Basic Block: 789
 		Type: MOVE
@@ -6036,8 +6198,8 @@ Scope: Tree_Search
 		Next: 790
 		Use: [3]
 		Def: [17]
-		In: [3]
-		Out: [17, 3]
+		In: [1, 3, 4, 6]
+		Out: [17, 1, 3, 4, 6]
 
 	Basic Block: 790
 		Type: HLOAD
@@ -6045,8 +6207,8 @@ Scope: Tree_Search
 		Next: 791
 		Use: [17]
 		Def: [18]
-		In: [17, 3]
-		Out: [17, 18, 3]
+		In: [17, 1, 3, 4, 6]
+		Out: [17, 1, 18, 3, 4, 6]
 
 	Basic Block: 791
 		Type: HLOAD
@@ -6054,8 +6216,8 @@ Scope: Tree_Search
 		Next: 792
 		Use: [18]
 		Def: [19]
-		In: [17, 18, 3]
-		Out: [17, 19, 3]
+		In: [17, 1, 18, 3, 4, 6]
+		Out: [17, 1, 19, 3, 4, 6]
 
 	Basic Block: 792
 		Type: MOVE
@@ -6063,8 +6225,8 @@ Scope: Tree_Search
 		Next: 793
 		Use: [17, 19]
 		Def: [20]
-		In: [17, 19, 3]
-		Out: [3, 20]
+		In: [17, 1, 19, 3, 4, 6]
+		Out: [1, 3, 20, 4, 6]
 
 	Basic Block: 793
 		Type: CJUMP
@@ -6072,8 +6234,8 @@ Scope: Tree_Search
 		Next: 794
 		Use: [20]
 		Def: []
-		In: [3, 20]
-		Out: [3]
+		In: [1, 3, 20, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 794
 		Type: MOVE
@@ -6081,8 +6243,8 @@ Scope: Tree_Search
 		Next: 795
 		Use: [3]
 		Def: [21]
-		In: [3]
-		Out: [21]
+		In: [1, 3, 4, 6]
+		Out: [1, 4, 21, 6]
 
 	Basic Block: 795
 		Type: HLOAD
@@ -6090,8 +6252,8 @@ Scope: Tree_Search
 		Next: 796
 		Use: [21]
 		Def: [22]
-		In: [21]
-		Out: [21, 22]
+		In: [1, 4, 21, 6]
+		Out: [1, 4, 21, 22, 6]
 
 	Basic Block: 796
 		Type: HLOAD
@@ -6099,8 +6261,8 @@ Scope: Tree_Search
 		Next: 797
 		Use: [22]
 		Def: [23]
-		In: [21, 22]
-		Out: [21, 23]
+		In: [1, 4, 21, 22, 6]
+		Out: [1, 4, 21, 6, 23]
 
 	Basic Block: 797
 		Type: MOVE
@@ -6108,8 +6270,8 @@ Scope: Tree_Search
 		Next: 798
 		Use: [21, 23]
 		Def: [24]
-		In: [21, 23]
-		Out: [24]
+		In: [1, 4, 21, 6, 23]
+		Out: [1, 4, 6, 24]
 
 	Basic Block: 798
 		Type: MOVE
@@ -6117,8 +6279,8 @@ Scope: Tree_Search
 		Next: 799
 		Use: [24]
 		Def: [3]
-		In: [24]
-		Out: []
+		In: [1, 4, 6, 24]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 799
 		Type: JUMP
@@ -6126,8 +6288,8 @@ Scope: Tree_Search
 		Next: 800
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 800
 		Type: MOVE
@@ -6135,8 +6297,8 @@ Scope: Tree_Search
 		Next: 802
 		Use: []
 		Def: [25]
-		In: []
-		Out: [25]
+		In: [1, 3, 6]
+		Out: [1, 3, 6, 25]
 
 	Basic Block: 802
 		Type: MOVE
@@ -6144,8 +6306,8 @@ Scope: Tree_Search
 		Next: 803
 		Use: [25]
 		Def: [4]
-		In: [25]
-		Out: []
+		In: [1, 3, 6, 25]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 803
 		Type: NOOP
@@ -6153,8 +6315,8 @@ Scope: Tree_Search
 		Next: 805
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 805
 		Type: JUMP
@@ -6162,8 +6324,8 @@ Scope: Tree_Search
 		Next: 806
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 806
 		Type: MOVE
@@ -6171,8 +6333,8 @@ Scope: Tree_Search
 		Next: 808
 		Use: []
 		Def: [27]
-		In: [1, 3, 8]
-		Out: [1, 3, 8, 27]
+		In: [1, 3, 4, 6, 8]
+		Out: [1, 3, 4, 6, 8, 27]
 
 	Basic Block: 808
 		Type: MOVE
@@ -6180,8 +6342,8 @@ Scope: Tree_Search
 		Next: 809
 		Use: [1, 27]
 		Def: [28]
-		In: [1, 3, 8, 27]
-		Out: [3, 8, 28]
+		In: [1, 3, 4, 6, 8, 27]
+		Out: [1, 3, 4, 6, 8, 28]
 
 	Basic Block: 809
 		Type: MOVE
@@ -6189,8 +6351,8 @@ Scope: Tree_Search
 		Next: 810
 		Use: [28]
 		Def: [26]
-		In: [3, 8, 28]
-		Out: [3, 8, 26]
+		In: [1, 3, 4, 6, 8, 28]
+		Out: [1, 3, 4, 6, 8, 26]
 
 	Basic Block: 810
 		Type: MOVE
@@ -6198,8 +6360,8 @@ Scope: Tree_Search
 		Next: 811
 		Use: [8, 26]
 		Def: [29]
-		In: [3, 8, 26]
-		Out: [3, 29]
+		In: [1, 3, 4, 6, 8, 26]
+		Out: [1, 3, 4, 6, 29]
 
 	Basic Block: 811
 		Type: CJUMP
@@ -6207,8 +6369,8 @@ Scope: Tree_Search
 		Next: 812
 		Use: [29]
 		Def: []
-		In: [3, 29]
-		Out: [3]
+		In: [1, 3, 4, 6, 29]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 812
 		Type: MOVE
@@ -6216,8 +6378,8 @@ Scope: Tree_Search
 		Next: 813
 		Use: [3]
 		Def: [30]
-		In: [3]
-		Out: [3, 30]
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6, 30]
 
 	Basic Block: 813
 		Type: HLOAD
@@ -6225,8 +6387,8 @@ Scope: Tree_Search
 		Next: 814
 		Use: [30]
 		Def: [31]
-		In: [3, 30]
-		Out: [3, 30, 31]
+		In: [1, 3, 4, 6, 30]
+		Out: [1, 3, 4, 6, 30, 31]
 
 	Basic Block: 814
 		Type: HLOAD
@@ -6234,8 +6396,8 @@ Scope: Tree_Search
 		Next: 815
 		Use: [31]
 		Def: [32]
-		In: [3, 30, 31]
-		Out: [32, 3, 30]
+		In: [1, 3, 4, 6, 30, 31]
+		Out: [32, 1, 3, 4, 6, 30]
 
 	Basic Block: 815
 		Type: MOVE
@@ -6243,8 +6405,8 @@ Scope: Tree_Search
 		Next: 816
 		Use: [32, 30]
 		Def: [33]
-		In: [32, 3, 30]
-		Out: [33, 3]
+		In: [32, 1, 3, 4, 6, 30]
+		Out: [33, 1, 3, 4, 6]
 
 	Basic Block: 816
 		Type: CJUMP
@@ -6252,8 +6414,8 @@ Scope: Tree_Search
 		Next: 817
 		Use: [33]
 		Def: []
-		In: [33, 3]
-		Out: [3]
+		In: [33, 1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 817
 		Type: MOVE
@@ -6261,8 +6423,8 @@ Scope: Tree_Search
 		Next: 818
 		Use: [3]
 		Def: [34]
-		In: [3]
-		Out: [34]
+		In: [1, 3, 4, 6]
+		Out: [1, 34, 4, 6]
 
 	Basic Block: 818
 		Type: HLOAD
@@ -6270,8 +6432,8 @@ Scope: Tree_Search
 		Next: 819
 		Use: [34]
 		Def: [35]
-		In: [34]
-		Out: [34, 35]
+		In: [1, 34, 4, 6]
+		Out: [1, 34, 35, 4, 6]
 
 	Basic Block: 819
 		Type: HLOAD
@@ -6279,8 +6441,8 @@ Scope: Tree_Search
 		Next: 820
 		Use: [35]
 		Def: [36]
-		In: [34, 35]
-		Out: [34, 36]
+		In: [1, 34, 35, 4, 6]
+		Out: [1, 34, 36, 4, 6]
 
 	Basic Block: 820
 		Type: MOVE
@@ -6288,8 +6450,8 @@ Scope: Tree_Search
 		Next: 821
 		Use: [34, 36]
 		Def: [37]
-		In: [34, 36]
-		Out: [37]
+		In: [1, 34, 36, 4, 6]
+		Out: [1, 4, 37, 6]
 
 	Basic Block: 821
 		Type: MOVE
@@ -6297,8 +6459,8 @@ Scope: Tree_Search
 		Next: 822
 		Use: [37]
 		Def: [3]
-		In: [37]
-		Out: []
+		In: [1, 4, 37, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 822
 		Type: JUMP
@@ -6306,8 +6468,8 @@ Scope: Tree_Search
 		Next: 823
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 823
 		Type: MOVE
@@ -6315,8 +6477,8 @@ Scope: Tree_Search
 		Next: 825
 		Use: []
 		Def: [38]
-		In: []
-		Out: [38]
+		In: [1, 3, 6]
+		Out: [1, 3, 38, 6]
 
 	Basic Block: 825
 		Type: MOVE
@@ -6324,8 +6486,8 @@ Scope: Tree_Search
 		Next: 826
 		Use: [38]
 		Def: [4]
-		In: [38]
-		Out: []
+		In: [1, 3, 38, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 826
 		Type: NOOP
@@ -6333,8 +6495,8 @@ Scope: Tree_Search
 		Next: 828
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 828
 		Type: JUMP
@@ -6342,8 +6504,8 @@ Scope: Tree_Search
 		Next: 829
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 829
 		Type: MOVE
@@ -6351,8 +6513,8 @@ Scope: Tree_Search
 		Next: 831
 		Use: []
 		Def: [39]
-		In: []
-		Out: [39]
+		In: [1, 3]
+		Out: [1, 3, 39]
 
 	Basic Block: 831
 		Type: MOVE
@@ -6360,8 +6522,8 @@ Scope: Tree_Search
 		Next: 832
 		Use: [39]
 		Def: [6]
-		In: [39]
-		Out: []
+		In: [1, 3, 39]
+		Out: [1, 3, 6]
 
 	Basic Block: 832
 		Type: MOVE
@@ -6369,8 +6531,8 @@ Scope: Tree_Search
 		Next: 833
 		Use: []
 		Def: [40]
-		In: []
-		Out: [40]
+		In: [1, 3, 6]
+		Out: [1, 3, 6, 40]
 
 	Basic Block: 833
 		Type: MOVE
@@ -6378,8 +6540,8 @@ Scope: Tree_Search
 		Next: 834
 		Use: [40]
 		Def: [4]
-		In: [40]
-		Out: []
+		In: [1, 3, 6, 40]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 834
 		Type: NOOP
@@ -6387,8 +6549,8 @@ Scope: Tree_Search
 		Next: 836
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 836
 		Type: NOOP
@@ -6396,8 +6558,8 @@ Scope: Tree_Search
 		Next: 838
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 838
 		Type: JUMP
@@ -6405,8 +6567,8 @@ Scope: Tree_Search
 		Next: 839
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
 
 	Basic Block: 839
 		Type: NOOP
@@ -6414,7 +6576,16 @@ Scope: Tree_Search
 		Next: 841
 		Use: []
 		Def: []
-		In: []
+		In: [6]
+		Out: [6]
+
+	Basic Block: 841
+		Type: RETURN
+		Label: null
+		Next: 842
+		Use: [6]
+		Def: []
+		In: [6]
 		Out: []
 
 Scope: Tree_Print
@@ -6479,6 +6650,15 @@ Scope: Tree_Print
 		Use: []
 		Def: [8]
 		In: []
+		Out: [8]
+
+	Basic Block: 852
+		Type: RETURN
+		Label: null
+		Next: 853
+		Use: [8]
+		Def: []
+		In: [8]
 		Out: []
 
 Scope: Tree_RecPrint
@@ -6534,7 +6714,7 @@ Scope: Tree_RecPrint
 		Use: [0]
 		Def: [8]
 		In: [0, 1]
-		Out: [1, 8]
+		Out: [0, 1, 8]
 
 	Basic Block: 862
 		Type: HLOAD
@@ -6542,8 +6722,8 @@ Scope: Tree_RecPrint
 		Next: 863
 		Use: [8]
 		Def: [9]
-		In: [1, 8]
-		Out: [1, 8, 9]
+		In: [0, 1, 8]
+		Out: [0, 1, 8, 9]
 
 	Basic Block: 863
 		Type: HLOAD
@@ -6551,8 +6731,8 @@ Scope: Tree_RecPrint
 		Next: 864
 		Use: [9]
 		Def: [10]
-		In: [1, 8, 9]
-		Out: [1, 8, 10]
+		In: [0, 1, 8, 9]
+		Out: [0, 1, 8, 10]
 
 	Basic Block: 864
 		Type: MOVE
@@ -6560,8 +6740,8 @@ Scope: Tree_RecPrint
 		Next: 865
 		Use: [1]
 		Def: [11]
-		In: [1, 8, 10]
-		Out: [8, 10, 11]
+		In: [0, 1, 8, 10]
+		Out: [0, 1, 8, 10, 11]
 
 	Basic Block: 865
 		Type: HLOAD
@@ -6569,8 +6749,8 @@ Scope: Tree_RecPrint
 		Next: 866
 		Use: [11]
 		Def: [12]
-		In: [8, 10, 11]
-		Out: [8, 10, 11, 12]
+		In: [0, 1, 8, 10, 11]
+		Out: [0, 1, 8, 10, 11, 12]
 
 	Basic Block: 866
 		Type: HLOAD
@@ -6578,8 +6758,8 @@ Scope: Tree_RecPrint
 		Next: 867
 		Use: [12]
 		Def: [13]
-		In: [8, 10, 11, 12]
-		Out: [8, 10, 11, 13]
+		In: [0, 1, 8, 10, 11, 12]
+		Out: [0, 1, 8, 10, 11, 13]
 
 	Basic Block: 867
 		Type: MOVE
@@ -6587,8 +6767,8 @@ Scope: Tree_RecPrint
 		Next: 868
 		Use: [11, 13]
 		Def: [14]
-		In: [8, 10, 11, 13]
-		Out: [8, 10, 14]
+		In: [0, 1, 8, 10, 11, 13]
+		Out: [0, 1, 8, 10, 14]
 
 	Basic Block: 868
 		Type: MOVE
@@ -6596,8 +6776,8 @@ Scope: Tree_RecPrint
 		Next: 869
 		Use: [8, 10, 14]
 		Def: [15]
-		In: [8, 10, 14]
-		Out: [15]
+		In: [0, 1, 8, 10, 14]
+		Out: [0, 1, 15]
 
 	Basic Block: 869
 		Type: MOVE
@@ -6605,8 +6785,8 @@ Scope: Tree_RecPrint
 		Next: 870
 		Use: [15]
 		Def: [7]
-		In: [15]
-		Out: []
+		In: [0, 1, 15]
+		Out: [0, 1]
 
 	Basic Block: 870
 		Type: JUMP
@@ -6614,8 +6794,8 @@ Scope: Tree_RecPrint
 		Next: 871
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1]
+		Out: [0, 1]
 
 	Basic Block: 871
 		Type: MOVE
@@ -6858,6 +7038,15 @@ Scope: Tree_RecPrint
 		Use: []
 		Def: [34]
 		In: []
+		Out: [34]
+
+	Basic Block: 902
+		Type: RETURN
+		Label: null
+		Next: 903
+		Use: [34]
+		Def: []
+		In: [34]
 		Out: []
 
 Scope: Tree_accept
@@ -6931,6 +7120,15 @@ Scope: Tree_accept
 		Use: []
 		Def: [9]
 		In: []
+		Out: [9]
+
+	Basic Block: 914
+		Type: RETURN
+		Label: null
+		Next: 915
+		Use: [9]
+		Def: []
+		In: [9]
 		Out: []
 
 Scope: Visitor_visit
@@ -6986,7 +7184,7 @@ Scope: Visitor_visit
 		Use: [1]
 		Def: [7]
 		In: [0, 1]
-		Out: [0, 7]
+		Out: [0, 1, 7]
 
 	Basic Block: 924
 		Type: HLOAD
@@ -6994,8 +7192,8 @@ Scope: Visitor_visit
 		Next: 925
 		Use: [7]
 		Def: [8]
-		In: [0, 7]
-		Out: [0, 7, 8]
+		In: [0, 1, 7]
+		Out: [0, 1, 7, 8]
 
 	Basic Block: 925
 		Type: HLOAD
@@ -7003,8 +7201,8 @@ Scope: Visitor_visit
 		Next: 926
 		Use: [8]
 		Def: [9]
-		In: [0, 7, 8]
-		Out: [0, 7, 9]
+		In: [0, 1, 7, 8]
+		Out: [0, 1, 7, 9]
 
 	Basic Block: 926
 		Type: MOVE
@@ -7012,8 +7210,8 @@ Scope: Visitor_visit
 		Next: 927
 		Use: [7, 9]
 		Def: [10]
-		In: [0, 7, 9]
-		Out: [0, 10]
+		In: [0, 1, 7, 9]
+		Out: [0, 1, 10]
 
 	Basic Block: 927
 		Type: HSTORE
@@ -7021,8 +7219,8 @@ Scope: Visitor_visit
 		Next: 928
 		Use: [0, 10]
 		Def: []
-		In: [0, 10]
-		Out: [0]
+		In: [0, 1, 10]
+		Out: [0, 1]
 
 	Basic Block: 928
 		Type: HLOAD
@@ -7030,8 +7228,8 @@ Scope: Visitor_visit
 		Next: 929
 		Use: [0]
 		Def: [13]
-		In: [0]
-		Out: [0, 13]
+		In: [0, 1]
+		Out: [0, 1, 13]
 
 	Basic Block: 929
 		Type: MOVE
@@ -7039,8 +7237,8 @@ Scope: Visitor_visit
 		Next: 930
 		Use: [13]
 		Def: [12]
-		In: [0, 13]
-		Out: [0, 12]
+		In: [0, 1, 13]
+		Out: [0, 1, 12]
 
 	Basic Block: 930
 		Type: HLOAD
@@ -7048,8 +7246,8 @@ Scope: Visitor_visit
 		Next: 931
 		Use: [12]
 		Def: [14]
-		In: [0, 12]
-		Out: [0, 12, 14]
+		In: [0, 1, 12]
+		Out: [0, 1, 12, 14]
 
 	Basic Block: 931
 		Type: HLOAD
@@ -7057,8 +7255,8 @@ Scope: Visitor_visit
 		Next: 932
 		Use: [14]
 		Def: [15]
-		In: [0, 12, 14]
-		Out: [0, 12, 15]
+		In: [0, 1, 12, 14]
+		Out: [0, 1, 12, 15]
 
 	Basic Block: 932
 		Type: MOVE
@@ -7066,8 +7264,8 @@ Scope: Visitor_visit
 		Next: 933
 		Use: [0, 12, 15]
 		Def: [16]
-		In: [0, 12, 15]
-		Out: [16]
+		In: [0, 1, 12, 15]
+		Out: [16, 0, 1]
 
 	Basic Block: 933
 		Type: MOVE
@@ -7075,8 +7273,8 @@ Scope: Visitor_visit
 		Next: 934
 		Use: [16]
 		Def: [11]
-		In: [16]
-		Out: []
+		In: [16, 0, 1]
+		Out: [0, 1]
 
 	Basic Block: 934
 		Type: JUMP
@@ -7084,8 +7282,8 @@ Scope: Visitor_visit
 		Next: 935
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1]
+		Out: [0, 1]
 
 	Basic Block: 935
 		Type: MOVE
@@ -7301,6 +7499,15 @@ Scope: Visitor_visit
 		Use: []
 		Def: [32]
 		In: []
+		Out: [32]
+
+	Basic Block: 963
+		Type: RETURN
+		Label: null
+		Next: 964
+		Use: [32]
+		Def: []
+		In: [32]
 		Out: []
 
 Scope: MyVisitor_visit
@@ -7356,7 +7563,7 @@ Scope: MyVisitor_visit
 		Use: [1]
 		Def: [7]
 		In: [0, 1]
-		Out: [0, 7]
+		Out: [0, 1, 7]
 
 	Basic Block: 973
 		Type: HLOAD
@@ -7364,8 +7571,8 @@ Scope: MyVisitor_visit
 		Next: 974
 		Use: [7]
 		Def: [8]
-		In: [0, 7]
-		Out: [0, 7, 8]
+		In: [0, 1, 7]
+		Out: [0, 1, 7, 8]
 
 	Basic Block: 974
 		Type: HLOAD
@@ -7373,8 +7580,8 @@ Scope: MyVisitor_visit
 		Next: 975
 		Use: [8]
 		Def: [9]
-		In: [0, 7, 8]
-		Out: [0, 7, 9]
+		In: [0, 1, 7, 8]
+		Out: [0, 1, 7, 9]
 
 	Basic Block: 975
 		Type: MOVE
@@ -7382,8 +7589,8 @@ Scope: MyVisitor_visit
 		Next: 976
 		Use: [7, 9]
 		Def: [10]
-		In: [0, 7, 9]
-		Out: [0, 10]
+		In: [0, 1, 7, 9]
+		Out: [0, 1, 10]
 
 	Basic Block: 976
 		Type: HSTORE
@@ -7391,8 +7598,8 @@ Scope: MyVisitor_visit
 		Next: 977
 		Use: [0, 10]
 		Def: []
-		In: [0, 10]
-		Out: [0]
+		In: [0, 1, 10]
+		Out: [0, 1]
 
 	Basic Block: 977
 		Type: HLOAD
@@ -7400,8 +7607,8 @@ Scope: MyVisitor_visit
 		Next: 978
 		Use: [0]
 		Def: [13]
-		In: [0]
-		Out: [0, 13]
+		In: [0, 1]
+		Out: [0, 1, 13]
 
 	Basic Block: 978
 		Type: MOVE
@@ -7409,8 +7616,8 @@ Scope: MyVisitor_visit
 		Next: 979
 		Use: [13]
 		Def: [12]
-		In: [0, 13]
-		Out: [0, 12]
+		In: [0, 1, 13]
+		Out: [0, 1, 12]
 
 	Basic Block: 979
 		Type: HLOAD
@@ -7418,8 +7625,8 @@ Scope: MyVisitor_visit
 		Next: 980
 		Use: [12]
 		Def: [14]
-		In: [0, 12]
-		Out: [0, 12, 14]
+		In: [0, 1, 12]
+		Out: [0, 1, 12, 14]
 
 	Basic Block: 980
 		Type: HLOAD
@@ -7427,8 +7634,8 @@ Scope: MyVisitor_visit
 		Next: 981
 		Use: [14]
 		Def: [15]
-		In: [0, 12, 14]
-		Out: [0, 12, 15]
+		In: [0, 1, 12, 14]
+		Out: [0, 1, 12, 15]
 
 	Basic Block: 981
 		Type: MOVE
@@ -7436,8 +7643,8 @@ Scope: MyVisitor_visit
 		Next: 982
 		Use: [0, 12, 15]
 		Def: [16]
-		In: [0, 12, 15]
-		Out: [16]
+		In: [0, 1, 12, 15]
+		Out: [16, 0, 1]
 
 	Basic Block: 982
 		Type: MOVE
@@ -7445,8 +7652,8 @@ Scope: MyVisitor_visit
 		Next: 983
 		Use: [16]
 		Def: [11]
-		In: [16]
-		Out: []
+		In: [16, 0, 1]
+		Out: [0, 1]
 
 	Basic Block: 983
 		Type: JUMP
@@ -7454,8 +7661,8 @@ Scope: MyVisitor_visit
 		Next: 984
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1]
+		Out: [0, 1]
 
 	Basic Block: 984
 		Type: MOVE
@@ -7716,6 +7923,15 @@ Scope: MyVisitor_visit
 		Use: []
 		Def: [36]
 		In: []
+		Out: [36]
+
+	Basic Block: 1017
+		Type: RETURN
+		Label: null
+		Next: 1018
+		Use: [36]
+		Def: []
+		In: [36]
 		Out: []
 
 Labels:
@@ -7784,3 +8000,2620 @@ Labels:
 	L7: 324
 	L8: 319
 	L9: 322
+Scope: MAIN
+	Temp: 0
+		Start: 11
+		End: 14
+
+	Temp: 1
+		Start: 4
+		End: 10
+
+	Temp: 2
+		Start: 2
+		End: 3
+
+	Temp: 3
+		Start: 3
+		End: 4
+
+	Temp: 4
+		Start: 7
+		End: 11
+
+	Temp: 5
+		Start: 5
+		End: 6
+
+	Temp: 6
+		Start: 6
+		End: 7
+
+	Temp: 7
+		Start: 8
+		End: 9
+
+	Temp: 8
+		Start: 12
+		End: 13
+
+	Temp: 9
+		Start: 13
+		End: 14
+
+	Temp: 10
+		Start: 14
+		End: 15
+
+Scope: MyVisitor_visit
+	Temp: 0
+		Start: 967
+		End: 1008
+
+	Temp: 1
+		Start: 967
+		End: 999
+
+	Temp: 3
+		Start: 967
+		End: 970
+
+	Temp: 4
+		Start: 968
+		End: 969
+
+	Temp: 5
+		Start: 969
+		End: 970
+
+	Temp: 6
+		Start: 970
+		End: 971
+
+	Temp: 7
+		Start: 972
+		End: 975
+
+	Temp: 8
+		Start: 973
+		End: 974
+
+	Temp: 9
+		Start: 974
+		End: 975
+
+	Temp: 10
+		Start: 975
+		End: 976
+
+	Temp: 12
+		Start: 978
+		End: 981
+
+	Temp: 13
+		Start: 977
+		End: 978
+
+	Temp: 14
+		Start: 979
+		End: 980
+
+	Temp: 15
+		Start: 980
+		End: 981
+
+	Temp: 16
+		Start: 981
+		End: 982
+
+	Temp: 17
+		Start: 984
+		End: 986
+
+	Temp: 18
+		Start: 989
+		End: 992
+
+	Temp: 19
+		Start: 990
+		End: 991
+
+	Temp: 20
+		Start: 991
+		End: 992
+
+	Temp: 21
+		Start: 992
+		End: 993
+
+	Temp: 22
+		Start: 994
+		End: 997
+
+	Temp: 23
+		Start: 995
+		End: 996
+
+	Temp: 24
+		Start: 996
+		End: 997
+
+	Temp: 25
+		Start: 997
+		End: 998
+
+	Temp: 26
+		Start: 999
+		End: 1002
+
+	Temp: 27
+		Start: 1000
+		End: 1001
+
+	Temp: 28
+		Start: 1001
+		End: 1002
+
+	Temp: 29
+		Start: 1002
+		End: 1003
+
+	Temp: 30
+		Start: 1005
+		End: 1008
+
+	Temp: 31
+		Start: 1004
+		End: 1005
+
+	Temp: 32
+		Start: 1006
+		End: 1007
+
+	Temp: 33
+		Start: 1007
+		End: 1008
+
+	Temp: 34
+		Start: 1008
+		End: 1009
+
+	Temp: 35
+		Start: 1011
+		End: 1013
+
+	Temp: 36
+		Start: 1016
+		End: 1017
+
+Scope: TV_Start
+	Temp: 2
+		Start: 82
+		End: 219
+
+	Temp: 3
+		Start: 21
+		End: 80
+
+	Temp: 4
+		Start: 19
+		End: 20
+
+	Temp: 5
+		Start: 20
+		End: 21
+
+	Temp: 6
+		Start: 24
+		End: 82
+
+	Temp: 7
+		Start: 22
+		End: 23
+
+	Temp: 8
+		Start: 23
+		End: 24
+
+	Temp: 9
+		Start: 25
+		End: 26
+
+	Temp: 10
+		Start: 27
+		End: 28
+
+	Temp: 11
+		Start: 29
+		End: 30
+
+	Temp: 12
+		Start: 31
+		End: 32
+
+	Temp: 13
+		Start: 33
+		End: 34
+
+	Temp: 14
+		Start: 35
+		End: 36
+
+	Temp: 15
+		Start: 37
+		End: 38
+
+	Temp: 16
+		Start: 39
+		End: 40
+
+	Temp: 17
+		Start: 41
+		End: 42
+
+	Temp: 18
+		Start: 43
+		End: 44
+
+	Temp: 19
+		Start: 45
+		End: 46
+
+	Temp: 20
+		Start: 47
+		End: 48
+
+	Temp: 21
+		Start: 49
+		End: 50
+
+	Temp: 22
+		Start: 51
+		End: 52
+
+	Temp: 23
+		Start: 53
+		End: 54
+
+	Temp: 24
+		Start: 55
+		End: 56
+
+	Temp: 25
+		Start: 57
+		End: 58
+
+	Temp: 26
+		Start: 59
+		End: 60
+
+	Temp: 27
+		Start: 61
+		End: 62
+
+	Temp: 28
+		Start: 63
+		End: 64
+
+	Temp: 29
+		Start: 65
+		End: 66
+
+	Temp: 30
+		Start: 68
+		End: 79
+
+	Temp: 31
+		Start: 67
+		End: 68
+
+	Temp: 32
+		Start: 69
+		End: 71
+
+	Temp: 33
+		Start: 71
+		End: 72
+
+	Temp: 34
+		Start: 73
+		End: 75
+
+	Temp: 35
+		Start: 74
+		End: 75
+
+	Temp: 36
+		Start: 76
+		End: 77
+
+	Temp: 37
+		Start: 77
+		End: 78
+
+	Temp: 39
+		Start: 83
+		End: 87
+
+	Temp: 40
+		Start: 84
+		End: 85
+
+	Temp: 41
+		Start: 85
+		End: 87
+
+	Temp: 42
+		Start: 86
+		End: 87
+
+	Temp: 43
+		Start: 87
+		End: 88
+
+	Temp: 44
+		Start: 89
+		End: 92
+
+	Temp: 45
+		Start: 90
+		End: 91
+
+	Temp: 46
+		Start: 91
+		End: 92
+
+	Temp: 47
+		Start: 92
+		End: 93
+
+	Temp: 48
+		Start: 94
+		End: 95
+
+	Temp: 49
+		Start: 96
+		End: 100
+
+	Temp: 50
+		Start: 97
+		End: 98
+
+	Temp: 51
+		Start: 98
+		End: 100
+
+	Temp: 52
+		Start: 99
+		End: 100
+
+	Temp: 53
+		Start: 100
+		End: 101
+
+	Temp: 54
+		Start: 102
+		End: 106
+
+	Temp: 55
+		Start: 103
+		End: 104
+
+	Temp: 56
+		Start: 104
+		End: 106
+
+	Temp: 57
+		Start: 105
+		End: 106
+
+	Temp: 58
+		Start: 106
+		End: 107
+
+	Temp: 59
+		Start: 108
+		End: 112
+
+	Temp: 60
+		Start: 109
+		End: 110
+
+	Temp: 61
+		Start: 110
+		End: 112
+
+	Temp: 62
+		Start: 111
+		End: 112
+
+	Temp: 63
+		Start: 112
+		End: 113
+
+	Temp: 64
+		Start: 114
+		End: 118
+
+	Temp: 65
+		Start: 115
+		End: 116
+
+	Temp: 66
+		Start: 116
+		End: 118
+
+	Temp: 67
+		Start: 117
+		End: 118
+
+	Temp: 68
+		Start: 118
+		End: 119
+
+	Temp: 69
+		Start: 120
+		End: 124
+
+	Temp: 70
+		Start: 121
+		End: 122
+
+	Temp: 71
+		Start: 122
+		End: 124
+
+	Temp: 72
+		Start: 123
+		End: 124
+
+	Temp: 73
+		Start: 124
+		End: 125
+
+	Temp: 74
+		Start: 126
+		End: 130
+
+	Temp: 75
+		Start: 127
+		End: 128
+
+	Temp: 76
+		Start: 128
+		End: 130
+
+	Temp: 77
+		Start: 129
+		End: 130
+
+	Temp: 78
+		Start: 130
+		End: 131
+
+	Temp: 79
+		Start: 132
+		End: 136
+
+	Temp: 80
+		Start: 133
+		End: 134
+
+	Temp: 81
+		Start: 134
+		End: 136
+
+	Temp: 82
+		Start: 135
+		End: 136
+
+	Temp: 83
+		Start: 136
+		End: 137
+
+	Temp: 84
+		Start: 138
+		End: 141
+
+	Temp: 85
+		Start: 139
+		End: 140
+
+	Temp: 86
+		Start: 140
+		End: 141
+
+	Temp: 87
+		Start: 141
+		End: 142
+
+	Temp: 88
+		Start: 143
+		End: 144
+
+	Temp: 89
+		Start: 168
+		End: 174
+
+	Temp: 90
+		Start: 147
+		End: 166
+
+	Temp: 91
+		Start: 145
+		End: 146
+
+	Temp: 92
+		Start: 146
+		End: 147
+
+	Temp: 93
+		Start: 150
+		End: 168
+
+	Temp: 94
+		Start: 148
+		End: 149
+
+	Temp: 95
+		Start: 149
+		End: 150
+
+	Temp: 96
+		Start: 151
+		End: 152
+
+	Temp: 97
+		Start: 154
+		End: 165
+
+	Temp: 98
+		Start: 153
+		End: 154
+
+	Temp: 99
+		Start: 155
+		End: 157
+
+	Temp: 100
+		Start: 157
+		End: 158
+
+	Temp: 101
+		Start: 159
+		End: 161
+
+	Temp: 102
+		Start: 160
+		End: 161
+
+	Temp: 103
+		Start: 162
+		End: 163
+
+	Temp: 104
+		Start: 163
+		End: 164
+
+	Temp: 105
+		Start: 169
+		End: 170
+
+	Temp: 107
+		Start: 171
+		End: 174
+
+	Temp: 108
+		Start: 172
+		End: 173
+
+	Temp: 109
+		Start: 173
+		End: 174
+
+	Temp: 110
+		Start: 174
+		End: 175
+
+	Temp: 111
+		Start: 176
+		End: 177
+
+	Temp: 112
+		Start: 178
+		End: 182
+
+	Temp: 113
+		Start: 179
+		End: 180
+
+	Temp: 114
+		Start: 180
+		End: 182
+
+	Temp: 115
+		Start: 181
+		End: 182
+
+	Temp: 116
+		Start: 182
+		End: 183
+
+	Temp: 117
+		Start: 184
+		End: 188
+
+	Temp: 118
+		Start: 185
+		End: 186
+
+	Temp: 119
+		Start: 186
+		End: 188
+
+	Temp: 120
+		Start: 187
+		End: 188
+
+	Temp: 121
+		Start: 188
+		End: 189
+
+	Temp: 122
+		Start: 190
+		End: 194
+
+	Temp: 123
+		Start: 191
+		End: 192
+
+	Temp: 124
+		Start: 192
+		End: 194
+
+	Temp: 125
+		Start: 193
+		End: 194
+
+	Temp: 126
+		Start: 194
+		End: 195
+
+	Temp: 127
+		Start: 196
+		End: 200
+
+	Temp: 128
+		Start: 197
+		End: 198
+
+	Temp: 129
+		Start: 198
+		End: 200
+
+	Temp: 130
+		Start: 199
+		End: 200
+
+	Temp: 131
+		Start: 200
+		End: 201
+
+	Temp: 132
+		Start: 202
+		End: 206
+
+	Temp: 133
+		Start: 203
+		End: 204
+
+	Temp: 134
+		Start: 204
+		End: 206
+
+	Temp: 135
+		Start: 205
+		End: 206
+
+	Temp: 136
+		Start: 206
+		End: 207
+
+	Temp: 137
+		Start: 208
+		End: 212
+
+	Temp: 138
+		Start: 209
+		End: 210
+
+	Temp: 139
+		Start: 210
+		End: 212
+
+	Temp: 140
+		Start: 211
+		End: 212
+
+	Temp: 141
+		Start: 212
+		End: 213
+
+	Temp: 142
+		Start: 214
+		End: 217
+
+	Temp: 143
+		Start: 215
+		End: 216
+
+	Temp: 144
+		Start: 216
+		End: 217
+
+	Temp: 145
+		Start: 217
+		End: 218
+
+	Temp: 146
+		Start: 219
+		End: 223
+
+	Temp: 147
+		Start: 220
+		End: 221
+
+	Temp: 148
+		Start: 221
+		End: 223
+
+	Temp: 149
+		Start: 222
+		End: 223
+
+	Temp: 150
+		Start: 223
+		End: 224
+
+	Temp: 151
+		Start: 225
+		End: 226
+
+Scope: Tree_Compare
+	Temp: 1
+		Start: 295
+		End: 313
+
+	Temp: 2
+		Start: 295
+		End: 301
+
+	Temp: 4
+		Start: 306
+		End: 326
+
+	Temp: 5
+		Start: 295
+		End: 296
+
+	Temp: 6
+		Start: 299
+		End: 310
+
+	Temp: 7
+		Start: 297
+		End: 298
+
+	Temp: 8
+		Start: 298
+		End: 299
+
+	Temp: 9
+		Start: 302
+		End: 303
+
+	Temp: 10
+		Start: 300
+		End: 301
+
+	Temp: 11
+		Start: 301
+		End: 302
+
+	Temp: 12
+		Start: 303
+		End: 304
+
+	Temp: 13
+		Start: 305
+		End: 306
+
+	Temp: 14
+		Start: 311
+		End: 313
+
+	Temp: 15
+		Start: 308
+		End: 310
+
+	Temp: 16
+		Start: 310
+		End: 311
+
+	Temp: 17
+		Start: 312
+		End: 314
+
+	Temp: 18
+		Start: 313
+		End: 314
+
+	Temp: 19
+		Start: 314
+		End: 315
+
+	Temp: 20
+		Start: 316
+		End: 317
+
+	Temp: 21
+		Start: 319
+		End: 321
+
+Scope: Tree_Delete
+	Temp: 0
+		Start: 480
+		End: 595
+
+	Temp: 1
+		Start: 480
+		End: 595
+
+	Temp: 3
+		Start: 480
+		End: 595
+
+	Temp: 4
+		Start: 481
+		End: 595
+
+	Temp: 5
+		Start: 483
+		End: 595
+
+	Temp: 6
+		Start: 482
+		End: 483
+
+	Temp: 7
+		Start: 485
+		End: 598
+
+	Temp: 8
+		Start: 484
+		End: 485
+
+	Temp: 9
+		Start: 487
+		End: 595
+
+	Temp: 10
+		Start: 486
+		End: 487
+
+	Temp: 11
+		Start: 494
+		End: 522
+
+	Temp: 12
+		Start: 490
+		End: 493
+
+	Temp: 13
+		Start: 491
+		End: 492
+
+	Temp: 14
+		Start: 492
+		End: 493
+
+	Temp: 15
+		Start: 493
+		End: 494
+
+	Temp: 16
+		Start: 497
+		End: 498
+
+	Temp: 17
+		Start: 495
+		End: 496
+
+	Temp: 18
+		Start: 496
+		End: 497
+
+	Temp: 19
+		Start: 498
+		End: 499
+
+	Temp: 20
+		Start: 500
+		End: 503
+
+	Temp: 21
+		Start: 501
+		End: 502
+
+	Temp: 22
+		Start: 502
+		End: 503
+
+	Temp: 23
+		Start: 503
+		End: 504
+
+	Temp: 24
+		Start: 506
+		End: 509
+
+	Temp: 25
+		Start: 507
+		End: 508
+
+	Temp: 26
+		Start: 508
+		End: 509
+
+	Temp: 27
+		Start: 509
+		End: 510
+
+	Temp: 28
+		Start: 512
+		End: 514
+
+	Temp: 29
+		Start: 521
+		End: 522
+
+	Temp: 30
+		Start: 518
+		End: 520
+
+	Temp: 31
+		Start: 520
+		End: 521
+
+	Temp: 32
+		Start: 522
+		End: 523
+
+	Temp: 33
+		Start: 524
+		End: 527
+
+	Temp: 34
+		Start: 525
+		End: 526
+
+	Temp: 35
+		Start: 526
+		End: 527
+
+	Temp: 36
+		Start: 527
+		End: 528
+
+	Temp: 37
+		Start: 530
+		End: 533
+
+	Temp: 38
+		Start: 531
+		End: 532
+
+	Temp: 39
+		Start: 532
+		End: 533
+
+	Temp: 40
+		Start: 533
+		End: 534
+
+	Temp: 41
+		Start: 536
+		End: 538
+
+	Temp: 42
+		Start: 545
+		End: 564
+
+	Temp: 43
+		Start: 544
+		End: 545
+
+	Temp: 44
+		Start: 546
+		End: 551
+
+	Temp: 45
+		Start: 547
+		End: 550
+
+	Temp: 46
+		Start: 548
+		End: 549
+
+	Temp: 47
+		Start: 549
+		End: 550
+
+	Temp: 48
+		Start: 550
+		End: 551
+
+	Temp: 49
+		Start: 551
+		End: 552
+
+	Temp: 50
+		Start: 553
+		End: 558
+
+	Temp: 51
+		Start: 554
+		End: 557
+
+	Temp: 52
+		Start: 555
+		End: 556
+
+	Temp: 53
+		Start: 556
+		End: 557
+
+	Temp: 54
+		Start: 557
+		End: 558
+
+	Temp: 55
+		Start: 558
+		End: 559
+
+	Temp: 56
+		Start: 560
+		End: 561
+
+	Temp: 58
+		Start: 565
+		End: 566
+
+	Temp: 59
+		Start: 568
+		End: 572
+
+	Temp: 60
+		Start: 570
+		End: 571
+
+	Temp: 61
+		Start: 571
+		End: 572
+
+	Temp: 62
+		Start: 572
+		End: 573
+
+	Temp: 63
+		Start: 577
+		End: 581
+
+	Temp: 64
+		Start: 579
+		End: 580
+
+	Temp: 65
+		Start: 580
+		End: 581
+
+	Temp: 66
+		Start: 581
+		End: 582
+
+	Temp: 67
+		Start: 585
+		End: 586
+
+	Temp: 68
+		Start: 587
+		End: 588
+
+	Temp: 69
+		Start: 593
+		End: 594
+
+Scope: Tree_GetHas_Left
+	Temp: 0
+		Start: 278
+		End: 278
+
+	Temp: 2
+		Start: 278
+		End: 279
+
+Scope: Tree_GetHas_Right
+	Temp: 0
+		Start: 273
+		End: 273
+
+	Temp: 2
+		Start: 273
+		End: 274
+
+Scope: Tree_GetKey
+	Temp: 0
+		Start: 262
+		End: 262
+
+	Temp: 2
+		Start: 262
+		End: 263
+
+Scope: Tree_GetLeft
+	Temp: 0
+		Start: 257
+		End: 257
+
+	Temp: 2
+		Start: 257
+		End: 258
+
+Scope: Tree_GetRight
+	Temp: 0
+		Start: 252
+		End: 252
+
+	Temp: 2
+		Start: 252
+		End: 253
+
+Scope: Tree_Init
+	Temp: 0
+		Start: 230
+		End: 234
+
+	Temp: 1
+		Start: 230
+		End: 230
+
+	Temp: 3
+		Start: 231
+		End: 232
+
+	Temp: 4
+		Start: 233
+		End: 234
+
+	Temp: 5
+		Start: 235
+		End: 236
+
+Scope: Tree_Insert
+	Temp: 0
+		Start: 330
+		End: 399
+
+	Temp: 1
+		Start: 330
+		End: 472
+
+	Temp: 3
+		Start: 393
+		End: 472
+
+	Temp: 4
+		Start: 332
+		End: 391
+
+	Temp: 5
+		Start: 330
+		End: 331
+
+	Temp: 6
+		Start: 331
+		End: 332
+
+	Temp: 7
+		Start: 335
+		End: 393
+
+	Temp: 8
+		Start: 333
+		End: 334
+
+	Temp: 9
+		Start: 334
+		End: 335
+
+	Temp: 10
+		Start: 336
+		End: 337
+
+	Temp: 11
+		Start: 338
+		End: 339
+
+	Temp: 12
+		Start: 340
+		End: 341
+
+	Temp: 13
+		Start: 342
+		End: 343
+
+	Temp: 14
+		Start: 344
+		End: 345
+
+	Temp: 15
+		Start: 346
+		End: 347
+
+	Temp: 16
+		Start: 348
+		End: 349
+
+	Temp: 17
+		Start: 350
+		End: 351
+
+	Temp: 18
+		Start: 352
+		End: 353
+
+	Temp: 19
+		Start: 354
+		End: 355
+
+	Temp: 20
+		Start: 356
+		End: 357
+
+	Temp: 21
+		Start: 358
+		End: 359
+
+	Temp: 22
+		Start: 360
+		End: 361
+
+	Temp: 23
+		Start: 362
+		End: 363
+
+	Temp: 24
+		Start: 364
+		End: 365
+
+	Temp: 25
+		Start: 366
+		End: 367
+
+	Temp: 26
+		Start: 368
+		End: 369
+
+	Temp: 27
+		Start: 370
+		End: 371
+
+	Temp: 28
+		Start: 372
+		End: 373
+
+	Temp: 29
+		Start: 374
+		End: 375
+
+	Temp: 30
+		Start: 376
+		End: 377
+
+	Temp: 31
+		Start: 379
+		End: 390
+
+	Temp: 32
+		Start: 378
+		End: 379
+
+	Temp: 33
+		Start: 380
+		End: 382
+
+	Temp: 34
+		Start: 382
+		End: 383
+
+	Temp: 35
+		Start: 384
+		End: 386
+
+	Temp: 36
+		Start: 385
+		End: 386
+
+	Temp: 37
+		Start: 387
+		End: 388
+
+	Temp: 38
+		Start: 388
+		End: 389
+
+	Temp: 40
+		Start: 394
+		End: 397
+
+	Temp: 41
+		Start: 395
+		End: 396
+
+	Temp: 42
+		Start: 396
+		End: 397
+
+	Temp: 43
+		Start: 397
+		End: 398
+
+	Temp: 44
+		Start: 399
+		End: 472
+
+	Temp: 45
+		Start: 401
+		End: 472
+
+	Temp: 46
+		Start: 400
+		End: 401
+
+	Temp: 47
+		Start: 408
+		End: 410
+
+	Temp: 48
+		Start: 404
+		End: 407
+
+	Temp: 49
+		Start: 405
+		End: 406
+
+	Temp: 50
+		Start: 406
+		End: 407
+
+	Temp: 51
+		Start: 407
+		End: 408
+
+	Temp: 52
+		Start: 411
+		End: 412
+
+	Temp: 53
+		Start: 409
+		End: 410
+
+	Temp: 54
+		Start: 410
+		End: 411
+
+	Temp: 55
+		Start: 412
+		End: 413
+
+	Temp: 56
+		Start: 414
+		End: 417
+
+	Temp: 57
+		Start: 415
+		End: 416
+
+	Temp: 58
+		Start: 416
+		End: 417
+
+	Temp: 59
+		Start: 417
+		End: 418
+
+	Temp: 60
+		Start: 419
+		End: 422
+
+	Temp: 61
+		Start: 420
+		End: 421
+
+	Temp: 62
+		Start: 421
+		End: 422
+
+	Temp: 63
+		Start: 422
+		End: 423
+
+	Temp: 64
+		Start: 425
+		End: 427
+
+	Temp: 65
+		Start: 428
+		End: 432
+
+	Temp: 66
+		Start: 429
+		End: 430
+
+	Temp: 67
+		Start: 430
+		End: 432
+
+	Temp: 68
+		Start: 431
+		End: 432
+
+	Temp: 69
+		Start: 432
+		End: 433
+
+	Temp: 70
+		Start: 434
+		End: 437
+
+	Temp: 71
+		Start: 435
+		End: 436
+
+	Temp: 72
+		Start: 436
+		End: 437
+
+	Temp: 73
+		Start: 437
+		End: 438
+
+	Temp: 74
+		Start: 442
+		End: 446
+
+	Temp: 75
+		Start: 444
+		End: 445
+
+	Temp: 76
+		Start: 445
+		End: 446
+
+	Temp: 77
+		Start: 446
+		End: 447
+
+	Temp: 78
+		Start: 448
+		End: 451
+
+	Temp: 79
+		Start: 449
+		End: 450
+
+	Temp: 80
+		Start: 450
+		End: 451
+
+	Temp: 81
+		Start: 451
+		End: 452
+
+	Temp: 82
+		Start: 454
+		End: 456
+
+	Temp: 83
+		Start: 457
+		End: 461
+
+	Temp: 84
+		Start: 458
+		End: 459
+
+	Temp: 85
+		Start: 459
+		End: 461
+
+	Temp: 86
+		Start: 460
+		End: 461
+
+	Temp: 87
+		Start: 461
+		End: 462
+
+	Temp: 88
+		Start: 463
+		End: 466
+
+	Temp: 89
+		Start: 464
+		End: 465
+
+	Temp: 90
+		Start: 465
+		End: 466
+
+	Temp: 91
+		Start: 466
+		End: 467
+
+	Temp: 92
+		Start: 475
+		End: 476
+
+Scope: Tree_Print
+	Temp: 0
+		Start: 845
+		End: 846
+
+	Temp: 2
+		Start: 845
+		End: 849
+
+	Temp: 4
+		Start: 846
+		End: 849
+
+	Temp: 5
+		Start: 847
+		End: 848
+
+	Temp: 6
+		Start: 848
+		End: 849
+
+	Temp: 7
+		Start: 849
+		End: 850
+
+	Temp: 8
+		Start: 851
+		End: 852
+
+Scope: Tree_RecPrint
+	Temp: 0
+		Start: 856
+		End: 886
+
+	Temp: 1
+		Start: 856
+		End: 889
+
+	Temp: 3
+		Start: 856
+		End: 859
+
+	Temp: 4
+		Start: 857
+		End: 858
+
+	Temp: 5
+		Start: 858
+		End: 859
+
+	Temp: 6
+		Start: 859
+		End: 860
+
+	Temp: 8
+		Start: 861
+		End: 868
+
+	Temp: 9
+		Start: 862
+		End: 863
+
+	Temp: 10
+		Start: 863
+		End: 868
+
+	Temp: 11
+		Start: 864
+		End: 867
+
+	Temp: 12
+		Start: 865
+		End: 866
+
+	Temp: 13
+		Start: 866
+		End: 867
+
+	Temp: 14
+		Start: 867
+		End: 868
+
+	Temp: 15
+		Start: 868
+		End: 869
+
+	Temp: 16
+		Start: 871
+		End: 873
+
+	Temp: 17
+		Start: 876
+		End: 879
+
+	Temp: 18
+		Start: 877
+		End: 878
+
+	Temp: 19
+		Start: 878
+		End: 879
+
+	Temp: 20
+		Start: 879
+		End: 880
+
+	Temp: 21
+		Start: 881
+		End: 884
+
+	Temp: 22
+		Start: 882
+		End: 883
+
+	Temp: 23
+		Start: 883
+		End: 884
+
+	Temp: 24
+		Start: 884
+		End: 885
+
+	Temp: 25
+		Start: 886
+		End: 893
+
+	Temp: 26
+		Start: 887
+		End: 888
+
+	Temp: 27
+		Start: 888
+		End: 893
+
+	Temp: 28
+		Start: 889
+		End: 892
+
+	Temp: 29
+		Start: 890
+		End: 891
+
+	Temp: 30
+		Start: 891
+		End: 892
+
+	Temp: 31
+		Start: 892
+		End: 893
+
+	Temp: 32
+		Start: 893
+		End: 894
+
+	Temp: 33
+		Start: 896
+		End: 898
+
+	Temp: 34
+		Start: 901
+		End: 902
+
+Scope: Tree_Remove
+	Temp: 0
+		Start: 602
+		End: 662
+
+	Temp: 1
+		Start: 602
+		End: 665
+
+	Temp: 2
+		Start: 602
+		End: 625
+
+	Temp: 4
+		Start: 602
+		End: 605
+
+	Temp: 5
+		Start: 603
+		End: 604
+
+	Temp: 6
+		Start: 604
+		End: 605
+
+	Temp: 7
+		Start: 605
+		End: 606
+
+	Temp: 9
+		Start: 607
+		End: 610
+
+	Temp: 10
+		Start: 608
+		End: 609
+
+	Temp: 11
+		Start: 609
+		End: 610
+
+	Temp: 12
+		Start: 610
+		End: 611
+
+	Temp: 13
+		Start: 613
+		End: 617
+
+	Temp: 14
+		Start: 615
+		End: 616
+
+	Temp: 15
+		Start: 616
+		End: 617
+
+	Temp: 16
+		Start: 617
+		End: 618
+
+	Temp: 17
+		Start: 619
+		End: 622
+
+	Temp: 18
+		Start: 620
+		End: 621
+
+	Temp: 19
+		Start: 621
+		End: 622
+
+	Temp: 20
+		Start: 622
+		End: 623
+
+	Temp: 21
+		Start: 630
+		End: 643
+
+	Temp: 22
+		Start: 625
+		End: 629
+
+	Temp: 23
+		Start: 627
+		End: 628
+
+	Temp: 24
+		Start: 628
+		End: 629
+
+	Temp: 25
+		Start: 629
+		End: 630
+
+	Temp: 26
+		Start: 639
+		End: 643
+
+	Temp: 27
+		Start: 635
+		End: 638
+
+	Temp: 28
+		Start: 631
+		End: 634
+
+	Temp: 29
+		Start: 632
+		End: 633
+
+	Temp: 30
+		Start: 633
+		End: 634
+
+	Temp: 31
+		Start: 634
+		End: 635
+
+	Temp: 32
+		Start: 636
+		End: 637
+
+	Temp: 33
+		Start: 637
+		End: 638
+
+	Temp: 34
+		Start: 638
+		End: 639
+
+	Temp: 35
+		Start: 640
+		End: 643
+
+	Temp: 36
+		Start: 641
+		End: 642
+
+	Temp: 37
+		Start: 642
+		End: 643
+
+	Temp: 38
+		Start: 643
+		End: 644
+
+	Temp: 39
+		Start: 645
+		End: 649
+
+	Temp: 40
+		Start: 646
+		End: 647
+
+	Temp: 41
+		Start: 647
+		End: 649
+
+	Temp: 42
+		Start: 648
+		End: 649
+
+	Temp: 43
+		Start: 649
+		End: 650
+
+	Temp: 44
+		Start: 651
+		End: 655
+
+	Temp: 45
+		Start: 652
+		End: 653
+
+	Temp: 46
+		Start: 653
+		End: 655
+
+	Temp: 47
+		Start: 654
+		End: 655
+
+	Temp: 48
+		Start: 655
+		End: 656
+
+	Temp: 49
+		Start: 658
+		End: 663
+
+	Temp: 50
+		Start: 660
+		End: 661
+
+	Temp: 51
+		Start: 661
+		End: 663
+
+	Temp: 52
+		Start: 662
+		End: 663
+
+	Temp: 53
+		Start: 663
+		End: 664
+
+	Temp: 54
+		Start: 665
+		End: 669
+
+	Temp: 55
+		Start: 666
+		End: 667
+
+	Temp: 56
+		Start: 667
+		End: 669
+
+	Temp: 57
+		Start: 668
+		End: 669
+
+	Temp: 58
+		Start: 669
+		End: 670
+
+	Temp: 59
+		Start: 677
+		End: 678
+
+Scope: Tree_RemoveLeft
+	Temp: 0
+		Start: 727
+		End: 758
+
+	Temp: 1
+		Start: 727
+		End: 761
+
+	Temp: 2
+		Start: 727
+		End: 752
+
+	Temp: 4
+		Start: 727
+		End: 731
+
+	Temp: 5
+		Start: 729
+		End: 730
+
+	Temp: 6
+		Start: 730
+		End: 731
+
+	Temp: 7
+		Start: 731
+		End: 732
+
+	Temp: 9
+		Start: 733
+		End: 744
+
+	Temp: 10
+		Start: 734
+		End: 735
+
+	Temp: 11
+		Start: 735
+		End: 744
+
+	Temp: 12
+		Start: 740
+		End: 743
+
+	Temp: 13
+		Start: 736
+		End: 739
+
+	Temp: 14
+		Start: 737
+		End: 738
+
+	Temp: 15
+		Start: 738
+		End: 739
+
+	Temp: 16
+		Start: 739
+		End: 740
+
+	Temp: 17
+		Start: 741
+		End: 742
+
+	Temp: 18
+		Start: 742
+		End: 743
+
+	Temp: 19
+		Start: 743
+		End: 744
+
+	Temp: 20
+		Start: 744
+		End: 745
+
+	Temp: 21
+		Start: 747
+		End: 750
+
+	Temp: 22
+		Start: 748
+		End: 749
+
+	Temp: 23
+		Start: 749
+		End: 750
+
+	Temp: 24
+		Start: 750
+		End: 751
+
+	Temp: 25
+		Start: 755
+		End: 759
+
+	Temp: 26
+		Start: 756
+		End: 757
+
+	Temp: 27
+		Start: 757
+		End: 759
+
+	Temp: 28
+		Start: 758
+		End: 759
+
+	Temp: 29
+		Start: 759
+		End: 760
+
+	Temp: 30
+		Start: 761
+		End: 765
+
+	Temp: 31
+		Start: 762
+		End: 763
+
+	Temp: 32
+		Start: 763
+		End: 765
+
+	Temp: 33
+		Start: 764
+		End: 765
+
+	Temp: 34
+		Start: 765
+		End: 766
+
+	Temp: 35
+		Start: 767
+		End: 768
+
+Scope: Tree_RemoveRight
+	Temp: 0
+		Start: 682
+		End: 713
+
+	Temp: 1
+		Start: 682
+		End: 716
+
+	Temp: 2
+		Start: 682
+		End: 707
+
+	Temp: 4
+		Start: 682
+		End: 686
+
+	Temp: 5
+		Start: 684
+		End: 685
+
+	Temp: 6
+		Start: 685
+		End: 686
+
+	Temp: 7
+		Start: 686
+		End: 687
+
+	Temp: 9
+		Start: 688
+		End: 699
+
+	Temp: 10
+		Start: 689
+		End: 690
+
+	Temp: 11
+		Start: 690
+		End: 699
+
+	Temp: 12
+		Start: 695
+		End: 698
+
+	Temp: 13
+		Start: 691
+		End: 694
+
+	Temp: 14
+		Start: 692
+		End: 693
+
+	Temp: 15
+		Start: 693
+		End: 694
+
+	Temp: 16
+		Start: 694
+		End: 695
+
+	Temp: 17
+		Start: 696
+		End: 697
+
+	Temp: 18
+		Start: 697
+		End: 698
+
+	Temp: 19
+		Start: 698
+		End: 699
+
+	Temp: 20
+		Start: 699
+		End: 700
+
+	Temp: 21
+		Start: 702
+		End: 705
+
+	Temp: 22
+		Start: 703
+		End: 704
+
+	Temp: 23
+		Start: 704
+		End: 705
+
+	Temp: 24
+		Start: 705
+		End: 706
+
+	Temp: 25
+		Start: 710
+		End: 714
+
+	Temp: 26
+		Start: 711
+		End: 712
+
+	Temp: 27
+		Start: 712
+		End: 714
+
+	Temp: 28
+		Start: 713
+		End: 714
+
+	Temp: 29
+		Start: 714
+		End: 715
+
+	Temp: 30
+		Start: 716
+		End: 720
+
+	Temp: 31
+		Start: 717
+		End: 718
+
+	Temp: 32
+		Start: 718
+		End: 720
+
+	Temp: 33
+		Start: 719
+		End: 720
+
+	Temp: 34
+		Start: 720
+		End: 721
+
+	Temp: 35
+		Start: 722
+		End: 723
+
+Scope: Tree_Search
+	Temp: 0
+		Start: 772
+		End: 772
+
+	Temp: 1
+		Start: 772
+		End: 838
+
+	Temp: 3
+		Start: 772
+		End: 838
+
+	Temp: 4
+		Start: 774
+		End: 838
+
+	Temp: 5
+		Start: 773
+		End: 774
+
+	Temp: 6
+		Start: 776
+		End: 841
+
+	Temp: 7
+		Start: 775
+		End: 776
+
+	Temp: 8
+		Start: 783
+		End: 810
+
+	Temp: 9
+		Start: 779
+		End: 782
+
+	Temp: 10
+		Start: 780
+		End: 781
+
+	Temp: 11
+		Start: 781
+		End: 782
+
+	Temp: 12
+		Start: 782
+		End: 783
+
+	Temp: 13
+		Start: 786
+		End: 787
+
+	Temp: 14
+		Start: 784
+		End: 785
+
+	Temp: 15
+		Start: 785
+		End: 786
+
+	Temp: 16
+		Start: 787
+		End: 788
+
+	Temp: 17
+		Start: 789
+		End: 792
+
+	Temp: 18
+		Start: 790
+		End: 791
+
+	Temp: 19
+		Start: 791
+		End: 792
+
+	Temp: 20
+		Start: 792
+		End: 793
+
+	Temp: 21
+		Start: 794
+		End: 797
+
+	Temp: 22
+		Start: 795
+		End: 796
+
+	Temp: 23
+		Start: 796
+		End: 797
+
+	Temp: 24
+		Start: 797
+		End: 798
+
+	Temp: 25
+		Start: 800
+		End: 802
+
+	Temp: 26
+		Start: 809
+		End: 810
+
+	Temp: 27
+		Start: 806
+		End: 808
+
+	Temp: 28
+		Start: 808
+		End: 809
+
+	Temp: 29
+		Start: 810
+		End: 811
+
+	Temp: 30
+		Start: 812
+		End: 815
+
+	Temp: 31
+		Start: 813
+		End: 814
+
+	Temp: 32
+		Start: 814
+		End: 815
+
+	Temp: 33
+		Start: 815
+		End: 816
+
+	Temp: 34
+		Start: 817
+		End: 820
+
+	Temp: 35
+		Start: 818
+		End: 819
+
+	Temp: 36
+		Start: 819
+		End: 820
+
+	Temp: 37
+		Start: 820
+		End: 821
+
+	Temp: 38
+		Start: 823
+		End: 825
+
+	Temp: 39
+		Start: 829
+		End: 831
+
+	Temp: 40
+		Start: 832
+		End: 833
+
+Scope: Tree_SetHas_Left
+	Temp: 0
+		Start: 283
+		End: 283
+
+	Temp: 1
+		Start: 283
+		End: 283
+
+	Temp: 3
+		Start: 284
+		End: 285
+
+Scope: Tree_SetHas_Right
+	Temp: 0
+		Start: 289
+		End: 289
+
+	Temp: 1
+		Start: 289
+		End: 289
+
+	Temp: 3
+		Start: 290
+		End: 291
+
+Scope: Tree_SetKey
+	Temp: 0
+		Start: 267
+		End: 267
+
+	Temp: 1
+		Start: 267
+		End: 267
+
+	Temp: 3
+		Start: 268
+		End: 269
+
+Scope: Tree_SetLeft
+	Temp: 0
+		Start: 246
+		End: 246
+
+	Temp: 1
+		Start: 246
+		End: 246
+
+	Temp: 3
+		Start: 247
+		End: 248
+
+Scope: Tree_SetRight
+	Temp: 0
+		Start: 240
+		End: 240
+
+	Temp: 1
+		Start: 240
+		End: 240
+
+	Temp: 3
+		Start: 241
+		End: 242
+
+Scope: Tree_accept
+	Temp: 0
+		Start: 906
+		End: 911
+
+	Temp: 1
+		Start: 906
+		End: 908
+
+	Temp: 3
+		Start: 906
+		End: 907
+
+	Temp: 5
+		Start: 908
+		End: 911
+
+	Temp: 6
+		Start: 909
+		End: 910
+
+	Temp: 7
+		Start: 910
+		End: 911
+
+	Temp: 8
+		Start: 911
+		End: 912
+
+	Temp: 9
+		Start: 913
+		End: 914
+
+Scope: Visitor_visit
+	Temp: 0
+		Start: 918
+		End: 954
+
+	Temp: 1
+		Start: 918
+		End: 945
+
+	Temp: 3
+		Start: 918
+		End: 921
+
+	Temp: 4
+		Start: 919
+		End: 920
+
+	Temp: 5
+		Start: 920
+		End: 921
+
+	Temp: 6
+		Start: 921
+		End: 922
+
+	Temp: 7
+		Start: 923
+		End: 926
+
+	Temp: 8
+		Start: 924
+		End: 925
+
+	Temp: 9
+		Start: 925
+		End: 926
+
+	Temp: 10
+		Start: 926
+		End: 927
+
+	Temp: 12
+		Start: 929
+		End: 932
+
+	Temp: 13
+		Start: 928
+		End: 929
+
+	Temp: 14
+		Start: 930
+		End: 931
+
+	Temp: 15
+		Start: 931
+		End: 932
+
+	Temp: 16
+		Start: 932
+		End: 933
+
+	Temp: 17
+		Start: 935
+		End: 937
+
+	Temp: 18
+		Start: 940
+		End: 943
+
+	Temp: 19
+		Start: 941
+		End: 942
+
+	Temp: 20
+		Start: 942
+		End: 943
+
+	Temp: 21
+		Start: 943
+		End: 944
+
+	Temp: 22
+		Start: 945
+		End: 948
+
+	Temp: 23
+		Start: 946
+		End: 947
+
+	Temp: 24
+		Start: 947
+		End: 948
+
+	Temp: 25
+		Start: 948
+		End: 949
+
+	Temp: 26
+		Start: 951
+		End: 954
+
+	Temp: 27
+		Start: 950
+		End: 951
+
+	Temp: 28
+		Start: 952
+		End: 953
+
+	Temp: 29
+		Start: 953
+		End: 954
+
+	Temp: 30
+		Start: 954
+		End: 955
+
+	Temp: 31
+		Start: 957
+		End: 959
+
+	Temp: 32
+		Start: 962
+		End: 963
+

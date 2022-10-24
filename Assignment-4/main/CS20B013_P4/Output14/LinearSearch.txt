@@ -123,7 +123,7 @@ Scope: MAIN
 		Use: [1, 10]
 		Def: []
 		In: [1, 4, 10]
-		Out: [4]
+		Out: [1, 4]
 
 	Basic Block: 16
 		Type: MOVE
@@ -131,8 +131,8 @@ Scope: MAIN
 		Next: 17
 		Use: []
 		Def: [12]
-		In: [4]
-		Out: [4, 12]
+		In: [1, 4]
+		Out: [1, 4, 12]
 
 	Basic Block: 17
 		Type: MOVE
@@ -140,8 +140,8 @@ Scope: MAIN
 		Next: 18
 		Use: [12]
 		Def: [11]
-		In: [4, 12]
-		Out: [4, 11]
+		In: [1, 4, 12]
+		Out: [1, 4, 11]
 
 	Basic Block: 18
 		Type: MOVE
@@ -149,8 +149,8 @@ Scope: MAIN
 		Next: 20
 		Use: []
 		Def: [13]
-		In: [4, 11]
-		Out: [4, 11, 13]
+		In: [1, 4, 11]
+		Out: [1, 4, 11, 13]
 
 	Basic Block: 20
 		Type: MOVE
@@ -158,8 +158,8 @@ Scope: MAIN
 		Next: 21
 		Use: [11, 13]
 		Def: [14]
-		In: [4, 11, 13]
-		Out: [4, 11, 14]
+		In: [1, 4, 11, 13]
+		Out: [1, 4, 11, 14]
 
 	Basic Block: 21
 		Type: CJUMP
@@ -167,8 +167,8 @@ Scope: MAIN
 		Next: 22
 		Use: [14]
 		Def: []
-		In: [4, 11, 14]
-		Out: [4, 11]
+		In: [1, 4, 11, 14]
+		Out: [1, 4, 11]
 
 	Basic Block: 22
 		Type: MOVE
@@ -176,8 +176,8 @@ Scope: MAIN
 		Next: 23
 		Use: [4, 11]
 		Def: [15]
-		In: [4, 11]
-		Out: [11, 15]
+		In: [1, 4, 11]
+		Out: [1, 4, 11, 15]
 
 	Basic Block: 23
 		Type: MOVE
@@ -185,8 +185,8 @@ Scope: MAIN
 		Next: 24
 		Use: []
 		Def: [16]
-		In: [11, 15]
-		Out: [16, 11, 15]
+		In: [1, 4, 11, 15]
+		Out: [16, 1, 4, 11, 15]
 
 	Basic Block: 24
 		Type: HSTORE
@@ -194,8 +194,8 @@ Scope: MAIN
 		Next: 25
 		Use: [16, 15]
 		Def: []
-		In: [16, 11, 15]
-		Out: [11]
+		In: [16, 1, 4, 11, 15]
+		Out: [1, 4, 11]
 
 	Basic Block: 25
 		Type: MOVE
@@ -203,8 +203,8 @@ Scope: MAIN
 		Next: 26
 		Use: []
 		Def: [17]
-		In: [11]
-		Out: [17, 11]
+		In: [1, 4, 11]
+		Out: [17, 1, 4, 11]
 
 	Basic Block: 26
 		Type: MOVE
@@ -212,8 +212,8 @@ Scope: MAIN
 		Next: 27
 		Use: [17, 11]
 		Def: [18]
-		In: [17, 11]
-		Out: [18]
+		In: [17, 1, 4, 11]
+		Out: [1, 18, 4]
 
 	Basic Block: 27
 		Type: MOVE
@@ -221,8 +221,8 @@ Scope: MAIN
 		Next: 28
 		Use: [18]
 		Def: [11]
-		In: [18]
-		Out: []
+		In: [1, 18, 4]
+		Out: [1, 4, 11]
 
 	Basic Block: 28
 		Type: JUMP
@@ -230,8 +230,8 @@ Scope: MAIN
 		Next: 29
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 4, 11]
+		Out: [1, 4, 11]
 
 	Basic Block: 29
 		Type: HSTORE
@@ -628,6 +628,15 @@ Scope: LS_Start
 		Use: []
 		Def: [34]
 		In: []
+		Out: [34]
+
+	Basic Block: 77
+		Type: RETURN
+		Label: null
+		Next: 78
+		Use: [34]
+		Def: []
+		In: [34]
 		Out: []
 
 Scope: LS_Print
@@ -737,7 +746,7 @@ Scope: LS_Print
 		Use: [0]
 		Def: [9]
 		In: [0, 2, 10]
-		Out: [2, 9, 10]
+		Out: [0, 2, 9, 10]
 
 	Basic Block: 94
 		Type: HLOAD
@@ -745,8 +754,8 @@ Scope: LS_Print
 		Next: 95
 		Use: [9]
 		Def: [13]
-		In: [2, 9, 10]
-		Out: [2, 9, 10, 13]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 9, 10, 13]
 
 	Basic Block: 95
 		Type: MOVE
@@ -754,8 +763,8 @@ Scope: LS_Print
 		Next: 96
 		Use: []
 		Def: [14]
-		In: [2, 9, 10, 13]
-		Out: [2, 9, 10, 13, 14]
+		In: [0, 2, 9, 10, 13]
+		Out: [0, 2, 9, 10, 13, 14]
 
 	Basic Block: 96
 		Type: MOVE
@@ -763,8 +772,8 @@ Scope: LS_Print
 		Next: 97
 		Use: []
 		Def: [15]
-		In: [2, 9, 10, 13, 14]
-		Out: [2, 9, 10, 13, 14, 15]
+		In: [0, 2, 9, 10, 13, 14]
+		Out: [0, 2, 9, 10, 13, 14, 15]
 
 	Basic Block: 97
 		Type: MOVE
@@ -772,8 +781,8 @@ Scope: LS_Print
 		Next: 98
 		Use: [13, 15]
 		Def: [16]
-		In: [2, 9, 10, 13, 14, 15]
-		Out: [16, 2, 9, 10, 14]
+		In: [0, 2, 9, 10, 13, 14, 15]
+		Out: [16, 0, 2, 9, 10, 14]
 
 	Basic Block: 98
 		Type: MOVE
@@ -781,8 +790,8 @@ Scope: LS_Print
 		Next: 99
 		Use: [16, 10]
 		Def: [17]
-		In: [16, 2, 9, 10, 14]
-		Out: [17, 2, 9, 10, 14]
+		In: [16, 0, 2, 9, 10, 14]
+		Out: [0, 17, 2, 9, 10, 14]
 
 	Basic Block: 99
 		Type: MOVE
@@ -790,8 +799,8 @@ Scope: LS_Print
 		Next: 100
 		Use: [17, 14]
 		Def: [18]
-		In: [17, 2, 9, 10, 14]
-		Out: [18, 2, 9, 10]
+		In: [0, 17, 2, 9, 10, 14]
+		Out: [0, 18, 2, 9, 10]
 
 	Basic Block: 100
 		Type: CJUMP
@@ -799,8 +808,8 @@ Scope: LS_Print
 		Next: 101
 		Use: [18]
 		Def: []
-		In: [18, 2, 9, 10]
-		Out: [2, 9, 10]
+		In: [0, 18, 2, 9, 10]
+		Out: [0, 2, 9, 10]
 
 	Basic Block: 101
 		Type: ERROR
@@ -808,8 +817,8 @@ Scope: LS_Print
 		Next: 102
 		Use: []
 		Def: []
-		In: [2, 9, 10]
-		Out: [2, 9, 10]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 9, 10]
 
 	Basic Block: 102
 		Type: NOOP
@@ -817,8 +826,8 @@ Scope: LS_Print
 		Next: 104
 		Use: []
 		Def: []
-		In: [2, 9, 10]
-		Out: [2, 9, 10]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 9, 10]
 
 	Basic Block: 104
 		Type: MOVE
@@ -826,8 +835,8 @@ Scope: LS_Print
 		Next: 105
 		Use: []
 		Def: [19]
-		In: [2, 9, 10]
-		Out: [2, 19, 9, 10]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 19, 9, 10]
 
 	Basic Block: 105
 		Type: MOVE
@@ -835,8 +844,8 @@ Scope: LS_Print
 		Next: 106
 		Use: [19, 10]
 		Def: [20]
-		In: [2, 19, 9, 10]
-		Out: [2, 20, 9]
+		In: [0, 2, 19, 9, 10]
+		Out: [0, 2, 20, 9]
 
 	Basic Block: 106
 		Type: MOVE
@@ -844,8 +853,8 @@ Scope: LS_Print
 		Next: 107
 		Use: [20, 9]
 		Def: [21]
-		In: [2, 20, 9]
-		Out: [2, 21]
+		In: [0, 2, 20, 9]
+		Out: [0, 2, 21]
 
 	Basic Block: 107
 		Type: HLOAD
@@ -853,8 +862,8 @@ Scope: LS_Print
 		Next: 108
 		Use: [21]
 		Def: [8]
-		In: [2, 21]
-		Out: [2, 8]
+		In: [0, 2, 21]
+		Out: [0, 2, 8]
 
 	Basic Block: 108
 		Type: PRINT
@@ -862,8 +871,8 @@ Scope: LS_Print
 		Next: 109
 		Use: [8]
 		Def: []
-		In: [2, 8]
-		Out: [2]
+		In: [0, 2, 8]
+		Out: [0, 2]
 
 	Basic Block: 109
 		Type: MOVE
@@ -871,8 +880,8 @@ Scope: LS_Print
 		Next: 110
 		Use: []
 		Def: [22]
-		In: [2]
-		Out: [2, 22]
+		In: [0, 2]
+		Out: [0, 2, 22]
 
 	Basic Block: 110
 		Type: MOVE
@@ -880,8 +889,8 @@ Scope: LS_Print
 		Next: 111
 		Use: [2, 22]
 		Def: [23]
-		In: [2, 22]
-		Out: [23]
+		In: [0, 2, 22]
+		Out: [0, 23]
 
 	Basic Block: 111
 		Type: MOVE
@@ -889,8 +898,8 @@ Scope: LS_Print
 		Next: 112
 		Use: [23]
 		Def: [2]
-		In: [23]
-		Out: []
+		In: [0, 23]
+		Out: [0, 2]
 
 	Basic Block: 112
 		Type: JUMP
@@ -898,8 +907,8 @@ Scope: LS_Print
 		Next: 113
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 2]
+		Out: [0, 2]
 
 	Basic Block: 113
 		Type: NOOP
@@ -917,6 +926,15 @@ Scope: LS_Print
 		Use: []
 		Def: [24]
 		In: []
+		Out: [24]
+
+	Basic Block: 116
+		Type: RETURN
+		Label: null
+		Next: 117
+		Use: [24]
+		Def: []
+		In: [24]
 		Out: []
 
 Scope: LS_Search
@@ -972,7 +990,7 @@ Scope: LS_Search
 		Use: [8]
 		Def: [7]
 		In: [0, 1, 3, 8]
-		Out: [0, 1, 3]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 126
 		Type: HLOAD
@@ -980,8 +998,8 @@ Scope: LS_Search
 		Next: 128
 		Use: [0]
 		Def: [9]
-		In: [0, 1, 3]
-		Out: [0, 1, 3, 9]
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7, 9]
 
 	Basic Block: 128
 		Type: MOVE
@@ -989,8 +1007,8 @@ Scope: LS_Search
 		Next: 129
 		Use: []
 		Def: [10]
-		In: [0, 1, 3, 9]
-		Out: [0, 1, 3, 9, 10]
+		In: [0, 1, 3, 7, 9]
+		Out: [0, 1, 3, 7, 9, 10]
 
 	Basic Block: 129
 		Type: MOVE
@@ -998,8 +1016,8 @@ Scope: LS_Search
 		Next: 130
 		Use: [9, 10]
 		Def: [11]
-		In: [0, 1, 3, 9, 10]
-		Out: [0, 1, 3, 11]
+		In: [0, 1, 3, 7, 9, 10]
+		Out: [0, 1, 3, 7, 11]
 
 	Basic Block: 130
 		Type: MOVE
@@ -1007,8 +1025,8 @@ Scope: LS_Search
 		Next: 131
 		Use: [3, 11]
 		Def: [12]
-		In: [0, 1, 3, 11]
-		Out: [0, 1, 3, 12]
+		In: [0, 1, 3, 7, 11]
+		Out: [0, 1, 3, 7, 12]
 
 	Basic Block: 131
 		Type: CJUMP
@@ -1016,8 +1034,8 @@ Scope: LS_Search
 		Next: 132
 		Use: [12]
 		Def: []
-		In: [0, 1, 3, 12]
-		Out: [0, 1, 3]
+		In: [0, 1, 3, 7, 12]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 132
 		Type: HLOAD
@@ -1025,8 +1043,8 @@ Scope: LS_Search
 		Next: 133
 		Use: [0]
 		Def: [15]
-		In: [0, 1, 3]
-		Out: [0, 1, 3]
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 133
 		Type: MOVE
@@ -1034,8 +1052,8 @@ Scope: LS_Search
 		Next: 134
 		Use: []
 		Def: [17]
-		In: [0, 1, 3]
-		Out: [0, 17, 1, 3]
+		In: [0, 1, 3, 7]
+		Out: [0, 17, 1, 3, 7]
 
 	Basic Block: 134
 		Type: MOVE
@@ -1043,8 +1061,8 @@ Scope: LS_Search
 		Next: 135
 		Use: [17, 3]
 		Def: [18]
-		In: [0, 17, 1, 3]
-		Out: [0, 1, 18]
+		In: [0, 17, 1, 3, 7]
+		Out: [0, 1, 18, 3, 7]
 
 	Basic Block: 135
 		Type: MOVE
@@ -1052,8 +1070,8 @@ Scope: LS_Search
 		Next: 136
 		Use: [18]
 		Def: [16]
-		In: [0, 1, 18]
-		Out: [0, 16, 1]
+		In: [0, 1, 18, 3, 7]
+		Out: [0, 16, 1, 3, 7]
 
 	Basic Block: 136
 		Type: HLOAD
@@ -1061,8 +1079,8 @@ Scope: LS_Search
 		Next: 137
 		Use: [0]
 		Def: [15]
-		In: [0, 16, 1]
-		Out: [16, 1, 15]
+		In: [0, 16, 1, 3, 7]
+		Out: [16, 0, 1, 3, 7, 15]
 
 	Basic Block: 137
 		Type: HLOAD
@@ -1070,8 +1088,8 @@ Scope: LS_Search
 		Next: 138
 		Use: [15]
 		Def: [19]
-		In: [16, 1, 15]
-		Out: [16, 1, 19, 15]
+		In: [16, 0, 1, 3, 7, 15]
+		Out: [16, 0, 1, 19, 3, 7, 15]
 
 	Basic Block: 138
 		Type: MOVE
@@ -1079,8 +1097,8 @@ Scope: LS_Search
 		Next: 139
 		Use: []
 		Def: [20]
-		In: [16, 1, 19, 15]
-		Out: [16, 1, 19, 20, 15]
+		In: [16, 0, 1, 19, 3, 7, 15]
+		Out: [16, 0, 1, 19, 3, 20, 7, 15]
 
 	Basic Block: 139
 		Type: MOVE
@@ -1088,8 +1106,8 @@ Scope: LS_Search
 		Next: 140
 		Use: []
 		Def: [21]
-		In: [16, 1, 19, 20, 15]
-		Out: [16, 1, 19, 20, 21, 15]
+		In: [16, 0, 1, 19, 3, 20, 7, 15]
+		Out: [16, 0, 1, 19, 3, 20, 21, 7, 15]
 
 	Basic Block: 140
 		Type: MOVE
@@ -1097,8 +1115,8 @@ Scope: LS_Search
 		Next: 141
 		Use: [19, 21]
 		Def: [22]
-		In: [16, 1, 19, 20, 21, 15]
-		Out: [16, 1, 20, 22, 15]
+		In: [16, 0, 1, 19, 3, 20, 21, 7, 15]
+		Out: [16, 0, 1, 3, 20, 22, 7, 15]
 
 	Basic Block: 141
 		Type: MOVE
@@ -1106,8 +1124,8 @@ Scope: LS_Search
 		Next: 142
 		Use: [16, 22]
 		Def: [23]
-		In: [16, 1, 20, 22, 15]
-		Out: [16, 1, 20, 23, 15]
+		In: [16, 0, 1, 3, 20, 22, 7, 15]
+		Out: [16, 0, 1, 3, 20, 23, 7, 15]
 
 	Basic Block: 142
 		Type: MOVE
@@ -1115,8 +1133,8 @@ Scope: LS_Search
 		Next: 143
 		Use: [20, 23]
 		Def: [24]
-		In: [16, 1, 20, 23, 15]
-		Out: [16, 1, 24, 15]
+		In: [16, 0, 1, 3, 20, 23, 7, 15]
+		Out: [16, 0, 1, 3, 7, 24, 15]
 
 	Basic Block: 143
 		Type: CJUMP
@@ -1124,8 +1142,8 @@ Scope: LS_Search
 		Next: 144
 		Use: [24]
 		Def: []
-		In: [16, 1, 24, 15]
-		Out: [16, 1, 15]
+		In: [16, 0, 1, 3, 7, 24, 15]
+		Out: [16, 0, 1, 3, 7, 15]
 
 	Basic Block: 144
 		Type: ERROR
@@ -1133,8 +1151,8 @@ Scope: LS_Search
 		Next: 145
 		Use: []
 		Def: []
-		In: [16, 1, 15]
-		Out: [16, 1, 15]
+		In: [16, 0, 1, 3, 7, 15]
+		Out: [16, 0, 1, 3, 7, 15]
 
 	Basic Block: 145
 		Type: NOOP
@@ -1142,8 +1160,8 @@ Scope: LS_Search
 		Next: 147
 		Use: []
 		Def: []
-		In: [16, 1, 15]
-		Out: [16, 1, 15]
+		In: [16, 0, 1, 3, 7, 15]
+		Out: [16, 0, 1, 3, 7, 15]
 
 	Basic Block: 147
 		Type: MOVE
@@ -1151,8 +1169,8 @@ Scope: LS_Search
 		Next: 148
 		Use: []
 		Def: [25]
-		In: [16, 1, 15]
-		Out: [16, 1, 25, 15]
+		In: [16, 0, 1, 3, 7, 15]
+		Out: [16, 0, 1, 3, 7, 25, 15]
 
 	Basic Block: 148
 		Type: MOVE
@@ -1160,8 +1178,8 @@ Scope: LS_Search
 		Next: 149
 		Use: [16, 25]
 		Def: [26]
-		In: [16, 1, 25, 15]
-		Out: [1, 26, 15]
+		In: [16, 0, 1, 3, 7, 25, 15]
+		Out: [0, 1, 3, 7, 26, 15]
 
 	Basic Block: 149
 		Type: MOVE
@@ -1169,8 +1187,8 @@ Scope: LS_Search
 		Next: 150
 		Use: [26, 15]
 		Def: [27]
-		In: [1, 26, 15]
-		Out: [1, 27]
+		In: [0, 1, 3, 7, 26, 15]
+		Out: [0, 1, 3, 7, 27]
 
 	Basic Block: 150
 		Type: HLOAD
@@ -1178,8 +1196,8 @@ Scope: LS_Search
 		Next: 151
 		Use: [27]
 		Def: [14]
-		In: [1, 27]
-		Out: [1, 14]
+		In: [0, 1, 3, 7, 27]
+		Out: [0, 1, 3, 7, 14]
 
 	Basic Block: 151
 		Type: MOVE
@@ -1187,8 +1205,8 @@ Scope: LS_Search
 		Next: 152
 		Use: [14]
 		Def: [13]
-		In: [1, 14]
-		Out: [1, 13]
+		In: [0, 1, 3, 7, 14]
+		Out: [0, 1, 3, 7, 13]
 
 	Basic Block: 152
 		Type: MOVE
@@ -1196,8 +1214,8 @@ Scope: LS_Search
 		Next: 153
 		Use: []
 		Def: [29]
-		In: [1, 13]
-		Out: [1, 29, 13]
+		In: [0, 1, 3, 7, 13]
+		Out: [0, 1, 3, 7, 29, 13]
 
 	Basic Block: 153
 		Type: MOVE
@@ -1205,8 +1223,8 @@ Scope: LS_Search
 		Next: 154
 		Use: [1, 29]
 		Def: [30]
-		In: [1, 29, 13]
-		Out: [1, 13, 30]
+		In: [0, 1, 3, 7, 29, 13]
+		Out: [0, 1, 3, 7, 13, 30]
 
 	Basic Block: 154
 		Type: MOVE
@@ -1214,8 +1232,8 @@ Scope: LS_Search
 		Next: 155
 		Use: [30]
 		Def: [28]
-		In: [1, 13, 30]
-		Out: [1, 13]
+		In: [0, 1, 3, 7, 13, 30]
+		Out: [0, 1, 3, 7, 28, 13]
 
 	Basic Block: 155
 		Type: MOVE
@@ -1223,8 +1241,8 @@ Scope: LS_Search
 		Next: 156
 		Use: []
 		Def: [31]
-		In: [1, 13]
-		Out: [1, 13, 31]
+		In: [0, 1, 3, 7, 28, 13]
+		Out: [0, 1, 3, 7, 28, 13, 31]
 
 	Basic Block: 156
 		Type: MOVE
@@ -1232,8 +1250,8 @@ Scope: LS_Search
 		Next: 157
 		Use: [1, 31]
 		Def: [32]
-		In: [1, 13, 31]
-		Out: [32, 13]
+		In: [0, 1, 3, 7, 28, 13, 31]
+		Out: [32, 0, 1, 3, 7, 28, 13]
 
 	Basic Block: 157
 		Type: MOVE
@@ -1241,8 +1259,8 @@ Scope: LS_Search
 		Next: 158
 		Use: [32, 13]
 		Def: [33]
-		In: [32, 13]
-		Out: [33]
+		In: [32, 0, 1, 3, 7, 28, 13]
+		Out: [0, 33, 1, 3, 7, 28, 13]
 
 	Basic Block: 158
 		Type: CJUMP
@@ -1250,8 +1268,8 @@ Scope: LS_Search
 		Next: 159
 		Use: [33]
 		Def: []
-		In: [33]
-		Out: []
+		In: [0, 33, 1, 3, 7, 28, 13]
+		Out: [0, 1, 3, 7, 28, 13]
 
 	Basic Block: 159
 		Type: MOVE
@@ -1259,8 +1277,8 @@ Scope: LS_Search
 		Next: 160
 		Use: []
 		Def: [35]
-		In: []
-		Out: [35]
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 35, 3, 7]
 
 	Basic Block: 160
 		Type: MOVE
@@ -1268,8 +1286,8 @@ Scope: LS_Search
 		Next: 161
 		Use: [35]
 		Def: [34]
-		In: [35]
-		Out: []
+		In: [0, 1, 35, 3, 7]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 161
 		Type: JUMP
@@ -1277,8 +1295,8 @@ Scope: LS_Search
 		Next: 162
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 162
 		Type: MOVE
@@ -1286,8 +1304,8 @@ Scope: LS_Search
 		Next: 164
 		Use: []
 		Def: [36]
-		In: [28, 13]
-		Out: [36, 28, 13]
+		In: [0, 1, 3, 7, 28, 13]
+		Out: [0, 1, 3, 36, 7, 28, 13]
 
 	Basic Block: 164
 		Type: MOVE
@@ -1295,8 +1313,8 @@ Scope: LS_Search
 		Next: 165
 		Use: []
 		Def: [37]
-		In: [36, 28, 13]
-		Out: [36, 37, 28, 13]
+		In: [0, 1, 3, 36, 7, 28, 13]
+		Out: [0, 1, 3, 36, 37, 7, 28, 13]
 
 	Basic Block: 165
 		Type: MOVE
@@ -1304,8 +1322,8 @@ Scope: LS_Search
 		Next: 166
 		Use: [37, 28]
 		Def: [38]
-		In: [36, 37, 28, 13]
-		Out: [36, 38, 13]
+		In: [0, 1, 3, 36, 37, 7, 28, 13]
+		Out: [0, 1, 3, 36, 38, 7, 13]
 
 	Basic Block: 166
 		Type: MOVE
@@ -1313,8 +1331,8 @@ Scope: LS_Search
 		Next: 167
 		Use: [38, 13]
 		Def: [39]
-		In: [36, 38, 13]
-		Out: [36, 39]
+		In: [0, 1, 3, 36, 38, 7, 13]
+		Out: [0, 1, 3, 36, 39, 7]
 
 	Basic Block: 167
 		Type: MOVE
@@ -1322,8 +1340,8 @@ Scope: LS_Search
 		Next: 168
 		Use: [36, 39]
 		Def: [40]
-		In: [36, 39]
-		Out: [40]
+		In: [0, 1, 3, 36, 39, 7]
+		Out: [0, 1, 3, 7, 40]
 
 	Basic Block: 168
 		Type: CJUMP
@@ -1331,8 +1349,8 @@ Scope: LS_Search
 		Next: 169
 		Use: [40]
 		Def: []
-		In: [40]
-		Out: []
+		In: [0, 1, 3, 7, 40]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 169
 		Type: MOVE
@@ -1340,8 +1358,8 @@ Scope: LS_Search
 		Next: 170
 		Use: []
 		Def: [41]
-		In: []
-		Out: [41]
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7, 41]
 
 	Basic Block: 170
 		Type: MOVE
@@ -1349,8 +1367,8 @@ Scope: LS_Search
 		Next: 171
 		Use: [41]
 		Def: [34]
-		In: [41]
-		Out: []
+		In: [0, 1, 3, 7, 41]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 171
 		Type: JUMP
@@ -1358,8 +1376,8 @@ Scope: LS_Search
 		Next: 172
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 172
 		Type: MOVE
@@ -1367,8 +1385,8 @@ Scope: LS_Search
 		Next: 174
 		Use: []
 		Def: [42]
-		In: [0]
-		Out: [0, 42]
+		In: [0, 1]
+		Out: [0, 1, 42]
 
 	Basic Block: 174
 		Type: MOVE
@@ -1376,8 +1394,8 @@ Scope: LS_Search
 		Next: 175
 		Use: [42]
 		Def: [5]
-		In: [0, 42]
-		Out: [0]
+		In: [0, 1, 42]
+		Out: [0, 1]
 
 	Basic Block: 175
 		Type: MOVE
@@ -1385,8 +1403,8 @@ Scope: LS_Search
 		Next: 176
 		Use: []
 		Def: [43]
-		In: [0]
-		Out: [0, 43]
+		In: [0, 1]
+		Out: [0, 1, 43]
 
 	Basic Block: 176
 		Type: MOVE
@@ -1394,8 +1412,8 @@ Scope: LS_Search
 		Next: 177
 		Use: [43]
 		Def: [7]
-		In: [0, 43]
-		Out: [0]
+		In: [0, 1, 43]
+		Out: [0, 1, 7]
 
 	Basic Block: 177
 		Type: HLOAD
@@ -1403,8 +1421,8 @@ Scope: LS_Search
 		Next: 178
 		Use: [0]
 		Def: [44]
-		In: [0]
-		Out: [44]
+		In: [0, 1, 7]
+		Out: [0, 1, 7, 44]
 
 	Basic Block: 178
 		Type: MOVE
@@ -1412,8 +1430,8 @@ Scope: LS_Search
 		Next: 179
 		Use: [44]
 		Def: [3]
-		In: [44]
-		Out: [3]
+		In: [0, 1, 7, 44]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 179
 		Type: NOOP
@@ -1421,8 +1439,8 @@ Scope: LS_Search
 		Next: 181
 		Use: []
 		Def: []
-		In: [3]
-		Out: [3]
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 181
 		Type: NOOP
@@ -1430,8 +1448,8 @@ Scope: LS_Search
 		Next: 183
 		Use: []
 		Def: []
-		In: [3]
-		Out: [3]
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 183
 		Type: MOVE
@@ -1439,8 +1457,8 @@ Scope: LS_Search
 		Next: 184
 		Use: []
 		Def: [45]
-		In: [3]
-		Out: [3, 45]
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7, 45]
 
 	Basic Block: 184
 		Type: MOVE
@@ -1448,8 +1466,8 @@ Scope: LS_Search
 		Next: 185
 		Use: [3, 45]
 		Def: [46]
-		In: [3, 45]
-		Out: [46]
+		In: [0, 1, 3, 7, 45]
+		Out: [0, 1, 7, 46]
 
 	Basic Block: 185
 		Type: MOVE
@@ -1457,8 +1475,8 @@ Scope: LS_Search
 		Next: 186
 		Use: [46]
 		Def: [3]
-		In: [46]
-		Out: []
+		In: [0, 1, 7, 46]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 186
 		Type: JUMP
@@ -1466,8 +1484,8 @@ Scope: LS_Search
 		Next: 187
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 7]
+		Out: [0, 1, 3, 7]
 
 	Basic Block: 187
 		Type: NOOP
@@ -1475,7 +1493,16 @@ Scope: LS_Search
 		Next: 189
 		Use: []
 		Def: []
-		In: []
+		In: [7]
+		Out: [7]
+
+	Basic Block: 189
+		Type: RETURN
+		Label: null
+		Next: 190
+		Use: [7]
+		Def: []
+		In: [7]
 		Out: []
 
 Scope: LS_Init
@@ -1486,7 +1513,7 @@ Scope: LS_Init
 		Use: [0, 1]
 		Def: []
 		In: [0, 1]
-		Out: [1]
+		Out: [0, 1]
 
 	Basic Block: 194
 		Type: MOVE
@@ -1494,8 +1521,8 @@ Scope: LS_Init
 		Next: 195
 		Use: []
 		Def: [4]
-		In: [1]
-		Out: [1, 4]
+		In: [0, 1]
+		Out: [0, 1, 4]
 
 	Basic Block: 195
 		Type: MOVE
@@ -1503,8 +1530,8 @@ Scope: LS_Init
 		Next: 196
 		Use: [1, 4]
 		Def: [5]
-		In: [1, 4]
-		Out: [1, 5]
+		In: [0, 1, 4]
+		Out: [0, 1, 5]
 
 	Basic Block: 196
 		Type: MOVE
@@ -1512,8 +1539,8 @@ Scope: LS_Init
 		Next: 197
 		Use: []
 		Def: [6]
-		In: [1, 5]
-		Out: [1, 5, 6]
+		In: [0, 1, 5]
+		Out: [0, 1, 5, 6]
 
 	Basic Block: 197
 		Type: MOVE
@@ -1521,8 +1548,8 @@ Scope: LS_Init
 		Next: 198
 		Use: [5, 6]
 		Def: [7]
-		In: [1, 5, 6]
-		Out: [1, 7]
+		In: [0, 1, 5, 6]
+		Out: [0, 1, 7]
 
 	Basic Block: 198
 		Type: MOVE
@@ -1530,8 +1557,8 @@ Scope: LS_Init
 		Next: 199
 		Use: [7]
 		Def: [8]
-		In: [1, 7]
-		Out: [1, 8]
+		In: [0, 1, 7]
+		Out: [0, 1, 8]
 
 	Basic Block: 199
 		Type: MOVE
@@ -1539,8 +1566,8 @@ Scope: LS_Init
 		Next: 200
 		Use: [8]
 		Def: [3]
-		In: [1, 8]
-		Out: [1, 3]
+		In: [0, 1, 8]
+		Out: [0, 1, 3]
 
 	Basic Block: 200
 		Type: MOVE
@@ -1548,8 +1575,8 @@ Scope: LS_Init
 		Next: 201
 		Use: []
 		Def: [10]
-		In: [1, 3]
-		Out: [1, 3, 10]
+		In: [0, 1, 3]
+		Out: [0, 1, 3, 10]
 
 	Basic Block: 201
 		Type: MOVE
@@ -1557,8 +1584,8 @@ Scope: LS_Init
 		Next: 202
 		Use: [10]
 		Def: [9]
-		In: [1, 3, 10]
-		Out: [1, 3, 9]
+		In: [0, 1, 3, 10]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 202
 		Type: MOVE
@@ -1566,8 +1593,8 @@ Scope: LS_Init
 		Next: 204
 		Use: []
 		Def: [11]
-		In: [1, 3, 9]
-		Out: [1, 3, 9, 11]
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 3, 9, 11]
 
 	Basic Block: 204
 		Type: MOVE
@@ -1575,8 +1602,8 @@ Scope: LS_Init
 		Next: 205
 		Use: [1, 11]
 		Def: [12]
-		In: [1, 3, 9, 11]
-		Out: [3, 9, 12]
+		In: [0, 1, 3, 9, 11]
+		Out: [0, 1, 3, 9, 12]
 
 	Basic Block: 205
 		Type: MOVE
@@ -1584,8 +1611,8 @@ Scope: LS_Init
 		Next: 206
 		Use: []
 		Def: [13]
-		In: [3, 9, 12]
-		Out: [3, 9, 12, 13]
+		In: [0, 1, 3, 9, 12]
+		Out: [0, 1, 3, 9, 12, 13]
 
 	Basic Block: 206
 		Type: MOVE
@@ -1593,8 +1620,8 @@ Scope: LS_Init
 		Next: 207
 		Use: [12, 13]
 		Def: [14]
-		In: [3, 9, 12, 13]
-		Out: [3, 9, 14]
+		In: [0, 1, 3, 9, 12, 13]
+		Out: [0, 1, 3, 9, 14]
 
 	Basic Block: 207
 		Type: MOVE
@@ -1602,8 +1629,8 @@ Scope: LS_Init
 		Next: 208
 		Use: []
 		Def: [15]
-		In: [3, 9, 14]
-		Out: [3, 9, 14, 15]
+		In: [0, 1, 3, 9, 14]
+		Out: [0, 1, 3, 9, 14, 15]
 
 	Basic Block: 208
 		Type: MOVE
@@ -1611,8 +1638,8 @@ Scope: LS_Init
 		Next: 209
 		Use: [14, 15]
 		Def: [16]
-		In: [3, 9, 14, 15]
-		Out: [16, 3, 9]
+		In: [0, 1, 3, 9, 14, 15]
+		Out: [16, 0, 1, 3, 9]
 
 	Basic Block: 209
 		Type: MOVE
@@ -1620,8 +1647,8 @@ Scope: LS_Init
 		Next: 210
 		Use: [16, 9]
 		Def: [17]
-		In: [16, 3, 9]
-		Out: [17, 3, 9]
+		In: [16, 0, 1, 3, 9]
+		Out: [0, 17, 1, 3, 9]
 
 	Basic Block: 210
 		Type: CJUMP
@@ -1629,8 +1656,8 @@ Scope: LS_Init
 		Next: 211
 		Use: [17]
 		Def: []
-		In: [17, 3, 9]
-		Out: [3, 9]
+		In: [0, 17, 1, 3, 9]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 211
 		Type: MOVE
@@ -1638,8 +1665,8 @@ Scope: LS_Init
 		Next: 212
 		Use: [3, 9]
 		Def: [18]
-		In: [3, 9]
-		Out: [18, 9]
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 18, 3, 9]
 
 	Basic Block: 212
 		Type: MOVE
@@ -1647,8 +1674,8 @@ Scope: LS_Init
 		Next: 213
 		Use: []
 		Def: [19]
-		In: [18, 9]
-		Out: [18, 19, 9]
+		In: [0, 1, 18, 3, 9]
+		Out: [0, 1, 18, 19, 3, 9]
 
 	Basic Block: 213
 		Type: HSTORE
@@ -1656,8 +1683,8 @@ Scope: LS_Init
 		Next: 214
 		Use: [18, 19]
 		Def: []
-		In: [18, 19, 9]
-		Out: [9]
+		In: [0, 1, 18, 19, 3, 9]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 214
 		Type: MOVE
@@ -1665,8 +1692,8 @@ Scope: LS_Init
 		Next: 215
 		Use: []
 		Def: [20]
-		In: [9]
-		Out: [20, 9]
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 3, 20, 9]
 
 	Basic Block: 215
 		Type: MOVE
@@ -1674,8 +1701,8 @@ Scope: LS_Init
 		Next: 216
 		Use: [20, 9]
 		Def: [21]
-		In: [20, 9]
-		Out: [21]
+		In: [0, 1, 3, 20, 9]
+		Out: [0, 1, 3, 21]
 
 	Basic Block: 216
 		Type: MOVE
@@ -1683,8 +1710,8 @@ Scope: LS_Init
 		Next: 217
 		Use: [21]
 		Def: [9]
-		In: [21]
-		Out: []
+		In: [0, 1, 3, 21]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 217
 		Type: JUMP
@@ -1692,8 +1719,8 @@ Scope: LS_Init
 		Next: 218
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 218
 		Type: MOVE
@@ -2008,7 +2035,7 @@ Scope: LS_Init
 		Use: [0, 40]
 		Def: [53]
 		In: [0, 34, 37, 40, 24, 26, 46]
-		Out: [34, 53, 37, 24, 26, 46]
+		Out: [0, 34, 53, 37, 24, 26, 46]
 
 	Basic Block: 255
 		Type: HLOAD
@@ -2016,8 +2043,8 @@ Scope: LS_Init
 		Next: 256
 		Use: [53]
 		Def: [44]
-		In: [34, 53, 37, 24, 26, 46]
-		Out: [34, 37, 24, 26, 44, 46]
+		In: [0, 34, 53, 37, 24, 26, 46]
+		Out: [0, 34, 37, 24, 26, 44, 46]
 
 	Basic Block: 256
 		Type: HLOAD
@@ -2025,8 +2052,8 @@ Scope: LS_Init
 		Next: 257
 		Use: [44]
 		Def: [49]
-		In: [34, 37, 24, 26, 44, 46]
-		Out: [49, 34, 37, 24, 26, 44, 46]
+		In: [0, 34, 37, 24, 26, 44, 46]
+		Out: [0, 49, 34, 37, 24, 26, 44, 46]
 
 	Basic Block: 257
 		Type: MOVE
@@ -2034,8 +2061,8 @@ Scope: LS_Init
 		Next: 258
 		Use: []
 		Def: [54]
-		In: [49, 34, 37, 24, 26, 44, 46]
-		Out: [49, 34, 37, 54, 24, 26, 44, 46]
+		In: [0, 49, 34, 37, 24, 26, 44, 46]
+		Out: [0, 49, 34, 37, 54, 24, 26, 44, 46]
 
 	Basic Block: 258
 		Type: MOVE
@@ -2043,8 +2070,8 @@ Scope: LS_Init
 		Next: 259
 		Use: []
 		Def: [55]
-		In: [49, 34, 37, 54, 24, 26, 44, 46]
-		Out: [49, 34, 37, 54, 55, 24, 26, 44, 46]
+		In: [0, 49, 34, 37, 54, 24, 26, 44, 46]
+		Out: [0, 49, 34, 37, 54, 55, 24, 26, 44, 46]
 
 	Basic Block: 259
 		Type: MOVE
@@ -2052,8 +2079,8 @@ Scope: LS_Init
 		Next: 260
 		Use: [49, 55]
 		Def: [56]
-		In: [49, 34, 37, 54, 55, 24, 26, 44, 46]
-		Out: [34, 37, 54, 56, 24, 26, 44, 46]
+		In: [0, 49, 34, 37, 54, 55, 24, 26, 44, 46]
+		Out: [0, 34, 37, 54, 56, 24, 26, 44, 46]
 
 	Basic Block: 260
 		Type: MOVE
@@ -2061,8 +2088,8 @@ Scope: LS_Init
 		Next: 261
 		Use: [56, 46]
 		Def: [57]
-		In: [34, 37, 54, 56, 24, 26, 44, 46]
-		Out: [34, 37, 54, 24, 57, 26, 44, 46]
+		In: [0, 34, 37, 54, 56, 24, 26, 44, 46]
+		Out: [0, 34, 37, 54, 24, 57, 26, 44, 46]
 
 	Basic Block: 261
 		Type: MOVE
@@ -2070,8 +2097,8 @@ Scope: LS_Init
 		Next: 262
 		Use: [54, 57]
 		Def: [58]
-		In: [34, 37, 54, 24, 57, 26, 44, 46]
-		Out: [34, 37, 24, 58, 26, 44, 46]
+		In: [0, 34, 37, 54, 24, 57, 26, 44, 46]
+		Out: [0, 34, 37, 24, 58, 26, 44, 46]
 
 	Basic Block: 262
 		Type: CJUMP
@@ -2079,8 +2106,8 @@ Scope: LS_Init
 		Next: 263
 		Use: [58]
 		Def: []
-		In: [34, 37, 24, 58, 26, 44, 46]
-		Out: [34, 37, 24, 26, 44, 46]
+		In: [0, 34, 37, 24, 58, 26, 44, 46]
+		Out: [0, 34, 37, 24, 26, 44, 46]
 
 	Basic Block: 263
 		Type: ERROR
@@ -2088,8 +2115,8 @@ Scope: LS_Init
 		Next: 264
 		Use: []
 		Def: []
-		In: [34, 37, 24, 26, 44, 46]
-		Out: [34, 37, 24, 26, 44, 46]
+		In: [0, 34, 37, 24, 26, 44, 46]
+		Out: [0, 34, 37, 24, 26, 44, 46]
 
 	Basic Block: 264
 		Type: NOOP
@@ -2097,8 +2124,8 @@ Scope: LS_Init
 		Next: 266
 		Use: []
 		Def: []
-		In: [34, 37, 24, 26, 44, 46]
-		Out: [34, 37, 24, 26, 44, 46]
+		In: [0, 34, 37, 24, 26, 44, 46]
+		Out: [0, 34, 37, 24, 26, 44, 46]
 
 	Basic Block: 266
 		Type: MOVE
@@ -2106,8 +2133,8 @@ Scope: LS_Init
 		Next: 267
 		Use: []
 		Def: [59]
-		In: [34, 37, 24, 26, 44, 46]
-		Out: [34, 37, 24, 26, 59, 44, 46]
+		In: [0, 34, 37, 24, 26, 44, 46]
+		Out: [0, 34, 37, 24, 26, 59, 44, 46]
 
 	Basic Block: 267
 		Type: MOVE
@@ -2115,8 +2142,8 @@ Scope: LS_Init
 		Next: 268
 		Use: [59, 46]
 		Def: [60]
-		In: [34, 37, 24, 26, 59, 44, 46]
-		Out: [34, 37, 24, 26, 44, 60]
+		In: [0, 34, 37, 24, 26, 59, 44, 46]
+		Out: [0, 34, 37, 24, 26, 44, 60]
 
 	Basic Block: 268
 		Type: MOVE
@@ -2124,8 +2151,8 @@ Scope: LS_Init
 		Next: 269
 		Use: [44, 60]
 		Def: [61]
-		In: [34, 37, 24, 26, 44, 60]
-		Out: [34, 37, 24, 26, 61]
+		In: [0, 34, 37, 24, 26, 44, 60]
+		Out: [0, 34, 37, 24, 26, 61]
 
 	Basic Block: 269
 		Type: MOVE
@@ -2133,8 +2160,8 @@ Scope: LS_Init
 		Next: 270
 		Use: [34, 37]
 		Def: [62]
-		In: [34, 37, 24, 26, 61]
-		Out: [24, 26, 61, 62]
+		In: [0, 34, 37, 24, 26, 61]
+		Out: [0, 24, 26, 61, 62]
 
 	Basic Block: 270
 		Type: HSTORE
@@ -2142,8 +2169,8 @@ Scope: LS_Init
 		Next: 271
 		Use: [61, 62]
 		Def: []
-		In: [24, 26, 61, 62]
-		Out: [24, 26]
+		In: [0, 24, 26, 61, 62]
+		Out: [0, 24, 26]
 
 	Basic Block: 271
 		Type: MOVE
@@ -2151,8 +2178,8 @@ Scope: LS_Init
 		Next: 272
 		Use: []
 		Def: [63]
-		In: [24, 26]
-		Out: [24, 26, 63]
+		In: [0, 24, 26]
+		Out: [0, 24, 26, 63]
 
 	Basic Block: 272
 		Type: MOVE
@@ -2160,8 +2187,8 @@ Scope: LS_Init
 		Next: 273
 		Use: [24, 63]
 		Def: [64]
-		In: [24, 26, 63]
-		Out: [64, 26]
+		In: [0, 24, 26, 63]
+		Out: [64, 0, 26]
 
 	Basic Block: 273
 		Type: MOVE
@@ -2169,8 +2196,8 @@ Scope: LS_Init
 		Next: 274
 		Use: [64]
 		Def: [24]
-		In: [64, 26]
-		Out: [26]
+		In: [64, 0, 26]
+		Out: [0, 24, 26]
 
 	Basic Block: 274
 		Type: MOVE
@@ -2178,8 +2205,8 @@ Scope: LS_Init
 		Next: 275
 		Use: []
 		Def: [65]
-		In: [26]
-		Out: [65, 26]
+		In: [0, 24, 26]
+		Out: [0, 65, 24, 26]
 
 	Basic Block: 275
 		Type: MOVE
@@ -2187,8 +2214,8 @@ Scope: LS_Init
 		Next: 276
 		Use: [65, 26]
 		Def: [66]
-		In: [65, 26]
-		Out: [66]
+		In: [0, 65, 24, 26]
+		Out: [0, 66, 24]
 
 	Basic Block: 276
 		Type: MOVE
@@ -2196,8 +2223,8 @@ Scope: LS_Init
 		Next: 277
 		Use: [66]
 		Def: [26]
-		In: [66]
-		Out: []
+		In: [0, 66, 24]
+		Out: [0, 24, 26]
 
 	Basic Block: 277
 		Type: JUMP
@@ -2205,8 +2232,8 @@ Scope: LS_Init
 		Next: 278
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 24, 26]
+		Out: [0, 24, 26]
 
 	Basic Block: 278
 		Type: NOOP
@@ -2224,6 +2251,15 @@ Scope: LS_Init
 		Use: []
 		Def: [67]
 		In: []
+		Out: [67]
+
+	Basic Block: 281
+		Type: RETURN
+		Label: null
+		Next: 282
+		Use: [67]
+		Def: []
+		In: [67]
 		Out: []
 
 Labels:
@@ -2244,3 +2280,768 @@ Labels:
 	L7: 145
 	L8: 162
 	L9: 181
+Scope: LS_Init
+	Temp: 0
+		Start: 193
+		End: 277
+
+	Temp: 1
+		Start: 193
+		End: 220
+
+	Temp: 3
+		Start: 199
+		End: 222
+
+	Temp: 4
+		Start: 194
+		End: 195
+
+	Temp: 5
+		Start: 195
+		End: 197
+
+	Temp: 6
+		Start: 196
+		End: 197
+
+	Temp: 7
+		Start: 197
+		End: 198
+
+	Temp: 8
+		Start: 198
+		End: 199
+
+	Temp: 9
+		Start: 201
+		End: 217
+
+	Temp: 10
+		Start: 200
+		End: 201
+
+	Temp: 11
+		Start: 202
+		End: 204
+
+	Temp: 12
+		Start: 204
+		End: 206
+
+	Temp: 13
+		Start: 205
+		End: 206
+
+	Temp: 14
+		Start: 206
+		End: 208
+
+	Temp: 15
+		Start: 207
+		End: 208
+
+	Temp: 16
+		Start: 208
+		End: 209
+
+	Temp: 17
+		Start: 209
+		End: 210
+
+	Temp: 18
+		Start: 211
+		End: 213
+
+	Temp: 19
+		Start: 212
+		End: 213
+
+	Temp: 20
+		Start: 214
+		End: 215
+
+	Temp: 21
+		Start: 215
+		End: 216
+
+	Temp: 22
+		Start: 218
+		End: 220
+
+	Temp: 23
+		Start: 220
+		End: 221
+
+	Temp: 24
+		Start: 224
+		End: 277
+
+	Temp: 25
+		Start: 223
+		End: 224
+
+	Temp: 26
+		Start: 228
+		End: 277
+
+	Temp: 27
+		Start: 225
+		End: 227
+
+	Temp: 28
+		Start: 226
+		End: 227
+
+	Temp: 29
+		Start: 227
+		End: 228
+
+	Temp: 30
+		Start: 229
+		End: 232
+
+	Temp: 31
+		Start: 231
+		End: 232
+
+	Temp: 32
+		Start: 232
+		End: 233
+
+	Temp: 33
+		Start: 233
+		End: 234
+
+	Temp: 34
+		Start: 237
+		End: 269
+
+	Temp: 35
+		Start: 235
+		End: 236
+
+	Temp: 36
+		Start: 236
+		End: 237
+
+	Temp: 37
+		Start: 240
+		End: 269
+
+	Temp: 38
+		Start: 238
+		End: 239
+
+	Temp: 39
+		Start: 239
+		End: 240
+
+	Temp: 40
+		Start: 244
+		End: 254
+
+	Temp: 41
+		Start: 241
+		End: 243
+
+	Temp: 42
+		Start: 242
+		End: 243
+
+	Temp: 43
+		Start: 243
+		End: 244
+
+	Temp: 44
+		Start: 255
+		End: 268
+
+	Temp: 45
+		Start: 245
+		End: 246
+
+	Temp: 46
+		Start: 249
+		End: 267
+
+	Temp: 47
+		Start: 247
+		End: 248
+
+	Temp: 48
+		Start: 248
+		End: 249
+
+	Temp: 49
+		Start: 256
+		End: 259
+
+	Temp: 50
+		Start: 250
+		End: 252
+
+	Temp: 51
+		Start: 251
+		End: 252
+
+	Temp: 52
+		Start: 252
+		End: 253
+
+	Temp: 53
+		Start: 254
+		End: 255
+
+	Temp: 54
+		Start: 257
+		End: 261
+
+	Temp: 55
+		Start: 258
+		End: 259
+
+	Temp: 56
+		Start: 259
+		End: 260
+
+	Temp: 57
+		Start: 260
+		End: 261
+
+	Temp: 58
+		Start: 261
+		End: 262
+
+	Temp: 59
+		Start: 266
+		End: 267
+
+	Temp: 60
+		Start: 267
+		End: 268
+
+	Temp: 61
+		Start: 268
+		End: 270
+
+	Temp: 62
+		Start: 269
+		End: 270
+
+	Temp: 63
+		Start: 271
+		End: 272
+
+	Temp: 64
+		Start: 272
+		End: 273
+
+	Temp: 65
+		Start: 274
+		End: 275
+
+	Temp: 66
+		Start: 275
+		End: 276
+
+	Temp: 67
+		Start: 280
+		End: 281
+
+Scope: LS_Print
+	Temp: 0
+		Start: 81
+		End: 112
+
+	Temp: 2
+		Start: 82
+		End: 112
+
+	Temp: 3
+		Start: 81
+		End: 82
+
+	Temp: 4
+		Start: 83
+		End: 86
+
+	Temp: 5
+		Start: 85
+		End: 86
+
+	Temp: 6
+		Start: 86
+		End: 87
+
+	Temp: 7
+		Start: 87
+		End: 88
+
+	Temp: 8
+		Start: 107
+		End: 108
+
+	Temp: 9
+		Start: 93
+		End: 106
+
+	Temp: 10
+		Start: 92
+		End: 105
+
+	Temp: 11
+		Start: 90
+		End: 91
+
+	Temp: 12
+		Start: 91
+		End: 92
+
+	Temp: 13
+		Start: 94
+		End: 97
+
+	Temp: 14
+		Start: 95
+		End: 99
+
+	Temp: 15
+		Start: 96
+		End: 97
+
+	Temp: 16
+		Start: 97
+		End: 98
+
+	Temp: 17
+		Start: 98
+		End: 99
+
+	Temp: 18
+		Start: 99
+		End: 100
+
+	Temp: 19
+		Start: 104
+		End: 105
+
+	Temp: 20
+		Start: 105
+		End: 106
+
+	Temp: 21
+		Start: 106
+		End: 107
+
+	Temp: 22
+		Start: 109
+		End: 110
+
+	Temp: 23
+		Start: 110
+		End: 111
+
+	Temp: 24
+		Start: 115
+		End: 116
+
+Scope: LS_Search
+	Temp: 0
+		Start: 120
+		End: 186
+
+	Temp: 1
+		Start: 120
+		End: 186
+
+	Temp: 3
+		Start: 121
+		End: 186
+
+	Temp: 4
+		Start: 120
+		End: 121
+
+	Temp: 6
+		Start: 122
+		End: 123
+
+	Temp: 7
+		Start: 125
+		End: 189
+
+	Temp: 8
+		Start: 124
+		End: 125
+
+	Temp: 9
+		Start: 126
+		End: 129
+
+	Temp: 10
+		Start: 128
+		End: 129
+
+	Temp: 11
+		Start: 129
+		End: 130
+
+	Temp: 12
+		Start: 130
+		End: 131
+
+	Temp: 13
+		Start: 151
+		End: 166
+
+	Temp: 14
+		Start: 150
+		End: 151
+
+	Temp: 15
+		Start: 136
+		End: 149
+
+	Temp: 16
+		Start: 135
+		End: 148
+
+	Temp: 17
+		Start: 133
+		End: 134
+
+	Temp: 18
+		Start: 134
+		End: 135
+
+	Temp: 19
+		Start: 137
+		End: 140
+
+	Temp: 20
+		Start: 138
+		End: 142
+
+	Temp: 21
+		Start: 139
+		End: 140
+
+	Temp: 22
+		Start: 140
+		End: 141
+
+	Temp: 23
+		Start: 141
+		End: 142
+
+	Temp: 24
+		Start: 142
+		End: 143
+
+	Temp: 25
+		Start: 147
+		End: 148
+
+	Temp: 26
+		Start: 148
+		End: 149
+
+	Temp: 27
+		Start: 149
+		End: 150
+
+	Temp: 28
+		Start: 154
+		End: 165
+
+	Temp: 29
+		Start: 152
+		End: 153
+
+	Temp: 30
+		Start: 153
+		End: 154
+
+	Temp: 31
+		Start: 155
+		End: 156
+
+	Temp: 32
+		Start: 156
+		End: 157
+
+	Temp: 33
+		Start: 157
+		End: 158
+
+	Temp: 35
+		Start: 159
+		End: 160
+
+	Temp: 36
+		Start: 162
+		End: 167
+
+	Temp: 37
+		Start: 164
+		End: 165
+
+	Temp: 38
+		Start: 165
+		End: 166
+
+	Temp: 39
+		Start: 166
+		End: 167
+
+	Temp: 40
+		Start: 167
+		End: 168
+
+	Temp: 41
+		Start: 169
+		End: 170
+
+	Temp: 42
+		Start: 172
+		End: 174
+
+	Temp: 43
+		Start: 175
+		End: 176
+
+	Temp: 44
+		Start: 177
+		End: 178
+
+	Temp: 45
+		Start: 183
+		End: 184
+
+	Temp: 46
+		Start: 184
+		End: 185
+
+Scope: LS_Start
+	Temp: 0
+		Start: 40
+		End: 70
+
+	Temp: 1
+		Start: 40
+		End: 43
+
+	Temp: 4
+		Start: 40
+		End: 43
+
+	Temp: 5
+		Start: 41
+		End: 42
+
+	Temp: 6
+		Start: 42
+		End: 43
+
+	Temp: 7
+		Start: 43
+		End: 44
+
+	Temp: 9
+		Start: 45
+		End: 48
+
+	Temp: 10
+		Start: 46
+		End: 47
+
+	Temp: 11
+		Start: 47
+		End: 48
+
+	Temp: 12
+		Start: 48
+		End: 49
+
+	Temp: 13
+		Start: 50
+		End: 51
+
+	Temp: 14
+		Start: 52
+		End: 56
+
+	Temp: 15
+		Start: 53
+		End: 54
+
+	Temp: 16
+		Start: 54
+		End: 56
+
+	Temp: 17
+		Start: 55
+		End: 56
+
+	Temp: 18
+		Start: 56
+		End: 57
+
+	Temp: 19
+		Start: 58
+		End: 62
+
+	Temp: 20
+		Start: 59
+		End: 60
+
+	Temp: 21
+		Start: 60
+		End: 62
+
+	Temp: 22
+		Start: 61
+		End: 62
+
+	Temp: 23
+		Start: 62
+		End: 63
+
+	Temp: 24
+		Start: 64
+		End: 68
+
+	Temp: 25
+		Start: 65
+		End: 66
+
+	Temp: 26
+		Start: 66
+		End: 68
+
+	Temp: 27
+		Start: 67
+		End: 68
+
+	Temp: 28
+		Start: 68
+		End: 69
+
+	Temp: 29
+		Start: 70
+		End: 74
+
+	Temp: 30
+		Start: 71
+		End: 72
+
+	Temp: 31
+		Start: 72
+		End: 74
+
+	Temp: 32
+		Start: 73
+		End: 74
+
+	Temp: 33
+		Start: 74
+		End: 75
+
+	Temp: 34
+		Start: 76
+		End: 77
+
+Scope: MAIN
+	Temp: 0
+		Start: 31
+		End: 35
+
+	Temp: 1
+		Start: 4
+		End: 29
+
+	Temp: 2
+		Start: 2
+		End: 3
+
+	Temp: 3
+		Start: 3
+		End: 4
+
+	Temp: 4
+		Start: 7
+		End: 31
+
+	Temp: 5
+		Start: 5
+		End: 6
+
+	Temp: 6
+		Start: 6
+		End: 7
+
+	Temp: 7
+		Start: 8
+		End: 9
+
+	Temp: 8
+		Start: 10
+		End: 11
+
+	Temp: 9
+		Start: 12
+		End: 13
+
+	Temp: 10
+		Start: 14
+		End: 15
+
+	Temp: 11
+		Start: 17
+		End: 28
+
+	Temp: 12
+		Start: 16
+		End: 17
+
+	Temp: 13
+		Start: 18
+		End: 20
+
+	Temp: 14
+		Start: 20
+		End: 21
+
+	Temp: 15
+		Start: 22
+		End: 24
+
+	Temp: 16
+		Start: 23
+		End: 24
+
+	Temp: 17
+		Start: 25
+		End: 26
+
+	Temp: 18
+		Start: 26
+		End: 27
+
+	Temp: 19
+		Start: 32
+		End: 33
+
+	Temp: 20
+		Start: 33
+		End: 35
+
+	Temp: 21
+		Start: 34
+		End: 35
+
+	Temp: 22
+		Start: 35
+		End: 36
+

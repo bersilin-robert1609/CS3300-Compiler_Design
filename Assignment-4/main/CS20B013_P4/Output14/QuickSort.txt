@@ -123,7 +123,7 @@ Scope: MAIN
 		Use: [1, 10]
 		Def: []
 		In: [1, 4, 10]
-		Out: [4]
+		Out: [1, 4]
 
 	Basic Block: 16
 		Type: MOVE
@@ -131,8 +131,8 @@ Scope: MAIN
 		Next: 17
 		Use: []
 		Def: [12]
-		In: [4]
-		Out: [4, 12]
+		In: [1, 4]
+		Out: [1, 4, 12]
 
 	Basic Block: 17
 		Type: MOVE
@@ -140,8 +140,8 @@ Scope: MAIN
 		Next: 18
 		Use: [12]
 		Def: [11]
-		In: [4, 12]
-		Out: [4, 11]
+		In: [1, 4, 12]
+		Out: [1, 4, 11]
 
 	Basic Block: 18
 		Type: MOVE
@@ -149,8 +149,8 @@ Scope: MAIN
 		Next: 20
 		Use: []
 		Def: [13]
-		In: [4, 11]
-		Out: [4, 11, 13]
+		In: [1, 4, 11]
+		Out: [1, 4, 11, 13]
 
 	Basic Block: 20
 		Type: MOVE
@@ -158,8 +158,8 @@ Scope: MAIN
 		Next: 21
 		Use: [11, 13]
 		Def: [14]
-		In: [4, 11, 13]
-		Out: [4, 11, 14]
+		In: [1, 4, 11, 13]
+		Out: [1, 4, 11, 14]
 
 	Basic Block: 21
 		Type: CJUMP
@@ -167,8 +167,8 @@ Scope: MAIN
 		Next: 22
 		Use: [14]
 		Def: []
-		In: [4, 11, 14]
-		Out: [4, 11]
+		In: [1, 4, 11, 14]
+		Out: [1, 4, 11]
 
 	Basic Block: 22
 		Type: MOVE
@@ -176,8 +176,8 @@ Scope: MAIN
 		Next: 23
 		Use: [4, 11]
 		Def: [15]
-		In: [4, 11]
-		Out: [11, 15]
+		In: [1, 4, 11]
+		Out: [1, 4, 11, 15]
 
 	Basic Block: 23
 		Type: MOVE
@@ -185,8 +185,8 @@ Scope: MAIN
 		Next: 24
 		Use: []
 		Def: [16]
-		In: [11, 15]
-		Out: [16, 11, 15]
+		In: [1, 4, 11, 15]
+		Out: [16, 1, 4, 11, 15]
 
 	Basic Block: 24
 		Type: HSTORE
@@ -194,8 +194,8 @@ Scope: MAIN
 		Next: 25
 		Use: [16, 15]
 		Def: []
-		In: [16, 11, 15]
-		Out: [11]
+		In: [16, 1, 4, 11, 15]
+		Out: [1, 4, 11]
 
 	Basic Block: 25
 		Type: MOVE
@@ -203,8 +203,8 @@ Scope: MAIN
 		Next: 26
 		Use: []
 		Def: [17]
-		In: [11]
-		Out: [17, 11]
+		In: [1, 4, 11]
+		Out: [17, 1, 4, 11]
 
 	Basic Block: 26
 		Type: MOVE
@@ -212,8 +212,8 @@ Scope: MAIN
 		Next: 27
 		Use: [17, 11]
 		Def: [18]
-		In: [17, 11]
-		Out: [18]
+		In: [17, 1, 4, 11]
+		Out: [1, 18, 4]
 
 	Basic Block: 27
 		Type: MOVE
@@ -221,8 +221,8 @@ Scope: MAIN
 		Next: 28
 		Use: [18]
 		Def: [11]
-		In: [18]
-		Out: []
+		In: [1, 18, 4]
+		Out: [1, 4, 11]
 
 	Basic Block: 28
 		Type: JUMP
@@ -230,8 +230,8 @@ Scope: MAIN
 		Next: 29
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [1, 4, 11]
+		Out: [1, 4, 11]
 
 	Basic Block: 29
 		Type: HSTORE
@@ -547,6 +547,15 @@ Scope: QS_Start
 		Use: []
 		Def: [25]
 		In: []
+		Out: [25]
+
+	Basic Block: 68
+		Type: RETURN
+		Label: null
+		Next: 69
+		Use: [25]
+		Def: []
+		In: [25]
 		Out: []
 
 Scope: QS_Sort
@@ -566,7 +575,7 @@ Scope: QS_Sort
 		Use: [5]
 		Def: [4]
 		In: [0, 1, 2, 5]
-		Out: [0, 1, 2]
+		Out: [0, 1, 2, 4]
 
 	Basic Block: 74
 		Type: MOVE
@@ -574,8 +583,8 @@ Scope: QS_Sort
 		Next: 75
 		Use: []
 		Def: [7]
-		In: [0, 1, 2]
-		Out: [0, 1, 2, 7]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4, 7]
 
 	Basic Block: 75
 		Type: MOVE
@@ -583,8 +592,8 @@ Scope: QS_Sort
 		Next: 76
 		Use: [2, 7]
 		Def: [8]
-		In: [0, 1, 2, 7]
-		Out: [0, 1, 2, 8]
+		In: [0, 1, 2, 4, 7]
+		Out: [0, 1, 2, 4, 8]
 
 	Basic Block: 76
 		Type: MOVE
@@ -592,8 +601,8 @@ Scope: QS_Sort
 		Next: 77
 		Use: [8]
 		Def: [6]
-		In: [0, 1, 2, 8]
-		Out: [0, 1, 2, 6]
+		In: [0, 1, 2, 4, 8]
+		Out: [0, 1, 2, 4, 6]
 
 	Basic Block: 77
 		Type: MOVE
@@ -601,8 +610,8 @@ Scope: QS_Sort
 		Next: 78
 		Use: [1, 6]
 		Def: [9]
-		In: [0, 1, 2, 6]
-		Out: [0, 1, 2, 9]
+		In: [0, 1, 2, 4, 6]
+		Out: [0, 1, 2, 4, 9]
 
 	Basic Block: 78
 		Type: CJUMP
@@ -610,8 +619,8 @@ Scope: QS_Sort
 		Next: 79
 		Use: [9]
 		Def: []
-		In: [0, 1, 2, 9]
-		Out: [0, 1, 2]
+		In: [0, 1, 2, 4, 9]
+		Out: [0, 1, 2, 4]
 
 	Basic Block: 79
 		Type: HLOAD
@@ -619,8 +628,8 @@ Scope: QS_Sort
 		Next: 80
 		Use: [0]
 		Def: [12]
-		In: [0, 1, 2]
-		Out: [0, 1, 2]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4]
 
 	Basic Block: 80
 		Type: MOVE
@@ -628,8 +637,8 @@ Scope: QS_Sort
 		Next: 81
 		Use: []
 		Def: [14]
-		In: [0, 1, 2]
-		Out: [0, 1, 2, 14]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4, 14]
 
 	Basic Block: 81
 		Type: MOVE
@@ -637,8 +646,8 @@ Scope: QS_Sort
 		Next: 82
 		Use: [2, 14]
 		Def: [15]
-		In: [0, 1, 2, 14]
-		Out: [0, 1, 2, 15]
+		In: [0, 1, 2, 4, 14]
+		Out: [0, 1, 2, 4, 15]
 
 	Basic Block: 82
 		Type: MOVE
@@ -646,8 +655,8 @@ Scope: QS_Sort
 		Next: 83
 		Use: [15]
 		Def: [13]
-		In: [0, 1, 2, 15]
-		Out: [0, 1, 2, 13]
+		In: [0, 1, 2, 4, 15]
+		Out: [0, 1, 2, 4, 13]
 
 	Basic Block: 83
 		Type: HLOAD
@@ -655,8 +664,8 @@ Scope: QS_Sort
 		Next: 84
 		Use: [0]
 		Def: [12]
-		In: [0, 1, 2, 13]
-		Out: [0, 1, 2, 12, 13]
+		In: [0, 1, 2, 4, 13]
+		Out: [0, 1, 2, 4, 12, 13]
 
 	Basic Block: 84
 		Type: HLOAD
@@ -664,8 +673,8 @@ Scope: QS_Sort
 		Next: 85
 		Use: [12]
 		Def: [16]
-		In: [0, 1, 2, 12, 13]
-		Out: [16, 0, 1, 2, 12, 13]
+		In: [0, 1, 2, 4, 12, 13]
+		Out: [16, 0, 1, 2, 4, 12, 13]
 
 	Basic Block: 85
 		Type: MOVE
@@ -673,8 +682,8 @@ Scope: QS_Sort
 		Next: 86
 		Use: []
 		Def: [18]
-		In: [16, 0, 1, 2, 12, 13]
-		Out: [16, 0, 1, 18, 2, 12, 13]
+		In: [16, 0, 1, 2, 4, 12, 13]
+		Out: [16, 0, 1, 18, 2, 4, 12, 13]
 
 	Basic Block: 86
 		Type: MOVE
@@ -682,8 +691,8 @@ Scope: QS_Sort
 		Next: 87
 		Use: [16, 18]
 		Def: [19]
-		In: [16, 0, 1, 18, 2, 12, 13]
-		Out: [0, 1, 2, 19, 12, 13]
+		In: [16, 0, 1, 18, 2, 4, 12, 13]
+		Out: [0, 1, 2, 19, 4, 12, 13]
 
 	Basic Block: 87
 		Type: MOVE
@@ -691,8 +700,8 @@ Scope: QS_Sort
 		Next: 88
 		Use: [19]
 		Def: [17]
-		In: [0, 1, 2, 19, 12, 13]
-		Out: [0, 17, 1, 2, 12, 13]
+		In: [0, 1, 2, 19, 4, 12, 13]
+		Out: [0, 17, 1, 2, 4, 12, 13]
 
 	Basic Block: 88
 		Type: MOVE
@@ -700,8 +709,8 @@ Scope: QS_Sort
 		Next: 89
 		Use: []
 		Def: [20]
-		In: [0, 17, 1, 2, 12, 13]
-		Out: [0, 17, 1, 2, 20, 12, 13]
+		In: [0, 17, 1, 2, 4, 12, 13]
+		Out: [0, 17, 1, 2, 20, 4, 12, 13]
 
 	Basic Block: 89
 		Type: MOVE
@@ -709,8 +718,8 @@ Scope: QS_Sort
 		Next: 90
 		Use: [17, 13]
 		Def: [21]
-		In: [0, 17, 1, 2, 20, 12, 13]
-		Out: [0, 1, 2, 20, 21, 12, 13]
+		In: [0, 17, 1, 2, 20, 4, 12, 13]
+		Out: [0, 1, 2, 20, 4, 21, 12, 13]
 
 	Basic Block: 90
 		Type: MOVE
@@ -718,8 +727,8 @@ Scope: QS_Sort
 		Next: 91
 		Use: [20, 21]
 		Def: [22]
-		In: [0, 1, 2, 20, 21, 12, 13]
-		Out: [0, 1, 2, 22, 12, 13]
+		In: [0, 1, 2, 20, 4, 21, 12, 13]
+		Out: [0, 1, 2, 4, 22, 12, 13]
 
 	Basic Block: 91
 		Type: CJUMP
@@ -727,8 +736,8 @@ Scope: QS_Sort
 		Next: 92
 		Use: [22]
 		Def: []
-		In: [0, 1, 2, 22, 12, 13]
-		Out: [0, 1, 2, 12, 13]
+		In: [0, 1, 2, 4, 22, 12, 13]
+		Out: [0, 1, 2, 4, 12, 13]
 
 	Basic Block: 92
 		Type: ERROR
@@ -736,8 +745,8 @@ Scope: QS_Sort
 		Next: 93
 		Use: []
 		Def: []
-		In: [0, 1, 2, 12, 13]
-		Out: [0, 1, 2, 12, 13]
+		In: [0, 1, 2, 4, 12, 13]
+		Out: [0, 1, 2, 4, 12, 13]
 
 	Basic Block: 93
 		Type: NOOP
@@ -745,8 +754,8 @@ Scope: QS_Sort
 		Next: 95
 		Use: []
 		Def: []
-		In: [0, 1, 2, 12, 13]
-		Out: [0, 1, 2, 12, 13]
+		In: [0, 1, 2, 4, 12, 13]
+		Out: [0, 1, 2, 4, 12, 13]
 
 	Basic Block: 95
 		Type: MOVE
@@ -754,8 +763,8 @@ Scope: QS_Sort
 		Next: 96
 		Use: []
 		Def: [23]
-		In: [0, 1, 2, 12, 13]
-		Out: [0, 1, 2, 23, 12, 13]
+		In: [0, 1, 2, 4, 12, 13]
+		Out: [0, 1, 2, 4, 23, 12, 13]
 
 	Basic Block: 96
 		Type: MOVE
@@ -763,8 +772,8 @@ Scope: QS_Sort
 		Next: 97
 		Use: [23, 13]
 		Def: [24]
-		In: [0, 1, 2, 23, 12, 13]
-		Out: [0, 1, 2, 24, 12]
+		In: [0, 1, 2, 4, 23, 12, 13]
+		Out: [0, 1, 2, 4, 24, 12]
 
 	Basic Block: 97
 		Type: MOVE
@@ -772,8 +781,8 @@ Scope: QS_Sort
 		Next: 98
 		Use: [24, 12]
 		Def: [25]
-		In: [0, 1, 2, 24, 12]
-		Out: [0, 1, 2, 25]
+		In: [0, 1, 2, 4, 24, 12]
+		Out: [0, 1, 2, 4, 25]
 
 	Basic Block: 98
 		Type: HLOAD
@@ -781,8 +790,8 @@ Scope: QS_Sort
 		Next: 99
 		Use: [25]
 		Def: [11]
-		In: [0, 1, 2, 25]
-		Out: [0, 1, 2, 11]
+		In: [0, 1, 2, 4, 25]
+		Out: [0, 1, 2, 4, 11]
 
 	Basic Block: 99
 		Type: MOVE
@@ -790,8 +799,8 @@ Scope: QS_Sort
 		Next: 100
 		Use: [11]
 		Def: [10]
-		In: [0, 1, 2, 11]
-		Out: [0, 1, 2, 10]
+		In: [0, 1, 2, 4, 11]
+		Out: [0, 1, 2, 4, 10]
 
 	Basic Block: 100
 		Type: MOVE
@@ -799,8 +808,8 @@ Scope: QS_Sort
 		Next: 101
 		Use: []
 		Def: [27]
-		In: [0, 1, 2, 10]
-		Out: [0, 1, 2, 10, 27]
+		In: [0, 1, 2, 4, 10]
+		Out: [0, 1, 2, 4, 10, 27]
 
 	Basic Block: 101
 		Type: MOVE
@@ -808,8 +817,8 @@ Scope: QS_Sort
 		Next: 102
 		Use: [1, 27]
 		Def: [28]
-		In: [0, 1, 2, 10, 27]
-		Out: [0, 2, 10, 28]
+		In: [0, 1, 2, 4, 10, 27]
+		Out: [0, 1, 2, 4, 10, 28]
 
 	Basic Block: 102
 		Type: MOVE
@@ -817,8 +826,8 @@ Scope: QS_Sort
 		Next: 103
 		Use: [28]
 		Def: [26]
-		In: [0, 2, 10, 28]
-		Out: [0, 2, 26, 10]
+		In: [0, 1, 2, 4, 10, 28]
+		Out: [0, 1, 2, 4, 26, 10]
 
 	Basic Block: 103
 		Type: MOVE
@@ -826,8 +835,8 @@ Scope: QS_Sort
 		Next: 104
 		Use: [2]
 		Def: [29]
-		In: [0, 2, 26, 10]
-		Out: [0, 26, 10]
+		In: [0, 1, 2, 4, 26, 10]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 104
 		Type: MOVE
@@ -835,8 +844,8 @@ Scope: QS_Sort
 		Next: 105
 		Use: []
 		Def: [31]
-		In: [0, 26, 10]
-		Out: [0, 26, 10, 31]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29, 31]
 
 	Basic Block: 105
 		Type: MOVE
@@ -844,8 +853,8 @@ Scope: QS_Sort
 		Next: 106
 		Use: [31]
 		Def: [30]
-		In: [0, 26, 10, 31]
-		Out: [0, 26, 10, 30]
+		In: [0, 1, 2, 4, 26, 10, 29, 31]
+		Out: [0, 1, 2, 4, 26, 10, 29, 30]
 
 	Basic Block: 106
 		Type: CJUMP
@@ -853,8 +862,8 @@ Scope: QS_Sort
 		Next: 108
 		Use: [30]
 		Def: []
-		In: [0, 26, 10, 30]
-		Out: [0, 26, 10]
+		In: [0, 1, 2, 4, 26, 10, 29, 30]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 108
 		Type: MOVE
@@ -862,8 +871,8 @@ Scope: QS_Sort
 		Next: 109
 		Use: []
 		Def: [33]
-		In: [0, 26, 10]
-		Out: [0, 33, 26, 10]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 33, 1, 2, 26, 10, 29]
 
 	Basic Block: 109
 		Type: MOVE
@@ -871,8 +880,8 @@ Scope: QS_Sort
 		Next: 110
 		Use: [33]
 		Def: [32]
-		In: [0, 33, 26, 10]
-		Out: [32, 0, 26, 10]
+		In: [0, 33, 1, 2, 26, 10, 29]
+		Out: [32, 0, 1, 2, 26, 10, 29]
 
 	Basic Block: 110
 		Type: CJUMP
@@ -880,8 +889,8 @@ Scope: QS_Sort
 		Next: 112
 		Use: [32]
 		Def: []
-		In: [32, 0, 26, 10]
-		Out: [0, 26, 10]
+		In: [32, 0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 26, 10, 29]
 
 	Basic Block: 112
 		Type: MOVE
@@ -889,8 +898,8 @@ Scope: QS_Sort
 		Next: 113
 		Use: []
 		Def: [34]
-		In: [0, 26, 10]
-		Out: [0, 34, 26, 10]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 34, 2, 26, 10, 29]
 
 	Basic Block: 113
 		Type: MOVE
@@ -898,8 +907,8 @@ Scope: QS_Sort
 		Next: 114
 		Use: [34, 26]
 		Def: [35]
-		In: [0, 34, 26, 10]
-		Out: [0, 35, 10]
+		In: [0, 1, 34, 2, 26, 10, 29]
+		Out: [0, 1, 2, 35, 10, 29]
 
 	Basic Block: 114
 		Type: MOVE
@@ -907,8 +916,8 @@ Scope: QS_Sort
 		Next: 115
 		Use: [35]
 		Def: [26]
-		In: [0, 35, 10]
-		Out: [0, 26, 10]
+		In: [0, 1, 2, 35, 10, 29]
+		Out: [0, 1, 2, 26, 10, 29]
 
 	Basic Block: 115
 		Type: HLOAD
@@ -916,8 +925,8 @@ Scope: QS_Sort
 		Next: 116
 		Use: [0]
 		Def: [38]
-		In: [0, 26, 10]
-		Out: [0, 26, 10]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 26, 10, 29]
 
 	Basic Block: 116
 		Type: MOVE
@@ -925,8 +934,8 @@ Scope: QS_Sort
 		Next: 117
 		Use: []
 		Def: [40]
-		In: [0, 26, 10]
-		Out: [0, 40, 26, 10]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 40, 26, 10, 29]
 
 	Basic Block: 117
 		Type: MOVE
@@ -934,8 +943,8 @@ Scope: QS_Sort
 		Next: 118
 		Use: [40, 26]
 		Def: [41]
-		In: [0, 40, 26, 10]
-		Out: [0, 41, 10]
+		In: [0, 1, 2, 40, 26, 10, 29]
+		Out: [0, 1, 2, 41, 10, 26, 29]
 
 	Basic Block: 118
 		Type: MOVE
@@ -943,8 +952,8 @@ Scope: QS_Sort
 		Next: 119
 		Use: [41]
 		Def: [39]
-		In: [0, 41, 10]
-		Out: [0, 39, 10]
+		In: [0, 1, 2, 41, 10, 26, 29]
+		Out: [0, 1, 2, 39, 10, 26, 29]
 
 	Basic Block: 119
 		Type: HLOAD
@@ -952,8 +961,8 @@ Scope: QS_Sort
 		Next: 120
 		Use: [0]
 		Def: [38]
-		In: [0, 39, 10]
-		Out: [38, 39, 10]
+		In: [0, 1, 2, 39, 10, 26, 29]
+		Out: [0, 1, 2, 38, 39, 10, 26, 29]
 
 	Basic Block: 120
 		Type: HLOAD
@@ -961,8 +970,8 @@ Scope: QS_Sort
 		Next: 121
 		Use: [38]
 		Def: [42]
-		In: [38, 39, 10]
-		Out: [38, 39, 42, 10]
+		In: [0, 1, 2, 38, 39, 10, 26, 29]
+		Out: [0, 1, 2, 38, 39, 42, 10, 26, 29]
 
 	Basic Block: 121
 		Type: MOVE
@@ -970,8 +979,8 @@ Scope: QS_Sort
 		Next: 122
 		Use: []
 		Def: [44]
-		In: [38, 39, 42, 10]
-		Out: [38, 39, 42, 10, 44]
+		In: [0, 1, 2, 38, 39, 42, 10, 26, 29]
+		Out: [0, 1, 2, 38, 39, 42, 10, 26, 44, 29]
 
 	Basic Block: 122
 		Type: MOVE
@@ -979,8 +988,8 @@ Scope: QS_Sort
 		Next: 123
 		Use: [42, 44]
 		Def: [45]
-		In: [38, 39, 42, 10, 44]
-		Out: [38, 39, 10, 45]
+		In: [0, 1, 2, 38, 39, 42, 10, 26, 44, 29]
+		Out: [0, 1, 2, 38, 39, 10, 26, 45, 29]
 
 	Basic Block: 123
 		Type: MOVE
@@ -988,8 +997,8 @@ Scope: QS_Sort
 		Next: 124
 		Use: [45]
 		Def: [43]
-		In: [38, 39, 10, 45]
-		Out: [38, 39, 10, 43]
+		In: [0, 1, 2, 38, 39, 10, 26, 45, 29]
+		Out: [0, 1, 2, 38, 39, 10, 26, 43, 29]
 
 	Basic Block: 124
 		Type: MOVE
@@ -997,8 +1006,8 @@ Scope: QS_Sort
 		Next: 125
 		Use: []
 		Def: [46]
-		In: [38, 39, 10, 43]
-		Out: [38, 39, 10, 43, 46]
+		In: [0, 1, 2, 38, 39, 10, 26, 43, 29]
+		Out: [0, 1, 2, 38, 39, 10, 26, 43, 29, 46]
 
 	Basic Block: 125
 		Type: MOVE
@@ -1006,8 +1015,8 @@ Scope: QS_Sort
 		Next: 126
 		Use: [39, 43]
 		Def: [47]
-		In: [38, 39, 10, 43, 46]
-		Out: [38, 39, 10, 46, 47]
+		In: [0, 1, 2, 38, 39, 10, 26, 43, 29, 46]
+		Out: [0, 1, 2, 38, 39, 10, 26, 29, 46, 47]
 
 	Basic Block: 126
 		Type: MOVE
@@ -1015,8 +1024,8 @@ Scope: QS_Sort
 		Next: 127
 		Use: [46, 47]
 		Def: [48]
-		In: [38, 39, 10, 46, 47]
-		Out: [48, 38, 39, 10]
+		In: [0, 1, 2, 38, 39, 10, 26, 29, 46, 47]
+		Out: [48, 0, 1, 2, 38, 39, 10, 26, 29]
 
 	Basic Block: 127
 		Type: CJUMP
@@ -1024,8 +1033,8 @@ Scope: QS_Sort
 		Next: 128
 		Use: [48]
 		Def: []
-		In: [48, 38, 39, 10]
-		Out: [38, 39, 10]
+		In: [48, 0, 1, 2, 38, 39, 10, 26, 29]
+		Out: [0, 1, 2, 38, 39, 10, 26, 29]
 
 	Basic Block: 128
 		Type: ERROR
@@ -1033,8 +1042,8 @@ Scope: QS_Sort
 		Next: 129
 		Use: []
 		Def: []
-		In: [38, 39, 10]
-		Out: [38, 39, 10]
+		In: [0, 1, 2, 38, 39, 10, 26, 29]
+		Out: [0, 1, 2, 38, 39, 10, 26, 29]
 
 	Basic Block: 129
 		Type: NOOP
@@ -1042,8 +1051,8 @@ Scope: QS_Sort
 		Next: 131
 		Use: []
 		Def: []
-		In: [38, 39, 10]
-		Out: [38, 39, 10]
+		In: [0, 1, 2, 38, 39, 10, 26, 29]
+		Out: [0, 1, 2, 38, 39, 10, 26, 29]
 
 	Basic Block: 131
 		Type: MOVE
@@ -1051,8 +1060,8 @@ Scope: QS_Sort
 		Next: 132
 		Use: []
 		Def: [49]
-		In: [38, 39, 10]
-		Out: [49, 38, 39, 10]
+		In: [0, 1, 2, 38, 39, 10, 26, 29]
+		Out: [0, 49, 1, 2, 38, 39, 10, 26, 29]
 
 	Basic Block: 132
 		Type: MOVE
@@ -1060,8 +1069,8 @@ Scope: QS_Sort
 		Next: 133
 		Use: [49, 39]
 		Def: [50]
-		In: [49, 38, 39, 10]
-		Out: [50, 38, 10]
+		In: [0, 49, 1, 2, 38, 39, 10, 26, 29]
+		Out: [0, 1, 50, 2, 38, 10, 26, 29]
 
 	Basic Block: 133
 		Type: MOVE
@@ -1069,8 +1078,8 @@ Scope: QS_Sort
 		Next: 134
 		Use: [50, 38]
 		Def: [51]
-		In: [50, 38, 10]
-		Out: [51, 10]
+		In: [0, 1, 50, 2, 38, 10, 26, 29]
+		Out: [0, 1, 2, 51, 10, 26, 29]
 
 	Basic Block: 134
 		Type: HLOAD
@@ -1078,8 +1087,8 @@ Scope: QS_Sort
 		Next: 135
 		Use: [51]
 		Def: [37]
-		In: [51, 10]
-		Out: [37, 10]
+		In: [0, 1, 2, 51, 10, 26, 29]
+		Out: [0, 1, 2, 37, 10, 26, 29]
 
 	Basic Block: 135
 		Type: MOVE
@@ -1087,8 +1096,8 @@ Scope: QS_Sort
 		Next: 136
 		Use: [37]
 		Def: [36]
-		In: [37, 10]
-		Out: [36, 10]
+		In: [0, 1, 2, 37, 10, 26, 29]
+		Out: [0, 1, 2, 36, 10, 26, 29]
 
 	Basic Block: 136
 		Type: MOVE
@@ -1096,8 +1105,8 @@ Scope: QS_Sort
 		Next: 137
 		Use: []
 		Def: [53]
-		In: [36, 10]
-		Out: [36, 53, 10]
+		In: [0, 1, 2, 36, 10, 26, 29]
+		Out: [0, 1, 2, 36, 53, 10, 26, 29]
 
 	Basic Block: 137
 		Type: MOVE
@@ -1105,8 +1114,8 @@ Scope: QS_Sort
 		Next: 138
 		Use: [53, 10]
 		Def: [54]
-		In: [36, 53, 10]
-		Out: [36, 54]
+		In: [0, 1, 2, 36, 53, 10, 26, 29]
+		Out: [0, 1, 2, 36, 54, 26, 10, 29]
 
 	Basic Block: 138
 		Type: MOVE
@@ -1114,8 +1123,8 @@ Scope: QS_Sort
 		Next: 139
 		Use: [54]
 		Def: [52]
-		In: [36, 54]
-		Out: [36, 52]
+		In: [0, 1, 2, 36, 54, 26, 10, 29]
+		Out: [0, 1, 2, 36, 52, 26, 10, 29]
 
 	Basic Block: 139
 		Type: MOVE
@@ -1123,8 +1132,8 @@ Scope: QS_Sort
 		Next: 140
 		Use: []
 		Def: [55]
-		In: [36, 52]
-		Out: [36, 52, 55]
+		In: [0, 1, 2, 36, 52, 26, 10, 29]
+		Out: [0, 1, 2, 36, 52, 55, 26, 10, 29]
 
 	Basic Block: 140
 		Type: MOVE
@@ -1132,8 +1141,8 @@ Scope: QS_Sort
 		Next: 141
 		Use: [36, 52]
 		Def: [56]
-		In: [36, 52, 55]
-		Out: [55, 56]
+		In: [0, 1, 2, 36, 52, 55, 26, 10, 29]
+		Out: [0, 1, 2, 55, 56, 26, 10, 29]
 
 	Basic Block: 141
 		Type: MOVE
@@ -1141,8 +1150,8 @@ Scope: QS_Sort
 		Next: 142
 		Use: [55, 56]
 		Def: [57]
-		In: [55, 56]
-		Out: [57]
+		In: [0, 1, 2, 55, 56, 26, 10, 29]
+		Out: [0, 1, 2, 57, 26, 10, 29]
 
 	Basic Block: 142
 		Type: CJUMP
@@ -1150,8 +1159,8 @@ Scope: QS_Sort
 		Next: 143
 		Use: [57]
 		Def: []
-		In: [57]
-		Out: []
+		In: [0, 1, 2, 57, 26, 10, 29]
+		Out: [0, 1, 2, 26, 10, 29]
 
 	Basic Block: 143
 		Type: MOVE
@@ -1159,8 +1168,8 @@ Scope: QS_Sort
 		Next: 144
 		Use: []
 		Def: [58]
-		In: []
-		Out: [58]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 58, 26, 10, 29]
 
 	Basic Block: 144
 		Type: MOVE
@@ -1168,8 +1177,8 @@ Scope: QS_Sort
 		Next: 145
 		Use: [58]
 		Def: [32]
-		In: [58]
-		Out: []
+		In: [0, 1, 2, 58, 26, 10, 29]
+		Out: [32, 0, 1, 2, 26, 10, 29]
 
 	Basic Block: 145
 		Type: JUMP
@@ -1177,8 +1186,8 @@ Scope: QS_Sort
 		Next: 146
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [32, 0, 1, 2, 26, 10, 29]
+		Out: [32, 0, 1, 2, 26, 10, 29]
 
 	Basic Block: 146
 		Type: MOVE
@@ -1186,8 +1195,8 @@ Scope: QS_Sort
 		Next: 148
 		Use: []
 		Def: [59]
-		In: []
-		Out: [59]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 26, 10, 59, 29]
 
 	Basic Block: 148
 		Type: MOVE
@@ -1195,8 +1204,8 @@ Scope: QS_Sort
 		Next: 149
 		Use: [59]
 		Def: [32]
-		In: [59]
-		Out: []
+		In: [0, 1, 2, 26, 10, 59, 29]
+		Out: [32, 0, 1, 2, 26, 10, 29]
 
 	Basic Block: 149
 		Type: NOOP
@@ -1204,8 +1213,8 @@ Scope: QS_Sort
 		Next: 151
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [32, 0, 1, 2, 26, 10, 29]
+		Out: [32, 0, 1, 2, 26, 10, 29]
 
 	Basic Block: 151
 		Type: JUMP
@@ -1213,8 +1222,8 @@ Scope: QS_Sort
 		Next: 152
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [32, 0, 1, 2, 26, 10, 29]
+		Out: [32, 0, 1, 2, 26, 10, 29]
 
 	Basic Block: 152
 		Type: NOOP
@@ -1222,8 +1231,8 @@ Scope: QS_Sort
 		Next: 154
 		Use: []
 		Def: []
-		In: [0, 10, 29]
-		Out: [0, 10, 29]
+		In: [0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 10, 26, 29]
 
 	Basic Block: 154
 		Type: MOVE
@@ -1231,8 +1240,8 @@ Scope: QS_Sort
 		Next: 155
 		Use: []
 		Def: [60]
-		In: [0, 10, 29]
-		Out: [0, 10, 60, 29]
+		In: [0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 10, 26, 60, 29]
 
 	Basic Block: 155
 		Type: MOVE
@@ -1240,8 +1249,8 @@ Scope: QS_Sort
 		Next: 156
 		Use: [60]
 		Def: [32]
-		In: [0, 10, 60, 29]
-		Out: [32, 0, 10, 29]
+		In: [0, 1, 2, 10, 26, 60, 29]
+		Out: [32, 0, 1, 2, 10, 26, 29]
 
 	Basic Block: 156
 		Type: CJUMP
@@ -1249,8 +1258,8 @@ Scope: QS_Sort
 		Next: 158
 		Use: [32]
 		Def: []
-		In: [32, 0, 10, 29]
-		Out: [0, 10, 29]
+		In: [32, 0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 10, 26, 29]
 
 	Basic Block: 158
 		Type: MOVE
@@ -1258,8 +1267,8 @@ Scope: QS_Sort
 		Next: 159
 		Use: []
 		Def: [61]
-		In: [0, 10, 29]
-		Out: [0, 10, 29, 61]
+		In: [0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 10, 26, 29, 61]
 
 	Basic Block: 159
 		Type: MOVE
@@ -1267,8 +1276,8 @@ Scope: QS_Sort
 		Next: 160
 		Use: [29, 61]
 		Def: [62]
-		In: [0, 10, 29, 61]
-		Out: [0, 10, 62]
+		In: [0, 1, 2, 10, 26, 29, 61]
+		Out: [0, 1, 2, 10, 26, 62]
 
 	Basic Block: 160
 		Type: MOVE
@@ -1276,8 +1285,8 @@ Scope: QS_Sort
 		Next: 161
 		Use: [62]
 		Def: [29]
-		In: [0, 10, 62]
-		Out: [0, 10, 29]
+		In: [0, 1, 2, 10, 26, 62]
+		Out: [0, 1, 2, 10, 26, 29]
 
 	Basic Block: 161
 		Type: HLOAD
@@ -1285,8 +1294,8 @@ Scope: QS_Sort
 		Next: 162
 		Use: [0]
 		Def: [64]
-		In: [0, 10, 29]
-		Out: [0, 10, 29]
+		In: [0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 10, 26, 29]
 
 	Basic Block: 162
 		Type: MOVE
@@ -1294,8 +1303,8 @@ Scope: QS_Sort
 		Next: 163
 		Use: []
 		Def: [66]
-		In: [0, 10, 29]
-		Out: [0, 66, 10, 29]
+		In: [0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 66, 2, 10, 26, 29]
 
 	Basic Block: 163
 		Type: MOVE
@@ -1303,8 +1312,8 @@ Scope: QS_Sort
 		Next: 164
 		Use: [66, 29]
 		Def: [67]
-		In: [0, 66, 10, 29]
-		Out: [0, 67, 10]
+		In: [0, 1, 66, 2, 10, 26, 29]
+		Out: [0, 1, 2, 67, 10, 26, 29]
 
 	Basic Block: 164
 		Type: MOVE
@@ -1312,8 +1321,8 @@ Scope: QS_Sort
 		Next: 165
 		Use: [67]
 		Def: [65]
-		In: [0, 67, 10]
-		Out: [0, 65, 10]
+		In: [0, 1, 2, 67, 10, 26, 29]
+		Out: [0, 65, 1, 2, 10, 26, 29]
 
 	Basic Block: 165
 		Type: HLOAD
@@ -1321,8 +1330,8 @@ Scope: QS_Sort
 		Next: 166
 		Use: [0]
 		Def: [64]
-		In: [0, 65, 10]
-		Out: [64, 65, 10]
+		In: [0, 65, 1, 2, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 10, 26, 29]
 
 	Basic Block: 166
 		Type: HLOAD
@@ -1330,8 +1339,8 @@ Scope: QS_Sort
 		Next: 167
 		Use: [64]
 		Def: [68]
-		In: [64, 65, 10]
-		Out: [64, 65, 68, 10]
+		In: [64, 0, 65, 1, 2, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 68, 10, 26, 29]
 
 	Basic Block: 167
 		Type: MOVE
@@ -1339,8 +1348,8 @@ Scope: QS_Sort
 		Next: 168
 		Use: []
 		Def: [70]
-		In: [64, 65, 68, 10]
-		Out: [64, 65, 68, 70, 10]
+		In: [64, 0, 65, 1, 2, 68, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 68, 70, 10, 26, 29]
 
 	Basic Block: 168
 		Type: MOVE
@@ -1348,8 +1357,8 @@ Scope: QS_Sort
 		Next: 169
 		Use: [68, 70]
 		Def: [71]
-		In: [64, 65, 68, 70, 10]
-		Out: [64, 65, 71, 10]
+		In: [64, 0, 65, 1, 2, 68, 70, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 71, 10, 26, 29]
 
 	Basic Block: 169
 		Type: MOVE
@@ -1357,8 +1366,8 @@ Scope: QS_Sort
 		Next: 170
 		Use: [71]
 		Def: [69]
-		In: [64, 65, 71, 10]
-		Out: [64, 65, 69, 10]
+		In: [64, 0, 65, 1, 2, 71, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 69, 10, 26, 29]
 
 	Basic Block: 170
 		Type: MOVE
@@ -1366,8 +1375,8 @@ Scope: QS_Sort
 		Next: 171
 		Use: []
 		Def: [72]
-		In: [64, 65, 69, 10]
-		Out: [64, 65, 69, 72, 10]
+		In: [64, 0, 65, 1, 2, 69, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 69, 72, 10, 26, 29]
 
 	Basic Block: 171
 		Type: MOVE
@@ -1375,8 +1384,8 @@ Scope: QS_Sort
 		Next: 172
 		Use: [65, 69]
 		Def: [73]
-		In: [64, 65, 69, 72, 10]
-		Out: [64, 65, 72, 73, 10]
+		In: [64, 0, 65, 1, 2, 69, 72, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 72, 73, 10, 26, 29]
 
 	Basic Block: 172
 		Type: MOVE
@@ -1384,8 +1393,8 @@ Scope: QS_Sort
 		Next: 173
 		Use: [72, 73]
 		Def: [74]
-		In: [64, 65, 72, 73, 10]
-		Out: [64, 65, 74, 10]
+		In: [64, 0, 65, 1, 2, 72, 73, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 74, 10, 26, 29]
 
 	Basic Block: 173
 		Type: CJUMP
@@ -1393,8 +1402,8 @@ Scope: QS_Sort
 		Next: 174
 		Use: [74]
 		Def: []
-		In: [64, 65, 74, 10]
-		Out: [64, 65, 10]
+		In: [64, 0, 65, 1, 2, 74, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 10, 26, 29]
 
 	Basic Block: 174
 		Type: ERROR
@@ -1402,8 +1411,8 @@ Scope: QS_Sort
 		Next: 175
 		Use: []
 		Def: []
-		In: [64, 65, 10]
-		Out: [64, 65, 10]
+		In: [64, 0, 65, 1, 2, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 10, 26, 29]
 
 	Basic Block: 175
 		Type: NOOP
@@ -1411,8 +1420,8 @@ Scope: QS_Sort
 		Next: 177
 		Use: []
 		Def: []
-		In: [64, 65, 10]
-		Out: [64, 65, 10]
+		In: [64, 0, 65, 1, 2, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 10, 26, 29]
 
 	Basic Block: 177
 		Type: MOVE
@@ -1420,8 +1429,8 @@ Scope: QS_Sort
 		Next: 178
 		Use: []
 		Def: [75]
-		In: [64, 65, 10]
-		Out: [64, 65, 10, 75]
+		In: [64, 0, 65, 1, 2, 10, 26, 29]
+		Out: [64, 0, 65, 1, 2, 10, 26, 75, 29]
 
 	Basic Block: 178
 		Type: MOVE
@@ -1429,8 +1438,8 @@ Scope: QS_Sort
 		Next: 179
 		Use: [65, 75]
 		Def: [76]
-		In: [64, 65, 10, 75]
-		Out: [64, 10, 76]
+		In: [64, 0, 65, 1, 2, 10, 26, 75, 29]
+		Out: [64, 0, 1, 2, 10, 26, 76, 29]
 
 	Basic Block: 179
 		Type: MOVE
@@ -1438,8 +1447,8 @@ Scope: QS_Sort
 		Next: 180
 		Use: [64, 76]
 		Def: [77]
-		In: [64, 10, 76]
-		Out: [10, 77]
+		In: [64, 0, 1, 2, 10, 26, 76, 29]
+		Out: [0, 1, 2, 10, 26, 77, 29]
 
 	Basic Block: 180
 		Type: HLOAD
@@ -1447,8 +1456,8 @@ Scope: QS_Sort
 		Next: 181
 		Use: [77]
 		Def: [63]
-		In: [10, 77]
-		Out: [10, 63]
+		In: [0, 1, 2, 10, 26, 77, 29]
+		Out: [0, 1, 2, 10, 26, 29, 63]
 
 	Basic Block: 181
 		Type: MOVE
@@ -1456,8 +1465,8 @@ Scope: QS_Sort
 		Next: 182
 		Use: [63]
 		Def: [36]
-		In: [10, 63]
-		Out: [36, 10]
+		In: [0, 1, 2, 10, 26, 29, 63]
+		Out: [0, 1, 2, 36, 10, 26, 29]
 
 	Basic Block: 182
 		Type: MOVE
@@ -1465,8 +1474,8 @@ Scope: QS_Sort
 		Next: 183
 		Use: []
 		Def: [79]
-		In: [36, 10]
-		Out: [36, 10, 79]
+		In: [0, 1, 2, 36, 10, 26, 29]
+		Out: [0, 1, 2, 36, 10, 26, 29, 79]
 
 	Basic Block: 183
 		Type: MOVE
@@ -1474,8 +1483,8 @@ Scope: QS_Sort
 		Next: 184
 		Use: [36, 79]
 		Def: [80]
-		In: [36, 10, 79]
-		Out: [80, 10]
+		In: [0, 1, 2, 36, 10, 26, 29, 79]
+		Out: [80, 0, 1, 2, 10, 26, 29]
 
 	Basic Block: 184
 		Type: MOVE
@@ -1483,8 +1492,8 @@ Scope: QS_Sort
 		Next: 185
 		Use: [80]
 		Def: [78]
-		In: [80, 10]
-		Out: [10, 78]
+		In: [80, 0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 10, 26, 29, 78]
 
 	Basic Block: 185
 		Type: MOVE
@@ -1492,8 +1501,8 @@ Scope: QS_Sort
 		Next: 186
 		Use: []
 		Def: [81]
-		In: [10, 78]
-		Out: [81, 10, 78]
+		In: [0, 1, 2, 10, 26, 29, 78]
+		Out: [0, 81, 1, 2, 10, 26, 29, 78]
 
 	Basic Block: 186
 		Type: MOVE
@@ -1501,8 +1510,8 @@ Scope: QS_Sort
 		Next: 187
 		Use: [10, 78]
 		Def: [82]
-		In: [81, 10, 78]
-		Out: [81, 82]
+		In: [0, 81, 1, 2, 10, 26, 29, 78]
+		Out: [0, 81, 1, 82, 2, 10, 26, 29]
 
 	Basic Block: 187
 		Type: MOVE
@@ -1510,8 +1519,8 @@ Scope: QS_Sort
 		Next: 188
 		Use: [81, 82]
 		Def: [83]
-		In: [81, 82]
-		Out: [83]
+		In: [0, 81, 1, 82, 2, 10, 26, 29]
+		Out: [0, 1, 2, 83, 10, 26, 29]
 
 	Basic Block: 188
 		Type: CJUMP
@@ -1519,8 +1528,8 @@ Scope: QS_Sort
 		Next: 189
 		Use: [83]
 		Def: []
-		In: [83]
-		Out: []
+		In: [0, 1, 2, 83, 10, 26, 29]
+		Out: [0, 1, 2, 10, 26, 29]
 
 	Basic Block: 189
 		Type: MOVE
@@ -1528,8 +1537,8 @@ Scope: QS_Sort
 		Next: 190
 		Use: []
 		Def: [84]
-		In: []
-		Out: [84]
+		In: [0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 84, 10, 26, 29]
 
 	Basic Block: 190
 		Type: MOVE
@@ -1537,8 +1546,8 @@ Scope: QS_Sort
 		Next: 191
 		Use: [84]
 		Def: [32]
-		In: [84]
-		Out: []
+		In: [0, 1, 2, 84, 10, 26, 29]
+		Out: [32, 0, 1, 2, 10, 26, 29]
 
 	Basic Block: 191
 		Type: JUMP
@@ -1546,8 +1555,8 @@ Scope: QS_Sort
 		Next: 192
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [32, 0, 1, 2, 10, 26, 29]
+		Out: [32, 0, 1, 2, 10, 26, 29]
 
 	Basic Block: 192
 		Type: MOVE
@@ -1555,8 +1564,8 @@ Scope: QS_Sort
 		Next: 194
 		Use: []
 		Def: [85]
-		In: []
-		Out: [85]
+		In: [0, 1, 2, 10, 26, 29]
+		Out: [0, 1, 2, 85, 10, 26, 29]
 
 	Basic Block: 194
 		Type: MOVE
@@ -1564,8 +1573,8 @@ Scope: QS_Sort
 		Next: 195
 		Use: [85]
 		Def: [32]
-		In: [85]
-		Out: []
+		In: [0, 1, 2, 85, 10, 26, 29]
+		Out: [32, 0, 1, 2, 10, 26, 29]
 
 	Basic Block: 195
 		Type: NOOP
@@ -1573,8 +1582,8 @@ Scope: QS_Sort
 		Next: 197
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [32, 0, 1, 2, 10, 26, 29]
+		Out: [32, 0, 1, 2, 10, 26, 29]
 
 	Basic Block: 197
 		Type: JUMP
@@ -1582,8 +1591,8 @@ Scope: QS_Sort
 		Next: 198
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [32, 0, 1, 2, 10, 26, 29]
+		Out: [32, 0, 1, 2, 10, 26, 29]
 
 	Basic Block: 198
 		Type: NOOP
@@ -1591,8 +1600,8 @@ Scope: QS_Sort
 		Next: 200
 		Use: []
 		Def: []
-		In: [0, 26, 29]
-		Out: [0, 26, 29]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 26, 10, 29]
 
 	Basic Block: 200
 		Type: HLOAD
@@ -1600,8 +1609,8 @@ Scope: QS_Sort
 		Next: 201
 		Use: [0]
 		Def: [87]
-		In: [0, 26, 29]
-		Out: [0, 26, 29]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 26, 10, 29]
 
 	Basic Block: 201
 		Type: MOVE
@@ -1609,8 +1618,8 @@ Scope: QS_Sort
 		Next: 202
 		Use: []
 		Def: [89]
-		In: [0, 26, 29]
-		Out: [0, 89, 26, 29]
+		In: [0, 1, 2, 26, 10, 29]
+		Out: [0, 1, 2, 89, 26, 10, 29]
 
 	Basic Block: 202
 		Type: MOVE
@@ -1618,8 +1627,8 @@ Scope: QS_Sort
 		Next: 203
 		Use: [89, 26]
 		Def: [90]
-		In: [0, 89, 26, 29]
-		Out: [0, 90, 26, 29]
+		In: [0, 1, 2, 89, 26, 10, 29]
+		Out: [0, 1, 2, 90, 26, 10, 29]
 
 	Basic Block: 203
 		Type: MOVE
@@ -1627,8 +1636,8 @@ Scope: QS_Sort
 		Next: 204
 		Use: [90]
 		Def: [88]
-		In: [0, 90, 26, 29]
-		Out: [0, 88, 26, 29]
+		In: [0, 1, 2, 90, 26, 10, 29]
+		Out: [0, 1, 2, 88, 26, 10, 29]
 
 	Basic Block: 204
 		Type: HLOAD
@@ -1636,8 +1645,8 @@ Scope: QS_Sort
 		Next: 205
 		Use: [0]
 		Def: [87]
-		In: [0, 88, 26, 29]
-		Out: [0, 87, 88, 26, 29]
+		In: [0, 1, 2, 88, 26, 10, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 29]
 
 	Basic Block: 205
 		Type: HLOAD
@@ -1645,8 +1654,8 @@ Scope: QS_Sort
 		Next: 206
 		Use: [87]
 		Def: [91]
-		In: [0, 87, 88, 26, 29]
-		Out: [0, 87, 88, 26, 91, 29]
+		In: [0, 1, 2, 87, 88, 26, 10, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 91, 29]
 
 	Basic Block: 206
 		Type: MOVE
@@ -1654,8 +1663,8 @@ Scope: QS_Sort
 		Next: 207
 		Use: []
 		Def: [93]
-		In: [0, 87, 88, 26, 91, 29]
-		Out: [0, 87, 88, 26, 91, 93, 29]
+		In: [0, 1, 2, 87, 88, 26, 10, 91, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 91, 93, 29]
 
 	Basic Block: 207
 		Type: MOVE
@@ -1663,8 +1672,8 @@ Scope: QS_Sort
 		Next: 208
 		Use: [91, 93]
 		Def: [94]
-		In: [0, 87, 88, 26, 91, 93, 29]
-		Out: [0, 87, 88, 26, 29, 94]
+		In: [0, 1, 2, 87, 88, 26, 10, 91, 93, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 29, 94]
 
 	Basic Block: 208
 		Type: MOVE
@@ -1672,8 +1681,8 @@ Scope: QS_Sort
 		Next: 209
 		Use: [94]
 		Def: [92]
-		In: [0, 87, 88, 26, 29, 94]
-		Out: [0, 87, 88, 26, 92, 29]
+		In: [0, 1, 2, 87, 88, 26, 10, 29, 94]
+		Out: [0, 1, 2, 87, 88, 26, 10, 92, 29]
 
 	Basic Block: 209
 		Type: MOVE
@@ -1681,8 +1690,8 @@ Scope: QS_Sort
 		Next: 210
 		Use: []
 		Def: [95]
-		In: [0, 87, 88, 26, 92, 29]
-		Out: [0, 87, 88, 26, 92, 29, 95]
+		In: [0, 1, 2, 87, 88, 26, 10, 92, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 92, 29, 95]
 
 	Basic Block: 210
 		Type: MOVE
@@ -1690,8 +1699,8 @@ Scope: QS_Sort
 		Next: 211
 		Use: [88, 92]
 		Def: [96]
-		In: [0, 87, 88, 26, 92, 29, 95]
-		Out: [96, 0, 87, 88, 26, 29, 95]
+		In: [0, 1, 2, 87, 88, 26, 10, 92, 29, 95]
+		Out: [96, 0, 1, 2, 87, 88, 26, 10, 29, 95]
 
 	Basic Block: 211
 		Type: MOVE
@@ -1699,8 +1708,8 @@ Scope: QS_Sort
 		Next: 212
 		Use: [96, 95]
 		Def: [97]
-		In: [96, 0, 87, 88, 26, 29, 95]
-		Out: [0, 97, 87, 88, 26, 29]
+		In: [96, 0, 1, 2, 87, 88, 26, 10, 29, 95]
+		Out: [0, 97, 1, 2, 87, 88, 26, 10, 29]
 
 	Basic Block: 212
 		Type: CJUMP
@@ -1708,8 +1717,8 @@ Scope: QS_Sort
 		Next: 213
 		Use: [97]
 		Def: []
-		In: [0, 97, 87, 88, 26, 29]
-		Out: [0, 87, 88, 26, 29]
+		In: [0, 97, 1, 2, 87, 88, 26, 10, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 29]
 
 	Basic Block: 213
 		Type: ERROR
@@ -1717,8 +1726,8 @@ Scope: QS_Sort
 		Next: 214
 		Use: []
 		Def: []
-		In: [0, 87, 88, 26, 29]
-		Out: [0, 87, 88, 26, 29]
+		In: [0, 1, 2, 87, 88, 26, 10, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 29]
 
 	Basic Block: 214
 		Type: NOOP
@@ -1726,8 +1735,8 @@ Scope: QS_Sort
 		Next: 216
 		Use: []
 		Def: []
-		In: [0, 87, 88, 26, 29]
-		Out: [0, 87, 88, 26, 29]
+		In: [0, 1, 2, 87, 88, 26, 10, 29]
+		Out: [0, 1, 2, 87, 88, 26, 10, 29]
 
 	Basic Block: 216
 		Type: MOVE
@@ -1735,8 +1744,8 @@ Scope: QS_Sort
 		Next: 217
 		Use: []
 		Def: [98]
-		In: [0, 87, 88, 26, 29]
-		Out: [0, 98, 87, 88, 26, 29]
+		In: [0, 1, 2, 87, 88, 26, 10, 29]
+		Out: [0, 1, 98, 2, 87, 88, 26, 10, 29]
 
 	Basic Block: 217
 		Type: MOVE
@@ -1744,8 +1753,8 @@ Scope: QS_Sort
 		Next: 218
 		Use: [98, 88]
 		Def: [99]
-		In: [0, 98, 87, 88, 26, 29]
-		Out: [0, 99, 87, 26, 29]
+		In: [0, 1, 98, 2, 87, 88, 26, 10, 29]
+		Out: [0, 1, 2, 99, 87, 26, 10, 29]
 
 	Basic Block: 218
 		Type: MOVE
@@ -1753,8 +1762,8 @@ Scope: QS_Sort
 		Next: 219
 		Use: [99, 87]
 		Def: [100]
-		In: [0, 99, 87, 26, 29]
-		Out: [0, 100, 26, 29]
+		In: [0, 1, 2, 99, 87, 26, 10, 29]
+		Out: [0, 1, 2, 100, 26, 10, 29]
 
 	Basic Block: 219
 		Type: HLOAD
@@ -1762,8 +1771,8 @@ Scope: QS_Sort
 		Next: 220
 		Use: [100]
 		Def: [86]
-		In: [0, 100, 26, 29]
-		Out: [0, 86, 26, 29]
+		In: [0, 1, 2, 100, 26, 10, 29]
+		Out: [0, 1, 2, 86, 26, 10, 29]
 
 	Basic Block: 220
 		Type: MOVE
@@ -1771,8 +1780,8 @@ Scope: QS_Sort
 		Next: 221
 		Use: [86]
 		Def: [4]
-		In: [0, 86, 26, 29]
-		Out: [0, 4, 26, 29]
+		In: [0, 1, 2, 86, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 221
 		Type: MOVE
@@ -1780,8 +1789,8 @@ Scope: QS_Sort
 		Next: 222
 		Use: []
 		Def: [102]
-		In: [0, 4, 26, 29]
-		Out: [0, 4, 102, 26, 29]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 102, 26, 10, 29]
 
 	Basic Block: 222
 		Type: MOVE
@@ -1789,8 +1798,8 @@ Scope: QS_Sort
 		Next: 223
 		Use: []
 		Def: [103]
-		In: [0, 4, 102, 26, 29]
-		Out: [0, 4, 102, 103, 26, 29]
+		In: [0, 1, 2, 4, 102, 26, 10, 29]
+		Out: [0, 1, 2, 4, 102, 103, 26, 10, 29]
 
 	Basic Block: 223
 		Type: MOVE
@@ -1798,8 +1807,8 @@ Scope: QS_Sort
 		Next: 224
 		Use: [102, 103]
 		Def: [104]
-		In: [0, 4, 102, 103, 26, 29]
-		Out: [0, 4, 104, 26, 29]
+		In: [0, 1, 2, 4, 102, 103, 26, 10, 29]
+		Out: [0, 1, 2, 4, 104, 26, 10, 29]
 
 	Basic Block: 224
 		Type: MOVE
@@ -1807,8 +1816,8 @@ Scope: QS_Sort
 		Next: 225
 		Use: [104]
 		Def: [101]
-		In: [0, 4, 104, 26, 29]
-		Out: [0, 4, 101, 26, 29]
+		In: [0, 1, 2, 4, 104, 26, 10, 29]
+		Out: [0, 1, 2, 4, 101, 26, 10, 29]
 
 	Basic Block: 225
 		Type: MOVE
@@ -1816,8 +1825,8 @@ Scope: QS_Sort
 		Next: 226
 		Use: [0, 101]
 		Def: [106]
-		In: [0, 4, 101, 26, 29]
-		Out: [0, 4, 106, 26, 29]
+		In: [0, 1, 2, 4, 101, 26, 10, 29]
+		Out: [0, 1, 2, 4, 106, 26, 10, 29]
 
 	Basic Block: 226
 		Type: HLOAD
@@ -1825,8 +1834,8 @@ Scope: QS_Sort
 		Next: 227
 		Use: [106]
 		Def: [105]
-		In: [0, 4, 106, 26, 29]
-		Out: [0, 4, 26, 29]
+		In: [0, 1, 2, 4, 106, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 227
 		Type: MOVE
@@ -1834,8 +1843,8 @@ Scope: QS_Sort
 		Next: 228
 		Use: []
 		Def: [108]
-		In: [0, 4, 26, 29]
-		Out: [0, 4, 26, 108, 29]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 108, 29]
 
 	Basic Block: 228
 		Type: MOVE
@@ -1843,8 +1852,8 @@ Scope: QS_Sort
 		Next: 229
 		Use: [26, 108]
 		Def: [109]
-		In: [0, 4, 26, 108, 29]
-		Out: [0, 4, 26, 109, 29]
+		In: [0, 1, 2, 4, 26, 10, 108, 29]
+		Out: [0, 1, 2, 4, 10, 26, 109, 29]
 
 	Basic Block: 229
 		Type: MOVE
@@ -1852,8 +1861,8 @@ Scope: QS_Sort
 		Next: 230
 		Use: [109]
 		Def: [107]
-		In: [0, 4, 26, 109, 29]
-		Out: [0, 4, 26, 107, 29]
+		In: [0, 1, 2, 4, 10, 26, 109, 29]
+		Out: [0, 1, 2, 4, 10, 26, 107, 29]
 
 	Basic Block: 230
 		Type: MOVE
@@ -1861,8 +1870,8 @@ Scope: QS_Sort
 		Next: 231
 		Use: []
 		Def: [111]
-		In: [0, 4, 26, 107, 29]
-		Out: [0, 4, 26, 107, 29, 111]
+		In: [0, 1, 2, 4, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 10, 26, 107, 29, 111]
 
 	Basic Block: 231
 		Type: MOVE
@@ -1870,8 +1879,8 @@ Scope: QS_Sort
 		Next: 232
 		Use: []
 		Def: [112]
-		In: [0, 4, 26, 107, 29, 111]
-		Out: [112, 0, 4, 26, 107, 29, 111]
+		In: [0, 1, 2, 4, 10, 26, 107, 29, 111]
+		Out: [112, 0, 1, 2, 4, 10, 26, 107, 29, 111]
 
 	Basic Block: 232
 		Type: MOVE
@@ -1879,8 +1888,8 @@ Scope: QS_Sort
 		Next: 233
 		Use: [112, 111]
 		Def: [113]
-		In: [112, 0, 4, 26, 107, 29, 111]
-		Out: [0, 113, 4, 26, 107, 29]
+		In: [112, 0, 1, 2, 4, 10, 26, 107, 29, 111]
+		Out: [0, 113, 1, 2, 4, 10, 26, 107, 29]
 
 	Basic Block: 233
 		Type: MOVE
@@ -1888,8 +1897,8 @@ Scope: QS_Sort
 		Next: 234
 		Use: [113]
 		Def: [101]
-		In: [0, 113, 4, 26, 107, 29]
-		Out: [0, 4, 101, 26, 107, 29]
+		In: [0, 113, 1, 2, 4, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 101, 10, 26, 107, 29]
 
 	Basic Block: 234
 		Type: MOVE
@@ -1897,8 +1906,8 @@ Scope: QS_Sort
 		Next: 235
 		Use: [0, 101]
 		Def: [114]
-		In: [0, 4, 101, 26, 107, 29]
-		Out: [0, 114, 4, 26, 107, 29]
+		In: [0, 1, 2, 4, 101, 10, 26, 107, 29]
+		Out: [0, 1, 114, 2, 4, 10, 26, 107, 29]
 
 	Basic Block: 235
 		Type: HLOAD
@@ -1906,8 +1915,8 @@ Scope: QS_Sort
 		Next: 236
 		Use: [114]
 		Def: [105]
-		In: [0, 114, 4, 26, 107, 29]
-		Out: [0, 4, 105, 26, 107, 29]
+		In: [0, 1, 114, 2, 4, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 105, 10, 26, 107, 29]
 
 	Basic Block: 236
 		Type: HLOAD
@@ -1915,8 +1924,8 @@ Scope: QS_Sort
 		Next: 237
 		Use: [105]
 		Def: [110]
-		In: [0, 4, 105, 26, 107, 29]
-		Out: [0, 4, 105, 26, 107, 29, 110]
+		In: [0, 1, 2, 4, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 105, 10, 26, 107, 29, 110]
 
 	Basic Block: 237
 		Type: MOVE
@@ -1924,8 +1933,8 @@ Scope: QS_Sort
 		Next: 238
 		Use: []
 		Def: [116]
-		In: [0, 4, 105, 26, 107, 29, 110]
-		Out: [0, 116, 4, 105, 26, 107, 29, 110]
+		In: [0, 1, 2, 4, 105, 10, 26, 107, 29, 110]
+		Out: [0, 1, 2, 116, 4, 105, 10, 26, 107, 29, 110]
 
 	Basic Block: 238
 		Type: MOVE
@@ -1933,8 +1942,8 @@ Scope: QS_Sort
 		Next: 239
 		Use: [116, 110]
 		Def: [117]
-		In: [0, 116, 4, 105, 26, 107, 29, 110]
-		Out: [0, 4, 117, 105, 26, 107, 29]
+		In: [0, 1, 2, 116, 4, 105, 10, 26, 107, 29, 110]
+		Out: [0, 1, 2, 4, 117, 105, 10, 26, 107, 29]
 
 	Basic Block: 239
 		Type: MOVE
@@ -1942,8 +1951,8 @@ Scope: QS_Sort
 		Next: 240
 		Use: [117]
 		Def: [115]
-		In: [0, 4, 117, 105, 26, 107, 29]
-		Out: [0, 115, 4, 105, 26, 107, 29]
+		In: [0, 1, 2, 4, 117, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 115, 4, 105, 10, 26, 107, 29]
 
 	Basic Block: 240
 		Type: MOVE
@@ -1951,8 +1960,8 @@ Scope: QS_Sort
 		Next: 241
 		Use: []
 		Def: [118]
-		In: [0, 115, 4, 105, 26, 107, 29]
-		Out: [0, 115, 4, 118, 105, 26, 107, 29]
+		In: [0, 1, 2, 115, 4, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 115, 4, 118, 105, 10, 26, 107, 29]
 
 	Basic Block: 241
 		Type: MOVE
@@ -1960,8 +1969,8 @@ Scope: QS_Sort
 		Next: 242
 		Use: [115, 107]
 		Def: [119]
-		In: [0, 115, 4, 118, 105, 26, 107, 29]
-		Out: [0, 4, 118, 119, 105, 26, 107, 29]
+		In: [0, 1, 2, 115, 4, 118, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 118, 119, 105, 10, 26, 107, 29]
 
 	Basic Block: 242
 		Type: MOVE
@@ -1969,8 +1978,8 @@ Scope: QS_Sort
 		Next: 243
 		Use: [118, 119]
 		Def: [120]
-		In: [0, 4, 118, 119, 105, 26, 107, 29]
-		Out: [0, 4, 120, 105, 26, 107, 29]
+		In: [0, 1, 2, 4, 118, 119, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 120, 105, 10, 26, 107, 29]
 
 	Basic Block: 243
 		Type: CJUMP
@@ -1978,8 +1987,8 @@ Scope: QS_Sort
 		Next: 244
 		Use: [120]
 		Def: []
-		In: [0, 4, 120, 105, 26, 107, 29]
-		Out: [0, 4, 105, 26, 107, 29]
+		In: [0, 1, 2, 4, 120, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 105, 10, 26, 107, 29]
 
 	Basic Block: 244
 		Type: ERROR
@@ -1987,8 +1996,8 @@ Scope: QS_Sort
 		Next: 245
 		Use: []
 		Def: []
-		In: [0, 4, 105, 26, 107, 29]
-		Out: [0, 4, 105, 26, 107, 29]
+		In: [0, 1, 2, 4, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 105, 10, 26, 107, 29]
 
 	Basic Block: 245
 		Type: NOOP
@@ -1996,8 +2005,8 @@ Scope: QS_Sort
 		Next: 247
 		Use: []
 		Def: []
-		In: [0, 4, 105, 26, 107, 29]
-		Out: [0, 4, 105, 26, 107, 29]
+		In: [0, 1, 2, 4, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 105, 10, 26, 107, 29]
 
 	Basic Block: 247
 		Type: MOVE
@@ -2005,8 +2014,8 @@ Scope: QS_Sort
 		Next: 248
 		Use: []
 		Def: [121]
-		In: [0, 4, 105, 26, 107, 29]
-		Out: [0, 4, 121, 105, 26, 107, 29]
+		In: [0, 1, 2, 4, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 121, 105, 10, 26, 107, 29]
 
 	Basic Block: 248
 		Type: MOVE
@@ -2014,8 +2023,8 @@ Scope: QS_Sort
 		Next: 249
 		Use: [121, 107]
 		Def: [122]
-		In: [0, 4, 121, 105, 26, 107, 29]
-		Out: [0, 4, 105, 122, 26, 29]
+		In: [0, 1, 2, 4, 121, 105, 10, 26, 107, 29]
+		Out: [0, 1, 2, 4, 105, 122, 10, 26, 29]
 
 	Basic Block: 249
 		Type: MOVE
@@ -2023,8 +2032,8 @@ Scope: QS_Sort
 		Next: 250
 		Use: [105, 122]
 		Def: [123]
-		In: [0, 4, 105, 122, 26, 29]
-		Out: [0, 4, 26, 123, 29]
+		In: [0, 1, 2, 4, 105, 122, 10, 26, 29]
+		Out: [0, 1, 2, 4, 10, 26, 123, 29]
 
 	Basic Block: 250
 		Type: HLOAD
@@ -2032,8 +2041,8 @@ Scope: QS_Sort
 		Next: 251
 		Use: [0]
 		Def: [125]
-		In: [0, 4, 26, 123, 29]
-		Out: [0, 4, 26, 123, 29]
+		In: [0, 1, 2, 4, 10, 26, 123, 29]
+		Out: [0, 1, 2, 4, 10, 26, 123, 29]
 
 	Basic Block: 251
 		Type: MOVE
@@ -2041,8 +2050,8 @@ Scope: QS_Sort
 		Next: 252
 		Use: []
 		Def: [127]
-		In: [0, 4, 26, 123, 29]
-		Out: [0, 4, 26, 123, 29, 127]
+		In: [0, 1, 2, 4, 10, 26, 123, 29]
+		Out: [0, 1, 2, 4, 10, 26, 123, 29, 127]
 
 	Basic Block: 252
 		Type: MOVE
@@ -2050,8 +2059,8 @@ Scope: QS_Sort
 		Next: 253
 		Use: [29, 127]
 		Def: [128]
-		In: [0, 4, 26, 123, 29, 127]
-		Out: [128, 0, 4, 26, 123, 29]
+		In: [0, 1, 2, 4, 10, 26, 123, 29, 127]
+		Out: [128, 0, 1, 2, 4, 10, 26, 123, 29]
 
 	Basic Block: 253
 		Type: MOVE
@@ -2059,8 +2068,8 @@ Scope: QS_Sort
 		Next: 254
 		Use: [128]
 		Def: [126]
-		In: [128, 0, 4, 26, 123, 29]
-		Out: [0, 4, 26, 123, 29, 126]
+		In: [128, 0, 1, 2, 4, 10, 26, 123, 29]
+		Out: [0, 1, 2, 4, 10, 26, 123, 29, 126]
 
 	Basic Block: 254
 		Type: HLOAD
@@ -2068,8 +2077,8 @@ Scope: QS_Sort
 		Next: 255
 		Use: [0]
 		Def: [125]
-		In: [0, 4, 26, 123, 29, 126]
-		Out: [0, 4, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 4, 10, 26, 123, 29, 126]
+		Out: [0, 1, 2, 4, 10, 26, 123, 125, 29, 126]
 
 	Basic Block: 255
 		Type: HLOAD
@@ -2077,8 +2086,8 @@ Scope: QS_Sort
 		Next: 256
 		Use: [125]
 		Def: [129]
-		In: [0, 4, 26, 123, 125, 29, 126]
-		Out: [0, 129, 4, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 4, 10, 26, 123, 125, 29, 126]
+		Out: [0, 129, 1, 2, 4, 10, 26, 123, 125, 29, 126]
 
 	Basic Block: 256
 		Type: MOVE
@@ -2086,8 +2095,8 @@ Scope: QS_Sort
 		Next: 257
 		Use: []
 		Def: [131]
-		In: [0, 129, 4, 26, 123, 125, 29, 126]
-		Out: [0, 129, 131, 4, 26, 123, 125, 29, 126]
+		In: [0, 129, 1, 2, 4, 10, 26, 123, 125, 29, 126]
+		Out: [0, 129, 1, 2, 131, 4, 10, 26, 123, 125, 29, 126]
 
 	Basic Block: 257
 		Type: MOVE
@@ -2095,8 +2104,8 @@ Scope: QS_Sort
 		Next: 258
 		Use: [129, 131]
 		Def: [132]
-		In: [0, 129, 131, 4, 26, 123, 125, 29, 126]
-		Out: [0, 132, 4, 26, 123, 125, 29, 126]
+		In: [0, 129, 1, 2, 131, 4, 10, 26, 123, 125, 29, 126]
+		Out: [0, 1, 2, 132, 4, 10, 26, 123, 125, 29, 126]
 
 	Basic Block: 258
 		Type: MOVE
@@ -2104,8 +2113,8 @@ Scope: QS_Sort
 		Next: 259
 		Use: [132]
 		Def: [130]
-		In: [0, 132, 4, 26, 123, 125, 29, 126]
-		Out: [0, 130, 4, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 132, 4, 10, 26, 123, 125, 29, 126]
+		Out: [0, 1, 130, 2, 4, 10, 26, 123, 125, 29, 126]
 
 	Basic Block: 259
 		Type: MOVE
@@ -2113,8 +2122,8 @@ Scope: QS_Sort
 		Next: 260
 		Use: []
 		Def: [133]
-		In: [0, 130, 4, 26, 123, 125, 29, 126]
-		Out: [0, 130, 4, 133, 26, 123, 125, 29, 126]
+		In: [0, 1, 130, 2, 4, 10, 26, 123, 125, 29, 126]
+		Out: [0, 1, 130, 2, 4, 133, 10, 26, 123, 125, 29, 126]
 
 	Basic Block: 260
 		Type: MOVE
@@ -2122,8 +2131,8 @@ Scope: QS_Sort
 		Next: 261
 		Use: [130, 126]
 		Def: [134]
-		In: [0, 130, 4, 133, 26, 123, 125, 29, 126]
-		Out: [0, 4, 133, 134, 26, 123, 125, 29, 126]
+		In: [0, 1, 130, 2, 4, 133, 10, 26, 123, 125, 29, 126]
+		Out: [0, 1, 2, 4, 133, 134, 26, 10, 123, 125, 29, 126]
 
 	Basic Block: 261
 		Type: MOVE
@@ -2131,8 +2140,8 @@ Scope: QS_Sort
 		Next: 262
 		Use: [133, 134]
 		Def: [135]
-		In: [0, 4, 133, 134, 26, 123, 125, 29, 126]
-		Out: [0, 4, 135, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 4, 133, 134, 26, 10, 123, 125, 29, 126]
+		Out: [0, 1, 2, 4, 135, 26, 10, 123, 125, 29, 126]
 
 	Basic Block: 262
 		Type: CJUMP
@@ -2140,8 +2149,8 @@ Scope: QS_Sort
 		Next: 263
 		Use: [135]
 		Def: []
-		In: [0, 4, 135, 26, 123, 125, 29, 126]
-		Out: [0, 4, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 4, 135, 26, 10, 123, 125, 29, 126]
+		Out: [0, 1, 2, 4, 26, 10, 123, 125, 29, 126]
 
 	Basic Block: 263
 		Type: ERROR
@@ -2149,8 +2158,8 @@ Scope: QS_Sort
 		Next: 264
 		Use: []
 		Def: []
-		In: [0, 4, 26, 123, 125, 29, 126]
-		Out: [0, 4, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 4, 26, 10, 123, 125, 29, 126]
+		Out: [0, 1, 2, 4, 26, 10, 123, 125, 29, 126]
 
 	Basic Block: 264
 		Type: NOOP
@@ -2158,8 +2167,8 @@ Scope: QS_Sort
 		Next: 266
 		Use: []
 		Def: []
-		In: [0, 4, 26, 123, 125, 29, 126]
-		Out: [0, 4, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 4, 26, 10, 123, 125, 29, 126]
+		Out: [0, 1, 2, 4, 26, 10, 123, 125, 29, 126]
 
 	Basic Block: 266
 		Type: MOVE
@@ -2167,8 +2176,8 @@ Scope: QS_Sort
 		Next: 267
 		Use: []
 		Def: [136]
-		In: [0, 4, 26, 123, 125, 29, 126]
-		Out: [0, 4, 136, 26, 123, 125, 29, 126]
+		In: [0, 1, 2, 4, 26, 10, 123, 125, 29, 126]
+		Out: [0, 1, 2, 4, 136, 26, 10, 123, 125, 29, 126]
 
 	Basic Block: 267
 		Type: MOVE
@@ -2176,8 +2185,8 @@ Scope: QS_Sort
 		Next: 268
 		Use: [136, 126]
 		Def: [137]
-		In: [0, 4, 136, 26, 123, 125, 29, 126]
-		Out: [0, 4, 137, 26, 123, 125, 29]
+		In: [0, 1, 2, 4, 136, 26, 10, 123, 125, 29, 126]
+		Out: [0, 1, 2, 4, 137, 26, 10, 123, 125, 29]
 
 	Basic Block: 268
 		Type: MOVE
@@ -2185,8 +2194,8 @@ Scope: QS_Sort
 		Next: 269
 		Use: [137, 125]
 		Def: [138]
-		In: [0, 4, 137, 26, 123, 125, 29]
-		Out: [0, 4, 138, 26, 123, 29]
+		In: [0, 1, 2, 4, 137, 26, 10, 123, 125, 29]
+		Out: [0, 1, 2, 4, 138, 26, 10, 123, 29]
 
 	Basic Block: 269
 		Type: HLOAD
@@ -2194,8 +2203,8 @@ Scope: QS_Sort
 		Next: 270
 		Use: [138]
 		Def: [124]
-		In: [0, 4, 138, 26, 123, 29]
-		Out: [0, 4, 26, 123, 124, 29]
+		In: [0, 1, 2, 4, 138, 26, 10, 123, 29]
+		Out: [0, 1, 2, 4, 26, 10, 123, 124, 29]
 
 	Basic Block: 270
 		Type: HSTORE
@@ -2203,8 +2212,8 @@ Scope: QS_Sort
 		Next: 271
 		Use: [123, 124]
 		Def: []
-		In: [0, 4, 26, 123, 124, 29]
-		Out: [0, 4, 26, 29]
+		In: [0, 1, 2, 4, 26, 10, 123, 124, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 271
 		Type: MOVE
@@ -2212,8 +2221,8 @@ Scope: QS_Sort
 		Next: 272
 		Use: []
 		Def: [140]
-		In: [0, 4, 26, 29]
-		Out: [0, 4, 26, 140, 29]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 140, 29]
 
 	Basic Block: 272
 		Type: MOVE
@@ -2221,8 +2230,8 @@ Scope: QS_Sort
 		Next: 273
 		Use: []
 		Def: [141]
-		In: [0, 4, 26, 140, 29]
-		Out: [0, 4, 26, 140, 141, 29]
+		In: [0, 1, 2, 4, 26, 10, 140, 29]
+		Out: [0, 1, 2, 4, 26, 10, 140, 141, 29]
 
 	Basic Block: 273
 		Type: MOVE
@@ -2230,8 +2239,8 @@ Scope: QS_Sort
 		Next: 274
 		Use: [140, 141]
 		Def: [142]
-		In: [0, 4, 26, 140, 141, 29]
-		Out: [0, 4, 26, 29, 142]
+		In: [0, 1, 2, 4, 26, 10, 140, 141, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29, 142]
 
 	Basic Block: 274
 		Type: MOVE
@@ -2239,8 +2248,8 @@ Scope: QS_Sort
 		Next: 275
 		Use: [142]
 		Def: [139]
-		In: [0, 4, 26, 29, 142]
-		Out: [0, 4, 26, 139, 29]
+		In: [0, 1, 2, 4, 26, 10, 29, 142]
+		Out: [0, 1, 2, 4, 26, 10, 139, 29]
 
 	Basic Block: 275
 		Type: MOVE
@@ -2248,8 +2257,8 @@ Scope: QS_Sort
 		Next: 276
 		Use: [0, 139]
 		Def: [144]
-		In: [0, 4, 26, 139, 29]
-		Out: [144, 0, 4, 26, 29]
+		In: [0, 1, 2, 4, 26, 10, 139, 29]
+		Out: [144, 0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 276
 		Type: HLOAD
@@ -2257,8 +2266,8 @@ Scope: QS_Sort
 		Next: 277
 		Use: [144]
 		Def: [143]
-		In: [144, 0, 4, 26, 29]
-		Out: [0, 4, 26, 29]
+		In: [144, 0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 277
 		Type: MOVE
@@ -2266,8 +2275,8 @@ Scope: QS_Sort
 		Next: 278
 		Use: []
 		Def: [146]
-		In: [0, 4, 26, 29]
-		Out: [0, 146, 4, 26, 29]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 146, 2, 4, 26, 10, 29]
 
 	Basic Block: 278
 		Type: MOVE
@@ -2275,8 +2284,8 @@ Scope: QS_Sort
 		Next: 279
 		Use: [146, 29]
 		Def: [147]
-		In: [0, 146, 4, 26, 29]
-		Out: [0, 147, 4, 26, 29]
+		In: [0, 1, 146, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 147, 4, 26, 10, 29]
 
 	Basic Block: 279
 		Type: MOVE
@@ -2284,8 +2293,8 @@ Scope: QS_Sort
 		Next: 280
 		Use: [147]
 		Def: [145]
-		In: [0, 147, 4, 26, 29]
-		Out: [0, 145, 4, 26, 29]
+		In: [0, 1, 2, 147, 4, 26, 10, 29]
+		Out: [0, 145, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 280
 		Type: MOVE
@@ -2293,8 +2302,8 @@ Scope: QS_Sort
 		Next: 281
 		Use: []
 		Def: [149]
-		In: [0, 145, 4, 26, 29]
-		Out: [0, 145, 4, 149, 26, 29]
+		In: [0, 145, 1, 2, 4, 26, 10, 29]
+		Out: [0, 145, 1, 2, 4, 149, 26, 10, 29]
 
 	Basic Block: 281
 		Type: MOVE
@@ -2302,8 +2311,8 @@ Scope: QS_Sort
 		Next: 282
 		Use: []
 		Def: [150]
-		In: [0, 145, 4, 149, 26, 29]
-		Out: [0, 145, 4, 149, 150, 26, 29]
+		In: [0, 145, 1, 2, 4, 149, 26, 10, 29]
+		Out: [0, 145, 1, 2, 4, 149, 150, 26, 10, 29]
 
 	Basic Block: 282
 		Type: MOVE
@@ -2311,8 +2320,8 @@ Scope: QS_Sort
 		Next: 283
 		Use: [149, 150]
 		Def: [151]
-		In: [0, 145, 4, 149, 150, 26, 29]
-		Out: [0, 145, 4, 151, 26, 29]
+		In: [0, 145, 1, 2, 4, 149, 150, 26, 10, 29]
+		Out: [0, 145, 1, 2, 4, 151, 26, 10, 29]
 
 	Basic Block: 283
 		Type: MOVE
@@ -2320,8 +2329,8 @@ Scope: QS_Sort
 		Next: 284
 		Use: [151]
 		Def: [139]
-		In: [0, 145, 4, 151, 26, 29]
-		Out: [0, 145, 4, 26, 139, 29]
+		In: [0, 145, 1, 2, 4, 151, 26, 10, 29]
+		Out: [0, 145, 1, 2, 4, 26, 10, 139, 29]
 
 	Basic Block: 284
 		Type: MOVE
@@ -2329,8 +2338,8 @@ Scope: QS_Sort
 		Next: 285
 		Use: [0, 139]
 		Def: [152]
-		In: [0, 145, 4, 26, 139, 29]
-		Out: [145, 4, 152, 26, 29]
+		In: [0, 145, 1, 2, 4, 26, 10, 139, 29]
+		Out: [0, 145, 1, 2, 4, 152, 26, 10, 29]
 
 	Basic Block: 285
 		Type: HLOAD
@@ -2338,8 +2347,8 @@ Scope: QS_Sort
 		Next: 286
 		Use: [152]
 		Def: [143]
-		In: [145, 4, 152, 26, 29]
-		Out: [145, 4, 26, 29, 143]
+		In: [0, 145, 1, 2, 4, 152, 26, 10, 29]
+		Out: [0, 145, 1, 2, 4, 26, 10, 29, 143]
 
 	Basic Block: 286
 		Type: HLOAD
@@ -2347,8 +2356,8 @@ Scope: QS_Sort
 		Next: 287
 		Use: [143]
 		Def: [148]
-		In: [145, 4, 26, 29, 143]
-		Out: [145, 148, 4, 26, 29, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 29, 143]
+		Out: [0, 145, 1, 2, 148, 4, 26, 10, 29, 143]
 
 	Basic Block: 287
 		Type: MOVE
@@ -2356,8 +2365,8 @@ Scope: QS_Sort
 		Next: 288
 		Use: []
 		Def: [154]
-		In: [145, 148, 4, 26, 29, 143]
-		Out: [145, 148, 4, 154, 26, 29, 143]
+		In: [0, 145, 1, 2, 148, 4, 26, 10, 29, 143]
+		Out: [0, 145, 1, 2, 148, 4, 154, 26, 10, 29, 143]
 
 	Basic Block: 288
 		Type: MOVE
@@ -2365,8 +2374,8 @@ Scope: QS_Sort
 		Next: 289
 		Use: [148, 154]
 		Def: [155]
-		In: [145, 148, 4, 154, 26, 29, 143]
-		Out: [145, 4, 26, 155, 29, 143]
+		In: [0, 145, 1, 2, 148, 4, 154, 26, 10, 29, 143]
+		Out: [0, 145, 1, 2, 4, 26, 10, 155, 29, 143]
 
 	Basic Block: 289
 		Type: MOVE
@@ -2374,8 +2383,8 @@ Scope: QS_Sort
 		Next: 290
 		Use: [155]
 		Def: [153]
-		In: [145, 4, 26, 155, 29, 143]
-		Out: [145, 4, 153, 26, 29, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 155, 29, 143]
+		Out: [0, 145, 1, 2, 4, 153, 26, 10, 29, 143]
 
 	Basic Block: 290
 		Type: MOVE
@@ -2383,8 +2392,8 @@ Scope: QS_Sort
 		Next: 291
 		Use: []
 		Def: [156]
-		In: [145, 4, 153, 26, 29, 143]
-		Out: [145, 4, 153, 26, 156, 29, 143]
+		In: [0, 145, 1, 2, 4, 153, 26, 10, 29, 143]
+		Out: [0, 145, 1, 2, 4, 153, 26, 10, 156, 29, 143]
 
 	Basic Block: 291
 		Type: MOVE
@@ -2392,8 +2401,8 @@ Scope: QS_Sort
 		Next: 292
 		Use: [145, 153]
 		Def: [157]
-		In: [145, 4, 153, 26, 156, 29, 143]
-		Out: [145, 4, 26, 156, 157, 29, 143]
+		In: [0, 145, 1, 2, 4, 153, 26, 10, 156, 29, 143]
+		Out: [0, 145, 1, 2, 4, 26, 10, 156, 157, 29, 143]
 
 	Basic Block: 292
 		Type: MOVE
@@ -2401,8 +2410,8 @@ Scope: QS_Sort
 		Next: 293
 		Use: [156, 157]
 		Def: [158]
-		In: [145, 4, 26, 156, 157, 29, 143]
-		Out: [145, 4, 26, 29, 158, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 156, 157, 29, 143]
+		Out: [0, 145, 1, 2, 4, 26, 10, 29, 158, 143]
 
 	Basic Block: 293
 		Type: CJUMP
@@ -2410,8 +2419,8 @@ Scope: QS_Sort
 		Next: 294
 		Use: [158]
 		Def: []
-		In: [145, 4, 26, 29, 158, 143]
-		Out: [145, 4, 26, 29, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 29, 158, 143]
+		Out: [0, 145, 1, 2, 4, 26, 10, 29, 143]
 
 	Basic Block: 294
 		Type: ERROR
@@ -2419,8 +2428,8 @@ Scope: QS_Sort
 		Next: 295
 		Use: []
 		Def: []
-		In: [145, 4, 26, 29, 143]
-		Out: [145, 4, 26, 29, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 29, 143]
+		Out: [0, 145, 1, 2, 4, 26, 10, 29, 143]
 
 	Basic Block: 295
 		Type: NOOP
@@ -2428,8 +2437,8 @@ Scope: QS_Sort
 		Next: 297
 		Use: []
 		Def: []
-		In: [145, 4, 26, 29, 143]
-		Out: [145, 4, 26, 29, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 29, 143]
+		Out: [0, 145, 1, 2, 4, 26, 10, 29, 143]
 
 	Basic Block: 297
 		Type: MOVE
@@ -2437,8 +2446,8 @@ Scope: QS_Sort
 		Next: 298
 		Use: []
 		Def: [159]
-		In: [145, 4, 26, 29, 143]
-		Out: [145, 4, 26, 29, 159, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 29, 143]
+		Out: [0, 145, 1, 2, 4, 26, 10, 29, 159, 143]
 
 	Basic Block: 298
 		Type: MOVE
@@ -2446,8 +2455,8 @@ Scope: QS_Sort
 		Next: 299
 		Use: [145, 159]
 		Def: [160]
-		In: [145, 4, 26, 29, 159, 143]
-		Out: [160, 4, 26, 29, 143]
+		In: [0, 145, 1, 2, 4, 26, 10, 29, 159, 143]
+		Out: [160, 0, 1, 2, 4, 26, 10, 29, 143]
 
 	Basic Block: 299
 		Type: MOVE
@@ -2455,8 +2464,8 @@ Scope: QS_Sort
 		Next: 300
 		Use: [160, 143]
 		Def: [161]
-		In: [160, 4, 26, 29, 143]
-		Out: [161, 4, 26, 29]
+		In: [160, 0, 1, 2, 4, 26, 10, 29, 143]
+		Out: [0, 161, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 300
 		Type: HSTORE
@@ -2464,8 +2473,8 @@ Scope: QS_Sort
 		Next: 301
 		Use: [161, 4]
 		Def: []
-		In: [161, 4, 26, 29]
-		Out: [26, 29]
+		In: [0, 161, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 301
 		Type: MOVE
@@ -2473,8 +2482,8 @@ Scope: QS_Sort
 		Next: 302
 		Use: [26, 29]
 		Def: [162]
-		In: [26, 29]
-		Out: [162]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 162, 2, 4, 26, 10, 29]
 
 	Basic Block: 302
 		Type: CJUMP
@@ -2482,8 +2491,8 @@ Scope: QS_Sort
 		Next: 303
 		Use: [162]
 		Def: []
-		In: [162]
-		Out: []
+		In: [0, 1, 162, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29]
 
 	Basic Block: 303
 		Type: MOVE
@@ -2491,8 +2500,8 @@ Scope: QS_Sort
 		Next: 304
 		Use: []
 		Def: [163]
-		In: []
-		Out: [163]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 163, 4, 26, 10, 29]
 
 	Basic Block: 304
 		Type: MOVE
@@ -2500,8 +2509,8 @@ Scope: QS_Sort
 		Next: 305
 		Use: [163]
 		Def: [30]
-		In: [163]
-		Out: []
+		In: [0, 1, 2, 163, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29, 30]
 
 	Basic Block: 305
 		Type: JUMP
@@ -2509,8 +2518,8 @@ Scope: QS_Sort
 		Next: 306
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 2, 4, 26, 10, 29, 30]
+		Out: [0, 1, 2, 4, 26, 10, 29, 30]
 
 	Basic Block: 306
 		Type: MOVE
@@ -2518,8 +2527,8 @@ Scope: QS_Sort
 		Next: 308
 		Use: []
 		Def: [164]
-		In: []
-		Out: [164]
+		In: [0, 1, 2, 4, 26, 10, 29]
+		Out: [0, 1, 2, 164, 4, 26, 10, 29]
 
 	Basic Block: 308
 		Type: MOVE
@@ -2527,8 +2536,8 @@ Scope: QS_Sort
 		Next: 309
 		Use: [164]
 		Def: [30]
-		In: [164]
-		Out: []
+		In: [0, 1, 2, 164, 4, 26, 10, 29]
+		Out: [0, 1, 2, 4, 26, 10, 29, 30]
 
 	Basic Block: 309
 		Type: NOOP
@@ -2536,8 +2545,8 @@ Scope: QS_Sort
 		Next: 311
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 2, 4, 26, 10, 29, 30]
+		Out: [0, 1, 2, 4, 26, 10, 29, 30]
 
 	Basic Block: 311
 		Type: JUMP
@@ -2545,8 +2554,8 @@ Scope: QS_Sort
 		Next: 312
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 2, 4, 26, 10, 29, 30]
+		Out: [0, 1, 2, 4, 26, 10, 29, 30]
 
 	Basic Block: 312
 		Type: NOOP
@@ -3851,6 +3860,15 @@ Scope: QS_Sort
 		Use: []
 		Def: [278]
 		In: []
+		Out: [278]
+
+	Basic Block: 465
+		Type: RETURN
+		Label: null
+		Next: 466
+		Use: [278]
+		Def: []
+		In: [278]
 		Out: []
 
 Scope: QS_Print
@@ -3969,7 +3987,7 @@ Scope: QS_Print
 		Use: [0]
 		Def: [10]
 		In: [0, 2, 11]
-		Out: [2, 10, 11]
+		Out: [0, 2, 10, 11]
 
 	Basic Block: 483
 		Type: HLOAD
@@ -3977,8 +3995,8 @@ Scope: QS_Print
 		Next: 484
 		Use: [10]
 		Def: [14]
-		In: [2, 10, 11]
-		Out: [2, 10, 11, 14]
+		In: [0, 2, 10, 11]
+		Out: [0, 2, 10, 11, 14]
 
 	Basic Block: 484
 		Type: MOVE
@@ -3986,8 +4004,8 @@ Scope: QS_Print
 		Next: 485
 		Use: []
 		Def: [16]
-		In: [2, 10, 11, 14]
-		Out: [16, 2, 10, 11, 14]
+		In: [0, 2, 10, 11, 14]
+		Out: [16, 0, 2, 10, 11, 14]
 
 	Basic Block: 485
 		Type: MOVE
@@ -3995,8 +4013,8 @@ Scope: QS_Print
 		Next: 486
 		Use: [16, 14]
 		Def: [17]
-		In: [16, 2, 10, 11, 14]
-		Out: [17, 2, 10, 11]
+		In: [16, 0, 2, 10, 11, 14]
+		Out: [0, 17, 2, 10, 11]
 
 	Basic Block: 486
 		Type: MOVE
@@ -4004,8 +4022,8 @@ Scope: QS_Print
 		Next: 487
 		Use: [17]
 		Def: [15]
-		In: [17, 2, 10, 11]
-		Out: [2, 10, 11, 15]
+		In: [0, 17, 2, 10, 11]
+		Out: [0, 2, 10, 11, 15]
 
 	Basic Block: 487
 		Type: MOVE
@@ -4013,8 +4031,8 @@ Scope: QS_Print
 		Next: 488
 		Use: []
 		Def: [18]
-		In: [2, 10, 11, 15]
-		Out: [18, 2, 10, 11, 15]
+		In: [0, 2, 10, 11, 15]
+		Out: [0, 18, 2, 10, 11, 15]
 
 	Basic Block: 488
 		Type: MOVE
@@ -4022,8 +4040,8 @@ Scope: QS_Print
 		Next: 489
 		Use: [11, 15]
 		Def: [19]
-		In: [18, 2, 10, 11, 15]
-		Out: [18, 2, 19, 10, 11]
+		In: [0, 18, 2, 10, 11, 15]
+		Out: [0, 18, 2, 19, 10, 11]
 
 	Basic Block: 489
 		Type: MOVE
@@ -4031,8 +4049,8 @@ Scope: QS_Print
 		Next: 490
 		Use: [18, 19]
 		Def: [20]
-		In: [18, 2, 19, 10, 11]
-		Out: [2, 20, 10, 11]
+		In: [0, 18, 2, 19, 10, 11]
+		Out: [0, 2, 20, 10, 11]
 
 	Basic Block: 490
 		Type: CJUMP
@@ -4040,8 +4058,8 @@ Scope: QS_Print
 		Next: 491
 		Use: [20]
 		Def: []
-		In: [2, 20, 10, 11]
-		Out: [2, 10, 11]
+		In: [0, 2, 20, 10, 11]
+		Out: [0, 2, 10, 11]
 
 	Basic Block: 491
 		Type: ERROR
@@ -4049,8 +4067,8 @@ Scope: QS_Print
 		Next: 492
 		Use: []
 		Def: []
-		In: [2, 10, 11]
-		Out: [2, 10, 11]
+		In: [0, 2, 10, 11]
+		Out: [0, 2, 10, 11]
 
 	Basic Block: 492
 		Type: NOOP
@@ -4058,8 +4076,8 @@ Scope: QS_Print
 		Next: 494
 		Use: []
 		Def: []
-		In: [2, 10, 11]
-		Out: [2, 10, 11]
+		In: [0, 2, 10, 11]
+		Out: [0, 2, 10, 11]
 
 	Basic Block: 494
 		Type: MOVE
@@ -4067,8 +4085,8 @@ Scope: QS_Print
 		Next: 495
 		Use: []
 		Def: [21]
-		In: [2, 10, 11]
-		Out: [2, 21, 10, 11]
+		In: [0, 2, 10, 11]
+		Out: [0, 2, 21, 10, 11]
 
 	Basic Block: 495
 		Type: MOVE
@@ -4076,8 +4094,8 @@ Scope: QS_Print
 		Next: 496
 		Use: [21, 11]
 		Def: [22]
-		In: [2, 21, 10, 11]
-		Out: [2, 22, 10]
+		In: [0, 2, 21, 10, 11]
+		Out: [0, 2, 22, 10]
 
 	Basic Block: 496
 		Type: MOVE
@@ -4085,8 +4103,8 @@ Scope: QS_Print
 		Next: 497
 		Use: [22, 10]
 		Def: [23]
-		In: [2, 22, 10]
-		Out: [2, 23]
+		In: [0, 2, 22, 10]
+		Out: [0, 2, 23]
 
 	Basic Block: 497
 		Type: HLOAD
@@ -4094,8 +4112,8 @@ Scope: QS_Print
 		Next: 498
 		Use: [23]
 		Def: [9]
-		In: [2, 23]
-		Out: [2, 9]
+		In: [0, 2, 23]
+		Out: [0, 2, 9]
 
 	Basic Block: 498
 		Type: PRINT
@@ -4103,8 +4121,8 @@ Scope: QS_Print
 		Next: 499
 		Use: [9]
 		Def: []
-		In: [2, 9]
-		Out: [2]
+		In: [0, 2, 9]
+		Out: [0, 2]
 
 	Basic Block: 499
 		Type: MOVE
@@ -4112,8 +4130,8 @@ Scope: QS_Print
 		Next: 500
 		Use: []
 		Def: [24]
-		In: [2]
-		Out: [2, 24]
+		In: [0, 2]
+		Out: [0, 2, 24]
 
 	Basic Block: 500
 		Type: MOVE
@@ -4121,8 +4139,8 @@ Scope: QS_Print
 		Next: 501
 		Use: [2, 24]
 		Def: [25]
-		In: [2, 24]
-		Out: [25]
+		In: [0, 2, 24]
+		Out: [0, 25]
 
 	Basic Block: 501
 		Type: MOVE
@@ -4130,8 +4148,8 @@ Scope: QS_Print
 		Next: 502
 		Use: [25]
 		Def: [2]
-		In: [25]
-		Out: []
+		In: [0, 25]
+		Out: [0, 2]
 
 	Basic Block: 502
 		Type: JUMP
@@ -4139,8 +4157,8 @@ Scope: QS_Print
 		Next: 503
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 2]
+		Out: [0, 2]
 
 	Basic Block: 503
 		Type: NOOP
@@ -4158,6 +4176,15 @@ Scope: QS_Print
 		Use: []
 		Def: [26]
 		In: []
+		Out: [26]
+
+	Basic Block: 506
+		Type: RETURN
+		Label: null
+		Next: 507
+		Use: [26]
+		Def: []
+		In: [26]
 		Out: []
 
 Scope: QS_Init
@@ -4168,7 +4195,7 @@ Scope: QS_Init
 		Use: [0, 1]
 		Def: []
 		In: [0, 1]
-		Out: [1]
+		Out: [0, 1]
 
 	Basic Block: 511
 		Type: MOVE
@@ -4176,8 +4203,8 @@ Scope: QS_Init
 		Next: 512
 		Use: []
 		Def: [4]
-		In: [1]
-		Out: [1, 4]
+		In: [0, 1]
+		Out: [0, 1, 4]
 
 	Basic Block: 512
 		Type: MOVE
@@ -4185,8 +4212,8 @@ Scope: QS_Init
 		Next: 513
 		Use: [1, 4]
 		Def: [5]
-		In: [1, 4]
-		Out: [1, 5]
+		In: [0, 1, 4]
+		Out: [0, 1, 5]
 
 	Basic Block: 513
 		Type: MOVE
@@ -4194,8 +4221,8 @@ Scope: QS_Init
 		Next: 514
 		Use: []
 		Def: [6]
-		In: [1, 5]
-		Out: [1, 5, 6]
+		In: [0, 1, 5]
+		Out: [0, 1, 5, 6]
 
 	Basic Block: 514
 		Type: MOVE
@@ -4203,8 +4230,8 @@ Scope: QS_Init
 		Next: 515
 		Use: [5, 6]
 		Def: [7]
-		In: [1, 5, 6]
-		Out: [1, 7]
+		In: [0, 1, 5, 6]
+		Out: [0, 1, 7]
 
 	Basic Block: 515
 		Type: MOVE
@@ -4212,8 +4239,8 @@ Scope: QS_Init
 		Next: 516
 		Use: [7]
 		Def: [8]
-		In: [1, 7]
-		Out: [1, 8]
+		In: [0, 1, 7]
+		Out: [0, 1, 8]
 
 	Basic Block: 516
 		Type: MOVE
@@ -4221,8 +4248,8 @@ Scope: QS_Init
 		Next: 517
 		Use: [8]
 		Def: [3]
-		In: [1, 8]
-		Out: [1, 3]
+		In: [0, 1, 8]
+		Out: [0, 1, 3]
 
 	Basic Block: 517
 		Type: MOVE
@@ -4230,8 +4257,8 @@ Scope: QS_Init
 		Next: 518
 		Use: []
 		Def: [10]
-		In: [1, 3]
-		Out: [1, 3, 10]
+		In: [0, 1, 3]
+		Out: [0, 1, 3, 10]
 
 	Basic Block: 518
 		Type: MOVE
@@ -4239,8 +4266,8 @@ Scope: QS_Init
 		Next: 519
 		Use: [10]
 		Def: [9]
-		In: [1, 3, 10]
-		Out: [1, 3, 9]
+		In: [0, 1, 3, 10]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 519
 		Type: MOVE
@@ -4248,8 +4275,8 @@ Scope: QS_Init
 		Next: 521
 		Use: []
 		Def: [11]
-		In: [1, 3, 9]
-		Out: [1, 3, 9, 11]
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 3, 9, 11]
 
 	Basic Block: 521
 		Type: MOVE
@@ -4257,8 +4284,8 @@ Scope: QS_Init
 		Next: 522
 		Use: [1, 11]
 		Def: [12]
-		In: [1, 3, 9, 11]
-		Out: [3, 9, 12]
+		In: [0, 1, 3, 9, 11]
+		Out: [0, 1, 3, 9, 12]
 
 	Basic Block: 522
 		Type: MOVE
@@ -4266,8 +4293,8 @@ Scope: QS_Init
 		Next: 523
 		Use: []
 		Def: [13]
-		In: [3, 9, 12]
-		Out: [3, 9, 12, 13]
+		In: [0, 1, 3, 9, 12]
+		Out: [0, 1, 3, 9, 12, 13]
 
 	Basic Block: 523
 		Type: MOVE
@@ -4275,8 +4302,8 @@ Scope: QS_Init
 		Next: 524
 		Use: [12, 13]
 		Def: [14]
-		In: [3, 9, 12, 13]
-		Out: [3, 9, 14]
+		In: [0, 1, 3, 9, 12, 13]
+		Out: [0, 1, 3, 9, 14]
 
 	Basic Block: 524
 		Type: MOVE
@@ -4284,8 +4311,8 @@ Scope: QS_Init
 		Next: 525
 		Use: []
 		Def: [15]
-		In: [3, 9, 14]
-		Out: [3, 9, 14, 15]
+		In: [0, 1, 3, 9, 14]
+		Out: [0, 1, 3, 9, 14, 15]
 
 	Basic Block: 525
 		Type: MOVE
@@ -4293,8 +4320,8 @@ Scope: QS_Init
 		Next: 526
 		Use: [14, 15]
 		Def: [16]
-		In: [3, 9, 14, 15]
-		Out: [16, 3, 9]
+		In: [0, 1, 3, 9, 14, 15]
+		Out: [16, 0, 1, 3, 9]
 
 	Basic Block: 526
 		Type: MOVE
@@ -4302,8 +4329,8 @@ Scope: QS_Init
 		Next: 527
 		Use: [16, 9]
 		Def: [17]
-		In: [16, 3, 9]
-		Out: [17, 3, 9]
+		In: [16, 0, 1, 3, 9]
+		Out: [0, 17, 1, 3, 9]
 
 	Basic Block: 527
 		Type: CJUMP
@@ -4311,8 +4338,8 @@ Scope: QS_Init
 		Next: 528
 		Use: [17]
 		Def: []
-		In: [17, 3, 9]
-		Out: [3, 9]
+		In: [0, 17, 1, 3, 9]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 528
 		Type: MOVE
@@ -4320,8 +4347,8 @@ Scope: QS_Init
 		Next: 529
 		Use: [3, 9]
 		Def: [18]
-		In: [3, 9]
-		Out: [18, 9]
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 18, 3, 9]
 
 	Basic Block: 529
 		Type: MOVE
@@ -4329,8 +4356,8 @@ Scope: QS_Init
 		Next: 530
 		Use: []
 		Def: [19]
-		In: [18, 9]
-		Out: [18, 19, 9]
+		In: [0, 1, 18, 3, 9]
+		Out: [0, 1, 18, 19, 3, 9]
 
 	Basic Block: 530
 		Type: HSTORE
@@ -4338,8 +4365,8 @@ Scope: QS_Init
 		Next: 531
 		Use: [18, 19]
 		Def: []
-		In: [18, 19, 9]
-		Out: [9]
+		In: [0, 1, 18, 19, 3, 9]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 531
 		Type: MOVE
@@ -4347,8 +4374,8 @@ Scope: QS_Init
 		Next: 532
 		Use: []
 		Def: [20]
-		In: [9]
-		Out: [20, 9]
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 3, 20, 9]
 
 	Basic Block: 532
 		Type: MOVE
@@ -4356,8 +4383,8 @@ Scope: QS_Init
 		Next: 533
 		Use: [20, 9]
 		Def: [21]
-		In: [20, 9]
-		Out: [21]
+		In: [0, 1, 3, 20, 9]
+		Out: [0, 1, 3, 21]
 
 	Basic Block: 533
 		Type: MOVE
@@ -4365,8 +4392,8 @@ Scope: QS_Init
 		Next: 534
 		Use: [21]
 		Def: [9]
-		In: [21]
-		Out: []
+		In: [0, 1, 3, 21]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 534
 		Type: JUMP
@@ -4374,8 +4401,8 @@ Scope: QS_Init
 		Next: 535
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [0, 1, 3, 9]
+		Out: [0, 1, 3, 9]
 
 	Basic Block: 535
 		Type: MOVE
@@ -7210,6 +7237,15 @@ Scope: QS_Init
 		Use: []
 		Def: [274]
 		In: []
+		Out: [274]
+
+	Basic Block: 861
+		Type: RETURN
+		Label: null
+		Next: 862
+		Use: [274]
+		Def: []
+		In: [274]
 		Out: []
 
 Labels:
@@ -7256,3 +7292,2508 @@ Labels:
 	L7: 110
 	L8: 152
 	L9: 129
+Scope: MAIN
+	Temp: 0
+		Start: 31
+		End: 35
+
+	Temp: 1
+		Start: 4
+		End: 29
+
+	Temp: 2
+		Start: 2
+		End: 3
+
+	Temp: 3
+		Start: 3
+		End: 4
+
+	Temp: 4
+		Start: 7
+		End: 31
+
+	Temp: 5
+		Start: 5
+		End: 6
+
+	Temp: 6
+		Start: 6
+		End: 7
+
+	Temp: 7
+		Start: 8
+		End: 9
+
+	Temp: 8
+		Start: 10
+		End: 11
+
+	Temp: 9
+		Start: 12
+		End: 13
+
+	Temp: 10
+		Start: 14
+		End: 15
+
+	Temp: 11
+		Start: 17
+		End: 28
+
+	Temp: 12
+		Start: 16
+		End: 17
+
+	Temp: 13
+		Start: 18
+		End: 20
+
+	Temp: 14
+		Start: 20
+		End: 21
+
+	Temp: 15
+		Start: 22
+		End: 24
+
+	Temp: 16
+		Start: 23
+		End: 24
+
+	Temp: 17
+		Start: 25
+		End: 26
+
+	Temp: 18
+		Start: 26
+		End: 27
+
+	Temp: 19
+		Start: 32
+		End: 33
+
+	Temp: 20
+		Start: 33
+		End: 35
+
+	Temp: 21
+		Start: 34
+		End: 35
+
+	Temp: 22
+		Start: 35
+		End: 36
+
+Scope: QS_Init
+	Temp: 0
+		Start: 510
+		End: 842
+
+	Temp: 1
+		Start: 510
+		End: 537
+
+	Temp: 3
+		Start: 516
+		End: 539
+
+	Temp: 4
+		Start: 511
+		End: 512
+
+	Temp: 5
+		Start: 512
+		End: 514
+
+	Temp: 6
+		Start: 513
+		End: 514
+
+	Temp: 7
+		Start: 514
+		End: 515
+
+	Temp: 8
+		Start: 515
+		End: 516
+
+	Temp: 9
+		Start: 518
+		End: 534
+
+	Temp: 10
+		Start: 517
+		End: 518
+
+	Temp: 11
+		Start: 519
+		End: 521
+
+	Temp: 12
+		Start: 521
+		End: 523
+
+	Temp: 13
+		Start: 522
+		End: 523
+
+	Temp: 14
+		Start: 523
+		End: 525
+
+	Temp: 15
+		Start: 524
+		End: 525
+
+	Temp: 16
+		Start: 525
+		End: 526
+
+	Temp: 17
+		Start: 526
+		End: 527
+
+	Temp: 18
+		Start: 528
+		End: 530
+
+	Temp: 19
+		Start: 529
+		End: 530
+
+	Temp: 20
+		Start: 531
+		End: 532
+
+	Temp: 21
+		Start: 532
+		End: 533
+
+	Temp: 22
+		Start: 535
+		End: 537
+
+	Temp: 23
+		Start: 537
+		End: 538
+
+	Temp: 24
+		Start: 543
+		End: 554
+
+	Temp: 25
+		Start: 540
+		End: 542
+
+	Temp: 26
+		Start: 541
+		End: 542
+
+	Temp: 27
+		Start: 542
+		End: 543
+
+	Temp: 28
+		Start: 555
+		End: 569
+
+	Temp: 29
+		Start: 544
+		End: 545
+
+	Temp: 30
+		Start: 549
+		End: 568
+
+	Temp: 31
+		Start: 546
+		End: 548
+
+	Temp: 32
+		Start: 547
+		End: 548
+
+	Temp: 33
+		Start: 548
+		End: 549
+
+	Temp: 34
+		Start: 556
+		End: 558
+
+	Temp: 35
+		Start: 550
+		End: 552
+
+	Temp: 36
+		Start: 551
+		End: 552
+
+	Temp: 37
+		Start: 552
+		End: 553
+
+	Temp: 38
+		Start: 554
+		End: 555
+
+	Temp: 39
+		Start: 559
+		End: 561
+
+	Temp: 40
+		Start: 557
+		End: 558
+
+	Temp: 41
+		Start: 558
+		End: 559
+
+	Temp: 42
+		Start: 560
+		End: 562
+
+	Temp: 43
+		Start: 561
+		End: 562
+
+	Temp: 44
+		Start: 562
+		End: 563
+
+	Temp: 45
+		Start: 567
+		End: 568
+
+	Temp: 46
+		Start: 568
+		End: 569
+
+	Temp: 47
+		Start: 569
+		End: 571
+
+	Temp: 48
+		Start: 570
+		End: 571
+
+	Temp: 49
+		Start: 575
+		End: 586
+
+	Temp: 50
+		Start: 572
+		End: 574
+
+	Temp: 51
+		Start: 573
+		End: 574
+
+	Temp: 52
+		Start: 574
+		End: 575
+
+	Temp: 53
+		Start: 587
+		End: 601
+
+	Temp: 54
+		Start: 576
+		End: 577
+
+	Temp: 55
+		Start: 581
+		End: 600
+
+	Temp: 56
+		Start: 578
+		End: 580
+
+	Temp: 57
+		Start: 579
+		End: 580
+
+	Temp: 58
+		Start: 580
+		End: 581
+
+	Temp: 59
+		Start: 588
+		End: 590
+
+	Temp: 60
+		Start: 582
+		End: 584
+
+	Temp: 61
+		Start: 583
+		End: 584
+
+	Temp: 62
+		Start: 584
+		End: 585
+
+	Temp: 63
+		Start: 586
+		End: 587
+
+	Temp: 64
+		Start: 591
+		End: 593
+
+	Temp: 65
+		Start: 589
+		End: 590
+
+	Temp: 66
+		Start: 590
+		End: 591
+
+	Temp: 67
+		Start: 592
+		End: 594
+
+	Temp: 68
+		Start: 593
+		End: 594
+
+	Temp: 69
+		Start: 594
+		End: 595
+
+	Temp: 70
+		Start: 599
+		End: 600
+
+	Temp: 71
+		Start: 600
+		End: 601
+
+	Temp: 72
+		Start: 601
+		End: 603
+
+	Temp: 73
+		Start: 602
+		End: 603
+
+	Temp: 74
+		Start: 607
+		End: 618
+
+	Temp: 75
+		Start: 604
+		End: 606
+
+	Temp: 76
+		Start: 605
+		End: 606
+
+	Temp: 77
+		Start: 606
+		End: 607
+
+	Temp: 78
+		Start: 619
+		End: 633
+
+	Temp: 79
+		Start: 608
+		End: 609
+
+	Temp: 80
+		Start: 613
+		End: 632
+
+	Temp: 81
+		Start: 610
+		End: 612
+
+	Temp: 82
+		Start: 611
+		End: 612
+
+	Temp: 83
+		Start: 612
+		End: 613
+
+	Temp: 84
+		Start: 620
+		End: 622
+
+	Temp: 85
+		Start: 614
+		End: 616
+
+	Temp: 86
+		Start: 615
+		End: 616
+
+	Temp: 87
+		Start: 616
+		End: 617
+
+	Temp: 88
+		Start: 618
+		End: 619
+
+	Temp: 89
+		Start: 623
+		End: 625
+
+	Temp: 90
+		Start: 621
+		End: 622
+
+	Temp: 91
+		Start: 622
+		End: 623
+
+	Temp: 92
+		Start: 624
+		End: 626
+
+	Temp: 93
+		Start: 625
+		End: 626
+
+	Temp: 94
+		Start: 626
+		End: 627
+
+	Temp: 95
+		Start: 631
+		End: 632
+
+	Temp: 96
+		Start: 632
+		End: 633
+
+	Temp: 97
+		Start: 633
+		End: 635
+
+	Temp: 98
+		Start: 634
+		End: 635
+
+	Temp: 99
+		Start: 639
+		End: 650
+
+	Temp: 100
+		Start: 636
+		End: 638
+
+	Temp: 101
+		Start: 637
+		End: 638
+
+	Temp: 102
+		Start: 638
+		End: 639
+
+	Temp: 103
+		Start: 651
+		End: 665
+
+	Temp: 104
+		Start: 640
+		End: 641
+
+	Temp: 105
+		Start: 645
+		End: 664
+
+	Temp: 106
+		Start: 642
+		End: 644
+
+	Temp: 107
+		Start: 643
+		End: 644
+
+	Temp: 108
+		Start: 644
+		End: 645
+
+	Temp: 109
+		Start: 652
+		End: 654
+
+	Temp: 110
+		Start: 646
+		End: 648
+
+	Temp: 111
+		Start: 647
+		End: 648
+
+	Temp: 112
+		Start: 648
+		End: 649
+
+	Temp: 113
+		Start: 650
+		End: 651
+
+	Temp: 114
+		Start: 655
+		End: 657
+
+	Temp: 115
+		Start: 653
+		End: 654
+
+	Temp: 116
+		Start: 654
+		End: 655
+
+	Temp: 117
+		Start: 656
+		End: 658
+
+	Temp: 118
+		Start: 657
+		End: 658
+
+	Temp: 119
+		Start: 658
+		End: 659
+
+	Temp: 120
+		Start: 663
+		End: 664
+
+	Temp: 121
+		Start: 664
+		End: 665
+
+	Temp: 122
+		Start: 665
+		End: 667
+
+	Temp: 123
+		Start: 666
+		End: 667
+
+	Temp: 124
+		Start: 671
+		End: 682
+
+	Temp: 125
+		Start: 668
+		End: 670
+
+	Temp: 126
+		Start: 669
+		End: 670
+
+	Temp: 127
+		Start: 670
+		End: 671
+
+	Temp: 128
+		Start: 683
+		End: 697
+
+	Temp: 129
+		Start: 672
+		End: 673
+
+	Temp: 130
+		Start: 677
+		End: 696
+
+	Temp: 131
+		Start: 674
+		End: 676
+
+	Temp: 132
+		Start: 675
+		End: 676
+
+	Temp: 133
+		Start: 676
+		End: 677
+
+	Temp: 134
+		Start: 684
+		End: 686
+
+	Temp: 135
+		Start: 678
+		End: 680
+
+	Temp: 136
+		Start: 679
+		End: 680
+
+	Temp: 137
+		Start: 680
+		End: 681
+
+	Temp: 138
+		Start: 682
+		End: 683
+
+	Temp: 139
+		Start: 687
+		End: 689
+
+	Temp: 140
+		Start: 685
+		End: 686
+
+	Temp: 141
+		Start: 686
+		End: 687
+
+	Temp: 142
+		Start: 688
+		End: 690
+
+	Temp: 143
+		Start: 689
+		End: 690
+
+	Temp: 144
+		Start: 690
+		End: 691
+
+	Temp: 145
+		Start: 695
+		End: 696
+
+	Temp: 146
+		Start: 696
+		End: 697
+
+	Temp: 147
+		Start: 697
+		End: 699
+
+	Temp: 148
+		Start: 698
+		End: 699
+
+	Temp: 149
+		Start: 703
+		End: 714
+
+	Temp: 150
+		Start: 700
+		End: 702
+
+	Temp: 151
+		Start: 701
+		End: 702
+
+	Temp: 152
+		Start: 702
+		End: 703
+
+	Temp: 153
+		Start: 715
+		End: 729
+
+	Temp: 154
+		Start: 704
+		End: 705
+
+	Temp: 155
+		Start: 709
+		End: 728
+
+	Temp: 156
+		Start: 706
+		End: 708
+
+	Temp: 157
+		Start: 707
+		End: 708
+
+	Temp: 158
+		Start: 708
+		End: 709
+
+	Temp: 159
+		Start: 716
+		End: 718
+
+	Temp: 160
+		Start: 710
+		End: 712
+
+	Temp: 161
+		Start: 711
+		End: 712
+
+	Temp: 162
+		Start: 712
+		End: 713
+
+	Temp: 163
+		Start: 714
+		End: 715
+
+	Temp: 164
+		Start: 719
+		End: 721
+
+	Temp: 165
+		Start: 717
+		End: 718
+
+	Temp: 166
+		Start: 718
+		End: 719
+
+	Temp: 167
+		Start: 720
+		End: 722
+
+	Temp: 168
+		Start: 721
+		End: 722
+
+	Temp: 169
+		Start: 722
+		End: 723
+
+	Temp: 170
+		Start: 727
+		End: 728
+
+	Temp: 171
+		Start: 728
+		End: 729
+
+	Temp: 172
+		Start: 729
+		End: 731
+
+	Temp: 173
+		Start: 730
+		End: 731
+
+	Temp: 174
+		Start: 735
+		End: 746
+
+	Temp: 175
+		Start: 732
+		End: 734
+
+	Temp: 176
+		Start: 733
+		End: 734
+
+	Temp: 177
+		Start: 734
+		End: 735
+
+	Temp: 178
+		Start: 747
+		End: 761
+
+	Temp: 179
+		Start: 736
+		End: 737
+
+	Temp: 180
+		Start: 741
+		End: 760
+
+	Temp: 181
+		Start: 738
+		End: 740
+
+	Temp: 182
+		Start: 739
+		End: 740
+
+	Temp: 183
+		Start: 740
+		End: 741
+
+	Temp: 184
+		Start: 748
+		End: 750
+
+	Temp: 185
+		Start: 742
+		End: 744
+
+	Temp: 186
+		Start: 743
+		End: 744
+
+	Temp: 187
+		Start: 744
+		End: 745
+
+	Temp: 188
+		Start: 746
+		End: 747
+
+	Temp: 189
+		Start: 751
+		End: 753
+
+	Temp: 190
+		Start: 749
+		End: 750
+
+	Temp: 191
+		Start: 750
+		End: 751
+
+	Temp: 192
+		Start: 752
+		End: 754
+
+	Temp: 193
+		Start: 753
+		End: 754
+
+	Temp: 194
+		Start: 754
+		End: 755
+
+	Temp: 195
+		Start: 759
+		End: 760
+
+	Temp: 196
+		Start: 760
+		End: 761
+
+	Temp: 197
+		Start: 761
+		End: 763
+
+	Temp: 198
+		Start: 762
+		End: 763
+
+	Temp: 199
+		Start: 767
+		End: 778
+
+	Temp: 200
+		Start: 764
+		End: 766
+
+	Temp: 201
+		Start: 765
+		End: 766
+
+	Temp: 202
+		Start: 766
+		End: 767
+
+	Temp: 203
+		Start: 779
+		End: 793
+
+	Temp: 204
+		Start: 768
+		End: 769
+
+	Temp: 205
+		Start: 773
+		End: 792
+
+	Temp: 206
+		Start: 770
+		End: 772
+
+	Temp: 207
+		Start: 771
+		End: 772
+
+	Temp: 208
+		Start: 772
+		End: 773
+
+	Temp: 209
+		Start: 780
+		End: 782
+
+	Temp: 210
+		Start: 774
+		End: 776
+
+	Temp: 211
+		Start: 775
+		End: 776
+
+	Temp: 212
+		Start: 776
+		End: 777
+
+	Temp: 213
+		Start: 778
+		End: 779
+
+	Temp: 214
+		Start: 783
+		End: 785
+
+	Temp: 215
+		Start: 781
+		End: 782
+
+	Temp: 216
+		Start: 782
+		End: 783
+
+	Temp: 217
+		Start: 784
+		End: 786
+
+	Temp: 218
+		Start: 785
+		End: 786
+
+	Temp: 219
+		Start: 786
+		End: 787
+
+	Temp: 220
+		Start: 791
+		End: 792
+
+	Temp: 221
+		Start: 792
+		End: 793
+
+	Temp: 222
+		Start: 793
+		End: 795
+
+	Temp: 223
+		Start: 794
+		End: 795
+
+	Temp: 224
+		Start: 799
+		End: 810
+
+	Temp: 225
+		Start: 796
+		End: 798
+
+	Temp: 226
+		Start: 797
+		End: 798
+
+	Temp: 227
+		Start: 798
+		End: 799
+
+	Temp: 228
+		Start: 811
+		End: 825
+
+	Temp: 229
+		Start: 800
+		End: 801
+
+	Temp: 230
+		Start: 805
+		End: 824
+
+	Temp: 231
+		Start: 802
+		End: 804
+
+	Temp: 232
+		Start: 803
+		End: 804
+
+	Temp: 233
+		Start: 804
+		End: 805
+
+	Temp: 234
+		Start: 812
+		End: 814
+
+	Temp: 235
+		Start: 806
+		End: 808
+
+	Temp: 236
+		Start: 807
+		End: 808
+
+	Temp: 237
+		Start: 808
+		End: 809
+
+	Temp: 238
+		Start: 810
+		End: 811
+
+	Temp: 239
+		Start: 815
+		End: 817
+
+	Temp: 240
+		Start: 813
+		End: 814
+
+	Temp: 241
+		Start: 814
+		End: 815
+
+	Temp: 242
+		Start: 816
+		End: 818
+
+	Temp: 243
+		Start: 817
+		End: 818
+
+	Temp: 244
+		Start: 818
+		End: 819
+
+	Temp: 245
+		Start: 823
+		End: 824
+
+	Temp: 246
+		Start: 824
+		End: 825
+
+	Temp: 247
+		Start: 825
+		End: 827
+
+	Temp: 248
+		Start: 826
+		End: 827
+
+	Temp: 249
+		Start: 831
+		End: 842
+
+	Temp: 250
+		Start: 828
+		End: 830
+
+	Temp: 251
+		Start: 829
+		End: 830
+
+	Temp: 252
+		Start: 830
+		End: 831
+
+	Temp: 253
+		Start: 843
+		End: 857
+
+	Temp: 254
+		Start: 832
+		End: 833
+
+	Temp: 255
+		Start: 837
+		End: 856
+
+	Temp: 256
+		Start: 834
+		End: 836
+
+	Temp: 257
+		Start: 835
+		End: 836
+
+	Temp: 258
+		Start: 836
+		End: 837
+
+	Temp: 259
+		Start: 844
+		End: 846
+
+	Temp: 260
+		Start: 838
+		End: 840
+
+	Temp: 261
+		Start: 839
+		End: 840
+
+	Temp: 262
+		Start: 840
+		End: 841
+
+	Temp: 263
+		Start: 842
+		End: 843
+
+	Temp: 264
+		Start: 847
+		End: 849
+
+	Temp: 265
+		Start: 845
+		End: 846
+
+	Temp: 266
+		Start: 846
+		End: 847
+
+	Temp: 267
+		Start: 848
+		End: 850
+
+	Temp: 268
+		Start: 849
+		End: 850
+
+	Temp: 269
+		Start: 850
+		End: 851
+
+	Temp: 270
+		Start: 855
+		End: 856
+
+	Temp: 271
+		Start: 856
+		End: 857
+
+	Temp: 272
+		Start: 857
+		End: 859
+
+	Temp: 273
+		Start: 858
+		End: 859
+
+	Temp: 274
+		Start: 860
+		End: 861
+
+Scope: QS_Print
+	Temp: 0
+		Start: 469
+		End: 502
+
+	Temp: 2
+		Start: 470
+		End: 502
+
+	Temp: 3
+		Start: 469
+		End: 470
+
+	Temp: 4
+		Start: 471
+		End: 474
+
+	Temp: 5
+		Start: 475
+		End: 476
+
+	Temp: 6
+		Start: 473
+		End: 474
+
+	Temp: 7
+		Start: 474
+		End: 475
+
+	Temp: 8
+		Start: 476
+		End: 477
+
+	Temp: 9
+		Start: 497
+		End: 498
+
+	Temp: 10
+		Start: 482
+		End: 496
+
+	Temp: 11
+		Start: 481
+		End: 495
+
+	Temp: 12
+		Start: 479
+		End: 480
+
+	Temp: 13
+		Start: 480
+		End: 481
+
+	Temp: 14
+		Start: 483
+		End: 485
+
+	Temp: 15
+		Start: 486
+		End: 488
+
+	Temp: 16
+		Start: 484
+		End: 485
+
+	Temp: 17
+		Start: 485
+		End: 486
+
+	Temp: 18
+		Start: 487
+		End: 489
+
+	Temp: 19
+		Start: 488
+		End: 489
+
+	Temp: 20
+		Start: 489
+		End: 490
+
+	Temp: 21
+		Start: 494
+		End: 495
+
+	Temp: 22
+		Start: 495
+		End: 496
+
+	Temp: 23
+		Start: 496
+		End: 497
+
+	Temp: 24
+		Start: 499
+		End: 500
+
+	Temp: 25
+		Start: 500
+		End: 501
+
+	Temp: 26
+		Start: 505
+		End: 506
+
+Scope: QS_Sort
+	Temp: 0
+		Start: 72
+		End: 451
+
+	Temp: 1
+		Start: 72
+		End: 449
+
+	Temp: 2
+		Start: 72
+		End: 456
+
+	Temp: 4
+		Start: 73
+		End: 443
+
+	Temp: 5
+		Start: 72
+		End: 73
+
+	Temp: 6
+		Start: 76
+		End: 77
+
+	Temp: 7
+		Start: 74
+		End: 75
+
+	Temp: 8
+		Start: 75
+		End: 76
+
+	Temp: 9
+		Start: 77
+		End: 78
+
+	Temp: 10
+		Start: 99
+		End: 311
+
+	Temp: 11
+		Start: 98
+		End: 99
+
+	Temp: 12
+		Start: 83
+		End: 97
+
+	Temp: 13
+		Start: 82
+		End: 96
+
+	Temp: 14
+		Start: 80
+		End: 81
+
+	Temp: 15
+		Start: 81
+		End: 82
+
+	Temp: 16
+		Start: 84
+		End: 86
+
+	Temp: 17
+		Start: 87
+		End: 89
+
+	Temp: 18
+		Start: 85
+		End: 86
+
+	Temp: 19
+		Start: 86
+		End: 87
+
+	Temp: 20
+		Start: 88
+		End: 90
+
+	Temp: 21
+		Start: 89
+		End: 90
+
+	Temp: 22
+		Start: 90
+		End: 91
+
+	Temp: 23
+		Start: 95
+		End: 96
+
+	Temp: 24
+		Start: 96
+		End: 97
+
+	Temp: 25
+		Start: 97
+		End: 98
+
+	Temp: 26
+		Start: 102
+		End: 455
+
+	Temp: 27
+		Start: 100
+		End: 101
+
+	Temp: 28
+		Start: 101
+		End: 102
+
+	Temp: 29
+		Start: 103
+		End: 321
+
+	Temp: 30
+		Start: 105
+		End: 311
+
+	Temp: 31
+		Start: 104
+		End: 105
+
+	Temp: 32
+		Start: 109
+		End: 197
+
+	Temp: 33
+		Start: 108
+		End: 109
+
+	Temp: 34
+		Start: 112
+		End: 113
+
+	Temp: 35
+		Start: 113
+		End: 114
+
+	Temp: 36
+		Start: 135
+		End: 183
+
+	Temp: 37
+		Start: 134
+		End: 135
+
+	Temp: 38
+		Start: 119
+		End: 133
+
+	Temp: 39
+		Start: 118
+		End: 132
+
+	Temp: 40
+		Start: 116
+		End: 117
+
+	Temp: 41
+		Start: 117
+		End: 118
+
+	Temp: 42
+		Start: 120
+		End: 122
+
+	Temp: 43
+		Start: 123
+		End: 125
+
+	Temp: 44
+		Start: 121
+		End: 122
+
+	Temp: 45
+		Start: 122
+		End: 123
+
+	Temp: 46
+		Start: 124
+		End: 126
+
+	Temp: 47
+		Start: 125
+		End: 126
+
+	Temp: 48
+		Start: 126
+		End: 127
+
+	Temp: 49
+		Start: 131
+		End: 132
+
+	Temp: 50
+		Start: 132
+		End: 133
+
+	Temp: 51
+		Start: 133
+		End: 134
+
+	Temp: 52
+		Start: 138
+		End: 140
+
+	Temp: 53
+		Start: 136
+		End: 137
+
+	Temp: 54
+		Start: 137
+		End: 138
+
+	Temp: 55
+		Start: 139
+		End: 141
+
+	Temp: 56
+		Start: 140
+		End: 141
+
+	Temp: 57
+		Start: 141
+		End: 142
+
+	Temp: 58
+		Start: 143
+		End: 144
+
+	Temp: 59
+		Start: 146
+		End: 148
+
+	Temp: 60
+		Start: 154
+		End: 155
+
+	Temp: 61
+		Start: 158
+		End: 159
+
+	Temp: 62
+		Start: 159
+		End: 160
+
+	Temp: 63
+		Start: 180
+		End: 181
+
+	Temp: 64
+		Start: 165
+		End: 179
+
+	Temp: 65
+		Start: 164
+		End: 178
+
+	Temp: 66
+		Start: 162
+		End: 163
+
+	Temp: 67
+		Start: 163
+		End: 164
+
+	Temp: 68
+		Start: 166
+		End: 168
+
+	Temp: 69
+		Start: 169
+		End: 171
+
+	Temp: 70
+		Start: 167
+		End: 168
+
+	Temp: 71
+		Start: 168
+		End: 169
+
+	Temp: 72
+		Start: 170
+		End: 172
+
+	Temp: 73
+		Start: 171
+		End: 172
+
+	Temp: 74
+		Start: 172
+		End: 173
+
+	Temp: 75
+		Start: 177
+		End: 178
+
+	Temp: 76
+		Start: 178
+		End: 179
+
+	Temp: 77
+		Start: 179
+		End: 180
+
+	Temp: 78
+		Start: 184
+		End: 186
+
+	Temp: 79
+		Start: 182
+		End: 183
+
+	Temp: 80
+		Start: 183
+		End: 184
+
+	Temp: 81
+		Start: 185
+		End: 187
+
+	Temp: 82
+		Start: 186
+		End: 187
+
+	Temp: 83
+		Start: 187
+		End: 188
+
+	Temp: 84
+		Start: 189
+		End: 190
+
+	Temp: 85
+		Start: 192
+		End: 194
+
+	Temp: 86
+		Start: 219
+		End: 220
+
+	Temp: 87
+		Start: 204
+		End: 218
+
+	Temp: 88
+		Start: 203
+		End: 217
+
+	Temp: 89
+		Start: 201
+		End: 202
+
+	Temp: 90
+		Start: 202
+		End: 203
+
+	Temp: 91
+		Start: 205
+		End: 207
+
+	Temp: 92
+		Start: 208
+		End: 210
+
+	Temp: 93
+		Start: 206
+		End: 207
+
+	Temp: 94
+		Start: 207
+		End: 208
+
+	Temp: 95
+		Start: 209
+		End: 211
+
+	Temp: 96
+		Start: 210
+		End: 211
+
+	Temp: 97
+		Start: 211
+		End: 212
+
+	Temp: 98
+		Start: 216
+		End: 217
+
+	Temp: 99
+		Start: 217
+		End: 218
+
+	Temp: 100
+		Start: 218
+		End: 219
+
+	Temp: 101
+		Start: 224
+		End: 234
+
+	Temp: 102
+		Start: 221
+		End: 223
+
+	Temp: 103
+		Start: 222
+		End: 223
+
+	Temp: 104
+		Start: 223
+		End: 224
+
+	Temp: 105
+		Start: 235
+		End: 249
+
+	Temp: 106
+		Start: 225
+		End: 226
+
+	Temp: 107
+		Start: 229
+		End: 248
+
+	Temp: 108
+		Start: 227
+		End: 228
+
+	Temp: 109
+		Start: 228
+		End: 229
+
+	Temp: 110
+		Start: 236
+		End: 238
+
+	Temp: 111
+		Start: 230
+		End: 232
+
+	Temp: 112
+		Start: 231
+		End: 232
+
+	Temp: 113
+		Start: 232
+		End: 233
+
+	Temp: 114
+		Start: 234
+		End: 235
+
+	Temp: 115
+		Start: 239
+		End: 241
+
+	Temp: 116
+		Start: 237
+		End: 238
+
+	Temp: 117
+		Start: 238
+		End: 239
+
+	Temp: 118
+		Start: 240
+		End: 242
+
+	Temp: 119
+		Start: 241
+		End: 242
+
+	Temp: 120
+		Start: 242
+		End: 243
+
+	Temp: 121
+		Start: 247
+		End: 248
+
+	Temp: 122
+		Start: 248
+		End: 249
+
+	Temp: 123
+		Start: 249
+		End: 270
+
+	Temp: 124
+		Start: 269
+		End: 270
+
+	Temp: 125
+		Start: 254
+		End: 268
+
+	Temp: 126
+		Start: 253
+		End: 267
+
+	Temp: 127
+		Start: 251
+		End: 252
+
+	Temp: 128
+		Start: 252
+		End: 253
+
+	Temp: 129
+		Start: 255
+		End: 257
+
+	Temp: 130
+		Start: 258
+		End: 260
+
+	Temp: 131
+		Start: 256
+		End: 257
+
+	Temp: 132
+		Start: 257
+		End: 258
+
+	Temp: 133
+		Start: 259
+		End: 261
+
+	Temp: 134
+		Start: 260
+		End: 261
+
+	Temp: 135
+		Start: 261
+		End: 262
+
+	Temp: 136
+		Start: 266
+		End: 267
+
+	Temp: 137
+		Start: 267
+		End: 268
+
+	Temp: 138
+		Start: 268
+		End: 269
+
+	Temp: 139
+		Start: 274
+		End: 284
+
+	Temp: 140
+		Start: 271
+		End: 273
+
+	Temp: 141
+		Start: 272
+		End: 273
+
+	Temp: 142
+		Start: 273
+		End: 274
+
+	Temp: 143
+		Start: 285
+		End: 299
+
+	Temp: 144
+		Start: 275
+		End: 276
+
+	Temp: 145
+		Start: 279
+		End: 298
+
+	Temp: 146
+		Start: 277
+		End: 278
+
+	Temp: 147
+		Start: 278
+		End: 279
+
+	Temp: 148
+		Start: 286
+		End: 288
+
+	Temp: 149
+		Start: 280
+		End: 282
+
+	Temp: 150
+		Start: 281
+		End: 282
+
+	Temp: 151
+		Start: 282
+		End: 283
+
+	Temp: 152
+		Start: 284
+		End: 285
+
+	Temp: 153
+		Start: 289
+		End: 291
+
+	Temp: 154
+		Start: 287
+		End: 288
+
+	Temp: 155
+		Start: 288
+		End: 289
+
+	Temp: 156
+		Start: 290
+		End: 292
+
+	Temp: 157
+		Start: 291
+		End: 292
+
+	Temp: 158
+		Start: 292
+		End: 293
+
+	Temp: 159
+		Start: 297
+		End: 298
+
+	Temp: 160
+		Start: 298
+		End: 299
+
+	Temp: 161
+		Start: 299
+		End: 300
+
+	Temp: 162
+		Start: 301
+		End: 302
+
+	Temp: 163
+		Start: 303
+		End: 304
+
+	Temp: 164
+		Start: 306
+		End: 308
+
+	Temp: 165
+		Start: 317
+		End: 327
+
+	Temp: 166
+		Start: 314
+		End: 316
+
+	Temp: 167
+		Start: 315
+		End: 316
+
+	Temp: 168
+		Start: 316
+		End: 317
+
+	Temp: 169
+		Start: 328
+		End: 342
+
+	Temp: 170
+		Start: 318
+		End: 319
+
+	Temp: 171
+		Start: 322
+		End: 341
+
+	Temp: 172
+		Start: 320
+		End: 321
+
+	Temp: 173
+		Start: 321
+		End: 322
+
+	Temp: 174
+		Start: 329
+		End: 331
+
+	Temp: 175
+		Start: 323
+		End: 325
+
+	Temp: 176
+		Start: 324
+		End: 325
+
+	Temp: 177
+		Start: 325
+		End: 326
+
+	Temp: 178
+		Start: 327
+		End: 328
+
+	Temp: 179
+		Start: 332
+		End: 334
+
+	Temp: 180
+		Start: 330
+		End: 331
+
+	Temp: 181
+		Start: 331
+		End: 332
+
+	Temp: 182
+		Start: 333
+		End: 335
+
+	Temp: 183
+		Start: 334
+		End: 335
+
+	Temp: 184
+		Start: 335
+		End: 336
+
+	Temp: 185
+		Start: 340
+		End: 341
+
+	Temp: 186
+		Start: 341
+		End: 342
+
+	Temp: 187
+		Start: 342
+		End: 363
+
+	Temp: 188
+		Start: 362
+		End: 363
+
+	Temp: 189
+		Start: 347
+		End: 361
+
+	Temp: 190
+		Start: 346
+		End: 360
+
+	Temp: 191
+		Start: 344
+		End: 345
+
+	Temp: 192
+		Start: 345
+		End: 346
+
+	Temp: 193
+		Start: 348
+		End: 350
+
+	Temp: 194
+		Start: 351
+		End: 353
+
+	Temp: 195
+		Start: 349
+		End: 350
+
+	Temp: 196
+		Start: 350
+		End: 351
+
+	Temp: 197
+		Start: 352
+		End: 354
+
+	Temp: 198
+		Start: 353
+		End: 354
+
+	Temp: 199
+		Start: 354
+		End: 355
+
+	Temp: 200
+		Start: 359
+		End: 360
+
+	Temp: 201
+		Start: 360
+		End: 361
+
+	Temp: 202
+		Start: 361
+		End: 362
+
+	Temp: 203
+		Start: 367
+		End: 377
+
+	Temp: 204
+		Start: 364
+		End: 366
+
+	Temp: 205
+		Start: 365
+		End: 366
+
+	Temp: 206
+		Start: 366
+		End: 367
+
+	Temp: 207
+		Start: 378
+		End: 392
+
+	Temp: 208
+		Start: 368
+		End: 369
+
+	Temp: 209
+		Start: 372
+		End: 391
+
+	Temp: 210
+		Start: 370
+		End: 371
+
+	Temp: 211
+		Start: 371
+		End: 372
+
+	Temp: 212
+		Start: 379
+		End: 381
+
+	Temp: 213
+		Start: 373
+		End: 375
+
+	Temp: 214
+		Start: 374
+		End: 375
+
+	Temp: 215
+		Start: 375
+		End: 376
+
+	Temp: 216
+		Start: 377
+		End: 378
+
+	Temp: 217
+		Start: 382
+		End: 384
+
+	Temp: 218
+		Start: 380
+		End: 381
+
+	Temp: 219
+		Start: 381
+		End: 382
+
+	Temp: 220
+		Start: 383
+		End: 385
+
+	Temp: 221
+		Start: 384
+		End: 385
+
+	Temp: 222
+		Start: 385
+		End: 386
+
+	Temp: 223
+		Start: 390
+		End: 391
+
+	Temp: 224
+		Start: 391
+		End: 392
+
+	Temp: 225
+		Start: 392
+		End: 413
+
+	Temp: 226
+		Start: 412
+		End: 413
+
+	Temp: 227
+		Start: 397
+		End: 411
+
+	Temp: 228
+		Start: 396
+		End: 410
+
+	Temp: 229
+		Start: 394
+		End: 395
+
+	Temp: 230
+		Start: 395
+		End: 396
+
+	Temp: 231
+		Start: 398
+		End: 400
+
+	Temp: 232
+		Start: 401
+		End: 403
+
+	Temp: 233
+		Start: 399
+		End: 400
+
+	Temp: 234
+		Start: 400
+		End: 401
+
+	Temp: 235
+		Start: 402
+		End: 404
+
+	Temp: 236
+		Start: 403
+		End: 404
+
+	Temp: 237
+		Start: 404
+		End: 405
+
+	Temp: 238
+		Start: 409
+		End: 410
+
+	Temp: 239
+		Start: 410
+		End: 411
+
+	Temp: 240
+		Start: 411
+		End: 412
+
+	Temp: 241
+		Start: 417
+		End: 427
+
+	Temp: 242
+		Start: 414
+		End: 416
+
+	Temp: 243
+		Start: 415
+		End: 416
+
+	Temp: 244
+		Start: 416
+		End: 417
+
+	Temp: 245
+		Start: 428
+		End: 442
+
+	Temp: 246
+		Start: 418
+		End: 419
+
+	Temp: 247
+		Start: 422
+		End: 441
+
+	Temp: 248
+		Start: 420
+		End: 421
+
+	Temp: 249
+		Start: 421
+		End: 422
+
+	Temp: 250
+		Start: 429
+		End: 431
+
+	Temp: 251
+		Start: 423
+		End: 425
+
+	Temp: 252
+		Start: 424
+		End: 425
+
+	Temp: 253
+		Start: 425
+		End: 426
+
+	Temp: 254
+		Start: 427
+		End: 428
+
+	Temp: 255
+		Start: 432
+		End: 434
+
+	Temp: 256
+		Start: 430
+		End: 431
+
+	Temp: 257
+		Start: 431
+		End: 432
+
+	Temp: 258
+		Start: 433
+		End: 435
+
+	Temp: 259
+		Start: 434
+		End: 435
+
+	Temp: 260
+		Start: 435
+		End: 436
+
+	Temp: 261
+		Start: 440
+		End: 441
+
+	Temp: 262
+		Start: 441
+		End: 442
+
+	Temp: 263
+		Start: 442
+		End: 443
+
+	Temp: 265
+		Start: 444
+		End: 449
+
+	Temp: 266
+		Start: 445
+		End: 446
+
+	Temp: 267
+		Start: 446
+		End: 449
+
+	Temp: 268
+		Start: 447
+		End: 448
+
+	Temp: 269
+		Start: 448
+		End: 449
+
+	Temp: 270
+		Start: 449
+		End: 450
+
+	Temp: 271
+		Start: 451
+		End: 456
+
+	Temp: 272
+		Start: 452
+		End: 453
+
+	Temp: 273
+		Start: 453
+		End: 456
+
+	Temp: 274
+		Start: 454
+		End: 455
+
+	Temp: 275
+		Start: 455
+		End: 456
+
+	Temp: 276
+		Start: 456
+		End: 457
+
+	Temp: 277
+		Start: 459
+		End: 461
+
+	Temp: 278
+		Start: 464
+		End: 465
+
+Scope: QS_Start
+	Temp: 0
+		Start: 40
+		End: 62
+
+	Temp: 1
+		Start: 40
+		End: 43
+
+	Temp: 3
+		Start: 55
+		End: 60
+
+	Temp: 4
+		Start: 40
+		End: 43
+
+	Temp: 5
+		Start: 41
+		End: 42
+
+	Temp: 6
+		Start: 42
+		End: 43
+
+	Temp: 7
+		Start: 43
+		End: 44
+
+	Temp: 8
+		Start: 45
+		End: 48
+
+	Temp: 9
+		Start: 46
+		End: 47
+
+	Temp: 10
+		Start: 47
+		End: 48
+
+	Temp: 11
+		Start: 48
+		End: 49
+
+	Temp: 12
+		Start: 50
+		End: 51
+
+	Temp: 13
+		Start: 52
+		End: 54
+
+	Temp: 14
+		Start: 53
+		End: 54
+
+	Temp: 15
+		Start: 54
+		End: 55
+
+	Temp: 16
+		Start: 56
+		End: 60
+
+	Temp: 17
+		Start: 57
+		End: 58
+
+	Temp: 18
+		Start: 58
+		End: 60
+
+	Temp: 19
+		Start: 59
+		End: 60
+
+	Temp: 20
+		Start: 60
+		End: 61
+
+	Temp: 21
+		Start: 62
+		End: 65
+
+	Temp: 22
+		Start: 63
+		End: 64
+
+	Temp: 23
+		Start: 64
+		End: 65
+
+	Temp: 24
+		Start: 65
+		End: 66
+
+	Temp: 25
+		Start: 67
+		End: 68
+

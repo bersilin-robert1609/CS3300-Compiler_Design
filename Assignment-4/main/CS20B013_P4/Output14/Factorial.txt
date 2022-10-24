@@ -141,8 +141,8 @@ Scope: Fac_ComputeFac
 		Next: 21
 		Use: []
 		Def: [3]
-		In: [1]
-		Out: [1, 3]
+		In: [0, 1]
+		Out: [0, 1, 3]
 
 	Basic Block: 21
 		Type: MOVE
@@ -150,8 +150,8 @@ Scope: Fac_ComputeFac
 		Next: 22
 		Use: [1, 3]
 		Def: [4]
-		In: [1, 3]
-		Out: [4]
+		In: [0, 1, 3]
+		Out: [0, 1, 4]
 
 	Basic Block: 22
 		Type: CJUMP
@@ -159,8 +159,8 @@ Scope: Fac_ComputeFac
 		Next: 23
 		Use: [4]
 		Def: []
-		In: [4]
-		Out: []
+		In: [0, 1, 4]
+		Out: [0, 1]
 
 	Basic Block: 23
 		Type: MOVE
@@ -178,7 +178,7 @@ Scope: Fac_ComputeFac
 		Use: [6]
 		Def: [5]
 		In: [6]
-		Out: []
+		Out: [5]
 
 	Basic Block: 25
 		Type: JUMP
@@ -186,8 +186,8 @@ Scope: Fac_ComputeFac
 		Next: 26
 		Use: []
 		Def: []
-		In: []
-		Out: []
+		In: [5]
+		Out: [5]
 
 	Basic Block: 26
 		Type: MOVE
@@ -259,7 +259,7 @@ Scope: Fac_ComputeFac
 		Use: [13]
 		Def: [5]
 		In: [13]
-		Out: []
+		Out: [5]
 
 	Basic Block: 35
 		Type: NOOP
@@ -267,9 +267,120 @@ Scope: Fac_ComputeFac
 		Next: 37
 		Use: []
 		Def: []
-		In: []
+		In: [5]
+		Out: [5]
+
+	Basic Block: 37
+		Type: RETURN
+		Label: null
+		Next: 38
+		Use: [5]
+		Def: []
+		In: [5]
 		Out: []
 
 Labels:
 	L2: 26
 	L3: 35
+Scope: Fac_ComputeFac
+	Temp: 0
+		Start: 20
+		End: 26
+
+	Temp: 1
+		Start: 20
+		End: 33
+
+	Temp: 3
+		Start: 20
+		End: 21
+
+	Temp: 4
+		Start: 21
+		End: 22
+
+	Temp: 5
+		Start: 24
+		End: 37
+
+	Temp: 6
+		Start: 23
+		End: 24
+
+	Temp: 7
+		Start: 26
+		End: 32
+
+	Temp: 8
+		Start: 28
+		End: 29
+
+	Temp: 9
+		Start: 29
+		End: 32
+
+	Temp: 10
+		Start: 30
+		End: 31
+
+	Temp: 11
+		Start: 31
+		End: 32
+
+	Temp: 12
+		Start: 32
+		End: 33
+
+	Temp: 13
+		Start: 33
+		End: 34
+
+Scope: MAIN
+	Temp: 0
+		Start: 11
+		End: 15
+
+	Temp: 1
+		Start: 4
+		End: 10
+
+	Temp: 2
+		Start: 2
+		End: 3
+
+	Temp: 3
+		Start: 3
+		End: 4
+
+	Temp: 4
+		Start: 7
+		End: 11
+
+	Temp: 5
+		Start: 5
+		End: 6
+
+	Temp: 6
+		Start: 6
+		End: 7
+
+	Temp: 7
+		Start: 8
+		End: 9
+
+	Temp: 8
+		Start: 12
+		End: 13
+
+	Temp: 9
+		Start: 13
+		End: 15
+
+	Temp: 10
+		Start: 14
+		End: 15
+
+	Temp: 11
+		Start: 15
+		End: 16
+

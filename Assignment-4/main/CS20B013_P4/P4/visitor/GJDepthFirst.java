@@ -162,7 +162,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             {
                if(labelMap.containsKey(bb.label)) 
                {
-                  int labelNumber = labelMap.get(bb.label) + 1;
+                  int labelNumber = labelMap.get(bb.label);
                   if(instructions.containsKey(labelNumber)) bb.out.addAll(instructions.get(labelNumber).in);
                }
             }
@@ -171,7 +171,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
                if(instructions.containsKey(bb.next)) bb.out.addAll(instructions.get(bb.next).in);
                if(labelMap.containsKey(bb.label)) 
                {
-                  int labelNumber = labelMap.get(bb.label) + 1;
+                  int labelNumber = labelMap.get(bb.label);
                   if(instructions.containsKey(labelNumber)) bb.out.addAll(instructions.get(labelNumber).in);
                }
             }
@@ -303,28 +303,41 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          return i1.start - i2.start;
       }
    });
+   PriorityQueue<Interval> reverseActive = new PriorityQueue<Interval>(new Comparator<Interval>() {
+      //Sorted by decreasing order of start
+      @Override
+      public int compare(Interval i1, Interval i2) {
+         return i2.end - i1.end;
+      }
+   });
 
-   // public void linearScanAlgorithm(String scopeLabel)
-   // { //add in register allocation for the particular label scope
-   //   // total available registers - 18 s0-s7, t0-t9
-
-   //    registerAllocation.put(scopeLabel, new HashMap<Integer, String>());
-   //    active.clear();
-   //    liveIntervals.addAll(intervals.get(scopeLabel).values());
+   public void linearScanAlgorithm(String scopeLabel)
+   {  //add in register allocation for the particular label scope
+      // total available registers - 18 s0-s7, t0-t9
       
-   //    while(!liveIntervals.isEmpty())
-   //    {
-   //       Interval interval = liveIntervals.poll();
-   //       while(!active.isEmpty() && active.peek().end < interval.start)
-   //       {
-   //          availableRegisters.push(registerAllocation.get(scopeLabel).get(active.poll().temp));
-   //       }
-   //       if(availableRegisters.isEmpty())
-   //       { //check active intervals and pop one with max end time
-   //          //last element in active
+      active.clear();
+      liveIntervals.clear();
+      reverseActive.clear();
+      for(Map.Entry<Integer, Interval> entry : intervals.get(scopeLabel).entrySet())
+      {
+         liveIntervals.add(entry.getValue());
+      }
+      int arguments = procProps.get(scopeLabel).argCount;
 
-   //       }
-   // }
+      HashMap<Integer, String> tempToReg = new HashMap<Integer, String>();
+      registerAllocation.put(scopeLabel, tempToReg);
+
+      for(int i=0; i<arguments; i++)
+      {
+         String registerAlloc = "a" + i;
+         Interval interval = intervals.get(scopeLabel).get(i);
+         tempToReg.put(i, registerAlloc);
+         active.add(interval);
+         liveIntervals.remove(interval);
+      }
+
+      
+   }
 
    public void registerAllocate()
    {
@@ -332,7 +345,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       Iterator<String> itr = intervals.keySet().iterator();
       while(itr.hasNext()){
          String key = itr.next();
-         //linearScanAlgorithm(key);
+         linearScanAlgorithm(key);
       }
    }
 
@@ -377,12 +390,12 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       fillInOut();
       sortByScope();
       findIntervalsByScope();
-      registerAllocate();
-      printRegisterAllocation();
+      //registerAllocate();
+      //printRegisterAllocation();
 
-      //printBasicBlocks();
-      //printLabels();
-      //printIntervals();
+      printBasicBlocks();
+      printLabels();
+      printIntervals();
 
       return _ret;
    }
@@ -424,14 +437,32 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f3 -> SimpleExp()
     * f4 -> "END"
     */
-    public R visit(StmtExp n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
+    public R visit(StmtExp n, A argu) 
+    {
       n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      n.f3.accept(this, argu);
-      n.f4.accept(this, argu);
-      return _ret;
+
+      SimpleExpReturn simpleExpReturn = (SimpleExpReturn)n.f3.accept(this, argu);
+
+      if(stage == 1)
+      {
+         BasicBlock newBlock = new BasicBlock();
+         newBlock.type = "RETURN";
+         if(simpleExpReturn.type == 0) newBlock.use.add(simpleExpReturn.temp);
+         newBlock.scope = ((ScopeArgument)argu).scope;
+
+         int lineNumber = n.f2.beginLine;
+         newBlock.next = lineNumber + 1;
+
+         ScopeArgument scope = (ScopeArgument)argu;
+         if(scope.labelPresent)
+         {
+            lineNumber--;
+            scope.labelPresent = false;
+         }
+         newBlock.lineNumber = lineNumber;
+         instructions.put(lineNumber, newBlock);
+      }
+      return null;
    }
 
    /**
