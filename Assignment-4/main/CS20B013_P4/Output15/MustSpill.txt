@@ -1,0 +1,72 @@
+Scope: Test35
+	Temp: 0 Register: spill
+
+	Temp: 1 Register: spill
+
+	Temp: 2 Register: spill
+
+	Temp: 3 Register: spill
+
+	Temp: 4 Register: spill
+
+	Temp: 5 Register: spill
+
+	Temp: 6 Register: spill
+
+	Temp: 7 Register: spill
+
+	Temp: 8 Register: spill
+
+	Temp: 9 Register: spill
+
+	Temp: 10 Register: spill
+
+	Temp: 11 Register: spill
+
+	Temp: 12 Register: spill
+
+	Temp: 13 Register: spill
+
+	Temp: 14 Register: spill
+
+	Temp: 15 Register: spill
+
+	Temp: 16 Register: t8
+
+	Temp: 17 Register: t9
+
+	Temp: 18 Register: s0
+
+	Temp: 19 Register: s1
+
+	Temp: 20 Register: s2
+
+	Temp: 21 Register: s3
+
+	Temp: 22 Register: s4
+
+	Temp: 23 Register: s5
+
+	Temp: 24 Register: s6
+
+	Temp: 25 Register: s7
+
+	Temp: 26 Register: t0
+
+	Temp: 27 Register: t1
+
+	Temp: 28 Register: t2
+
+	Temp: 29 Register: t3
+
+	Temp: 30 Register: t4
+
+	Temp: 31 Register: t5
+
+	Temp: 32 Register: t6
+
+	Temp: 33 Register: t7
+
+Scope: MAIN
+	Temp: 0 Register: s0
+

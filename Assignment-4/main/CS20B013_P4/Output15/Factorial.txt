@@ -1,0 +1,52 @@
+Scope: MAIN
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s0
+
+	Temp: 2 Register: s0
+
+	Temp: 3 Register: s1
+
+	Temp: 4 Register: s1
+
+	Temp: 5 Register: s1
+
+	Temp: 6 Register: s2
+
+	Temp: 7 Register: s2
+
+	Temp: 8 Register: s1
+
+	Temp: 9 Register: s2
+
+	Temp: 10 Register: s1
+
+	Temp: 11 Register: s3
+
+Scope: Fac_ComputeFac
+	Temp: 0 Register: a0
+
+	Temp: 1 Register: a1
+
+	Temp: 3 Register: s0
+
+	Temp: 4 Register: s1
+
+	Temp: 5 Register: s0
+
+	Temp: 6 Register: s1
+
+	Temp: 7 Register: s1
+
+	Temp: 8 Register: s2
+
+	Temp: 9 Register: s3
+
+	Temp: 10 Register: s2
+
+	Temp: 11 Register: s4
+
+	Temp: 12 Register: s2
+
+	Temp: 13 Register: s1
+

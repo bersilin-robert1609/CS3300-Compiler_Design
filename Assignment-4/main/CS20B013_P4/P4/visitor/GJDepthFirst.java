@@ -64,6 +64,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       public int argCount;
       public int localVarCount;
       public int tempCount;
+      public int maxArgCount;
    }
 
    class BasicBlock
@@ -128,6 +129,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
    }
 
+   // Global variables
    HashMap<String, ProcedureProperties> procProps = new HashMap<String, ProcedureProperties>();
    TreeMap<Integer, BasicBlock> instructions = new TreeMap<Integer, BasicBlock>();
    TreeMap<String, Integer> labelMap = new TreeMap<String, Integer>();
@@ -136,7 +138,38 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    TreeMap<String, TreeMap<Integer, Interval>> intervals = new TreeMap<String, TreeMap<Integer, Interval>>();
    int stage = 1;
    int expCount = 0;
+   boolean debug = false;
    public int nextExp() {return expCount++;}
+   HashMap<String, HashMap<Integer, String>> registerAllocation = new HashMap<String, HashMap<Integer, String>>();
+   Stack<String> availableRegisters = new Stack<String>();
+   HashMap<String, HashMap<Integer, Integer>> spillNumberMap = new HashMap<String, HashMap<Integer, Integer>>();
+
+   int globalSpillNumber = 0;
+   public int nextSpillNumber() {return globalSpillNumber++;}
+
+   PriorityQueue<Interval> active = new PriorityQueue<Interval>(new Comparator<Interval>() {
+      //Sorted by increasing order of end
+      @Override
+      public int compare(Interval i1, Interval i2) {
+         return i1.end - i2.end;
+      }
+   });
+   PriorityQueue<Interval> liveIntervals = new PriorityQueue<Interval>(new Comparator<Interval>() {
+      //Sorted by increasing order of start
+      @Override
+      public int compare(Interval i1, Interval i2) {
+         return i1.start - i2.start;
+      }
+   });
+   PriorityQueue<Interval> reverseActive = new PriorityQueue<Interval>(new Comparator<Interval>() {
+      //Sorted by decreasing order of start
+      @Override
+      public int compare(Interval i1, Interval i2) {
+         return i2.end - i1.end;
+      }
+   });
+
+   // Custom functions
 
    public void fillInOut()
    {
@@ -279,37 +312,40 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
    }
 
-   HashMap<String, HashMap<Integer, String>> registerAllocation = new HashMap<String, HashMap<Integer, String>>();
-   Stack<String> availableRegisters = new Stack<String>();
-
    public void populateRegisters()
    {
       availableRegisters.clear();
       for(int i = 9; i >= 0; i--) availableRegisters.push("t" + i);
       for(int i = 7; i >= 0; i--) availableRegisters.push("s" + i);
    }
+
    // Linear Search Algorithm
-   PriorityQueue<Interval> active = new PriorityQueue<Interval>(new Comparator<Interval>() {
-      //Sorted by increasing order of end
-      @Override
-      public int compare(Interval i1, Interval i2) {
-         return i1.end - i2.end;
+   public void expireOldIntervals(int start, String scope)
+   {
+      while(!active.isEmpty() && active.peek().end < start)
+      {
+         Interval interval = active.poll();
+         availableRegisters.push(registerAllocation.get(scope).get(interval.temp));
       }
-   });
-   PriorityQueue<Interval> liveIntervals = new PriorityQueue<Interval>(new Comparator<Interval>() {
-      //Sorted by increasing order of start
-      @Override
-      public int compare(Interval i1, Interval i2) {
-         return i1.start - i2.start;
+   }
+
+   public void spillAtInterval(Interval interval, String scope)
+   {
+      Interval spill = reverseActive.peek();
+      if(spill != null && spill.end > interval.end)
+      {
+         registerAllocation.get(scope).put(interval.temp, registerAllocation.get(scope).get(spill.temp));
+         registerAllocation.get(scope).put(spill.temp, "spill");
+         reverseActive.poll();
+         active.remove(interval);
+         reverseActive.add(interval);
+         active.add(interval);
       }
-   });
-   PriorityQueue<Interval> reverseActive = new PriorityQueue<Interval>(new Comparator<Interval>() {
-      //Sorted by decreasing order of start
-      @Override
-      public int compare(Interval i1, Interval i2) {
-         return i2.end - i1.end;
+      else
+      {
+         registerAllocation.get(scope).put(interval.temp, "spill");
       }
-   });
+   }
 
    public void linearScanAlgorithm(String scopeLabel)
    {  //add in register allocation for the particular label scope
@@ -322,29 +358,52 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       {
          liveIntervals.add(entry.getValue());
       }
-      int arguments = procProps.get(scopeLabel).argCount;
+      int arguments;
+      if(!scopeLabel.equals("MAIN")) arguments = procProps.get(scopeLabel).argCount;
+      else arguments = 0;
 
       HashMap<Integer, String> tempToReg = new HashMap<Integer, String>();
       registerAllocation.put(scopeLabel, tempToReg);
 
       for(int i=0; i<arguments; i++)
       {
-         String registerAlloc = "a" + i;
          Interval interval = intervals.get(scopeLabel).get(i);
-         tempToReg.put(i, registerAlloc);
-         active.add(interval);
-         liveIntervals.remove(interval);
+         if(interval != null)
+         {
+            String registerAlloc;
+
+            if(i<=3) registerAlloc = "a" + i;
+            else registerAlloc = "paraspill";
+
+            tempToReg.put(i, registerAlloc);
+            liveIntervals.remove(interval);
+         }
       }
 
-      
+      while(!liveIntervals.isEmpty())
+      {
+         expireOldIntervals(liveIntervals.peek().start, scopeLabel);
+         if(!availableRegisters.isEmpty())
+         {
+            Interval interval = liveIntervals.poll();
+            String registerAlloc = availableRegisters.pop();
+            tempToReg.put(interval.temp, registerAlloc);
+            active.add(interval);
+            reverseActive.add(interval);
+         }
+         else
+         {
+            spillAtInterval(liveIntervals.poll(), scopeLabel);
+         }
+      }
    }
 
    public void registerAllocate()
    {
-      populateRegisters();
       Iterator<String> itr = intervals.keySet().iterator();
       while(itr.hasNext()){
          String key = itr.next();
+         populateRegisters();
          linearScanAlgorithm(key);
       }
    }
@@ -365,6 +424,31 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
    }
 
+   public int findSpills(String scope)
+   {
+      int spillCount = 0;
+      Iterator<Integer> itr = registerAllocation.get(scope).keySet().iterator();
+      while(itr.hasNext()){
+         Integer key = itr.next();
+         if(registerAllocation.get(scope).get(key).equals("spill")) spillCount++;
+      }
+      return spillCount;
+   }
+
+   public void allocateSpillNumbers(String scope)
+   {
+      Iterator<Integer> itr = registerAllocation.get(scope).keySet().iterator();
+      HashMap<Integer, Integer> tempToSpill = spillNumberMap.get(scope);
+      while(itr.hasNext()){
+         Integer key = itr.next();
+         if(registerAllocation.get(scope).get(key).equals("spill"))
+         {
+            int temp = key;
+            int spillnum = nextSpillNumber();
+            tempToSpill.put(temp, spillnum);
+         }
+      }
+   }
 
    //
    // User-generated visitor methods below
@@ -377,27 +461,35 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f3 -> ( Procedure() )*
     * f4 -> <EOF>
     */
-   public R visit(Goal n, A argu) {
-      R _ret=null;
+   public R visit(Goal n, A argu) 
+   {
       ScopeArgument scope = new ScopeArgument();
       scope.scope = "MAIN";
       scope.isLabel = true;
       n.f1.accept(this, (A)scope);
-      n.f2.accept(this, argu);      
       n.f3.accept(this, argu);
-      n.f4.accept(this, argu);
 
       fillInOut();
       sortByScope();
       findIntervalsByScope();
-      //registerAllocate();
-      //printRegisterAllocation();
+      registerAllocate();
+      if(debug)
+      {
+         printRegisterAllocation();
+         printBasicBlocks();
+         printIntervals();
+         printLabels();
+      }
 
-      printBasicBlocks();
-      printLabels();
-      printIntervals();
+      stage = 2;
 
-      return _ret;
+      System.out.println("MAIN");
+      globalSpillNumber = 0;
+      n.f1.accept(this, (A)scope);
+      System.out.println("END");
+      n.f3.accept(this, argu);
+
+      return null;
    }
 
    /**
@@ -409,25 +501,45 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(Procedure n, A argu) 
    {
-      R _ret=null;
-
       ScopeArgument scope = new ScopeArgument();
       scope.isLabel = false;
-
-      String label = n.f0.accept(this, (A)scope).toString();      
-      n.f1.accept(this, argu);
-      int arguments = Integer.parseInt(n.f2.accept(this, argu).toString());
-
-      ProcedureProperties procedure = new ProcedureProperties();
-      procedure.argCount = arguments;   
-      procProps.put(label, procedure);
-
+      String label = n.f0.accept(this, (A)scope).toString();
       scope.scope = label;
-      scope.isLabel = true;
 
-      n.f3.accept(this, argu);
+      ProcedureProperties procedure;
+      if(stage == 1)
+      {
+         int arguments = Integer.parseInt(n.f2.accept(this, argu).toString());
+
+         procedure = new ProcedureProperties();
+         procedure.argCount = arguments;
+         procedure.maxArgCount = arguments;
+         procProps.put(label, procedure);
+      }
+      else if(stage == 2)
+      {
+         procedure = procProps.get(label);
+         int args = procedure.argCount;
+         int mac = procedure.maxArgCount;
+         int ss = 0;
+         if(mac > 4) ss = mac - 4;
+         ss += findSpills(label);
+         if (mac > 0) ss += 18;
+         else ss += 8;
+         System.out.println(label + " [" + args + "]" + " [" + ss + "]" + " [" + mac + "]");
+
+         spillNumberMap.put(label, new HashMap<Integer, Integer>());
+         globalSpillNumber = 0;
+
+         for(int i=4; i<args; i++) spillNumberMap.get(label).put(i, nextSpillNumber());
+
+         for(int i=0; i<8; i++) System.out.println("ASTORE SPILLEDARG " + nextSpillNumber() + " s" + i);
+
+         allocateSpillNumbers(label);
+      }
       n.f4.accept(this, (A)scope);
-      return _ret;
+
+      return null;
    }
 
    /**
@@ -439,6 +551,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
     public R visit(StmtExp n, A argu) 
     {
+      ScopeArgument scope = (ScopeArgument)argu;
+      if(stage == 2)
+      {
+         System.out.println("BEGIN");
+      }
       n.f1.accept(this, argu);
 
       SimpleExpReturn simpleExpReturn = (SimpleExpReturn)n.f3.accept(this, argu);
@@ -453,7 +570,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          int lineNumber = n.f2.beginLine;
          newBlock.next = lineNumber + 1;
 
-         ScopeArgument scope = (ScopeArgument)argu;
          if(scope.labelPresent)
          {
             lineNumber--;
@@ -461,6 +577,31 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          }
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
+      }
+      else if(stage == 2)
+      {
+         HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
+      
+         if(simpleExpReturn.type == 0)
+         {
+            String reg = tempToReg.get(simpleExpReturn.temp);
+            if(reg.equals("spill") || reg.equals("paraspill"))
+            {
+               int spillnum = spillNumberMap.get(scope.scope).get(simpleExpReturn.temp);
+               System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+               System.out.println("MOVE v0 v1");
+            }
+            else
+            {
+               System.out.println("MOVE v0 " + reg);
+            }
+         }
+         else if(simpleExpReturn.type == 1)
+         {
+            System.out.println("MOVE v1 " + simpleExpReturn.number);
+            System.out.println("MOVE v0 v1");
+         }
+         System.out.println("END");
       }
       return null;
    }
@@ -521,6 +662,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
+      else if (stage == 2)
+      {
+         System.out.println("NOOP");
+      }
       return null;
    }
 
@@ -546,6 +691,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
+      }
+      else if(stage == 2)
+      {
+         System.out.println("ERROR");
       }
       return null;
    }
@@ -578,7 +727,23 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          }
 
          newBlock.lineNumber = lineNumber;
-         instructions.put(lineNumber, newBlock);
+         instructions.
+         put(lineNumber, newBlock);
+      }
+      else if(stage == 2)
+      {
+         HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
+         String reg = tempToReg.get(temp);
+         if(reg.equals("spill") || reg.equals("paraspill"))
+         {
+            int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp);
+            System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+            System.out.println("CJUMP v1 " + label);
+         }
+         else
+         {
+            System.out.println("CJUMP " + reg + " " + label);
+         }
       }
       return null;
    }
@@ -609,6 +774,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
+      }
+      else if(stage == 2)
+      {
+         System.out.println("JUMP " + label);
       }
       return null;
    }
@@ -645,6 +814,25 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
+      else if (stage == 2)
+      {
+         HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
+         String reg1 = tempToReg.get(temp1);
+         String reg2 = tempToReg.get(temp2);
+         if(reg1.equals("spill") || reg1.equals("paraspill"))
+         {
+            int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp1);
+            System.out.println("ALOAD v0 SPILLEDARG " + spillnum);
+            reg1 = "v0";
+         }
+         if(reg2.equals("spill") || reg2.equals("paraspill"))
+         {
+            int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp2);
+            System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+            reg2 = "v1";
+         }
+         System.out.println("HSTORE " + reg1 + " " + offset + " " + reg2);
+      }
       return null;
    }
 
@@ -680,6 +868,28 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
+      else if(stage == 2)
+      {
+         HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
+         String reg1 = tempToReg.get(temp1);
+         String reg2 = tempToReg.get(temp2);
+         if(reg2.equals("spill") || reg2.equals("paraspill"))
+         {
+            int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp2);
+            System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+            reg2 = "v1";
+         }
+         if(reg1.equals("spill") || reg1.equals("paraspill"))
+         {
+            int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp1);
+            System.out.println("HLOAD v0 " + reg2 + " " + offset);
+            System.out.println("ASTORE SPILLEDARG " + spillnum + " v0");
+         }
+         else
+         {
+            System.out.println("HLOAD " + reg1 + " " + reg2 + " " + offset);
+         }
+      }
       return null;
    }
 
@@ -714,6 +924,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
+      else if (stage == 2)
+      {
+         
+      }
       return null;
    }
 
@@ -743,6 +957,25 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
+      }
+      else if(stage == 2)
+      {
+         HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
+         if(simpleExpReturn.type == 0)
+         {
+            String reg = tempToReg.get(simpleExpReturn.temp);
+            if(reg.equals("spill") || reg.equals("paraspill"))
+            {
+               int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(simpleExpReturn.temp);
+               System.out.println("ALOAD v0 SPILLEDARG " + spillnum);
+            }
+            System.out.println("PRINT v0");
+         }
+         else
+         {
+            System.out.println("MOVE v0 " + simpleExpReturn.number);
+            System.out.println("PRINT v0");
+         }
       }
       return null;
    }
@@ -795,6 +1028,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       Vector<Node> nodes = n.f3.nodes;
       for(int i = 0; i < nodes.size(); i++) 
          expReturn.use.add(Integer.parseInt(nodes.get(i).accept(this, argu).toString()));
+
+      int tempArgCount = nodes.size();
+      if(procProps.containsKey(((ScopeArgument)argu).scope))
+         if(procProps.get(((ScopeArgument)argu).scope).maxArgCount < tempArgCount)
+            procProps.get(((ScopeArgument)argu).scope).maxArgCount = tempArgCount;
 
       int expNumber = nextExp();
       expMap.put(expNumber, expReturn);
@@ -898,6 +1136,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       if(((ScopeArgument)argu).isLabel){
          labelMap.put(label.toString(), lineNumber);
          ((ScopeArgument)argu).labelPresent = true;
+
+         if(stage == 2) System.out.println(label.toString());
       }
       return label;
    }
