@@ -141,7 +141,6 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    // Global variables
    HashMap<String, ProcedureProperties> procProps = new HashMap<String, ProcedureProperties>();
    TreeMap<Integer, BasicBlock> instructions = new TreeMap<Integer, BasicBlock>();
-   //TreeMap<String, Integer> labelMap = new TreeMap<String, Integer>();
    TreeMap<String, TreeMap<String, LabelData>> labelData = new TreeMap<String, TreeMap<String, LabelData>>();
    HashMap<Integer, ExpReturn> expMap = new HashMap<Integer, ExpReturn>();
    LinkedHashMap<String, TreeMap<Integer, BasicBlock>> sortedInstrs = new LinkedHashMap<String, TreeMap<Integer, BasicBlock>>();
@@ -154,7 +153,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    Queue<String> availableRegisters = new LinkedList<String>();
    HashMap<String, HashMap<Integer, Integer>> spillNumberMap = new HashMap<String, HashMap<Integer, Integer>>();
    int globalSpillNumber = 0;
-   int newLabelNumber = 0;
+   int newLabelNumber = 2;
 
    public int nextSpillNumber() {return globalSpillNumber++;}
 
@@ -213,7 +212,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             else if(bb.type.equals("CJUMP"))
             {
                if(instructions.containsKey(bb.next)) bb.out.addAll(instructions.get(bb.next).in);
-               if(labelData.containsKey(bb.label)) 
+               if(labelData.get(bb.scope).containsKey(bb.label)) 
                {
                   int labelNumber = labelData.get(bb.scope).get(bb.label).lineNumber;
                   if(instructions.containsKey(labelNumber)) bb.out.addAll(instructions.get(labelNumber).in);
@@ -492,6 +491,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       proc.argCount = 0;
       proc.maxArgCount = 0;
       procProps.put("MAIN", proc);
+
+      TreeMap<String, LabelData> labelMap = new TreeMap<String, LabelData>();
+      labelData.put("MAIN", labelMap);
+
       n.f1.accept(this, (A)scope);
       n.f3.accept(this, argu);
 
@@ -519,6 +522,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       System.out.println("MAIN [" + args + "] [" + spillCount + "] [" + mac + "]");
       globalSpillNumber = 0;
+      allocateSpillNumbers("MAIN");
       n.f1.accept(this, (A)scope);
       System.out.println("END");
       n.f3.accept(this, argu);
@@ -540,12 +544,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       String label = n.f0.accept(this, (A)scope).toString();
       scope.scope = label;
 
-      TreeMap<String, LabelData> labelMap = new TreeMap<String, LabelData>();
-      labelData.put(label, labelMap);
-
       ProcedureProperties procedure;
       if(stage == 1)
       {
+         TreeMap<String, LabelData> labelMap = new TreeMap<String, LabelData>();
+         labelData.put(label, labelMap);
          int arguments = Integer.parseInt(n.f2.accept(this, argu).toString());
 
          procedure = new ProcedureProperties();
@@ -775,17 +778,19 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
       else if(stage == 2)
       {
+         String newLabel = labelData.get(((ScopeArgument)argu).scope).get(label).newLabel;
+
          HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
          String reg = tempToReg.get(temp);
          if(reg.equals("spill") || reg.equals("paraspill"))
          {
             int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp);
             System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
-            System.out.println("CJUMP v1 " + label);
+            System.out.println("CJUMP v1 " + newLabel);
          }
          else
          {
-            System.out.println("CJUMP " + reg + " " + label);
+            System.out.println("CJUMP " + reg + " " + newLabel);
          }
       }
       return null;
@@ -820,7 +825,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
       else if(stage == 2)
       {
-         System.out.println("JUMP " + label);
+         String newLabel = labelData.get(((ScopeArgument)argu).scope).get(label).newLabel;
+         System.out.println("JUMP " + newLabel);
       }
       return null;
    }
@@ -967,7 +973,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          newBlock.lineNumber = lineNumber;
          instructions.put(lineNumber, newBlock);
       }
-      else if (stage == 2)
+      else if(stage == 2)
       {
          HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
          String reg1 = tempToReg.get(temp);
@@ -1360,6 +1366,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          if(stage == 2)
          {
             LabelData labelData = labelMap.get(label.toString());
+            if(labelData == null)
+            {
+               System.out.println("ERROR: Label not found" + label.toString());
+               System.exit(0);
+            }
             System.out.println(labelData.newLabel);
          }
       }

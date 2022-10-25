@@ -16,5 +16,4 @@ done
 find . -name "*.class" | xargs rm -f
 
 cd ..
-
-bash compareOutput.sh $dirName
+# bash compareOutput.sh $dirName
