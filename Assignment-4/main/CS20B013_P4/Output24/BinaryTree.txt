@@ -1,0 +1,13163 @@
+Scope: Tree_Insert
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: t0
+
+	Temp: 4 Register: s4
+
+	Temp: 5 Register: s2
+
+	Temp: 6 Register: s3
+
+	Temp: 7 Register: s7
+
+	Temp: 8 Register: s5
+
+	Temp: 9 Register: s6
+
+	Temp: 10 Register: t0
+
+	Temp: 11 Register: t1
+
+	Temp: 12 Register: t2
+
+	Temp: 13 Register: t3
+
+	Temp: 14 Register: t4
+
+	Temp: 15 Register: t5
+
+	Temp: 16 Register: t6
+
+	Temp: 17 Register: t7
+
+	Temp: 18 Register: t8
+
+	Temp: 19 Register: t9
+
+	Temp: 20 Register: s2
+
+	Temp: 21 Register: s3
+
+	Temp: 22 Register: s5
+
+	Temp: 23 Register: s6
+
+	Temp: 24 Register: t0
+
+	Temp: 25 Register: t1
+
+	Temp: 26 Register: t2
+
+	Temp: 27 Register: t3
+
+	Temp: 28 Register: t4
+
+	Temp: 29 Register: t5
+
+	Temp: 30 Register: t7
+
+	Temp: 31 Register: t6
+
+	Temp: 32 Register: t8
+
+	Temp: 33 Register: t9
+
+	Temp: 34 Register: s2
+
+	Temp: 35 Register: s3
+
+	Temp: 36 Register: s5
+
+	Temp: 37 Register: s6
+
+	Temp: 39 Register: t1
+
+	Temp: 40 Register: t2
+
+	Temp: 41 Register: t3
+
+	Temp: 42 Register: t4
+
+	Temp: 43 Register: t5
+
+	Temp: 44 Register: t8
+
+	Temp: 45 Register: t6
+
+	Temp: 46 Register: s6
+
+	Temp: 47 Register: t9
+
+	Temp: 48 Register: s2
+
+	Temp: 49 Register: s3
+
+	Temp: 50 Register: s5
+
+	Temp: 51 Register: s7
+
+	Temp: 52 Register: t7
+
+	Temp: 53 Register: s4
+
+	Temp: 54 Register: t2
+
+	Temp: 55 Register: t3
+
+	Temp: 56 Register: t1
+
+	Temp: 57 Register: t4
+
+	Temp: 58 Register: t6
+
+	Temp: 59 Register: s2
+
+	Temp: 60 Register: t9
+
+	Temp: 61 Register: s3
+
+	Temp: 62 Register: s5
+
+	Temp: 63 Register: s6
+
+	Temp: 64 Register: t7
+
+	Temp: 65 Register: s4
+
+	Temp: 66 Register: s7
+
+	Temp: 67 Register: t2
+
+	Temp: 68 Register: t1
+
+	Temp: 69 Register: t3
+
+	Temp: 70 Register: t4
+
+	Temp: 71 Register: t6
+
+	Temp: 72 Register: t9
+
+	Temp: 73 Register: s2
+
+	Temp: 74 Register: s3
+
+	Temp: 75 Register: s5
+
+	Temp: 76 Register: s6
+
+	Temp: 77 Register: s4
+
+	Temp: 78 Register: t7
+
+	Temp: 79 Register: s7
+
+	Temp: 80 Register: t2
+
+	Temp: 81 Register: t1
+
+	Temp: 82 Register: t4
+
+	Temp: 83 Register: t3
+
+	Temp: 84 Register: t6
+
+	Temp: 85 Register: t9
+
+	Temp: 86 Register: s3
+
+	Temp: 87 Register: s2
+
+	Temp: 88 Register: s5
+
+	Temp: 89 Register: s6
+
+	Temp: 90 Register: t7
+
+	Temp: 91 Register: s4
+
+Scope: Tree_GetRight
+	Temp: 0 Register: s0
+
+	Temp: 2 Register: s1
+
+Scope: Tree_GetHas_Left
+	Temp: 0 Register: s0
+
+	Temp: 2 Register: s1
+
+Scope: BT_Start
+	Temp: 2 Register: s0
+
+	Temp: 3 Register: s2
+
+	Temp: 4 Register: s0
+
+	Temp: 5 Register: s1
+
+	Temp: 6 Register: s5
+
+	Temp: 7 Register: s3
+
+	Temp: 8 Register: s4
+
+	Temp: 9 Register: s6
+
+	Temp: 10 Register: s7
+
+	Temp: 11 Register: t0
+
+	Temp: 12 Register: t1
+
+	Temp: 13 Register: t2
+
+	Temp: 14 Register: t3
+
+	Temp: 15 Register: t4
+
+	Temp: 16 Register: t5
+
+	Temp: 17 Register: t6
+
+	Temp: 18 Register: t7
+
+	Temp: 19 Register: t8
+
+	Temp: 20 Register: t9
+
+	Temp: 21 Register: s0
+
+	Temp: 22 Register: s1
+
+	Temp: 23 Register: s3
+
+	Temp: 24 Register: s4
+
+	Temp: 25 Register: s6
+
+	Temp: 26 Register: s7
+
+	Temp: 27 Register: t0
+
+	Temp: 28 Register: t1
+
+	Temp: 29 Register: t3
+
+	Temp: 30 Register: t2
+
+	Temp: 31 Register: t4
+
+	Temp: 32 Register: t5
+
+	Temp: 33 Register: t6
+
+	Temp: 34 Register: t7
+
+	Temp: 35 Register: t8
+
+	Temp: 36 Register: t9
+
+	Temp: 38 Register: s1
+
+	Temp: 39 Register: s3
+
+	Temp: 40 Register: s4
+
+	Temp: 41 Register: s6
+
+	Temp: 42 Register: s7
+
+	Temp: 43 Register: t0
+
+	Temp: 44 Register: t1
+
+	Temp: 45 Register: t2
+
+	Temp: 46 Register: t4
+
+	Temp: 47 Register: t5
+
+	Temp: 48 Register: t6
+
+	Temp: 49 Register: t7
+
+	Temp: 50 Register: t8
+
+	Temp: 51 Register: t9
+
+	Temp: 52 Register: t3
+
+	Temp: 53 Register: s2
+
+	Temp: 54 Register: s5
+
+	Temp: 55 Register: s3
+
+	Temp: 56 Register: s4
+
+	Temp: 57 Register: s6
+
+	Temp: 58 Register: s1
+
+	Temp: 59 Register: s7
+
+	Temp: 60 Register: t1
+
+	Temp: 61 Register: t2
+
+	Temp: 62 Register: t0
+
+	Temp: 63 Register: t4
+
+	Temp: 64 Register: t5
+
+	Temp: 65 Register: t7
+
+	Temp: 66 Register: t8
+
+	Temp: 67 Register: t9
+
+	Temp: 68 Register: t6
+
+	Temp: 69 Register: t3
+
+	Temp: 70 Register: s5
+
+	Temp: 71 Register: s3
+
+	Temp: 72 Register: s2
+
+	Temp: 73 Register: s4
+
+	Temp: 74 Register: s1
+
+	Temp: 75 Register: s7
+
+	Temp: 76 Register: t1
+
+	Temp: 77 Register: s6
+
+	Temp: 78 Register: t2
+
+	Temp: 79 Register: t4
+
+	Temp: 80 Register: t5
+
+	Temp: 81 Register: t7
+
+	Temp: 82 Register: t0
+
+	Temp: 83 Register: t8
+
+	Temp: 84 Register: t6
+
+	Temp: 85 Register: t3
+
+	Temp: 86 Register: s5
+
+	Temp: 87 Register: t9
+
+	Temp: 88 Register: s3
+
+	Temp: 89 Register: s4
+
+	Temp: 90 Register: s1
+
+	Temp: 91 Register: s7
+
+	Temp: 92 Register: s2
+
+	Temp: 93 Register: t1
+
+	Temp: 94 Register: t2
+
+	Temp: 95 Register: t4
+
+	Temp: 96 Register: t5
+
+	Temp: 97 Register: s6
+
+	Temp: 98 Register: t7
+
+	Temp: 99 Register: t8
+
+	Temp: 100 Register: t6
+
+	Temp: 101 Register: t3
+
+	Temp: 102 Register: t0
+
+	Temp: 103 Register: s5
+
+	Temp: 104 Register: s3
+
+	Temp: 105 Register: s4
+
+	Temp: 106 Register: t9
+
+	Temp: 107 Register: s1
+
+	Temp: 108 Register: s2
+
+	Temp: 109 Register: t1
+
+	Temp: 110 Register: t2
+
+	Temp: 111 Register: s7
+
+	Temp: 112 Register: t4
+
+	Temp: 113 Register: s6
+
+	Temp: 114 Register: t7
+
+	Temp: 115 Register: t8
+
+	Temp: 116 Register: t5
+
+	Temp: 117 Register: t6
+
+	Temp: 118 Register: t0
+
+	Temp: 119 Register: s5
+
+	Temp: 120 Register: s3
+
+	Temp: 121 Register: t3
+
+	Temp: 122 Register: s4
+
+	Temp: 123 Register: s1
+
+	Temp: 124 Register: s2
+
+	Temp: 125 Register: t1
+
+	Temp: 126 Register: t9
+
+	Temp: 127 Register: t2
+
+	Temp: 128 Register: t4
+
+	Temp: 129 Register: s6
+
+	Temp: 130 Register: t7
+
+Scope: Tree_RemoveRight
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 2 Register: s2
+
+	Temp: 4 Register: s3
+
+	Temp: 5 Register: s4
+
+	Temp: 6 Register: s5
+
+	Temp: 7 Register: s6
+
+	Temp: 9 Register: s7
+
+	Temp: 10 Register: t0
+
+	Temp: 11 Register: t1
+
+	Temp: 12 Register: t6
+
+	Temp: 13 Register: t2
+
+	Temp: 14 Register: t3
+
+	Temp: 15 Register: t4
+
+	Temp: 16 Register: t5
+
+	Temp: 17 Register: t7
+
+	Temp: 18 Register: t8
+
+	Temp: 19 Register: t9
+
+	Temp: 20 Register: s4
+
+	Temp: 21 Register: s5
+
+	Temp: 22 Register: s3
+
+	Temp: 23 Register: s6
+
+	Temp: 24 Register: t0
+
+	Temp: 25 Register: t3
+
+	Temp: 26 Register: t4
+
+	Temp: 27 Register: t2
+
+	Temp: 28 Register: t5
+
+	Temp: 29 Register: t7
+
+	Temp: 30 Register: t8
+
+	Temp: 31 Register: t6
+
+	Temp: 32 Register: s7
+
+	Temp: 33 Register: t9
+
+	Temp: 34 Register: t1
+
+	Temp: 35 Register: s4
+
+Scope: Tree_SetRight
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+Scope: Tree_RecPrint
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+	Temp: 4 Register: s3
+
+	Temp: 5 Register: s4
+
+	Temp: 6 Register: s5
+
+	Temp: 8 Register: s6
+
+	Temp: 9 Register: s7
+
+	Temp: 10 Register: t0
+
+	Temp: 11 Register: t1
+
+	Temp: 12 Register: t2
+
+	Temp: 13 Register: t3
+
+	Temp: 14 Register: t4
+
+	Temp: 15 Register: t5
+
+	Temp: 16 Register: t6
+
+	Temp: 17 Register: t7
+
+	Temp: 18 Register: t8
+
+	Temp: 19 Register: t9
+
+	Temp: 20 Register: s3
+
+	Temp: 21 Register: s4
+
+	Temp: 22 Register: s2
+
+	Temp: 23 Register: s5
+
+	Temp: 24 Register: s7
+
+	Temp: 25 Register: t2
+
+	Temp: 26 Register: t3
+
+	Temp: 27 Register: t1
+
+	Temp: 28 Register: s6
+
+	Temp: 29 Register: t4
+
+	Temp: 30 Register: t0
+
+	Temp: 31 Register: t5
+
+	Temp: 32 Register: t6
+
+	Temp: 33 Register: t8
+
+	Temp: 34 Register: t9
+
+Scope: Tree_Search
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+	Temp: 4 Register: s4
+
+	Temp: 5 Register: s3
+
+	Temp: 6 Register: s6
+
+	Temp: 7 Register: s5
+
+	Temp: 8 Register: t3
+
+	Temp: 9 Register: s7
+
+	Temp: 10 Register: t0
+
+	Temp: 11 Register: t1
+
+	Temp: 12 Register: t2
+
+	Temp: 13 Register: t6
+
+	Temp: 14 Register: t4
+
+	Temp: 15 Register: t5
+
+	Temp: 16 Register: t7
+
+	Temp: 17 Register: t8
+
+	Temp: 18 Register: t9
+
+	Temp: 19 Register: s3
+
+	Temp: 20 Register: s5
+
+	Temp: 21 Register: t0
+
+	Temp: 22 Register: s7
+
+	Temp: 23 Register: t1
+
+	Temp: 24 Register: t2
+
+	Temp: 25 Register: t4
+
+	Temp: 26 Register: t7
+
+	Temp: 27 Register: t5
+
+	Temp: 28 Register: t6
+
+	Temp: 29 Register: t9
+
+	Temp: 30 Register: s3
+
+	Temp: 31 Register: t8
+
+	Temp: 32 Register: s5
+
+	Temp: 33 Register: s7
+
+	Temp: 34 Register: t1
+
+	Temp: 35 Register: t0
+
+	Temp: 36 Register: t2
+
+	Temp: 37 Register: t4
+
+	Temp: 38 Register: t5
+
+	Temp: 39 Register: t6
+
+	Temp: 40 Register: t3
+
+Scope: Tree_Compare
+	Temp: 1 Register: s1
+
+	Temp: 2 Register: s2
+
+	Temp: 4 Register: t3
+
+	Temp: 5 Register: s0
+
+	Temp: 6 Register: s5
+
+	Temp: 7 Register: s3
+
+	Temp: 8 Register: s4
+
+	Temp: 9 Register: t0
+
+	Temp: 10 Register: s6
+
+	Temp: 11 Register: s7
+
+	Temp: 12 Register: t1
+
+	Temp: 13 Register: t2
+
+	Temp: 14 Register: t6
+
+	Temp: 15 Register: t4
+
+	Temp: 16 Register: t5
+
+	Temp: 17 Register: t7
+
+	Temp: 18 Register: t8
+
+	Temp: 19 Register: t9
+
+	Temp: 20 Register: s0
+
+	Temp: 21 Register: s3
+
+Scope: Tree_Remove
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 2 Register: s2
+
+	Temp: 4 Register: s3
+
+	Temp: 5 Register: s4
+
+	Temp: 6 Register: s5
+
+	Temp: 7 Register: s6
+
+	Temp: 9 Register: s7
+
+	Temp: 10 Register: t0
+
+	Temp: 11 Register: t1
+
+	Temp: 12 Register: t2
+
+	Temp: 13 Register: t3
+
+	Temp: 14 Register: t4
+
+	Temp: 15 Register: t5
+
+	Temp: 16 Register: t6
+
+	Temp: 17 Register: t7
+
+	Temp: 18 Register: t8
+
+	Temp: 19 Register: t9
+
+	Temp: 20 Register: s4
+
+	Temp: 21 Register: t1
+
+	Temp: 22 Register: s5
+
+	Temp: 23 Register: s3
+
+	Temp: 24 Register: s6
+
+	Temp: 25 Register: t0
+
+	Temp: 26 Register: t7
+
+	Temp: 27 Register: t3
+
+	Temp: 28 Register: s7
+
+	Temp: 29 Register: t2
+
+	Temp: 30 Register: t4
+
+	Temp: 31 Register: t5
+
+	Temp: 32 Register: t6
+
+	Temp: 33 Register: t8
+
+	Temp: 34 Register: t9
+
+	Temp: 35 Register: s4
+
+	Temp: 36 Register: s3
+
+	Temp: 37 Register: s6
+
+	Temp: 38 Register: s5
+
+	Temp: 39 Register: t0
+
+	Temp: 40 Register: t2
+
+	Temp: 41 Register: t4
+
+	Temp: 42 Register: s7
+
+	Temp: 43 Register: t5
+
+	Temp: 44 Register: t6
+
+	Temp: 45 Register: t8
+
+	Temp: 46 Register: t3
+
+	Temp: 47 Register: t9
+
+	Temp: 48 Register: s3
+
+	Temp: 49 Register: s6
+
+	Temp: 50 Register: t7
+
+	Temp: 51 Register: t1
+
+	Temp: 52 Register: s4
+
+	Temp: 53 Register: s5
+
+	Temp: 54 Register: t2
+
+	Temp: 55 Register: t4
+
+	Temp: 56 Register: t0
+
+	Temp: 57 Register: s7
+
+	Temp: 58 Register: t5
+
+	Temp: 59 Register: t8
+
+Scope: Tree_SetHas_Left
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+Scope: Tree_SetKey
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+Scope: Tree_Init
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+	Temp: 4 Register: s3
+
+	Temp: 5 Register: s4
+
+Scope: Tree_GetKey
+	Temp: 0 Register: s0
+
+	Temp: 2 Register: s1
+
+Scope: Tree_SetLeft
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+Scope: Tree_GetLeft
+	Temp: 0 Register: s0
+
+	Temp: 2 Register: s1
+
+Scope: MAIN
+	Temp: 0 Register: s7
+
+	Temp: 1 Register: s2
+
+	Temp: 2 Register: s0
+
+	Temp: 3 Register: s1
+
+	Temp: 4 Register: s5
+
+	Temp: 5 Register: s3
+
+	Temp: 6 Register: s4
+
+	Temp: 7 Register: s6
+
+	Temp: 8 Register: t0
+
+	Temp: 9 Register: t1
+
+	Temp: 10 Register: t2
+
+Scope: Tree_GetHas_Right
+	Temp: 0 Register: s0
+
+	Temp: 2 Register: s1
+
+Scope: Tree_Print
+	Temp: 0 Register: s0
+
+	Temp: 2 Register: s1
+
+	Temp: 4 Register: s2
+
+	Temp: 5 Register: s3
+
+	Temp: 6 Register: s4
+
+	Temp: 7 Register: s5
+
+	Temp: 8 Register: s6
+
+Scope: Tree_Delete
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+	Temp: 4 Register: s3
+
+	Temp: 5 Register: s5
+
+	Temp: 6 Register: s4
+
+	Temp: 7 Register: s7
+
+	Temp: 8 Register: s6
+
+	Temp: 9 Register: t1
+
+	Temp: 10 Register: t0
+
+	Temp: 11 Register: t6
+
+	Temp: 12 Register: t2
+
+	Temp: 13 Register: t3
+
+	Temp: 14 Register: t4
+
+	Temp: 15 Register: t5
+
+	Temp: 16 Register: t9
+
+	Temp: 17 Register: t7
+
+	Temp: 18 Register: t8
+
+	Temp: 19 Register: s4
+
+	Temp: 20 Register: s6
+
+	Temp: 21 Register: t0
+
+	Temp: 22 Register: t3
+
+	Temp: 23 Register: t4
+
+	Temp: 24 Register: t2
+
+	Temp: 25 Register: t5
+
+	Temp: 26 Register: t7
+
+	Temp: 27 Register: t8
+
+	Temp: 28 Register: t9
+
+	Temp: 29 Register: s6
+
+	Temp: 30 Register: s4
+
+	Temp: 31 Register: t0
+
+	Temp: 32 Register: t3
+
+	Temp: 33 Register: t4
+
+	Temp: 34 Register: t5
+
+	Temp: 35 Register: t2
+
+	Temp: 36 Register: t7
+
+	Temp: 37 Register: t8
+
+	Temp: 38 Register: t9
+
+	Temp: 39 Register: s4
+
+	Temp: 40 Register: t0
+
+	Temp: 41 Register: s6
+
+	Temp: 42 Register: t3
+
+	Temp: 43 Register: t6
+
+	Temp: 44 Register: t5
+
+	Temp: 45 Register: t2
+
+	Temp: 46 Register: t4
+
+	Temp: 47 Register: t7
+
+	Temp: 48 Register: t9
+
+	Temp: 49 Register: s4
+
+	Temp: 50 Register: t8
+
+	Temp: 51 Register: t0
+
+	Temp: 52 Register: s6
+
+	Temp: 53 Register: t6
+
+	Temp: 54 Register: t4
+
+	Temp: 55 Register: t2
+
+	Temp: 56 Register: t7
+
+	Temp: 58 Register: t5
+
+	Temp: 59 Register: t9
+
+	Temp: 60 Register: s4
+
+	Temp: 61 Register: s6
+
+	Temp: 62 Register: t0
+
+	Temp: 63 Register: t6
+
+	Temp: 64 Register: t8
+
+	Temp: 65 Register: t4
+
+	Temp: 66 Register: t2
+
+	Temp: 67 Register: t7
+
+	Temp: 68 Register: t3
+
+	Temp: 69 Register: t5
+
+Scope: Tree_RemoveLeft
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 2 Register: s2
+
+	Temp: 4 Register: s3
+
+	Temp: 5 Register: s4
+
+	Temp: 6 Register: s5
+
+	Temp: 7 Register: s6
+
+	Temp: 9 Register: s7
+
+	Temp: 10 Register: t0
+
+	Temp: 11 Register: t1
+
+	Temp: 12 Register: t6
+
+	Temp: 13 Register: t2
+
+	Temp: 14 Register: t3
+
+	Temp: 15 Register: t4
+
+	Temp: 16 Register: t5
+
+	Temp: 17 Register: t7
+
+	Temp: 18 Register: t8
+
+	Temp: 19 Register: t9
+
+	Temp: 20 Register: s4
+
+	Temp: 21 Register: s5
+
+	Temp: 22 Register: s3
+
+	Temp: 23 Register: s6
+
+	Temp: 24 Register: t0
+
+	Temp: 25 Register: t3
+
+	Temp: 26 Register: t4
+
+	Temp: 27 Register: t2
+
+	Temp: 28 Register: t5
+
+	Temp: 29 Register: t7
+
+	Temp: 30 Register: t8
+
+	Temp: 31 Register: t6
+
+	Temp: 32 Register: s7
+
+	Temp: 33 Register: t9
+
+	Temp: 34 Register: t1
+
+	Temp: 35 Register: s4
+
+Scope: Tree_SetHas_Right
+	Temp: 0 Register: s0
+
+	Temp: 1 Register: s1
+
+	Temp: 3 Register: s2
+
+Scope: MAIN
+	Basic Block: 2
+		Type: MOVE
+		Label: null
+		Next: 3
+		Use: []
+		Def: [2]
+		In: []
+		Out: [2]
+
+	Basic Block: 3
+		Type: MOVE
+		Label: null
+		Next: 4
+		Use: [2]
+		Def: [3]
+		In: [2]
+		Out: [3]
+
+	Basic Block: 4
+		Type: MOVE
+		Label: null
+		Next: 5
+		Use: [3]
+		Def: [1]
+		In: [3]
+		Out: [1]
+
+	Basic Block: 5
+		Type: MOVE
+		Label: null
+		Next: 6
+		Use: []
+		Def: [5]
+		In: [1]
+		Out: [1, 5]
+
+	Basic Block: 6
+		Type: MOVE
+		Label: null
+		Next: 7
+		Use: [5]
+		Def: [6]
+		In: [1, 5]
+		Out: [1, 6]
+
+	Basic Block: 7
+		Type: MOVE
+		Label: null
+		Next: 8
+		Use: [6]
+		Def: [4]
+		In: [1, 6]
+		Out: [1, 4]
+
+	Basic Block: 8
+		Type: MOVE
+		Label: null
+		Next: 9
+		Use: []
+		Def: [7]
+		In: [1, 4]
+		Out: [1, 4, 7]
+
+	Basic Block: 9
+		Type: HSTORE
+		Label: null
+		Next: 10
+		Use: [1, 7]
+		Def: []
+		In: [1, 4, 7]
+		Out: [1, 4]
+
+	Basic Block: 10
+		Type: HSTORE
+		Label: null
+		Next: 11
+		Use: [1, 4]
+		Def: []
+		In: [1, 4]
+		Out: [4]
+
+	Basic Block: 11
+		Type: MOVE
+		Label: null
+		Next: 12
+		Use: [4]
+		Def: [0]
+		In: [4]
+		Out: [0]
+
+	Basic Block: 12
+		Type: HLOAD
+		Label: null
+		Next: 13
+		Use: [0]
+		Def: [8]
+		In: [0]
+		Out: [0, 8]
+
+	Basic Block: 13
+		Type: HLOAD
+		Label: null
+		Next: 14
+		Use: [8]
+		Def: [9]
+		In: [0, 8]
+		Out: [0, 9]
+
+	Basic Block: 14
+		Type: MOVE
+		Label: null
+		Next: 15
+		Use: [0, 9]
+		Def: [10]
+		In: [0, 9]
+		Out: [10]
+
+	Basic Block: 15
+		Type: PRINT
+		Label: null
+		Next: 16
+		Use: [10]
+		Def: []
+		In: [10]
+		Out: []
+
+Scope: BT_Start
+	Basic Block: 19
+		Type: MOVE
+		Label: null
+		Next: 20
+		Use: []
+		Def: [4]
+		In: []
+		Out: [4]
+
+	Basic Block: 20
+		Type: MOVE
+		Label: null
+		Next: 21
+		Use: [4]
+		Def: [5]
+		In: [4]
+		Out: [5]
+
+	Basic Block: 21
+		Type: MOVE
+		Label: null
+		Next: 22
+		Use: [5]
+		Def: [3]
+		In: [5]
+		Out: [3]
+
+	Basic Block: 22
+		Type: MOVE
+		Label: null
+		Next: 23
+		Use: []
+		Def: [7]
+		In: [3]
+		Out: [3, 7]
+
+	Basic Block: 23
+		Type: MOVE
+		Label: null
+		Next: 24
+		Use: [7]
+		Def: [8]
+		In: [3, 7]
+		Out: [3, 8]
+
+	Basic Block: 24
+		Type: MOVE
+		Label: null
+		Next: 25
+		Use: [8]
+		Def: [6]
+		In: [3, 8]
+		Out: [3, 6]
+
+	Basic Block: 25
+		Type: MOVE
+		Label: null
+		Next: 26
+		Use: []
+		Def: [9]
+		In: [3, 6]
+		Out: [3, 6, 9]
+
+	Basic Block: 26
+		Type: HSTORE
+		Label: null
+		Next: 27
+		Use: [3, 9]
+		Def: []
+		In: [3, 6, 9]
+		Out: [3, 6]
+
+	Basic Block: 27
+		Type: MOVE
+		Label: null
+		Next: 28
+		Use: []
+		Def: [10]
+		In: [3, 6]
+		Out: [3, 6, 10]
+
+	Basic Block: 28
+		Type: HSTORE
+		Label: null
+		Next: 29
+		Use: [3, 10]
+		Def: []
+		In: [3, 6, 10]
+		Out: [3, 6]
+
+	Basic Block: 29
+		Type: MOVE
+		Label: null
+		Next: 30
+		Use: []
+		Def: [11]
+		In: [3, 6]
+		Out: [3, 6, 11]
+
+	Basic Block: 30
+		Type: HSTORE
+		Label: null
+		Next: 31
+		Use: [3, 11]
+		Def: []
+		In: [3, 6, 11]
+		Out: [3, 6]
+
+	Basic Block: 31
+		Type: MOVE
+		Label: null
+		Next: 32
+		Use: []
+		Def: [12]
+		In: [3, 6]
+		Out: [3, 6, 12]
+
+	Basic Block: 32
+		Type: HSTORE
+		Label: null
+		Next: 33
+		Use: [3, 12]
+		Def: []
+		In: [3, 6, 12]
+		Out: [3, 6]
+
+	Basic Block: 33
+		Type: MOVE
+		Label: null
+		Next: 34
+		Use: []
+		Def: [13]
+		In: [3, 6]
+		Out: [3, 6, 13]
+
+	Basic Block: 34
+		Type: HSTORE
+		Label: null
+		Next: 35
+		Use: [3, 13]
+		Def: []
+		In: [3, 6, 13]
+		Out: [3, 6]
+
+	Basic Block: 35
+		Type: MOVE
+		Label: null
+		Next: 36
+		Use: []
+		Def: [14]
+		In: [3, 6]
+		Out: [3, 6, 14]
+
+	Basic Block: 36
+		Type: HSTORE
+		Label: null
+		Next: 37
+		Use: [3, 14]
+		Def: []
+		In: [3, 6, 14]
+		Out: [3, 6]
+
+	Basic Block: 37
+		Type: MOVE
+		Label: null
+		Next: 38
+		Use: []
+		Def: [15]
+		In: [3, 6]
+		Out: [3, 6, 15]
+
+	Basic Block: 38
+		Type: HSTORE
+		Label: null
+		Next: 39
+		Use: [3, 15]
+		Def: []
+		In: [3, 6, 15]
+		Out: [3, 6]
+
+	Basic Block: 39
+		Type: MOVE
+		Label: null
+		Next: 40
+		Use: []
+		Def: [16]
+		In: [3, 6]
+		Out: [16, 3, 6]
+
+	Basic Block: 40
+		Type: HSTORE
+		Label: null
+		Next: 41
+		Use: [16, 3]
+		Def: []
+		In: [16, 3, 6]
+		Out: [3, 6]
+
+	Basic Block: 41
+		Type: MOVE
+		Label: null
+		Next: 42
+		Use: []
+		Def: [17]
+		In: [3, 6]
+		Out: [17, 3, 6]
+
+	Basic Block: 42
+		Type: HSTORE
+		Label: null
+		Next: 43
+		Use: [17, 3]
+		Def: []
+		In: [17, 3, 6]
+		Out: [3, 6]
+
+	Basic Block: 43
+		Type: MOVE
+		Label: null
+		Next: 44
+		Use: []
+		Def: [18]
+		In: [3, 6]
+		Out: [18, 3, 6]
+
+	Basic Block: 44
+		Type: HSTORE
+		Label: null
+		Next: 45
+		Use: [18, 3]
+		Def: []
+		In: [18, 3, 6]
+		Out: [3, 6]
+
+	Basic Block: 45
+		Type: MOVE
+		Label: null
+		Next: 46
+		Use: []
+		Def: [19]
+		In: [3, 6]
+		Out: [3, 19, 6]
+
+	Basic Block: 46
+		Type: HSTORE
+		Label: null
+		Next: 47
+		Use: [3, 19]
+		Def: []
+		In: [3, 19, 6]
+		Out: [3, 6]
+
+	Basic Block: 47
+		Type: MOVE
+		Label: null
+		Next: 48
+		Use: []
+		Def: [20]
+		In: [3, 6]
+		Out: [3, 20, 6]
+
+	Basic Block: 48
+		Type: HSTORE
+		Label: null
+		Next: 49
+		Use: [3, 20]
+		Def: []
+		In: [3, 20, 6]
+		Out: [3, 6]
+
+	Basic Block: 49
+		Type: MOVE
+		Label: null
+		Next: 50
+		Use: []
+		Def: [21]
+		In: [3, 6]
+		Out: [3, 21, 6]
+
+	Basic Block: 50
+		Type: HSTORE
+		Label: null
+		Next: 51
+		Use: [3, 21]
+		Def: []
+		In: [3, 21, 6]
+		Out: [3, 6]
+
+	Basic Block: 51
+		Type: MOVE
+		Label: null
+		Next: 52
+		Use: []
+		Def: [22]
+		In: [3, 6]
+		Out: [3, 22, 6]
+
+	Basic Block: 52
+		Type: HSTORE
+		Label: null
+		Next: 53
+		Use: [3, 22]
+		Def: []
+		In: [3, 22, 6]
+		Out: [3, 6]
+
+	Basic Block: 53
+		Type: MOVE
+		Label: null
+		Next: 54
+		Use: []
+		Def: [23]
+		In: [3, 6]
+		Out: [3, 6, 23]
+
+	Basic Block: 54
+		Type: HSTORE
+		Label: null
+		Next: 55
+		Use: [3, 23]
+		Def: []
+		In: [3, 6, 23]
+		Out: [3, 6]
+
+	Basic Block: 55
+		Type: MOVE
+		Label: null
+		Next: 56
+		Use: []
+		Def: [24]
+		In: [3, 6]
+		Out: [3, 6, 24]
+
+	Basic Block: 56
+		Type: HSTORE
+		Label: null
+		Next: 57
+		Use: [3, 24]
+		Def: []
+		In: [3, 6, 24]
+		Out: [3, 6]
+
+	Basic Block: 57
+		Type: MOVE
+		Label: null
+		Next: 58
+		Use: []
+		Def: [25]
+		In: [3, 6]
+		Out: [3, 6, 25]
+
+	Basic Block: 58
+		Type: HSTORE
+		Label: null
+		Next: 59
+		Use: [3, 25]
+		Def: []
+		In: [3, 6, 25]
+		Out: [3, 6]
+
+	Basic Block: 59
+		Type: MOVE
+		Label: null
+		Next: 60
+		Use: []
+		Def: [26]
+		In: [3, 6]
+		Out: [3, 6, 26]
+
+	Basic Block: 60
+		Type: HSTORE
+		Label: null
+		Next: 61
+		Use: [3, 26]
+		Def: []
+		In: [3, 6, 26]
+		Out: [3, 6]
+
+	Basic Block: 61
+		Type: MOVE
+		Label: null
+		Next: 62
+		Use: []
+		Def: [27]
+		In: [3, 6]
+		Out: [3, 6, 27]
+
+	Basic Block: 62
+		Type: HSTORE
+		Label: null
+		Next: 63
+		Use: [3, 27]
+		Def: []
+		In: [3, 6, 27]
+		Out: [3, 6]
+
+	Basic Block: 63
+		Type: MOVE
+		Label: null
+		Next: 64
+		Use: []
+		Def: [28]
+		In: [3, 6]
+		Out: [3, 6, 28]
+
+	Basic Block: 64
+		Type: HSTORE
+		Label: null
+		Next: 65
+		Use: [3, 28]
+		Def: []
+		In: [3, 6, 28]
+		Out: [3, 6]
+
+	Basic Block: 65
+		Type: MOVE
+		Label: null
+		Next: 66
+		Use: []
+		Def: [30]
+		In: [3, 6]
+		Out: [3, 6, 30]
+
+	Basic Block: 66
+		Type: MOVE
+		Label: null
+		Next: 67
+		Use: [30]
+		Def: [29]
+		In: [3, 6, 30]
+		Out: [3, 6, 29]
+
+	Basic Block: 67
+		Type: MOVE
+		Label: null
+		Next: 69
+		Use: []
+		Def: [31]
+		In: [3, 6, 29]
+		Out: [3, 6, 29, 31]
+
+	Basic Block: 69
+		Type: MOVE
+		Label: null
+		Next: 70
+		Use: [29, 31]
+		Def: [32]
+		In: [3, 6, 29, 31]
+		Out: [32, 3, 6, 29]
+
+	Basic Block: 70
+		Type: CJUMP
+		Label: L3
+		Next: 71
+		Use: [32]
+		Def: []
+		In: [32, 3, 6, 29]
+		Out: [3, 6, 29]
+
+	Basic Block: 71
+		Type: MOVE
+		Label: null
+		Next: 72
+		Use: [6, 29]
+		Def: [33]
+		In: [3, 6, 29]
+		Out: [33, 3, 6, 29]
+
+	Basic Block: 72
+		Type: MOVE
+		Label: null
+		Next: 73
+		Use: []
+		Def: [34]
+		In: [33, 3, 6, 29]
+		Out: [33, 34, 3, 6, 29]
+
+	Basic Block: 73
+		Type: HSTORE
+		Label: null
+		Next: 74
+		Use: [33, 34]
+		Def: []
+		In: [33, 34, 3, 6, 29]
+		Out: [3, 6, 29]
+
+	Basic Block: 74
+		Type: MOVE
+		Label: null
+		Next: 75
+		Use: []
+		Def: [35]
+		In: [3, 6, 29]
+		Out: [35, 3, 6, 29]
+
+	Basic Block: 75
+		Type: MOVE
+		Label: null
+		Next: 76
+		Use: [35, 29]
+		Def: [36]
+		In: [35, 3, 6, 29]
+		Out: [3, 36, 6]
+
+	Basic Block: 76
+		Type: MOVE
+		Label: null
+		Next: 77
+		Use: [36]
+		Def: [29]
+		In: [3, 36, 6]
+		Out: [3, 6, 29]
+
+	Basic Block: 77
+		Type: JUMP
+		Label: L2
+		Next: 78
+		Use: []
+		Def: []
+		In: [3, 6, 29]
+		Out: [3, 6, 29]
+
+	Basic Block: 78
+		Type: HSTORE
+		Label: null
+		Next: 80
+		Use: [3, 6]
+		Def: []
+		In: [3, 6]
+		Out: [6]
+
+	Basic Block: 80
+		Type: MOVE
+		Label: null
+		Next: 81
+		Use: [6]
+		Def: [2]
+		In: [6]
+		Out: [2]
+
+	Basic Block: 81
+		Type: MOVE
+		Label: null
+		Next: 82
+		Use: [2]
+		Def: [38]
+		In: [2]
+		Out: [2, 38]
+
+	Basic Block: 82
+		Type: HLOAD
+		Label: null
+		Next: 83
+		Use: [38]
+		Def: [39]
+		In: [2, 38]
+		Out: [2, 38, 39]
+
+	Basic Block: 83
+		Type: HLOAD
+		Label: null
+		Next: 84
+		Use: [39]
+		Def: [40]
+		In: [2, 38, 39]
+		Out: [2, 38, 40]
+
+	Basic Block: 84
+		Type: MOVE
+		Label: null
+		Next: 85
+		Use: []
+		Def: [41]
+		In: [2, 38, 40]
+		Out: [2, 38, 40, 41]
+
+	Basic Block: 85
+		Type: MOVE
+		Label: null
+		Next: 86
+		Use: [38, 40, 41]
+		Def: [42]
+		In: [2, 38, 40, 41]
+		Out: [2, 42]
+
+	Basic Block: 86
+		Type: MOVE
+		Label: null
+		Next: 87
+		Use: [42]
+		Def: [37]
+		In: [2, 42]
+		Out: [2]
+
+	Basic Block: 87
+		Type: MOVE
+		Label: null
+		Next: 88
+		Use: [2]
+		Def: [43]
+		In: [2]
+		Out: [2, 43]
+
+	Basic Block: 88
+		Type: HLOAD
+		Label: null
+		Next: 89
+		Use: [43]
+		Def: [44]
+		In: [2, 43]
+		Out: [2, 43, 44]
+
+	Basic Block: 89
+		Type: HLOAD
+		Label: null
+		Next: 90
+		Use: [44]
+		Def: [45]
+		In: [2, 43, 44]
+		Out: [2, 43, 45]
+
+	Basic Block: 90
+		Type: MOVE
+		Label: null
+		Next: 91
+		Use: [43, 45]
+		Def: [46]
+		In: [2, 43, 45]
+		Out: [2, 46]
+
+	Basic Block: 91
+		Type: MOVE
+		Label: null
+		Next: 92
+		Use: [46]
+		Def: [37]
+		In: [2, 46]
+		Out: [2]
+
+	Basic Block: 92
+		Type: MOVE
+		Label: null
+		Next: 93
+		Use: []
+		Def: [47]
+		In: [2]
+		Out: [2, 47]
+
+	Basic Block: 93
+		Type: PRINT
+		Label: null
+		Next: 94
+		Use: [47]
+		Def: []
+		In: [2, 47]
+		Out: [2]
+
+	Basic Block: 94
+		Type: MOVE
+		Label: null
+		Next: 95
+		Use: [2]
+		Def: [48]
+		In: [2]
+		Out: [48, 2]
+
+	Basic Block: 95
+		Type: HLOAD
+		Label: null
+		Next: 96
+		Use: [48]
+		Def: [49]
+		In: [48, 2]
+		Out: [48, 49, 2]
+
+	Basic Block: 96
+		Type: HLOAD
+		Label: null
+		Next: 97
+		Use: [49]
+		Def: [50]
+		In: [48, 49, 2]
+		Out: [48, 50, 2]
+
+	Basic Block: 97
+		Type: MOVE
+		Label: null
+		Next: 98
+		Use: []
+		Def: [51]
+		In: [48, 50, 2]
+		Out: [48, 50, 2, 51]
+
+	Basic Block: 98
+		Type: MOVE
+		Label: null
+		Next: 99
+		Use: [48, 50, 51]
+		Def: [52]
+		In: [48, 50, 2, 51]
+		Out: [2, 52]
+
+	Basic Block: 99
+		Type: MOVE
+		Label: null
+		Next: 100
+		Use: [52]
+		Def: [37]
+		In: [2, 52]
+		Out: [2]
+
+	Basic Block: 100
+		Type: MOVE
+		Label: null
+		Next: 101
+		Use: [2]
+		Def: [53]
+		In: [2]
+		Out: [2, 53]
+
+	Basic Block: 101
+		Type: HLOAD
+		Label: null
+		Next: 102
+		Use: [53]
+		Def: [54]
+		In: [2, 53]
+		Out: [2, 53, 54]
+
+	Basic Block: 102
+		Type: HLOAD
+		Label: null
+		Next: 103
+		Use: [54]
+		Def: [55]
+		In: [2, 53, 54]
+		Out: [2, 53, 55]
+
+	Basic Block: 103
+		Type: MOVE
+		Label: null
+		Next: 104
+		Use: [53, 55]
+		Def: [56]
+		In: [2, 53, 55]
+		Out: [2, 56]
+
+	Basic Block: 104
+		Type: MOVE
+		Label: null
+		Next: 105
+		Use: [56]
+		Def: [37]
+		In: [2, 56]
+		Out: [2]
+
+	Basic Block: 105
+		Type: MOVE
+		Label: null
+		Next: 106
+		Use: [2]
+		Def: [57]
+		In: [2]
+		Out: [2, 57]
+
+	Basic Block: 106
+		Type: HLOAD
+		Label: null
+		Next: 107
+		Use: [57]
+		Def: [58]
+		In: [2, 57]
+		Out: [2, 57, 58]
+
+	Basic Block: 107
+		Type: HLOAD
+		Label: null
+		Next: 108
+		Use: [58]
+		Def: [59]
+		In: [2, 57, 58]
+		Out: [2, 57, 59]
+
+	Basic Block: 108
+		Type: MOVE
+		Label: null
+		Next: 109
+		Use: []
+		Def: [60]
+		In: [2, 57, 59]
+		Out: [2, 57, 59, 60]
+
+	Basic Block: 109
+		Type: MOVE
+		Label: null
+		Next: 110
+		Use: [57, 59, 60]
+		Def: [61]
+		In: [2, 57, 59, 60]
+		Out: [2, 61]
+
+	Basic Block: 110
+		Type: MOVE
+		Label: null
+		Next: 111
+		Use: [61]
+		Def: [37]
+		In: [2, 61]
+		Out: [2]
+
+	Basic Block: 111
+		Type: MOVE
+		Label: null
+		Next: 112
+		Use: [2]
+		Def: [62]
+		In: [2]
+		Out: [2, 62]
+
+	Basic Block: 112
+		Type: HLOAD
+		Label: null
+		Next: 113
+		Use: [62]
+		Def: [63]
+		In: [2, 62]
+		Out: [2, 62, 63]
+
+	Basic Block: 113
+		Type: HLOAD
+		Label: null
+		Next: 114
+		Use: [63]
+		Def: [64]
+		In: [2, 62, 63]
+		Out: [64, 2, 62]
+
+	Basic Block: 114
+		Type: MOVE
+		Label: null
+		Next: 115
+		Use: []
+		Def: [65]
+		In: [64, 2, 62]
+		Out: [64, 65, 2, 62]
+
+	Basic Block: 115
+		Type: MOVE
+		Label: null
+		Next: 116
+		Use: [64, 65, 62]
+		Def: [66]
+		In: [64, 65, 2, 62]
+		Out: [66, 2]
+
+	Basic Block: 116
+		Type: MOVE
+		Label: null
+		Next: 117
+		Use: [66]
+		Def: [37]
+		In: [66, 2]
+		Out: [2]
+
+	Basic Block: 117
+		Type: MOVE
+		Label: null
+		Next: 118
+		Use: [2]
+		Def: [67]
+		In: [2]
+		Out: [2, 67]
+
+	Basic Block: 118
+		Type: HLOAD
+		Label: null
+		Next: 119
+		Use: [67]
+		Def: [68]
+		In: [2, 67]
+		Out: [2, 67, 68]
+
+	Basic Block: 119
+		Type: HLOAD
+		Label: null
+		Next: 120
+		Use: [68]
+		Def: [69]
+		In: [2, 67, 68]
+		Out: [2, 67, 69]
+
+	Basic Block: 120
+		Type: MOVE
+		Label: null
+		Next: 121
+		Use: []
+		Def: [70]
+		In: [2, 67, 69]
+		Out: [2, 67, 69, 70]
+
+	Basic Block: 121
+		Type: MOVE
+		Label: null
+		Next: 122
+		Use: [67, 69, 70]
+		Def: [71]
+		In: [2, 67, 69, 70]
+		Out: [2, 71]
+
+	Basic Block: 122
+		Type: MOVE
+		Label: null
+		Next: 123
+		Use: [71]
+		Def: [37]
+		In: [2, 71]
+		Out: [2]
+
+	Basic Block: 123
+		Type: MOVE
+		Label: null
+		Next: 124
+		Use: [2]
+		Def: [72]
+		In: [2]
+		Out: [2, 72]
+
+	Basic Block: 124
+		Type: HLOAD
+		Label: null
+		Next: 125
+		Use: [72]
+		Def: [73]
+		In: [2, 72]
+		Out: [2, 72, 73]
+
+	Basic Block: 125
+		Type: HLOAD
+		Label: null
+		Next: 126
+		Use: [73]
+		Def: [74]
+		In: [2, 72, 73]
+		Out: [2, 72, 74]
+
+	Basic Block: 126
+		Type: MOVE
+		Label: null
+		Next: 127
+		Use: []
+		Def: [75]
+		In: [2, 72, 74]
+		Out: [2, 72, 74, 75]
+
+	Basic Block: 127
+		Type: MOVE
+		Label: null
+		Next: 128
+		Use: [72, 74, 75]
+		Def: [76]
+		In: [2, 72, 74, 75]
+		Out: [2, 76]
+
+	Basic Block: 128
+		Type: MOVE
+		Label: null
+		Next: 129
+		Use: [76]
+		Def: [37]
+		In: [2, 76]
+		Out: [2]
+
+	Basic Block: 129
+		Type: MOVE
+		Label: null
+		Next: 130
+		Use: [2]
+		Def: [77]
+		In: [2]
+		Out: [2, 77]
+
+	Basic Block: 130
+		Type: HLOAD
+		Label: null
+		Next: 131
+		Use: [77]
+		Def: [78]
+		In: [2, 77]
+		Out: [2, 77, 78]
+
+	Basic Block: 131
+		Type: HLOAD
+		Label: null
+		Next: 132
+		Use: [78]
+		Def: [79]
+		In: [2, 77, 78]
+		Out: [2, 77, 79]
+
+	Basic Block: 132
+		Type: MOVE
+		Label: null
+		Next: 133
+		Use: []
+		Def: [80]
+		In: [2, 77, 79]
+		Out: [80, 2, 77, 79]
+
+	Basic Block: 133
+		Type: MOVE
+		Label: null
+		Next: 134
+		Use: [80, 77, 79]
+		Def: [81]
+		In: [80, 2, 77, 79]
+		Out: [81, 2]
+
+	Basic Block: 134
+		Type: MOVE
+		Label: null
+		Next: 135
+		Use: [81]
+		Def: [37]
+		In: [81, 2]
+		Out: [2]
+
+	Basic Block: 135
+		Type: MOVE
+		Label: null
+		Next: 136
+		Use: [2]
+		Def: [82]
+		In: [2]
+		Out: [82, 2]
+
+	Basic Block: 136
+		Type: HLOAD
+		Label: null
+		Next: 137
+		Use: [82]
+		Def: [83]
+		In: [82, 2]
+		Out: [82, 2, 83]
+
+	Basic Block: 137
+		Type: HLOAD
+		Label: null
+		Next: 138
+		Use: [83]
+		Def: [84]
+		In: [82, 2, 83]
+		Out: [82, 2, 84]
+
+	Basic Block: 138
+		Type: MOVE
+		Label: null
+		Next: 139
+		Use: []
+		Def: [85]
+		In: [82, 2, 84]
+		Out: [82, 2, 84, 85]
+
+	Basic Block: 139
+		Type: MOVE
+		Label: null
+		Next: 140
+		Use: [82, 84, 85]
+		Def: [86]
+		In: [82, 2, 84, 85]
+		Out: [2, 86]
+
+	Basic Block: 140
+		Type: MOVE
+		Label: null
+		Next: 141
+		Use: [86]
+		Def: [37]
+		In: [2, 86]
+		Out: [2]
+
+	Basic Block: 141
+		Type: MOVE
+		Label: null
+		Next: 142
+		Use: [2]
+		Def: [87]
+		In: [2]
+		Out: [2, 87]
+
+	Basic Block: 142
+		Type: HLOAD
+		Label: null
+		Next: 143
+		Use: [87]
+		Def: [88]
+		In: [2, 87]
+		Out: [2, 87, 88]
+
+	Basic Block: 143
+		Type: HLOAD
+		Label: null
+		Next: 144
+		Use: [88]
+		Def: [89]
+		In: [2, 87, 88]
+		Out: [2, 87, 89]
+
+	Basic Block: 144
+		Type: MOVE
+		Label: null
+		Next: 145
+		Use: [87, 89]
+		Def: [90]
+		In: [2, 87, 89]
+		Out: [2, 90]
+
+	Basic Block: 145
+		Type: MOVE
+		Label: null
+		Next: 146
+		Use: [90]
+		Def: [37]
+		In: [2, 90]
+		Out: [2]
+
+	Basic Block: 146
+		Type: MOVE
+		Label: null
+		Next: 147
+		Use: [2]
+		Def: [91]
+		In: [2]
+		Out: [2, 91]
+
+	Basic Block: 147
+		Type: HLOAD
+		Label: null
+		Next: 148
+		Use: [91]
+		Def: [92]
+		In: [2, 91]
+		Out: [2, 91, 92]
+
+	Basic Block: 148
+		Type: HLOAD
+		Label: null
+		Next: 149
+		Use: [92]
+		Def: [93]
+		In: [2, 91, 92]
+		Out: [2, 91, 93]
+
+	Basic Block: 149
+		Type: MOVE
+		Label: null
+		Next: 150
+		Use: []
+		Def: [94]
+		In: [2, 91, 93]
+		Out: [2, 91, 93, 94]
+
+	Basic Block: 150
+		Type: MOVE
+		Label: null
+		Next: 151
+		Use: [91, 93, 94]
+		Def: [95]
+		In: [2, 91, 93, 94]
+		Out: [2, 95]
+
+	Basic Block: 151
+		Type: PRINT
+		Label: null
+		Next: 152
+		Use: [95]
+		Def: []
+		In: [2, 95]
+		Out: [2]
+
+	Basic Block: 152
+		Type: MOVE
+		Label: null
+		Next: 153
+		Use: [2]
+		Def: [96]
+		In: [2]
+		Out: [96, 2]
+
+	Basic Block: 153
+		Type: HLOAD
+		Label: null
+		Next: 154
+		Use: [96]
+		Def: [97]
+		In: [96, 2]
+		Out: [96, 97, 2]
+
+	Basic Block: 154
+		Type: HLOAD
+		Label: null
+		Next: 155
+		Use: [97]
+		Def: [98]
+		In: [96, 97, 2]
+		Out: [96, 98, 2]
+
+	Basic Block: 155
+		Type: MOVE
+		Label: null
+		Next: 156
+		Use: []
+		Def: [99]
+		In: [96, 98, 2]
+		Out: [96, 98, 2, 99]
+
+	Basic Block: 156
+		Type: MOVE
+		Label: null
+		Next: 157
+		Use: [96, 98, 99]
+		Def: [100]
+		In: [96, 98, 2, 99]
+		Out: [2, 100]
+
+	Basic Block: 157
+		Type: PRINT
+		Label: null
+		Next: 158
+		Use: [100]
+		Def: []
+		In: [2, 100]
+		Out: [2]
+
+	Basic Block: 158
+		Type: MOVE
+		Label: null
+		Next: 159
+		Use: [2]
+		Def: [101]
+		In: [2]
+		Out: [2, 101]
+
+	Basic Block: 159
+		Type: HLOAD
+		Label: null
+		Next: 160
+		Use: [101]
+		Def: [102]
+		In: [2, 101]
+		Out: [2, 101, 102]
+
+	Basic Block: 160
+		Type: HLOAD
+		Label: null
+		Next: 161
+		Use: [102]
+		Def: [103]
+		In: [2, 101, 102]
+		Out: [2, 101, 103]
+
+	Basic Block: 161
+		Type: MOVE
+		Label: null
+		Next: 162
+		Use: []
+		Def: [104]
+		In: [2, 101, 103]
+		Out: [2, 101, 103, 104]
+
+	Basic Block: 162
+		Type: MOVE
+		Label: null
+		Next: 163
+		Use: [101, 103, 104]
+		Def: [105]
+		In: [2, 101, 103, 104]
+		Out: [2, 105]
+
+	Basic Block: 163
+		Type: PRINT
+		Label: null
+		Next: 164
+		Use: [105]
+		Def: []
+		In: [2, 105]
+		Out: [2]
+
+	Basic Block: 164
+		Type: MOVE
+		Label: null
+		Next: 165
+		Use: [2]
+		Def: [106]
+		In: [2]
+		Out: [2, 106]
+
+	Basic Block: 165
+		Type: HLOAD
+		Label: null
+		Next: 166
+		Use: [106]
+		Def: [107]
+		In: [2, 106]
+		Out: [2, 106, 107]
+
+	Basic Block: 166
+		Type: HLOAD
+		Label: null
+		Next: 167
+		Use: [107]
+		Def: [108]
+		In: [2, 106, 107]
+		Out: [2, 106, 108]
+
+	Basic Block: 167
+		Type: MOVE
+		Label: null
+		Next: 168
+		Use: []
+		Def: [109]
+		In: [2, 106, 108]
+		Out: [2, 106, 108, 109]
+
+	Basic Block: 168
+		Type: MOVE
+		Label: null
+		Next: 169
+		Use: [106, 108, 109]
+		Def: [110]
+		In: [2, 106, 108, 109]
+		Out: [2, 110]
+
+	Basic Block: 169
+		Type: PRINT
+		Label: null
+		Next: 170
+		Use: [110]
+		Def: []
+		In: [2, 110]
+		Out: [2]
+
+	Basic Block: 170
+		Type: MOVE
+		Label: null
+		Next: 171
+		Use: [2]
+		Def: [111]
+		In: [2]
+		Out: [2, 111]
+
+	Basic Block: 171
+		Type: HLOAD
+		Label: null
+		Next: 172
+		Use: [111]
+		Def: [112]
+		In: [2, 111]
+		Out: [112, 2, 111]
+
+	Basic Block: 172
+		Type: HLOAD
+		Label: null
+		Next: 173
+		Use: [112]
+		Def: [113]
+		In: [112, 2, 111]
+		Out: [113, 2, 111]
+
+	Basic Block: 173
+		Type: MOVE
+		Label: null
+		Next: 174
+		Use: []
+		Def: [114]
+		In: [113, 2, 111]
+		Out: [113, 114, 2, 111]
+
+	Basic Block: 174
+		Type: MOVE
+		Label: null
+		Next: 175
+		Use: [113, 114, 111]
+		Def: [115]
+		In: [113, 114, 2, 111]
+		Out: [2, 115]
+
+	Basic Block: 175
+		Type: PRINT
+		Label: null
+		Next: 176
+		Use: [115]
+		Def: []
+		In: [2, 115]
+		Out: [2]
+
+	Basic Block: 176
+		Type: MOVE
+		Label: null
+		Next: 177
+		Use: [2]
+		Def: [116]
+		In: [2]
+		Out: [2, 116]
+
+	Basic Block: 177
+		Type: HLOAD
+		Label: null
+		Next: 178
+		Use: [116]
+		Def: [117]
+		In: [2, 116]
+		Out: [2, 116, 117]
+
+	Basic Block: 178
+		Type: HLOAD
+		Label: null
+		Next: 179
+		Use: [117]
+		Def: [118]
+		In: [2, 116, 117]
+		Out: [2, 116, 118]
+
+	Basic Block: 179
+		Type: MOVE
+		Label: null
+		Next: 180
+		Use: []
+		Def: [119]
+		In: [2, 116, 118]
+		Out: [2, 116, 118, 119]
+
+	Basic Block: 180
+		Type: MOVE
+		Label: null
+		Next: 181
+		Use: [116, 118, 119]
+		Def: [120]
+		In: [2, 116, 118, 119]
+		Out: [2, 120]
+
+	Basic Block: 181
+		Type: MOVE
+		Label: null
+		Next: 182
+		Use: [120]
+		Def: [37]
+		In: [2, 120]
+		Out: [2]
+
+	Basic Block: 182
+		Type: MOVE
+		Label: null
+		Next: 183
+		Use: [2]
+		Def: [121]
+		In: [2]
+		Out: [2, 121]
+
+	Basic Block: 183
+		Type: HLOAD
+		Label: null
+		Next: 184
+		Use: [121]
+		Def: [122]
+		In: [2, 121]
+		Out: [2, 121, 122]
+
+	Basic Block: 184
+		Type: HLOAD
+		Label: null
+		Next: 185
+		Use: [122]
+		Def: [123]
+		In: [2, 121, 122]
+		Out: [2, 121, 123]
+
+	Basic Block: 185
+		Type: MOVE
+		Label: null
+		Next: 186
+		Use: [121, 123]
+		Def: [124]
+		In: [2, 121, 123]
+		Out: [2, 124]
+
+	Basic Block: 186
+		Type: MOVE
+		Label: null
+		Next: 187
+		Use: [124]
+		Def: [37]
+		In: [2, 124]
+		Out: [2]
+
+	Basic Block: 187
+		Type: MOVE
+		Label: null
+		Next: 188
+		Use: [2]
+		Def: [125]
+		In: [2]
+		Out: [125]
+
+	Basic Block: 188
+		Type: HLOAD
+		Label: null
+		Next: 189
+		Use: [125]
+		Def: [126]
+		In: [125]
+		Out: [125, 126]
+
+	Basic Block: 189
+		Type: HLOAD
+		Label: null
+		Next: 190
+		Use: [126]
+		Def: [127]
+		In: [125, 126]
+		Out: [125, 127]
+
+	Basic Block: 190
+		Type: MOVE
+		Label: null
+		Next: 191
+		Use: []
+		Def: [128]
+		In: [125, 127]
+		Out: [128, 125, 127]
+
+	Basic Block: 191
+		Type: MOVE
+		Label: null
+		Next: 192
+		Use: [128, 125, 127]
+		Def: [129]
+		In: [128, 125, 127]
+		Out: [129]
+
+	Basic Block: 192
+		Type: PRINT
+		Label: null
+		Next: 193
+		Use: [129]
+		Def: []
+		In: [129]
+		Out: []
+
+	Basic Block: 193
+		Type: MOVE
+		Label: null
+		Next: 194
+		Use: []
+		Def: [130]
+		In: []
+		Out: [130]
+
+	Basic Block: 194
+		Type: RETURN
+		Label: null
+		Next: 195
+		Use: [130]
+		Def: []
+		In: [130]
+		Out: []
+
+Scope: Tree_Init
+	Basic Block: 198
+		Type: HSTORE
+		Label: null
+		Next: 199
+		Use: [0, 1]
+		Def: []
+		In: [0, 1]
+		Out: [0]
+
+	Basic Block: 199
+		Type: MOVE
+		Label: null
+		Next: 200
+		Use: []
+		Def: [3]
+		In: [0]
+		Out: [0, 3]
+
+	Basic Block: 200
+		Type: HSTORE
+		Label: null
+		Next: 201
+		Use: [0, 3]
+		Def: []
+		In: [0, 3]
+		Out: [0]
+
+	Basic Block: 201
+		Type: MOVE
+		Label: null
+		Next: 202
+		Use: []
+		Def: [4]
+		In: [0]
+		Out: [0, 4]
+
+	Basic Block: 202
+		Type: HSTORE
+		Label: null
+		Next: 203
+		Use: [0, 4]
+		Def: []
+		In: [0, 4]
+		Out: []
+
+	Basic Block: 203
+		Type: MOVE
+		Label: null
+		Next: 204
+		Use: []
+		Def: [5]
+		In: []
+		Out: [5]
+
+	Basic Block: 204
+		Type: RETURN
+		Label: null
+		Next: 205
+		Use: [5]
+		Def: []
+		In: [5]
+		Out: []
+
+Scope: Tree_SetRight
+	Basic Block: 208
+		Type: HSTORE
+		Label: null
+		Next: 209
+		Use: [0, 1]
+		Def: []
+		In: [0, 1]
+		Out: []
+
+	Basic Block: 209
+		Type: MOVE
+		Label: null
+		Next: 210
+		Use: []
+		Def: [3]
+		In: []
+		Out: [3]
+
+	Basic Block: 210
+		Type: RETURN
+		Label: null
+		Next: 211
+		Use: [3]
+		Def: []
+		In: [3]
+		Out: []
+
+Scope: Tree_SetLeft
+	Basic Block: 214
+		Type: HSTORE
+		Label: null
+		Next: 215
+		Use: [0, 1]
+		Def: []
+		In: [0, 1]
+		Out: []
+
+	Basic Block: 215
+		Type: MOVE
+		Label: null
+		Next: 216
+		Use: []
+		Def: [3]
+		In: []
+		Out: [3]
+
+	Basic Block: 216
+		Type: RETURN
+		Label: null
+		Next: 217
+		Use: [3]
+		Def: []
+		In: [3]
+		Out: []
+
+Scope: Tree_GetRight
+	Basic Block: 220
+		Type: HLOAD
+		Label: null
+		Next: 221
+		Use: [0]
+		Def: [2]
+		In: [0]
+		Out: [2]
+
+	Basic Block: 221
+		Type: RETURN
+		Label: null
+		Next: 222
+		Use: [2]
+		Def: []
+		In: [2]
+		Out: []
+
+Scope: Tree_GetLeft
+	Basic Block: 225
+		Type: HLOAD
+		Label: null
+		Next: 226
+		Use: [0]
+		Def: [2]
+		In: [0]
+		Out: [2]
+
+	Basic Block: 226
+		Type: RETURN
+		Label: null
+		Next: 227
+		Use: [2]
+		Def: []
+		In: [2]
+		Out: []
+
+Scope: Tree_GetKey
+	Basic Block: 230
+		Type: HLOAD
+		Label: null
+		Next: 231
+		Use: [0]
+		Def: [2]
+		In: [0]
+		Out: [2]
+
+	Basic Block: 231
+		Type: RETURN
+		Label: null
+		Next: 232
+		Use: [2]
+		Def: []
+		In: [2]
+		Out: []
+
+Scope: Tree_SetKey
+	Basic Block: 235
+		Type: HSTORE
+		Label: null
+		Next: 236
+		Use: [0, 1]
+		Def: []
+		In: [0, 1]
+		Out: []
+
+	Basic Block: 236
+		Type: MOVE
+		Label: null
+		Next: 237
+		Use: []
+		Def: [3]
+		In: []
+		Out: [3]
+
+	Basic Block: 237
+		Type: RETURN
+		Label: null
+		Next: 238
+		Use: [3]
+		Def: []
+		In: [3]
+		Out: []
+
+Scope: Tree_GetHas_Right
+	Basic Block: 241
+		Type: HLOAD
+		Label: null
+		Next: 242
+		Use: [0]
+		Def: [2]
+		In: [0]
+		Out: [2]
+
+	Basic Block: 242
+		Type: RETURN
+		Label: null
+		Next: 243
+		Use: [2]
+		Def: []
+		In: [2]
+		Out: []
+
+Scope: Tree_GetHas_Left
+	Basic Block: 246
+		Type: HLOAD
+		Label: null
+		Next: 247
+		Use: [0]
+		Def: [2]
+		In: [0]
+		Out: [2]
+
+	Basic Block: 247
+		Type: RETURN
+		Label: null
+		Next: 248
+		Use: [2]
+		Def: []
+		In: [2]
+		Out: []
+
+Scope: Tree_SetHas_Left
+	Basic Block: 251
+		Type: HSTORE
+		Label: null
+		Next: 252
+		Use: [0, 1]
+		Def: []
+		In: [0, 1]
+		Out: []
+
+	Basic Block: 252
+		Type: MOVE
+		Label: null
+		Next: 253
+		Use: []
+		Def: [3]
+		In: []
+		Out: [3]
+
+	Basic Block: 253
+		Type: RETURN
+		Label: null
+		Next: 254
+		Use: [3]
+		Def: []
+		In: [3]
+		Out: []
+
+Scope: Tree_SetHas_Right
+	Basic Block: 257
+		Type: HSTORE
+		Label: null
+		Next: 258
+		Use: [0, 1]
+		Def: []
+		In: [0, 1]
+		Out: []
+
+	Basic Block: 258
+		Type: MOVE
+		Label: null
+		Next: 259
+		Use: []
+		Def: [3]
+		In: []
+		Out: [3]
+
+	Basic Block: 259
+		Type: RETURN
+		Label: null
+		Next: 260
+		Use: [3]
+		Def: []
+		In: [3]
+		Out: []
+
+Scope: Tree_Compare
+	Basic Block: 263
+		Type: MOVE
+		Label: null
+		Next: 264
+		Use: []
+		Def: [5]
+		In: [1, 2]
+		Out: [1, 2, 5]
+
+	Basic Block: 264
+		Type: MOVE
+		Label: null
+		Next: 265
+		Use: [5]
+		Def: [4]
+		In: [1, 2, 5]
+		Out: [1, 2]
+
+	Basic Block: 265
+		Type: MOVE
+		Label: null
+		Next: 266
+		Use: []
+		Def: [7]
+		In: [1, 2]
+		Out: [1, 2, 7]
+
+	Basic Block: 266
+		Type: MOVE
+		Label: null
+		Next: 267
+		Use: [2, 7]
+		Def: [8]
+		In: [1, 2, 7]
+		Out: [1, 2, 8]
+
+	Basic Block: 267
+		Type: MOVE
+		Label: null
+		Next: 268
+		Use: [8]
+		Def: [6]
+		In: [1, 2, 8]
+		Out: [1, 2, 6]
+
+	Basic Block: 268
+		Type: MOVE
+		Label: null
+		Next: 269
+		Use: []
+		Def: [10]
+		In: [1, 2, 6]
+		Out: [1, 2, 6, 10]
+
+	Basic Block: 269
+		Type: MOVE
+		Label: null
+		Next: 270
+		Use: [2, 10]
+		Def: [11]
+		In: [1, 2, 6, 10]
+		Out: [1, 6, 11]
+
+	Basic Block: 270
+		Type: MOVE
+		Label: null
+		Next: 271
+		Use: [11]
+		Def: [9]
+		In: [1, 6, 11]
+		Out: [1, 6, 9]
+
+	Basic Block: 271
+		Type: MOVE
+		Label: null
+		Next: 272
+		Use: [1, 9]
+		Def: [12]
+		In: [1, 6, 9]
+		Out: [1, 6, 12]
+
+	Basic Block: 272
+		Type: CJUMP
+		Label: L4
+		Next: 273
+		Use: [12]
+		Def: []
+		In: [1, 6, 12]
+		Out: [1, 6]
+
+	Basic Block: 273
+		Type: MOVE
+		Label: null
+		Next: 274
+		Use: []
+		Def: [13]
+		In: []
+		Out: [13]
+
+	Basic Block: 274
+		Type: MOVE
+		Label: null
+		Next: 275
+		Use: [13]
+		Def: [4]
+		In: [13]
+		Out: [4]
+
+	Basic Block: 275
+		Type: JUMP
+		Label: L5
+		Next: 276
+		Use: []
+		Def: []
+		In: [4]
+		Out: [4]
+
+	Basic Block: 276
+		Type: MOVE
+		Label: null
+		Next: 278
+		Use: []
+		Def: [15]
+		In: [1, 6]
+		Out: [1, 6, 15]
+
+	Basic Block: 278
+		Type: MOVE
+		Label: null
+		Next: 279
+		Use: [6, 15]
+		Def: [16]
+		In: [1, 6, 15]
+		Out: [16, 1]
+
+	Basic Block: 279
+		Type: MOVE
+		Label: null
+		Next: 280
+		Use: [16]
+		Def: [14]
+		In: [16, 1]
+		Out: [1, 14]
+
+	Basic Block: 280
+		Type: MOVE
+		Label: null
+		Next: 281
+		Use: []
+		Def: [17]
+		In: [1, 14]
+		Out: [1, 17, 14]
+
+	Basic Block: 281
+		Type: MOVE
+		Label: null
+		Next: 282
+		Use: [1, 14]
+		Def: [18]
+		In: [1, 17, 14]
+		Out: [17, 18]
+
+	Basic Block: 282
+		Type: MOVE
+		Label: null
+		Next: 283
+		Use: [17, 18]
+		Def: [19]
+		In: [17, 18]
+		Out: [19]
+
+	Basic Block: 283
+		Type: CJUMP
+		Label: L6
+		Next: 284
+		Use: [19]
+		Def: []
+		In: [19]
+		Out: []
+
+	Basic Block: 284
+		Type: MOVE
+		Label: null
+		Next: 285
+		Use: []
+		Def: [20]
+		In: []
+		Out: [20]
+
+	Basic Block: 285
+		Type: MOVE
+		Label: null
+		Next: 286
+		Use: [20]
+		Def: [4]
+		In: [20]
+		Out: [4]
+
+	Basic Block: 286
+		Type: JUMP
+		Label: L7
+		Next: 287
+		Use: []
+		Def: []
+		In: [4]
+		Out: [4]
+
+	Basic Block: 287
+		Type: MOVE
+		Label: null
+		Next: 289
+		Use: []
+		Def: [21]
+		In: []
+		Out: [21]
+
+	Basic Block: 289
+		Type: MOVE
+		Label: null
+		Next: 290
+		Use: [21]
+		Def: [4]
+		In: [21]
+		Out: [4]
+
+	Basic Block: 290
+		Type: NOOP
+		Label: null
+		Next: 292
+		Use: []
+		Def: []
+		In: [4]
+		Out: [4]
+
+	Basic Block: 292
+		Type: NOOP
+		Label: null
+		Next: 294
+		Use: []
+		Def: []
+		In: [4]
+		Out: [4]
+
+	Basic Block: 294
+		Type: RETURN
+		Label: null
+		Next: 295
+		Use: [4]
+		Def: []
+		In: [4]
+		Out: []
+
+Scope: Tree_Insert
+	Basic Block: 298
+		Type: MOVE
+		Label: null
+		Next: 299
+		Use: []
+		Def: [5]
+		In: [0, 1]
+		Out: [0, 1, 5]
+
+	Basic Block: 299
+		Type: MOVE
+		Label: null
+		Next: 300
+		Use: [5]
+		Def: [6]
+		In: [0, 1, 5]
+		Out: [0, 1, 6]
+
+	Basic Block: 300
+		Type: MOVE
+		Label: null
+		Next: 301
+		Use: [6]
+		Def: [4]
+		In: [0, 1, 6]
+		Out: [0, 1, 4]
+
+	Basic Block: 301
+		Type: MOVE
+		Label: null
+		Next: 302
+		Use: []
+		Def: [8]
+		In: [0, 1, 4]
+		Out: [0, 1, 4, 8]
+
+	Basic Block: 302
+		Type: MOVE
+		Label: null
+		Next: 303
+		Use: [8]
+		Def: [9]
+		In: [0, 1, 4, 8]
+		Out: [0, 1, 4, 9]
+
+	Basic Block: 303
+		Type: MOVE
+		Label: null
+		Next: 304
+		Use: [9]
+		Def: [7]
+		In: [0, 1, 4, 9]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 304
+		Type: MOVE
+		Label: null
+		Next: 305
+		Use: []
+		Def: [10]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 10]
+
+	Basic Block: 305
+		Type: HSTORE
+		Label: null
+		Next: 306
+		Use: [4, 10]
+		Def: []
+		In: [0, 1, 4, 7, 10]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 306
+		Type: MOVE
+		Label: null
+		Next: 307
+		Use: []
+		Def: [11]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 11]
+
+	Basic Block: 307
+		Type: HSTORE
+		Label: null
+		Next: 308
+		Use: [4, 11]
+		Def: []
+		In: [0, 1, 4, 7, 11]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 308
+		Type: MOVE
+		Label: null
+		Next: 309
+		Use: []
+		Def: [12]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 12]
+
+	Basic Block: 309
+		Type: HSTORE
+		Label: null
+		Next: 310
+		Use: [4, 12]
+		Def: []
+		In: [0, 1, 4, 7, 12]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 310
+		Type: MOVE
+		Label: null
+		Next: 311
+		Use: []
+		Def: [13]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 13]
+
+	Basic Block: 311
+		Type: HSTORE
+		Label: null
+		Next: 312
+		Use: [4, 13]
+		Def: []
+		In: [0, 1, 4, 7, 13]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 312
+		Type: MOVE
+		Label: null
+		Next: 313
+		Use: []
+		Def: [14]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 14]
+
+	Basic Block: 313
+		Type: HSTORE
+		Label: null
+		Next: 314
+		Use: [4, 14]
+		Def: []
+		In: [0, 1, 4, 7, 14]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 314
+		Type: MOVE
+		Label: null
+		Next: 315
+		Use: []
+		Def: [15]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 15]
+
+	Basic Block: 315
+		Type: HSTORE
+		Label: null
+		Next: 316
+		Use: [4, 15]
+		Def: []
+		In: [0, 1, 4, 7, 15]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 316
+		Type: MOVE
+		Label: null
+		Next: 317
+		Use: []
+		Def: [16]
+		In: [0, 1, 4, 7]
+		Out: [16, 0, 1, 4, 7]
+
+	Basic Block: 317
+		Type: HSTORE
+		Label: null
+		Next: 318
+		Use: [16, 4]
+		Def: []
+		In: [16, 0, 1, 4, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 318
+		Type: MOVE
+		Label: null
+		Next: 319
+		Use: []
+		Def: [17]
+		In: [0, 1, 4, 7]
+		Out: [0, 17, 1, 4, 7]
+
+	Basic Block: 319
+		Type: HSTORE
+		Label: null
+		Next: 320
+		Use: [17, 4]
+		Def: []
+		In: [0, 17, 1, 4, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 320
+		Type: MOVE
+		Label: null
+		Next: 321
+		Use: []
+		Def: [18]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 18, 4, 7]
+
+	Basic Block: 321
+		Type: HSTORE
+		Label: null
+		Next: 322
+		Use: [18, 4]
+		Def: []
+		In: [0, 1, 18, 4, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 322
+		Type: MOVE
+		Label: null
+		Next: 323
+		Use: []
+		Def: [19]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 19, 4, 7]
+
+	Basic Block: 323
+		Type: HSTORE
+		Label: null
+		Next: 324
+		Use: [19, 4]
+		Def: []
+		In: [0, 1, 19, 4, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 324
+		Type: MOVE
+		Label: null
+		Next: 325
+		Use: []
+		Def: [20]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 20, 7]
+
+	Basic Block: 325
+		Type: HSTORE
+		Label: null
+		Next: 326
+		Use: [4, 20]
+		Def: []
+		In: [0, 1, 4, 20, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 326
+		Type: MOVE
+		Label: null
+		Next: 327
+		Use: []
+		Def: [21]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 21, 7]
+
+	Basic Block: 327
+		Type: HSTORE
+		Label: null
+		Next: 328
+		Use: [4, 21]
+		Def: []
+		In: [0, 1, 4, 21, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 328
+		Type: MOVE
+		Label: null
+		Next: 329
+		Use: []
+		Def: [22]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 22, 7]
+
+	Basic Block: 329
+		Type: HSTORE
+		Label: null
+		Next: 330
+		Use: [4, 22]
+		Def: []
+		In: [0, 1, 4, 22, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 330
+		Type: MOVE
+		Label: null
+		Next: 331
+		Use: []
+		Def: [23]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 23, 7]
+
+	Basic Block: 331
+		Type: HSTORE
+		Label: null
+		Next: 332
+		Use: [4, 23]
+		Def: []
+		In: [0, 1, 4, 23, 7]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 332
+		Type: MOVE
+		Label: null
+		Next: 333
+		Use: []
+		Def: [24]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 24]
+
+	Basic Block: 333
+		Type: HSTORE
+		Label: null
+		Next: 334
+		Use: [4, 24]
+		Def: []
+		In: [0, 1, 4, 7, 24]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 334
+		Type: MOVE
+		Label: null
+		Next: 335
+		Use: []
+		Def: [25]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 25]
+
+	Basic Block: 335
+		Type: HSTORE
+		Label: null
+		Next: 336
+		Use: [4, 25]
+		Def: []
+		In: [0, 1, 4, 7, 25]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 336
+		Type: MOVE
+		Label: null
+		Next: 337
+		Use: []
+		Def: [26]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 26]
+
+	Basic Block: 337
+		Type: HSTORE
+		Label: null
+		Next: 338
+		Use: [4, 26]
+		Def: []
+		In: [0, 1, 4, 7, 26]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 338
+		Type: MOVE
+		Label: null
+		Next: 339
+		Use: []
+		Def: [27]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 27]
+
+	Basic Block: 339
+		Type: HSTORE
+		Label: null
+		Next: 340
+		Use: [4, 27]
+		Def: []
+		In: [0, 1, 4, 7, 27]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 340
+		Type: MOVE
+		Label: null
+		Next: 341
+		Use: []
+		Def: [28]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 28]
+
+	Basic Block: 341
+		Type: HSTORE
+		Label: null
+		Next: 342
+		Use: [4, 28]
+		Def: []
+		In: [0, 1, 4, 7, 28]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 342
+		Type: MOVE
+		Label: null
+		Next: 343
+		Use: []
+		Def: [29]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 29]
+
+	Basic Block: 343
+		Type: HSTORE
+		Label: null
+		Next: 344
+		Use: [4, 29]
+		Def: []
+		In: [0, 1, 4, 7, 29]
+		Out: [0, 1, 4, 7]
+
+	Basic Block: 344
+		Type: MOVE
+		Label: null
+		Next: 345
+		Use: []
+		Def: [31]
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 4, 7, 31]
+
+	Basic Block: 345
+		Type: MOVE
+		Label: null
+		Next: 346
+		Use: [31]
+		Def: [30]
+		In: [0, 1, 4, 7, 31]
+		Out: [0, 1, 4, 7, 30]
+
+	Basic Block: 346
+		Type: MOVE
+		Label: null
+		Next: 348
+		Use: []
+		Def: [32]
+		In: [0, 1, 4, 7, 30]
+		Out: [32, 0, 1, 4, 7, 30]
+
+	Basic Block: 348
+		Type: MOVE
+		Label: null
+		Next: 349
+		Use: [32, 30]
+		Def: [33]
+		In: [32, 0, 1, 4, 7, 30]
+		Out: [0, 33, 1, 4, 7, 30]
+
+	Basic Block: 349
+		Type: CJUMP
+		Label: L9
+		Next: 350
+		Use: [33]
+		Def: []
+		In: [0, 33, 1, 4, 7, 30]
+		Out: [0, 1, 4, 7, 30]
+
+	Basic Block: 350
+		Type: MOVE
+		Label: null
+		Next: 351
+		Use: [7, 30]
+		Def: [34]
+		In: [0, 1, 4, 7, 30]
+		Out: [0, 1, 34, 4, 7, 30]
+
+	Basic Block: 351
+		Type: MOVE
+		Label: null
+		Next: 352
+		Use: []
+		Def: [35]
+		In: [0, 1, 34, 4, 7, 30]
+		Out: [0, 1, 34, 35, 4, 7, 30]
+
+	Basic Block: 352
+		Type: HSTORE
+		Label: null
+		Next: 353
+		Use: [34, 35]
+		Def: []
+		In: [0, 1, 34, 35, 4, 7, 30]
+		Out: [0, 1, 4, 7, 30]
+
+	Basic Block: 353
+		Type: MOVE
+		Label: null
+		Next: 354
+		Use: []
+		Def: [36]
+		In: [0, 1, 4, 7, 30]
+		Out: [0, 1, 36, 4, 7, 30]
+
+	Basic Block: 354
+		Type: MOVE
+		Label: null
+		Next: 355
+		Use: [36, 30]
+		Def: [37]
+		In: [0, 1, 36, 4, 7, 30]
+		Out: [0, 1, 4, 37, 7]
+
+	Basic Block: 355
+		Type: MOVE
+		Label: null
+		Next: 356
+		Use: [37]
+		Def: [30]
+		In: [0, 1, 4, 37, 7]
+		Out: [0, 1, 4, 7, 30]
+
+	Basic Block: 356
+		Type: JUMP
+		Label: L8
+		Next: 357
+		Use: []
+		Def: []
+		In: [0, 1, 4, 7, 30]
+		Out: [0, 1, 4, 7, 30]
+
+	Basic Block: 357
+		Type: HSTORE
+		Label: null
+		Next: 359
+		Use: [4, 7]
+		Def: []
+		In: [0, 1, 4, 7]
+		Out: [0, 1, 7]
+
+	Basic Block: 359
+		Type: MOVE
+		Label: null
+		Next: 360
+		Use: [7]
+		Def: [3]
+		In: [0, 1, 7]
+		Out: [0, 1, 3]
+
+	Basic Block: 360
+		Type: MOVE
+		Label: null
+		Next: 361
+		Use: [3]
+		Def: [39]
+		In: [0, 1, 3]
+		Out: [0, 1, 3, 39]
+
+	Basic Block: 361
+		Type: HLOAD
+		Label: null
+		Next: 362
+		Use: [39]
+		Def: [40]
+		In: [0, 1, 3, 39]
+		Out: [0, 1, 3, 39, 40]
+
+	Basic Block: 362
+		Type: HLOAD
+		Label: null
+		Next: 363
+		Use: [40]
+		Def: [41]
+		In: [0, 1, 3, 39, 40]
+		Out: [0, 1, 3, 39, 41]
+
+	Basic Block: 363
+		Type: MOVE
+		Label: null
+		Next: 364
+		Use: [1, 39, 41]
+		Def: [42]
+		In: [0, 1, 3, 39, 41]
+		Out: [0, 1, 3, 42]
+
+	Basic Block: 364
+		Type: MOVE
+		Label: null
+		Next: 365
+		Use: [42]
+		Def: [38]
+		In: [0, 1, 3, 42]
+		Out: [0, 1, 3]
+
+	Basic Block: 365
+		Type: MOVE
+		Label: null
+		Next: 366
+		Use: [0]
+		Def: [43]
+		In: [0, 1, 3]
+		Out: [1, 3, 43]
+
+	Basic Block: 366
+		Type: MOVE
+		Label: null
+		Next: 367
+		Use: []
+		Def: [45]
+		In: [1, 3, 43]
+		Out: [1, 3, 43, 45]
+
+	Basic Block: 367
+		Type: MOVE
+		Label: null
+		Next: 368
+		Use: [45]
+		Def: [44]
+		In: [1, 3, 43, 45]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 368
+		Type: CJUMP
+		Label: L11
+		Next: 370
+		Use: [44]
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 370
+		Type: MOVE
+		Label: null
+		Next: 371
+		Use: [43]
+		Def: [47]
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44, 47]
+
+	Basic Block: 371
+		Type: HLOAD
+		Label: null
+		Next: 372
+		Use: [47]
+		Def: [48]
+		In: [1, 3, 43, 44, 47]
+		Out: [48, 1, 3, 43, 44, 47]
+
+	Basic Block: 372
+		Type: HLOAD
+		Label: null
+		Next: 373
+		Use: [48]
+		Def: [49]
+		In: [48, 1, 3, 43, 44, 47]
+		Out: [49, 1, 3, 43, 44, 47]
+
+	Basic Block: 373
+		Type: MOVE
+		Label: null
+		Next: 374
+		Use: [49, 47]
+		Def: [50]
+		In: [49, 1, 3, 43, 44, 47]
+		Out: [1, 50, 3, 43, 44]
+
+	Basic Block: 374
+		Type: MOVE
+		Label: null
+		Next: 375
+		Use: [50]
+		Def: [46]
+		In: [1, 50, 3, 43, 44]
+		Out: [1, 3, 43, 44, 46]
+
+	Basic Block: 375
+		Type: MOVE
+		Label: null
+		Next: 376
+		Use: []
+		Def: [52]
+		In: [1, 3, 43, 44, 46]
+		Out: [1, 3, 52, 43, 44, 46]
+
+	Basic Block: 376
+		Type: MOVE
+		Label: null
+		Next: 377
+		Use: [52, 46]
+		Def: [53]
+		In: [1, 3, 52, 43, 44, 46]
+		Out: [1, 3, 53, 43, 44]
+
+	Basic Block: 377
+		Type: MOVE
+		Label: null
+		Next: 378
+		Use: [53]
+		Def: [51]
+		In: [1, 3, 53, 43, 44]
+		Out: [1, 51, 3, 43, 44]
+
+	Basic Block: 378
+		Type: MOVE
+		Label: null
+		Next: 379
+		Use: [1, 51]
+		Def: [54]
+		In: [1, 51, 3, 43, 44]
+		Out: [1, 3, 54, 43, 44]
+
+	Basic Block: 379
+		Type: CJUMP
+		Label: L12
+		Next: 380
+		Use: [54]
+		Def: []
+		In: [1, 3, 54, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 380
+		Type: MOVE
+		Label: null
+		Next: 381
+		Use: [43]
+		Def: [55]
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 55, 43, 44]
+
+	Basic Block: 381
+		Type: HLOAD
+		Label: null
+		Next: 382
+		Use: [55]
+		Def: [56]
+		In: [1, 3, 55, 43, 44]
+		Out: [1, 3, 55, 56, 43, 44]
+
+	Basic Block: 382
+		Type: HLOAD
+		Label: null
+		Next: 383
+		Use: [56]
+		Def: [57]
+		In: [1, 3, 55, 56, 43, 44]
+		Out: [1, 3, 55, 57, 43, 44]
+
+	Basic Block: 383
+		Type: MOVE
+		Label: null
+		Next: 384
+		Use: [55, 57]
+		Def: [58]
+		In: [1, 3, 55, 57, 43, 44]
+		Out: [1, 3, 58, 43, 44]
+
+	Basic Block: 384
+		Type: CJUMP
+		Label: L14
+		Next: 385
+		Use: [58]
+		Def: []
+		In: [1, 3, 58, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 385
+		Type: MOVE
+		Label: null
+		Next: 386
+		Use: [43]
+		Def: [59]
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 59, 44]
+
+	Basic Block: 386
+		Type: HLOAD
+		Label: null
+		Next: 387
+		Use: [59]
+		Def: [60]
+		In: [1, 3, 59, 44]
+		Out: [1, 3, 59, 60, 44]
+
+	Basic Block: 387
+		Type: HLOAD
+		Label: null
+		Next: 388
+		Use: [60]
+		Def: [61]
+		In: [1, 3, 59, 60, 44]
+		Out: [1, 3, 59, 44, 61]
+
+	Basic Block: 388
+		Type: MOVE
+		Label: null
+		Next: 389
+		Use: [59, 61]
+		Def: [62]
+		In: [1, 3, 59, 44, 61]
+		Out: [1, 3, 44, 62]
+
+	Basic Block: 389
+		Type: MOVE
+		Label: null
+		Next: 390
+		Use: [62]
+		Def: [43]
+		In: [1, 3, 44, 62]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 390
+		Type: JUMP
+		Label: L15
+		Next: 391
+		Use: []
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 391
+		Type: MOVE
+		Label: null
+		Next: 393
+		Use: []
+		Def: [63]
+		In: [1, 3, 43]
+		Out: [1, 3, 43, 63]
+
+	Basic Block: 393
+		Type: MOVE
+		Label: null
+		Next: 394
+		Use: [63]
+		Def: [44]
+		In: [1, 3, 43, 63]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 394
+		Type: MOVE
+		Label: null
+		Next: 395
+		Use: [43]
+		Def: [64]
+		In: [1, 3, 43, 44]
+		Out: [64, 1, 3, 43, 44]
+
+	Basic Block: 395
+		Type: HLOAD
+		Label: null
+		Next: 396
+		Use: [64]
+		Def: [65]
+		In: [64, 1, 3, 43, 44]
+		Out: [64, 65, 1, 3, 43, 44]
+
+	Basic Block: 396
+		Type: HLOAD
+		Label: null
+		Next: 397
+		Use: [65]
+		Def: [66]
+		In: [64, 65, 1, 3, 43, 44]
+		Out: [64, 1, 66, 3, 43, 44]
+
+	Basic Block: 397
+		Type: MOVE
+		Label: null
+		Next: 398
+		Use: []
+		Def: [67]
+		In: [64, 1, 66, 3, 43, 44]
+		Out: [64, 1, 66, 67, 3, 43, 44]
+
+	Basic Block: 398
+		Type: MOVE
+		Label: null
+		Next: 399
+		Use: [64, 66, 67]
+		Def: [68]
+		In: [64, 1, 66, 67, 3, 43, 44]
+		Out: [1, 3, 68, 43, 44]
+
+	Basic Block: 399
+		Type: MOVE
+		Label: null
+		Next: 400
+		Use: [68]
+		Def: [38]
+		In: [1, 3, 68, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 400
+		Type: MOVE
+		Label: null
+		Next: 401
+		Use: [43]
+		Def: [69]
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 69, 43, 44]
+
+	Basic Block: 401
+		Type: HLOAD
+		Label: null
+		Next: 402
+		Use: [69]
+		Def: [70]
+		In: [1, 3, 69, 43, 44]
+		Out: [1, 3, 69, 70, 43, 44]
+
+	Basic Block: 402
+		Type: HLOAD
+		Label: null
+		Next: 403
+		Use: [70]
+		Def: [71]
+		In: [1, 3, 69, 70, 43, 44]
+		Out: [1, 3, 69, 71, 43, 44]
+
+	Basic Block: 403
+		Type: MOVE
+		Label: null
+		Next: 404
+		Use: [3, 69, 71]
+		Def: [72]
+		In: [1, 3, 69, 71, 43, 44]
+		Out: [1, 3, 72, 43, 44]
+
+	Basic Block: 404
+		Type: MOVE
+		Label: null
+		Next: 405
+		Use: [72]
+		Def: [38]
+		In: [1, 3, 72, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 405
+		Type: NOOP
+		Label: null
+		Next: 407
+		Use: []
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 407
+		Type: JUMP
+		Label: L13
+		Next: 408
+		Use: []
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 408
+		Type: MOVE
+		Label: null
+		Next: 410
+		Use: [43]
+		Def: [73]
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 73, 43, 44]
+
+	Basic Block: 410
+		Type: HLOAD
+		Label: null
+		Next: 411
+		Use: [73]
+		Def: [74]
+		In: [1, 3, 73, 43, 44]
+		Out: [1, 3, 73, 74, 43, 44]
+
+	Basic Block: 411
+		Type: HLOAD
+		Label: null
+		Next: 412
+		Use: [74]
+		Def: [75]
+		In: [1, 3, 73, 74, 43, 44]
+		Out: [1, 3, 73, 75, 43, 44]
+
+	Basic Block: 412
+		Type: MOVE
+		Label: null
+		Next: 413
+		Use: [73, 75]
+		Def: [76]
+		In: [1, 3, 73, 75, 43, 44]
+		Out: [1, 3, 43, 76, 44]
+
+	Basic Block: 413
+		Type: CJUMP
+		Label: L16
+		Next: 414
+		Use: [76]
+		Def: []
+		In: [1, 3, 43, 76, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 414
+		Type: MOVE
+		Label: null
+		Next: 415
+		Use: [43]
+		Def: [77]
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 44, 77]
+
+	Basic Block: 415
+		Type: HLOAD
+		Label: null
+		Next: 416
+		Use: [77]
+		Def: [78]
+		In: [1, 3, 44, 77]
+		Out: [1, 3, 44, 77, 78]
+
+	Basic Block: 416
+		Type: HLOAD
+		Label: null
+		Next: 417
+		Use: [78]
+		Def: [79]
+		In: [1, 3, 44, 77, 78]
+		Out: [1, 3, 44, 77, 79]
+
+	Basic Block: 417
+		Type: MOVE
+		Label: null
+		Next: 418
+		Use: [77, 79]
+		Def: [80]
+		In: [1, 3, 44, 77, 79]
+		Out: [80, 1, 3, 44]
+
+	Basic Block: 418
+		Type: MOVE
+		Label: null
+		Next: 419
+		Use: [80]
+		Def: [43]
+		In: [80, 1, 3, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 419
+		Type: JUMP
+		Label: L17
+		Next: 420
+		Use: []
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 420
+		Type: MOVE
+		Label: null
+		Next: 422
+		Use: []
+		Def: [81]
+		In: [1, 3, 43]
+		Out: [81, 1, 3, 43]
+
+	Basic Block: 422
+		Type: MOVE
+		Label: null
+		Next: 423
+		Use: [81]
+		Def: [44]
+		In: [81, 1, 3, 43]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 423
+		Type: MOVE
+		Label: null
+		Next: 424
+		Use: [43]
+		Def: [82]
+		In: [1, 3, 43, 44]
+		Out: [1, 82, 3, 43, 44]
+
+	Basic Block: 424
+		Type: HLOAD
+		Label: null
+		Next: 425
+		Use: [82]
+		Def: [83]
+		In: [1, 82, 3, 43, 44]
+		Out: [1, 82, 83, 3, 43, 44]
+
+	Basic Block: 425
+		Type: HLOAD
+		Label: null
+		Next: 426
+		Use: [83]
+		Def: [84]
+		In: [1, 82, 83, 3, 43, 44]
+		Out: [1, 82, 3, 84, 43, 44]
+
+	Basic Block: 426
+		Type: MOVE
+		Label: null
+		Next: 427
+		Use: []
+		Def: [85]
+		In: [1, 82, 3, 84, 43, 44]
+		Out: [1, 82, 3, 84, 85, 43, 44]
+
+	Basic Block: 427
+		Type: MOVE
+		Label: null
+		Next: 428
+		Use: [82, 84, 85]
+		Def: [86]
+		In: [1, 82, 3, 84, 85, 43, 44]
+		Out: [1, 3, 86, 43, 44]
+
+	Basic Block: 428
+		Type: MOVE
+		Label: null
+		Next: 429
+		Use: [86]
+		Def: [38]
+		In: [1, 3, 86, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 429
+		Type: MOVE
+		Label: null
+		Next: 430
+		Use: [43]
+		Def: [87]
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 87, 43, 44]
+
+	Basic Block: 430
+		Type: HLOAD
+		Label: null
+		Next: 431
+		Use: [87]
+		Def: [88]
+		In: [1, 3, 87, 43, 44]
+		Out: [1, 3, 87, 88, 43, 44]
+
+	Basic Block: 431
+		Type: HLOAD
+		Label: null
+		Next: 432
+		Use: [88]
+		Def: [89]
+		In: [1, 3, 87, 88, 43, 44]
+		Out: [1, 3, 87, 89, 43, 44]
+
+	Basic Block: 432
+		Type: MOVE
+		Label: null
+		Next: 433
+		Use: [3, 87, 89]
+		Def: [90]
+		In: [1, 3, 87, 89, 43, 44]
+		Out: [1, 3, 90, 43, 44]
+
+	Basic Block: 433
+		Type: MOVE
+		Label: null
+		Next: 434
+		Use: [90]
+		Def: [38]
+		In: [1, 3, 90, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 434
+		Type: NOOP
+		Label: null
+		Next: 436
+		Use: []
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 436
+		Type: NOOP
+		Label: null
+		Next: 438
+		Use: []
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 438
+		Type: JUMP
+		Label: L10
+		Next: 439
+		Use: []
+		Def: []
+		In: [1, 3, 43, 44]
+		Out: [1, 3, 43, 44]
+
+	Basic Block: 439
+		Type: NOOP
+		Label: null
+		Next: 441
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 441
+		Type: MOVE
+		Label: null
+		Next: 442
+		Use: []
+		Def: [91]
+		In: []
+		Out: [91]
+
+	Basic Block: 442
+		Type: RETURN
+		Label: null
+		Next: 443
+		Use: [91]
+		Def: []
+		In: [91]
+		Out: []
+
+Scope: Tree_Delete
+	Basic Block: 446
+		Type: MOVE
+		Label: null
+		Next: 447
+		Use: [0]
+		Def: [3]
+		In: [0, 1]
+		Out: [0, 1, 3]
+
+	Basic Block: 447
+		Type: MOVE
+		Label: null
+		Next: 448
+		Use: [0]
+		Def: [4]
+		In: [0, 1, 3]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 448
+		Type: MOVE
+		Label: null
+		Next: 449
+		Use: []
+		Def: [6]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 6]
+
+	Basic Block: 449
+		Type: MOVE
+		Label: null
+		Next: 450
+		Use: [6]
+		Def: [5]
+		In: [0, 1, 3, 4, 6]
+		Out: [0, 1, 3, 4, 5]
+
+	Basic Block: 450
+		Type: MOVE
+		Label: null
+		Next: 451
+		Use: []
+		Def: [8]
+		In: [0, 1, 3, 4, 5]
+		Out: [0, 1, 3, 4, 5, 8]
+
+	Basic Block: 451
+		Type: MOVE
+		Label: null
+		Next: 452
+		Use: [8]
+		Def: [7]
+		In: [0, 1, 3, 4, 5, 8]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 452
+		Type: MOVE
+		Label: null
+		Next: 453
+		Use: []
+		Def: [10]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7, 10]
+
+	Basic Block: 453
+		Type: MOVE
+		Label: null
+		Next: 454
+		Use: [10]
+		Def: [9]
+		In: [0, 1, 3, 4, 5, 7, 10]
+		Out: [0, 1, 3, 4, 5, 7, 9]
+
+	Basic Block: 454
+		Type: CJUMP
+		Label: L19
+		Next: 456
+		Use: [5]
+		Def: []
+		In: [0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9]
+
+	Basic Block: 456
+		Type: MOVE
+		Label: null
+		Next: 457
+		Use: [3]
+		Def: [12]
+		In: [0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9, 12]
+
+	Basic Block: 457
+		Type: HLOAD
+		Label: null
+		Next: 458
+		Use: [12]
+		Def: [13]
+		In: [0, 1, 3, 4, 5, 7, 9, 12]
+		Out: [0, 1, 3, 4, 5, 7, 9, 12, 13]
+
+	Basic Block: 458
+		Type: HLOAD
+		Label: null
+		Next: 459
+		Use: [13]
+		Def: [14]
+		In: [0, 1, 3, 4, 5, 7, 9, 12, 13]
+		Out: [0, 1, 3, 4, 5, 7, 9, 12, 14]
+
+	Basic Block: 459
+		Type: MOVE
+		Label: null
+		Next: 460
+		Use: [12, 14]
+		Def: [15]
+		In: [0, 1, 3, 4, 5, 7, 9, 12, 14]
+		Out: [0, 1, 3, 4, 5, 7, 9, 15]
+
+	Basic Block: 460
+		Type: MOVE
+		Label: null
+		Next: 461
+		Use: [15]
+		Def: [11]
+		In: [0, 1, 3, 4, 5, 7, 9, 15]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11]
+
+	Basic Block: 461
+		Type: MOVE
+		Label: null
+		Next: 462
+		Use: []
+		Def: [17]
+		In: [0, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 17, 1, 3, 4, 5, 7, 9, 11]
+
+	Basic Block: 462
+		Type: MOVE
+		Label: null
+		Next: 463
+		Use: [17, 11]
+		Def: [18]
+		In: [0, 17, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 18, 3, 4, 5, 7, 9, 11]
+
+	Basic Block: 463
+		Type: MOVE
+		Label: null
+		Next: 464
+		Use: [18]
+		Def: [16]
+		In: [0, 1, 18, 3, 4, 5, 7, 9, 11]
+		Out: [16, 0, 1, 3, 4, 5, 7, 9, 11]
+
+	Basic Block: 464
+		Type: MOVE
+		Label: null
+		Next: 465
+		Use: [16, 1]
+		Def: [19]
+		In: [16, 0, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 19, 3, 4, 5, 7, 9, 11]
+
+	Basic Block: 465
+		Type: CJUMP
+		Label: L20
+		Next: 466
+		Use: [19]
+		Def: []
+		In: [0, 1, 19, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11]
+
+	Basic Block: 466
+		Type: MOVE
+		Label: null
+		Next: 467
+		Use: [3]
+		Def: [20]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 20, 4, 5, 7]
+
+	Basic Block: 467
+		Type: HLOAD
+		Label: null
+		Next: 468
+		Use: [20]
+		Def: [21]
+		In: [0, 1, 3, 20, 4, 5, 7]
+		Out: [0, 1, 3, 20, 4, 21, 5, 7]
+
+	Basic Block: 468
+		Type: HLOAD
+		Label: null
+		Next: 469
+		Use: [21]
+		Def: [22]
+		In: [0, 1, 3, 20, 4, 21, 5, 7]
+		Out: [0, 1, 3, 20, 4, 5, 22, 7]
+
+	Basic Block: 469
+		Type: MOVE
+		Label: null
+		Next: 470
+		Use: [20, 22]
+		Def: [23]
+		In: [0, 1, 3, 20, 4, 5, 22, 7]
+		Out: [0, 1, 3, 4, 5, 23, 7]
+
+	Basic Block: 470
+		Type: CJUMP
+		Label: L22
+		Next: 471
+		Use: [23]
+		Def: []
+		In: [0, 1, 3, 4, 5, 23, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 471
+		Type: MOVE
+		Label: null
+		Next: 472
+		Use: [3]
+		Def: [4]
+		In: [0, 1, 3, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 472
+		Type: MOVE
+		Label: null
+		Next: 473
+		Use: [3]
+		Def: [24]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 4, 5, 7, 24]
+
+	Basic Block: 473
+		Type: HLOAD
+		Label: null
+		Next: 474
+		Use: [24]
+		Def: [25]
+		In: [0, 1, 4, 5, 7, 24]
+		Out: [0, 1, 4, 5, 7, 24, 25]
+
+	Basic Block: 474
+		Type: HLOAD
+		Label: null
+		Next: 475
+		Use: [25]
+		Def: [26]
+		In: [0, 1, 4, 5, 7, 24, 25]
+		Out: [0, 1, 4, 5, 7, 24, 26]
+
+	Basic Block: 475
+		Type: MOVE
+		Label: null
+		Next: 476
+		Use: [24, 26]
+		Def: [27]
+		In: [0, 1, 4, 5, 7, 24, 26]
+		Out: [0, 1, 4, 5, 7, 27]
+
+	Basic Block: 476
+		Type: MOVE
+		Label: null
+		Next: 477
+		Use: [27]
+		Def: [3]
+		In: [0, 1, 4, 5, 7, 27]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 477
+		Type: JUMP
+		Label: L23
+		Next: 478
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 478
+		Type: MOVE
+		Label: null
+		Next: 480
+		Use: []
+		Def: [28]
+		In: [0, 1, 3, 4, 7]
+		Out: [0, 1, 3, 4, 7, 28]
+
+	Basic Block: 480
+		Type: MOVE
+		Label: null
+		Next: 481
+		Use: [28]
+		Def: [5]
+		In: [0, 1, 3, 4, 7, 28]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 481
+		Type: NOOP
+		Label: null
+		Next: 483
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 483
+		Type: JUMP
+		Label: L21
+		Next: 484
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 484
+		Type: MOVE
+		Label: null
+		Next: 486
+		Use: []
+		Def: [30]
+		In: [0, 1, 3, 4, 5, 7, 9, 11]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11, 30]
+
+	Basic Block: 486
+		Type: MOVE
+		Label: null
+		Next: 487
+		Use: [1, 30]
+		Def: [31]
+		In: [0, 1, 3, 4, 5, 7, 9, 11, 30]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11, 31]
+
+	Basic Block: 487
+		Type: MOVE
+		Label: null
+		Next: 488
+		Use: [31]
+		Def: [29]
+		In: [0, 1, 3, 4, 5, 7, 9, 11, 31]
+		Out: [0, 1, 3, 4, 5, 7, 9, 11, 29]
+
+	Basic Block: 488
+		Type: MOVE
+		Label: null
+		Next: 489
+		Use: [11, 29]
+		Def: [32]
+		In: [0, 1, 3, 4, 5, 7, 9, 11, 29]
+		Out: [32, 0, 1, 3, 4, 5, 7, 9]
+
+	Basic Block: 489
+		Type: CJUMP
+		Label: L24
+		Next: 490
+		Use: [32]
+		Def: []
+		In: [32, 0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9]
+
+	Basic Block: 490
+		Type: MOVE
+		Label: null
+		Next: 491
+		Use: [3]
+		Def: [33]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 33, 1, 3, 4, 5, 7]
+
+	Basic Block: 491
+		Type: HLOAD
+		Label: null
+		Next: 492
+		Use: [33]
+		Def: [34]
+		In: [0, 33, 1, 3, 4, 5, 7]
+		Out: [0, 33, 1, 34, 3, 4, 5, 7]
+
+	Basic Block: 492
+		Type: HLOAD
+		Label: null
+		Next: 493
+		Use: [34]
+		Def: [35]
+		In: [0, 33, 1, 34, 3, 4, 5, 7]
+		Out: [0, 33, 1, 35, 3, 4, 5, 7]
+
+	Basic Block: 493
+		Type: MOVE
+		Label: null
+		Next: 494
+		Use: [33, 35]
+		Def: [36]
+		In: [0, 33, 1, 35, 3, 4, 5, 7]
+		Out: [0, 1, 3, 36, 4, 5, 7]
+
+	Basic Block: 494
+		Type: CJUMP
+		Label: L26
+		Next: 495
+		Use: [36]
+		Def: []
+		In: [0, 1, 3, 36, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 495
+		Type: MOVE
+		Label: null
+		Next: 496
+		Use: [3]
+		Def: [4]
+		In: [0, 1, 3, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 496
+		Type: MOVE
+		Label: null
+		Next: 497
+		Use: [3]
+		Def: [37]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 4, 37, 5, 7]
+
+	Basic Block: 497
+		Type: HLOAD
+		Label: null
+		Next: 498
+		Use: [37]
+		Def: [38]
+		In: [0, 1, 4, 37, 5, 7]
+		Out: [0, 1, 4, 37, 5, 38, 7]
+
+	Basic Block: 498
+		Type: HLOAD
+		Label: null
+		Next: 499
+		Use: [38]
+		Def: [39]
+		In: [0, 1, 4, 37, 5, 38, 7]
+		Out: [0, 1, 4, 37, 5, 39, 7]
+
+	Basic Block: 499
+		Type: MOVE
+		Label: null
+		Next: 500
+		Use: [37, 39]
+		Def: [40]
+		In: [0, 1, 4, 37, 5, 39, 7]
+		Out: [0, 1, 4, 5, 7, 40]
+
+	Basic Block: 500
+		Type: MOVE
+		Label: null
+		Next: 501
+		Use: [40]
+		Def: [3]
+		In: [0, 1, 4, 5, 7, 40]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 501
+		Type: JUMP
+		Label: L27
+		Next: 502
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 502
+		Type: MOVE
+		Label: null
+		Next: 504
+		Use: []
+		Def: [41]
+		In: [0, 1, 3, 4, 7]
+		Out: [0, 1, 3, 4, 7, 41]
+
+	Basic Block: 504
+		Type: MOVE
+		Label: null
+		Next: 505
+		Use: [41]
+		Def: [5]
+		In: [0, 1, 3, 4, 7, 41]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 505
+		Type: NOOP
+		Label: null
+		Next: 507
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 507
+		Type: JUMP
+		Label: L25
+		Next: 508
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 508
+		Type: CJUMP
+		Label: L28
+		Next: 510
+		Use: [9]
+		Def: []
+		In: [0, 1, 3, 4, 9]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 510
+		Type: MOVE
+		Label: null
+		Next: 511
+		Use: []
+		Def: [43]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 43]
+
+	Basic Block: 511
+		Type: MOVE
+		Label: null
+		Next: 512
+		Use: [43]
+		Def: [42]
+		In: [0, 1, 3, 4, 43]
+		Out: [0, 1, 3, 4, 42]
+
+	Basic Block: 512
+		Type: MOVE
+		Label: null
+		Next: 513
+		Use: []
+		Def: [44]
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4, 42, 44]
+
+	Basic Block: 513
+		Type: MOVE
+		Label: null
+		Next: 514
+		Use: [3]
+		Def: [45]
+		In: [0, 1, 3, 4, 42, 44]
+		Out: [0, 1, 3, 4, 42, 44, 45]
+
+	Basic Block: 514
+		Type: HLOAD
+		Label: null
+		Next: 515
+		Use: [45]
+		Def: [46]
+		In: [0, 1, 3, 4, 42, 44, 45]
+		Out: [0, 1, 3, 4, 42, 44, 45, 46]
+
+	Basic Block: 515
+		Type: HLOAD
+		Label: null
+		Next: 516
+		Use: [46]
+		Def: [47]
+		In: [0, 1, 3, 4, 42, 44, 45, 46]
+		Out: [0, 1, 3, 4, 42, 44, 45, 47]
+
+	Basic Block: 516
+		Type: MOVE
+		Label: null
+		Next: 517
+		Use: [45, 47]
+		Def: [48]
+		In: [0, 1, 3, 4, 42, 44, 45, 47]
+		Out: [48, 0, 1, 3, 4, 42, 44]
+
+	Basic Block: 517
+		Type: MOVE
+		Label: null
+		Next: 518
+		Use: [48, 44]
+		Def: [49]
+		In: [48, 0, 1, 3, 4, 42, 44]
+		Out: [0, 49, 1, 3, 4, 42]
+
+	Basic Block: 518
+		Type: CJUMP
+		Label: L32
+		Next: 519
+		Use: [49]
+		Def: []
+		In: [0, 49, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4, 42]
+
+	Basic Block: 519
+		Type: MOVE
+		Label: null
+		Next: 520
+		Use: []
+		Def: [50]
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 50, 3, 4, 42]
+
+	Basic Block: 520
+		Type: MOVE
+		Label: null
+		Next: 521
+		Use: [3]
+		Def: [51]
+		In: [0, 1, 50, 3, 4, 42]
+		Out: [0, 1, 50, 51, 3, 4, 42]
+
+	Basic Block: 521
+		Type: HLOAD
+		Label: null
+		Next: 522
+		Use: [51]
+		Def: [52]
+		In: [0, 1, 50, 51, 3, 4, 42]
+		Out: [0, 1, 50, 51, 3, 52, 4, 42]
+
+	Basic Block: 522
+		Type: HLOAD
+		Label: null
+		Next: 523
+		Use: [52]
+		Def: [53]
+		In: [0, 1, 50, 51, 3, 52, 4, 42]
+		Out: [0, 1, 50, 51, 3, 4, 53, 42]
+
+	Basic Block: 523
+		Type: MOVE
+		Label: null
+		Next: 524
+		Use: [51, 53]
+		Def: [54]
+		In: [0, 1, 50, 51, 3, 4, 53, 42]
+		Out: [0, 1, 50, 3, 4, 54, 42]
+
+	Basic Block: 524
+		Type: MOVE
+		Label: null
+		Next: 525
+		Use: [50, 54]
+		Def: [55]
+		In: [0, 1, 50, 3, 4, 54, 42]
+		Out: [0, 1, 3, 4, 55, 42]
+
+	Basic Block: 525
+		Type: CJUMP
+		Label: L32
+		Next: 526
+		Use: [55]
+		Def: []
+		In: [0, 1, 3, 4, 55, 42]
+		Out: [0, 1, 3, 4, 42]
+
+	Basic Block: 526
+		Type: MOVE
+		Label: null
+		Next: 527
+		Use: []
+		Def: [56]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 56]
+
+	Basic Block: 527
+		Type: MOVE
+		Label: null
+		Next: 528
+		Use: [56]
+		Def: [42]
+		In: [0, 1, 3, 4, 56]
+		Out: [0, 1, 3, 4, 42]
+
+	Basic Block: 528
+		Type: NOOP
+		Label: null
+		Next: 530
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4, 42]
+
+	Basic Block: 530
+		Type: CJUMP
+		Label: L30
+		Next: 531
+		Use: [42]
+		Def: []
+		In: [0, 1, 3, 4, 42]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 531
+		Type: MOVE
+		Label: null
+		Next: 532
+		Use: []
+		Def: [58]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 58]
+
+	Basic Block: 532
+		Type: MOVE
+		Label: null
+		Next: 533
+		Use: [58]
+		Def: [57]
+		In: [0, 1, 3, 4, 58]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 533
+		Type: JUMP
+		Label: L31
+		Next: 534
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 534
+		Type: MOVE
+		Label: null
+		Next: 536
+		Use: [0]
+		Def: [59]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 59]
+
+	Basic Block: 536
+		Type: HLOAD
+		Label: null
+		Next: 537
+		Use: [59]
+		Def: [60]
+		In: [0, 1, 3, 4, 59]
+		Out: [0, 1, 3, 4, 59, 60]
+
+	Basic Block: 537
+		Type: HLOAD
+		Label: null
+		Next: 538
+		Use: [60]
+		Def: [61]
+		In: [0, 1, 3, 4, 59, 60]
+		Out: [0, 1, 3, 4, 59, 61]
+
+	Basic Block: 538
+		Type: MOVE
+		Label: null
+		Next: 539
+		Use: [3, 4, 59, 61]
+		Def: [62]
+		In: [0, 1, 3, 4, 59, 61]
+		Out: [0, 1, 3, 4, 62]
+
+	Basic Block: 539
+		Type: MOVE
+		Label: null
+		Next: 540
+		Use: [62]
+		Def: [57]
+		In: [0, 1, 3, 4, 62]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 540
+		Type: NOOP
+		Label: null
+		Next: 542
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 542
+		Type: JUMP
+		Label: L29
+		Next: 543
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 543
+		Type: MOVE
+		Label: null
+		Next: 545
+		Use: [0]
+		Def: [63]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4, 63]
+
+	Basic Block: 545
+		Type: HLOAD
+		Label: null
+		Next: 546
+		Use: [63]
+		Def: [64]
+		In: [0, 1, 3, 4, 63]
+		Out: [64, 0, 1, 3, 4, 63]
+
+	Basic Block: 546
+		Type: HLOAD
+		Label: null
+		Next: 547
+		Use: [64]
+		Def: [65]
+		In: [64, 0, 1, 3, 4, 63]
+		Out: [0, 65, 1, 3, 4, 63]
+
+	Basic Block: 547
+		Type: MOVE
+		Label: null
+		Next: 548
+		Use: [65, 3, 4, 63]
+		Def: [66]
+		In: [0, 65, 1, 3, 4, 63]
+		Out: [0, 1, 66, 3, 4]
+
+	Basic Block: 548
+		Type: MOVE
+		Label: null
+		Next: 549
+		Use: [66]
+		Def: [57]
+		In: [0, 1, 66, 3, 4]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 549
+		Type: NOOP
+		Label: null
+		Next: 551
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 551
+		Type: MOVE
+		Label: null
+		Next: 552
+		Use: []
+		Def: [67]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 67, 3, 4]
+
+	Basic Block: 552
+		Type: MOVE
+		Label: null
+		Next: 553
+		Use: [67]
+		Def: [7]
+		In: [0, 1, 67, 3, 4]
+		Out: [0, 1, 3, 4, 7]
+
+	Basic Block: 553
+		Type: MOVE
+		Label: null
+		Next: 554
+		Use: []
+		Def: [68]
+		In: [0, 1, 3, 4, 7]
+		Out: [0, 1, 3, 68, 4, 7]
+
+	Basic Block: 554
+		Type: MOVE
+		Label: null
+		Next: 555
+		Use: [68]
+		Def: [5]
+		In: [0, 1, 3, 68, 4, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 555
+		Type: NOOP
+		Label: null
+		Next: 557
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 557
+		Type: NOOP
+		Label: null
+		Next: 559
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7]
+
+	Basic Block: 559
+		Type: MOVE
+		Label: null
+		Next: 560
+		Use: []
+		Def: [69]
+		In: [0, 1, 3, 4, 5, 7]
+		Out: [0, 1, 3, 4, 69, 5, 7]
+
+	Basic Block: 560
+		Type: MOVE
+		Label: null
+		Next: 561
+		Use: [69]
+		Def: [9]
+		In: [0, 1, 3, 4, 69, 5, 7]
+		Out: [0, 1, 3, 4, 5, 7, 9]
+
+	Basic Block: 561
+		Type: JUMP
+		Label: L18
+		Next: 562
+		Use: []
+		Def: []
+		In: [0, 1, 3, 4, 5, 7, 9]
+		Out: [0, 1, 3, 4, 5, 7, 9]
+
+	Basic Block: 562
+		Type: NOOP
+		Label: null
+		Next: 564
+		Use: []
+		Def: []
+		In: [7]
+		Out: [7]
+
+	Basic Block: 564
+		Type: RETURN
+		Label: null
+		Next: 565
+		Use: [7]
+		Def: []
+		In: [7]
+		Out: []
+
+Scope: Tree_Remove
+	Basic Block: 568
+		Type: MOVE
+		Label: null
+		Next: 569
+		Use: [2]
+		Def: [4]
+		In: [0, 1, 2]
+		Out: [0, 1, 2, 4]
+
+	Basic Block: 569
+		Type: HLOAD
+		Label: null
+		Next: 570
+		Use: [4]
+		Def: [5]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4, 5]
+
+	Basic Block: 570
+		Type: HLOAD
+		Label: null
+		Next: 571
+		Use: [5]
+		Def: [6]
+		In: [0, 1, 2, 4, 5]
+		Out: [0, 1, 2, 4, 6]
+
+	Basic Block: 571
+		Type: MOVE
+		Label: null
+		Next: 572
+		Use: [4, 6]
+		Def: [7]
+		In: [0, 1, 2, 4, 6]
+		Out: [0, 1, 2, 7]
+
+	Basic Block: 572
+		Type: CJUMP
+		Label: L33
+		Next: 573
+		Use: [7]
+		Def: []
+		In: [0, 1, 2, 7]
+		Out: [0, 1, 2]
+
+	Basic Block: 573
+		Type: MOVE
+		Label: null
+		Next: 574
+		Use: [0]
+		Def: [9]
+		In: [0, 1, 2]
+		Out: [1, 2, 9]
+
+	Basic Block: 574
+		Type: HLOAD
+		Label: null
+		Next: 575
+		Use: [9]
+		Def: [10]
+		In: [1, 2, 9]
+		Out: [1, 2, 9, 10]
+
+	Basic Block: 575
+		Type: HLOAD
+		Label: null
+		Next: 576
+		Use: [10]
+		Def: [11]
+		In: [1, 2, 9, 10]
+		Out: [1, 2, 9, 11]
+
+	Basic Block: 576
+		Type: MOVE
+		Label: null
+		Next: 577
+		Use: [1, 2, 9, 11]
+		Def: [12]
+		In: [1, 2, 9, 11]
+		Out: [12]
+
+	Basic Block: 577
+		Type: MOVE
+		Label: null
+		Next: 578
+		Use: [12]
+		Def: [8]
+		In: [12]
+		Out: []
+
+	Basic Block: 578
+		Type: JUMP
+		Label: L34
+		Next: 579
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 579
+		Type: MOVE
+		Label: null
+		Next: 581
+		Use: [2]
+		Def: [13]
+		In: [0, 1, 2]
+		Out: [0, 1, 2, 13]
+
+	Basic Block: 581
+		Type: HLOAD
+		Label: null
+		Next: 582
+		Use: [13]
+		Def: [14]
+		In: [0, 1, 2, 13]
+		Out: [0, 1, 2, 13, 14]
+
+	Basic Block: 582
+		Type: HLOAD
+		Label: null
+		Next: 583
+		Use: [14]
+		Def: [15]
+		In: [0, 1, 2, 13, 14]
+		Out: [0, 1, 2, 13, 15]
+
+	Basic Block: 583
+		Type: MOVE
+		Label: null
+		Next: 584
+		Use: [13, 15]
+		Def: [16]
+		In: [0, 1, 2, 13, 15]
+		Out: [16, 0, 1, 2]
+
+	Basic Block: 584
+		Type: CJUMP
+		Label: L35
+		Next: 585
+		Use: [16]
+		Def: []
+		In: [16, 0, 1, 2]
+		Out: [0, 1, 2]
+
+	Basic Block: 585
+		Type: MOVE
+		Label: null
+		Next: 586
+		Use: [0]
+		Def: [17]
+		In: [0, 1, 2]
+		Out: [17, 1, 2]
+
+	Basic Block: 586
+		Type: HLOAD
+		Label: null
+		Next: 587
+		Use: [17]
+		Def: [18]
+		In: [17, 1, 2]
+		Out: [17, 1, 18, 2]
+
+	Basic Block: 587
+		Type: HLOAD
+		Label: null
+		Next: 588
+		Use: [18]
+		Def: [19]
+		In: [17, 1, 18, 2]
+		Out: [17, 1, 2, 19]
+
+	Basic Block: 588
+		Type: MOVE
+		Label: null
+		Next: 589
+		Use: [17, 1, 2, 19]
+		Def: [20]
+		In: [17, 1, 2, 19]
+		Out: [20]
+
+	Basic Block: 589
+		Type: MOVE
+		Label: null
+		Next: 590
+		Use: [20]
+		Def: [8]
+		In: [20]
+		Out: []
+
+	Basic Block: 590
+		Type: JUMP
+		Label: L36
+		Next: 591
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 591
+		Type: MOVE
+		Label: null
+		Next: 593
+		Use: [2]
+		Def: [22]
+		In: [0, 1, 2]
+		Out: [0, 1, 22]
+
+	Basic Block: 593
+		Type: HLOAD
+		Label: null
+		Next: 594
+		Use: [22]
+		Def: [23]
+		In: [0, 1, 22]
+		Out: [0, 1, 22, 23]
+
+	Basic Block: 594
+		Type: HLOAD
+		Label: null
+		Next: 595
+		Use: [23]
+		Def: [24]
+		In: [0, 1, 22, 23]
+		Out: [0, 1, 22, 24]
+
+	Basic Block: 595
+		Type: MOVE
+		Label: null
+		Next: 596
+		Use: [22, 24]
+		Def: [25]
+		In: [0, 1, 22, 24]
+		Out: [0, 1, 25]
+
+	Basic Block: 596
+		Type: MOVE
+		Label: null
+		Next: 597
+		Use: [25]
+		Def: [21]
+		In: [0, 1, 25]
+		Out: [0, 1, 21]
+
+	Basic Block: 597
+		Type: MOVE
+		Label: null
+		Next: 598
+		Use: [1]
+		Def: [28]
+		In: [0, 1, 21]
+		Out: [0, 1, 21, 28]
+
+	Basic Block: 598
+		Type: HLOAD
+		Label: null
+		Next: 599
+		Use: [28]
+		Def: [29]
+		In: [0, 1, 21, 28]
+		Out: [0, 1, 21, 28, 29]
+
+	Basic Block: 599
+		Type: HLOAD
+		Label: null
+		Next: 600
+		Use: [29]
+		Def: [30]
+		In: [0, 1, 21, 28, 29]
+		Out: [0, 1, 21, 28, 30]
+
+	Basic Block: 600
+		Type: MOVE
+		Label: null
+		Next: 601
+		Use: [28, 30]
+		Def: [31]
+		In: [0, 1, 21, 28, 30]
+		Out: [0, 1, 21, 31]
+
+	Basic Block: 601
+		Type: MOVE
+		Label: null
+		Next: 602
+		Use: [31]
+		Def: [27]
+		In: [0, 1, 21, 31]
+		Out: [0, 1, 21, 27]
+
+	Basic Block: 602
+		Type: HLOAD
+		Label: null
+		Next: 603
+		Use: [27]
+		Def: [32]
+		In: [0, 1, 21, 27]
+		Out: [32, 0, 1, 21, 27]
+
+	Basic Block: 603
+		Type: HLOAD
+		Label: null
+		Next: 604
+		Use: [32]
+		Def: [33]
+		In: [32, 0, 1, 21, 27]
+		Out: [0, 33, 1, 21, 27]
+
+	Basic Block: 604
+		Type: MOVE
+		Label: null
+		Next: 605
+		Use: [33, 27]
+		Def: [34]
+		In: [0, 33, 1, 21, 27]
+		Out: [0, 1, 34, 21]
+
+	Basic Block: 605
+		Type: MOVE
+		Label: null
+		Next: 606
+		Use: [34]
+		Def: [26]
+		In: [0, 1, 34, 21]
+		Out: [0, 1, 21, 26]
+
+	Basic Block: 606
+		Type: MOVE
+		Label: null
+		Next: 607
+		Use: [0]
+		Def: [35]
+		In: [0, 1, 21, 26]
+		Out: [0, 1, 35, 21, 26]
+
+	Basic Block: 607
+		Type: HLOAD
+		Label: null
+		Next: 608
+		Use: [35]
+		Def: [36]
+		In: [0, 1, 35, 21, 26]
+		Out: [0, 1, 35, 36, 21, 26]
+
+	Basic Block: 608
+		Type: HLOAD
+		Label: null
+		Next: 609
+		Use: [36]
+		Def: [37]
+		In: [0, 1, 35, 36, 21, 26]
+		Out: [0, 1, 35, 37, 21, 26]
+
+	Basic Block: 609
+		Type: MOVE
+		Label: null
+		Next: 610
+		Use: [35, 37, 21, 26]
+		Def: [38]
+		In: [0, 1, 35, 37, 21, 26]
+		Out: [0, 1, 38]
+
+	Basic Block: 610
+		Type: CJUMP
+		Label: L37
+		Next: 611
+		Use: [38]
+		Def: []
+		In: [0, 1, 38]
+		Out: [0, 1]
+
+	Basic Block: 611
+		Type: MOVE
+		Label: null
+		Next: 612
+		Use: [1]
+		Def: [39]
+		In: [0, 1]
+		Out: [0, 1, 39]
+
+	Basic Block: 612
+		Type: HLOAD
+		Label: null
+		Next: 613
+		Use: [39]
+		Def: [40]
+		In: [0, 1, 39]
+		Out: [0, 1, 39, 40]
+
+	Basic Block: 613
+		Type: HLOAD
+		Label: null
+		Next: 614
+		Use: [40]
+		Def: [41]
+		In: [0, 1, 39, 40]
+		Out: [0, 1, 39, 41]
+
+	Basic Block: 614
+		Type: HLOAD
+		Label: null
+		Next: 615
+		Use: [0]
+		Def: [42]
+		In: [0, 1, 39, 41]
+		Out: [1, 39, 41, 42]
+
+	Basic Block: 615
+		Type: MOVE
+		Label: null
+		Next: 616
+		Use: [39, 41, 42]
+		Def: [43]
+		In: [1, 39, 41, 42]
+		Out: [1, 43]
+
+	Basic Block: 616
+		Type: MOVE
+		Label: null
+		Next: 617
+		Use: [43]
+		Def: [8]
+		In: [1, 43]
+		Out: [1]
+
+	Basic Block: 617
+		Type: MOVE
+		Label: null
+		Next: 618
+		Use: [1]
+		Def: [44]
+		In: [1]
+		Out: [44]
+
+	Basic Block: 618
+		Type: HLOAD
+		Label: null
+		Next: 619
+		Use: [44]
+		Def: [45]
+		In: [44]
+		Out: [44, 45]
+
+	Basic Block: 619
+		Type: HLOAD
+		Label: null
+		Next: 620
+		Use: [45]
+		Def: [46]
+		In: [44, 45]
+		Out: [44, 46]
+
+	Basic Block: 620
+		Type: MOVE
+		Label: null
+		Next: 621
+		Use: []
+		Def: [47]
+		In: [44, 46]
+		Out: [44, 46, 47]
+
+	Basic Block: 621
+		Type: MOVE
+		Label: null
+		Next: 622
+		Use: [44, 46, 47]
+		Def: [48]
+		In: [44, 46, 47]
+		Out: [48]
+
+	Basic Block: 622
+		Type: MOVE
+		Label: null
+		Next: 623
+		Use: [48]
+		Def: [8]
+		In: [48]
+		Out: []
+
+	Basic Block: 623
+		Type: JUMP
+		Label: L38
+		Next: 624
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 624
+		Type: MOVE
+		Label: null
+		Next: 626
+		Use: [1]
+		Def: [49]
+		In: [0, 1]
+		Out: [0, 49, 1]
+
+	Basic Block: 626
+		Type: HLOAD
+		Label: null
+		Next: 627
+		Use: [49]
+		Def: [50]
+		In: [0, 49, 1]
+		Out: [0, 49, 1, 50]
+
+	Basic Block: 627
+		Type: HLOAD
+		Label: null
+		Next: 628
+		Use: [50]
+		Def: [51]
+		In: [0, 49, 1, 50]
+		Out: [0, 49, 1, 51]
+
+	Basic Block: 628
+		Type: HLOAD
+		Label: null
+		Next: 629
+		Use: [0]
+		Def: [52]
+		In: [0, 49, 1, 51]
+		Out: [49, 1, 51, 52]
+
+	Basic Block: 629
+		Type: MOVE
+		Label: null
+		Next: 630
+		Use: [49, 51, 52]
+		Def: [53]
+		In: [49, 1, 51, 52]
+		Out: [1, 53]
+
+	Basic Block: 630
+		Type: MOVE
+		Label: null
+		Next: 631
+		Use: [53]
+		Def: [8]
+		In: [1, 53]
+		Out: [1]
+
+	Basic Block: 631
+		Type: MOVE
+		Label: null
+		Next: 632
+		Use: [1]
+		Def: [54]
+		In: [1]
+		Out: [54]
+
+	Basic Block: 632
+		Type: HLOAD
+		Label: null
+		Next: 633
+		Use: [54]
+		Def: [55]
+		In: [54]
+		Out: [54, 55]
+
+	Basic Block: 633
+		Type: HLOAD
+		Label: null
+		Next: 634
+		Use: [55]
+		Def: [56]
+		In: [54, 55]
+		Out: [54, 56]
+
+	Basic Block: 634
+		Type: MOVE
+		Label: null
+		Next: 635
+		Use: []
+		Def: [57]
+		In: [54, 56]
+		Out: [54, 56, 57]
+
+	Basic Block: 635
+		Type: MOVE
+		Label: null
+		Next: 636
+		Use: [54, 56, 57]
+		Def: [58]
+		In: [54, 56, 57]
+		Out: [58]
+
+	Basic Block: 636
+		Type: MOVE
+		Label: null
+		Next: 637
+		Use: [58]
+		Def: [8]
+		In: [58]
+		Out: []
+
+	Basic Block: 637
+		Type: NOOP
+		Label: null
+		Next: 639
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 639
+		Type: NOOP
+		Label: null
+		Next: 641
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 641
+		Type: NOOP
+		Label: null
+		Next: 643
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 643
+		Type: MOVE
+		Label: null
+		Next: 644
+		Use: []
+		Def: [59]
+		In: []
+		Out: [59]
+
+	Basic Block: 644
+		Type: RETURN
+		Label: null
+		Next: 645
+		Use: [59]
+		Def: []
+		In: [59]
+		Out: []
+
+Scope: Tree_RemoveRight
+	Basic Block: 648
+		Type: MOVE
+		Label: null
+		Next: 650
+		Use: [2]
+		Def: [4]
+		In: [0, 1, 2]
+		Out: [0, 1, 2, 4]
+
+	Basic Block: 650
+		Type: HLOAD
+		Label: null
+		Next: 651
+		Use: [4]
+		Def: [5]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4, 5]
+
+	Basic Block: 651
+		Type: HLOAD
+		Label: null
+		Next: 652
+		Use: [5]
+		Def: [6]
+		In: [0, 1, 2, 4, 5]
+		Out: [0, 1, 2, 4, 6]
+
+	Basic Block: 652
+		Type: MOVE
+		Label: null
+		Next: 653
+		Use: [4, 6]
+		Def: [7]
+		In: [0, 1, 2, 4, 6]
+		Out: [0, 1, 2, 7]
+
+	Basic Block: 653
+		Type: CJUMP
+		Label: L40
+		Next: 654
+		Use: [7]
+		Def: []
+		In: [0, 1, 2, 7]
+		Out: [0, 1, 2]
+
+	Basic Block: 654
+		Type: MOVE
+		Label: null
+		Next: 655
+		Use: [2]
+		Def: [9]
+		In: [0, 2]
+		Out: [0, 2, 9]
+
+	Basic Block: 655
+		Type: HLOAD
+		Label: null
+		Next: 656
+		Use: [9]
+		Def: [10]
+		In: [0, 2, 9]
+		Out: [0, 2, 9, 10]
+
+	Basic Block: 656
+		Type: HLOAD
+		Label: null
+		Next: 657
+		Use: [10]
+		Def: [11]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 9, 11]
+
+	Basic Block: 657
+		Type: MOVE
+		Label: null
+		Next: 658
+		Use: [2]
+		Def: [13]
+		In: [0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 13]
+
+	Basic Block: 658
+		Type: HLOAD
+		Label: null
+		Next: 659
+		Use: [13]
+		Def: [14]
+		In: [0, 2, 9, 11, 13]
+		Out: [0, 2, 9, 11, 13, 14]
+
+	Basic Block: 659
+		Type: HLOAD
+		Label: null
+		Next: 660
+		Use: [14]
+		Def: [15]
+		In: [0, 2, 9, 11, 13, 14]
+		Out: [0, 2, 9, 11, 13, 15]
+
+	Basic Block: 660
+		Type: MOVE
+		Label: null
+		Next: 661
+		Use: [13, 15]
+		Def: [16]
+		In: [0, 2, 9, 11, 13, 15]
+		Out: [16, 0, 2, 9, 11]
+
+	Basic Block: 661
+		Type: MOVE
+		Label: null
+		Next: 662
+		Use: [16]
+		Def: [12]
+		In: [16, 0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 12]
+
+	Basic Block: 662
+		Type: HLOAD
+		Label: null
+		Next: 663
+		Use: [12]
+		Def: [17]
+		In: [0, 2, 9, 11, 12]
+		Out: [0, 17, 2, 9, 11, 12]
+
+	Basic Block: 663
+		Type: HLOAD
+		Label: null
+		Next: 664
+		Use: [17]
+		Def: [18]
+		In: [0, 17, 2, 9, 11, 12]
+		Out: [0, 18, 2, 9, 11, 12]
+
+	Basic Block: 664
+		Type: MOVE
+		Label: null
+		Next: 665
+		Use: [18, 12]
+		Def: [19]
+		In: [0, 18, 2, 9, 11, 12]
+		Out: [0, 2, 19, 9, 11]
+
+	Basic Block: 665
+		Type: MOVE
+		Label: null
+		Next: 666
+		Use: [19, 9, 11]
+		Def: [20]
+		In: [0, 2, 19, 9, 11]
+		Out: [0, 2, 20]
+
+	Basic Block: 666
+		Type: MOVE
+		Label: null
+		Next: 667
+		Use: [20]
+		Def: [8]
+		In: [0, 2, 20]
+		Out: [0, 2]
+
+	Basic Block: 667
+		Type: MOVE
+		Label: null
+		Next: 668
+		Use: [2]
+		Def: [1]
+		In: [0, 2]
+		Out: [0, 1, 2]
+
+	Basic Block: 668
+		Type: MOVE
+		Label: null
+		Next: 669
+		Use: [2]
+		Def: [21]
+		In: [0, 1, 2]
+		Out: [0, 1, 21]
+
+	Basic Block: 669
+		Type: HLOAD
+		Label: null
+		Next: 670
+		Use: [21]
+		Def: [22]
+		In: [0, 1, 21]
+		Out: [0, 1, 21, 22]
+
+	Basic Block: 670
+		Type: HLOAD
+		Label: null
+		Next: 671
+		Use: [22]
+		Def: [23]
+		In: [0, 1, 21, 22]
+		Out: [0, 1, 21, 23]
+
+	Basic Block: 671
+		Type: MOVE
+		Label: null
+		Next: 672
+		Use: [21, 23]
+		Def: [24]
+		In: [0, 1, 21, 23]
+		Out: [0, 1, 24]
+
+	Basic Block: 672
+		Type: MOVE
+		Label: null
+		Next: 673
+		Use: [24]
+		Def: [2]
+		In: [0, 1, 24]
+		Out: [0, 1, 2]
+
+	Basic Block: 673
+		Type: JUMP
+		Label: L39
+		Next: 674
+		Use: []
+		Def: []
+		In: [0, 1, 2]
+		Out: [0, 1, 2]
+
+	Basic Block: 674
+		Type: NOOP
+		Label: null
+		Next: 676
+		Use: []
+		Def: []
+		In: [0, 1]
+		Out: [0, 1]
+
+	Basic Block: 676
+		Type: MOVE
+		Label: null
+		Next: 677
+		Use: [1]
+		Def: [25]
+		In: [0, 1]
+		Out: [0, 1, 25]
+
+	Basic Block: 677
+		Type: HLOAD
+		Label: null
+		Next: 678
+		Use: [25]
+		Def: [26]
+		In: [0, 1, 25]
+		Out: [0, 1, 25, 26]
+
+	Basic Block: 678
+		Type: HLOAD
+		Label: null
+		Next: 679
+		Use: [26]
+		Def: [27]
+		In: [0, 1, 25, 26]
+		Out: [0, 1, 25, 27]
+
+	Basic Block: 679
+		Type: HLOAD
+		Label: null
+		Next: 680
+		Use: [0]
+		Def: [28]
+		In: [0, 1, 25, 27]
+		Out: [1, 25, 27, 28]
+
+	Basic Block: 680
+		Type: MOVE
+		Label: null
+		Next: 681
+		Use: [25, 27, 28]
+		Def: [29]
+		In: [1, 25, 27, 28]
+		Out: [1, 29]
+
+	Basic Block: 681
+		Type: MOVE
+		Label: null
+		Next: 682
+		Use: [29]
+		Def: [8]
+		In: [1, 29]
+		Out: [1]
+
+	Basic Block: 682
+		Type: MOVE
+		Label: null
+		Next: 683
+		Use: [1]
+		Def: [30]
+		In: [1]
+		Out: [30]
+
+	Basic Block: 683
+		Type: HLOAD
+		Label: null
+		Next: 684
+		Use: [30]
+		Def: [31]
+		In: [30]
+		Out: [30, 31]
+
+	Basic Block: 684
+		Type: HLOAD
+		Label: null
+		Next: 685
+		Use: [31]
+		Def: [32]
+		In: [30, 31]
+		Out: [32, 30]
+
+	Basic Block: 685
+		Type: MOVE
+		Label: null
+		Next: 686
+		Use: []
+		Def: [33]
+		In: [32, 30]
+		Out: [32, 33, 30]
+
+	Basic Block: 686
+		Type: MOVE
+		Label: null
+		Next: 687
+		Use: [32, 33, 30]
+		Def: [34]
+		In: [32, 33, 30]
+		Out: [34]
+
+	Basic Block: 687
+		Type: MOVE
+		Label: null
+		Next: 688
+		Use: [34]
+		Def: [8]
+		In: [34]
+		Out: []
+
+	Basic Block: 688
+		Type: MOVE
+		Label: null
+		Next: 689
+		Use: []
+		Def: [35]
+		In: []
+		Out: [35]
+
+	Basic Block: 689
+		Type: RETURN
+		Label: null
+		Next: 690
+		Use: [35]
+		Def: []
+		In: [35]
+		Out: []
+
+Scope: Tree_RemoveLeft
+	Basic Block: 693
+		Type: MOVE
+		Label: null
+		Next: 695
+		Use: [2]
+		Def: [4]
+		In: [0, 1, 2]
+		Out: [0, 1, 2, 4]
+
+	Basic Block: 695
+		Type: HLOAD
+		Label: null
+		Next: 696
+		Use: [4]
+		Def: [5]
+		In: [0, 1, 2, 4]
+		Out: [0, 1, 2, 4, 5]
+
+	Basic Block: 696
+		Type: HLOAD
+		Label: null
+		Next: 697
+		Use: [5]
+		Def: [6]
+		In: [0, 1, 2, 4, 5]
+		Out: [0, 1, 2, 4, 6]
+
+	Basic Block: 697
+		Type: MOVE
+		Label: null
+		Next: 698
+		Use: [4, 6]
+		Def: [7]
+		In: [0, 1, 2, 4, 6]
+		Out: [0, 1, 2, 7]
+
+	Basic Block: 698
+		Type: CJUMP
+		Label: L42
+		Next: 699
+		Use: [7]
+		Def: []
+		In: [0, 1, 2, 7]
+		Out: [0, 1, 2]
+
+	Basic Block: 699
+		Type: MOVE
+		Label: null
+		Next: 700
+		Use: [2]
+		Def: [9]
+		In: [0, 2]
+		Out: [0, 2, 9]
+
+	Basic Block: 700
+		Type: HLOAD
+		Label: null
+		Next: 701
+		Use: [9]
+		Def: [10]
+		In: [0, 2, 9]
+		Out: [0, 2, 9, 10]
+
+	Basic Block: 701
+		Type: HLOAD
+		Label: null
+		Next: 702
+		Use: [10]
+		Def: [11]
+		In: [0, 2, 9, 10]
+		Out: [0, 2, 9, 11]
+
+	Basic Block: 702
+		Type: MOVE
+		Label: null
+		Next: 703
+		Use: [2]
+		Def: [13]
+		In: [0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 13]
+
+	Basic Block: 703
+		Type: HLOAD
+		Label: null
+		Next: 704
+		Use: [13]
+		Def: [14]
+		In: [0, 2, 9, 11, 13]
+		Out: [0, 2, 9, 11, 13, 14]
+
+	Basic Block: 704
+		Type: HLOAD
+		Label: null
+		Next: 705
+		Use: [14]
+		Def: [15]
+		In: [0, 2, 9, 11, 13, 14]
+		Out: [0, 2, 9, 11, 13, 15]
+
+	Basic Block: 705
+		Type: MOVE
+		Label: null
+		Next: 706
+		Use: [13, 15]
+		Def: [16]
+		In: [0, 2, 9, 11, 13, 15]
+		Out: [16, 0, 2, 9, 11]
+
+	Basic Block: 706
+		Type: MOVE
+		Label: null
+		Next: 707
+		Use: [16]
+		Def: [12]
+		In: [16, 0, 2, 9, 11]
+		Out: [0, 2, 9, 11, 12]
+
+	Basic Block: 707
+		Type: HLOAD
+		Label: null
+		Next: 708
+		Use: [12]
+		Def: [17]
+		In: [0, 2, 9, 11, 12]
+		Out: [0, 17, 2, 9, 11, 12]
+
+	Basic Block: 708
+		Type: HLOAD
+		Label: null
+		Next: 709
+		Use: [17]
+		Def: [18]
+		In: [0, 17, 2, 9, 11, 12]
+		Out: [0, 18, 2, 9, 11, 12]
+
+	Basic Block: 709
+		Type: MOVE
+		Label: null
+		Next: 710
+		Use: [18, 12]
+		Def: [19]
+		In: [0, 18, 2, 9, 11, 12]
+		Out: [0, 2, 19, 9, 11]
+
+	Basic Block: 710
+		Type: MOVE
+		Label: null
+		Next: 711
+		Use: [19, 9, 11]
+		Def: [20]
+		In: [0, 2, 19, 9, 11]
+		Out: [0, 2, 20]
+
+	Basic Block: 711
+		Type: MOVE
+		Label: null
+		Next: 712
+		Use: [20]
+		Def: [8]
+		In: [0, 2, 20]
+		Out: [0, 2]
+
+	Basic Block: 712
+		Type: MOVE
+		Label: null
+		Next: 713
+		Use: [2]
+		Def: [1]
+		In: [0, 2]
+		Out: [0, 1, 2]
+
+	Basic Block: 713
+		Type: MOVE
+		Label: null
+		Next: 714
+		Use: [2]
+		Def: [21]
+		In: [0, 1, 2]
+		Out: [0, 1, 21]
+
+	Basic Block: 714
+		Type: HLOAD
+		Label: null
+		Next: 715
+		Use: [21]
+		Def: [22]
+		In: [0, 1, 21]
+		Out: [0, 1, 21, 22]
+
+	Basic Block: 715
+		Type: HLOAD
+		Label: null
+		Next: 716
+		Use: [22]
+		Def: [23]
+		In: [0, 1, 21, 22]
+		Out: [0, 1, 21, 23]
+
+	Basic Block: 716
+		Type: MOVE
+		Label: null
+		Next: 717
+		Use: [21, 23]
+		Def: [24]
+		In: [0, 1, 21, 23]
+		Out: [0, 1, 24]
+
+	Basic Block: 717
+		Type: MOVE
+		Label: null
+		Next: 718
+		Use: [24]
+		Def: [2]
+		In: [0, 1, 24]
+		Out: [0, 1, 2]
+
+	Basic Block: 718
+		Type: JUMP
+		Label: L41
+		Next: 719
+		Use: []
+		Def: []
+		In: [0, 1, 2]
+		Out: [0, 1, 2]
+
+	Basic Block: 719
+		Type: NOOP
+		Label: null
+		Next: 721
+		Use: []
+		Def: []
+		In: [0, 1]
+		Out: [0, 1]
+
+	Basic Block: 721
+		Type: MOVE
+		Label: null
+		Next: 722
+		Use: [1]
+		Def: [25]
+		In: [0, 1]
+		Out: [0, 1, 25]
+
+	Basic Block: 722
+		Type: HLOAD
+		Label: null
+		Next: 723
+		Use: [25]
+		Def: [26]
+		In: [0, 1, 25]
+		Out: [0, 1, 25, 26]
+
+	Basic Block: 723
+		Type: HLOAD
+		Label: null
+		Next: 724
+		Use: [26]
+		Def: [27]
+		In: [0, 1, 25, 26]
+		Out: [0, 1, 25, 27]
+
+	Basic Block: 724
+		Type: HLOAD
+		Label: null
+		Next: 725
+		Use: [0]
+		Def: [28]
+		In: [0, 1, 25, 27]
+		Out: [1, 25, 27, 28]
+
+	Basic Block: 725
+		Type: MOVE
+		Label: null
+		Next: 726
+		Use: [25, 27, 28]
+		Def: [29]
+		In: [1, 25, 27, 28]
+		Out: [1, 29]
+
+	Basic Block: 726
+		Type: MOVE
+		Label: null
+		Next: 727
+		Use: [29]
+		Def: [8]
+		In: [1, 29]
+		Out: [1]
+
+	Basic Block: 727
+		Type: MOVE
+		Label: null
+		Next: 728
+		Use: [1]
+		Def: [30]
+		In: [1]
+		Out: [30]
+
+	Basic Block: 728
+		Type: HLOAD
+		Label: null
+		Next: 729
+		Use: [30]
+		Def: [31]
+		In: [30]
+		Out: [30, 31]
+
+	Basic Block: 729
+		Type: HLOAD
+		Label: null
+		Next: 730
+		Use: [31]
+		Def: [32]
+		In: [30, 31]
+		Out: [32, 30]
+
+	Basic Block: 730
+		Type: MOVE
+		Label: null
+		Next: 731
+		Use: []
+		Def: [33]
+		In: [32, 30]
+		Out: [32, 33, 30]
+
+	Basic Block: 731
+		Type: MOVE
+		Label: null
+		Next: 732
+		Use: [32, 33, 30]
+		Def: [34]
+		In: [32, 33, 30]
+		Out: [34]
+
+	Basic Block: 732
+		Type: MOVE
+		Label: null
+		Next: 733
+		Use: [34]
+		Def: [8]
+		In: [34]
+		Out: []
+
+	Basic Block: 733
+		Type: MOVE
+		Label: null
+		Next: 734
+		Use: []
+		Def: [35]
+		In: []
+		Out: [35]
+
+	Basic Block: 734
+		Type: RETURN
+		Label: null
+		Next: 735
+		Use: [35]
+		Def: []
+		In: [35]
+		Out: []
+
+Scope: Tree_Search
+	Basic Block: 738
+		Type: MOVE
+		Label: null
+		Next: 739
+		Use: [0]
+		Def: [3]
+		In: [0, 1]
+		Out: [1, 3]
+
+	Basic Block: 739
+		Type: MOVE
+		Label: null
+		Next: 740
+		Use: []
+		Def: [5]
+		In: [1, 3]
+		Out: [1, 3, 5]
+
+	Basic Block: 740
+		Type: MOVE
+		Label: null
+		Next: 741
+		Use: [5]
+		Def: [4]
+		In: [1, 3, 5]
+		Out: [1, 3, 4]
+
+	Basic Block: 741
+		Type: MOVE
+		Label: null
+		Next: 742
+		Use: []
+		Def: [7]
+		In: [1, 3, 4]
+		Out: [1, 3, 4, 7]
+
+	Basic Block: 742
+		Type: MOVE
+		Label: null
+		Next: 743
+		Use: [7]
+		Def: [6]
+		In: [1, 3, 4, 7]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 743
+		Type: CJUMP
+		Label: L44
+		Next: 745
+		Use: [4]
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 745
+		Type: MOVE
+		Label: null
+		Next: 746
+		Use: [3]
+		Def: [9]
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6, 9]
+
+	Basic Block: 746
+		Type: HLOAD
+		Label: null
+		Next: 747
+		Use: [9]
+		Def: [10]
+		In: [1, 3, 4, 6, 9]
+		Out: [1, 3, 4, 6, 9, 10]
+
+	Basic Block: 747
+		Type: HLOAD
+		Label: null
+		Next: 748
+		Use: [10]
+		Def: [11]
+		In: [1, 3, 4, 6, 9, 10]
+		Out: [1, 3, 4, 6, 9, 11]
+
+	Basic Block: 748
+		Type: MOVE
+		Label: null
+		Next: 749
+		Use: [9, 11]
+		Def: [12]
+		In: [1, 3, 4, 6, 9, 11]
+		Out: [1, 3, 4, 6, 12]
+
+	Basic Block: 749
+		Type: MOVE
+		Label: null
+		Next: 750
+		Use: [12]
+		Def: [8]
+		In: [1, 3, 4, 6, 12]
+		Out: [1, 3, 4, 6, 8]
+
+	Basic Block: 750
+		Type: MOVE
+		Label: null
+		Next: 751
+		Use: []
+		Def: [14]
+		In: [1, 3, 4, 6, 8]
+		Out: [1, 3, 4, 6, 8, 14]
+
+	Basic Block: 751
+		Type: MOVE
+		Label: null
+		Next: 752
+		Use: [8, 14]
+		Def: [15]
+		In: [1, 3, 4, 6, 8, 14]
+		Out: [1, 3, 4, 6, 8, 15]
+
+	Basic Block: 752
+		Type: MOVE
+		Label: null
+		Next: 753
+		Use: [15]
+		Def: [13]
+		In: [1, 3, 4, 6, 8, 15]
+		Out: [1, 3, 4, 6, 8, 13]
+
+	Basic Block: 753
+		Type: MOVE
+		Label: null
+		Next: 754
+		Use: [1, 13]
+		Def: [16]
+		In: [1, 3, 4, 6, 8, 13]
+		Out: [16, 1, 3, 4, 6, 8]
+
+	Basic Block: 754
+		Type: CJUMP
+		Label: L45
+		Next: 755
+		Use: [16]
+		Def: []
+		In: [16, 1, 3, 4, 6, 8]
+		Out: [1, 3, 4, 6, 8]
+
+	Basic Block: 755
+		Type: MOVE
+		Label: null
+		Next: 756
+		Use: [3]
+		Def: [17]
+		In: [1, 3, 4, 6]
+		Out: [17, 1, 3, 4, 6]
+
+	Basic Block: 756
+		Type: HLOAD
+		Label: null
+		Next: 757
+		Use: [17]
+		Def: [18]
+		In: [17, 1, 3, 4, 6]
+		Out: [17, 1, 18, 3, 4, 6]
+
+	Basic Block: 757
+		Type: HLOAD
+		Label: null
+		Next: 758
+		Use: [18]
+		Def: [19]
+		In: [17, 1, 18, 3, 4, 6]
+		Out: [17, 1, 19, 3, 4, 6]
+
+	Basic Block: 758
+		Type: MOVE
+		Label: null
+		Next: 759
+		Use: [17, 19]
+		Def: [20]
+		In: [17, 1, 19, 3, 4, 6]
+		Out: [1, 3, 20, 4, 6]
+
+	Basic Block: 759
+		Type: CJUMP
+		Label: L47
+		Next: 760
+		Use: [20]
+		Def: []
+		In: [1, 3, 20, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 760
+		Type: MOVE
+		Label: null
+		Next: 761
+		Use: [3]
+		Def: [21]
+		In: [1, 3, 4, 6]
+		Out: [1, 4, 21, 6]
+
+	Basic Block: 761
+		Type: HLOAD
+		Label: null
+		Next: 762
+		Use: [21]
+		Def: [22]
+		In: [1, 4, 21, 6]
+		Out: [1, 4, 21, 22, 6]
+
+	Basic Block: 762
+		Type: HLOAD
+		Label: null
+		Next: 763
+		Use: [22]
+		Def: [23]
+		In: [1, 4, 21, 22, 6]
+		Out: [1, 4, 21, 6, 23]
+
+	Basic Block: 763
+		Type: MOVE
+		Label: null
+		Next: 764
+		Use: [21, 23]
+		Def: [24]
+		In: [1, 4, 21, 6, 23]
+		Out: [1, 4, 6, 24]
+
+	Basic Block: 764
+		Type: MOVE
+		Label: null
+		Next: 765
+		Use: [24]
+		Def: [3]
+		In: [1, 4, 6, 24]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 765
+		Type: JUMP
+		Label: L48
+		Next: 766
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 766
+		Type: MOVE
+		Label: null
+		Next: 768
+		Use: []
+		Def: [25]
+		In: [1, 3, 6]
+		Out: [1, 3, 6, 25]
+
+	Basic Block: 768
+		Type: MOVE
+		Label: null
+		Next: 769
+		Use: [25]
+		Def: [4]
+		In: [1, 3, 6, 25]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 769
+		Type: NOOP
+		Label: null
+		Next: 771
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 771
+		Type: JUMP
+		Label: L46
+		Next: 772
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 772
+		Type: MOVE
+		Label: null
+		Next: 774
+		Use: []
+		Def: [27]
+		In: [1, 3, 4, 6, 8]
+		Out: [1, 3, 4, 6, 8, 27]
+
+	Basic Block: 774
+		Type: MOVE
+		Label: null
+		Next: 775
+		Use: [1, 27]
+		Def: [28]
+		In: [1, 3, 4, 6, 8, 27]
+		Out: [1, 3, 4, 6, 8, 28]
+
+	Basic Block: 775
+		Type: MOVE
+		Label: null
+		Next: 776
+		Use: [28]
+		Def: [26]
+		In: [1, 3, 4, 6, 8, 28]
+		Out: [1, 3, 4, 6, 8, 26]
+
+	Basic Block: 776
+		Type: MOVE
+		Label: null
+		Next: 777
+		Use: [8, 26]
+		Def: [29]
+		In: [1, 3, 4, 6, 8, 26]
+		Out: [1, 3, 4, 6, 29]
+
+	Basic Block: 777
+		Type: CJUMP
+		Label: L49
+		Next: 778
+		Use: [29]
+		Def: []
+		In: [1, 3, 4, 6, 29]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 778
+		Type: MOVE
+		Label: null
+		Next: 779
+		Use: [3]
+		Def: [30]
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6, 30]
+
+	Basic Block: 779
+		Type: HLOAD
+		Label: null
+		Next: 780
+		Use: [30]
+		Def: [31]
+		In: [1, 3, 4, 6, 30]
+		Out: [1, 3, 4, 6, 30, 31]
+
+	Basic Block: 780
+		Type: HLOAD
+		Label: null
+		Next: 781
+		Use: [31]
+		Def: [32]
+		In: [1, 3, 4, 6, 30, 31]
+		Out: [32, 1, 3, 4, 6, 30]
+
+	Basic Block: 781
+		Type: MOVE
+		Label: null
+		Next: 782
+		Use: [32, 30]
+		Def: [33]
+		In: [32, 1, 3, 4, 6, 30]
+		Out: [33, 1, 3, 4, 6]
+
+	Basic Block: 782
+		Type: CJUMP
+		Label: L51
+		Next: 783
+		Use: [33]
+		Def: []
+		In: [33, 1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 783
+		Type: MOVE
+		Label: null
+		Next: 784
+		Use: [3]
+		Def: [34]
+		In: [1, 3, 4, 6]
+		Out: [1, 34, 4, 6]
+
+	Basic Block: 784
+		Type: HLOAD
+		Label: null
+		Next: 785
+		Use: [34]
+		Def: [35]
+		In: [1, 34, 4, 6]
+		Out: [1, 34, 35, 4, 6]
+
+	Basic Block: 785
+		Type: HLOAD
+		Label: null
+		Next: 786
+		Use: [35]
+		Def: [36]
+		In: [1, 34, 35, 4, 6]
+		Out: [1, 34, 36, 4, 6]
+
+	Basic Block: 786
+		Type: MOVE
+		Label: null
+		Next: 787
+		Use: [34, 36]
+		Def: [37]
+		In: [1, 34, 36, 4, 6]
+		Out: [1, 4, 37, 6]
+
+	Basic Block: 787
+		Type: MOVE
+		Label: null
+		Next: 788
+		Use: [37]
+		Def: [3]
+		In: [1, 4, 37, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 788
+		Type: JUMP
+		Label: L52
+		Next: 789
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 789
+		Type: MOVE
+		Label: null
+		Next: 791
+		Use: []
+		Def: [38]
+		In: [1, 3, 6]
+		Out: [1, 3, 38, 6]
+
+	Basic Block: 791
+		Type: MOVE
+		Label: null
+		Next: 792
+		Use: [38]
+		Def: [4]
+		In: [1, 3, 38, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 792
+		Type: NOOP
+		Label: null
+		Next: 794
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 794
+		Type: JUMP
+		Label: L50
+		Next: 795
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 795
+		Type: MOVE
+		Label: null
+		Next: 797
+		Use: []
+		Def: [39]
+		In: [1, 3]
+		Out: [1, 3, 39]
+
+	Basic Block: 797
+		Type: MOVE
+		Label: null
+		Next: 798
+		Use: [39]
+		Def: [6]
+		In: [1, 3, 39]
+		Out: [1, 3, 6]
+
+	Basic Block: 798
+		Type: MOVE
+		Label: null
+		Next: 799
+		Use: []
+		Def: [40]
+		In: [1, 3, 6]
+		Out: [1, 3, 6, 40]
+
+	Basic Block: 799
+		Type: MOVE
+		Label: null
+		Next: 800
+		Use: [40]
+		Def: [4]
+		In: [1, 3, 6, 40]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 800
+		Type: NOOP
+		Label: null
+		Next: 802
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 802
+		Type: NOOP
+		Label: null
+		Next: 804
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 804
+		Type: JUMP
+		Label: L43
+		Next: 805
+		Use: []
+		Def: []
+		In: [1, 3, 4, 6]
+		Out: [1, 3, 4, 6]
+
+	Basic Block: 805
+		Type: NOOP
+		Label: null
+		Next: 807
+		Use: []
+		Def: []
+		In: [6]
+		Out: [6]
+
+	Basic Block: 807
+		Type: RETURN
+		Label: null
+		Next: 808
+		Use: [6]
+		Def: []
+		In: [6]
+		Out: []
+
+Scope: Tree_Print
+	Basic Block: 811
+		Type: MOVE
+		Label: null
+		Next: 812
+		Use: [0]
+		Def: [2]
+		In: [0]
+		Out: [0, 2]
+
+	Basic Block: 812
+		Type: MOVE
+		Label: null
+		Next: 813
+		Use: [0]
+		Def: [4]
+		In: [0, 2]
+		Out: [2, 4]
+
+	Basic Block: 813
+		Type: HLOAD
+		Label: null
+		Next: 814
+		Use: [4]
+		Def: [5]
+		In: [2, 4]
+		Out: [2, 4, 5]
+
+	Basic Block: 814
+		Type: HLOAD
+		Label: null
+		Next: 815
+		Use: [5]
+		Def: [6]
+		In: [2, 4, 5]
+		Out: [2, 4, 6]
+
+	Basic Block: 815
+		Type: MOVE
+		Label: null
+		Next: 816
+		Use: [2, 4, 6]
+		Def: [7]
+		In: [2, 4, 6]
+		Out: [7]
+
+	Basic Block: 816
+		Type: MOVE
+		Label: null
+		Next: 817
+		Use: [7]
+		Def: [3]
+		In: [7]
+		Out: []
+
+	Basic Block: 817
+		Type: MOVE
+		Label: null
+		Next: 818
+		Use: []
+		Def: [8]
+		In: []
+		Out: [8]
+
+	Basic Block: 818
+		Type: RETURN
+		Label: null
+		Next: 819
+		Use: [8]
+		Def: []
+		In: [8]
+		Out: []
+
+Scope: Tree_RecPrint
+	Basic Block: 822
+		Type: MOVE
+		Label: null
+		Next: 823
+		Use: [1]
+		Def: [3]
+		In: [0, 1]
+		Out: [0, 1, 3]
+
+	Basic Block: 823
+		Type: HLOAD
+		Label: null
+		Next: 824
+		Use: [3]
+		Def: [4]
+		In: [0, 1, 3]
+		Out: [0, 1, 3, 4]
+
+	Basic Block: 824
+		Type: HLOAD
+		Label: null
+		Next: 825
+		Use: [4]
+		Def: [5]
+		In: [0, 1, 3, 4]
+		Out: [0, 1, 3, 5]
+
+	Basic Block: 825
+		Type: MOVE
+		Label: null
+		Next: 826
+		Use: [3, 5]
+		Def: [6]
+		In: [0, 1, 3, 5]
+		Out: [0, 1, 6]
+
+	Basic Block: 826
+		Type: CJUMP
+		Label: L53
+		Next: 827
+		Use: [6]
+		Def: []
+		In: [0, 1, 6]
+		Out: [0, 1]
+
+	Basic Block: 827
+		Type: MOVE
+		Label: null
+		Next: 828
+		Use: [0]
+		Def: [8]
+		In: [0, 1]
+		Out: [0, 1, 8]
+
+	Basic Block: 828
+		Type: HLOAD
+		Label: null
+		Next: 829
+		Use: [8]
+		Def: [9]
+		In: [0, 1, 8]
+		Out: [0, 1, 8, 9]
+
+	Basic Block: 829
+		Type: HLOAD
+		Label: null
+		Next: 830
+		Use: [9]
+		Def: [10]
+		In: [0, 1, 8, 9]
+		Out: [0, 1, 8, 10]
+
+	Basic Block: 830
+		Type: MOVE
+		Label: null
+		Next: 831
+		Use: [1]
+		Def: [11]
+		In: [0, 1, 8, 10]
+		Out: [0, 1, 8, 10, 11]
+
+	Basic Block: 831
+		Type: HLOAD
+		Label: null
+		Next: 832
+		Use: [11]
+		Def: [12]
+		In: [0, 1, 8, 10, 11]
+		Out: [0, 1, 8, 10, 11, 12]
+
+	Basic Block: 832
+		Type: HLOAD
+		Label: null
+		Next: 833
+		Use: [12]
+		Def: [13]
+		In: [0, 1, 8, 10, 11, 12]
+		Out: [0, 1, 8, 10, 11, 13]
+
+	Basic Block: 833
+		Type: MOVE
+		Label: null
+		Next: 834
+		Use: [11, 13]
+		Def: [14]
+		In: [0, 1, 8, 10, 11, 13]
+		Out: [0, 1, 8, 10, 14]
+
+	Basic Block: 834
+		Type: MOVE
+		Label: null
+		Next: 835
+		Use: [8, 10, 14]
+		Def: [15]
+		In: [0, 1, 8, 10, 14]
+		Out: [0, 1, 15]
+
+	Basic Block: 835
+		Type: MOVE
+		Label: null
+		Next: 836
+		Use: [15]
+		Def: [7]
+		In: [0, 1, 15]
+		Out: [0, 1]
+
+	Basic Block: 836
+		Type: JUMP
+		Label: L54
+		Next: 837
+		Use: []
+		Def: []
+		In: [0, 1]
+		Out: [0, 1]
+
+	Basic Block: 837
+		Type: MOVE
+		Label: null
+		Next: 839
+		Use: []
+		Def: [16]
+		In: [0, 1]
+		Out: [16, 0, 1]
+
+	Basic Block: 839
+		Type: MOVE
+		Label: null
+		Next: 840
+		Use: [16]
+		Def: [7]
+		In: [16, 0, 1]
+		Out: [0, 1]
+
+	Basic Block: 840
+		Type: NOOP
+		Label: null
+		Next: 842
+		Use: []
+		Def: []
+		In: [0, 1]
+		Out: [0, 1]
+
+	Basic Block: 842
+		Type: MOVE
+		Label: null
+		Next: 843
+		Use: [1]
+		Def: [17]
+		In: [0, 1]
+		Out: [0, 17, 1]
+
+	Basic Block: 843
+		Type: HLOAD
+		Label: null
+		Next: 844
+		Use: [17]
+		Def: [18]
+		In: [0, 17, 1]
+		Out: [0, 17, 1, 18]
+
+	Basic Block: 844
+		Type: HLOAD
+		Label: null
+		Next: 845
+		Use: [18]
+		Def: [19]
+		In: [0, 17, 1, 18]
+		Out: [0, 17, 1, 19]
+
+	Basic Block: 845
+		Type: MOVE
+		Label: null
+		Next: 846
+		Use: [17, 19]
+		Def: [20]
+		In: [0, 17, 1, 19]
+		Out: [0, 1, 20]
+
+	Basic Block: 846
+		Type: PRINT
+		Label: null
+		Next: 847
+		Use: [20]
+		Def: []
+		In: [0, 1, 20]
+		Out: [0, 1]
+
+	Basic Block: 847
+		Type: MOVE
+		Label: null
+		Next: 848
+		Use: [1]
+		Def: [21]
+		In: [0, 1]
+		Out: [0, 1, 21]
+
+	Basic Block: 848
+		Type: HLOAD
+		Label: null
+		Next: 849
+		Use: [21]
+		Def: [22]
+		In: [0, 1, 21]
+		Out: [0, 1, 21, 22]
+
+	Basic Block: 849
+		Type: HLOAD
+		Label: null
+		Next: 850
+		Use: [22]
+		Def: [23]
+		In: [0, 1, 21, 22]
+		Out: [0, 1, 21, 23]
+
+	Basic Block: 850
+		Type: MOVE
+		Label: null
+		Next: 851
+		Use: [21, 23]
+		Def: [24]
+		In: [0, 1, 21, 23]
+		Out: [0, 1, 24]
+
+	Basic Block: 851
+		Type: CJUMP
+		Label: L55
+		Next: 852
+		Use: [24]
+		Def: []
+		In: [0, 1, 24]
+		Out: [0, 1]
+
+	Basic Block: 852
+		Type: MOVE
+		Label: null
+		Next: 853
+		Use: [0]
+		Def: [25]
+		In: [0, 1]
+		Out: [1, 25]
+
+	Basic Block: 853
+		Type: HLOAD
+		Label: null
+		Next: 854
+		Use: [25]
+		Def: [26]
+		In: [1, 25]
+		Out: [1, 25, 26]
+
+	Basic Block: 854
+		Type: HLOAD
+		Label: null
+		Next: 855
+		Use: [26]
+		Def: [27]
+		In: [1, 25, 26]
+		Out: [1, 25, 27]
+
+	Basic Block: 855
+		Type: MOVE
+		Label: null
+		Next: 856
+		Use: [1]
+		Def: [28]
+		In: [1, 25, 27]
+		Out: [25, 27, 28]
+
+	Basic Block: 856
+		Type: HLOAD
+		Label: null
+		Next: 857
+		Use: [28]
+		Def: [29]
+		In: [25, 27, 28]
+		Out: [25, 27, 28, 29]
+
+	Basic Block: 857
+		Type: HLOAD
+		Label: null
+		Next: 858
+		Use: [29]
+		Def: [30]
+		In: [25, 27, 28, 29]
+		Out: [25, 27, 28, 30]
+
+	Basic Block: 858
+		Type: MOVE
+		Label: null
+		Next: 859
+		Use: [28, 30]
+		Def: [31]
+		In: [25, 27, 28, 30]
+		Out: [25, 27, 31]
+
+	Basic Block: 859
+		Type: MOVE
+		Label: null
+		Next: 860
+		Use: [25, 27, 31]
+		Def: [32]
+		In: [25, 27, 31]
+		Out: [32]
+
+	Basic Block: 860
+		Type: MOVE
+		Label: null
+		Next: 861
+		Use: [32]
+		Def: [7]
+		In: [32]
+		Out: []
+
+	Basic Block: 861
+		Type: JUMP
+		Label: L56
+		Next: 862
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 862
+		Type: MOVE
+		Label: null
+		Next: 864
+		Use: []
+		Def: [33]
+		In: []
+		Out: [33]
+
+	Basic Block: 864
+		Type: MOVE
+		Label: null
+		Next: 865
+		Use: [33]
+		Def: [7]
+		In: [33]
+		Out: []
+
+	Basic Block: 865
+		Type: NOOP
+		Label: null
+		Next: 867
+		Use: []
+		Def: []
+		In: []
+		Out: []
+
+	Basic Block: 867
+		Type: MOVE
+		Label: null
+		Next: 868
+		Use: []
+		Def: [34]
+		In: []
+		Out: [34]
+
+	Basic Block: 868
+		Type: RETURN
+		Label: null
+		Next: 869
+		Use: [34]
+		Def: []
+		In: [34]
+		Out: []
+
+Scope: BT_Start
+	Temp: 2
+		Start: 80
+		End: 187
+
+	Temp: 3
+		Start: 21
+		End: 78
+
+	Temp: 4
+		Start: 19
+		End: 20
+
+	Temp: 5
+		Start: 20
+		End: 21
+
+	Temp: 6
+		Start: 24
+		End: 80
+
+	Temp: 7
+		Start: 22
+		End: 23
+
+	Temp: 8
+		Start: 23
+		End: 24
+
+	Temp: 9
+		Start: 25
+		End: 26
+
+	Temp: 10
+		Start: 27
+		End: 28
+
+	Temp: 11
+		Start: 29
+		End: 30
+
+	Temp: 12
+		Start: 31
+		End: 32
+
+	Temp: 13
+		Start: 33
+		End: 34
+
+	Temp: 14
+		Start: 35
+		End: 36
+
+	Temp: 15
+		Start: 37
+		End: 38
+
+	Temp: 16
+		Start: 39
+		End: 40
+
+	Temp: 17
+		Start: 41
+		End: 42
+
+	Temp: 18
+		Start: 43
+		End: 44
+
+	Temp: 19
+		Start: 45
+		End: 46
+
+	Temp: 20
+		Start: 47
+		End: 48
+
+	Temp: 21
+		Start: 49
+		End: 50
+
+	Temp: 22
+		Start: 51
+		End: 52
+
+	Temp: 23
+		Start: 53
+		End: 54
+
+	Temp: 24
+		Start: 55
+		End: 56
+
+	Temp: 25
+		Start: 57
+		End: 58
+
+	Temp: 26
+		Start: 59
+		End: 60
+
+	Temp: 27
+		Start: 61
+		End: 62
+
+	Temp: 28
+		Start: 63
+		End: 64
+
+	Temp: 29
+		Start: 66
+		End: 77
+
+	Temp: 30
+		Start: 65
+		End: 66
+
+	Temp: 31
+		Start: 67
+		End: 69
+
+	Temp: 32
+		Start: 69
+		End: 70
+
+	Temp: 33
+		Start: 71
+		End: 73
+
+	Temp: 34
+		Start: 72
+		End: 73
+
+	Temp: 35
+		Start: 74
+		End: 75
+
+	Temp: 36
+		Start: 75
+		End: 76
+
+	Temp: 38
+		Start: 81
+		End: 85
+
+	Temp: 39
+		Start: 82
+		End: 83
+
+	Temp: 40
+		Start: 83
+		End: 85
+
+	Temp: 41
+		Start: 84
+		End: 85
+
+	Temp: 42
+		Start: 85
+		End: 86
+
+	Temp: 43
+		Start: 87
+		End: 90
+
+	Temp: 44
+		Start: 88
+		End: 89
+
+	Temp: 45
+		Start: 89
+		End: 90
+
+	Temp: 46
+		Start: 90
+		End: 91
+
+	Temp: 47
+		Start: 92
+		End: 93
+
+	Temp: 48
+		Start: 94
+		End: 98
+
+	Temp: 49
+		Start: 95
+		End: 96
+
+	Temp: 50
+		Start: 96
+		End: 98
+
+	Temp: 51
+		Start: 97
+		End: 98
+
+	Temp: 52
+		Start: 98
+		End: 99
+
+	Temp: 53
+		Start: 100
+		End: 103
+
+	Temp: 54
+		Start: 101
+		End: 102
+
+	Temp: 55
+		Start: 102
+		End: 103
+
+	Temp: 56
+		Start: 103
+		End: 104
+
+	Temp: 57
+		Start: 105
+		End: 109
+
+	Temp: 58
+		Start: 106
+		End: 107
+
+	Temp: 59
+		Start: 107
+		End: 109
+
+	Temp: 60
+		Start: 108
+		End: 109
+
+	Temp: 61
+		Start: 109
+		End: 110
+
+	Temp: 62
+		Start: 111
+		End: 115
+
+	Temp: 63
+		Start: 112
+		End: 113
+
+	Temp: 64
+		Start: 113
+		End: 115
+
+	Temp: 65
+		Start: 114
+		End: 115
+
+	Temp: 66
+		Start: 115
+		End: 116
+
+	Temp: 67
+		Start: 117
+		End: 121
+
+	Temp: 68
+		Start: 118
+		End: 119
+
+	Temp: 69
+		Start: 119
+		End: 121
+
+	Temp: 70
+		Start: 120
+		End: 121
+
+	Temp: 71
+		Start: 121
+		End: 122
+
+	Temp: 72
+		Start: 123
+		End: 127
+
+	Temp: 73
+		Start: 124
+		End: 125
+
+	Temp: 74
+		Start: 125
+		End: 127
+
+	Temp: 75
+		Start: 126
+		End: 127
+
+	Temp: 76
+		Start: 127
+		End: 128
+
+	Temp: 77
+		Start: 129
+		End: 133
+
+	Temp: 78
+		Start: 130
+		End: 131
+
+	Temp: 79
+		Start: 131
+		End: 133
+
+	Temp: 80
+		Start: 132
+		End: 133
+
+	Temp: 81
+		Start: 133
+		End: 134
+
+	Temp: 82
+		Start: 135
+		End: 139
+
+	Temp: 83
+		Start: 136
+		End: 137
+
+	Temp: 84
+		Start: 137
+		End: 139
+
+	Temp: 85
+		Start: 138
+		End: 139
+
+	Temp: 86
+		Start: 139
+		End: 140
+
+	Temp: 87
+		Start: 141
+		End: 144
+
+	Temp: 88
+		Start: 142
+		End: 143
+
+	Temp: 89
+		Start: 143
+		End: 144
+
+	Temp: 90
+		Start: 144
+		End: 145
+
+	Temp: 91
+		Start: 146
+		End: 150
+
+	Temp: 92
+		Start: 147
+		End: 148
+
+	Temp: 93
+		Start: 148
+		End: 150
+
+	Temp: 94
+		Start: 149
+		End: 150
+
+	Temp: 95
+		Start: 150
+		End: 151
+
+	Temp: 96
+		Start: 152
+		End: 156
+
+	Temp: 97
+		Start: 153
+		End: 154
+
+	Temp: 98
+		Start: 154
+		End: 156
+
+	Temp: 99
+		Start: 155
+		End: 156
+
+	Temp: 100
+		Start: 156
+		End: 157
+
+	Temp: 101
+		Start: 158
+		End: 162
+
+	Temp: 102
+		Start: 159
+		End: 160
+
+	Temp: 103
+		Start: 160
+		End: 162
+
+	Temp: 104
+		Start: 161
+		End: 162
+
+	Temp: 105
+		Start: 162
+		End: 163
+
+	Temp: 106
+		Start: 164
+		End: 168
+
+	Temp: 107
+		Start: 165
+		End: 166
+
+	Temp: 108
+		Start: 166
+		End: 168
+
+	Temp: 109
+		Start: 167
+		End: 168
+
+	Temp: 110
+		Start: 168
+		End: 169
+
+	Temp: 111
+		Start: 170
+		End: 174
+
+	Temp: 112
+		Start: 171
+		End: 172
+
+	Temp: 113
+		Start: 172
+		End: 174
+
+	Temp: 114
+		Start: 173
+		End: 174
+
+	Temp: 115
+		Start: 174
+		End: 175
+
+	Temp: 116
+		Start: 176
+		End: 180
+
+	Temp: 117
+		Start: 177
+		End: 178
+
+	Temp: 118
+		Start: 178
+		End: 180
+
+	Temp: 119
+		Start: 179
+		End: 180
+
+	Temp: 120
+		Start: 180
+		End: 181
+
+	Temp: 121
+		Start: 182
+		End: 185
+
+	Temp: 122
+		Start: 183
+		End: 184
+
+	Temp: 123
+		Start: 184
+		End: 185
+
+	Temp: 124
+		Start: 185
+		End: 186
+
+	Temp: 125
+		Start: 187
+		End: 191
+
+	Temp: 126
+		Start: 188
+		End: 189
+
+	Temp: 127
+		Start: 189
+		End: 191
+
+	Temp: 128
+		Start: 190
+		End: 191
+
+	Temp: 129
+		Start: 191
+		End: 192
+
+	Temp: 130
+		Start: 193
+		End: 194
+
+Scope: MAIN
+	Temp: 0
+		Start: 11
+		End: 14
+
+	Temp: 1
+		Start: 4
+		End: 10
+
+	Temp: 2
+		Start: 2
+		End: 3
+
+	Temp: 3
+		Start: 3
+		End: 4
+
+	Temp: 4
+		Start: 7
+		End: 11
+
+	Temp: 5
+		Start: 5
+		End: 6
+
+	Temp: 6
+		Start: 6
+		End: 7
+
+	Temp: 7
+		Start: 8
+		End: 9
+
+	Temp: 8
+		Start: 12
+		End: 13
+
+	Temp: 9
+		Start: 13
+		End: 14
+
+	Temp: 10
+		Start: 14
+		End: 15
+
+Scope: Tree_Compare
+	Temp: 1
+		Start: 263
+		End: 281
+
+	Temp: 2
+		Start: 263
+		End: 269
+
+	Temp: 4
+		Start: 274
+		End: 294
+
+	Temp: 5
+		Start: 263
+		End: 264
+
+	Temp: 6
+		Start: 267
+		End: 278
+
+	Temp: 7
+		Start: 265
+		End: 266
+
+	Temp: 8
+		Start: 266
+		End: 267
+
+	Temp: 9
+		Start: 270
+		End: 271
+
+	Temp: 10
+		Start: 268
+		End: 269
+
+	Temp: 11
+		Start: 269
+		End: 270
+
+	Temp: 12
+		Start: 271
+		End: 272
+
+	Temp: 13
+		Start: 273
+		End: 274
+
+	Temp: 14
+		Start: 279
+		End: 281
+
+	Temp: 15
+		Start: 276
+		End: 278
+
+	Temp: 16
+		Start: 278
+		End: 279
+
+	Temp: 17
+		Start: 280
+		End: 282
+
+	Temp: 18
+		Start: 281
+		End: 282
+
+	Temp: 19
+		Start: 282
+		End: 283
+
+	Temp: 20
+		Start: 284
+		End: 285
+
+	Temp: 21
+		Start: 287
+		End: 289
+
+Scope: Tree_Delete
+	Temp: 0
+		Start: 446
+		End: 561
+
+	Temp: 1
+		Start: 446
+		End: 561
+
+	Temp: 3
+		Start: 446
+		End: 561
+
+	Temp: 4
+		Start: 447
+		End: 561
+
+	Temp: 5
+		Start: 449
+		End: 561
+
+	Temp: 6
+		Start: 448
+		End: 449
+
+	Temp: 7
+		Start: 451
+		End: 564
+
+	Temp: 8
+		Start: 450
+		End: 451
+
+	Temp: 9
+		Start: 453
+		End: 561
+
+	Temp: 10
+		Start: 452
+		End: 453
+
+	Temp: 11
+		Start: 460
+		End: 488
+
+	Temp: 12
+		Start: 456
+		End: 459
+
+	Temp: 13
+		Start: 457
+		End: 458
+
+	Temp: 14
+		Start: 458
+		End: 459
+
+	Temp: 15
+		Start: 459
+		End: 460
+
+	Temp: 16
+		Start: 463
+		End: 464
+
+	Temp: 17
+		Start: 461
+		End: 462
+
+	Temp: 18
+		Start: 462
+		End: 463
+
+	Temp: 19
+		Start: 464
+		End: 465
+
+	Temp: 20
+		Start: 466
+		End: 469
+
+	Temp: 21
+		Start: 467
+		End: 468
+
+	Temp: 22
+		Start: 468
+		End: 469
+
+	Temp: 23
+		Start: 469
+		End: 470
+
+	Temp: 24
+		Start: 472
+		End: 475
+
+	Temp: 25
+		Start: 473
+		End: 474
+
+	Temp: 26
+		Start: 474
+		End: 475
+
+	Temp: 27
+		Start: 475
+		End: 476
+
+	Temp: 28
+		Start: 478
+		End: 480
+
+	Temp: 29
+		Start: 487
+		End: 488
+
+	Temp: 30
+		Start: 484
+		End: 486
+
+	Temp: 31
+		Start: 486
+		End: 487
+
+	Temp: 32
+		Start: 488
+		End: 489
+
+	Temp: 33
+		Start: 490
+		End: 493
+
+	Temp: 34
+		Start: 491
+		End: 492
+
+	Temp: 35
+		Start: 492
+		End: 493
+
+	Temp: 36
+		Start: 493
+		End: 494
+
+	Temp: 37
+		Start: 496
+		End: 499
+
+	Temp: 38
+		Start: 497
+		End: 498
+
+	Temp: 39
+		Start: 498
+		End: 499
+
+	Temp: 40
+		Start: 499
+		End: 500
+
+	Temp: 41
+		Start: 502
+		End: 504
+
+	Temp: 42
+		Start: 511
+		End: 530
+
+	Temp: 43
+		Start: 510
+		End: 511
+
+	Temp: 44
+		Start: 512
+		End: 517
+
+	Temp: 45
+		Start: 513
+		End: 516
+
+	Temp: 46
+		Start: 514
+		End: 515
+
+	Temp: 47
+		Start: 515
+		End: 516
+
+	Temp: 48
+		Start: 516
+		End: 517
+
+	Temp: 49
+		Start: 517
+		End: 518
+
+	Temp: 50
+		Start: 519
+		End: 524
+
+	Temp: 51
+		Start: 520
+		End: 523
+
+	Temp: 52
+		Start: 521
+		End: 522
+
+	Temp: 53
+		Start: 522
+		End: 523
+
+	Temp: 54
+		Start: 523
+		End: 524
+
+	Temp: 55
+		Start: 524
+		End: 525
+
+	Temp: 56
+		Start: 526
+		End: 527
+
+	Temp: 58
+		Start: 531
+		End: 532
+
+	Temp: 59
+		Start: 534
+		End: 538
+
+	Temp: 60
+		Start: 536
+		End: 537
+
+	Temp: 61
+		Start: 537
+		End: 538
+
+	Temp: 62
+		Start: 538
+		End: 539
+
+	Temp: 63
+		Start: 543
+		End: 547
+
+	Temp: 64
+		Start: 545
+		End: 546
+
+	Temp: 65
+		Start: 546
+		End: 547
+
+	Temp: 66
+		Start: 547
+		End: 548
+
+	Temp: 67
+		Start: 551
+		End: 552
+
+	Temp: 68
+		Start: 553
+		End: 554
+
+	Temp: 69
+		Start: 559
+		End: 560
+
+Scope: Tree_GetHas_Left
+	Temp: 0
+		Start: 246
+		End: 246
+
+	Temp: 2
+		Start: 246
+		End: 247
+
+Scope: Tree_GetHas_Right
+	Temp: 0
+		Start: 241
+		End: 241
+
+	Temp: 2
+		Start: 241
+		End: 242
+
+Scope: Tree_GetKey
+	Temp: 0
+		Start: 230
+		End: 230
+
+	Temp: 2
+		Start: 230
+		End: 231
+
+Scope: Tree_GetLeft
+	Temp: 0
+		Start: 225
+		End: 225
+
+	Temp: 2
+		Start: 225
+		End: 226
+
+Scope: Tree_GetRight
+	Temp: 0
+		Start: 220
+		End: 220
+
+	Temp: 2
+		Start: 220
+		End: 221
+
+Scope: Tree_Init
+	Temp: 0
+		Start: 198
+		End: 202
+
+	Temp: 1
+		Start: 198
+		End: 198
+
+	Temp: 3
+		Start: 199
+		End: 200
+
+	Temp: 4
+		Start: 201
+		End: 202
+
+	Temp: 5
+		Start: 203
+		End: 204
+
+Scope: Tree_Insert
+	Temp: 0
+		Start: 298
+		End: 365
+
+	Temp: 1
+		Start: 298
+		End: 438
+
+	Temp: 3
+		Start: 359
+		End: 438
+
+	Temp: 4
+		Start: 300
+		End: 357
+
+	Temp: 5
+		Start: 298
+		End: 299
+
+	Temp: 6
+		Start: 299
+		End: 300
+
+	Temp: 7
+		Start: 303
+		End: 359
+
+	Temp: 8
+		Start: 301
+		End: 302
+
+	Temp: 9
+		Start: 302
+		End: 303
+
+	Temp: 10
+		Start: 304
+		End: 305
+
+	Temp: 11
+		Start: 306
+		End: 307
+
+	Temp: 12
+		Start: 308
+		End: 309
+
+	Temp: 13
+		Start: 310
+		End: 311
+
+	Temp: 14
+		Start: 312
+		End: 313
+
+	Temp: 15
+		Start: 314
+		End: 315
+
+	Temp: 16
+		Start: 316
+		End: 317
+
+	Temp: 17
+		Start: 318
+		End: 319
+
+	Temp: 18
+		Start: 320
+		End: 321
+
+	Temp: 19
+		Start: 322
+		End: 323
+
+	Temp: 20
+		Start: 324
+		End: 325
+
+	Temp: 21
+		Start: 326
+		End: 327
+
+	Temp: 22
+		Start: 328
+		End: 329
+
+	Temp: 23
+		Start: 330
+		End: 331
+
+	Temp: 24
+		Start: 332
+		End: 333
+
+	Temp: 25
+		Start: 334
+		End: 335
+
+	Temp: 26
+		Start: 336
+		End: 337
+
+	Temp: 27
+		Start: 338
+		End: 339
+
+	Temp: 28
+		Start: 340
+		End: 341
+
+	Temp: 29
+		Start: 342
+		End: 343
+
+	Temp: 30
+		Start: 345
+		End: 356
+
+	Temp: 31
+		Start: 344
+		End: 345
+
+	Temp: 32
+		Start: 346
+		End: 348
+
+	Temp: 33
+		Start: 348
+		End: 349
+
+	Temp: 34
+		Start: 350
+		End: 352
+
+	Temp: 35
+		Start: 351
+		End: 352
+
+	Temp: 36
+		Start: 353
+		End: 354
+
+	Temp: 37
+		Start: 354
+		End: 355
+
+	Temp: 39
+		Start: 360
+		End: 363
+
+	Temp: 40
+		Start: 361
+		End: 362
+
+	Temp: 41
+		Start: 362
+		End: 363
+
+	Temp: 42
+		Start: 363
+		End: 364
+
+	Temp: 43
+		Start: 365
+		End: 438
+
+	Temp: 44
+		Start: 367
+		End: 438
+
+	Temp: 45
+		Start: 366
+		End: 367
+
+	Temp: 46
+		Start: 374
+		End: 376
+
+	Temp: 47
+		Start: 370
+		End: 373
+
+	Temp: 48
+		Start: 371
+		End: 372
+
+	Temp: 49
+		Start: 372
+		End: 373
+
+	Temp: 50
+		Start: 373
+		End: 374
+
+	Temp: 51
+		Start: 377
+		End: 378
+
+	Temp: 52
+		Start: 375
+		End: 376
+
+	Temp: 53
+		Start: 376
+		End: 377
+
+	Temp: 54
+		Start: 378
+		End: 379
+
+	Temp: 55
+		Start: 380
+		End: 383
+
+	Temp: 56
+		Start: 381
+		End: 382
+
+	Temp: 57
+		Start: 382
+		End: 383
+
+	Temp: 58
+		Start: 383
+		End: 384
+
+	Temp: 59
+		Start: 385
+		End: 388
+
+	Temp: 60
+		Start: 386
+		End: 387
+
+	Temp: 61
+		Start: 387
+		End: 388
+
+	Temp: 62
+		Start: 388
+		End: 389
+
+	Temp: 63
+		Start: 391
+		End: 393
+
+	Temp: 64
+		Start: 394
+		End: 398
+
+	Temp: 65
+		Start: 395
+		End: 396
+
+	Temp: 66
+		Start: 396
+		End: 398
+
+	Temp: 67
+		Start: 397
+		End: 398
+
+	Temp: 68
+		Start: 398
+		End: 399
+
+	Temp: 69
+		Start: 400
+		End: 403
+
+	Temp: 70
+		Start: 401
+		End: 402
+
+	Temp: 71
+		Start: 402
+		End: 403
+
+	Temp: 72
+		Start: 403
+		End: 404
+
+	Temp: 73
+		Start: 408
+		End: 412
+
+	Temp: 74
+		Start: 410
+		End: 411
+
+	Temp: 75
+		Start: 411
+		End: 412
+
+	Temp: 76
+		Start: 412
+		End: 413
+
+	Temp: 77
+		Start: 414
+		End: 417
+
+	Temp: 78
+		Start: 415
+		End: 416
+
+	Temp: 79
+		Start: 416
+		End: 417
+
+	Temp: 80
+		Start: 417
+		End: 418
+
+	Temp: 81
+		Start: 420
+		End: 422
+
+	Temp: 82
+		Start: 423
+		End: 427
+
+	Temp: 83
+		Start: 424
+		End: 425
+
+	Temp: 84
+		Start: 425
+		End: 427
+
+	Temp: 85
+		Start: 426
+		End: 427
+
+	Temp: 86
+		Start: 427
+		End: 428
+
+	Temp: 87
+		Start: 429
+		End: 432
+
+	Temp: 88
+		Start: 430
+		End: 431
+
+	Temp: 89
+		Start: 431
+		End: 432
+
+	Temp: 90
+		Start: 432
+		End: 433
+
+	Temp: 91
+		Start: 441
+		End: 442
+
+Scope: Tree_Print
+	Temp: 0
+		Start: 811
+		End: 812
+
+	Temp: 2
+		Start: 811
+		End: 815
+
+	Temp: 4
+		Start: 812
+		End: 815
+
+	Temp: 5
+		Start: 813
+		End: 814
+
+	Temp: 6
+		Start: 814
+		End: 815
+
+	Temp: 7
+		Start: 815
+		End: 816
+
+	Temp: 8
+		Start: 817
+		End: 818
+
+Scope: Tree_RecPrint
+	Temp: 0
+		Start: 822
+		End: 852
+
+	Temp: 1
+		Start: 822
+		End: 855
+
+	Temp: 3
+		Start: 822
+		End: 825
+
+	Temp: 4
+		Start: 823
+		End: 824
+
+	Temp: 5
+		Start: 824
+		End: 825
+
+	Temp: 6
+		Start: 825
+		End: 826
+
+	Temp: 8
+		Start: 827
+		End: 834
+
+	Temp: 9
+		Start: 828
+		End: 829
+
+	Temp: 10
+		Start: 829
+		End: 834
+
+	Temp: 11
+		Start: 830
+		End: 833
+
+	Temp: 12
+		Start: 831
+		End: 832
+
+	Temp: 13
+		Start: 832
+		End: 833
+
+	Temp: 14
+		Start: 833
+		End: 834
+
+	Temp: 15
+		Start: 834
+		End: 835
+
+	Temp: 16
+		Start: 837
+		End: 839
+
+	Temp: 17
+		Start: 842
+		End: 845
+
+	Temp: 18
+		Start: 843
+		End: 844
+
+	Temp: 19
+		Start: 844
+		End: 845
+
+	Temp: 20
+		Start: 845
+		End: 846
+
+	Temp: 21
+		Start: 847
+		End: 850
+
+	Temp: 22
+		Start: 848
+		End: 849
+
+	Temp: 23
+		Start: 849
+		End: 850
+
+	Temp: 24
+		Start: 850
+		End: 851
+
+	Temp: 25
+		Start: 852
+		End: 859
+
+	Temp: 26
+		Start: 853
+		End: 854
+
+	Temp: 27
+		Start: 854
+		End: 859
+
+	Temp: 28
+		Start: 855
+		End: 858
+
+	Temp: 29
+		Start: 856
+		End: 857
+
+	Temp: 30
+		Start: 857
+		End: 858
+
+	Temp: 31
+		Start: 858
+		End: 859
+
+	Temp: 32
+		Start: 859
+		End: 860
+
+	Temp: 33
+		Start: 862
+		End: 864
+
+	Temp: 34
+		Start: 867
+		End: 868
+
+Scope: Tree_Remove
+	Temp: 0
+		Start: 568
+		End: 628
+
+	Temp: 1
+		Start: 568
+		End: 631
+
+	Temp: 2
+		Start: 568
+		End: 591
+
+	Temp: 4
+		Start: 568
+		End: 571
+
+	Temp: 5
+		Start: 569
+		End: 570
+
+	Temp: 6
+		Start: 570
+		End: 571
+
+	Temp: 7
+		Start: 571
+		End: 572
+
+	Temp: 9
+		Start: 573
+		End: 576
+
+	Temp: 10
+		Start: 574
+		End: 575
+
+	Temp: 11
+		Start: 575
+		End: 576
+
+	Temp: 12
+		Start: 576
+		End: 577
+
+	Temp: 13
+		Start: 579
+		End: 583
+
+	Temp: 14
+		Start: 581
+		End: 582
+
+	Temp: 15
+		Start: 582
+		End: 583
+
+	Temp: 16
+		Start: 583
+		End: 584
+
+	Temp: 17
+		Start: 585
+		End: 588
+
+	Temp: 18
+		Start: 586
+		End: 587
+
+	Temp: 19
+		Start: 587
+		End: 588
+
+	Temp: 20
+		Start: 588
+		End: 589
+
+	Temp: 21
+		Start: 596
+		End: 609
+
+	Temp: 22
+		Start: 591
+		End: 595
+
+	Temp: 23
+		Start: 593
+		End: 594
+
+	Temp: 24
+		Start: 594
+		End: 595
+
+	Temp: 25
+		Start: 595
+		End: 596
+
+	Temp: 26
+		Start: 605
+		End: 609
+
+	Temp: 27
+		Start: 601
+		End: 604
+
+	Temp: 28
+		Start: 597
+		End: 600
+
+	Temp: 29
+		Start: 598
+		End: 599
+
+	Temp: 30
+		Start: 599
+		End: 600
+
+	Temp: 31
+		Start: 600
+		End: 601
+
+	Temp: 32
+		Start: 602
+		End: 603
+
+	Temp: 33
+		Start: 603
+		End: 604
+
+	Temp: 34
+		Start: 604
+		End: 605
+
+	Temp: 35
+		Start: 606
+		End: 609
+
+	Temp: 36
+		Start: 607
+		End: 608
+
+	Temp: 37
+		Start: 608
+		End: 609
+
+	Temp: 38
+		Start: 609
+		End: 610
+
+	Temp: 39
+		Start: 611
+		End: 615
+
+	Temp: 40
+		Start: 612
+		End: 613
+
+	Temp: 41
+		Start: 613
+		End: 615
+
+	Temp: 42
+		Start: 614
+		End: 615
+
+	Temp: 43
+		Start: 615
+		End: 616
+
+	Temp: 44
+		Start: 617
+		End: 621
+
+	Temp: 45
+		Start: 618
+		End: 619
+
+	Temp: 46
+		Start: 619
+		End: 621
+
+	Temp: 47
+		Start: 620
+		End: 621
+
+	Temp: 48
+		Start: 621
+		End: 622
+
+	Temp: 49
+		Start: 624
+		End: 629
+
+	Temp: 50
+		Start: 626
+		End: 627
+
+	Temp: 51
+		Start: 627
+		End: 629
+
+	Temp: 52
+		Start: 628
+		End: 629
+
+	Temp: 53
+		Start: 629
+		End: 630
+
+	Temp: 54
+		Start: 631
+		End: 635
+
+	Temp: 55
+		Start: 632
+		End: 633
+
+	Temp: 56
+		Start: 633
+		End: 635
+
+	Temp: 57
+		Start: 634
+		End: 635
+
+	Temp: 58
+		Start: 635
+		End: 636
+
+	Temp: 59
+		Start: 643
+		End: 644
+
+Scope: Tree_RemoveLeft
+	Temp: 0
+		Start: 693
+		End: 724
+
+	Temp: 1
+		Start: 693
+		End: 727
+
+	Temp: 2
+		Start: 693
+		End: 718
+
+	Temp: 4
+		Start: 693
+		End: 697
+
+	Temp: 5
+		Start: 695
+		End: 696
+
+	Temp: 6
+		Start: 696
+		End: 697
+
+	Temp: 7
+		Start: 697
+		End: 698
+
+	Temp: 9
+		Start: 699
+		End: 710
+
+	Temp: 10
+		Start: 700
+		End: 701
+
+	Temp: 11
+		Start: 701
+		End: 710
+
+	Temp: 12
+		Start: 706
+		End: 709
+
+	Temp: 13
+		Start: 702
+		End: 705
+
+	Temp: 14
+		Start: 703
+		End: 704
+
+	Temp: 15
+		Start: 704
+		End: 705
+
+	Temp: 16
+		Start: 705
+		End: 706
+
+	Temp: 17
+		Start: 707
+		End: 708
+
+	Temp: 18
+		Start: 708
+		End: 709
+
+	Temp: 19
+		Start: 709
+		End: 710
+
+	Temp: 20
+		Start: 710
+		End: 711
+
+	Temp: 21
+		Start: 713
+		End: 716
+
+	Temp: 22
+		Start: 714
+		End: 715
+
+	Temp: 23
+		Start: 715
+		End: 716
+
+	Temp: 24
+		Start: 716
+		End: 717
+
+	Temp: 25
+		Start: 721
+		End: 725
+
+	Temp: 26
+		Start: 722
+		End: 723
+
+	Temp: 27
+		Start: 723
+		End: 725
+
+	Temp: 28
+		Start: 724
+		End: 725
+
+	Temp: 29
+		Start: 725
+		End: 726
+
+	Temp: 30
+		Start: 727
+		End: 731
+
+	Temp: 31
+		Start: 728
+		End: 729
+
+	Temp: 32
+		Start: 729
+		End: 731
+
+	Temp: 33
+		Start: 730
+		End: 731
+
+	Temp: 34
+		Start: 731
+		End: 732
+
+	Temp: 35
+		Start: 733
+		End: 734
+
+Scope: Tree_RemoveRight
+	Temp: 0
+		Start: 648
+		End: 679
+
+	Temp: 1
+		Start: 648
+		End: 682
+
+	Temp: 2
+		Start: 648
+		End: 673
+
+	Temp: 4
+		Start: 648
+		End: 652
+
+	Temp: 5
+		Start: 650
+		End: 651
+
+	Temp: 6
+		Start: 651
+		End: 652
+
+	Temp: 7
+		Start: 652
+		End: 653
+
+	Temp: 9
+		Start: 654
+		End: 665
+
+	Temp: 10
+		Start: 655
+		End: 656
+
+	Temp: 11
+		Start: 656
+		End: 665
+
+	Temp: 12
+		Start: 661
+		End: 664
+
+	Temp: 13
+		Start: 657
+		End: 660
+
+	Temp: 14
+		Start: 658
+		End: 659
+
+	Temp: 15
+		Start: 659
+		End: 660
+
+	Temp: 16
+		Start: 660
+		End: 661
+
+	Temp: 17
+		Start: 662
+		End: 663
+
+	Temp: 18
+		Start: 663
+		End: 664
+
+	Temp: 19
+		Start: 664
+		End: 665
+
+	Temp: 20
+		Start: 665
+		End: 666
+
+	Temp: 21
+		Start: 668
+		End: 671
+
+	Temp: 22
+		Start: 669
+		End: 670
+
+	Temp: 23
+		Start: 670
+		End: 671
+
+	Temp: 24
+		Start: 671
+		End: 672
+
+	Temp: 25
+		Start: 676
+		End: 680
+
+	Temp: 26
+		Start: 677
+		End: 678
+
+	Temp: 27
+		Start: 678
+		End: 680
+
+	Temp: 28
+		Start: 679
+		End: 680
+
+	Temp: 29
+		Start: 680
+		End: 681
+
+	Temp: 30
+		Start: 682
+		End: 686
+
+	Temp: 31
+		Start: 683
+		End: 684
+
+	Temp: 32
+		Start: 684
+		End: 686
+
+	Temp: 33
+		Start: 685
+		End: 686
+
+	Temp: 34
+		Start: 686
+		End: 687
+
+	Temp: 35
+		Start: 688
+		End: 689
+
+Scope: Tree_Search
+	Temp: 0
+		Start: 738
+		End: 738
+
+	Temp: 1
+		Start: 738
+		End: 804
+
+	Temp: 3
+		Start: 738
+		End: 804
+
+	Temp: 4
+		Start: 740
+		End: 804
+
+	Temp: 5
+		Start: 739
+		End: 740
+
+	Temp: 6
+		Start: 742
+		End: 807
+
+	Temp: 7
+		Start: 741
+		End: 742
+
+	Temp: 8
+		Start: 749
+		End: 776
+
+	Temp: 9
+		Start: 745
+		End: 748
+
+	Temp: 10
+		Start: 746
+		End: 747
+
+	Temp: 11
+		Start: 747
+		End: 748
+
+	Temp: 12
+		Start: 748
+		End: 749
+
+	Temp: 13
+		Start: 752
+		End: 753
+
+	Temp: 14
+		Start: 750
+		End: 751
+
+	Temp: 15
+		Start: 751
+		End: 752
+
+	Temp: 16
+		Start: 753
+		End: 754
+
+	Temp: 17
+		Start: 755
+		End: 758
+
+	Temp: 18
+		Start: 756
+		End: 757
+
+	Temp: 19
+		Start: 757
+		End: 758
+
+	Temp: 20
+		Start: 758
+		End: 759
+
+	Temp: 21
+		Start: 760
+		End: 763
+
+	Temp: 22
+		Start: 761
+		End: 762
+
+	Temp: 23
+		Start: 762
+		End: 763
+
+	Temp: 24
+		Start: 763
+		End: 764
+
+	Temp: 25
+		Start: 766
+		End: 768
+
+	Temp: 26
+		Start: 775
+		End: 776
+
+	Temp: 27
+		Start: 772
+		End: 774
+
+	Temp: 28
+		Start: 774
+		End: 775
+
+	Temp: 29
+		Start: 776
+		End: 777
+
+	Temp: 30
+		Start: 778
+		End: 781
+
+	Temp: 31
+		Start: 779
+		End: 780
+
+	Temp: 32
+		Start: 780
+		End: 781
+
+	Temp: 33
+		Start: 781
+		End: 782
+
+	Temp: 34
+		Start: 783
+		End: 786
+
+	Temp: 35
+		Start: 784
+		End: 785
+
+	Temp: 36
+		Start: 785
+		End: 786
+
+	Temp: 37
+		Start: 786
+		End: 787
+
+	Temp: 38
+		Start: 789
+		End: 791
+
+	Temp: 39
+		Start: 795
+		End: 797
+
+	Temp: 40
+		Start: 798
+		End: 799
+
+Scope: Tree_SetHas_Left
+	Temp: 0
+		Start: 251
+		End: 251
+
+	Temp: 1
+		Start: 251
+		End: 251
+
+	Temp: 3
+		Start: 252
+		End: 253
+
+Scope: Tree_SetHas_Right
+	Temp: 0
+		Start: 257
+		End: 257
+
+	Temp: 1
+		Start: 257
+		End: 257
+
+	Temp: 3
+		Start: 258
+		End: 259
+
+Scope: Tree_SetKey
+	Temp: 0
+		Start: 235
+		End: 235
+
+	Temp: 1
+		Start: 235
+		End: 235
+
+	Temp: 3
+		Start: 236
+		End: 237
+
+Scope: Tree_SetLeft
+	Temp: 0
+		Start: 214
+		End: 214
+
+	Temp: 1
+		Start: 214
+		End: 214
+
+	Temp: 3
+		Start: 215
+		End: 216
+
+Scope: Tree_SetRight
+	Temp: 0
+		Start: 208
+		End: 208
+
+	Temp: 1
+		Start: 208
+		End: 208
+
+	Temp: 3
+		Start: 209
+		End: 210
+
+Labels:
+	L10: 368
+	L11: 439
+	L12: 408
+	L13: 436
+	L14: 391
+	L15: 405
+	L16: 420
+	L17: 434
+	L18: 454
+	L19: 562
+	L2: 67
+	L20: 484
+	L21: 557
+	L22: 478
+	L23: 481
+	L24: 508
+	L25: 555
+	L26: 502
+	L27: 505
+	L28: 543
+	L29: 549
+	L3: 78
+	L30: 534
+	L31: 540
+	L32: 528
+	L33: 579
+	L34: 641
+	L35: 591
+	L36: 639
+	L37: 624
+	L38: 637
+	L39: 648
+	L4: 276
+	L40: 674
+	L41: 693
+	L42: 719
+	L43: 743
+	L44: 805
+	L45: 772
+	L46: 802
+	L47: 766
+	L48: 769
+	L49: 795
+	L5: 292
+	L50: 800
+	L51: 789
+	L52: 792
+	L53: 837
+	L54: 840
+	L55: 862
+	L56: 865
+	L6: 287
+	L7: 290
+	L8: 346
+	L9: 357
+MAIN [0] [10] [1]
+MOVE s0 4
+MOVE s1 HALLOCATE s0
+MOVE s2 s1
+MOVE s3 4
+MOVE s4 HALLOCATE s3
+MOVE s5 s4
+MOVE s6 BT_Start
+HSTORE s2 0 s6
+HSTORE s5 0 s2
+MOVE s7 s5
+HLOAD t0 s7 0
+HLOAD t1 t0 0
+ASTORE SPILLEDARG 0 t0
+ASTORE SPILLEDARG 1 t1
+ASTORE SPILLEDARG 2 t2
+ASTORE SPILLEDARG 3 t3
+ASTORE SPILLEDARG 4 t4
+ASTORE SPILLEDARG 5 t5
+ASTORE SPILLEDARG 6 t6
+ASTORE SPILLEDARG 7 t7
+ASTORE SPILLEDARG 8 t8
+ASTORE SPILLEDARG 9 t9
+MOVE a0 s7
+CALL t1
+ALOAD t0 SPILLEDARG 0
+ALOAD t1 SPILLEDARG 1
+ALOAD t2 SPILLEDARG 2
+ALOAD t3 SPILLEDARG 3
+ALOAD t4 SPILLEDARG 4
+ALOAD t5 SPILLEDARG 5
+ALOAD t6 SPILLEDARG 6
+ALOAD t7 SPILLEDARG 7
+ALOAD t8 SPILLEDARG 8
+ALOAD t9 SPILLEDARG 9
+MOVE t2 v0
+PRINT t2
+END
+BT_Start [1] [18] [2]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s0 80
+MOVE s1 HALLOCATE s0
+MOVE s2 s1
+MOVE s3 28
+MOVE s4 HALLOCATE s3
+MOVE s5 s4
+MOVE s6 Tree_RecPrint
+HSTORE s2 76 s6
+MOVE s7 Tree_Print
+HSTORE s2 72 s7
+MOVE t0 Tree_Search
+HSTORE s2 68 t0
+MOVE t1 Tree_RemoveLeft
+HSTORE s2 64 t1
+MOVE t2 Tree_RemoveRight
+HSTORE s2 60 t2
+MOVE t3 Tree_Remove
+HSTORE s2 56 t3
+MOVE t4 Tree_Delete
+HSTORE s2 52 t4
+MOVE t5 Tree_Insert
+HSTORE s2 48 t5
+MOVE t6 Tree_Compare
+HSTORE s2 44 t6
+MOVE t7 Tree_SetHas_Right
+HSTORE s2 40 t7
+MOVE t8 Tree_SetHas_Left
+HSTORE s2 36 t8
+MOVE t9 Tree_GetHas_Left
+HSTORE s2 32 t9
+MOVE s0 Tree_GetHas_Right
+HSTORE s2 28 s0
+MOVE s1 Tree_SetKey
+HSTORE s2 24 s1
+MOVE s3 Tree_GetKey
+HSTORE s2 20 s3
+MOVE s4 Tree_GetLeft
+HSTORE s2 16 s4
+MOVE s6 Tree_GetRight
+HSTORE s2 12 s6
+MOVE s7 Tree_SetLeft
+HSTORE s2 8 s7
+MOVE t0 Tree_SetRight
+HSTORE s2 4 t0
+MOVE t1 Tree_Init
+HSTORE s2 0 t1
+MOVE t2 4
+MOVE t3 t2
+L2
+MOVE t4 27
+MOVE t5 LE t3 t4
+CJUMP t5 L3
+MOVE t6 PLUS s5 t3
+MOVE t7 0
+HSTORE t6 0 t7
+MOVE t8 4
+MOVE t9 PLUS t3 t8
+MOVE t3 t9
+JUMP L2
+L3
+HSTORE s5 0 s2
+MOVE s0 s5
+MOVE s1 s0
+HLOAD s3 s1 0
+HLOAD s4 s3 0
+MOVE s6 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s1
+MOVE a1 s6
+CALL s4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s7 v0
+MOVE v0 s7
+MOVE t0 s0
+HLOAD t1 t0 0
+HLOAD t2 t1 72
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t0
+CALL t2
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t4 v0
+MOVE v0 t4
+MOVE t5 100000000
+PRINT t5
+MOVE t6 s0
+HLOAD t7 t6 0
+HLOAD t8 t7 48
+MOVE t9 8
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t6
+MOVE a1 t9
+CALL t8
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t3 v0
+MOVE v0 t3
+MOVE s2 s0
+HLOAD s5 s2 0
+HLOAD s3 s5 72
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s2
+CALL s3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s4 v0
+MOVE v0 s4
+MOVE s6 s0
+HLOAD s1 s6 0
+HLOAD s7 s1 48
+MOVE t1 24
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s6
+MOVE a1 t1
+CALL s7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t2 v0
+MOVE v0 t2
+MOVE t0 s0
+HLOAD t4 t0 0
+HLOAD t5 t4 48
+MOVE t7 4
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t0
+MOVE a1 t7
+CALL t5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t8 v0
+MOVE v0 t8
+MOVE t9 s0
+HLOAD t6 t9 0
+HLOAD t3 t6 48
+MOVE s5 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t9
+MOVE a1 s5
+CALL t3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s3 v0
+MOVE v0 s3
+MOVE s2 s0
+HLOAD s4 s2 0
+HLOAD s1 s4 48
+MOVE s7 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s2
+MOVE a1 s7
+CALL s1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t1 v0
+MOVE v0 t1
+MOVE s6 s0
+HLOAD t2 s6 0
+HLOAD t4 t2 48
+MOVE t5 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s6
+MOVE a1 t5
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t7 v0
+MOVE v0 t7
+MOVE t0 s0
+HLOAD t8 t0 0
+HLOAD t6 t8 48
+MOVE t3 14
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t0
+MOVE a1 t3
+CALL t6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+MOVE v0 s5
+MOVE t9 s0
+HLOAD s3 t9 0
+HLOAD s4 s3 72
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t9
+CALL s4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s1 v0
+MOVE v0 s1
+MOVE s7 s0
+HLOAD s2 s7 0
+HLOAD t1 s2 68
+MOVE t2 24
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s7
+MOVE a1 t2
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t4 v0
+PRINT t4
+MOVE t5 s0
+HLOAD s6 t5 0
+HLOAD t7 s6 68
+MOVE t8 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t5
+MOVE a1 t8
+CALL t7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t6 v0
+PRINT t6
+MOVE t3 s0
+HLOAD t0 t3 0
+HLOAD s5 t0 68
+MOVE s3 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+MOVE a1 s3
+CALL s5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s4 v0
+PRINT s4
+MOVE t9 s0
+HLOAD s1 t9 0
+HLOAD s2 s1 68
+MOVE t1 50
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t9
+MOVE a1 t1
+CALL s2
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t2 v0
+PRINT t2
+MOVE s7 s0
+HLOAD t4 s7 0
+HLOAD s6 t4 68
+MOVE t7 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s7
+MOVE a1 t7
+CALL s6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t8 v0
+PRINT t8
+MOVE t5 s0
+HLOAD t6 t5 0
+HLOAD t0 t6 52
+MOVE s5 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t5
+MOVE a1 s5
+CALL t0
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s3 v0
+MOVE v0 s3
+MOVE t3 s0
+HLOAD s4 t3 0
+HLOAD s1 s4 72
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+CALL s1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s2 v0
+MOVE v0 s2
+MOVE t1 s0
+HLOAD t9 t1 0
+HLOAD t2 t9 68
+MOVE t4 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t1
+MOVE a1 t4
+CALL t2
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s6 v0
+PRINT s6
+MOVE t7 0
+MOVE v0 t7
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_Init [2] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+HSTORE s0 12 s1
+MOVE s2 0
+HSTORE s0 16 s2
+MOVE s3 0
+HSTORE s0 20 s3
+MOVE s4 1
+MOVE v0 s4
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_SetRight [2] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+HSTORE s0 8 s1
+MOVE s2 1
+MOVE v0 s2
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_SetLeft [2] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+HSTORE s0 4 s1
+MOVE s2 1
+MOVE v0 s2
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_GetRight [1] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+HLOAD s1 s0 8
+MOVE v0 s1
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_GetLeft [1] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+HLOAD s1 s0 4
+MOVE v0 s1
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_GetKey [1] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+HLOAD s1 s0 12
+MOVE v0 s1
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_SetKey [2] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+HSTORE s0 12 s1
+MOVE s2 1
+MOVE v0 s2
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_GetHas_Right [1] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+HLOAD s1 s0 20
+MOVE v0 s1
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_GetHas_Left [1] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+HLOAD s1 s0 16
+MOVE v0 s1
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_SetHas_Left [2] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+HSTORE s0 16 s1
+MOVE s2 1
+MOVE v0 s2
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_SetHas_Right [2] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+HSTORE s0 20 s1
+MOVE s2 1
+MOVE v0 s2
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_Compare [3] [18] [0]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 a2
+MOVE s0 0
+MOVE t3 s0
+MOVE s3 1
+MOVE s4 PLUS s2 s3
+MOVE s5 s4
+MOVE s6 1
+MOVE s7 MINUS s2 s6
+MOVE t0 s7
+MOVE t1 LE s1 t0
+CJUMP t1 L4
+MOVE t2 0
+MOVE t3 t2
+JUMP L5
+L4
+MOVE t4 1
+MOVE t5 MINUS s5 t4
+MOVE t6 t5
+MOVE t7 1
+MOVE t8 LE s1 t6
+MOVE t9 MINUS t7 t8
+CJUMP t9 L6
+MOVE s0 0
+MOVE t3 s0
+JUMP L7
+L6
+MOVE s3 1
+MOVE t3 s3
+L7
+NOOP
+L5
+NOOP
+MOVE v0 t3
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_Insert [2] [18] [2]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 80
+MOVE s3 HALLOCATE s2
+MOVE s4 s3
+MOVE s5 28
+MOVE s6 HALLOCATE s5
+MOVE s7 s6
+MOVE t0 Tree_RecPrint
+HSTORE s4 76 t0
+MOVE t1 Tree_Print
+HSTORE s4 72 t1
+MOVE t2 Tree_Search
+HSTORE s4 68 t2
+MOVE t3 Tree_RemoveLeft
+HSTORE s4 64 t3
+MOVE t4 Tree_RemoveRight
+HSTORE s4 60 t4
+MOVE t5 Tree_Remove
+HSTORE s4 56 t5
+MOVE t6 Tree_Delete
+HSTORE s4 52 t6
+MOVE t7 Tree_Insert
+HSTORE s4 48 t7
+MOVE t8 Tree_Compare
+HSTORE s4 44 t8
+MOVE t9 Tree_SetHas_Right
+HSTORE s4 40 t9
+MOVE s2 Tree_SetHas_Left
+HSTORE s4 36 s2
+MOVE s3 Tree_GetHas_Left
+HSTORE s4 32 s3
+MOVE s5 Tree_GetHas_Right
+HSTORE s4 28 s5
+MOVE s6 Tree_SetKey
+HSTORE s4 24 s6
+MOVE t0 Tree_GetKey
+HSTORE s4 20 t0
+MOVE t1 Tree_GetLeft
+HSTORE s4 16 t1
+MOVE t2 Tree_GetRight
+HSTORE s4 12 t2
+MOVE t3 Tree_SetLeft
+HSTORE s4 8 t3
+MOVE t4 Tree_SetRight
+HSTORE s4 4 t4
+MOVE t5 Tree_Init
+HSTORE s4 0 t5
+MOVE t6 4
+MOVE t7 t6
+L8
+MOVE t8 27
+MOVE t9 LE t7 t8
+CJUMP t9 L9
+MOVE s2 PLUS s7 t7
+MOVE s3 0
+HSTORE s2 0 s3
+MOVE s5 4
+MOVE s6 PLUS t7 s5
+MOVE t7 s6
+JUMP L8
+L9
+HSTORE s7 0 s4
+MOVE t0 s7
+MOVE t1 t0
+HLOAD t2 t1 0
+HLOAD t3 t2 0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t1
+MOVE a1 s1
+CALL t3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t4 v0
+MOVE v0 t4
+MOVE t5 s0
+MOVE t6 1
+MOVE t8 t6
+L10
+CJUMP t8 L11
+MOVE t9 t5
+HLOAD s2 t9 0
+HLOAD s3 s2 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t9
+CALL s3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+MOVE s6 s5
+MOVE t7 1
+MOVE s4 MINUS s6 t7
+MOVE s7 s4
+MOVE t2 LE s1 s7
+CJUMP t2 L12
+MOVE t3 t5
+HLOAD t1 t3 0
+HLOAD t4 t1 32
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t6 v0
+CJUMP t6 L14
+MOVE s2 t5
+HLOAD t9 s2 0
+HLOAD s3 t9 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s2
+CALL s3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+MOVE t5 s5
+JUMP L15
+L14
+MOVE s6 0
+MOVE t8 s6
+MOVE t7 t5
+HLOAD s4 t7 0
+HLOAD s7 s4 36
+MOVE t2 1
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t7
+MOVE a1 t2
+CALL s7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t1 v0
+MOVE v0 t1
+MOVE t3 t5
+HLOAD t4 t3 0
+HLOAD t6 t4 8
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+MOVE a1 t0
+CALL t6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t9 v0
+MOVE v0 t9
+L15
+NOOP
+JUMP L13
+L12
+MOVE s2 t5
+HLOAD s3 s2 0
+HLOAD s5 s3 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s2
+CALL s5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s6 v0
+CJUMP s6 L16
+MOVE s4 t5
+HLOAD t7 s4 0
+HLOAD s7 t7 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s4
+CALL s7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t2 v0
+MOVE t5 t2
+JUMP L17
+L16
+MOVE t1 0
+MOVE t8 t1
+MOVE t4 t5
+HLOAD t3 t4 0
+HLOAD t6 t3 40
+MOVE t9 1
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t4
+MOVE a1 t9
+CALL t6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s3 v0
+MOVE v0 s3
+MOVE s2 t5
+HLOAD s5 s2 0
+HLOAD s6 s5 4
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s2
+MOVE a1 t0
+CALL s6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t7 v0
+MOVE v0 t7
+L17
+NOOP
+L13
+NOOP
+JUMP L10
+L11
+NOOP
+MOVE s4 1
+MOVE v0 s4
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_Delete [2] [18] [3]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 s0
+MOVE s3 s0
+MOVE s4 1
+MOVE s5 s4
+MOVE s6 0
+MOVE s7 s6
+MOVE t0 1
+MOVE t1 t0
+L18
+CJUMP s5 L19
+MOVE t2 s2
+HLOAD t3 t2 0
+HLOAD t4 t3 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t2
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+MOVE t6 t5
+MOVE t7 1
+MOVE t8 MINUS t6 t7
+MOVE t9 t8
+MOVE s4 LE s1 t9
+CJUMP s4 L20
+MOVE s6 s2
+HLOAD t0 s6 0
+HLOAD t3 t0 32
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s6
+CALL t3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t4 v0
+CJUMP t4 L22
+MOVE s3 s2
+MOVE t2 s2
+HLOAD t5 t2 0
+HLOAD t7 t5 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t2
+CALL t7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t8 v0
+MOVE s2 t8
+JUMP L23
+L22
+MOVE t9 0
+MOVE s5 t9
+L23
+NOOP
+JUMP L21
+L20
+MOVE s4 1
+MOVE t0 MINUS s1 s4
+MOVE s6 t0
+MOVE t3 LE t6 s6
+CJUMP t3 L24
+MOVE t4 s2
+HLOAD t5 t4 0
+HLOAD t2 t5 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t4
+CALL t2
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t7 v0
+CJUMP t7 L26
+MOVE s3 s2
+MOVE t8 s2
+HLOAD t9 t8 0
+HLOAD s4 t9 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t8
+CALL s4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t0 v0
+MOVE s2 t0
+JUMP L27
+L26
+MOVE s6 0
+MOVE s5 s6
+L27
+NOOP
+JUMP L25
+L24
+CJUMP t1 L28
+MOVE t6 0
+MOVE t3 t6
+MOVE t5 1
+MOVE t2 s2
+HLOAD t4 t2 0
+HLOAD t7 t4 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t2
+CALL t7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t9 v0
+MOVE s4 MINUS t5 t9
+CJUMP s4 L32
+MOVE t8 1
+MOVE t0 s2
+HLOAD s6 t0 0
+HLOAD t6 s6 32
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t0
+CALL t6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t4 v0
+MOVE t2 MINUS t8 t4
+CJUMP t2 L32
+MOVE t7 1
+MOVE t3 t7
+L32
+NOOP
+CJUMP t3 L30
+MOVE t5 1
+MOVE v0 t5
+JUMP L31
+L30
+MOVE t9 s0
+HLOAD s4 t9 0
+HLOAD s6 s4 56
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t9
+MOVE a1 s3
+MOVE a2 s2
+CALL s6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t0 v0
+MOVE v0 t0
+L31
+NOOP
+JUMP L29
+L28
+MOVE t6 s0
+HLOAD t8 t6 0
+HLOAD t4 t8 56
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t6
+MOVE a1 s3
+MOVE a2 s2
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t2 v0
+MOVE v0 t2
+L29
+NOOP
+MOVE t7 1
+MOVE s7 t7
+MOVE t3 0
+MOVE s5 t3
+L25
+NOOP
+L21
+NOOP
+MOVE t5 0
+MOVE t1 t5
+JUMP L18
+L19
+NOOP
+MOVE v0 s7
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_Remove [3] [18] [3]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 a2
+MOVE s3 s2
+HLOAD s4 s3 0
+HLOAD s5 s4 32
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s3
+CALL s5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s6 v0
+CJUMP s6 L33
+MOVE s7 s0
+HLOAD t0 s7 0
+HLOAD t1 t0 64
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s7
+MOVE a1 s1
+MOVE a2 s2
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t2 v0
+MOVE v0 t2
+JUMP L34
+L33
+MOVE t3 s2
+HLOAD t4 t3 0
+HLOAD t5 t4 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+CALL t5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t6 v0
+CJUMP t6 L35
+MOVE t7 s0
+HLOAD t8 t7 0
+HLOAD t9 t8 60
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t7
+MOVE a1 s1
+MOVE a2 s2
+CALL t9
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s4 v0
+MOVE v0 s4
+JUMP L36
+L35
+MOVE s5 s2
+HLOAD s3 s5 0
+HLOAD s6 s3 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s5
+CALL s6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t0 v0
+MOVE t1 t0
+MOVE s7 s1
+HLOAD t2 s7 0
+HLOAD t4 t2 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s7
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+MOVE t3 t5
+HLOAD t6 t3 0
+HLOAD t8 t6 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+CALL t8
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t9 v0
+MOVE t7 t9
+MOVE s4 s0
+HLOAD s3 s4 0
+HLOAD s6 s3 44
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s4
+MOVE a1 t1
+MOVE a2 t7
+CALL s6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+CJUMP s5 L37
+MOVE t0 s1
+HLOAD t2 t0 0
+HLOAD t4 t2 8
+HLOAD s7 s0 24
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t0
+MOVE a1 s7
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+MOVE v0 t5
+MOVE t6 s1
+HLOAD t8 t6 0
+HLOAD t3 t8 36
+MOVE t9 0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t6
+MOVE a1 t9
+CALL t3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s3 v0
+MOVE v0 s3
+JUMP L38
+L37
+MOVE s6 s1
+HLOAD t7 s6 0
+HLOAD t1 t7 4
+HLOAD s4 s0 24
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s6
+MOVE a1 s4
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+MOVE v0 s5
+MOVE t2 s1
+HLOAD t4 t2 0
+HLOAD t0 t4 40
+MOVE s7 0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t2
+MOVE a1 s7
+CALL t0
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+MOVE v0 t5
+L38
+NOOP
+L36
+NOOP
+L34
+NOOP
+MOVE t8 1
+MOVE v0 t8
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_RemoveRight [3] [18] [2]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 a2
+L39
+MOVE s3 s2
+HLOAD s4 s3 0
+HLOAD s5 s4 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s3
+CALL s5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s6 v0
+CJUMP s6 L40
+MOVE s7 s2
+HLOAD t0 s7 0
+HLOAD t1 t0 24
+MOVE t2 s2
+HLOAD t3 t2 0
+HLOAD t4 t3 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t2
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+MOVE t6 t5
+HLOAD t7 t6 0
+HLOAD t8 t7 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t6
+CALL t8
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t9 v0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s7
+MOVE a1 t9
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s4 v0
+MOVE v0 s4
+MOVE s1 s2
+MOVE s5 s2
+HLOAD s3 s5 0
+HLOAD s6 s3 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s5
+CALL s6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t0 v0
+MOVE s2 t0
+JUMP L39
+L40
+NOOP
+MOVE t3 s1
+HLOAD t4 t3 0
+HLOAD t2 t4 4
+HLOAD t5 s0 24
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+MOVE a1 t5
+CALL t2
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t7 v0
+MOVE v0 t7
+MOVE t8 s1
+HLOAD t6 t8 0
+HLOAD s7 t6 40
+MOVE t9 0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t8
+MOVE a1 t9
+CALL s7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t1 v0
+MOVE v0 t1
+MOVE s4 1
+MOVE v0 s4
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_RemoveLeft [3] [18] [2]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 a2
+L41
+MOVE s3 s2
+HLOAD s4 s3 0
+HLOAD s5 s4 32
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s3
+CALL s5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s6 v0
+CJUMP s6 L42
+MOVE s7 s2
+HLOAD t0 s7 0
+HLOAD t1 t0 24
+MOVE t2 s2
+HLOAD t3 t2 0
+HLOAD t4 t3 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t2
+CALL t4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+MOVE t6 t5
+HLOAD t7 t6 0
+HLOAD t8 t7 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t6
+CALL t8
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t9 v0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s7
+MOVE a1 t9
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s4 v0
+MOVE v0 s4
+MOVE s1 s2
+MOVE s5 s2
+HLOAD s3 s5 0
+HLOAD s6 s3 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s5
+CALL s6
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t0 v0
+MOVE s2 t0
+JUMP L41
+L42
+NOOP
+MOVE t3 s1
+HLOAD t4 t3 0
+HLOAD t2 t4 8
+HLOAD t5 s0 24
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t3
+MOVE a1 t5
+CALL t2
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t7 v0
+MOVE v0 t7
+MOVE t8 s1
+HLOAD t6 t8 0
+HLOAD s7 t6 36
+MOVE t9 0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t8
+MOVE a1 t9
+CALL s7
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t1 v0
+MOVE v0 t1
+MOVE s4 1
+MOVE v0 s4
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_Search [2] [18] [1]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 s0
+MOVE s3 1
+MOVE s4 s3
+MOVE s5 0
+MOVE s6 s5
+L43
+CJUMP s4 L44
+MOVE s7 s2
+HLOAD t0 s7 0
+HLOAD t1 t0 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s7
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t2 v0
+MOVE t3 t2
+MOVE t4 1
+MOVE t5 MINUS t3 t4
+MOVE t6 t5
+MOVE t7 LE s1 t6
+CJUMP t7 L45
+MOVE t8 s2
+HLOAD t9 t8 0
+HLOAD s3 t9 32
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t8
+CALL s3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+CJUMP s5 L47
+MOVE t0 s2
+HLOAD s7 t0 0
+HLOAD t1 s7 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t0
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t2 v0
+MOVE s2 t2
+JUMP L48
+L47
+MOVE t4 0
+MOVE s4 t4
+L48
+NOOP
+JUMP L46
+L45
+MOVE t5 1
+MOVE t6 MINUS s1 t5
+MOVE t7 t6
+MOVE t9 LE t3 t7
+CJUMP t9 L49
+MOVE s3 s2
+HLOAD t8 s3 0
+HLOAD s5 t8 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s3
+CALL s5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s7 v0
+CJUMP s7 L51
+MOVE t1 s2
+HLOAD t0 t1 0
+HLOAD t2 t0 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t1
+CALL t2
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t4 v0
+MOVE s2 t4
+JUMP L52
+L51
+MOVE t5 0
+MOVE s4 t5
+L52
+NOOP
+JUMP L50
+L49
+MOVE t6 1
+MOVE s6 t6
+MOVE t3 0
+MOVE s4 t3
+L50
+NOOP
+L46
+NOOP
+JUMP L43
+L44
+NOOP
+MOVE v0 s6
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_Print [1] [18] [2]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 s0
+MOVE s2 s0
+HLOAD s3 s2 0
+HLOAD s4 s3 76
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s2
+MOVE a1 s1
+CALL s4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+MOVE v0 s5
+MOVE s6 1
+MOVE v0 s6
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END
+Tree_RecPrint [2] [18] [2]
+ASTORE SPILLEDARG 0 s0
+ASTORE SPILLEDARG 1 s1
+ASTORE SPILLEDARG 2 s2
+ASTORE SPILLEDARG 3 s3
+ASTORE SPILLEDARG 4 s4
+ASTORE SPILLEDARG 5 s5
+ASTORE SPILLEDARG 6 s6
+ASTORE SPILLEDARG 7 s7
+MOVE s0 a0
+MOVE s1 a1
+MOVE s2 s1
+HLOAD s3 s2 0
+HLOAD s4 s3 32
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s2
+CALL s4
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s5 v0
+CJUMP s5 L53
+MOVE s6 s0
+HLOAD s7 s6 0
+HLOAD t0 s7 76
+MOVE t1 s1
+HLOAD t2 t1 0
+HLOAD t3 t2 16
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t1
+CALL t3
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t4 v0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s6
+MOVE a1 t4
+CALL t0
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+MOVE v0 t5
+JUMP L54
+L53
+MOVE t6 1
+MOVE v0 t6
+L54
+NOOP
+MOVE t7 s1
+HLOAD t8 t7 0
+HLOAD t9 t8 20
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t7
+CALL t9
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s3 v0
+PRINT s3
+MOVE s4 s1
+HLOAD s2 s4 0
+HLOAD s5 s2 28
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s4
+CALL s5
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE s7 v0
+CJUMP s7 L55
+MOVE t2 s0
+HLOAD t3 t2 0
+HLOAD t1 t3 76
+MOVE s6 s1
+HLOAD t4 s6 0
+HLOAD t0 t4 12
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 s6
+CALL t0
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t5 v0
+ASTORE SPILLEDARG 8 t0
+ASTORE SPILLEDARG 9 t1
+ASTORE SPILLEDARG 10 t2
+ASTORE SPILLEDARG 11 t3
+ASTORE SPILLEDARG 12 t4
+ASTORE SPILLEDARG 13 t5
+ASTORE SPILLEDARG 14 t6
+ASTORE SPILLEDARG 15 t7
+ASTORE SPILLEDARG 16 t8
+ASTORE SPILLEDARG 17 t9
+MOVE a0 t2
+MOVE a1 t5
+CALL t1
+ALOAD t0 SPILLEDARG 8
+ALOAD t1 SPILLEDARG 9
+ALOAD t2 SPILLEDARG 10
+ALOAD t3 SPILLEDARG 11
+ALOAD t4 SPILLEDARG 12
+ALOAD t5 SPILLEDARG 13
+ALOAD t6 SPILLEDARG 14
+ALOAD t7 SPILLEDARG 15
+ALOAD t8 SPILLEDARG 16
+ALOAD t9 SPILLEDARG 17
+MOVE t6 v0
+MOVE v0 t6
+JUMP L56
+L55
+MOVE t8 1
+MOVE v0 t8
+L56
+NOOP
+MOVE t9 1
+MOVE v0 t9
+ALOAD s0 SPILLEDARG 0
+ALOAD s1 SPILLEDARG 1
+ALOAD s2 SPILLEDARG 2
+ALOAD s3 SPILLEDARG 3
+ALOAD s4 SPILLEDARG 4
+ALOAD s5 SPILLEDARG 5
+ALOAD s6 SPILLEDARG 6
+ALOAD s7 SPILLEDARG 7
+END

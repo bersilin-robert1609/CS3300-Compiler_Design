@@ -131,10 +131,18 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
    }
 
+   class LabelData
+   {
+      public String oldLabel;
+      public String newLabel;
+      public int lineNumber;
+   }
+
    // Global variables
    HashMap<String, ProcedureProperties> procProps = new HashMap<String, ProcedureProperties>();
    TreeMap<Integer, BasicBlock> instructions = new TreeMap<Integer, BasicBlock>();
-   TreeMap<String, Integer> labelMap = new TreeMap<String, Integer>();
+   //TreeMap<String, Integer> labelMap = new TreeMap<String, Integer>();
+   TreeMap<String, TreeMap<String, LabelData>> labelData = new TreeMap<String, TreeMap<String, LabelData>>();
    HashMap<Integer, ExpReturn> expMap = new HashMap<Integer, ExpReturn>();
    LinkedHashMap<String, TreeMap<Integer, BasicBlock>> sortedInstrs = new LinkedHashMap<String, TreeMap<Integer, BasicBlock>>();
    TreeMap<String, TreeMap<Integer, Interval>> intervals = new TreeMap<String, TreeMap<Integer, Interval>>();
@@ -143,10 +151,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    boolean debug = false;
    public int nextExp() {return expCount++;}
    HashMap<String, HashMap<Integer, String>> registerAllocation = new HashMap<String, HashMap<Integer, String>>();
-   Stack<String> availableRegisters = new Stack<String>();
+   Queue<String> availableRegisters = new LinkedList<String>();
    HashMap<String, HashMap<Integer, Integer>> spillNumberMap = new HashMap<String, HashMap<Integer, Integer>>();
-
    int globalSpillNumber = 0;
+   int newLabelNumber = 0;
+
    public int nextSpillNumber() {return globalSpillNumber++;}
 
    PriorityQueue<Interval> active = new PriorityQueue<Interval>(new Comparator<Interval>() {
@@ -195,18 +204,18 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
             if(bb.type.equals("JUMP")) 
             {
-               if(labelMap.containsKey(bb.label)) 
+               if(labelData.get(bb.scope).containsKey(bb.label)) 
                {
-                  int labelNumber = labelMap.get(bb.label);
+                  int labelNumber = labelData.get(bb.scope).get(bb.label).lineNumber;
                   if(instructions.containsKey(labelNumber)) bb.out.addAll(instructions.get(labelNumber).in);
                }
             }
             else if(bb.type.equals("CJUMP"))
             {
                if(instructions.containsKey(bb.next)) bb.out.addAll(instructions.get(bb.next).in);
-               if(labelMap.containsKey(bb.label)) 
+               if(labelData.containsKey(bb.label)) 
                {
-                  int labelNumber = labelMap.get(bb.label);
+                  int labelNumber = labelData.get(bb.scope).get(bb.label).lineNumber;
                   if(instructions.containsKey(labelNumber)) bb.out.addAll(instructions.get(labelNumber).in);
                }
             }
@@ -287,11 +296,19 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    public void printLabels()
    {
       //print labels
-      System.out.println("Labels:");
-      Iterator<String> itr3 = labelMap.keySet().iterator();
-      while(itr3.hasNext()){
-         String key = itr3.next();
-         System.out.println("\t" + key + ": " + labelMap.get(key));
+      Iterator<String> itr = labelData.keySet().iterator();
+      while(itr.hasNext()){
+         String key = itr.next();
+         System.out.println("Scope: " + key);
+         Iterator<String> itr2 = labelData.get(key).keySet().iterator();
+         while(itr2.hasNext()){
+            String key2 = itr2.next();
+            LabelData label = labelData.get(key).get(key2);
+            System.out.println("\tLabel: " + key2);
+            System.out.println("\t\tLine Number: " + label.lineNumber);
+            System.out.println("\t\tNew Label: " + label.newLabel);
+            System.out.println();
+         }
       }
    }
 
@@ -317,8 +334,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    public void populateRegisters()
    {
       availableRegisters.clear();
-      for(int i = 9; i >= 0; i--) availableRegisters.push("t" + i);
-      for(int i = 7; i >= 0; i--) availableRegisters.push("s" + i);
+      for(int i = 0; i < 8; i++) availableRegisters.add("s" + i);
+      for(int i = 0; i < 10; i++) availableRegisters.add("t" + i);
    }
 
    // Linear Search Algorithm
@@ -327,7 +344,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       while(!active.isEmpty() && active.peek().end < start)
       {
          Interval interval = active.poll();
-         availableRegisters.push(registerAllocation.get(scope).get(interval.temp));
+         availableRegisters.add(registerAllocation.get(scope).get(interval.temp));
       }
    }
 
@@ -375,7 +392,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             String registerAlloc;
 
             if(i<=3){
-               registerAlloc = availableRegisters.pop();
+               registerAlloc = "s" + i;
+               availableRegisters.remove(registerAlloc);
             }
             else registerAlloc = "paraspill";
 
@@ -390,7 +408,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          if(!availableRegisters.isEmpty())
          {
             Interval interval = liveIntervals.poll();
-            String registerAlloc = availableRegisters.pop();
+            String registerAlloc = availableRegisters.poll();
             tempToReg.put(interval.temp, registerAlloc);
             active.add(interval);
             reverseActive.add(interval);
@@ -522,6 +540,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       String label = n.f0.accept(this, (A)scope).toString();
       scope.scope = label;
 
+      TreeMap<String, LabelData> labelMap = new TreeMap<String, LabelData>();
+      labelData.put(label, labelMap);
+
       ProcedureProperties procedure;
       if(stage == 1)
       {
@@ -570,7 +591,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          allocateSpillNumbers(scope.scope);
 
          int args = procProps.get(scope.scope).argCount;
-         for(int i=0; i<3; i++)
+         for(int i=0; i<=3; i++)
          {
             if(i < args) System.out.println("MOVE s" + i + " a" + i);
          }
@@ -1320,11 +1341,27 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    {
       R label = n.f0.accept(this, argu);
       int lineNumber = n.f0.beginLine;
-      if(((ScopeArgument)argu).isLabel){
-         labelMap.put(label.toString(), lineNumber);
+      if(((ScopeArgument)argu).isLabel)
+      {
+         TreeMap<String, LabelData> labelMap = labelData.get(((ScopeArgument)argu).scope);
+
+         if(stage == 1)
+         {
+            LabelData labelData = new LabelData();
+            labelData.lineNumber = lineNumber;
+            labelData.oldLabel = label.toString();
+            labelData.newLabel = "L" + newLabelNumber++;
+
+            labelMap.put(label.toString(), labelData);
+         }
+
          ((ScopeArgument)argu).labelPresent = true;
 
-         if(stage == 2) System.out.println(label.toString());
+         if(stage == 2)
+         {
+            LabelData labelData = labelMap.get(label.toString());
+            System.out.println(labelData.newLabel);
+         }
       }
       return label;
    }
