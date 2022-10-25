@@ -95,12 +95,14 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       public int temp;
       public int number;
       public String label;
+      public String returnString;
    }
 
    class ExpReturn
    {
       public HashSet<Integer> use;
       public String type;
+      public String returnString;
 
       public ExpReturn()
       {
@@ -372,7 +374,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          {
             String registerAlloc;
 
-            if(i<=3) registerAlloc = "a" + i;
+            if(i<=3){
+               registerAlloc = availableRegisters.pop();
+            }
             else registerAlloc = "paraspill";
 
             tempToReg.put(i, registerAlloc);
@@ -486,6 +490,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       }
 
       stage = 2;
+      expMap.clear();
+      expCount = 0;
 
       int args = 0;
       int mac = procProps.get("MAIN").maxArgCount;
@@ -532,10 +538,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          int args = procedure.argCount;
          int mac = procedure.maxArgCount;
          int ss = 0;
-         if(mac > 4) ss = mac - 4;
+         if(mac > 4) ss += mac - 4;
          ss += findSpills(label);
-         if (mac > 0) ss += 18;
-         else ss += 8;
+         ss += 18;
          System.out.println(label + " [" + args + "]" + " [" + ss + "]" + " [" + mac + "]");
 
          spillNumberMap.put(label, new HashMap<Integer, Integer>());
@@ -563,6 +568,12 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          for(int i=0; i<8; i++) System.out.println("ASTORE SPILLEDARG " + nextSpillNumber() + " s" + i);
 
          allocateSpillNumbers(scope.scope);
+
+         int args = procProps.get(scope.scope).argCount;
+         for(int i=0; i<3; i++)
+         {
+            if(i < args) System.out.println("MOVE s" + i + " a" + i);
+         }
       }
       n.f1.accept(this, argu);
 
@@ -939,12 +950,18 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       {
          HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
          String reg1 = tempToReg.get(temp);
-         if(reg1.equals("spill") || reg1.equals("paraspill"))
+
+         if(reg1 == null)
+         {
+            System.out.println("MOVE v0 " + expReturn.returnString);
+         }
+         else if(reg1.equals("spill") || reg1.equals("paraspill"))
          {
             int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp);
-            System.out.println("ASTORE SPILLEDARG " + spillnum + " V0");
+            System.out.println("MOVE v1 " + expReturn.returnString);
+            System.out.println("ASTORE SPILLEDARG " + spillnum + " v1");
          }
-         else System.out.println("MOVE " + reg1 + " v0");
+         else System.out.println("MOVE " + reg1 + " " + expReturn.returnString);
       }
       return null;
    }
@@ -986,8 +1003,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
             {
                int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(simpleExpReturn.temp);
                System.out.println("ALOAD v0 SPILLEDARG " + spillnum);
+               reg = "v0";
             }
-            System.out.println("PRINT v0");
+            System.out.println("PRINT "+ reg);
          }
          else if(simpleExpReturn.type == 1)
          {
@@ -1016,6 +1034,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          simpleExpReturn = (SimpleExpReturn)n.f0.accept(this, argu);
          expReturn = new ExpReturn();
          if(simpleExpReturn.type == 0) expReturn.use.add(simpleExpReturn.temp);
+
+         expReturn.returnString = simpleExpReturn.returnString;
       }
       else
       {
@@ -1116,6 +1136,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          }
 
          for(int i=0; i<10; i++) System.out.println("ALOAD t" + i + " SPILLEDARG " + firstSpillNumber++);
+         globalSpillNumber = firstSpillNumber - 10;
+         expReturn.returnString = "v0";
       }
 
       return (R)(Integer.toString(expNumber));
@@ -1138,15 +1160,27 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
 
       if(stage == 2)
       {
-         HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
-         String reg = tempToReg.get(simpleExpReturn.temp);
-         if(reg.equals("spill") || reg.equals("paraspill"))
+         if(simpleExpReturn.type == 0)
          {
-            int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(simpleExpReturn.temp);
-            System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+            HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
+            String reg = tempToReg.get(simpleExpReturn.temp);
+            if(reg.equals("spill") || reg.equals("paraspill"))
+            {
+               int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(simpleExpReturn.temp);
+               System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+               reg = "v1";
+            }
+            
+            expReturn.returnString = "HALLOCATE "+ reg;
          }
-         else System.out.println("MOVE v1 " + reg);
-         System.out.println("MOVE v0 HALLOCATE v1");
+         else if(simpleExpReturn.type == 1)
+         {
+            expReturn.returnString = "HALLOCATE "+ simpleExpReturn.number;
+         }
+         else if(simpleExpReturn.type == 2)
+         {
+            expReturn.returnString = "HALLOCATE "+ simpleExpReturn.label;
+         }
       }
 
       return (R)(Integer.toString(expNumber));
@@ -1163,12 +1197,12 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       Integer temp = Integer.parseInt(n.f1.accept(this, argu).toString());
       SimpleExpReturn simpleExpReturn = (SimpleExpReturn)n.f2.accept(this, argu);
 
+      int expNumber;
       ExpReturn expReturn = new ExpReturn();
       expReturn.use.add(temp);
       if(simpleExpReturn.type == 0) expReturn.use.add(simpleExpReturn.temp);
       expReturn.type = "BINOP";
-
-      int expNumber = nextExp();
+      expNumber = nextExp();
       expMap.put(expNumber, expReturn);
 
       if(stage == 2)
@@ -1179,29 +1213,30 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
          {
             int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(temp);
             System.out.println("ALOAD v0 SPILLEDARG " + spillnum);
+            reg = "v0";
          }
-         else System.out.println("MOVE v0 " + reg);
 
          if(simpleExpReturn.type == 0)
          {
-            reg = tempToReg.get(simpleExpReturn.temp);
-            if(reg.equals("spill") || reg.equals("paraspill"))
+            String reg1 = tempToReg.get(simpleExpReturn.temp);
+            if(reg1.equals("spill") || reg1.equals("paraspill"))
             {
                int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(simpleExpReturn.temp);
                System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+               reg1 = "v1";
             }
-            else System.out.println("MOVE v1 " + reg);
+            expReturn.returnString = op + " " + reg + " " + reg1;
          }
          else if(simpleExpReturn.type == 1)
          {
             System.out.println("MOVE v1 " + simpleExpReturn.number);
+            expReturn.returnString = op + " " + reg + " v1";
          }
          else if(simpleExpReturn.type == 2)
          {
             System.out.println("MOVE v1 " + simpleExpReturn.label);
+            expReturn.returnString = op + " " + reg + " v1";
          }
-
-         System.out.println("MOVE v0 " + op + " v0 v1");
       }
 
       return (R)(Integer.toString(expNumber));
@@ -1234,6 +1269,31 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       if(n.f0.which == 0) simpleExpReturn.temp = Integer.parseInt(ret.toString());
       else if(n.f0.which == 1) simpleExpReturn.number = Integer.parseInt(ret.toString());
       else if(n.f0.which == 2) simpleExpReturn.label = ret.toString();
+
+      if(stage == 2)
+      {
+         if(n.f0.which == 0)
+         {
+            HashMap<Integer, String> tempToReg = registerAllocation.get(((ScopeArgument)argu).scope);
+            String reg = tempToReg.get(simpleExpReturn.temp);
+            if(reg.equals("spill") || reg.equals("paraspill"))
+            {
+               int spillnum = spillNumberMap.get(((ScopeArgument)argu).scope).get(simpleExpReturn.temp);
+               System.out.println("ALOAD v1 SPILLEDARG " + spillnum);
+               reg = "v1";
+            }
+            
+            simpleExpReturn.returnString = reg;
+         }
+         else if(n.f0.which == 1)
+         {
+            simpleExpReturn.returnString = Integer.toString(simpleExpReturn.number);
+         }
+         else if(n.f0.which == 2)
+         {
+            simpleExpReturn.returnString = simpleExpReturn.label;
+         }
+      }
 
       return (R)simpleExpReturn;
    }
