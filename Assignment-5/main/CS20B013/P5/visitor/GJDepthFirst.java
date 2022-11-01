@@ -89,10 +89,11 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int stackMovement = stackAlloc * 4;
       if(!name.equals("main")) stackMovement += 8;
       else stackMovement += 4;
+      stackMovement += ((maxArgsInCall - 4) * 4) > 0 ? ((maxArgsInCall - 4) * 4) : 0;
 
       System.out.println("move $fp, $sp");
       System.out.println("subu $sp, $sp, " + stackMovement);
-
+      System.out.println("sw $ra, -4($fp)");
       return stackMovement;
    }
 
@@ -135,12 +136,12 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       putProcprops("main", argCount, stackAlloc, maxArgsInCall);
       int stackMovement = printInit("main", argCount, stackAlloc, maxArgsInCall);
       
-      n.f10.accept(this, argu);
+      String scope = "main";
+      n.f10.accept(this, (A)scope);
       n.f11.accept(this, argu);
       n.f12.accept(this, argu);
       n.f13.accept(this, argu);
       n.f14.accept(this, argu);
-      
       
       return null;
    }
@@ -173,7 +174,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(Procedure n, A argu) {
       R _ret=null;
-      n.f0.accept(this, argu);
+      String scope = n.f0.accept(this, argu).toString();
       n.f1.accept(this, argu);
       n.f2.accept(this, argu);
       n.f3.accept(this, argu);
@@ -182,15 +183,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       n.f6.accept(this, argu);
       n.f7.accept(this, argu);
       n.f8.accept(this, argu);
-      n.f9.accept(this, argu);
-      
-      
-      
-      n.f10.accept(this, argu);
+      n.f9.accept(this, argu);  
+      n.f10.accept(this, (A)scope);
       n.f11.accept(this, argu);
       n.f12.accept(this, argu);
-      
-      
       return _ret;
    }
 
@@ -219,20 +215,23 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    /**
     * f0 -> "NOOP"
     */
-   public R visit(NoOpStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+   public R visit(NoOpStmt n, A argu) 
+   {
+      System.out.println("nop");
+      return null;
    }
 
    /**
     * f0 -> "ERROR"
     */
-   public R visit(ErrorStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-          
-      return _ret;
+   public R visit(ErrorStmt n, A argu) 
+   {
+      System.out.println("li $v0, 4");
+      System.out.println("la $a0, str_er");
+      System.out.println("syscall");
+      System.out.println("li $v0, 10");
+      System.out.println("syscall");
+      return null;
    }
 
    /**
@@ -240,23 +239,23 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Reg()
     * f2 -> Label()
     */
-   public R visit(CJumpStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      return _ret;
+   public R visit(CJumpStmt n, A argu) 
+   {
+      String reg = n.f1.accept(this, argu).toString();
+      String label = n.f2.accept(this, argu).toString();
+      System.out.println("beqz " + reg + ", " + label);
+      return null;
    }
 
    /**
     * f0 -> "JUMP"
     * f1 -> Label()
     */
-   public R visit(JumpStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      return _ret;
+   public R visit(JumpStmt n, A argu) 
+   {
+      String label = n.f1.accept(this, argu).toString();
+      System.out.println("b " + label);
+      return null;
    }
 
    /**
@@ -265,15 +264,14 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f2 -> IntegerLiteral()
     * f3 -> Reg()
     */
-   public R visit(HStoreStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      
-      n.f3.accept(this, argu);
-      
-      return _ret;
+   public R visit(HStoreStmt n, A argu) 
+   {
+      String reg1 = n.f1.accept(this, argu).toString();
+      String reg2 = n.f3.accept(this, argu).toString();
+      int offset = Integer.parseInt(n.f2.accept(this, argu).toString());
+
+      System.out.println("sw " + reg2 + ", " + offset + "(" + reg1 + ")");
+      return null;
    }
 
    /**
@@ -282,14 +280,14 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f2 -> Reg()
     * f3 -> IntegerLiteral()
     */
-   public R visit(HLoadStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      n.f3.accept(this, argu);
-      
-      return _ret;
+   public R visit(HLoadStmt n, A argu) 
+   {
+      String reg1 = n.f1.accept(this, argu).toString();
+      String reg2 = n.f2.accept(this, argu).toString();
+      int offset = Integer.parseInt(n.f3.accept(this, argu).toString());
+
+      System.out.println("lw " + reg1 + ", " + offset + "(" + reg2 + ")");
+      return null;
    }
 
    /**
@@ -309,12 +307,16 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f0 -> "PRINT"
     * f1 -> SimpleExp()
     */
-   public R visit(PrintStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      
-      return _ret;
+   public R visit(PrintStmt n, A argu) 
+   {
+      SimpleExpReturn exp = (SimpleExpReturn)n.f1.accept(this, argu);
+
+      if(exp.type.equals("REG")) System.out.println("move $a0, " + exp.reg);
+      else if(exp.type.equals("INT")) System.out.println("li $a0, " + exp.intVal);
+      else if(exp.type.equals("LABEL")) System.out.println("la $a0, " + exp.label);
+
+      System.out.println("jal _print");
+      return null;
    }
 
    /**
@@ -322,13 +324,22 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Reg()
     * f2 -> SpilledArg()
     */
-   public R visit(ALoadStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      
-      return _ret;
+   public R visit(ALoadStmt n, A argu) 
+   {
+      String reg = n.f1.accept(this, argu).toString();
+      int offset = Integer.parseInt(n.f2.accept(this, argu).toString());
+
+      String scope = (String)argu;
+      ProcedureProperties proc = procProps.get(scope);
+      int extras = proc.maxArgsInCall - 4;
+
+      if(extras > 0)
+      {
+         if(offset < extras) System.out.println("lw " + reg + ", " + (offset * 4) + "($fp)");
+         else System.out.println("lw " + reg + ", " + (offset * 4) + "($sp)");
+      }
+      else System.out.println("lw " + reg + ", " + (offset * 4) + "($sp)");
+      return null;
    }
 
    /**
@@ -336,13 +347,13 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> SpilledArg()
     * f2 -> Reg()
     */
-   public R visit(AStoreStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      
-      return _ret;
+   public R visit(AStoreStmt n, A argu) 
+   {
+      int offset = Integer.parseInt(n.f1.accept(this, argu).toString());
+      String reg = n.f2.accept(this, argu).toString();
+
+      System.out.println("sw " + reg + ", " + (offset * 4) + "($sp)");
+      return null;
    }
 
    /**
@@ -350,25 +361,31 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> IntegerLiteral()
     * f2 -> Reg()
     */
-   public R visit(PassArgStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      
-      return _ret;
+   public R visit(PassArgStmt n, A argu) 
+   {
+      int offset = Integer.parseInt(n.f1.accept(this, argu).toString());
+      String reg = n.f2.accept(this, argu).toString();
+
+      System.out.println("sw " + reg + ", " + ((offset - 1) * 4) + "($sp)");
+      return null;
    }
 
    /**
     * f0 -> "CALL"
     * f1 -> SimpleExp()
     */
-   public R visit(CallStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      
-      return _ret;
+   public R visit(CallStmt n, A argu) 
+   {
+      SimpleExpReturn exp = (SimpleExpReturn)n.f1.accept(this, argu);
+
+      if(exp.type.equals("REG")) System.out.println("jalr " + exp.reg);
+      else if(exp.type.equals("LABEL")) System.out.println("jalr " + exp.label);
+      else if(exp.type.equals("INT"))
+      {
+         System.out.println("li $v0, " + exp.intVal);
+         System.out.println("jalr $v0");
+      }
+      return null;
    }
 
    /**
@@ -376,7 +393,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     *       | BinOp()
     *       | SimpleExp()
     */
-   public R visit(Exp n, A argu) {
+   public R visit(Exp n, A argu) 
+   {
       R _ret=null;
       n.f0.accept(this, argu);
       return _ret;
@@ -386,7 +404,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f0 -> "HALLOCATE"
     * f1 -> SimpleExp()
     */
-   public R visit(HAllocate n, A argu) {
+   public R visit(HAllocate n, A argu) 
+   {
       R _ret=null;
       n.f0.accept(this, argu);
       n.f1.accept(this, null);
@@ -399,12 +418,12 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Reg()
     * f2 -> SimpleExp()
     */
-   public R visit(BinOp n, A argu) {
+   public R visit(BinOp n, A argu) 
+   {
       R _ret=null;
       n.f0.accept(this, argu);
       n.f1.accept(this, argu);
-      n.f2.accept(this, null);
-      
+      n.f2.accept(this, argu);
       return _ret;
    }
 
@@ -416,12 +435,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     *       | "TIMES"
     *       | "DIV"
     */
-   public R visit(Operator n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
-      
-      
+   public R visit(Operator n, A argu) 
+   {
+      return n.f0.accept(this, argu);
    }
 
    /**
@@ -430,10 +446,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(SpilledArg n, A argu) 
    {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      return _ret;
+      return n.f1.accept(this, argu);
    }
 
    /**
@@ -494,7 +507,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(Reg n, A argu) 
    {
-      return n.f0.accept(this, argu);
+      String _ret = n.f0.accept(this, argu).toString();
+      _ret = "$" + _ret;
+      return (R)_ret;
    }
 
    /**
@@ -533,5 +548,4 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       n.f0.accept(this, argu);
       return _ret;
    }
-
 }
