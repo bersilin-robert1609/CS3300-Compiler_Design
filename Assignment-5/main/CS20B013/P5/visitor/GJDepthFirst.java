@@ -71,6 +71,17 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       public int intVal;
    }
 
+   class ExpReturn
+   {
+      public String type;
+      public String op;
+      public String reg1;
+      public String simpleExpType;
+      public String simpleExpReg;
+      public int simpleExpIntVal;
+      public String simpleExpLabel;
+   }
+
    class ProcedureProperties
    {
       public String name;
@@ -80,15 +91,15 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
    }
 
    LinkedHashMap<String, ProcedureProperties> procProps = new LinkedHashMap<String, ProcedureProperties>();
+   boolean debug = false;
 
    public int printInit(String name, int argCount, int stackAlloc, int maxArgsInCall)
    {
       System.out.print(".text" + "\n" + ".globl " + name + "\n" + name + ":" + "\n");
-      if(!name.equals("main")) System.out.println("sw $fp, -8($sp)");
+      System.out.println("sw $fp, -8($sp)");
       
       int stackMovement = stackAlloc * 4;
-      if(!name.equals("main")) stackMovement += 8;
-      else stackMovement += 4;
+      stackMovement += 8;
       stackMovement += ((maxArgsInCall - 4) * 4) > 0 ? ((maxArgsInCall - 4) * 4) : 0;
 
       System.out.println("move $fp, $sp");
@@ -105,6 +116,42 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       props.stackAlloc = stackAlloc;
       props.maxArgsInCall = maxArgsInCall;
       procProps.put(name, props);
+   }
+
+   public void printEnd(String name, int stackMovement)
+   {
+      System.out.println("lw $ra, -4($fp)");
+      System.out.println("lw $fp, -8($fp)");
+      System.out.println("addu $sp, $sp, " + stackMovement);
+      System.out.println("j $ra");
+      return;
+   }
+
+   public void printFuncs()
+   {
+      System.out.println(".text");
+      System.out.println(".globl _halloc");
+      System.out.println("_halloc:");
+      System.out.println("li $v0, 9");
+      System.out.println("syscall");
+      System.out.println("j $ra");
+
+      System.out.println(".text");
+      System.out.println(".globl _print");
+      System.out.println("_print:");
+      System.out.println("li $v0, 1");
+      System.out.println("syscall");
+      System.out.println("la $a0, newl");
+      System.out.println("li $v0, 4");
+      System.out.println("syscall");
+      System.out.println("j $ra");
+
+      System.out.println(".data");
+      System.out.println(".align   0");
+      System.out.println("newl:    .asciiz \"\\n\"");
+      System.out.println(".data");
+      System.out.println(".align   0");
+      System.out.println("str_er:  .asciiz \" ERROR: abnormal termination\\n\"");
    }
    //
    // User-generated visitor methods below
@@ -138,11 +185,10 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       
       String scope = "main";
       n.f10.accept(this, (A)scope);
-      n.f11.accept(this, argu);
-      n.f12.accept(this, argu);
+      printEnd("main", stackMovement);
       n.f13.accept(this, argu);
-      n.f14.accept(this, argu);
-      
+
+      printFuncs();
       return null;
    }
 
@@ -172,22 +218,19 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f11 -> "END"
     * f12 -> ( SpillInfo() )?
     */
-   public R visit(Procedure n, A argu) {
-      R _ret=null;
+   public R visit(Procedure n, A argu) 
+   {
       String scope = n.f0.accept(this, argu).toString();
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      n.f3.accept(this, argu);
-      n.f4.accept(this, argu);
-      n.f5.accept(this, argu);
-      n.f6.accept(this, argu);
-      n.f7.accept(this, argu);
-      n.f8.accept(this, argu);
-      n.f9.accept(this, argu);  
+      int argCount = Integer.parseInt(n.f2.accept(this, argu).toString());
+      int stackAlloc = Integer.parseInt(n.f5.accept(this, argu).toString());
+      int maxArgsInCall = Integer.parseInt(n.f8.accept(this, argu).toString());
+      
+      putProcprops(scope, argCount, stackAlloc, maxArgsInCall);
+      int stackMovement = printInit(scope, argCount, stackAlloc, maxArgsInCall);
+
       n.f10.accept(this, (A)scope);
-      n.f11.accept(this, argu);
-      n.f12.accept(this, argu);
-      return _ret;
+      printEnd(scope, stackMovement);
+      return null;
    }
 
    /**
@@ -295,12 +338,35 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     * f1 -> Reg()
     * f2 -> Exp()
     */
-   public R visit(MoveStmt n, A argu) {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu); 
-      n.f2.accept(this, argu);
-      return _ret;
+   public R visit(MoveStmt n, A argu) 
+   {
+      String reg = n.f1.accept(this, argu).toString();
+      ExpReturn exp = (ExpReturn)n.f2.accept(this, argu);
+
+      if(exp.type.equals("HALLOCATE")) System.out.println("move " + reg + ", $v0");
+      else if(exp.type.equals("BINOP"))
+      {
+         String op = exp.op;
+         String reg1 = exp.reg1;
+         String val2;
+         if(exp.simpleExpType.equals("REG")) val2 = exp.simpleExpReg;
+         else if(exp.simpleExpType.equals("INT")) val2 = Integer.toString(exp.simpleExpIntVal);
+         else val2 = exp.simpleExpLabel;
+         
+         if(op.equals("LE")) System.out.println("sle " + reg + ", " + reg1 + ", " + val2);
+         else if(op.equals("NE")) System.out.println("sne " + reg + ", " + reg1 + ", " + val2);
+         else if(op.equals("PLUS")) System.out.println("add " + reg + ", " + reg1 + ", " + val2);
+         else if(op.equals("MINUS")) System.out.println("sub " + reg + ", " + reg1 + ", " + val2);
+         else if(op.equals("TIMES")) System.out.println("mul " + reg + ", " + reg1 + ", " + val2);
+         else if(op.equals("DIV")) System.out.println("div " + reg + ", " + reg1 + ", " + val2);
+      }
+      else if(exp.type.equals("SIMPLEEXP"))
+      {
+         if(exp.simpleExpType.equals("REG")) System.out.println("move " + reg + ", " + exp.simpleExpReg);
+         else if(exp.simpleExpType.equals("INT")) System.out.println("li " + reg + ", " + exp.simpleExpIntVal);
+         else System.out.println("la " + reg + ", " + exp.simpleExpLabel);
+      }
+      return null;
    }
 
    /**
@@ -330,15 +396,13 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int offset = Integer.parseInt(n.f2.accept(this, argu).toString());
 
       String scope = (String)argu;
-      ProcedureProperties proc = procProps.get(scope);
-      int extras = proc.maxArgsInCall - 4;
+      ProcedureProperties proc = (ProcedureProperties)procProps.get(scope);
+      int extraArgs = proc.argCount - 4;
 
-      if(extras > 0)
-      {
-         if(offset < extras) System.out.println("lw " + reg + ", " + (offset * 4) + "($fp)");
-         else System.out.println("lw " + reg + ", " + (offset * 4) + "($sp)");
-      }
-      else System.out.println("lw " + reg + ", " + (offset * 4) + "($sp)");
+      int newOffset;
+      if(extraArgs > 0 && offset < extraArgs) newOffset = offset * 4;
+      else newOffset = -(4 * (offset + 3));
+      System.out.println("lw " + reg + ", " + newOffset + "($fp)");      
       return null;
    }
 
@@ -352,7 +416,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int offset = Integer.parseInt(n.f1.accept(this, argu).toString());
       String reg = n.f2.accept(this, argu).toString();
 
-      System.out.println("sw " + reg + ", " + (offset * 4) + "($sp)");
+      int newOffset = 4 * (offset + 3);
+      System.out.println("sw " + reg + ", -" + newOffset + "($fp)");
       return null;
    }
 
@@ -395,9 +460,20 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(Exp n, A argu) 
    {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      return _ret;
+      if(n.f0.which == 0) return n.f0.accept(this, argu);
+      else if(n.f0.which == 1) return n.f0.accept(this, argu);
+      else
+      {
+         SimpleExpReturn exp = (SimpleExpReturn)n.f0.accept(this, argu);
+         
+         ExpReturn ret = new ExpReturn();
+         ret.type = "SIMPLEEXP";
+         ret.simpleExpType = exp.type;
+         if(exp.type.equals("REG")) ret.simpleExpReg = exp.reg;
+         else if(exp.type.equals("INT")) ret.simpleExpIntVal = exp.intVal;
+         else if(exp.type.equals("LABEL")) ret.simpleExpLabel = exp.label;
+         return (R)ret;
+      }
    }
 
    /**
@@ -406,11 +482,17 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(HAllocate n, A argu) 
    {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, null);
-      
-      return _ret;
+      SimpleExpReturn exp = (SimpleExpReturn)n.f1.accept(this, argu);
+
+      if(exp.type.equals("REG")) System.out.println("move $a0, " + exp.reg);
+      else if(exp.type.equals("INT")) System.out.println("li $a0, " + exp.intVal);
+      else if(exp.type.equals("LABEL")) System.out.println("la $a0, " + exp.label);
+
+      System.out.println("jal _halloc");
+
+      ExpReturn ret = new ExpReturn();
+      ret.type = "HALLOCATE";
+      return (R)ret;
    }
 
    /**
@@ -420,11 +502,19 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(BinOp n, A argu) 
    {
-      R _ret=null;
-      n.f0.accept(this, argu);
-      n.f1.accept(this, argu);
-      n.f2.accept(this, argu);
-      return _ret;
+      String op = n.f0.accept(this, argu).toString();
+      String reg = n.f1.accept(this, argu).toString();
+      SimpleExpReturn exp = (SimpleExpReturn)n.f2.accept(this, argu);
+
+      ExpReturn ret = new ExpReturn();
+      ret.type = "BINOP";
+      ret.op = op;
+      ret.reg1 = reg;
+      ret.simpleExpType = exp.type;
+      if(exp.type.equals("REG")) ret.simpleExpReg = exp.reg;
+      else if(exp.type.equals("INT")) ret.simpleExpIntVal = exp.intVal;
+      else if(exp.type.equals("LABEL")) ret.simpleExpLabel = exp.label;
+      return (R)ret;
    }
 
    /**
@@ -525,7 +615,9 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
     */
    public R visit(Label n, A argu) 
    {
-      return n.f0.accept(this, argu);
+      R _ret = n.f0.accept(this, argu);
+      if(printLabel) System.out.println(_ret.toString() + ":");
+      return _ret;
    }
 
    /**
