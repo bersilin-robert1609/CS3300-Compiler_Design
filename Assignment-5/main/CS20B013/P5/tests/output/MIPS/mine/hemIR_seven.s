@@ -34,10 +34,10 @@ move $a0, $s0
 move $a1, $s2
 move $a2, $s3
 move $a3, $s4
-sw $s5, 0($sp)
-sw $s6, 4($sp)
-sw $s7, 8($sp)
-sw $t0, 12($sp)
+sw $s5, -12($sp)
+sw $s6, -16($sp)
+sw $s7, -20($sp)
+sw $t0, -24($sp)
 sw $t0, -12($fp)
 sw $t1, -16($fp)
 sw $t2, -20($fp)
@@ -85,13 +85,13 @@ move $s1, $a0
 move $s2, $a1
 move $t0, $a2
 move $s6, $a3
-lw $v0, 0($fp)
+lw $v0, -12($fp)
 move $s7, $v0
-lw $v0, 4($fp)
+lw $v0, -16($fp)
 move $s3, $v0
-lw $v0, 8($fp)
+lw $v0, -20($fp)
 move $s4, $v0
-lw $v0, 12($fp)
+lw $v0, -24($fp)
 move $s5, $v0
 li $s0, 7
 sne $s0, $s2, $s0
@@ -105,10 +105,10 @@ move $a0, $s0
 move $a1, $t0
 move $a2, $s6
 move $a3, $s7
-sw $s3, 0($sp)
-sw $s4, 4($sp)
-sw $s5, 8($sp)
-sw $s2, 12($sp)
+sw $s3, -12($sp)
+sw $s4, -16($sp)
+sw $s5, -20($sp)
+sw $s2, -24($sp)
 sw $t0, -60($fp)
 sw $t1, -64($fp)
 sw $t2, -68($fp)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-green='\033[0;37m'
-red='\033[0;32m'
+green='\033[0;32m'
+red='\033[0;31m'
 clear='\033[0m'
 
 if [[ $# == 0 ]]; then

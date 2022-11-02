@@ -34,9 +34,9 @@ move $a0, $s1
 move $a1, $s0
 move $a2, $s2
 move $a3, $s5
-sw $s6, 0($sp)
-sw $s7, 4($sp)
-sw $t0, 8($sp)
+sw $s6, -12($sp)
+sw $s7, -16($sp)
+sw $t0, -20($sp)
 sw $t0, -12($fp)
 sw $t1, -16($fp)
 sw $t2, -20($fp)
@@ -84,11 +84,11 @@ move $s0, $a0
 move $s1, $a1
 move $s2, $a2
 move $s3, $a3
-lw $v0, 0($fp)
+lw $v0, -12($fp)
 move $s4, $v0
-lw $v0, 4($fp)
+lw $v0, -16($fp)
 move $s5, $v0
-lw $v0, 8($fp)
+lw $v0, -20($fp)
 move $s6, $v0
 move $a0, $s1
 jal _print
@@ -110,9 +110,9 @@ move $a0, $s0
 move $a1, $s6
 move $a2, $s5
 move $a3, $s4
-sw $s3, 0($sp)
-sw $s2, 4($sp)
-sw $s1, 8($sp)
+sw $s3, -12($sp)
+sw $s2, -16($sp)
+sw $s1, -20($sp)
 sw $t0, -56($fp)
 sw $t1, -60($fp)
 sw $t2, -64($fp)
@@ -168,11 +168,11 @@ move $v1, $a0
 move $s0, $a1
 move $s1, $a2
 move $s2, $a3
-lw $v0, 0($fp)
+lw $v0, -12($fp)
 move $s3, $v0
-lw $v0, 4($fp)
+lw $v0, -16($fp)
 move $s4, $v0
-lw $v0, 8($fp)
+lw $v0, -20($fp)
 move $s5, $v0
 move $a0, $s0
 jal _print

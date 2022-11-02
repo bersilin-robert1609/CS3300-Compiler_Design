@@ -231,10 +231,10 @@ move $a0, $s1
 move $a1, $s2
 move $a2, $s3
 move $a3, $s0
-sw $s4, 0($sp)
-sw $s5, 4($sp)
-sw $s6, 8($sp)
-sw $s7, 12($sp)
+sw $s4, -12($sp)
+sw $s5, -16($sp)
+sw $s6, -20($sp)
+sw $s7, -24($sp)
 sw $t0, -44($fp)
 sw $t1, -48($fp)
 sw $t2, -52($fp)
@@ -292,13 +292,13 @@ move $v1, $a0
 move $v1, $a1
 move $s4, $a2
 move $s5, $a3
-lw $v0, 0($fp)
+lw $v0, -12($fp)
 move $s0, $v0
-lw $v0, 4($fp)
+lw $v0, -16($fp)
 move $s3, $v0
-lw $v0, 8($fp)
+lw $v0, -20($fp)
 move $s1, $v0
-lw $v0, 12($fp)
+lw $v0, -24($fp)
 move $s2, $v0
 move $a0, $s4
 jal _print

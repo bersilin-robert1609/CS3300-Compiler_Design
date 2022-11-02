@@ -395,14 +395,8 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       String reg = n.f1.accept(this, argu).toString();
       int offset = Integer.parseInt(n.f2.accept(this, argu).toString());
 
-      String scope = (String)argu;
-      ProcedureProperties proc = (ProcedureProperties)procProps.get(scope);
-      int extraArgs = proc.argCount - 4;
-
-      int newOffset;
-      if(extraArgs > 0 && offset < extraArgs) newOffset = offset * 4;
-      else newOffset = -(4 * (offset + 3));
-      System.out.println("lw " + reg + ", " + newOffset + "($fp)");      
+      int newOffset = 4 * (offset + 3);
+      System.out.println("lw " + reg + ", -" + newOffset + "($fp)");      
       return null;
    }
 
@@ -431,7 +425,7 @@ public class GJDepthFirst<R,A> implements GJVisitor<R,A> {
       int offset = Integer.parseInt(n.f1.accept(this, argu).toString());
       String reg = n.f2.accept(this, argu).toString();
 
-      System.out.println("sw " + reg + ", " + ((offset - 1) * 4) + "($sp)");
+      System.out.println("sw " + reg + ", -" + (offset * 4 + 8) + "($sp)");
       return null;
    }
 
