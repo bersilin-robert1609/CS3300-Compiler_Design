@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Sep  6 15:25:27 2022
+# Make data base, printed on Wed Nov  9 10:26:39 2022
 
 # Variables
 
@@ -85,11 +85,9 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/bersilinubuntu22/.vscode-server/bin/784b0177c56c607789f9638da7b6bf3230d47a8c/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/MinGW/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/ZeroTier/One/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/bersi/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bersi/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/MinGW/bin:/mnt/c/Users/bersi/AppData/Roaming/npm:/mnt/c/Python310/Lib:/mnt/c/Users/bersi/.dotnet/tools:/snap/bin
+PATH = /home/bersilinubuntu22/.vscode-server/bin/8fa188b2b301d36553cbc9ce1b0a146ccb93351f/bin/remote-cli:/home/bersilinubuntu22/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/MinGW/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/ZeroTier/One/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/bersi/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/bersi/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/bersi/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/MinGW/bin:/mnt/c/Users/bersi/AppData/Roaming/npm:/mnt/c/Python310/Lib:/mnt/c/Users/bersi/.dotnet/tools:/snap/bin
 # default
 MAKEFILES := 
-# environment
-MOTD_SHOWN = update-motd
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -105,13 +103,13 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # automatic
 +F = $(notdir $+)
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+WSL_INTEROP = /run/WSL/1947_interop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
 LOGNAME = bersilinubuntu22
 # environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/bersi/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/bersi/.vscode/extensions/ms-vscode-remote.remote-wsl-0.72.0
 # makefile
 .DEFAULT_GOAL := clean
 # environment
@@ -119,9 +117,9 @@ USER = bersilinubuntu22
 # default
 MAKE_VERSION := 4.3
 # environment
-_ = /home/bersilinubuntu22/.vscode-server/bin/784b0177c56c607789f9638da7b6bf3230d47a8c/node
+_ = /home/bersilinubuntu22/.vscode-server/bin/8fa188b2b301d36553cbc9ce1b0a146ccb93351f/node
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-4fb60b9d-a679-4796-9c21-3e136ec62f91.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-fb9ae6c8-cf8b-4da3-81de-1417352a3106.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -141,7 +139,7 @@ WSL_DISTRO_NAME = Ubuntu-22.04
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # variable set hash-table stats:
-# Load=64/1024=6%, Rehash=0, Collisions=1/94=1%
+# Load=63/1024=6%, Rehash=0, Collisions=1/93=1%
 
 # Pattern-specific Variable Values
 
@@ -149,9 +147,9 @@ WSL_DISTRO_NAME = Ubuntu-22.04
 
 # Directories
 
-# . (device 2064, inode 46092): 24 files, no impossibilities.
+# . (device 2064, inode 46092): 26 files, no impossibilities.
 
-# 24 files, no impossibilities in 1 directories.
+# 26 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -200,12 +198,12 @@ all:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 272 B / avg = 8 B
-# current buf: size = 8162 B / used = 272 B / count = 33 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 35 / storage = 301 B / avg = 8 B
+# current buf: size = 8162 B / used = 301 B / count = 35 / avg = 8 B
 
-# strcache performance: lookups = 38 / hit rate = 13%
+# strcache performance: lookups = 40 / hit rate = 12%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=0/38=0%
-# Finished Make data base on Tue Sep  6 15:25:27 2022
+# Load=35/8192=0%, Rehash=0, Collisions=0/40=0%
+# Finished Make data base on Wed Nov  9 10:26:39 2022
 
  
